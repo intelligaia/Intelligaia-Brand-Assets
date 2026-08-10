@@ -72,7 +72,7 @@
         "type": "home",
         "description": "Brand system landing — all sections",
         "path": "website/dark/00 Home.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/00%20Home.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/00%20Home.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -83,7 +83,7 @@
         "type": "reference-hub",
         "description": "Foundations hub — principles, colour, type",
         "path": "website/dark/10 Foundations.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/10%20Foundations.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/10%20Foundations.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -94,7 +94,7 @@
         "type": "reference",
         "description": "Three design principles",
         "path": "website/dark/11 Principles.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/11%20Principles.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/11%20Principles.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -105,7 +105,7 @@
         "type": "reference",
         "description": "Four brand colours + token exports",
         "path": "website/dark/12 Colour.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/12%20Colour.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/12%20Colour.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -116,7 +116,7 @@
         "type": "reference",
         "description": "Two type families, seven-step scale + token exports",
         "path": "website/dark/13 Typography.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/13%20Typography.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/13%20Typography.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -127,7 +127,7 @@
         "type": "reference-hub",
         "description": "Brand assets hub — the illustration system",
         "path": "website/dark/20 Brand Assets.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/20%20Brand%20Assets.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/20%20Brand%20Assets.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -138,7 +138,7 @@
         "type": "reference",
         "description": "Process diagrams and flow charts",
         "path": "website/dark/30 Diagrams.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/30%20Diagrams.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/30%20Diagrams.html",
         "has_page_spec": true,
         "has_agent_prompt": false
       },
@@ -149,7 +149,7 @@
         "type": "template",
         "description": "Service catalog template — six page types",
         "path": "website/dark/40 Service Catalog.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/40%20Service%20Catalog.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/40%20Service%20Catalog.html",
         "has_page_spec": true,
         "has_agent_prompt": false
       },
@@ -160,7 +160,7 @@
         "type": "playbook",
         "description": "Landing page playbook",
         "path": "website/dark/50 Landing Pages.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/50%20Landing%20Pages.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/50%20Landing%20Pages.html",
         "has_page_spec": true,
         "has_agent_prompt": true
       },
@@ -171,7 +171,7 @@
         "type": "playbook",
         "description": "Case study playbook",
         "path": "website/dark/60 Case Studies.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/60%20Case%20Studies.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/60%20Case%20Studies.html",
         "has_page_spec": true,
         "has_agent_prompt": true
       },
@@ -182,7 +182,7 @@
         "type": "playbook",
         "description": "Engineering whitepaper playbook",
         "path": "website/dark/70 Whitepapers.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/70%20Whitepapers.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/70%20Whitepapers.html",
         "has_page_spec": true,
         "has_agent_prompt": true
       },
@@ -193,7 +193,7 @@
         "type": "playbook",
         "description": "Social media playbook",
         "path": "website/dark/80 Social Media.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/dark/80%20Social%20Media.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/80%20Social%20Media.html",
         "has_page_spec": true,
         "has_agent_prompt": true
       }
@@ -206,7 +206,7 @@
         "type": "home",
         "description": "Brand system landing — all sections",
         "path": "website/light/00 Home.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/00%20Home.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/00%20Home.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -217,7 +217,7 @@
         "type": "reference-hub",
         "description": "Foundations hub — principles, colour, type",
         "path": "website/light/10 Foundations.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/10%20Foundations.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/10%20Foundations.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -228,7 +228,7 @@
         "type": "reference",
         "description": "Three design principles",
         "path": "website/light/11 Principles.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/11%20Principles.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/11%20Principles.html",
         "has_page_spec": true,
         "has_agent_prompt": false
       },
@@ -239,7 +239,7 @@
         "type": "reference",
         "description": "Four brand colours + token exports",
         "path": "website/light/12 Colour.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/12%20Colour.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/12%20Colour.html",
         "has_page_spec": true,
         "has_agent_prompt": false
       },
@@ -250,7 +250,7 @@
         "type": "reference",
         "description": "Two type families, seven-step scale + token exports",
         "path": "website/light/13 Typography.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/13%20Typography.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/13%20Typography.html",
         "has_page_spec": true,
         "has_agent_prompt": false
       },
@@ -261,7 +261,7 @@
         "type": "reference-hub",
         "description": "Brand assets hub — the illustration system",
         "path": "website/light/20 Brand Assets.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/20%20Brand%20Assets.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/20%20Brand%20Assets.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -272,7 +272,7 @@
         "type": "reference",
         "description": "Four-stage construction process",
         "path": "website/light/21 Construction.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/21%20Construction.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/21%20Construction.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -283,7 +283,7 @@
         "type": "library",
         "description": "Character illustrations",
         "path": "website/light/22 Characters.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/22%20Characters.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/22%20Characters.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -294,7 +294,7 @@
         "type": "library",
         "description": "Device illustrations",
         "path": "website/light/23 Devices.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/23%20Devices.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/23%20Devices.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -305,7 +305,7 @@
         "type": "library",
         "description": "Object illustrations",
         "path": "website/light/24 Objects.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/24%20Objects.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/24%20Objects.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -316,7 +316,7 @@
         "type": "library",
         "description": "Nature illustrations",
         "path": "website/light/25 Nature.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/25%20Nature.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/25%20Nature.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -327,7 +327,7 @@
         "type": "library",
         "description": "UI icon set",
         "path": "website/light/26 Icons.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/26%20Icons.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/26%20Icons.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -338,7 +338,7 @@
         "type": "library",
         "description": "Illustrated letterforms",
         "path": "website/light/27 Letters.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/27%20Letters.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/27%20Letters.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -349,7 +349,7 @@
         "type": "library",
         "description": "Wave and flow shapes",
         "path": "website/light/28 Waves.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/28%20Waves.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/28%20Waves.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -360,7 +360,7 @@
         "type": "library-detail",
         "description": "Single asset detail view",
         "path": "website/light/29 Asset Detail.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/29%20Asset%20Detail.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/29%20Asset%20Detail.html",
         "has_page_spec": false,
         "has_agent_prompt": false
       },
@@ -371,7 +371,7 @@
         "type": "reference",
         "description": "Process diagrams and flow charts",
         "path": "website/light/30 Diagrams.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/30%20Diagrams.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/30%20Diagrams.html",
         "has_page_spec": true,
         "has_agent_prompt": false
       },
@@ -382,7 +382,7 @@
         "type": "template",
         "description": "Service catalog template — six page types",
         "path": "website/light/40 Service Catalog.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/40%20Service%20Catalog.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/40%20Service%20Catalog.html",
         "has_page_spec": true,
         "has_agent_prompt": false
       },
@@ -393,7 +393,7 @@
         "type": "playbook",
         "description": "Landing page playbook",
         "path": "website/light/50 Landing Pages.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/50%20Landing%20Pages.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/50%20Landing%20Pages.html",
         "has_page_spec": true,
         "has_agent_prompt": false
       },
@@ -404,7 +404,7 @@
         "type": "playbook",
         "description": "Case study playbook",
         "path": "website/light/60 Case Studies.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/60%20Case%20Studies.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/60%20Case%20Studies.html",
         "has_page_spec": true,
         "has_agent_prompt": true
       },
@@ -415,7 +415,7 @@
         "type": "playbook",
         "description": "Engineering whitepaper playbook",
         "path": "website/light/70 Whitepapers.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/70%20Whitepapers.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/70%20Whitepapers.html",
         "has_page_spec": true,
         "has_agent_prompt": true
       },
@@ -426,7 +426,7 @@
         "type": "playbook",
         "description": "Social media playbook",
         "path": "website/light/80 Social Media.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/website/light/80%20Social%20Media.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/80%20Social%20Media.html",
         "has_page_spec": true,
         "has_agent_prompt": true
       }
