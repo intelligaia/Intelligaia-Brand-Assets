@@ -1,0 +1,1586 @@
+[
+  {
+    "id": "character-priya-front-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Priya \u2014 Front face \u2014 Circles",
+    "description": "Priya \u2014 Front face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 01 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Female Character 01 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "character-priya"
+  },
+  {
+    "id": "character-priya-front-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Priya \u2014 Front face \u2014 Final",
+    "description": "Priya \u2014 Front face, final stage.",
+    "path": "Assets/Female Characters/Female Character 01 \u2014 Front face \u2014 Final.png",
+    "filename": "Female Character 01 \u2014 Front face \u2014 Final.png",
+    "family_id": "character-priya"
+  },
+  {
+    "id": "character-priya-front-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Priya \u2014 Front face \u2014 Wireframe",
+    "description": "Priya \u2014 Front face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 01 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Female Character 01 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "character-priya"
+  },
+  {
+    "id": "character-priya-side-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Priya \u2014 Side face \u2014 Circles",
+    "description": "Priya \u2014 Side face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 01 \u2014 Side face \u2014 Deconstructed.png",
+    "filename": "Female Character 01 \u2014 Side face \u2014 Deconstructed.png",
+    "family_id": "character-priya"
+  },
+  {
+    "id": "character-priya-side-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Priya \u2014 Side face \u2014 Final",
+    "description": "Priya \u2014 Side face, final stage.",
+    "path": "Assets/Female Characters/Female Character 01 \u2014 Side face \u2014 Final.png",
+    "filename": "Female Character 01 \u2014 Side face \u2014 Final.png",
+    "family_id": "character-priya"
+  },
+  {
+    "id": "character-priya-side-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Priya \u2014 Side face \u2014 Wireframe",
+    "description": "Priya \u2014 Side face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 01 \u2014 Side face \u2014 Outlined.png",
+    "filename": "Female Character 01 \u2014 Side face \u2014 Outlined.png",
+    "family_id": "character-priya"
+  },
+  {
+    "id": "character-maya-front-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Maya \u2014 Front face \u2014 Circles",
+    "description": "Maya \u2014 Front face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 02 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Female Character 02 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "character-maya"
+  },
+  {
+    "id": "character-maya-front-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Maya \u2014 Front face \u2014 Final",
+    "description": "Maya \u2014 Front face, final stage.",
+    "path": "Assets/Female Characters/Female Character 02 \u2014 Front face \u2014 Final.png",
+    "filename": "Female Character 02 \u2014 Front face \u2014 Final.png",
+    "family_id": "character-maya"
+  },
+  {
+    "id": "character-maya-front-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Maya \u2014 Front face \u2014 Wireframe",
+    "description": "Maya \u2014 Front face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 02 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Female Character 02 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "character-maya"
+  },
+  {
+    "id": "character-maya-side-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Maya \u2014 Side face \u2014 Circles",
+    "description": "Maya \u2014 Side face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 02 \u2014 Side face \u2014 Deconstructed.png",
+    "filename": "Female Character 02 \u2014 Side face \u2014 Deconstructed.png",
+    "family_id": "character-maya"
+  },
+  {
+    "id": "character-maya-side-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Maya \u2014 Side face \u2014 Final",
+    "description": "Maya \u2014 Side face, final stage.",
+    "path": "Assets/Female Characters/Female Character 02 \u2014 Side face \u2014 Final.png",
+    "filename": "Female Character 02 \u2014 Side face \u2014 Final.png",
+    "family_id": "character-maya"
+  },
+  {
+    "id": "character-maya-side-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Maya \u2014 Side face \u2014 Wireframe",
+    "description": "Maya \u2014 Side face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 02 \u2014 Side face \u2014 Outlined.png",
+    "filename": "Female Character 02 \u2014 Side face \u2014 Outlined.png",
+    "family_id": "character-maya"
+  },
+  {
+    "id": "character-aisha-front-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Aisha \u2014 Front face \u2014 Circles",
+    "description": "Aisha \u2014 Front face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 03 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Female Character 03 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "character-aisha"
+  },
+  {
+    "id": "character-aisha-front-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Aisha \u2014 Front face \u2014 Final",
+    "description": "Aisha \u2014 Front face, final stage.",
+    "path": "Assets/Female Characters/Female Character 03 \u2014 Front face \u2014 Final.png",
+    "filename": "Female Character 03 \u2014 Front face \u2014 Final.png",
+    "family_id": "character-aisha"
+  },
+  {
+    "id": "character-aisha-front-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Aisha \u2014 Front face \u2014 Wireframe",
+    "description": "Aisha \u2014 Front face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 03 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Female Character 03 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "character-aisha"
+  },
+  {
+    "id": "character-aisha-side-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Aisha \u2014 Side face \u2014 Circles",
+    "description": "Aisha \u2014 Side face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 03 \u2014 Side face \u2014 Deconstructed.png",
+    "filename": "Female Character 03 \u2014 Side face \u2014 Deconstructed.png",
+    "family_id": "character-aisha"
+  },
+  {
+    "id": "character-aisha-side-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Aisha \u2014 Side face \u2014 Final",
+    "description": "Aisha \u2014 Side face, final stage.",
+    "path": "Assets/Female Characters/Female Character 03 \u2014 Side face \u2014 Final.png",
+    "filename": "Female Character 03 \u2014 Side face \u2014 Final.png",
+    "family_id": "character-aisha"
+  },
+  {
+    "id": "character-aisha-side-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Aisha \u2014 Side face \u2014 Wireframe",
+    "description": "Aisha \u2014 Side face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 03 \u2014 Side face \u2014 Outlined.png",
+    "filename": "Female Character 03 \u2014 Side face \u2014 Outlined.png",
+    "family_id": "character-aisha"
+  },
+  {
+    "id": "character-sofia-front-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Sofia \u2014 Front face \u2014 Circles",
+    "description": "Sofia \u2014 Front face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 04 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Female Character 04 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "character-sofia"
+  },
+  {
+    "id": "character-sofia-front-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Sofia \u2014 Front face \u2014 Final",
+    "description": "Sofia \u2014 Front face, final stage.",
+    "path": "Assets/Female Characters/Female Character 04 \u2014 Front face \u2014 Final.png",
+    "filename": "Female Character 04 \u2014 Front face \u2014 Final.png",
+    "family_id": "character-sofia"
+  },
+  {
+    "id": "character-sofia-front-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Sofia \u2014 Front face \u2014 Wireframe",
+    "description": "Sofia \u2014 Front face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 04 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Female Character 04 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "character-sofia"
+  },
+  {
+    "id": "character-sofia-side-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Sofia \u2014 Side face \u2014 Circles",
+    "description": "Sofia \u2014 Side face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 04 \u2014 Side face \u2014 Deconstructed.png",
+    "filename": "Female Character 04 \u2014 Side face \u2014 Deconstructed.png",
+    "family_id": "character-sofia"
+  },
+  {
+    "id": "character-sofia-side-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Sofia \u2014 Side face \u2014 Final",
+    "description": "Sofia \u2014 Side face, final stage.",
+    "path": "Assets/Female Characters/Female Character 04 \u2014 Side face \u2014 Final.png",
+    "filename": "Female Character 04 \u2014 Side face \u2014 Final.png",
+    "family_id": "character-sofia"
+  },
+  {
+    "id": "character-sofia-side-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Sofia \u2014 Side face \u2014 Wireframe",
+    "description": "Sofia \u2014 Side face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 04 \u2014 Side face \u2014 Outlined.png",
+    "filename": "Female Character 04 \u2014 Side face \u2014 Outlined.png",
+    "family_id": "character-sofia"
+  },
+  {
+    "id": "character-nia-front-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Nia \u2014 Front face \u2014 Circles",
+    "description": "Nia \u2014 Front face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 05 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Female Character 05 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "character-nia"
+  },
+  {
+    "id": "character-nia-front-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Nia \u2014 Front face \u2014 Final",
+    "description": "Nia \u2014 Front face, final stage.",
+    "path": "Assets/Female Characters/Female Character 05 \u2014 Front face \u2014 Final.png",
+    "filename": "Female Character 05 \u2014 Front face \u2014 Final.png",
+    "family_id": "character-nia"
+  },
+  {
+    "id": "character-nia-front-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Nia \u2014 Front face \u2014 Wireframe",
+    "description": "Nia \u2014 Front face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 05 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Female Character 05 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "character-nia"
+  },
+  {
+    "id": "character-nia-side-circles",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Nia \u2014 Side face \u2014 Circles",
+    "description": "Nia \u2014 Side face, circles stage.",
+    "path": "Assets/Female Characters/Female Character 05 \u2014 Side face \u2014 Deconstructed.png",
+    "filename": "Female Character 05 \u2014 Side face \u2014 Deconstructed.png",
+    "family_id": "character-nia"
+  },
+  {
+    "id": "character-nia-side-final",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Nia \u2014 Side face \u2014 Final",
+    "description": "Nia \u2014 Side face, final stage.",
+    "path": "Assets/Female Characters/Female Character 05 \u2014 Side face \u2014 Final.png",
+    "filename": "Female Character 05 \u2014 Side face \u2014 Final.png",
+    "family_id": "character-nia"
+  },
+  {
+    "id": "character-nia-side-wireframe",
+    "category": "Characters",
+    "subcategory": "Female character",
+    "name": "Nia \u2014 Side face \u2014 Wireframe",
+    "description": "Nia \u2014 Side face, wireframe stage.",
+    "path": "Assets/Female Characters/Female Character 05 \u2014 Side face \u2014 Outlined.png",
+    "filename": "Female Character 05 \u2014 Side face \u2014 Outlined.png",
+    "family_id": "character-nia"
+  },
+  {
+    "id": "character-arjun-front-circles",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Arjun \u2014 Front face \u2014 Circles",
+    "description": "Arjun \u2014 Front face, circles stage.",
+    "path": "Assets/Male Characters/Male Character 01 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Male Character 01 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "character-arjun"
+  },
+  {
+    "id": "character-arjun-front-final",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Arjun \u2014 Front face \u2014 Final",
+    "description": "Arjun \u2014 Front face, final stage.",
+    "path": "Assets/Male Characters/Male Character 01 \u2014 Front face \u2014 Final.png",
+    "filename": "Male Character 01 \u2014 Front face \u2014 Final.png",
+    "family_id": "character-arjun"
+  },
+  {
+    "id": "character-arjun-front-wireframe",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Arjun \u2014 Front face \u2014 Wireframe",
+    "description": "Arjun \u2014 Front face, wireframe stage.",
+    "path": "Assets/Male Characters/Male Character 01 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Male Character 01 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "character-arjun"
+  },
+  {
+    "id": "character-arjun-side-circles",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Arjun \u2014 Side face \u2014 Circles",
+    "description": "Arjun \u2014 Side face, circles stage.",
+    "path": "Assets/Male Characters/Male Character 01 \u2014 Side face \u2014 Deconstructed.png",
+    "filename": "Male Character 01 \u2014 Side face \u2014 Deconstructed.png",
+    "family_id": "character-arjun"
+  },
+  {
+    "id": "character-arjun-side-final",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Arjun \u2014 Side face \u2014 Final",
+    "description": "Arjun \u2014 Side face, final stage.",
+    "path": "Assets/Male Characters/Male Character 01 \u2014 Side face \u2014 Final.png",
+    "filename": "Male Character 01 \u2014 Side face \u2014 Final.png",
+    "family_id": "character-arjun"
+  },
+  {
+    "id": "character-arjun-side-wireframe",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Arjun \u2014 Side face \u2014 Wireframe",
+    "description": "Arjun \u2014 Side face, wireframe stage.",
+    "path": "Assets/Male Characters/Male Character 01 \u2014 Side face \u2014 Outlined.png",
+    "filename": "Male Character 01 \u2014 Side face \u2014 Outlined.png",
+    "family_id": "character-arjun"
+  },
+  {
+    "id": "character-david-front-circles",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "David \u2014 Front face \u2014 Circles",
+    "description": "David \u2014 Front face, circles stage.",
+    "path": "Assets/Male Characters/Male Character 02 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Male Character 02 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "character-david"
+  },
+  {
+    "id": "character-david-front-final",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "David \u2014 Front face \u2014 Final",
+    "description": "David \u2014 Front face, final stage.",
+    "path": "Assets/Male Characters/Male Character 02 \u2014 Front face \u2014 Final.png",
+    "filename": "Male Character 02 \u2014 Front face \u2014 Final.png",
+    "family_id": "character-david"
+  },
+  {
+    "id": "character-david-front-wireframe",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "David \u2014 Front face \u2014 Wireframe",
+    "description": "David \u2014 Front face, wireframe stage.",
+    "path": "Assets/Male Characters/Male Character 02 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Male Character 02 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "character-david"
+  },
+  {
+    "id": "character-david-side-circles",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "David \u2014 Side face \u2014 Circles",
+    "description": "David \u2014 Side face, circles stage.",
+    "path": "Assets/Male Characters/Male Character 02 \u2014 Side face \u2014 Deconstructed.png",
+    "filename": "Male Character 02 \u2014 Side face \u2014 Deconstructed.png",
+    "family_id": "character-david"
+  },
+  {
+    "id": "character-david-side-final",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "David \u2014 Side face \u2014 Final",
+    "description": "David \u2014 Side face, final stage.",
+    "path": "Assets/Male Characters/Male Character 02 \u2014 Side face \u2014 Final.png",
+    "filename": "Male Character 02 \u2014 Side face \u2014 Final.png",
+    "family_id": "character-david"
+  },
+  {
+    "id": "character-david-side-wireframe",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "David \u2014 Side face \u2014 Wireframe",
+    "description": "David \u2014 Side face, wireframe stage.",
+    "path": "Assets/Male Characters/Male Character 02 \u2014 Side face \u2014 Outlined.png",
+    "filename": "Male Character 02 \u2014 Side face \u2014 Outlined.png",
+    "family_id": "character-david"
+  },
+  {
+    "id": "character-kenji-front-circles",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Kenji \u2014 Front face \u2014 Circles",
+    "description": "Kenji \u2014 Front face, circles stage.",
+    "path": "Assets/Male Characters/Male Character 04 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Male Character 04 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "character-kenji"
+  },
+  {
+    "id": "character-kenji-front-final",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Kenji \u2014 Front face \u2014 Final",
+    "description": "Kenji \u2014 Front face, final stage.",
+    "path": "Assets/Male Characters/Male Character 04 \u2014 Front face \u2014 Final.png",
+    "filename": "Male Character 04 \u2014 Front face \u2014 Final.png",
+    "family_id": "character-kenji"
+  },
+  {
+    "id": "character-kenji-front-wireframe",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Kenji \u2014 Front face \u2014 Wireframe",
+    "description": "Kenji \u2014 Front face, wireframe stage.",
+    "path": "Assets/Male Characters/Male Character 04 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Male Character 04 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "character-kenji"
+  },
+  {
+    "id": "character-kenji-side-circles",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Kenji \u2014 Side face \u2014 Circles",
+    "description": "Kenji \u2014 Side face, circles stage.",
+    "path": "Assets/Male Characters/Male Character 04 \u2014 Side face \u2014 Deconstructed.png",
+    "filename": "Male Character 04 \u2014 Side face \u2014 Deconstructed.png",
+    "family_id": "character-kenji"
+  },
+  {
+    "id": "character-kenji-side-final",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Kenji \u2014 Side face \u2014 Final",
+    "description": "Kenji \u2014 Side face, final stage.",
+    "path": "Assets/Male Characters/Male Character 04 \u2014 Side face \u2014 Final.png",
+    "filename": "Male Character 04 \u2014 Side face \u2014 Final.png",
+    "family_id": "character-kenji"
+  },
+  {
+    "id": "character-kenji-side-wireframe",
+    "category": "Characters",
+    "subcategory": "Male character",
+    "name": "Kenji \u2014 Side face \u2014 Wireframe",
+    "description": "Kenji \u2014 Side face, wireframe stage.",
+    "path": "Assets/Male Characters/Male Character 04 \u2014 Side face \u2014 Outlined.png",
+    "filename": "Male Character 04 \u2014 Side face \u2014 Outlined.png",
+    "family_id": "character-kenji"
+  },
+  {
+    "id": "devices-macbook-front-circles",
+    "category": "Devices",
+    "subcategory": "Laptop",
+    "name": "MacBook \u2014 Front face \u2014 Circles",
+    "description": "MacBook \u2014 Front face, circles stage.",
+    "path": "Assets/Devices/MacBook \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "MacBook \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "devices-macbook"
+  },
+  {
+    "id": "devices-macbook-front-final",
+    "category": "Devices",
+    "subcategory": "Laptop",
+    "name": "MacBook \u2014 Front face \u2014 Final",
+    "description": "MacBook \u2014 Front face, final stage.",
+    "path": "Assets/Devices/MacBook \u2014 Front face \u2014 Final.png",
+    "filename": "MacBook \u2014 Front face \u2014 Final.png",
+    "family_id": "devices-macbook"
+  },
+  {
+    "id": "devices-macbook-front-wireframe",
+    "category": "Devices",
+    "subcategory": "Laptop",
+    "name": "MacBook \u2014 Front face \u2014 Wireframe",
+    "description": "MacBook \u2014 Front face, wireframe stage.",
+    "path": "Assets/Devices/MacBook \u2014 Front face \u2014 Outlined.png",
+    "filename": "MacBook \u2014 Front face \u2014 Outlined.png",
+    "family_id": "devices-macbook"
+  },
+  {
+    "id": "devices-apple-vision-pro-default-circles",
+    "category": "Devices",
+    "subcategory": "Mixed-reality headset",
+    "name": "Apple Vision Pro \u2014 Circles",
+    "description": "Apple Vision Pro, circles stage.",
+    "path": "Assets/Devices/Apple Vision Pro \u2014 Deconstructed.png",
+    "filename": "Apple Vision Pro \u2014 Deconstructed.png",
+    "family_id": "devices-apple-vision-pro"
+  },
+  {
+    "id": "devices-apple-vision-pro-default-final",
+    "category": "Devices",
+    "subcategory": "Mixed-reality headset",
+    "name": "Apple Vision Pro \u2014 Final",
+    "description": "Apple Vision Pro, final stage.",
+    "path": "Assets/Devices/Apple Vision Pro \u2014 Filled.png",
+    "filename": "Apple Vision Pro \u2014 Filled.png",
+    "family_id": "devices-apple-vision-pro"
+  },
+  {
+    "id": "devices-apple-vision-pro-default-wireframe",
+    "category": "Devices",
+    "subcategory": "Mixed-reality headset",
+    "name": "Apple Vision Pro \u2014 Wireframe",
+    "description": "Apple Vision Pro, wireframe stage.",
+    "path": "Assets/Devices/Apple Vision Pro \u2014 Outlined.png",
+    "filename": "Apple Vision Pro \u2014 Outlined.png",
+    "family_id": "devices-apple-vision-pro"
+  },
+  {
+    "id": "devices-headphones-01-default-circles",
+    "category": "Devices",
+    "subcategory": "Over-ear",
+    "name": "Headphones 01 \u2014 Circles",
+    "description": "Headphones 01, circles stage.",
+    "path": "Assets/Devices/Headphones 01 \u2014 Deconstructed.png",
+    "filename": "Headphones 01 \u2014 Deconstructed.png",
+    "family_id": "devices-headphones-01"
+  },
+  {
+    "id": "devices-headphones-01-default-final",
+    "category": "Devices",
+    "subcategory": "Over-ear",
+    "name": "Headphones 01 \u2014 Final",
+    "description": "Headphones 01, final stage.",
+    "path": "Assets/Devices/Headphones 01 \u2014 Filled.png",
+    "filename": "Headphones 01 \u2014 Filled.png",
+    "family_id": "devices-headphones-01"
+  },
+  {
+    "id": "devices-headphones-01-default-wireframe",
+    "category": "Devices",
+    "subcategory": "Over-ear",
+    "name": "Headphones 01 \u2014 Wireframe",
+    "description": "Headphones 01, wireframe stage.",
+    "path": "Assets/Devices/Headphones 01 \u2014 Outlined.png",
+    "filename": "Headphones 01 \u2014 Outlined.png",
+    "family_id": "devices-headphones-01"
+  },
+  {
+    "id": "devices-headphones-02-default-circles",
+    "category": "Devices",
+    "subcategory": "Studio",
+    "name": "Headphones 02 \u2014 Circles",
+    "description": "Headphones 02, circles stage.",
+    "path": "Assets/Devices/Headphones 02 \u2014 Deconstructed.png",
+    "filename": "Headphones 02 \u2014 Deconstructed.png",
+    "family_id": "devices-headphones-02"
+  },
+  {
+    "id": "devices-headphones-02-default-final",
+    "category": "Devices",
+    "subcategory": "Studio",
+    "name": "Headphones 02 \u2014 Final",
+    "description": "Headphones 02, final stage.",
+    "path": "Assets/Devices/Headphones 02 \u2014 Filled.png",
+    "filename": "Headphones 02 \u2014 Filled.png",
+    "family_id": "devices-headphones-02"
+  },
+  {
+    "id": "devices-headphones-02-default-wireframe",
+    "category": "Devices",
+    "subcategory": "Studio",
+    "name": "Headphones 02 \u2014 Wireframe",
+    "description": "Headphones 02, wireframe stage.",
+    "path": "Assets/Devices/Headphones 02 \u2014 Outlined.png",
+    "filename": "Headphones 02 \u2014 Outlined.png",
+    "family_id": "devices-headphones-02"
+  },
+  {
+    "id": "devices-meta-glasses-01-front-circles",
+    "category": "Devices",
+    "subcategory": "Classic",
+    "name": "Meta Glasses 01 \u2014 Front face \u2014 Circles",
+    "description": "Meta Glasses 01 \u2014 Front face, circles stage.",
+    "path": "Assets/Devices/Meta Glasses 01 \u2014 Front face \u2014 Deconstructed.png",
+    "filename": "Meta Glasses 01 \u2014 Front face \u2014 Deconstructed.png",
+    "family_id": "devices-meta-glasses-01"
+  },
+  {
+    "id": "devices-meta-glasses-01-front-final",
+    "category": "Devices",
+    "subcategory": "Classic",
+    "name": "Meta Glasses 01 \u2014 Front face \u2014 Final",
+    "description": "Meta Glasses 01 \u2014 Front face, final stage.",
+    "path": "Assets/Devices/Meta Glasses 01 \u2014 Front face \u2014 Final.png",
+    "filename": "Meta Glasses 01 \u2014 Front face \u2014 Final.png",
+    "family_id": "devices-meta-glasses-01"
+  },
+  {
+    "id": "devices-meta-glasses-01-front-wireframe",
+    "category": "Devices",
+    "subcategory": "Classic",
+    "name": "Meta Glasses 01 \u2014 Front face \u2014 Wireframe",
+    "description": "Meta Glasses 01 \u2014 Front face, wireframe stage.",
+    "path": "Assets/Devices/Meta Glasses 01 \u2014 Front face \u2014 Outlined.png",
+    "filename": "Meta Glasses 01 \u2014 Front face \u2014 Outlined.png",
+    "family_id": "devices-meta-glasses-01"
+  },
+  {
+    "id": "devices-meta-glasses-02-default-circles",
+    "category": "Devices",
+    "subcategory": "Pilot",
+    "name": "Meta Glasses 02 \u2014 Circles",
+    "description": "Meta Glasses 02, circles stage.",
+    "path": "Assets/Devices/Meta Glasses 02 \u2014 Deconstructed.png",
+    "filename": "Meta Glasses 02 \u2014 Deconstructed.png",
+    "family_id": "devices-meta-glasses-02"
+  },
+  {
+    "id": "devices-meta-glasses-02-default-final",
+    "category": "Devices",
+    "subcategory": "Pilot",
+    "name": "Meta Glasses 02 \u2014 Final",
+    "description": "Meta Glasses 02, final stage.",
+    "path": "Assets/Devices/Meta Glasses 02 \u2014 Filled.png",
+    "filename": "Meta Glasses 02 \u2014 Filled.png",
+    "family_id": "devices-meta-glasses-02"
+  },
+  {
+    "id": "devices-meta-glasses-02-default-wireframe",
+    "category": "Devices",
+    "subcategory": "Pilot",
+    "name": "Meta Glasses 02 \u2014 Wireframe",
+    "description": "Meta Glasses 02, wireframe stage.",
+    "path": "Assets/Devices/Meta Glasses 02 \u2014 Outlined.png",
+    "filename": "Meta Glasses 02 \u2014 Outlined.png",
+    "family_id": "devices-meta-glasses-02"
+  },
+  {
+    "id": "devices-meta-glasses-03-default-circles",
+    "category": "Devices",
+    "subcategory": "Sport",
+    "name": "Meta Glasses 03 \u2014 Circles",
+    "description": "Meta Glasses 03, circles stage.",
+    "path": "Assets/Devices/Meta Glasses 03 \u2014 Deconstructed.png",
+    "filename": "Meta Glasses 03 \u2014 Deconstructed.png",
+    "family_id": "devices-meta-glasses-03"
+  },
+  {
+    "id": "devices-meta-glasses-03-default-final",
+    "category": "Devices",
+    "subcategory": "Sport",
+    "name": "Meta Glasses 03 \u2014 Final",
+    "description": "Meta Glasses 03, final stage.",
+    "path": "Assets/Devices/Meta Glasses 03 \u2014 Final.png",
+    "filename": "Meta Glasses 03 \u2014 Final.png",
+    "family_id": "devices-meta-glasses-03"
+  },
+  {
+    "id": "devices-meta-glasses-03-default-wireframe",
+    "category": "Devices",
+    "subcategory": "Sport",
+    "name": "Meta Glasses 03 \u2014 Wireframe",
+    "description": "Meta Glasses 03, wireframe stage.",
+    "path": "Assets/Devices/Meta Glasses 03 \u2014 Outlined.png",
+    "filename": "Meta Glasses 03 \u2014 Outlined.png",
+    "family_id": "devices-meta-glasses-03"
+  },
+  {
+    "id": "nature-cloud-default-circles",
+    "category": "Nature",
+    "subcategory": "Weather",
+    "name": "Cloud \u2014 Circles",
+    "description": "Cloud, circles stage.",
+    "path": "Assets/Nature/Cloud \u2014 Deconstructed.png",
+    "filename": "Cloud \u2014 Deconstructed.png",
+    "family_id": "nature-cloud"
+  },
+  {
+    "id": "nature-cloud-default-final",
+    "category": "Nature",
+    "subcategory": "Weather",
+    "name": "Cloud \u2014 Final",
+    "description": "Cloud, final stage.",
+    "path": "Assets/Nature/Cloud \u2014 Final.png",
+    "filename": "Cloud \u2014 Final.png",
+    "family_id": "nature-cloud"
+  },
+  {
+    "id": "nature-cloud-default-wireframe",
+    "category": "Nature",
+    "subcategory": "Weather",
+    "name": "Cloud \u2014 Wireframe",
+    "description": "Cloud, wireframe stage.",
+    "path": "Assets/Nature/Cloud \u2014 Outlined.png",
+    "filename": "Cloud \u2014 Outlined.png",
+    "family_id": "nature-cloud"
+  },
+  {
+    "id": "nature-plants-default-circles",
+    "category": "Nature",
+    "subcategory": "Foliage",
+    "name": "Plants \u2014 Circles",
+    "description": "Plants, circles stage.",
+    "path": "Assets/Nature/Plants \u2014 Deconstructed.png",
+    "filename": "Plants \u2014 Deconstructed.png",
+    "family_id": "nature-plants"
+  },
+  {
+    "id": "nature-plants-default-final",
+    "category": "Nature",
+    "subcategory": "Foliage",
+    "name": "Plants \u2014 Final",
+    "description": "Plants, final stage.",
+    "path": "Assets/Nature/Plants \u2014 Final.png",
+    "filename": "Plants \u2014 Final.png",
+    "family_id": "nature-plants"
+  },
+  {
+    "id": "nature-plants-default-wireframe",
+    "category": "Nature",
+    "subcategory": "Foliage",
+    "name": "Plants \u2014 Wireframe",
+    "description": "Plants, wireframe stage.",
+    "path": "Assets/Nature/Plants \u2014 Outlined.png",
+    "filename": "Plants \u2014 Outlined.png",
+    "family_id": "nature-plants"
+  },
+  {
+    "id": "nature-trees-default-circles",
+    "category": "Nature",
+    "subcategory": "Foliage",
+    "name": "Trees \u2014 Circles",
+    "description": "Trees, circles stage.",
+    "path": "Assets/Nature/Trees \u2014 Deconstructed.png",
+    "filename": "Trees \u2014 Deconstructed.png",
+    "family_id": "nature-trees"
+  },
+  {
+    "id": "nature-trees-default-final",
+    "category": "Nature",
+    "subcategory": "Foliage",
+    "name": "Trees \u2014 Final",
+    "description": "Trees, final stage.",
+    "path": "Assets/Nature/Trees \u2014 Final.png",
+    "filename": "Trees \u2014 Final.png",
+    "family_id": "nature-trees"
+  },
+  {
+    "id": "nature-trees-default-wireframe",
+    "category": "Nature",
+    "subcategory": "Foliage",
+    "name": "Trees \u2014 Wireframe",
+    "description": "Trees, wireframe stage.",
+    "path": "Assets/Nature/Trees \u2014 Outlined.png",
+    "filename": "Trees \u2014 Outlined.png",
+    "family_id": "nature-trees"
+  },
+  {
+    "id": "objects-binoculars-default-circles",
+    "category": "Objects",
+    "subcategory": "Optics",
+    "name": "Binoculars \u2014 Circles",
+    "description": "Binoculars, circles stage.",
+    "path": "Assets/Objects/Binoculars \u2014 Deconstructed.png",
+    "filename": "Binoculars \u2014 Deconstructed.png",
+    "family_id": "objects-binoculars"
+  },
+  {
+    "id": "objects-binoculars-default-final",
+    "category": "Objects",
+    "subcategory": "Optics",
+    "name": "Binoculars \u2014 Final",
+    "description": "Binoculars, final stage.",
+    "path": "Assets/Objects/Binoculars \u2014 Final.png",
+    "filename": "Binoculars \u2014 Final.png",
+    "family_id": "objects-binoculars"
+  },
+  {
+    "id": "objects-binoculars-default-wireframe",
+    "category": "Objects",
+    "subcategory": "Optics",
+    "name": "Binoculars \u2014 Wireframe",
+    "description": "Binoculars, wireframe stage.",
+    "path": "Assets/Objects/Binoculars \u2014 Outlined.png",
+    "filename": "Binoculars \u2014 Outlined.png",
+    "family_id": "objects-binoculars"
+  },
+  {
+    "id": "objects-magnifying-glass-default-final",
+    "category": "Objects",
+    "subcategory": "Optics",
+    "name": "Magnifying Glass \u2014 Final",
+    "description": "Magnifying Glass, final stage.",
+    "path": "Assets/Objects/Magnifying Glass \u2014 Final.png",
+    "filename": "Magnifying Glass \u2014 Final.png",
+    "family_id": "objects-magnifying-glass"
+  },
+  {
+    "id": "objects-magnifying-glass-default-wireframe",
+    "category": "Objects",
+    "subcategory": "Optics",
+    "name": "Magnifying Glass \u2014 Wireframe",
+    "description": "Magnifying Glass, wireframe stage.",
+    "path": "Assets/Objects/Magnifying Glass \u2014 Outlined.png",
+    "filename": "Magnifying Glass \u2014 Outlined.png",
+    "family_id": "objects-magnifying-glass"
+  },
+  {
+    "id": "objects-lighthouse-default-circles",
+    "category": "Objects",
+    "subcategory": "Landmark",
+    "name": "Lighthouse \u2014 Circles",
+    "description": "Lighthouse, circles stage.",
+    "path": "Assets/Objects/Lighthouse \u2014 Deconstructed.png",
+    "filename": "Lighthouse \u2014 Deconstructed.png",
+    "family_id": "objects-lighthouse"
+  },
+  {
+    "id": "objects-lighthouse-default-final",
+    "category": "Objects",
+    "subcategory": "Landmark",
+    "name": "Lighthouse \u2014 Final",
+    "description": "Lighthouse, final stage.",
+    "path": "Assets/Objects/Lighthouse \u2014 Final.png",
+    "filename": "Lighthouse \u2014 Final.png",
+    "family_id": "objects-lighthouse"
+  },
+  {
+    "id": "objects-lighthouse-default-wireframe",
+    "category": "Objects",
+    "subcategory": "Landmark",
+    "name": "Lighthouse \u2014 Wireframe",
+    "description": "Lighthouse, wireframe stage.",
+    "path": "Assets/Objects/Lighthouse \u2014 Outlined.png",
+    "filename": "Lighthouse \u2014 Outlined.png",
+    "family_id": "objects-lighthouse"
+  },
+  {
+    "id": "objects-sailboat-default-final",
+    "category": "Objects",
+    "subcategory": "Marine",
+    "name": "Sailboat \u2014 Final",
+    "description": "Sailboat, final stage.",
+    "path": "Assets/Objects/Ship 01 \u2014 Final.png",
+    "filename": "Ship 01 \u2014 Final.png",
+    "family_id": "objects-sailboat"
+  },
+  {
+    "id": "objects-sailboat-default-wireframe",
+    "category": "Objects",
+    "subcategory": "Marine",
+    "name": "Sailboat \u2014 Wireframe",
+    "description": "Sailboat, wireframe stage.",
+    "path": "Assets/Objects/Ship 01 \u2014 Outlined.png",
+    "filename": "Ship 01 \u2014 Outlined.png",
+    "family_id": "objects-sailboat"
+  },
+  {
+    "id": "objects-cargo-ship-default-final",
+    "category": "Objects",
+    "subcategory": "Marine",
+    "name": "Cargo Ship \u2014 Final",
+    "description": "Cargo Ship, final stage.",
+    "path": "Assets/Objects/Ship 02 \u2014 Final.png",
+    "filename": "Ship 02 \u2014 Final.png",
+    "family_id": "objects-cargo-ship"
+  },
+  {
+    "id": "objects-cargo-ship-default-wireframe",
+    "category": "Objects",
+    "subcategory": "Marine",
+    "name": "Cargo Ship \u2014 Wireframe",
+    "description": "Cargo Ship, wireframe stage.",
+    "path": "Assets/Objects/Ship 02 \u2014 Outlined.png",
+    "filename": "Ship 02 \u2014 Outlined.png",
+    "family_id": "objects-cargo-ship"
+  },
+  {
+    "id": "icon-ai-bot-face",
+    "category": "Icons",
+    "subcategory": "AI",
+    "name": "Bot Face",
+    "description": "Bot Face \u2014 AI icon.",
+    "path": "Assets/Icon/AI/Bot-Face.svg",
+    "filename": "Bot-Face.svg"
+  },
+  {
+    "id": "icon-ai-machine-vision",
+    "category": "Icons",
+    "subcategory": "AI",
+    "name": "Machine Vision",
+    "description": "Machine Vision \u2014 AI icon.",
+    "path": "Assets/Icon/AI/Machine-Vision.svg",
+    "filename": "Machine-Vision.svg"
+  },
+  {
+    "id": "icon-abstract-concentric-arcs",
+    "category": "Icons",
+    "subcategory": "Abstract",
+    "name": "Concentric Arcs",
+    "description": "Concentric Arcs \u2014 Abstract icon.",
+    "path": "Assets/Icon/Abstract/Concentric-Arcs.svg",
+    "filename": "Concentric-Arcs.svg"
+  },
+  {
+    "id": "icon-abstract-four-point-star",
+    "category": "Icons",
+    "subcategory": "Abstract",
+    "name": "Four Point Star",
+    "description": "Four Point Star \u2014 Abstract icon.",
+    "path": "Assets/Icon/Abstract/Four-Point-Star.svg",
+    "filename": "Four-Point-Star.svg"
+  },
+  {
+    "id": "icon-analytics-data-insights",
+    "category": "Icons",
+    "subcategory": "Analytics",
+    "name": "Data Insights",
+    "description": "Data Insights \u2014 Analytics icon.",
+    "path": "Assets/Icon/Analytics/Data-Insights.svg",
+    "filename": "Data-Insights.svg"
+  },
+  {
+    "id": "icon-analytics-predictive-forecast",
+    "category": "Icons",
+    "subcategory": "Analytics",
+    "name": "Predictive Forecast",
+    "description": "Predictive Forecast \u2014 Analytics icon.",
+    "path": "Assets/Icon/Analytics/Predictive-Forecast.svg",
+    "filename": "Predictive-Forecast.svg"
+  },
+  {
+    "id": "icon-data-list-to-cards",
+    "category": "Icons",
+    "subcategory": "Data",
+    "name": "List To Cards",
+    "description": "List To Cards \u2014 Data icon.",
+    "path": "Assets/Icon/Data/List-To-Cards.svg",
+    "filename": "List-To-Cards.svg"
+  },
+  {
+    "id": "icon-interface-website-search",
+    "category": "Icons",
+    "subcategory": "Interface",
+    "name": "Website Search",
+    "description": "Website Search \u2014 Interface icon.",
+    "path": "Assets/Icon/Interface/Website-Search.svg",
+    "filename": "Website-Search.svg"
+  },
+  {
+    "id": "icon-people-business-persona",
+    "category": "Icons",
+    "subcategory": "People",
+    "name": "Business Persona",
+    "description": "Business Persona \u2014 People icon.",
+    "path": "Assets/Icon/People/Business-Persona.svg",
+    "filename": "Business-Persona.svg"
+  },
+  {
+    "id": "icon-people-peer-connection",
+    "category": "Icons",
+    "subcategory": "People",
+    "name": "Peer Connection",
+    "description": "Peer Connection \u2014 People icon.",
+    "path": "Assets/Icon/People/Peer-Connection.svg",
+    "filename": "Peer-Connection.svg"
+  },
+  {
+    "id": "icon-people-user-avatar",
+    "category": "Icons",
+    "subcategory": "People",
+    "name": "User Avatar",
+    "description": "User Avatar \u2014 People icon.",
+    "path": "Assets/Icon/People/User-Avatar.svg",
+    "filename": "User-Avatar.svg"
+  },
+  {
+    "id": "icon-strategy-target-goal",
+    "category": "Icons",
+    "subcategory": "Strategy",
+    "name": "Target Goal",
+    "description": "Target Goal \u2014 Strategy icon.",
+    "path": "Assets/Icon/Strategy/Target-Goal.svg",
+    "filename": "Target-Goal.svg"
+  },
+  {
+    "id": "icon-system-alert-warning",
+    "category": "Icons",
+    "subcategory": "System",
+    "name": "Alert Warning",
+    "description": "Alert Warning \u2014 System icon.",
+    "path": "Assets/Icon/System/Alert-Warning.svg",
+    "filename": "Alert-Warning.svg"
+  },
+  {
+    "id": "icon-system-process-automation",
+    "category": "Icons",
+    "subcategory": "System",
+    "name": "Process Automation",
+    "description": "Process Automation \u2014 System icon.",
+    "path": "Assets/Icon/System/Process-Automation.svg",
+    "filename": "Process-Automation.svg"
+  },
+  {
+    "id": "icon-ui-account-circle-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Account Circle 01",
+    "description": "Account Circle 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Account-Circle-01.svg",
+    "filename": "Account-Circle-01.svg"
+  },
+  {
+    "id": "icon-ui-account-circle-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Account Circle 02",
+    "description": "Account Circle 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Account-Circle-02.svg",
+    "filename": "Account-Circle-02.svg"
+  },
+  {
+    "id": "icon-ui-account-circle-03",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Account Circle 03",
+    "description": "Account Circle 03 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Account-Circle-03.svg",
+    "filename": "Account-Circle-03.svg"
+  },
+  {
+    "id": "icon-ui-account-circle-04",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Account Circle 04",
+    "description": "Account Circle 04 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Account-Circle-04.svg",
+    "filename": "Account-Circle-04.svg"
+  },
+  {
+    "id": "icon-ui-calendar-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Calendar 01",
+    "description": "Calendar 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Calendar-01.svg",
+    "filename": "Calendar-01.svg"
+  },
+  {
+    "id": "icon-ui-calendar-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Calendar 02",
+    "description": "Calendar 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Calendar-02.svg",
+    "filename": "Calendar-02.svg"
+  },
+  {
+    "id": "icon-ui-error-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Error 01",
+    "description": "Error 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Error-01.svg",
+    "filename": "Error-01.svg"
+  },
+  {
+    "id": "icon-ui-error-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Error 02",
+    "description": "Error 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Error-02.svg",
+    "filename": "Error-02.svg"
+  },
+  {
+    "id": "icon-ui-error-03",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Error 03",
+    "description": "Error 03 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Error-03.svg",
+    "filename": "Error-03.svg"
+  },
+  {
+    "id": "icon-ui-event-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Event 01",
+    "description": "Event 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Event-01.svg",
+    "filename": "Event-01.svg"
+  },
+  {
+    "id": "icon-ui-event-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Event 02",
+    "description": "Event 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Event-02.svg",
+    "filename": "Event-02.svg"
+  },
+  {
+    "id": "icon-ui-help-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Help 01",
+    "description": "Help 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Help-01.svg",
+    "filename": "Help-01.svg"
+  },
+  {
+    "id": "icon-ui-help-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Help 02",
+    "description": "Help 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Help-02.svg",
+    "filename": "Help-02.svg"
+  },
+  {
+    "id": "icon-ui-language-earth-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Language Earth 01",
+    "description": "Language Earth 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Language-Earth-01.svg",
+    "filename": "Language-Earth-01.svg"
+  },
+  {
+    "id": "icon-ui-language-earth-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Language Earth 02",
+    "description": "Language Earth 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Language-Earth-02.svg",
+    "filename": "Language-Earth-02.svg"
+  },
+  {
+    "id": "icon-ui-language-earth-03",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Language Earth 03",
+    "description": "Language Earth 03 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Language-Earth-03.svg",
+    "filename": "Language-Earth-03.svg"
+  },
+  {
+    "id": "icon-ui-language-earth-04",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Language Earth 04",
+    "description": "Language Earth 04 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Language-Earth-04.svg",
+    "filename": "Language-Earth-04.svg"
+  },
+  {
+    "id": "icon-ui-lock-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Lock 01",
+    "description": "Lock 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Lock-01.svg",
+    "filename": "Lock-01.svg"
+  },
+  {
+    "id": "icon-ui-schedule-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Schedule 01",
+    "description": "Schedule 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Schedule-01.svg",
+    "filename": "Schedule-01.svg"
+  },
+  {
+    "id": "icon-ui-schedule-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Schedule 02",
+    "description": "Schedule 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Schedule-02.svg",
+    "filename": "Schedule-02.svg"
+  },
+  {
+    "id": "icon-ui-schedule-03",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Schedule 03",
+    "description": "Schedule 03 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Schedule-03.svg",
+    "filename": "Schedule-03.svg"
+  },
+  {
+    "id": "icon-ui-verified-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Verified 01",
+    "description": "Verified 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Verified-01.svg",
+    "filename": "Verified-01.svg"
+  },
+  {
+    "id": "icon-ui-verified-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Verified 02",
+    "description": "Verified 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Verified-02.svg",
+    "filename": "Verified-02.svg"
+  },
+  {
+    "id": "icon-ui-verified-03",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Verified 03",
+    "description": "Verified 03 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Verified-03.svg",
+    "filename": "Verified-03.svg"
+  },
+  {
+    "id": "icon-ui-warning-01",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Warning 01",
+    "description": "Warning 01 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Warning-01.svg",
+    "filename": "Warning-01.svg"
+  },
+  {
+    "id": "icon-ui-warning-02",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Warning 02",
+    "description": "Warning 02 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Warning-02.svg",
+    "filename": "Warning-02.svg"
+  },
+  {
+    "id": "icon-ui-warning-03",
+    "category": "Icons",
+    "subcategory": "UI",
+    "name": "Warning 03",
+    "description": "Warning 03 \u2014 UI icon.",
+    "path": "Assets/Icon/UI/Warning-03.svg",
+    "filename": "Warning-03.svg"
+  },
+  {
+    "id": "wave-braided-ribbon-horizontal-01",
+    "category": "Waves",
+    "subcategory": "Braided Ribbon",
+    "name": "Braided Ribbon \u2014 Horizontal 01",
+    "description": "Ribbon \u2014 braided ribbon.",
+    "path": "Assets/Waves/Braided-Ribbon/Horizontal-01.svg",
+    "filename": "Horizontal-01.svg"
+  },
+  {
+    "id": "wave-braided-ribbon-vertical-twist",
+    "category": "Waves",
+    "subcategory": "Braided Ribbon",
+    "name": "Braided Ribbon \u2014 Vertical Twist",
+    "description": "Ribbon \u2014 braided ribbon.",
+    "path": "Assets/Waves/Braided-Ribbon/Vertical-Twist.svg",
+    "filename": "Vertical-Twist.svg"
+  },
+  {
+    "id": "wave-crossing-strand-duo-weave",
+    "category": "Waves",
+    "subcategory": "Crossing Strand",
+    "name": "Crossing Strand \u2014 Duo Weave",
+    "description": "Ribbon \u2014 crossing strand.",
+    "path": "Assets/Waves/Crossing-Strand/Duo-Weave.svg",
+    "filename": "Duo-Weave.svg"
+  },
+  {
+    "id": "wave-folded-ribbon-accordion-wide",
+    "category": "Waves",
+    "subcategory": "Folded Ribbon",
+    "name": "Folded Ribbon \u2014 Accordion Wide",
+    "description": "Ribbon \u2014 folded ribbon.",
+    "path": "Assets/Waves/Folded-Ribbon/Accordion-Wide.svg",
+    "filename": "Accordion-Wide.svg"
+  },
+  {
+    "id": "wave-looped-ribbon-tunnel-arch",
+    "category": "Waves",
+    "subcategory": "Looped Ribbon",
+    "name": "Looped Ribbon \u2014 Tunnel Arch",
+    "description": "Ribbon \u2014 looped ribbon.",
+    "path": "Assets/Waves/Looped-Ribbon/Tunnel-Arch.svg",
+    "filename": "Tunnel-Arch.svg"
+  },
+  {
+    "id": "wave-multicolour-ribbon-layered-flow",
+    "category": "Waves",
+    "subcategory": "Multicolour Ribbon",
+    "name": "Multicolour Ribbon \u2014 Layered Flow",
+    "description": "Ribbon \u2014 multicolour ribbon.",
+    "path": "Assets/Waves/Multicolour-Ribbon/Layered-Flow.svg",
+    "filename": "Layered-Flow.svg"
+  },
+  {
+    "id": "wave-ramp-ribbon-arch-rise",
+    "category": "Waves",
+    "subcategory": "Ramp Ribbon",
+    "name": "Ramp Ribbon \u2014 Arch Rise",
+    "description": "Ribbon \u2014 ramp ribbon.",
+    "path": "Assets/Waves/Ramp-Ribbon/Arch-Rise.svg",
+    "filename": "Arch-Rise.svg"
+  },
+  {
+    "id": "wave-soft-crest-cloud-bump",
+    "category": "Waves",
+    "subcategory": "Soft Crest",
+    "name": "Soft Crest \u2014 Cloud Bump",
+    "description": "Ribbon \u2014 soft crest.",
+    "path": "Assets/Waves/Soft-Crest/Cloud-Bump.svg",
+    "filename": "Cloud-Bump.svg"
+  },
+  {
+    "id": "wave-zigzag-ribbon-vertical-fold",
+    "category": "Waves",
+    "subcategory": "Zigzag Ribbon",
+    "name": "Zigzag Ribbon \u2014 Vertical Fold",
+    "description": "Ribbon \u2014 zigzag ribbon.",
+    "path": "Assets/Waves/Zigzag-Ribbon/Vertical-Fold.svg",
+    "filename": "Vertical-Fold.svg"
+  },
+  {
+    "id": "letter-a",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter A",
+    "description": "Uppercase A \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=A.svg",
+    "filename": "Alphabet=A.svg"
+  },
+  {
+    "id": "letter-b",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter B",
+    "description": "Uppercase B \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=B.svg",
+    "filename": "Alphabet=B.svg"
+  },
+  {
+    "id": "letter-c",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter C",
+    "description": "Uppercase C \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=C.svg",
+    "filename": "Alphabet=C.svg"
+  },
+  {
+    "id": "letter-d",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter D",
+    "description": "Uppercase D \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=D.svg",
+    "filename": "Alphabet=D.svg"
+  },
+  {
+    "id": "letter-e",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter E",
+    "description": "Uppercase E \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=E.svg",
+    "filename": "Alphabet=E.svg"
+  },
+  {
+    "id": "letter-f",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter F",
+    "description": "Uppercase F \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=F.svg",
+    "filename": "Alphabet=F.svg"
+  },
+  {
+    "id": "letter-g",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter G",
+    "description": "Uppercase G \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=G.svg",
+    "filename": "Alphabet=G.svg"
+  },
+  {
+    "id": "letter-h",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter H",
+    "description": "Uppercase H \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=H.svg",
+    "filename": "Alphabet=H.svg"
+  },
+  {
+    "id": "letter-i",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter I",
+    "description": "Uppercase I \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=I.svg",
+    "filename": "Alphabet=I.svg"
+  },
+  {
+    "id": "letter-j",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter J",
+    "description": "Uppercase J \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=J.svg",
+    "filename": "Alphabet=J.svg"
+  },
+  {
+    "id": "letter-k",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter K",
+    "description": "Uppercase K \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=K.svg",
+    "filename": "Alphabet=K.svg"
+  },
+  {
+    "id": "letter-l",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter L",
+    "description": "Uppercase L \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=L.svg",
+    "filename": "Alphabet=L.svg"
+  },
+  {
+    "id": "letter-m",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter M",
+    "description": "Uppercase M \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=M.svg",
+    "filename": "Alphabet=M.svg"
+  },
+  {
+    "id": "letter-n",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter N",
+    "description": "Uppercase N \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=N.svg",
+    "filename": "Alphabet=N.svg"
+  },
+  {
+    "id": "letter-o",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter O",
+    "description": "Uppercase O \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=O.svg",
+    "filename": "Alphabet=O.svg"
+  },
+  {
+    "id": "letter-p",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter P",
+    "description": "Uppercase P \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=P.svg",
+    "filename": "Alphabet=P.svg"
+  },
+  {
+    "id": "letter-q",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter Q",
+    "description": "Uppercase Q \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=Q.svg",
+    "filename": "Alphabet=Q.svg"
+  },
+  {
+    "id": "letter-r",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter R",
+    "description": "Uppercase R \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=R.svg",
+    "filename": "Alphabet=R.svg"
+  },
+  {
+    "id": "letter-s",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter S",
+    "description": "Uppercase S \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=S.svg",
+    "filename": "Alphabet=S.svg"
+  },
+  {
+    "id": "letter-t",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter T",
+    "description": "Uppercase T \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=T.svg",
+    "filename": "Alphabet=T.svg"
+  },
+  {
+    "id": "letter-u",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter U",
+    "description": "Uppercase U \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=U.svg",
+    "filename": "Alphabet=U.svg"
+  },
+  {
+    "id": "letter-v",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter V",
+    "description": "Uppercase V \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=V.svg",
+    "filename": "Alphabet=V.svg"
+  },
+  {
+    "id": "letter-w",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter W",
+    "description": "Uppercase W \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=W.svg",
+    "filename": "Alphabet=W.svg"
+  },
+  {
+    "id": "letter-x",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter X",
+    "description": "Uppercase X \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=X.svg",
+    "filename": "Alphabet=X.svg"
+  },
+  {
+    "id": "letter-y",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter Y",
+    "description": "Uppercase Y \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=Y.svg",
+    "filename": "Alphabet=Y.svg"
+  },
+  {
+    "id": "letter-z",
+    "category": "Letters",
+    "subcategory": "Uppercase",
+    "name": "Letter Z",
+    "description": "Uppercase Z \u2014 display glyph.",
+    "path": "Assets/letters/Alphabet=Z.svg",
+    "filename": "Alphabet=Z.svg"
+  }
+]

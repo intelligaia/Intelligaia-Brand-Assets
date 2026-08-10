@@ -1,0 +1,30 @@
+<svg width="1515" height="320" viewBox="0 0 1515 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M791.105 140.192L790.16 138.344L788.423 134.862C786.143 130.156 784.066 125.342 782.164 120.435C781.233 118.035 780.351 115.613 779.52 113.169C744.866 45.958 674.765 0 593.936 0C518.194 0 451.896 40.3474 415.328 100.727C411.941 107.76 408.264 114.641 404.361 121.358C352.141 211.061 254.954 271.359 143.69 271.359L138.288 271.311L138.174 271.309L133.402 271.186L129.624 271.036L125.116 270.796L121.88 270.582C120.004 270.517 118.115 270.485 116.226 270.485C70.5541 270.485 29.3272 289.48 0 320H232.452H417.419H770.454H942.173H1514.95C1449.76 232.883 1345.75 176.499 1228.57 176.499C1169.35 176.499 1113.49 190.9 1064.31 216.39L1060 218.937L1056.88 220.694C1054.31 222.109 1051.7 223.469 1049.06 224.768C1023.22 237.487 994.141 244.628 963.391 244.628C888.518 244.628 823.517 202.262 791.105 140.192Z" fill="#AA7ECD"/>
+<mask id="mask0_1964_666" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="1515" height="320">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M791.115 140.192L790.17 138.344L788.432 134.862C786.153 130.156 784.076 125.342 782.174 120.435C781.242 118.035 780.361 115.613 779.53 113.169C744.876 45.958 674.775 0 593.946 0C518.204 0 451.906 40.3474 415.338 100.727C411.951 107.76 408.274 114.641 404.37 121.358C352.151 211.061 254.964 271.359 143.699 271.359L138.297 271.311L138.184 271.309L133.412 271.186L129.634 271.036L125.126 270.796L121.89 270.582C120.013 270.517 118.125 270.485 116.236 270.485C70.5638 270.485 29.337 289.48 0.00976562 320H232.462H417.429H770.463H942.183H1514.96C1449.77 232.883 1345.76 176.499 1228.58 176.499C1169.36 176.499 1113.5 190.9 1064.31 216.39L1060.01 218.937L1056.89 220.694C1054.32 222.109 1051.71 223.469 1049.07 224.768C1023.23 237.487 994.151 244.628 963.401 244.628C888.528 244.628 823.527 202.262 791.115 140.192Z" fill="url(#paint0_linear_1964_666)"/>
+</mask>
+<g mask="url(#mask0_1964_666)">
+<g filter="url(#filter0_g_1964_666)">
+<path d="M-28.877 354.455V323.113L1567.9 126.113L1560.22 354.455H-28.877Z" fill="url(#paint1_linear_1964_666)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_g_1964_666" x="-128.877" y="26.1133" width="1796.77" height="428.344" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.31021192669868469 0.31021192669868469" numOctaves="3" seed="9376" />
+<feDisplacementMap in="shape" scale="200" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect1_texture_1964_666">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+<linearGradient id="paint0_linear_1964_666" x1="-1.98109" y1="320.728" x2="1514.79" y2="320.728" gradientUnits="userSpaceOnUse">
+<stop stop-color="#AA7ECD"/>
+<stop offset="1" stop-color="#65219B"/>
+</linearGradient>
+<linearGradient id="paint1_linear_1964_666" x1="-30.9753" y1="354.974" x2="1567.71" y2="354.974" gradientUnits="userSpaceOnUse">
+<stop stop-color="#AA7ECD"/>
+<stop offset="1" stop-color="#65219B"/>
+</linearGradient>
+</defs>
+</svg>

@@ -1,0 +1,21 @@
+<svg width="90" height="110" viewBox="0 0 90 110" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#paint0_angular_1968_11996_clip_path)" data-figma-skip-parse="true"><g transform="matrix(0 0.054 -0.0445443 0 45.4271 55.0156)"><foreignObject x="-1022.45" y="-1022.45" width="2044.9" height="2044.9"><div xmlns="http://www.w3.org/1999/xhtml" style="background:conic-gradient(from 90deg,rgba(139, 104, 255, 1) 0deg,rgba(76, 98, 235, 1) 180deg,rgba(255, 111, 183, 0.82) 360deg);height:100%;width:100%;opacity:1"></div></foreignObject></g></g><path d="M0.882812 27.4903L49.9678 1.01562L89.9714 23.1169L89.3367 83.0799L40.6586 109.016L0.882812 85.9028V27.4903Z" data-figma-gradient-fill="{&#34;type&#34;:&#34;GRADIENT_ANGULAR&#34;,&#34;stops&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.54695039987564087,&#34;g&#34;:0.40906575322151184,&#34;b&#34;:1.0,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.29901316761970520,&#34;g&#34;:0.38734224438667297,&#34;b&#34;:0.92508357763290405,&#34;a&#34;:1.0},&#34;position&#34;:0.50},{&#34;color&#34;:{&#34;r&#34;:1.0,&#34;g&#34;:0.43619790673255920,&#34;b&#34;:0.71809893846511841,&#34;a&#34;:0.81999999284744263},&#34;position&#34;:1.0}],&#34;stopsVar&#34;:[{&#34;color&#34;:{&#34;r&#34;:0.54695039987564087,&#34;g&#34;:0.40906575322151184,&#34;b&#34;:1.0,&#34;a&#34;:1.0},&#34;position&#34;:0.0},{&#34;color&#34;:{&#34;r&#34;:0.29901316761970520,&#34;g&#34;:0.38734224438667297,&#34;b&#34;:0.92508357763290405,&#34;a&#34;:1.0},&#34;position&#34;:0.50},{&#34;color&#34;:{&#34;r&#34;:1.0,&#34;g&#34;:0.43619790673255920,&#34;b&#34;:0.71809893846511841,&#34;a&#34;:0.81999999284744263},&#34;position&#34;:1.0}],&#34;transform&#34;:{&#34;m00&#34;:5.4551047855874550e-15,&#34;m01&#34;:-89.088615417480469,&#34;m02&#34;:89.971427917480469,&#34;m10&#34;:108.0,&#34;m11&#34;:6.6130928451412288e-15,&#34;m12&#34;:1.0156250},&#34;opacity&#34;:1.0,&#34;blendMode&#34;:&#34;NORMAL&#34;,&#34;visible&#34;:true}"/>
+<path d="M39.1612 42.0295L50.5536 36.1055L56.7055 39.751V63.9029L45.541 70.2827L39.1612 67.0928V42.0295Z" fill="#FFD33F"/>
+<g style="mix-blend-mode:hard-light">
+<path d="M0.999866 27.6278L48.8835 1.67969V36.4555L38.7182 42.8756V63.4736L0.999866 83.8041V27.6278Z" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.26733 32.1767L48.6159 6.49609" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 36.1884L48.8834 10.5078" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 40.4696L48.8834 14.7891" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 44.747L48.8834 19.0664" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 49.0282L48.8834 23.3477" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 53.3095L48.8834 27.6289" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 57.5868L48.8834 31.9062" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 61.8681L48.8834 36.1875" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 66.1505L38.1832 46.2734" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 70.4278L38.1832 50.5508" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 74.7102L38.7182 54.543" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+<path d="M1.53484 78.9909L38.4507 58.9688" stroke="#59C2E4" stroke-opacity="0.59" stroke-width="2"/>
+</g>
+<defs>
+<clipPath id="paint0_angular_1968_11996_clip_path"><path d="M0.882812 27.4903L49.9678 1.01562L89.9714 23.1169L89.3367 83.0799L40.6586 109.016L0.882812 85.9028V27.4903Z"/></clipPath></defs>
+</svg>

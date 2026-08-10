@@ -1,0 +1,25 @@
+<svg width="78" height="79" viewBox="0 0 78 79" fill="none" xmlns="http://www.w3.org/2000/svg">
+<mask id="mask0_1968_35230" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="78" height="79">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M54.9696 22.507L38.5567 0L22.2623 22.507L-2.64795e-05 39.189L22.2623 55.7506L38.5567 78.378L54.9696 55.7506L77.1134 39.189L54.9696 22.507ZM38.5587 22.4414L45.5727 32.0597L55.0355 39.1883L45.5727 46.2655L38.5587 55.9353L31.5953 46.2655L22.0819 39.1883L31.5953 32.0597L38.5587 22.4414Z" fill="#7F7BC2"/>
+</mask>
+<g mask="url(#mask0_1968_35230)">
+<g filter="url(#filter0_g_1968_35230)">
+<path d="M31.5467 -4.78125L-0.913879 78.9359H79.3285L82.373 13.2635L31.5467 -4.78125Z" fill="url(#paint0_linear_1968_35230)"/>
+</g>
+</g>
+<defs>
+<filter id="filter0_g_1968_35230" x="-21.0011" y="-24.8684" width="123.461" height="123.893" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feTurbulence type="fractalNoise" baseFrequency="0.99900001287460327 0.99900001287460327" numOctaves="3" seed="1500" />
+<feDisplacementMap in="shape" scale="40.174369812011719" xChannelSelector="R" yChannelSelector="G" result="displacedImage" width="100%" height="100%" />
+<feMerge result="effect1_texture_1968_35230">
+<feMergeNode in="displacedImage"/>
+</feMerge>
+</filter>
+<linearGradient id="paint0_linear_1968_35230" x1="28.871" y1="35.0095" x2="57.5755" y2="62.4093" gradientUnits="userSpaceOnUse">
+<stop stop-color="#7F7BC2"/>
+<stop offset="1" stop-color="#3C3A5C"/>
+</linearGradient>
+</defs>
+</svg>

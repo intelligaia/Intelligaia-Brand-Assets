@@ -1,0 +1,940 @@
+{
+  "Characters": [
+    {
+      "id": "character-priya",
+      "family": "Female Character 01",
+      "name": "Priya",
+      "gender": "Female",
+      "category": "Characters",
+      "subcategory": "Female character",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Female Character 01",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 01 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Female Character 01 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 01",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 01 \u2014 Front face \u2014 Final.png",
+            "filename": "Female Character 01 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 01",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 01 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Female Character 01 \u2014 Front face \u2014 Outlined.png"
+          }
+        },
+        "side": {
+          "circles": {
+            "family": "Female Character 01",
+            "view": "side",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 01 \u2014 Side face \u2014 Deconstructed.png",
+            "filename": "Female Character 01 \u2014 Side face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 01",
+            "view": "side",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 01 \u2014 Side face \u2014 Final.png",
+            "filename": "Female Character 01 \u2014 Side face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 01",
+            "view": "side",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 01 \u2014 Side face \u2014 Outlined.png",
+            "filename": "Female Character 01 \u2014 Side face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 6
+    },
+    {
+      "id": "character-maya",
+      "family": "Female Character 02",
+      "name": "Maya",
+      "gender": "Female",
+      "category": "Characters",
+      "subcategory": "Female character",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Female Character 02",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 02 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Female Character 02 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 02",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 02 \u2014 Front face \u2014 Final.png",
+            "filename": "Female Character 02 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 02",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 02 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Female Character 02 \u2014 Front face \u2014 Outlined.png"
+          }
+        },
+        "side": {
+          "circles": {
+            "family": "Female Character 02",
+            "view": "side",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 02 \u2014 Side face \u2014 Deconstructed.png",
+            "filename": "Female Character 02 \u2014 Side face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 02",
+            "view": "side",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 02 \u2014 Side face \u2014 Final.png",
+            "filename": "Female Character 02 \u2014 Side face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 02",
+            "view": "side",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 02 \u2014 Side face \u2014 Outlined.png",
+            "filename": "Female Character 02 \u2014 Side face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 6
+    },
+    {
+      "id": "character-aisha",
+      "family": "Female Character 03",
+      "name": "Aisha",
+      "gender": "Female",
+      "category": "Characters",
+      "subcategory": "Female character",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Female Character 03",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 03 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Female Character 03 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 03",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 03 \u2014 Front face \u2014 Final.png",
+            "filename": "Female Character 03 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 03",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 03 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Female Character 03 \u2014 Front face \u2014 Outlined.png"
+          }
+        },
+        "side": {
+          "circles": {
+            "family": "Female Character 03",
+            "view": "side",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 03 \u2014 Side face \u2014 Deconstructed.png",
+            "filename": "Female Character 03 \u2014 Side face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 03",
+            "view": "side",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 03 \u2014 Side face \u2014 Final.png",
+            "filename": "Female Character 03 \u2014 Side face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 03",
+            "view": "side",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 03 \u2014 Side face \u2014 Outlined.png",
+            "filename": "Female Character 03 \u2014 Side face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 6
+    },
+    {
+      "id": "character-sofia",
+      "family": "Female Character 04",
+      "name": "Sofia",
+      "gender": "Female",
+      "category": "Characters",
+      "subcategory": "Female character",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Female Character 04",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 04 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Female Character 04 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 04",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 04 \u2014 Front face \u2014 Final.png",
+            "filename": "Female Character 04 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 04",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 04 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Female Character 04 \u2014 Front face \u2014 Outlined.png"
+          }
+        },
+        "side": {
+          "circles": {
+            "family": "Female Character 04",
+            "view": "side",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 04 \u2014 Side face \u2014 Deconstructed.png",
+            "filename": "Female Character 04 \u2014 Side face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 04",
+            "view": "side",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 04 \u2014 Side face \u2014 Final.png",
+            "filename": "Female Character 04 \u2014 Side face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 04",
+            "view": "side",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 04 \u2014 Side face \u2014 Outlined.png",
+            "filename": "Female Character 04 \u2014 Side face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 6
+    },
+    {
+      "id": "character-nia",
+      "family": "Female Character 05",
+      "name": "Nia",
+      "gender": "Female",
+      "category": "Characters",
+      "subcategory": "Female character",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Female Character 05",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 05 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Female Character 05 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 05",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 05 \u2014 Front face \u2014 Final.png",
+            "filename": "Female Character 05 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 05",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 05 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Female Character 05 \u2014 Front face \u2014 Outlined.png"
+          }
+        },
+        "side": {
+          "circles": {
+            "family": "Female Character 05",
+            "view": "side",
+            "stage": "circles",
+            "path": "Assets/Female Characters/Female Character 05 \u2014 Side face \u2014 Deconstructed.png",
+            "filename": "Female Character 05 \u2014 Side face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Female Character 05",
+            "view": "side",
+            "stage": "final",
+            "path": "Assets/Female Characters/Female Character 05 \u2014 Side face \u2014 Final.png",
+            "filename": "Female Character 05 \u2014 Side face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Female Character 05",
+            "view": "side",
+            "stage": "wireframe",
+            "path": "Assets/Female Characters/Female Character 05 \u2014 Side face \u2014 Outlined.png",
+            "filename": "Female Character 05 \u2014 Side face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 6
+    },
+    {
+      "id": "character-arjun",
+      "family": "Male Character 01",
+      "name": "Arjun",
+      "gender": "Male",
+      "category": "Characters",
+      "subcategory": "Male character",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Male Character 01",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Male Characters/Male Character 01 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Male Character 01 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Male Character 01",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Male Characters/Male Character 01 \u2014 Front face \u2014 Final.png",
+            "filename": "Male Character 01 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Male Character 01",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Male Characters/Male Character 01 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Male Character 01 \u2014 Front face \u2014 Outlined.png"
+          }
+        },
+        "side": {
+          "circles": {
+            "family": "Male Character 01",
+            "view": "side",
+            "stage": "circles",
+            "path": "Assets/Male Characters/Male Character 01 \u2014 Side face \u2014 Deconstructed.png",
+            "filename": "Male Character 01 \u2014 Side face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Male Character 01",
+            "view": "side",
+            "stage": "final",
+            "path": "Assets/Male Characters/Male Character 01 \u2014 Side face \u2014 Final.png",
+            "filename": "Male Character 01 \u2014 Side face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Male Character 01",
+            "view": "side",
+            "stage": "wireframe",
+            "path": "Assets/Male Characters/Male Character 01 \u2014 Side face \u2014 Outlined.png",
+            "filename": "Male Character 01 \u2014 Side face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 6
+    },
+    {
+      "id": "character-david",
+      "family": "Male Character 02",
+      "name": "David",
+      "gender": "Male",
+      "category": "Characters",
+      "subcategory": "Male character",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Male Character 02",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Male Characters/Male Character 02 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Male Character 02 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Male Character 02",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Male Characters/Male Character 02 \u2014 Front face \u2014 Final.png",
+            "filename": "Male Character 02 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Male Character 02",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Male Characters/Male Character 02 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Male Character 02 \u2014 Front face \u2014 Outlined.png"
+          }
+        },
+        "side": {
+          "circles": {
+            "family": "Male Character 02",
+            "view": "side",
+            "stage": "circles",
+            "path": "Assets/Male Characters/Male Character 02 \u2014 Side face \u2014 Deconstructed.png",
+            "filename": "Male Character 02 \u2014 Side face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Male Character 02",
+            "view": "side",
+            "stage": "final",
+            "path": "Assets/Male Characters/Male Character 02 \u2014 Side face \u2014 Final.png",
+            "filename": "Male Character 02 \u2014 Side face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Male Character 02",
+            "view": "side",
+            "stage": "wireframe",
+            "path": "Assets/Male Characters/Male Character 02 \u2014 Side face \u2014 Outlined.png",
+            "filename": "Male Character 02 \u2014 Side face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 6
+    },
+    {
+      "id": "character-kenji",
+      "family": "Male Character 04",
+      "name": "Kenji",
+      "gender": "Male",
+      "category": "Characters",
+      "subcategory": "Male character",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Male Character 04",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Male Characters/Male Character 04 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Male Character 04 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Male Character 04",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Male Characters/Male Character 04 \u2014 Front face \u2014 Final.png",
+            "filename": "Male Character 04 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Male Character 04",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Male Characters/Male Character 04 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Male Character 04 \u2014 Front face \u2014 Outlined.png"
+          }
+        },
+        "side": {
+          "circles": {
+            "family": "Male Character 04",
+            "view": "side",
+            "stage": "circles",
+            "path": "Assets/Male Characters/Male Character 04 \u2014 Side face \u2014 Deconstructed.png",
+            "filename": "Male Character 04 \u2014 Side face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Male Character 04",
+            "view": "side",
+            "stage": "final",
+            "path": "Assets/Male Characters/Male Character 04 \u2014 Side face \u2014 Final.png",
+            "filename": "Male Character 04 \u2014 Side face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Male Character 04",
+            "view": "side",
+            "stage": "wireframe",
+            "path": "Assets/Male Characters/Male Character 04 \u2014 Side face \u2014 Outlined.png",
+            "filename": "Male Character 04 \u2014 Side face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 6
+    }
+  ],
+  "Devices": [
+    {
+      "id": "devices-macbook",
+      "family": "MacBook",
+      "name": "MacBook",
+      "subcategory": "Laptop",
+      "category": "Devices",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "MacBook",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Devices/MacBook \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "MacBook \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "MacBook",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Devices/MacBook \u2014 Front face \u2014 Final.png",
+            "filename": "MacBook \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "MacBook",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Devices/MacBook \u2014 Front face \u2014 Outlined.png",
+            "filename": "MacBook \u2014 Front face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "devices-apple-vision-pro",
+      "family": "Apple Vision Pro",
+      "name": "Apple Vision Pro",
+      "subcategory": "Mixed-reality headset",
+      "category": "Devices",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Apple Vision Pro",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Devices/Apple Vision Pro \u2014 Deconstructed.png",
+            "filename": "Apple Vision Pro \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Apple Vision Pro",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Devices/Apple Vision Pro \u2014 Filled.png",
+            "filename": "Apple Vision Pro \u2014 Filled.png"
+          },
+          "wireframe": {
+            "family": "Apple Vision Pro",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Devices/Apple Vision Pro \u2014 Outlined.png",
+            "filename": "Apple Vision Pro \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "devices-headphones-01",
+      "family": "Headphones 01",
+      "name": "Headphones 01",
+      "subcategory": "Over-ear",
+      "category": "Devices",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Headphones 01",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Devices/Headphones 01 \u2014 Deconstructed.png",
+            "filename": "Headphones 01 \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Headphones 01",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Devices/Headphones 01 \u2014 Filled.png",
+            "filename": "Headphones 01 \u2014 Filled.png"
+          },
+          "wireframe": {
+            "family": "Headphones 01",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Devices/Headphones 01 \u2014 Outlined.png",
+            "filename": "Headphones 01 \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "devices-headphones-02",
+      "family": "Headphones 02",
+      "name": "Headphones 02",
+      "subcategory": "Studio",
+      "category": "Devices",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Headphones 02",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Devices/Headphones 02 \u2014 Deconstructed.png",
+            "filename": "Headphones 02 \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Headphones 02",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Devices/Headphones 02 \u2014 Filled.png",
+            "filename": "Headphones 02 \u2014 Filled.png"
+          },
+          "wireframe": {
+            "family": "Headphones 02",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Devices/Headphones 02 \u2014 Outlined.png",
+            "filename": "Headphones 02 \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "devices-meta-glasses-01",
+      "family": "Meta Glasses 01",
+      "name": "Meta Glasses 01",
+      "subcategory": "Classic",
+      "category": "Devices",
+      "views": {
+        "front": {
+          "circles": {
+            "family": "Meta Glasses 01",
+            "view": "front",
+            "stage": "circles",
+            "path": "Assets/Devices/Meta Glasses 01 \u2014 Front face \u2014 Deconstructed.png",
+            "filename": "Meta Glasses 01 \u2014 Front face \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Meta Glasses 01",
+            "view": "front",
+            "stage": "final",
+            "path": "Assets/Devices/Meta Glasses 01 \u2014 Front face \u2014 Final.png",
+            "filename": "Meta Glasses 01 \u2014 Front face \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Meta Glasses 01",
+            "view": "front",
+            "stage": "wireframe",
+            "path": "Assets/Devices/Meta Glasses 01 \u2014 Front face \u2014 Outlined.png",
+            "filename": "Meta Glasses 01 \u2014 Front face \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "devices-meta-glasses-02",
+      "family": "Meta Glasses 02",
+      "name": "Meta Glasses 02",
+      "subcategory": "Pilot",
+      "category": "Devices",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Meta Glasses 02",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Devices/Meta Glasses 02 \u2014 Deconstructed.png",
+            "filename": "Meta Glasses 02 \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Meta Glasses 02",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Devices/Meta Glasses 02 \u2014 Filled.png",
+            "filename": "Meta Glasses 02 \u2014 Filled.png"
+          },
+          "wireframe": {
+            "family": "Meta Glasses 02",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Devices/Meta Glasses 02 \u2014 Outlined.png",
+            "filename": "Meta Glasses 02 \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "devices-meta-glasses-03",
+      "family": "Meta Glasses 03",
+      "name": "Meta Glasses 03",
+      "subcategory": "Sport",
+      "category": "Devices",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Meta Glasses 03",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Devices/Meta Glasses 03 \u2014 Deconstructed.png",
+            "filename": "Meta Glasses 03 \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Meta Glasses 03",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Devices/Meta Glasses 03 \u2014 Final.png",
+            "filename": "Meta Glasses 03 \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Meta Glasses 03",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Devices/Meta Glasses 03 \u2014 Outlined.png",
+            "filename": "Meta Glasses 03 \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    }
+  ],
+  "Nature": [
+    {
+      "id": "nature-cloud",
+      "family": "Cloud",
+      "name": "Cloud",
+      "subcategory": "Weather",
+      "category": "Nature",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Cloud",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Nature/Cloud \u2014 Deconstructed.png",
+            "filename": "Cloud \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Cloud",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Nature/Cloud \u2014 Final.png",
+            "filename": "Cloud \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Cloud",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Nature/Cloud \u2014 Outlined.png",
+            "filename": "Cloud \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "nature-plants",
+      "family": "Plants",
+      "name": "Plants",
+      "subcategory": "Foliage",
+      "category": "Nature",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Plants",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Nature/Plants \u2014 Deconstructed.png",
+            "filename": "Plants \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Plants",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Nature/Plants \u2014 Final.png",
+            "filename": "Plants \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Plants",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Nature/Plants \u2014 Outlined.png",
+            "filename": "Plants \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "nature-trees",
+      "family": "Trees",
+      "name": "Trees",
+      "subcategory": "Foliage",
+      "category": "Nature",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Trees",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Nature/Trees \u2014 Deconstructed.png",
+            "filename": "Trees \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Trees",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Nature/Trees \u2014 Final.png",
+            "filename": "Trees \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Trees",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Nature/Trees \u2014 Outlined.png",
+            "filename": "Trees \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    }
+  ],
+  "Objects": [
+    {
+      "id": "objects-binoculars",
+      "family": "Binoculars",
+      "name": "Binoculars",
+      "subcategory": "Optics",
+      "category": "Objects",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Binoculars",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Objects/Binoculars \u2014 Deconstructed.png",
+            "filename": "Binoculars \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Binoculars",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Objects/Binoculars \u2014 Final.png",
+            "filename": "Binoculars \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Binoculars",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Objects/Binoculars \u2014 Outlined.png",
+            "filename": "Binoculars \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "objects-magnifying-glass",
+      "family": "Magnifying Glass",
+      "name": "Magnifying Glass",
+      "subcategory": "Optics",
+      "category": "Objects",
+      "views": {
+        "default": {
+          "final": {
+            "family": "Magnifying Glass",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Objects/Magnifying Glass \u2014 Final.png",
+            "filename": "Magnifying Glass \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Magnifying Glass",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Objects/Magnifying Glass \u2014 Outlined.png",
+            "filename": "Magnifying Glass \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 2
+    },
+    {
+      "id": "objects-lighthouse",
+      "family": "Lighthouse",
+      "name": "Lighthouse",
+      "subcategory": "Landmark",
+      "category": "Objects",
+      "views": {
+        "default": {
+          "circles": {
+            "family": "Lighthouse",
+            "view": "default",
+            "stage": "circles",
+            "path": "Assets/Objects/Lighthouse \u2014 Deconstructed.png",
+            "filename": "Lighthouse \u2014 Deconstructed.png"
+          },
+          "final": {
+            "family": "Lighthouse",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Objects/Lighthouse \u2014 Final.png",
+            "filename": "Lighthouse \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Lighthouse",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Objects/Lighthouse \u2014 Outlined.png",
+            "filename": "Lighthouse \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 3
+    },
+    {
+      "id": "objects-sailboat",
+      "family": "Ship 01",
+      "name": "Sailboat",
+      "subcategory": "Marine",
+      "category": "Objects",
+      "views": {
+        "default": {
+          "final": {
+            "family": "Ship 01",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Objects/Ship 01 \u2014 Final.png",
+            "filename": "Ship 01 \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Ship 01",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Objects/Ship 01 \u2014 Outlined.png",
+            "filename": "Ship 01 \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 2
+    },
+    {
+      "id": "objects-cargo-ship",
+      "family": "Ship 02",
+      "name": "Cargo Ship",
+      "subcategory": "Marine",
+      "category": "Objects",
+      "views": {
+        "default": {
+          "final": {
+            "family": "Ship 02",
+            "view": "default",
+            "stage": "final",
+            "path": "Assets/Objects/Ship 02 \u2014 Final.png",
+            "filename": "Ship 02 \u2014 Final.png"
+          },
+          "wireframe": {
+            "family": "Ship 02",
+            "view": "default",
+            "stage": "wireframe",
+            "path": "Assets/Objects/Ship 02 \u2014 Outlined.png",
+            "filename": "Ship 02 \u2014 Outlined.png"
+          }
+        }
+      },
+      "asset_count": 2
+    }
+  ]
+}
