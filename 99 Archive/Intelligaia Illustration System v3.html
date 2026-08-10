@@ -1,0 +1,1295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intelligaia · Illustration System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --bg: #FFFFFF;
+  --bg-2: #F7F7F5;
+  --bg-3: #EFEFEC;
+  --ink: #0E0E0C;
+  --ink-2: #1F1F1C;
+  --ink-soft: #4B4B46;
+  --muted: #8A8A80;
+  --hair: #E6E4DD;
+  --hair-2: #D6D4CC;
+  --tag-bg: #F2F1EC;
+  --tag-ink: #4B4B46;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.55;
+  color: var(--ink);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+a { color: inherit; text-decoration: none; }
+a:hover { color: var(--ink); }
+
+/* numerals stay consistent in Inter — no mono font */
+.num, .id, .dim, .key { font-variant-numeric: tabular-nums; font-feature-settings: 'ss01'; }
+
+/* =========================== GLOBAL HEADER (Intelligaia.com style) =========================== */
+.g-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255,255,255,0.96);
+  backdrop-filter: saturate(180%) blur(10px);
+  -webkit-backdrop-filter: saturate(180%) blur(10px);
+  border-bottom: 1px solid var(--hair);
+}
+.g-header-inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+.g-logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 600;
+  font-size: 17px;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+.g-logo .glyph { width: 28px; height: 28px; display: inline-flex; }
+.g-logo .glyph svg { width: 100%; height: 100%; }
+.g-nav { display: flex; gap: 22px; align-items: center; margin-left: 24px; flex: 1; }
+.g-nav a { font-size: 13.5px; font-weight: 400; color: var(--ink-soft); white-space: nowrap; }
+.g-nav a:hover { color: var(--ink); }
+.g-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 500; color: var(--ink);
+  border: 1px solid var(--ink); padding: 8px 16px; border-radius: 999px;
+  background: var(--bg); transition: all 0.15s ease;
+}
+.g-cta:hover { background: var(--ink); color: var(--bg); }
+@media (max-width: 1080px) { .g-nav { display: none; } }
+
+/* =========================== DOC SUBNAV =========================== */
+.doc-subnav { border-bottom: 1px solid var(--hair); background: var(--bg); }
+.doc-subnav-inner {
+  max-width: 1320px; margin: 0 auto; padding: 14px 32px;
+  display: flex; align-items: center; justify-content: space-between; gap: 24px;
+}
+.crumb { font-size: 12px; color: var(--muted); display: flex; gap: 8px; align-items: center; }
+.crumb .sep { opacity: 0.5; }
+.crumb .cur { color: var(--ink); font-weight: 500; }
+.doc-meta { display: flex; gap: 18px; font-size: 11.5px; color: var(--muted); letter-spacing: 0.02em; }
+.doc-meta span b { color: var(--ink); font-weight: 500; }
+
+/* =========================== PAGE FRAME =========================== */
+.wrap { max-width: 1320px; margin: 0 auto; padding: 0 32px; }
+.section { padding: 64px 0; border-bottom: 1px solid var(--hair); }
+.section:last-of-type { border-bottom: none; }
+@media (max-width: 720px) {
+  .wrap { padding: 0 20px; }
+  .g-header-inner { padding: 0 20px; }
+  .doc-subnav-inner { padding: 12px 20px; }
+}
+
+/* =========================== HERO =========================== */
+.hero { padding: 56px 0 40px; }
+.hero .eyebrow {
+  font-size: 12px; font-weight: 500; color: var(--muted);
+  letter-spacing: 0.02em; margin-bottom: 14px;
+  display: inline-flex; align-items: center; gap: 10px;
+}
+.hero .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--ink); }
+.hero h1 {
+  font-weight: 500; font-size: 44px; line-height: 1.08;
+  letter-spacing: -0.02em; margin: 0 0 16px; max-width: 22ch;
+}
+.hero .lede { font-size: 16px; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 58ch; }
+.hero-meta {
+  display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;
+  margin-top: 40px; padding-top: 24px; border-top: 1px solid var(--hair);
+}
+.hero-meta .item .k { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+.hero-meta .item .v { font-size: 15px; font-weight: 500; color: var(--ink); }
+@media (max-width: 760px) { .hero h1 { font-size: 32px; } .hero-meta { grid-template-columns: 1fr 1fr; } }
+
+/* =========================== INTRO PILLARS =========================== */
+.pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
+.pillar { padding: 24px 0; border-top: 1px solid var(--ink); }
+.pillar .ix { font-size: 11px; color: var(--muted); margin-bottom: 18px; letter-spacing: 0.02em; }
+.pillar h3 { font-weight: 500; font-size: 22px; line-height: 1.2; letter-spacing: -0.01em; margin: 0 0 12px; }
+.pillar p { margin: 0; font-size: 14px; color: var(--ink-soft); line-height: 1.6; }
+@media (max-width: 720px) { .pillars { grid-template-columns: 1fr; } }
+
+/* =========================== TOC =========================== */
+.toc { border-top: 1px solid var(--ink); border-bottom: 1px solid var(--ink); display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+.toc-col { border-right: 1px solid var(--hair); padding: 24px 0; }
+.toc-col:last-child { border-right: none; }
+.toc-row {
+  display: grid; grid-template-columns: 60px 1fr 1.4fr; gap: 16px;
+  padding: 14px 24px; border-bottom: 1px dashed var(--hair); align-items: center;
+}
+.toc-row:last-child { border-bottom: none; }
+.toc-row .n { font-size: 12px; color: var(--muted); letter-spacing: 0.02em; }
+.toc-row .t { font-size: 14px; font-weight: 500; color: var(--ink); }
+.toc-row .cats { display: flex; gap: 6px; flex-wrap: wrap; font-size: 11.5px; color: var(--ink-soft); }
+.toc-row .cats span { padding: 2px 8px; background: var(--bg-2); border-radius: 4px; }
+@media (max-width: 760px) {
+  .toc { grid-template-columns: 1fr; }
+  .toc-col { border-right: none; border-bottom: 1px solid var(--hair); }
+  .toc-row { grid-template-columns: 40px 1fr; }
+  .toc-row .cats { grid-column: 1 / -1; padding-left: 56px; }
+}
+
+/* =========================== PART DIVIDER (lighter than v1) =========================== */
+.part-divider { padding: 80px 0 64px; border-bottom: 1px solid var(--hair); }
+.part-divider .ix { font-size: 12px; color: var(--muted); margin-bottom: 14px; letter-spacing: 0.02em; }
+.part-divider h2 { font-size: 38px; font-weight: 400; letter-spacing: -0.02em; margin: 0 0 12px; line-height: 1.1; max-width: 18ch; }
+.part-divider p { font-size: 16px; color: var(--ink-soft); margin: 0; max-width: 62ch; line-height: 1.55; }
+
+/* =========================== SECTION BAR (source-inspired, no caps/serif) =========================== */
+.sec-bar {
+  display: grid;
+  grid-template-columns: 56px 1fr 1.3fr;
+  align-items: stretch;
+  border-top: 1px solid var(--ink);
+  border-bottom: 1px solid var(--ink);
+  margin-bottom: 28px;
+  background: var(--bg);
+}
+.sec-bar .num {
+  background: var(--ink); color: var(--bg);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px; font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.sec-bar .label {
+  background: var(--bg-2); padding: 16px 22px;
+  font-size: 19px; font-weight: 500; letter-spacing: -0.01em;
+  display: flex; align-items: center;
+}
+.sec-bar .sub {
+  background: var(--bg); padding: 16px 22px;
+  font-size: 14px; color: var(--ink-soft);
+  display: flex; align-items: center;
+}
+@media (max-width: 760px) {
+  .sec-bar { grid-template-columns: 48px 1fr; }
+  .sec-bar .sub { display: none; }
+}
+
+/* =========================== MODULAR CARD GRID =========================== */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cards.cards-2 { grid-template-columns: repeat(2, 1fr); }
+.cards.cards-6 { grid-template-columns: repeat(3, 1fr); }
+@media (max-width: 1080px) { .cards, .cards.cards-6 { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .cards, .cards.cards-2, .cards.cards-6 { grid-template-columns: 1fr; } }
+
+.card {
+  background: var(--bg);
+  border: 1px solid var(--hair);
+  border-radius: 14px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  transition: border-color 0.15s ease;
+}
+.card:hover { border-color: var(--hair-2); }
+.card .card-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+.badge {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11.5px; color: var(--ink);
+}
+.badge .b {
+  width: 24px; height: 24px; border-radius: 50%;
+  background: var(--ink); color: var(--bg);
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600;
+}
+.badge .b.alt { background: var(--bg); color: var(--ink); border: 1px solid var(--ink); }
+.badge .lbl { font-size: 11.5px; color: var(--muted); }
+.card-status {
+  font-size: 10.5px; color: var(--muted);
+  background: var(--bg-2); padding: 3px 8px; border-radius: 4px;
+}
+.card-title { font-size: 18px; font-weight: 500; letter-spacing: -0.01em; margin: 0; }
+.card-def { font-size: 13px; color: var(--ink-soft); line-height: 1.55; margin: 0; }
+
+/* two-tier placeholder block: concept + applied */
+.slot-pair { display: flex; flex-direction: column; gap: 8px; }
+.slot-pair .dash {
+  border: none; border-top: 1px dashed var(--hair);
+  margin: 0;
+}
+.slot-row {
+  display: grid;
+  grid-template-columns: 80px 1fr;
+  gap: 10px;
+  align-items: center;
+}
+.slot {
+  border: 1.5px dashed var(--hair-2);
+  border-radius: 10px;
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 6px;
+  background: var(--bg-2);
+  color: var(--muted);
+  text-align: center;
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+}
+.slot .slot-grid {
+  position: absolute; inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(14,14,12,0.025) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(14,14,12,0.025) 1px, transparent 1px);
+  background-size: 16px 16px;
+  pointer-events: none;
+}
+.slot-name {
+  position: relative; z-index: 1;
+  font-size: 11.5px; color: var(--ink); font-weight: 500;
+  letter-spacing: -0.005em;
+}
+.slot-dim {
+  position: relative; z-index: 1;
+  font-size: 10.5px; color: var(--muted);
+}
+.slot-tag {
+  position: absolute; top: 8px; left: 8px;
+  font-size: 9.5px; color: var(--muted);
+  letter-spacing: 0.02em;
+  background: rgba(255,255,255,0.8); padding: 2px 6px; border-radius: 3px;
+}
+.slot.concept { aspect-ratio: 1 / 1; padding: 8px; gap: 2px; }
+.slot.concept .slot-name { font-size: 10.5px; }
+.slot.concept .slot-dim { font-size: 9.5px; }
+.slot.applied { aspect-ratio: 4 / 3; }
+.slot.tall { aspect-ratio: 1 / 1; }
+.slot.wide { aspect-ratio: 16 / 9; }
+
+/* attribute list */
+.attrs {
+  display: flex; flex-direction: column; gap: 5px;
+  margin: 0; padding: 12px 0 0;
+  border-top: 1px solid var(--hair);
+  list-style: none; font-size: 12px;
+}
+.attrs li {
+  display: grid; grid-template-columns: 88px 1fr; gap: 8px;
+  color: var(--ink-soft); align-items: baseline;
+}
+.attrs li .k { color: var(--muted); font-size: 11.5px; }
+.attrs li .v { color: var(--ink); }
+.tag-row { display: flex; gap: 6px; flex-wrap: wrap; }
+.tag {
+  display: inline-flex; align-items: center;
+  font-size: 11px; color: var(--tag-ink);
+  background: var(--tag-bg); padding: 3px 8px; border-radius: 4px;
+}
+
+/* =========================== HORIZONTAL SCALE (for abstraction & density) =========================== */
+.scale-block {
+  border: 1px solid var(--hair);
+  border-radius: 14px;
+  padding: 28px 28px 22px;
+  margin-bottom: 16px;
+  background: var(--bg);
+}
+.scale-track {
+  position: relative;
+  height: 1px; background: var(--ink);
+  margin: 32px 0 14px;
+}
+.scale-dot {
+  position: absolute; top: -10px;
+  width: 22px; height: 22px;
+  background: var(--ink); color: var(--bg);
+  border-radius: 50%;
+  display: inline-flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 600;
+  transform: translateX(-50%);
+}
+.scale-dot.ghost { background: var(--bg); color: var(--muted); border: 1.2px solid var(--muted); }
+.scale-labels {
+  display: grid; grid-template-columns: repeat(var(--cols, 4), 1fr);
+  font-size: 12px; color: var(--ink); font-weight: 500;
+}
+.scale-labels span { text-align: center; }
+.scale-labels span.off { color: var(--muted); font-weight: 400; }
+
+/* =========================== BOTTOM NOTES STRIP (source-inspired, cleaner) =========================== */
+.notes {
+  display: grid;
+  grid-template-columns: 56px repeat(3, 1fr);
+  border: 1px solid var(--hair);
+  border-radius: 14px;
+  margin-top: 24px;
+  background: var(--bg);
+  overflow: hidden;
+}
+.notes .star {
+  background: var(--bg-2);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 18px; color: var(--ink);
+  border-right: 1px solid var(--hair);
+}
+.notes .note {
+  padding: 16px 18px;
+  display: flex; align-items: center; gap: 12px;
+  border-right: 1px solid var(--hair);
+}
+.notes .note:last-child { border-right: none; }
+.notes .note .ico {
+  width: 32px; height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 1px solid var(--ink);
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.notes .note p { margin: 0; font-size: 12.5px; color: var(--ink-soft); line-height: 1.4; }
+@media (max-width: 760px) {
+  .notes { grid-template-columns: 48px 1fr; }
+  .notes .note { border-right: none; border-bottom: 1px solid var(--hair); }
+  .notes .note:last-child { border-bottom: none; }
+}
+
+/* =========================== CLOSING =========================== */
+.closing { padding: 80px 0; background: var(--bg-2); }
+.closing .ix { font-size: 12px; color: var(--muted); margin-bottom: 14px; letter-spacing: 0.02em; }
+.closing h2 { font-size: 32px; font-weight: 500; letter-spacing: -0.02em; margin: 0 0 12px; max-width: 22ch; }
+.closing .lede { font-size: 15px; color: var(--ink-soft); margin: 0 0 40px; max-width: 60ch; }
+.takeaways {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px;
+  padding-top: 32px; border-top: 1px solid var(--hair);
+}
+.takeaway .ix { font-size: 11px; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.02em; }
+.takeaway h4 { font-size: 18px; font-weight: 500; margin: 0 0 8px; letter-spacing: -0.01em; }
+.takeaway p { margin: 0; font-size: 13.5px; color: var(--ink-soft); line-height: 1.55; }
+@media (max-width: 720px) { .takeaways { grid-template-columns: 1fr; } }
+
+/* =========================== FOOTER (intelligaia.com style) =========================== */
+.g-footer { background: var(--bg); border-top: 1px solid var(--hair); padding: 56px 0 24px; }
+.g-footer-grid {
+  max-width: 1320px; margin: 0 auto; padding: 0 32px;
+  display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 40px;
+}
+.foot-block h5 { font-size: 12px; color: var(--muted); margin: 0 0 14px; font-weight: 500; letter-spacing: 0.02em; }
+.foot-block ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; font-size: 13px; }
+.foot-block ul a { color: var(--ink-soft); }
+.foot-block ul a:hover { color: var(--ink); }
+.foot-block .loc { font-size: 13px; color: var(--ink-soft); line-height: 1.6; }
+.foot-block .loc b { color: var(--ink); font-weight: 500; display: block; margin-bottom: 4px; }
+.foot-bar {
+  max-width: 1320px; margin: 40px auto 0; padding: 24px 32px 0;
+  border-top: 1px solid var(--hair);
+  display: flex; justify-content: space-between;
+  font-size: 11.5px; color: var(--muted);
+}
+@media (max-width: 900px) { .g-footer-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 540px) { .g-footer-grid { grid-template-columns: 1fr; } .foot-bar { flex-direction: column; gap: 8px; } }
+</style>
+</head>
+<body>
+
+<!-- ====================================================================== -->
+<!-- GLOBAL HEADER                                                          -->
+<!-- ====================================================================== -->
+<header class="g-header">
+  <div class="g-header-inner">
+    <a href="#" class="g-logo">
+      <span class="glyph">
+        <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+          <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"/>
+          <circle cx="16" cy="16" r="6" fill="currentColor"/>
+          <circle cx="16" cy="16" r="2.4" fill="#FFFFFF"/>
+        </svg>
+      </span>
+      <span>intelligaia</span>
+    </a>
+    <nav class="g-nav">
+      <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+      <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+      <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+      <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+      <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+      <a href="https://www.intelligaia.com/blog">Blog</a>
+      <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    </nav>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+  </div>
+</header>
+
+<!-- ====================================================================== -->
+<!-- DOC SUBNAV                                                              -->
+<!-- ====================================================================== -->
+<div class="doc-subnav">
+  <div class="doc-subnav-inner">
+    <div class="crumb">
+      <span>Design Foundations</span>
+      <span class="sep">/</span>
+      <span>Visual Language</span>
+      <span class="sep">/</span>
+      <span class="cur">Illustration System</span>
+    </div>
+    <div class="doc-meta">
+      <span><b class="num">v3.0</b> · May 2026</span>
+      <span>Internal</span>
+    </div>
+  </div>
+</div>
+
+<!-- ====================================================================== -->
+<!-- HERO                                                                    -->
+<!-- ====================================================================== -->
+<section class="wrap hero">
+  <div class="eyebrow">Design Foundation · Illustration</div>
+  <h1>A visual system for AI-native storytelling.</h1>
+  <p class="lede">The rules, ratios, and reference points that make an Intelligaia illustration look like Intelligaia — across decks, docs, web and product. Intent-aware by construction, designed to scale across human and agent surfaces.</p>
+
+  <div class="hero-meta">
+    <div class="item"><div class="k">Sections</div><div class="v num">10</div></div>
+    <div class="item"><div class="k">Categories</div><div class="v num">34</div></div>
+    <div class="item"><div class="k">Maintainer</div><div class="v">Design Studio</div></div>
+    <div class="item"><div class="k">Status</div><div class="v">Draft for review</div></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- INTRO PILLARS                                                           -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="pillars">
+    <div class="pillar">
+      <div class="ix"><span class="num">01</span> / Pillar</div>
+      <h3>Intent first.</h3>
+      <p>Every illustration begins with a question — what should the viewer understand in two seconds? Tools are answers. The question comes first, the picture follows.</p>
+    </div>
+    <div class="pillar">
+      <div class="ix"><span class="num">02</span> / Pillar</div>
+      <h3>System over taste.</h3>
+      <p>Repeatable rules outlast arbitrary choices. The framework gives every contributor the same shelves, hinges and joints — personal style still lives, it just lives inside the grammar.</p>
+    </div>
+    <div class="pillar">
+      <div class="ix"><span class="num">03</span> / Pillar</div>
+      <h3>Read at glance.</h3>
+      <p>Agentic interfaces are read at scan-speed. If the picture takes ten seconds to parse, it has failed. Simplicity is not minimalism — it is respect for the viewer's time.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- TOC                                                                     -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">02</div>
+    <div class="label">Index</div>
+    <div class="sub">General map · ten sections, thirty-four categories.</div>
+  </div>
+
+  <div class="toc">
+    <div class="toc-col">
+      <div class="toc-row"><div class="n num">3.1</div><div class="t">Palette System</div><div class="cats"><span>Anchored</span><span>Layered</span><span>Spectrum</span></div></div>
+      <div class="toc-row"><div class="n num">3.2</div><div class="t">Fill Method</div><div class="cats"><span>Outline</span><span>Flat</span><span>Volumetric</span></div></div>
+      <div class="toc-row"><div class="n num">3.3</div><div class="t">Form Logic</div><div class="cats"><span>Constructed</span><span>Organic</span><span>Mixed</span></div></div>
+      <div class="toc-row"><div class="n num">3.4</div><div class="t">Abstraction Level</div><div class="cats"><span>Glyph</span><span>Diagram</span><span>Editorial</span></div></div>
+      <div class="toc-row"><div class="n num">3.5</div><div class="t">Perspective</div><div class="cats"><span>Side</span><span>Top</span><span>Isometric</span><span>Perspective</span></div></div>
+    </div>
+    <div class="toc-col">
+      <div class="toc-row"><div class="n num">4.1</div><div class="t">Detail Density</div><div class="cats"><span>Essential</span><span>Considered</span><span>Layered</span></div></div>
+      <div class="toc-row"><div class="n num">4.2</div><div class="t">Surface Treatment</div><div class="cats"><span>Pattern</span><span>Grain</span><span>Micro-marks</span></div></div>
+      <div class="toc-row"><div class="n num">4.3</div><div class="t">Light &amp; Shadow</div><div class="cats"><span>Soft</span><span>Hard</span><span>Cast</span><span>Highlight</span><span>Refraction</span><span>Glow</span></div></div>
+      <div class="toc-row"><div class="n num">4.4</div><div class="t">Characters</div><div class="cats"><span>Canon</span><span>License</span><span>Presence</span></div></div>
+      <div class="toc-row"><div class="n num">4.5</div><div class="t">Composition</div><div class="cats"><span>Axes</span><span>Setting</span><span>Focus</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- PART 03 DIVIDER                                                         -->
+<!-- ====================================================================== -->
+<section class="wrap part-divider">
+  <div class="ix"><span class="num">Part 03 / 04</span></div>
+  <h2>Form fundamentals.</h2>
+  <p>Before light, before character, before scene — the bones. How color reduces, how surface fills, how shape behaves, how depth is chosen, how the world is seen.</p>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 3.1 PALETTE SYSTEM                                                       -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">3.1</div>
+    <div class="label">Palette System</div>
+    <div class="sub">How color is reduced to something intentional and prompt-ready.</div>
+  </div>
+
+  <div class="cards">
+    <!-- A -->
+    <div class="card">
+      <div class="card-head">
+        <span class="badge"><span class="b">A</span><span class="card-title">Anchored</span></span>
+        <span class="card-status">draft</span>
+      </div>
+      <p class="card-def">One hue. Four shades. Calm, focused, scales easily across an entire set of agent surfaces.</p>
+      <div class="slot-pair">
+        <div class="slot-row">
+          <div class="slot concept">
+            <span class="slot-grid"></span>
+            <span class="slot-tag">concept</span>
+            <span class="slot-name">concept-A.svg</span>
+          </div>
+          <div class="slot applied">
+            <span class="slot-grid"></span>
+            <span class="slot-tag">example</span>
+            <span class="slot-name">palette-anchored.svg</span>
+            <span class="slot-dim num">1200 × 900</span>
+          </div>
+        </div>
+      </div>
+      <ul class="attrs">
+        <li><span class="k">use when</span><span class="v">single-subject hero, agent persona</span></li>
+        <li><span class="k">shades</span><span class="v num">4 (incl. ink + surface)</span></li>
+        <li><span class="k">contrast</span><span class="v num">≥ 4.5 : 1</span></li>
+        <li><span class="k">tags</span><span class="v"><span class="tag-row"><span class="tag">mono</span><span class="tag">calm</span></span></span></li>
+      </ul>
+    </div>
+    <!-- B -->
+    <div class="card">
+      <div class="card-head">
+        <span class="badge"><span class="b">B</span><span class="card-title">Layered</span></span>
+        <span class="card-status">draft</span>
+      </div>
+      <p class="card-def">Base hue + one accent + a neutral. The everyday working palette — disciplined, with room to point.</p>
+      <div class="slot-pair">
+        <div class="slot-row">
+          <div class="slot concept">
+            <span class="slot-grid"></span>
+            <span class="slot-tag">concept</span>
+            <span class="slot-name">concept-B.svg</span>
+          </div>
+          <div class="slot applied">
+            <span class="slot-grid"></span>
+            <span class="slot-tag">example</span>
+            <span class="slot-name">palette-layered.svg</span>
+            <span class="slot-dim num">1200 × 900</span>
+          </div>
+        </div>
+      </div>
+      <ul class="attrs">
+        <li><span class="k">use when</span><span class="v">most editorial &amp; spot illustrations</span></li>
+        <li><span class="k">shades</span><span class="v">base ladder + accent + neutral</span></li>
+        <li><span class="k">accent rule</span><span class="v num">≤ 10% area</span></li>
+        <li><span class="k">tags</span><span class="v"><span class="tag-row"><span class="tag">default</span><span class="tag">accent-led</span></span></span></li>
+      </ul>
+    </div>
+    <!-- C -->
+    <div class="card">
+      <div class="card-head">
+        <span class="badge"><span class="b">C</span><span class="card-title">Spectrum</span></span>
+        <span class="card-status">draft</span>
+      </div>
+      <p class="card-def">Three balanced hues + neutral. The story-mode palette — used when an illustration must carry a narrative on its own.</p>
+      <div class="slot-pair">
+        <div class="slot-row">
+          <div class="slot concept">
+            <span class="slot-grid"></span>
+            <span class="slot-tag">concept</span>
+            <span class="slot-name">concept-C.svg</span>
+          </div>
+          <div class="slot applied">
+            <span class="slot-grid"></span>
+            <span class="slot-tag">example</span>
+            <span class="slot-name">palette-spectrum.svg</span>
+            <span class="slot-dim num">1200 × 900</span>
+          </div>
+        </div>
+      </div>
+      <ul class="attrs">
+        <li><span class="k">use when</span><span class="v">hero, cover, narrative scenes</span></li>
+        <li><span class="k">shades</span><span class="v num">3 hues + neutral</span></li>
+        <li><span class="k">balance</span><span class="v num">60 / 30 / 10 area rule</span></li>
+        <li><span class="k">tags</span><span class="v"><span class="tag-row"><span class="tag">editorial</span><span class="tag">narrative</span></span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note">
+      <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4"/></svg></span>
+      <p>Contrast between the lightest and darkest shade should never collapse below 4.5 : 1.</p>
+    </div>
+    <div class="note">
+      <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"/><path d="M8 12 L11 15 L16 9" stroke="currentColor" stroke-width="1.4"/></svg></span>
+      <p>Background tone is part of the palette — choose it before you start, not after.</p>
+    </div>
+    <div class="note">
+      <span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="4" y1="18" x2="20" y2="18" stroke="currentColor" stroke-width="1.4"/><circle cx="9" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/><circle cx="16" cy="14" r="2" stroke="currentColor" stroke-width="1.4"/></svg></span>
+      <p>Neutrals carry the composition. Hues are the spice — never the meal.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 3.2 FILL METHOD                                                          -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">3.2</div>
+    <div class="label">Fill Method</div>
+    <div class="sub">How a shape is filled — pick one dominant, mix the others sparingly.</div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A</span><span class="card-title">Outline</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Pure line geometry. Reads as schematic, technical, system-aware — the default for diagrams and product flows.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">fill-outline.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">stroke</span><span class="v num">1.4 – 1.8 px</span></li>
+        <li><span class="k">corners</span><span class="v num">2 px radius</span></li>
+        <li><span class="k">use when</span><span class="v">diagrams, agent flows</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B</span><span class="card-title">Flat Fill</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Uniform color regions, no gradients. The everyday workhorse — fastest to produce, easiest to keep consistent.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">fill-flat.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">stroke</span><span class="v">optional 1 px hairline</span></li>
+        <li><span class="k">overlap</span><span class="v">multiply mode for shadow</span></li>
+        <li><span class="k">use when</span><span class="v">most spot &amp; inline work</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">C</span><span class="card-title">Volumetric</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Gradient-driven depth. Used sparingly — for hero scenes, AI-substance illustrations, anything that needs to feel alive.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-C.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">fill-volumetric.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">gradient</span><span class="v num">2-stop, linear or radial</span></li>
+        <li><span class="k">budget</span><span class="v num">≤ 3 fills per scene</span></li>
+        <li><span class="k">use when</span><span class="v">hero, cover, AI-substance</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"/><line x1="4" y1="20" x2="20" y2="4" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Mixtures are common — outline + flat + a single gradient is the workhorse.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Stroke weight defines the system's voice. Pick once, lock it.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="6" y="6" width="12" height="12" fill="currentColor"/></svg></span><p>Multiply over color is cheap, consistent depth — use it before reaching for gradients.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 3.3 FORM LOGIC                                                           -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">3.3</div>
+    <div class="label">Form Logic</div>
+    <div class="sub">The skeleton of the style — straight rules, curved rules, or a deliberate negotiation.</div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A</span><span class="card-title">Constructed</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Orthogonal, ruled, disciplined. Built from circles, squares, triangles. Reads as engineered, system-native, agent-friendly.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">form-constructed.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">grammar</span><span class="v">circle · square · triangle</span></li>
+        <li><span class="k">angles</span><span class="v num">0° · 45° · 90°</span></li>
+        <li><span class="k">tags</span><span class="v"><span class="tag-row"><span class="tag">engineered</span></span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B</span><span class="card-title">Organic</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Continuous curves, soft transitions, hand-drawn logic. Used for human stories, empathy maps, anything warm.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">form-organic.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">grammar</span><span class="v">bezier · blob · sweep</span></li>
+        <li><span class="k">corners</span><span class="v">no sharp angles</span></li>
+        <li><span class="k">tags</span><span class="v"><span class="tag-row"><span class="tag">human</span><span class="tag">warm</span></span></span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">C</span><span class="card-title">Mixed</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Constructed frame with organic accents (or the reverse). The default for human-AI scenes — discipline plus humanity.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-C.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">form-mixed.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">ratio</span><span class="v num">≈ 70 / 30 between modes</span></li>
+        <li><span class="k">use when</span><span class="v">human-AI scenes (default)</span></li>
+        <li><span class="k">tags</span><span class="v"><span class="tag-row"><span class="tag">default</span><span class="tag">hybrid</span></span></span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="4" width="16" height="16" stroke="currentColor" stroke-width="1.4"/><line x1="4" y1="20" x2="20" y2="4" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Rigid frame, fluid character is a strong default for human-AI scenes.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="9" ry="6" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span><p>Coherence across elements matters more than any single decision.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Set rules of behavior up-front — "corners are always 4-radius" is a real rule.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 3.4 ABSTRACTION LEVEL (with scale)                                       -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">3.4</div>
+    <div class="label">Abstraction Level</div>
+    <div class="sub">How far the subject is reduced before it stops being itself.</div>
+  </div>
+
+  <div class="scale-block" style="--cols: 4;">
+    <div class="scale-labels">
+      <span>Glyph</span>
+      <span>Diagram</span>
+      <span>Editorial</span>
+      <span class="off">Photoreal — out of scope</span>
+    </div>
+    <div class="scale-track">
+      <span class="scale-dot" style="left:12.5%;">A</span>
+      <span class="scale-dot" style="left:37.5%;">B</span>
+      <span class="scale-dot" style="left:62.5%;">C</span>
+      <span class="scale-dot ghost" style="left:87.5%;">×</span>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A</span><span class="card-title">Glyph</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Symbol-level reduction. Reads as a pictogram, icon, or system primitive. The shape says the concept, nothing else.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">abstraction-glyph.svg</span><span class="slot-dim num">800 × 800</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">elements</span><span class="v num">≤ 5 shapes</span></li>
+        <li><span class="k">grid</span><span class="v num">24 px icon grid</span></li>
+        <li><span class="k">use when</span><span class="v">inline, UI, list markers</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B</span><span class="card-title">Diagram</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Schematic clarity. Recognizable subject, structured for legibility — the way a textbook shows a concept.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">abstraction-diagram.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">style</span><span class="v">schematic, labelled-ready</span></li>
+        <li><span class="k">use when</span><span class="v">docs, explainers, agent flows</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">C</span><span class="card-title">Editorial</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Character and intention. Recognizable, expressive, narrative-grade — the upper end of the scale.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-C.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">abstraction-editorial.svg</span><span class="slot-dim num">1600 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">style</span><span class="v">narrative, expressive</span></li>
+        <li><span class="k">use when</span><span class="v">hero, blog, campaign</span></li>
+        <li><span class="k">caution</span><span class="v">do not slip into photoreal</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Abstraction is not the same as detail — they scale independently.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4"/></svg></span><p>The subject must stay recognizable. If you can't read it in 2 seconds, step back a level.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="9" r="4" stroke="currentColor" stroke-width="1.4"/><line x1="12" y1="13" x2="12" y2="20" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Abstraction is invention — the most editorial decision you make.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 3.5 PERSPECTIVE                                                          -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">3.5</div>
+    <div class="label">Perspective</div>
+    <div class="sub">How the world is seen — flat views read as diagrams, dimensional views read as objects.</div>
+  </div>
+
+  <div class="cards cards-6">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A1</span><span class="card-title">Side</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Profile elevation. Reads as schematic, instructional.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A1.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">perspective-side.svg</span><span class="slot-dim num">1000 × 1000</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A2</span><span class="card-title">Top</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Plan view. Reads as map, layout, system blueprint.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A2.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">perspective-top.svg</span><span class="slot-dim num">1000 × 1000</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B1</span><span class="card-title">Isometric</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Equal-angle dimensional. The Intelligaia workhorse for product scenes.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B1.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">perspective-iso.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B2</span><span class="card-title">Perspective</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Vanishing-point depth. Used sparingly — for cinematic scenes only.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B2.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">perspective-persp.svg</span><span class="slot-dim num">1600 × 900</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 20 L12 4 L20 20 Z" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Perspective defines spatiality — elevation reads as diagram, dimensional reads as object.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 4 H20 V20 H4 Z M4 12 H20 M12 4 V20" stroke="currentColor" stroke-width="1.2"/></svg></span><p>Two faces visible = friendly. Three faces = serious.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 V18 M6 12 L12 18 L18 12" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Depth-of-field is the variable — a subtle background blur changes the temperature.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- PART 04 DIVIDER                                                          -->
+<!-- ====================================================================== -->
+<section class="wrap part-divider">
+  <div class="ix"><span class="num">Part 04 / 04</span></div>
+  <h2>Applied foundations.</h2>
+  <p>Once the bones are set, the body needs density, surface, light, inhabitants and a stage. Five sections covering how illustrations behave in space and earn attention.</p>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 4.1 DETAIL DENSITY                                                       -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">4.1</div>
+    <div class="label">Detail Density</div>
+    <div class="sub">How much information lives in a single illustration. More is not more — it is just more.</div>
+  </div>
+
+  <div class="scale-block" style="--cols: 3;">
+    <div class="scale-labels">
+      <span>Essential</span>
+      <span>Considered</span>
+      <span>Layered</span>
+    </div>
+    <div class="scale-track">
+      <span class="scale-dot" style="left:16.67%;">A</span>
+      <span class="scale-dot" style="left:50%;">B</span>
+      <span class="scale-dot" style="left:83.33%;">C</span>
+    </div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A</span><span class="card-title">Essential</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Minimum information to read the subject. Generous negative space. The default for spot art and inline marks.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">density-essential.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">elements</span><span class="v num">≤ 10 shapes</span></li>
+        <li><span class="k">use when</span><span class="v">spot, inline, list, embedded</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B</span><span class="card-title">Considered</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Subject is clearly described, supporting context is shown. The everyday choice for editorial &amp; explainer use.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">density-considered.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">elements</span><span class="v num">10 – 25 shapes</span></li>
+        <li><span class="k">use when</span><span class="v">blog, doc, explainer (default)</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">C</span><span class="card-title">Layered</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Narrative-grade detail. Layers of context, supporting subjects, environmental cues. Reserved for hero scenes.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-C.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">density-layered.svg</span><span class="slot-dim num">1600 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">elements</span><span class="v num">25 + shapes</span></li>
+        <li><span class="k">use when</span><span class="v">hero, cover, campaign</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/><line x1="6" y1="6" x2="18" y2="18" stroke="currentColor" stroke-width="1.4"/></svg></span><p>More detail does not mean more quality — sometimes it is just more work.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Maintain consistent density across a set — one piece will read as wrong otherwise.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="7" stroke="currentColor" stroke-width="1.4"/><line x1="14" y1="14" x2="22" y2="22" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Control the zoom. Density is the camera distance.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 4.2 SURFACE TREATMENT                                                    -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">4.2</div>
+    <div class="label">Surface Treatment</div>
+    <div class="sub">Where personality enters — patterns, grain, and small punctuating marks.</div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A</span><span class="card-title">Pattern</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Repeating geometric fields — dots, lines, dashes, grids. Used to suggest material, texture, or system depth.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">surface-pattern.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">density</span><span class="v num">≤ 30% of area</span></li>
+        <li><span class="k">use when</span><span class="v">surfaces, system metaphor</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B</span><span class="card-title">Grain</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Subtle noise. Adds warmth and tactility — keeps illustrations from feeling sterile in dense product UIs.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">surface-grain.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">intensity</span><span class="v num">≤ 12% opacity</span></li>
+        <li><span class="k">use when</span><span class="v">editorial, hero, warm subjects</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">C</span><span class="card-title">Micro-marks</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Punctuating glyphs — dots, arrows, ticks, tiny letters. The smallest atoms of the system, used to add meaning and rhythm.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-C.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">surface-marks.svg</span><span class="slot-dim num">1200 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">scale</span><span class="v num">8 – 16 px relative</span></li>
+        <li><span class="k">budget</span><span class="v num">≤ 6 marks per scene</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Watch saturation. Accents at full strength will fight the subject.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Accents give the system its personality. Use sparingly and they feel signature.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 V18 M6 14 L12 20 L18 14" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Build a small accent library before you commit — try, save, retry.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 4.3 LIGHT & SHADOW                                                       -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">4.3</div>
+    <div class="label">Light &amp; Shadow</div>
+    <div class="sub">Six tools for not being left flat — pick one or two, never all six.</div>
+  </div>
+
+  <div class="cards cards-6">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A</span><span class="card-title">Soft Gradient</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Continuous fall-off. The friendliest shading model.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">light-soft.svg</span><span class="slot-dim num">800 × 800</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B</span><span class="card-title">Hard Shadow</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Planar shadow zones — two-tone, decisive, system-friendly.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">light-hard.svg</span><span class="slot-dim num">800 × 800</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">C</span><span class="card-title">Cast Shadow</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Ground shadow. Anchors the subject to the surface.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-C.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">light-cast.svg</span><span class="slot-dim num">800 × 800</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">D</span><span class="card-title">Highlight</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Specular hit. Tiny, directional — gives the object weight.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-D.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">light-highlight.svg</span><span class="slot-dim num">800 × 800</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">E</span><span class="card-title">Refraction</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Through-surface light. Reserved for glass, water, AI surfaces.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-E.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">light-refraction.svg</span><span class="slot-dim num">800 × 800</span></div>
+      </div></div>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">F</span><span class="card-title">Glow / Halo</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Radial aura. Signals energy, model output, agent activity.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-F.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">light-glow.svg</span><span class="slot-dim num">800 × 800</span></div>
+      </div></div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><line x1="4" y1="12" x2="20" y2="12" stroke="currentColor" stroke-width="1.4"/><path d="M14 6 L20 12 L14 18" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Define light direction first — top-left at 30° is the safe default.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Pick one light model per set. Mixing makes the world feel like multiple worlds.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 8 L12 4 L20 8 L20 16 L12 20 L4 16 Z" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Shadows reinforce volume — they're structure, not decoration.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 4.4 CHARACTERS                                                           -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">4.4</div>
+    <div class="label">Characters</div>
+    <div class="sub">The inhabitants of the system — how human and agent figures carry the work.</div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A</span><span class="card-title">Body Canon</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Adherence to the proportion system — head-to-body ratio, joint logic, shoulder width. The baseline every figure starts from.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">character-canon.svg</span><span class="slot-dim num">1200 × 1200</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">ratio</span><span class="v num">1 : 5.5 head-to-body</span></li>
+        <li><span class="k">faces</span><span class="v num">3 expressions baseline</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B</span><span class="card-title">Creative License</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Expressive variation within the canon — stylized agents, abstract beings, role-specific exaggeration. The poetic layer.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">character-license.svg</span><span class="slot-dim num">1200 × 1200</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">use when</span><span class="v">agents, mascots, metaphor</span></li>
+        <li><span class="k">caution</span><span class="v">stay recognizable as a figure</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">C</span><span class="card-title">Presence</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Gesture, gaze, posture. Where the figure looks, the viewer looks. Where the figure leans, the eye follows.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-C.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">character-presence.svg</span><span class="slot-dim num">1600 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">attention</span><span class="v">eye-line drives composition</span></li>
+        <li><span class="k">use when</span><span class="v">narrative, campaign</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="9" ry="6" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span><p>Characters direct attention. Wherever they look, the viewer looks.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 V20 M4 12 H20 M7 7 L17 17 M17 7 L7 17" stroke="currentColor" stroke-width="1.2"/></svg></span><p>Define a body canon — proportions, head-to-body, shoulder width, joint logic.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Attention to expressiveness and movement — stiff figures kill an editorial set.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- 4.5 COMPOSITION                                                          -->
+<!-- ====================================================================== -->
+<section class="wrap section">
+  <div class="sec-bar">
+    <div class="num">4.5</div>
+    <div class="label">Composition</div>
+    <div class="sub">The whole is more than the sum of its parts — axes, setting, focus.</div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">A</span><span class="card-title">Layout Axes</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Orthogonal grid or diagonal coherence. Pick the underlying skeleton before you place anything.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-A.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">composition-axes.svg</span><span class="slot-dim num">1600 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">grids</span><span class="v num">3 × 3 or 4 × 3</span></li>
+        <li><span class="k">diagonals</span><span class="v num">30° or 45°</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">B</span><span class="card-title">Setting</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">Suggested background (hairlines, horizon) or defined background (full scene). One choice per illustration set.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-B.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">composition-setting.svg</span><span class="slot-dim num">1600 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">suggested</span><span class="v num">3 hairlines max</span></li>
+        <li><span class="k">defined</span><span class="v">flat-fill backdrop only</span></li>
+      </ul>
+    </div>
+    <div class="card">
+      <div class="card-head"><span class="badge"><span class="b">C</span><span class="card-title">Focal Hierarchy</span></span><span class="card-status">draft</span></div>
+      <p class="card-def">One main focus + up to two secondary. Pick a clear winner; let everything else play support.</p>
+      <div class="slot-pair"><div class="slot-row">
+        <div class="slot concept"><span class="slot-grid"></span><span class="slot-tag">concept</span><span class="slot-name">concept-C.svg</span></div>
+        <div class="slot applied"><span class="slot-grid"></span><span class="slot-tag">example</span><span class="slot-name">composition-focus.svg</span><span class="slot-dim num">1600 × 900</span></div>
+      </div></div>
+      <ul class="attrs">
+        <li><span class="k">rule</span><span class="v num">1 primary, ≤ 2 secondary</span></li>
+        <li><span class="k">contrast</span><span class="v num">≥ 2× size or weight gap</span></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="notes">
+    <div class="star">✱</div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 4 L22 20 H2 Z" stroke="currentColor" stroke-width="1.4"/></svg></span><p>Pay attention to composition margins — breathing room is a feature, not waste.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><ellipse cx="12" cy="12" rx="9" ry="6" stroke="currentColor" stroke-width="1.4"/><circle cx="12" cy="12" r="2.5" fill="currentColor"/></svg></span><p>Always have a global vision — zoom out before you commit.</p></div>
+    <div class="note"><span class="ico"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="5" fill="currentColor"/><path d="M12 1 V5 M12 19 V23 M1 12 H5 M19 12 H23" stroke="currentColor" stroke-width="1.4"/></svg></span><p>To create is to play — set rules so the game is interesting, not so the game is solved.</p></div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- CLOSING                                                                 -->
+<!-- ====================================================================== -->
+<section class="closing">
+  <div class="wrap">
+    <div class="ix">05 / Insight</div>
+    <h2>Three thoughts to leave with.</h2>
+    <p class="lede">A system is not a cage — it is the soil. Pick the rules so the work compounds, not so the work is solved.</p>
+    <div class="takeaways">
+      <div class="takeaway">
+        <div class="ix"><span class="num">01</span> / Insight</div>
+        <h4>Everything is a system.</h4>
+        <p>Even a single illustration is a system of choices. Name the choices, repeat the choices, the system writes itself.</p>
+      </div>
+      <div class="takeaway">
+        <div class="ix"><span class="num">02</span> / Insight</div>
+        <h4>Rules before pixels.</h4>
+        <p>Spend the first hour deciding the grammar. The next hour will be three times faster — and the tenth ten times faster.</p>
+      </div>
+      <div class="takeaway">
+        <div class="ix"><span class="num">03</span> / Insight</div>
+        <h4>Learn by looking.</h4>
+        <p>The fastest way to get better is to study what is already good. Steal the principle, not the picture.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====================================================================== -->
+<!-- FOOTER                                                                  -->
+<!-- ====================================================================== -->
+<footer class="g-footer">
+  <div class="g-footer-grid">
+    <div class="foot-block">
+      <a href="#" class="g-logo" style="margin-bottom:16px;">
+        <span class="glyph">
+          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" fill="none">
+            <circle cx="16" cy="16" r="15" stroke="currentColor" stroke-width="1.4"/>
+            <circle cx="16" cy="16" r="6" fill="currentColor"/>
+            <circle cx="16" cy="16" r="2.4" fill="#FFFFFF"/>
+          </svg>
+        </span>
+        <span>intelligaia</span>
+      </a>
+      <p style="font-size:13px;color:var(--ink-soft);line-height:1.55;margin:12px 0 0;">We design AI-native systems for enterprise. Thoughtful solutions that realize goodness and sustainable business value.</p>
+    </div>
+    <div class="foot-block">
+      <h5>Services</h5>
+      <ul>
+        <li><a href="https://www.intelligaia.com/design-workshops">Workshops</a></li>
+        <li><a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a></li>
+        <li><a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scale</a></li>
+        <li><a href="https://www.intelligaia.com/tech-ai">Tech + AI</a></li>
+        <li><a href="https://www.intelligaia.com/federal-public-services">Gov Services</a></li>
+      </ul>
+    </div>
+    <div class="foot-block">
+      <h5>Studio</h5>
+      <ul>
+        <li><a href="https://www.intelligaia.com/portfolio">Portfolio</a></li>
+        <li><a href="https://www.intelligaia.com/blog">Blog</a></li>
+        <li><a href="https://www.intelligaia.com/about-team-intelligaia">People</a></li>
+        <li><a href="https://www.intelligaia.com/careers">Careers</a></li>
+        <li><a href="https://www.intelligaia.com/contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="foot-block">
+      <h5>Offices</h5>
+      <div class="loc"><b>United States</b>548 Spire Bnd, Apex, NC 27523<br/>sales@intelligaia.com</div>
+      <div class="loc" style="margin-top:16px;"><b>India</b>Industrial Plot I-63, Sector 83,<br/>Alpha IT City, Mohali, Punjab 140306</div>
+    </div>
+  </div>
+  <div class="foot-bar">
+    <span>© Intelligaia · Illustration System v3.0 · Internal</span>
+    <span>May 2026</span>
+  </div>
+</footer>
+
+</body>
+</html>

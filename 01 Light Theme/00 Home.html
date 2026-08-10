@@ -1,0 +1,884 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intelligaia Design System · v2 (Figma-aligned)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<!-- Type system: Oswald (400/500, headings only) · Geist (everything else) · Geist Mono (code, hex, numerals). No other families. -->
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  /* ============================================================ */
+  /* FIGMA-ALIGNED BRAND TOKENS (from Intelligaia-Illustration-DS  */
+  /* — 2026 — Guidelines page, node 1659:69, extracted May 2026)   */
+  /* ============================================================ */
+
+  /* ===== Brand Hero (3) ===== */
+  --brand-hero-yellow: #FFC800;
+  --brand-hero-black:  #121212;
+  --brand-hero-purple: #6C3CD2;
+
+  /* ===== Primary (7) ===== */
+  --primary-cyan:   #00C3D6;
+  --primary-teal:   #34899F;
+  --primary-orange: #FF8434;
+  --primary-pink:   #F05A8C;
+  --primary-blue:   #3782F0;
+  --primary-red:    #F04B46;
+  --primary-green:  #37AF37;
+
+  /* ===== Secondary (7) — light shade of each Primary ===== */
+  --secondary-cyan-light:   #98EFFF;
+  --secondary-teal-light:   #5BC6D1;
+  --secondary-orange-light: #FFBA80;
+  --secondary-pink-light:   #FFAAC0;
+  --secondary-blue-light:   #94C3FF;
+  --secondary-red-light:    #FF9B94;
+  --secondary-green-light:  #8CDC8C;
+
+  /* ===== Base (3) ===== */
+  --base-white:      #FEFEFE;
+  --base-grey:       #9B9B9B;
+  --base-grey-light: #DEDEDE;
+
+  /* ===== Skin (5) ===== */
+  --skin-porcelain: #FFECDA;
+  --skin-light:     #FFC99D;
+  --skin-medium:    #D89C86;
+  --skin-deep:      #AC6A54;
+  --skin-rich:      #5C371E;
+
+  /* ===== Hair (5) ===== */
+  --hair-black:      #121212;
+  --hair-brown-dark: #382010;
+  --hair-brown:      #825A3A;
+  --hair-blonde:     #E5BC6B;
+  --hair-grey:       #767676;
+
+  /* ===== Purple extras (from variable defs) ===== */
+  --purple-500: #8A5AF0;
+  --purple-800: #3A1487;
+
+  /* ===== SEMANTIC ALIASES (used by components on this page) ===== */
+  --bg:        var(--base-white);
+  --bg-2:      #F7F7F5;
+  --bg-3:      #EFEFEC;
+  --ink:       var(--brand-hero-black);
+  --ink-soft:  #3A3A36;
+  --hair:      #E6E4DB;
+  --hair-2:    #D6D4CC;
+  --footer-bg: #F4F4F2;
+
+  /* ===== LEGACY ALIASES (kept for cross-page compatibility) ===== */
+  --yellow:       var(--brand-hero-yellow);
+  --yellow-soft:  #FFE874;
+  --yellow-tint:  #FFF1A8;
+  --violet:       var(--brand-hero-purple);
+  --violet-deep:  var(--purple-800);
+  --violet-soft:  #B5A8F4;
+  --magenta:      var(--primary-pink);
+  --cyan:         var(--primary-cyan);
+  --coral:        var(--primary-red);
+  --orange:       var(--primary-orange);
+  --teal:         var(--primary-teal);
+  --blue-deep:    var(--primary-blue);
+  --sand:         var(--skin-light);
+  --cloud:        var(--secondary-cyan-light);
+  --earth:        var(--hair-brown);
+
+  /* ============================================================ */
+  /* Layout tokens — spacing / radius / elevation                   */
+  /* ============================================================ */
+  --space-1: 4px;   --space-2: 8px;   --space-3: 12px;  --space-4: 16px;
+  --space-5: 24px;  --space-6: 32px;  --space-7: 48px;  --space-8: 64px;  --space-9: 96px;
+  --radius-0: 0;    --radius-1: 2px;  --radius-2: 4px;  --radius-3: 6px;
+  --radius-4: 8px;  --radius-5: 12px; --radius-6: 16px; --radius-7: 24px; --radius-pill: 999px;
+  --elev-0: none;
+  --elev-1: 0 1px 2px rgba(18,18,18,0.06);
+  --elev-2: 0 4px 8px rgba(18,18,18,0.08);
+  --elev-3: 0 8px 16px rgba(18,18,18,0.10);
+  --elev-4: 0 16px 32px rgba(18,18,18,0.12);
+
+  /* ============================================================ */
+  /* Gradient paint styles (13 — cannot be Figma variables)         */
+  /* ============================================================ */
+  --grad-1: linear-gradient(135deg, #FDF3E6 0%, #F7EEF6 50%, #EBE4F9 100%);
+  --grad-2: linear-gradient(135deg, #FCF5F0 0%, #FFECDA 100%);
+  --grad-3: linear-gradient(135deg, #EDFFFB 0%, #BFF4F8 100%);
+  --grad-4: linear-gradient(135deg, #08CC93 0%, #35D9C6 50%, #226DFA 100%);
+  --grad-5: linear-gradient(135deg, #08CC93 0%, #35D9C6 50%, #226DFA 100%);
+  --grad-gold-cream:    linear-gradient(135deg, #FFC107 0%, rgba(254,240,185,0) 100%);
+  --grad-purple-violet: linear-gradient(180deg, #8A5AF0 0%, #3A1487 100%);
+  --grad-cyan-navy:     linear-gradient(180deg, #18CDCC 0%, #023B80 100%);
+  --grad-cyan-glow:     radial-gradient(circle, #98EFFF 0%, #98EFFF 100%);
+  --grad-teal-solid:    #3280A4;
+  --grad-purple-coral:  linear-gradient(135deg, #8B4888 0%, #8B4888 26%, #E8757A 100%);
+  --grad-teal-radial:   radial-gradient(circle at 60% 40%, #46C4B7 0%, #34899F 71%);
+  --grad-pink-purple:   linear-gradient(135deg, #E8757A 40%, #8B4888 80%, #8B4888 100%);
+
+  /* ============================================================ */
+  /* Typography — 9 families in the type system                     */
+  /* ============================================================ */
+  --font-oswald:      'Oswald', 'Helvetica Neue', Arial, sans-serif;
+  --font-geist:       'Geist', 'Inter', system-ui, sans-serif;
+  --font-geist-pixel: 'Geist Mono', ui-monospace, monospace; /* self-hosted Geist Pixel Triangle — Silkscreen used as visual approx */
+  --font-geist-mono:  'Geist Mono', 'IBM Plex Mono', ui-monospace, monospace;
+  --font-plex-mono:   'IBM Plex Mono', 'Geist Mono', ui-monospace, monospace;
+  --font-inter:       'Inter', system-ui, sans-serif;
+  --font-fraunces:    'Fraunces', 'Trirong', Georgia, serif;
+  --font-helvetica:   'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-spline:      'Spline Sans', 'Inter', system-ui, sans-serif;
+  --font-trirong:     'Trirong', Georgia, serif; /* legacy alias */
+}
+
+/* ==== GLOBAL HEADER — pixel-matched to intelligaia.com (Wix) ==== */
+.g-header { position: sticky; top: 0; z-index: 50; background: #FFFFFF; width: 100%; height: 114px; }
+.g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; gap: 0; }
+.g-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.g-logo img { height: 51px; width: auto; display: block; }
+.g-logo .word, .g-logo .tag { display: none; }
+.g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
+.g-nav a { font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 16px; line-height: 1; color: #000000; text-decoration: none; white-space: nowrap; transition: opacity 0.15s ease; }
+.g-nav a:hover { opacity: 0.6; }
+.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; line-height: 1; color: #000000; background: #FFFFFF; border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
+.g-cta:hover { background: #000000; color: #FFFFFF; }
+.g-cta svg { width: 14px; height: 14px; }
+.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: #FFFFFF; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
+.g-hamburger svg { width: 20px; height: 20px; color: #000000; }
+.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: #FFFFFF; z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
+.g-mobile-drawer.open { display: flex; }
+.g-mobile-drawer a { font-family: 'Geist', sans-serif; font-weight: 600; font-size: 20px; color: #000000; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #EAEAEA; }
+.g-mobile-drawer .g-cta { align-self: flex-start; margin-top: 12px; }
+@media (max-width: 1000px) {
+  .g-header { height: 88px; }
+  .g-header-inner { padding: 0 24px; gap: 24px; }
+  .g-logo img { height: 40px; }
+  .g-nav, .g-cta { display: none; }
+  .g-hamburger { display: inline-flex; margin-left: auto; }
+  .g-mobile-drawer { top: 88px; }
+}
+/* ==== end canonical global header ==== */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body {
+  font-family: 'Geist', 'Inter', system-ui, sans-serif;
+  font-weight: 400; font-size: 15.5px; line-height: 1.6;
+  color: var(--ink); background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+.num { font-variant-numeric: tabular-nums; }
+.serif { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; }
+
+/* Sub-heading — single consistent style, no caps, no numbers */
+.sub-head { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; letter-spacing: -0.01em; margin: 40px 0 18px; color: var(--ink); }
+.sub-head:first-of-type { margin-top: 0; }
+
+/* ===== HERO ===== */
+.hero { max-width: 1440px; margin: 0 auto; padding: 40px 48px 56px; }
+.hero h1 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 88px; line-height: 0.98; letter-spacing: 0.01em; margin: 0 0 20px; max-width: 20ch; }
+.hero .lede { font-size: 20px; line-height: 1.4; margin: 0 0 20px; max-width: 60ch; }
+.hero .cat-hints { font-size: 13.5px; line-height: 1.75; margin: 0 0 32px; max-width: 90ch; opacity: 0.7; }
+.hero .cat-hints .soon { opacity: 0.5; font-size: 11.5px; }
+.hero-cta { display: flex; gap: 10px; flex-wrap: wrap; }
+.btn-quiet { display: inline-flex; align-items: center; gap: 8px; padding: 8px 16px; background: transparent; color: var(--ink); border: 1px solid var(--hair-2); border-radius: 999px; font-size: 13px; font-family: 'Geist', sans-serif; text-decoration: none; transition: all 0.15s ease; }
+.btn-quiet.small { padding: 5px 12px; font-size: 11.5px; letter-spacing: 0.02em; }
+.btn-quiet.small svg { width: 10px; height: 10px; }
+.btn-quiet:hover { border-color: var(--ink); background: var(--ink); color: var(--yellow); }
+.btn-quiet svg { width: 12px; height: 12px; }
+@media (max-width: 1000px) { .hero h1 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 88px; line-height: 0.98; letter-spacing: 0.01em; margin: 0 0 20px; max-width: 20ch; } .hero .lede { font-size: 17px; } }
+.hero h1 strong { font-weight: 500; }
+.hero .lede { font-size: 20px; line-height: 1.5; color: var(--ink); margin: 0 0 40px; max-width: 60ch; }
+.hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; background: var(--yellow); color: var(--ink); border: 1px solid var(--ink); border-radius: var(--radius-pill); font-size: 15px; font-weight: 500; }
+.btn-primary:hover { background: var(--ink); color: var(--yellow); }
+.btn-primary svg { width: 14px; height: 14px; }
+.btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 14px 26px; background: transparent; color: var(--ink); border: 1px solid var(--ink); border-radius: var(--radius-pill); font-size: 15px; font-weight: 400; }
+.btn-outline:hover { background: var(--ink); color: var(--bg); }
+.btn-outline svg { width: 14px; height: 14px; }
+@media (max-width: 760px) { .hero { padding: 56px 24px 40px; } .hero h1 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 88px; line-height: 0.98; letter-spacing: 0.01em; margin: 0 0 20px; max-width: 20ch; } }
+
+/* ===== SECTION FRAME ===== */
+.page { max-width: 1440px; margin: 0 auto; padding: 64px 56px; }
+.section-head { margin-bottom: 40px; display: flex; align-items: end; justify-content: space-between; gap: 32px; }
+.section-head .l { display: flex; flex-direction: column; }
+.section-head .l .eyebrow { font-size: 13px; font-weight: 500; color: var(--ink); opacity: 0.6; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 12px; }
+.section-head .l .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--ink); opacity: 0.5; }
+.section-head h2 { font-weight: 500; font-size: 32px; letter-spacing: -0.02em; margin: 0 0 6px; }
+.section-head p { font-size: 15px; color: var(--ink); opacity: 0.7; margin: 0; max-width: 60ch; }
+.section-head .r { font-size: 13px; color: var(--ink); opacity: 0.6; }
+@media (max-width: 760px) { .page { padding: 48px 24px; } .section-head { flex-direction: column; align-items: flex-start; } }
+
+/* ===== BRAND PRINCIPLES ===== */
+.principles { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border-top: 1px solid var(--ink); border-bottom: 1px solid var(--hair); }
+.principle { padding: 40px 32px; border-right: 1px solid var(--hair); display: flex; flex-direction: column; gap: 16px; }
+.principle:last-child { border-right: none; }
+.principle .icon { color: var(--ink); }
+.principle h3 { font-weight: 500; font-size: 24px; letter-spacing: -0.015em; margin: 0; }
+.principle .quote { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; font-size: 20px; line-height: 1.35; letter-spacing: -0.01em; color: var(--ink); margin: 0; }
+.principle p { font-size: 14.5px; line-height: 1.6; color: var(--ink); opacity: 0.8; margin: 0; }
+@media (max-width: 760px) { .principles { grid-template-columns: 1fr; } .principle { border-right: none; border-bottom: 1px solid var(--hair); } .principle:last-child { border-bottom: none; } }
+
+/* ===== TYPOGRAPHY SCALE ===== */
+.type-scale { border: 1px solid var(--hair); border-radius: var(--radius-5); overflow: hidden; }
+.type-row { display: grid; grid-template-columns: 120px 100px 1fr; gap: 24px; padding: 22px 28px; border-bottom: 1px solid var(--hair); align-items: baseline; }
+.type-row:last-child { border-bottom: none; }
+.type-row .name { font-size: 12.5px; font-weight: 500; color: var(--ink); opacity: 0.7; }
+.type-row .spec { font-size: 12px; color: var(--ink); opacity: 0.55; }
+.type-row .sample { color: var(--ink); }
+.type-family-tag { display: inline-block; margin-left: 8px; font-size: 10px; padding: 2px 6px; border-radius: 3px; background: var(--bg-2); color: var(--ink); opacity: 0.6; font-weight: 500; }
+@media (max-width: 760px) { .type-row { grid-template-columns: 1fr; gap: 4px; padding: 18px 20px; } .type-row .sample { margin-top: 6px; } }
+
+.fam-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.fam-card { padding: 22px 24px; border: 1px solid var(--hair); border-radius: var(--radius-5); background: var(--bg); }
+.fam-card .fam-name { font-size: 38px; line-height: 1.1; margin: 0 0 10px; letter-spacing: -0.015em; }
+.fam-card .fam-role { font-size: 12.5px; color: var(--ink); opacity: 0.7; margin: 0; line-height: 1.5; }
+.fam-card .fam-role code { font-family: var(--font-geist-mono); font-size: 11px; background: var(--bg-2); padding: 1px 5px; border-radius: 3px; opacity: 0.85; }
+.fam-card .fam-weights { display: flex; gap: 10px; margin-top: 14px; font-size: 12px; font-family: var(--font-geist-mono); color: var(--ink); opacity: 0.55; }
+@media (max-width: 900px) { .fam-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .fam-grid { grid-template-columns: 1fr; } }
+
+.type-row .name { font-size: 12.5px; font-weight: 500; color: var(--ink); opacity: 0.7; }
+.type-row .spec { font-size: 12px; color: var(--ink); opacity: 0.55; line-height: 1.5; }
+.type-row .spec code { font-family: var(--font-geist-mono); font-size: 11px; background: var(--bg-2); padding: 1px 5px; border-radius: 3px; display: inline-block; margin-bottom: 3px; }
+
+/* ===== COLOR TOKENS ===== */
+.tokens-block { padding: 32px 36px; border: 1px solid var(--hair); border-radius: var(--radius-5); background: var(--bg); }
+.tokens-block .group { margin-bottom: 32px; }
+.tokens-block .group:last-child { margin-bottom: 0; }
+.tokens-block .group h5 { font-family: 'Oswald', sans-serif; font-size: 20px; font-weight: 500; letter-spacing: -0.01em; margin: 0 0 18px; color: var(--ink); }
+.tokens-row { display: flex; flex-wrap: wrap; gap: 10px; }
+.tok { display: flex; flex-direction: column; gap: 6px; padding: 10px 12px; border: 1px solid var(--hair); border-radius: var(--radius-4); min-width: 140px; background: var(--bg); }
+.tok .ch { width: 100%; height: 44px; border-radius: var(--radius-3); }
+.tok .name { font-size: 12px; font-weight: 500; color: var(--ink); }
+.tok .hx { font-size: 11px; color: var(--ink); opacity: 0.6; font-variant-numeric: tabular-nums; }
+.tok .var { font-size: 10.5px; color: var(--ink); opacity: 0.45; font-family: 'Geist Mono', ui-monospace, monospace; }
+.tokens-block .gradient-bar { height: 64px; border-radius: var(--radius-4); display: flex; align-items: center; justify-content: center; color: #FFFFFF; font-size: 13px; font-weight: 500; text-shadow: 0 1px 2px rgba(0,0,0,0.35); letter-spacing: 0.04em; background: linear-gradient(90deg, #322A62 0%, #7D60EB 40%, #E93483 75%, #FCD111 100%); }
+.tokens-block .gradient-note { font-size: 13px; color: var(--ink); opacity: 0.65; margin: 12px 0 0; line-height: 1.5; }
+
+/* ===== GRADIENT PAINT STYLE CARDS ===== */
+.grad-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.grad-card { border: 1px solid var(--hair); border-radius: var(--radius-4); overflow: hidden; display: flex; flex-direction: column; background: var(--bg); }
+.grad-card .grad-swatch { height: 100px; }
+.grad-card .grad-meta { display: flex; justify-content: space-between; padding: 12px 14px 4px; align-items: baseline; }
+.grad-card .grad-name { font-size: 13px; font-weight: 500; color: var(--ink); }
+.grad-card .grad-type { font-size: 11px; color: var(--ink); opacity: 0.55; }
+.grad-card .grad-stops { padding: 0 14px 8px; font-size: 11px; font-family: var(--font-geist-mono); color: var(--ink); opacity: 0.7; }
+.grad-card .grad-use { padding: 0 14px 14px; font-size: 12px; color: var(--ink); opacity: 0.7; margin: 0; line-height: 1.5; }
+@media (max-width: 900px) { .grad-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .grad-grid { grid-template-columns: 1fr; } }
+
+/* ===== SPACING SCALE VIS ===== */
+.scale-block { padding: 32px 36px; border: 1px solid var(--hair); border-radius: var(--radius-5); background: var(--bg); }
+.scale-row { display: grid; grid-template-columns: 100px 100px 1fr; gap: 20px; padding: 12px 0; border-bottom: 1px dashed var(--hair); align-items: center; font-size: 13px; }
+.scale-row:last-child { border-bottom: none; }
+.scale-row .var { font-family: 'Geist Mono', ui-monospace, monospace; color: var(--ink); opacity: 0.7; }
+.scale-row .val { color: var(--ink); font-weight: 500; }
+.scale-row .bar { background: var(--yellow); height: 14px; border-radius: 2px; }
+
+/* ===== RADIUS SCALE ===== */
+.radius-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); gap: 12px; }
+.rad { padding: 20px; border: 1px solid var(--hair); border-radius: var(--radius-5); background: var(--bg); display: flex; flex-direction: column; align-items: center; gap: 12px; }
+.rad .square { width: 64px; height: 64px; background: var(--ink); }
+.rad .var { font-size: 11px; font-family: 'Geist Mono', ui-monospace, monospace; color: var(--ink); opacity: 0.7; }
+.rad .val { font-size: 12.5px; font-weight: 500; color: var(--ink); }
+
+/* ===== ELEVATION ===== */
+.elev-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; padding-top: 8px; }
+.elev-card { padding: 32px 24px; background: var(--bg); border-radius: var(--radius-5); display: flex; flex-direction: column; align-items: center; gap: 10px; border: 1px solid transparent; }
+.elev-card.e0 { box-shadow: var(--elev-0); border: 1px solid var(--hair); }
+.elev-card.e1 { box-shadow: var(--elev-1); }
+.elev-card.e2 { box-shadow: var(--elev-2); }
+.elev-card.e3 { box-shadow: var(--elev-3); }
+.elev-card.e4 { box-shadow: var(--elev-4); }
+.elev-card .var { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; color: var(--ink); opacity: 0.7; }
+.elev-card .role { font-size: 13px; font-weight: 500; color: var(--ink); }
+.elev-card .use { font-size: 11.5px; color: var(--ink); opacity: 0.6; text-align: center; margin: 0; }
+
+/* ===== SUB-SYSTEMS ===== */
+.subsys-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+
+/* ILLUSTRATION LIBRARY BANNER — full-bleed, dark */
+.lib-banner { background: var(--ink); color: #FFFFFF; }
+.lib-banner-inner { max-width: 1440px; margin: 0 auto; padding: 56px 48px; display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.4fr); gap: 56px; align-items: center; }
+.lb-l .eyebrow { font-family: 'Geist', sans-serif; font-size: 12px; opacity: 0.55; letter-spacing: 0.06em; margin-bottom: 14px; display: inline-flex; align-items: center; gap: 12px; }
+.lb-l .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--yellow); }
+.lb-l h2 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 44px; letter-spacing: -0.018em; margin: 0 0 16px; color: #FFFFFF; }
+.lb-l p { font-size: 15.5px; line-height: 1.55; opacity: 0.8; margin: 0 0 26px; max-width: 60ch; }
+.lb-actions { display: flex; align-items: center; gap: 20px; flex-wrap: wrap; }
+.lb-actions .btn-primary { background: var(--yellow); color: var(--ink); border-color: var(--yellow); }
+.lb-actions .btn-primary:hover { background: transparent; color: var(--yellow); border-color: var(--yellow); }
+.lb-meta { font-family: 'Geist', sans-serif; font-size: 12px; opacity: 0.55; letter-spacing: 0.04em; }
+.lb-r { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+.lb-thumb { display: flex; flex-direction: column; align-items: center; gap: 8px; text-decoration: none; color: rgba(255,255,255,0.7); transition: color 0.15s ease; }
+.lb-thumb:hover { color: var(--yellow); }
+.lb-thumb img { width: 100%; aspect-ratio: 1; background: rgba(255,255,255,0.06); border: 1px solid rgba(255,255,255,0.1); border-radius: 10px; padding: 10px; object-fit: contain; transition: all 0.15s ease; }
+.lb-thumb:hover img { background: rgba(255,255,255,0.14); border-color: var(--yellow); }
+.lb-thumb span { font-family: 'Geist', sans-serif; font-size: 11px; letter-spacing: 0.02em; }
+@media (max-width: 1000px) { .lib-banner-inner { grid-template-columns: 1fr; gap: 32px; padding: 40px 24px; } .lb-r { grid-template-columns: repeat(4, 1fr); } .lb-l h2 { font-size: 32px; } }
+@media (max-width: 600px) { .lb-r { grid-template-columns: repeat(3, 1fr); } }
+
+/* MARKETING COLLATERAL cards */
+/* BIG PREVIEW BANNER — Marketing Collateral + Diagrams (single clickable card) */
+.preview-banner { display: block; text-decoration: none; color: var(--ink); border: 1px solid var(--hair); border-radius: 20px; overflow: hidden; background: var(--bg); transition: all 0.15s ease; }
+.preview-banner:hover { border-color: var(--ink); box-shadow: 0 8px 28px rgba(18,18,18,0.10); }
+.pb-strip { display: grid; grid-template-columns: repeat(5, 1fr); background: var(--bg-2); padding: 48px 48px 36px; gap: 24px; align-items: center; }
+.pb-strip img { width: 100%; height: 460px; object-fit: contain; display: block; box-shadow: 0 8px 28px rgba(18,18,18,0.12); border-radius: 4px; transition: transform 0.25s ease; }
+.preview-banner:hover .pb-strip img { transform: translateY(-4px); }
+.pb-wide { background: var(--bg-2); padding: 56px 56px; display: flex; align-items: center; justify-content: center; }
+.pb-wide img { max-width: 100%; max-height: 640px; object-fit: contain; display: block; box-shadow: 0 8px 28px rgba(18,18,18,0.14); border-radius: 6px; }
+.pb-caption { display: flex; align-items: center; justify-content: space-between; padding: 22px 32px; border-top: 1px solid var(--hair); gap: 24px; flex-wrap: wrap; }
+.pb-caption .pb-l h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 22px; letter-spacing: -0.012em; margin: 0 0 4px; }
+.pb-caption .pb-l p { font-size: 13.5px; opacity: 0.7; margin: 0; }
+.pb-caption .pb-r { display: flex; align-items: center; gap: 16px; }
+.pb-cta { font-family: 'Geist', sans-serif; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
+.tag { font-family: 'Geist', sans-serif; font-size: 10.5px; padding: 3px 10px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 999px; opacity: 0.75; letter-spacing: 0.04em; }
+.tag.live { background: var(--yellow); border-color: var(--yellow); opacity: 1; }
+@media (max-width: 1000px) { .pb-strip { grid-template-columns: repeat(3, 1fr); padding: 32px 32px 24px; } .pb-strip img { height: 340px; } .pb-wide img { max-height: 460px; } }
+@media (max-width: 700px) { .pb-strip { grid-template-columns: repeat(2, 1fr); padding: 20px 20px 14px; gap: 12px; } .pb-strip img { height: 260px; } .pb-wide { padding: 24px; } .pb-wide img { max-height: 360px; } }
+.mc-meta { padding: 18px 20px 20px; border-top: 1px solid var(--hair); flex: 1; display: flex; flex-direction: column; }
+.mc-meta h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 18px; letter-spacing: -0.008em; margin: 0 0 8px; }
+.mc-meta p { font-size: 13px; line-height: 1.5; opacity: 0.7; margin: 0 0 12px; flex: 1; }
+.mc-tags { display: flex; gap: 6px; flex-wrap: wrap; }
+.mc-tags .tag { font-family: 'Geist', sans-serif; font-size: 10.5px; padding: 3px 10px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 999px; opacity: 0.75; letter-spacing: 0.04em; }
+.mc-tags .tag.live { background: var(--yellow); border-color: var(--yellow); opacity: 1; }
+.mc-tags .tag.ghost { background: transparent; border-style: dashed; }
+.subsys-card { display: block; padding: 32px 28px; border: 1px solid var(--hair); border-radius: var(--radius-5); background: var(--bg); position: relative; transition: all 0.15s ease; }
+.subsys-card:hover { border-color: var(--ink); box-shadow: var(--elev-2); }
+.subsys-card .status { position: absolute; top: 20px; right: 20px; font-size: 10.5px; padding: 3px 8px; border-radius: var(--radius-2); background: var(--yellow); color: var(--ink); font-weight: 500; }
+.subsys-card .status.soon { background: var(--bg-2); color: var(--ink); opacity: 0.6; border: 1px dashed var(--hair-2); }
+.subsys-card .preview { height: 140px; background: var(--bg-2); border-radius: var(--radius-4); margin-bottom: 20px; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+.subsys-card .preview img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.subsys-card .preview .placeholder-icon { color: var(--ink); opacity: 0.25; }
+.subsys-card h3 { font-weight: 500; font-size: 20px; letter-spacing: -0.012em; margin: 0 0 6px; }
+.subsys-card p { font-size: 13.5px; color: var(--ink); opacity: 0.7; margin: 0 0 16px; }
+.subsys-card .arrow-row { display: flex; align-items: center; gap: 8px; font-size: 12.5px; color: var(--ink); font-weight: 500; }
+.subsys-card.disabled { opacity: 0.7; pointer-events: none; }
+@media (max-width: 900px) { .subsys-grid { grid-template-columns: 1fr; } }
+
+/* ===== FOOTER (intelligaia.com light-cream snapshot) ===== */
+.g-footer { background: var(--footer-bg); color: var(--ink); padding: 80px 0 56px; border-top: 1px solid var(--hair); margin-top: 80px; }
+.g-footer-inner { max-width: 1440px; margin: 0 auto; padding: 0 56px; display: grid; grid-template-columns: 1.1fr 0.9fr 1.3fr 1.3fr; gap: 48px; align-items: start; }
+.ig-col-brand .ig-logo-foot { display: inline-flex; flex-direction: column; color: var(--ink); margin-bottom: 32px; }
+.ig-col-brand .ig-logo-foot .word { font-weight: 400; font-size: 30px; letter-spacing: -0.024em; line-height: 1; }
+.ig-col-brand .ig-logo-foot .tag { font-size: 10.5px; margin-top: 4px; color: var(--ink); }
+.ig-social { display: flex; gap: 12px; margin-top: 220px; }
+.ig-sic { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); }
+.ig-sic svg { width: 22px; height: 22px; }
+.ig-sic:hover { opacity: 0.65; }
+.ig-col-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; font-size: 22px; font-weight: 400; letter-spacing: -0.01em; }
+.ig-col-nav ul a { color: var(--ink); } .ig-col-nav ul a:hover { opacity: 0.65; }
+.ig-col-offices .ig-office { margin-bottom: 32px; }
+.ig-col-offices .ig-office:last-child { margin-bottom: 0; }
+.ig-col-offices h5 { font-size: 22px; font-weight: 600; margin: 0 0 14px; letter-spacing: -0.012em; }
+.ig-col-offices p { font-size: 14.5px; line-height: 1.6; margin: 0; color: var(--ink); }
+.ig-col-offices p a { text-decoration: underline; text-underline-offset: 3px; }
+.ig-col-cta { text-align: left; }
+.goodness { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; font-size: 56px; line-height: 1.05; letter-spacing: -0.015em; margin: 0 0 36px; color: var(--ink); }
+.ig-contact-pill { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; background: transparent; color: var(--ink); border-radius: var(--radius-pill); font-size: 15px; font-weight: 400; border: 1px solid var(--ink); }
+.ig-contact-pill:hover { background: var(--ink); color: var(--footer-bg); }
+.ig-contact-pill svg { width: 14px; height: 14px; }
+@media (max-width: 1080px) { .g-footer-inner { grid-template-columns: 1fr 1fr; gap: 56px; } .ig-social { margin-top: 24px; } }
+@media (max-width: 640px) { .g-footer-inner { grid-template-columns: 1fr; padding: 0 24px; } .g-footer { padding: 56px 0 40px; } .goodness { font-size: 40px; } }
+
+/* ============================================================ */
+/* PLATFORM TYPOGRAPHY — Locked                                    */
+/*   Oswald        → h1-h6 (Regular 400 or Medium 500 only)        */
+/*   Geist Regular → body / paragraphs / interface                 */
+/*   Geist Pixel   → landing-page hero H1 only                     */
+/* ============================================================ */
+body { font-family: 'Geist', 'Inter', system-ui, sans-serif !important; font-weight: 400 !important; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif !important; font-weight: 400 !important; }
+/* h1 defaults to Medium 500. h2/h3 explicitly override to Regular 400. */
+h2, h3 { font-weight: 400 !important; }
+p, li, span, a, div, button, input, textarea, label { font-family: 'Geist', 'Inter', system-ui, sans-serif; font-weight: 400; }
+/* Landing hero H1 uses Geist Pixel */
+.hero h1, .cover-title { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif !important; font-weight: 500 !important; text-transform: uppercase; letter-spacing: -0.015em; }
+/* Footer signature = Oswald Regular */
+.goodness { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif !important; font-weight: 400 !important; }
+
+
+/* FOUNDATIONS PREVIEW CARD on DS home */
+/* FOUNDATION CARDS — rectangular, matching the Marketing Collateral pattern */
+.fnd-card { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr); gap: 40px; padding: 40px; border: 1px solid var(--hair); border-radius: 20px; background: var(--bg); text-decoration: none; color: var(--ink); transition: all 0.15s ease; align-items: center; }
+a.fnd-card:hover { border-color: var(--ink); box-shadow: 0 6px 22px rgba(18,18,18,0.08); }
+.fnd-card .fc-l { display: flex; flex-direction: column; gap: 20px; }
+.fnd-card .fc-r { display: flex; align-items: center; justify-content: center; }
+.fnd-card .fc-lede { font-size: 14.5px; line-height: 1.55; opacity: 0.78; margin: 0; max-width: 54ch; }
+
+/* Principles list inside the Principles card */
+.fc-principles { display: flex; flex-direction: column; gap: 12px; }
+.fc-p { display: grid; grid-template-columns: 28px 1fr; gap: 14px; align-items: start; }
+.fc-p .fc-p-n { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.5; letter-spacing: 0.06em; margin-top: 3px; }
+.fc-p h4 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 15px; margin: 0 0 2px; letter-spacing: -0.005em; }
+.fc-p p { font-size: 12.5px; opacity: 0.65; margin: 0; line-height: 1.4; }
+
+/* Philosophy SVG diagram */
+.philosophy-svg { width: 100%; max-width: 400px; height: auto; }
+
+/* Colour + Typography previews inside the Foundations card */
+.fp-block .fp-label { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.55; letter-spacing: 0.06em; margin-bottom: 14px; }
+.fp-swatches { display: grid; grid-template-columns: repeat(10, 1fr); gap: 6px; margin-bottom: 16px; }
+.fp-swatches span { aspect-ratio: 1; border-radius: 6px; display: block; }
+.fp-swatches.primary4 { grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.fp-swatches.primary4 span { aspect-ratio: 1.2; border-radius: 10px; display: flex; align-items: flex-end; padding: 12px; position: relative; overflow: hidden; }
+.fp-swatches.primary4 em { font-style: normal; font-family: 'Geist', sans-serif; font-size: 10.5px; letter-spacing: 0.04em; line-height: 1.3; opacity: 0.9; }
+.fp-type { display: flex; flex-direction: column; gap: 10px; margin-bottom: 16px; }
+.fp-type-row { display: grid; grid-template-columns: 56px 1fr; align-items: center; gap: 16px; padding: 10px 14px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 10px; }
+.fp-t-sample { color: var(--ink); }
+.fp-t-body { display: flex; flex-direction: column; gap: 2px; }
+.fp-t-name { font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: -0.005em; }
+.fp-t-role { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.55; }
+.fp-open { font-family: 'Geist', sans-serif; font-size: 12px; opacity: 0.7; color: var(--ink); text-decoration: none; letter-spacing: 0.02em; }
+.fp-open:hover { opacity: 1; }
+
+@media (max-width: 1000px) { .fnd-card { grid-template-columns: 1fr; gap: 24px; padding: 28px; } .fp-swatches { grid-template-columns: repeat(8, 1fr); } }
+.foundation-trio { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+.fnd-card { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); gap: 20px; padding: 24px 24px 26px; border: 1px solid var(--hair); border-radius: 16px; background: var(--bg); text-decoration: none; color: var(--ink); transition: all 0.15s ease; align-items: center; min-height: 220px; }
+.fnd-card:hover { border-color: var(--ink); box-shadow: 0 4px 16px rgba(18,18,18,0.08); transform: translateY(-2px); }
+.fnd-card .fnd-l .eyebrow { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.55; letter-spacing: 0.04em; margin-bottom: 10px; display: inline-flex; align-items: center; gap: 10px; }
+.fnd-card .fnd-l .eyebrow::before { content: ''; width: 18px; height: 1px; background: var(--ink); opacity: 0.5; }
+.fnd-card .fnd-l h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 22px; letter-spacing: -0.014em; margin: 0 0 10px; line-height: 1.15; }
+.fnd-card .fnd-l p { font-size: 13px; line-height: 1.55; opacity: 0.72; margin: 0 0 14px; }
+.fnd-card .fnd-cta { font-family: 'Geist', sans-serif; font-size: 12px; letter-spacing: 0.02em; color: var(--ink); }
+.fnd-card .fnd-r { display: flex; align-items: center; justify-content: center; }
+
+/* Card-specific right-side previews */
+.philosophy-diagram svg { width: 100%; max-width: 180px; height: auto; }
+.colour-preview { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; width: 100%; max-width: 160px; }
+.colour-preview span { aspect-ratio: 1; border-radius: 6px; display: block; }
+.type-preview { display: flex; align-items: baseline; gap: 14px; }
+.type-preview .tp-1 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 42px; line-height: 1; letter-spacing: -0.02em; }
+.type-preview .tp-2 { font-size: 34px; line-height: 1; }
+.type-preview .tp-3 { font-size: 24px; line-height: 1; }
+
+@media (max-width: 1000px) { .foundation-trio { grid-template-columns: 1fr; } .fnd-card { min-height: auto; } }
+
+/* Old .foundations-card left as legacy — safe to remove if not referenced */
+.foundations-card { display: grid; grid-template-columns: minmax(0, 1fr) minmax(360px, 480px); gap: 48px; padding: 40px 40px; border: 1px solid var(--hair); border-radius: 20px; background: var(--bg); text-decoration: none; color: var(--ink); transition: all 0.15s ease; align-items: center; }
+.foundations-card:hover { border-color: var(--ink); box-shadow: 0 6px 22px rgba(18,18,18,0.08); }
+.foundations-card .fc-l .eyebrow { font-family: 'Geist', sans-serif; font-size: 12px; opacity: 0.55; letter-spacing: 0.04em; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 12px; }
+.foundations-card .fc-l .eyebrow::before { content: ''; width: 24px; height: 1px; background: var(--ink); opacity: 0.5; }
+.foundations-card .fc-l h2 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 32px; letter-spacing: -0.018em; margin: 0 0 12px; line-height: 1.15; }
+.foundations-card .fc-l p { font-size: 14.5px; line-height: 1.55; opacity: 0.75; margin: 0 0 20px; max-width: 56ch; }
+.foundations-card .fc-cta { font-family: 'Geist', sans-serif; font-size: 13px; display: inline-flex; align-items: center; gap: 8px; color: var(--ink); }
+.foundations-card .fc-r { display: flex; flex-direction: column; gap: 18px; }
+.foundations-card .fc-preview { }
+.fc-mini-lbl { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.55; letter-spacing: 0.04em; margin-bottom: 8px; }
+.fc-swatch-row { display: grid; grid-template-columns: repeat(8, 1fr); gap: 6px; }
+.fc-swatch-row span { aspect-ratio: 1; border-radius: 8px; display: block; }
+.fc-type-row { display: flex; align-items: baseline; gap: 20px; }
+.fc-type-row .fc-t1 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 42px; line-height: 1; letter-spacing: -0.02em; }
+.fc-type-row .fc-t2 { font-size: 36px; line-height: 1; }
+.fc-type-row .fc-t3 { font-size: 28px; line-height: 1; }
+.fc-meta-row { display: flex; flex-wrap: wrap; gap: 6px; }
+.fc-meta-row .chip { font-family: 'Geist', sans-serif; font-size: 11px; padding: 4px 10px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 999px; opacity: 0.75; }
+@media (max-width: 1000px) { .foundations-card { grid-template-columns: 1fr; padding: 32px 24px; } .foundations-card .fc-l h2 { font-size: 26px; } }
+
+
+.hero-sep-wrap { max-width: 1440px; margin: 0 auto; padding: 0 48px; }
+.hero-sep { border: none; border-top: 1px solid var(--hair); margin: 0 0 24px; }
+
+/* PLAYBOOK TEASER GRID on DS home */
+.pb-teaser-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+@media (max-width: 900px) { .pb-teaser-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 600px) { .pb-teaser-grid { grid-template-columns: 1fr; } }
+.pb-teaser { display: flex; flex-direction: column; padding: 20px 22px 22px; border: 1px solid var(--hair); border-radius: 12px; background: var(--bg); text-decoration: none; color: var(--ink); transition: all 0.15s ease; }
+.pb-teaser:hover { border-color: var(--ink); box-shadow: 0 4px 12px rgba(18,18,18,0.06); transform: translateY(-2px); }
+.pb-teaser.live { border-color: var(--ink); background: var(--bg); }
+.pb-teaser-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 10px; }
+.pb-teaser-num { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.5; letter-spacing: 0.06em; }
+.pb-teaser-live { font-family: 'Geist', sans-serif; font-size: 10px; padding: 2px 8px; background: var(--yellow); border-radius: 999px; letter-spacing: 0.06em; }
+.pb-teaser-soon { font-family: 'Geist', sans-serif; font-size: 10px; padding: 2px 8px; background: var(--bg-2); border: 1px dashed var(--hair-2); border-radius: 999px; opacity: 0.6; letter-spacing: 0.06em; }
+.pb-teaser h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 17px; letter-spacing: -0.008em; margin: 0 0 6px; }
+.pb-teaser p { font-size: 12.5px; line-height: 1.5; opacity: 0.7; margin: 0; }
+
+</style>
+</head>
+<body>
+
+<!-- ================================================================ -->
+<!-- GLOBAL HEADER                                                    -->
+<!-- ================================================================ -->
+<header class="g-header">
+  <div class="g-header-inner">
+    <a href="https://www.intelligaia.com" class="g-logo" aria-label="Intelligaia">
+      <img src="../Assets/Brand/intelligaia-logo.png" alt="Intelligaia" />
+    </a>
+    <nav class="g-nav">
+      <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+      <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+      <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+      <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+      <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+      <a href="https://www.intelligaia.com/blog">Blog</a>
+      <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    </nav>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+    <button class="g-hamburger" aria-label="Menu" onclick="document.querySelector('.g-mobile-drawer').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 6 H20 M4 12 H20 M4 18 H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="g-mobile-drawer">
+    <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+    <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+    <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+    <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+    <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+    <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+    <a href="https://www.intelligaia.com/blog">Blog</a>
+    <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+  </div>
+</header>
+
+<!-- ================================================================ -->
+<!-- HERO                                                             -->
+<!-- ================================================================ -->
+<section class="hero">
+  <h1>Intelligaia<br/><strong>Design System.</strong></h1>
+  <p class="lede">The design foundations that make every Intelligaia touchpoint feel like one voice.</p>
+  <div class="hero-cta">
+    <a href="11%20Principles.html" class="btn-quiet small">Guiding Principles</a>
+    <a href="12%20Colour.html" class="btn-quiet small">Foundational Elements</a>
+    <a href="20%20Illustration%20System.html" class="btn-quiet small">Illustration Library</a>
+    <a href="40%20Marketing%20Collateral.html" class="btn-quiet small">Marketing Collateral</a>
+  </div>
+</section>
+
+<div class="hero-sep-wrap"><hr class="hero-sep"/></div>
+
+<!-- ================================================================ -->
+<!-- PLAYBOOKS — action-first entry (leads the page)                  -->
+<!-- ================================================================ -->
+<section class="page" id="playbooks-teaser">
+  <div class="section-head">
+    <div class="l">
+      <div class="eyebrow">Playbooks</div>
+      <h2>Start with what you're building.</h2>
+      <p>Step-by-step recipes for producing Intelligaia-quality output. Humans read them. Agents parse the JSON at the bottom of each.</p>
+    </div>
+    <a href="30%20Playbooks.html" class="btn-primary">
+      Open all playbooks
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+  <div class="pb-teaser-grid">
+    <a class="pb-teaser live" href="31%20Landing%20Page%20Hero.html">
+      <div class="pb-teaser-head"><span class="pb-teaser-num">01</span><span class="pb-teaser-live">Live</span></div>
+      <h3>Landing page hero</h3>
+      <p>Yellow banner, Oswald Bold headline, one CTA, hero illustration.</p>
+    </a>
+    <a class="pb-teaser" href="30%20Playbooks.html">
+      <div class="pb-teaser-head"><span class="pb-teaser-num">02</span><span class="pb-teaser-soon">Soon</span></div>
+      <h3>Marketing one-pager</h3>
+      <p>Service or product brief — offer, pillars, metric, CTA.</p>
+    </a>
+    <a class="pb-teaser" href="30%20Playbooks.html">
+      <div class="pb-teaser-head"><span class="pb-teaser-num">03</span><span class="pb-teaser-soon">Soon</span></div>
+      <h3>Case study spread</h3>
+      <p>5-page arc — cover, problem, approach, artifacts, outcome.</p>
+    </a>
+    <a class="pb-teaser" href="30%20Playbooks.html">
+      <div class="pb-teaser-head"><span class="pb-teaser-num">04</span><span class="pb-teaser-soon">Soon</span></div>
+      <h3>Social media post</h3>
+      <p>Square or portrait post for LinkedIn / Instagram with brand marks.</p>
+    </a>
+    <a class="pb-teaser" href="30%20Playbooks.html">
+      <div class="pb-teaser-head"><span class="pb-teaser-num">05</span><span class="pb-teaser-soon">Soon</span></div>
+      <h3>Company website page</h3>
+      <p>A generic content page for intelligaia.com — hero + sections + footer.</p>
+    </a>
+    <a class="pb-teaser" href="30%20Playbooks.html">
+      <div class="pb-teaser-head"><span class="pb-teaser-num">06</span><span class="pb-teaser-soon">Soon</span></div>
+      <h3>Diagram / process graphic</h3>
+      <p>Geometric process diagram — nodes, connectors, brand palette.</p>
+    </a>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- BRAND PRINCIPLES                                                 -->
+<!-- ================================================================ -->
+
+<!-- ================================================================ -->
+<!-- TYPOGRAPHY                                                       -->
+<!-- ================================================================ -->
+
+<!-- ================================================================ -->
+<!-- COLOR TOKENS                                                     -->
+<!-- ================================================================ -->
+
+<!-- ================================================================ -->
+<!-- SPACING                                                          -->
+<!-- ================================================================ -->
+
+<!-- ================================================================ -->
+<!-- RADIUS                                                           -->
+<!-- ================================================================ -->
+
+<!-- ================================================================ -->
+<!-- ELEVATION                                                        -->
+<!-- ================================================================ -->
+
+
+<!-- ================================================================ -->
+<!-- GUIDING PRINCIPLES (rectangular card, Marketing Collateral style)-->
+<!-- ================================================================ -->
+<section class="page" id="principles-section">
+  <div class="section-head">
+    <div class="l">
+      <div class="eyebrow">Guiding Principles</div>
+      <h2>Principles &amp; philosophy.</h2>
+      <p>Three commitments that anchor every Intelligaia design decision — and the philosophy behind the new brand.</p>
+    </div>
+    <a href="11%20Principles.html" class="btn-primary">
+      Open principles
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <a href="11%20Principles.html" class="fnd-card">
+    <div class="fc-l">
+      <p class="fc-lede">Goodness leads. Intent-aware. Human-centered. These are the operating instructions for the design team — before a colour is picked, a shape is drawn or a screen is laid out.</p>
+      <div class="fc-principles">
+        <div class="fc-p"><span class="fc-p-n">01</span><div><h4>Goodness leads</h4><p>Value that compounds, not extraction.</p></div></div>
+        <div class="fc-p"><span class="fc-p-n">02</span><div><h4>Intent-aware</h4><p>Design for the question, not the interface.</p></div></div>
+        <div class="fc-p"><span class="fc-p-n">03</span><div><h4>Human-centered</h4><p>AI amplifies people, not the other way around.</p></div></div>
+      </div>
+    </div>
+    <div class="fc-r">
+      <svg class="philosophy-svg" viewBox="0 0 400 340" fill="none" aria-labelledby="philo-title" role="img">
+        <title id="philo-title">The three principles converge at Intelligaia design</title>
+        <g opacity="0.08" stroke="#121212" stroke-width="0.6">
+          <line x1="0" y1="170" x2="400" y2="170" />
+          <line x1="200" y1="0" x2="200" y2="340" />
+        </g>
+        <g stroke-width="1.6" fill="none">
+          <circle cx="145" cy="135" r="92" stroke="#121212" opacity="0.5" />
+          <circle cx="255" cy="135" r="92" stroke="#6C3CD2" opacity="0.7" />
+          <circle cx="200" cy="215" r="92" stroke="#FFC800" opacity="1" stroke-width="2.2" />
+        </g>
+        <circle cx="200" cy="170" r="13" fill="#121212" />
+        <text x="200" y="174" text-anchor="middle" font-family="Oswald, sans-serif" font-size="8" font-weight="500" fill="#FFC800" letter-spacing="0.04em">DESIGN</text>
+        <g font-family="Oswald, sans-serif" font-size="10" font-weight="500" fill="#121212" letter-spacing="0.04em">
+          <line x1="85" y1="60" x2="120" y2="100" stroke="#121212" stroke-width="0.8" opacity="0.5" />
+          <text x="15" y="50" opacity="0.85">GOODNESS</text>
+          <text x="15" y="63" font-size="8" opacity="0.5">value that compounds</text>
+          <line x1="315" y1="60" x2="280" y2="100" stroke="#6C3CD2" stroke-width="0.8" opacity="0.6" />
+          <text x="385" y="50" text-anchor="end" opacity="0.85">INTENT-AWARE</text>
+          <text x="385" y="63" text-anchor="end" font-size="8" opacity="0.5">design for the question</text>
+          <line x1="200" y1="315" x2="200" y2="280" stroke="#FFC800" stroke-width="1.2" />
+          <text x="200" y="330" text-anchor="middle" opacity="0.85">HUMAN-CENTERED</text>
+        </g>
+      </svg>
+    </div>
+  </a>
+</section>
+
+<!-- ================================================================ -->
+<!-- FOUNDATIONAL ELEMENTS (colour + typography rectangular card)     -->
+<!-- ================================================================ -->
+<section class="page" id="foundations-section">
+  <div class="section-head">
+    <div class="l">
+      <div class="eyebrow">Foundational Elements</div>
+      <h2>Colour &amp; typography.</h2>
+      <p>Thirty locked colour tokens and three type families — every visual rule an Intelligaia page follows sits inside these two systems.</p>
+    </div>
+    <a href="12%20Colour.html" class="btn-primary">
+      Open foundations
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="fnd-card">
+    <div class="fc-l">
+      <div class="fp-block">
+        <div class="fp-label">Brand palette · 4 primary</div>
+        <div class="fp-swatches primary4">
+          <span title="Yellow — brand hero, CTAs" style="background:#FFC800;"><em>Yellow<br/>#FFC800</em></span>
+          <span title="Black — text and chrome" style="background:#121212;color:#FFF;"><em>Black<br/>#121212</em></span>
+          <span title="Blue — links, info states" style="background:#3782F0;color:#FFF;"><em>Blue<br/>#3782F0</em></span>
+          <span title="Purple — accents, sparingly" style="background:#6C3CD2;color:#FFF;"><em>Purple<br/>#6C3CD2</em></span>
+        </div>
+        <a href="12%20Colour.html" class="fp-open">See usage rules + full palette →</a>
+      </div>
+    </div>
+    <div class="fc-r type-side">
+      <div class="fp-block">
+        <div class="fp-label">Type · 2 families · 7 steps</div>
+        <div class="fp-type">
+          <div class="fp-type-row">
+            <span class="fp-t-sample" style="font-family:'Oswald',sans-serif;font-weight:500;font-size:42px;line-height:1;">Aa</span>
+            <div class="fp-t-body"><span class="fp-t-name">Oswald Medium</span><span class="fp-t-role">Headings</span></div>
+          </div>
+          <div class="fp-type-row">
+            <span class="fp-t-sample" style="font-family:'Geist',sans-serif;font-weight:400;font-size:38px;line-height:1;">Aa</span>
+            <div class="fp-t-body"><span class="fp-t-name">Geist Regular</span><span class="fp-t-role">Body</span></div>
+          </div>
+          <div class="fp-type-row">
+            <span class="fp-t-sample" style="font-family:'Geist Mono', monospace;font-size:28px;line-height:1;">Aa</span>
+            <div class="fp-t-body"><span class="fp-t-name">Geist Mono</span><span class="fp-t-role">Code, hex, numerals</span></div>
+          </div>
+        </div>
+        <a href="13%20Typography.html" class="fp-open">Open the type system →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- ILLUSTRATION LIBRARY — full-width banner                         -->
+<!-- ================================================================ -->
+<section class="lib-banner" id="libraries">
+  <div class="lib-banner-inner">
+    <div class="lb-l">
+      <div class="eyebrow">Illustration Library</div>
+      <h2>The Illustration Library.</h2>
+      <p>166 assets across seven categories — Characters, Devices, Nature, Objects, Icons, Waves and Letters. Every asset built from the same three primitives (circle, rectangle, curved rectangle), the same three-stage construction sequence, and the same brand palette. Same rules, different subjects.</p>
+      <div class="lb-actions">
+        <a href="20%20Illustration%20System.html" class="btn-primary">
+          Open the library
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+        <span class="lb-meta">7 libraries · 166 assets · Live</span>
+      </div>
+    </div>
+    <div class="lb-r">
+      <a href="22%20Characters.html" class="lb-thumb"><img src="../Assets/Female%20Characters/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Characters" loading="lazy"/><span>Characters</span></a>
+      <a href="23%20Devices.html" class="lb-thumb"><img src="../Assets/Devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Devices" loading="lazy"/><span>Devices</span></a>
+      <a href="25%20Nature.html" class="lb-thumb"><img src="../Assets/Nature/Trees%20%E2%80%94%20Final.png" alt="Nature" loading="lazy"/><span>Nature</span></a>
+      <a href="24%20Objects.html" class="lb-thumb"><img src="../Assets/Objects/Lighthouse%20%E2%80%94%20Final.png" alt="Objects" loading="lazy"/><span>Objects</span></a>
+      <a href="26%20Icons.html" class="lb-thumb"><img src="../Assets/Icon/UI/Account-Circle-01.svg" alt="Icons" loading="lazy"/><span>Icons</span></a>
+      <a href="28%20Waves.html" class="lb-thumb"><img src="../Assets/Waves/Braided-Ribbon/Horizontal-01.svg" alt="Waves" loading="lazy"/><span>Waves</span></a>
+      <a href="27%20Letters.html" class="lb-thumb"><img src="../Assets/letters/Alphabet%3DA.svg" alt="Letters" loading="lazy"/><span>Letters</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ================================================================ -->
+<!-- MARKETING COLLATERAL                                             -->
+<!-- ================================================================ -->
+<section class="page" id="documents">
+  <div class="section-head">
+    <div class="l">
+      <div class="eyebrow">Marketing Collateral</div>
+      <h2>Marketing Collateral.</h2>
+      <p>The service catalog and other branded documents that go out from Intelligaia — a single, versioned place. A source of truth for humans and for the AI tools we use to automate design work.</p>
+    </div>
+    <a href="40%20Marketing%20Collateral.html" class="btn-primary">
+      Open all collateral
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <a href="40%20Marketing%20Collateral.html" class="preview-banner">
+    <div class="pb-strip">
+      <img src="../Assets/Service-Catalog/Cover%20%28with%20lines%29.png" alt="Cover" loading="lazy" />
+      <img src="../Assets/Service-Catalog/About%20Intelligaia.png" alt="About Intelligaia" loading="lazy" />
+      <img src="../Assets/Service-Catalog/What%20Intelligaia%20Does%20best.png" alt="What Intelligaia Does Best" loading="lazy" />
+      <img src="../Assets/Service-Catalog/Capabilities%20Overview.png" alt="Capabilities Overview" loading="lazy" />
+      <img src="../Assets/Service-Catalog/Case%20Study%20Page%205.png" alt="Case Study Page 5" loading="lazy" />
+    </div>
+    <div class="pb-caption">
+      <div class="pb-l">
+        <h3>Service Catalog</h3>
+        <p>8 pages · Cover, About, Capabilities, Business Value, Case Studies</p>
+      </div>
+      <div class="pb-r">
+        <span class="tag live">Live</span>
+        <span class="pb-cta">Open catalog
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </div>
+  </a>
+</section>
+
+<!-- ================================================================ -->
+<!-- DIAGRAMS                                                         -->
+<!-- ================================================================ -->
+<section class="page" id="diagrams">
+  <div class="section-head">
+    <div class="l">
+      <div class="eyebrow">Diagrams</div>
+      <h2>Diagrams.</h2>
+      <p>Site maps, flowcharts, process diagrams and social-media graphics — the visual explainers that go out on posts, decks and internal documents. Every diagram built to the same colour, typography and pattern rules as the rest of the system.</p>
+    </div>
+    <a href="41%20Diagrams.html" class="btn-primary">
+      Open all diagrams
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <a href="41%20Diagrams.html" class="preview-banner wide">
+    <div class="pb-wide">
+      <img src="../Assets/Diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png" alt="Role-based AI deconstruction diagram" loading="lazy" />
+    </div>
+    <div class="pb-caption">
+      <div class="pb-l">
+        <h3>Role-based AI Deconstruction</h3>
+        <p>Process graphic — social posts, decks, internal explainers</p>
+      </div>
+      <div class="pb-r">
+        <span class="tag live">Live</span>
+        <span class="pb-cta">Open diagrams
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </span>
+      </div>
+    </div>
+  </a>
+</section>
+
+<!-- ================================================================ -->
+<!-- FOOTER                                                           -->
+<!-- ================================================================ -->
+<footer class="g-footer">
+  <div class="g-footer-inner">
+    <div class="ig-col ig-col-brand">
+      <a href="https://www.intelligaia.com" class="ig-logo-foot">
+        <span class="word">intelligaia</span>
+        <span class="tag">humanizing AI for enterprises</span>
+      </a>
+      <div class="ig-social">
+        <a href="https://www.linkedin.com/company/intelligaia/" aria-label="LinkedIn" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg></a>
+        <a href="https://www.instagram.com/intelligaia" aria-label="Instagram" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M7.6 4A3.6 3.6 0 0 0 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4A3.6 3.6 0 0 0 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/></svg></a>
+        <a href="https://youtube.com/@intelligaia-studio" aria-label="YouTube" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/></svg></a>
+      </div>
+    </div>
+    <div class="ig-col ig-col-nav">
+      <ul>
+        <li><a href="https://www.intelligaia.com/portfolio">Portfolio</a></li>
+        <li><a href="https://www.intelligaia.com/design-workshops">Workshops</a></li>
+        <li><a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a></li>
+        <li><a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scale</a></li>
+        <li><a href="https://www.intelligaia.com/federal-public-services">Gov Services</a></li>
+        <li><a href="https://www.intelligaia.com/careers">Careers</a></li>
+      </ul>
+    </div>
+    <div class="ig-col ig-col-offices">
+      <div class="ig-office">
+        <h5>United States</h5>
+        <p>548 Spire Bnd, Apex, NC 27523<br/><a href="mailto:sales@intelligaia.com">sales@intelligaia.com</a><br/>Ph: <a href="tel:+12524001521">252-400-1521</a></p>
+      </div>
+      <div class="ig-office">
+        <h5>INDIA</h5>
+        <p>Industrial Plot I-63,<br/>Sector - 83 Alpha IT City,<br/>Mohali, Punjab - 140306</p>
+      </div>
+    </div>
+    <div class="ig-col ig-col-cta">
+      <h2 class="goodness">Goodness =<br/>Rewards</h2>
+      <a href="https://www.intelligaia.com/contact" class="ig-contact-pill">Contact Us
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intelligaia · Design System · Start here</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#04050A; --panel:#0A0C14; --panel-2:#0E111B;
+  --ink:#F4F5F7; --ink-soft:#FFFFFF; --ink-muted:#9AA0AB; --ink-dim:#5C626E;
+  --yellow:#FFD400; --hair:rgba(255,255,255,0.08); --hair-2:rgba(255,255,255,0.16);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:'Geist',system-ui,sans-serif;font-weight:400;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4,h5,h6{font-family:'Oswald',sans-serif;font-weight:400;margin:0;color:var(--ink-soft)}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 40px}
+
+/* HEADER */
+.hdr{position:sticky;top:0;z-index:50;background:rgba(4,5,10,0.86);backdrop-filter:blur(14px);border-bottom:1px solid var(--hair)}
+.hdr-in{max-width:1180px;margin:0 auto;padding:18px 40px;display:flex;align-items:center;justify-content:space-between}
+.logo{font-family:'Oswald',sans-serif;font-weight:500;font-size:19px;letter-spacing:-0.01em;color:var(--ink-soft)}
+.logo span{color:var(--yellow)}
+.hdr-meta{font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-dim);letter-spacing:0.06em}
+
+/* HERO */
+.hero{padding:110px 0 70px}
+.eyebrow{display:flex;align-items:center;gap:14px;font-family:'Geist',sans-serif;font-weight:500;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--ink-muted);margin-bottom:26px}
+.eyebrow::before{content:'';width:40px;height:1px;background:var(--yellow)}
+h1.big{font-family:'Oswald',sans-serif;font-weight:500;font-size:clamp(40px,5.4vw,72px);line-height:1.06;letter-spacing:-0.015em;max-width:20ch;margin:0 0 24px}
+.lede{font-size:clamp(16px,1.7vw,19px);line-height:1.55;color:var(--ink-muted);max-width:60ch;margin:0}
+
+/* THEME SWITCH */
+.themebar{display:flex;gap:10px;margin:38px 0 0}
+.tbtn{padding:11px 20px;border-radius:999px;border:1px solid var(--hair-2);font-family:'Geist',sans-serif;font-weight:500;font-size:13px;color:var(--ink);cursor:pointer;background:transparent;transition:.18s}
+.tbtn.on{background:var(--yellow);border-color:var(--yellow);color:#04050A}
+.tbtn:hover:not(.on){border-color:var(--ink-muted)}
+
+/* SECTIONS */
+.sec{padding:34px 0 0}
+.sec-hd{display:flex;align-items:baseline;gap:16px;padding:44px 0 20px;border-top:1px solid var(--hair);margin-top:44px}
+.sec-num{font-family:'Geist Mono',monospace;font-size:12px;color:var(--yellow)}
+.sec-hd h2{font-family:'Oswald',sans-serif;font-weight:500;font-size:26px;letter-spacing:-0.01em}
+.sec-hd .n{margin-left:auto;font-family:'Geist Mono',monospace;font-size:11px;color:var(--ink-dim)}
+
+/* CARDS */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:14px}
+.card{display:block;background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:22px 22px 20px;transition:.2s;position:relative;overflow:hidden}
+.card:hover{background:var(--panel-2);border-color:var(--hair-2);transform:translateY(-2px)}
+.card .no{font-family:'Geist Mono',monospace;font-size:11px;color:var(--yellow);letter-spacing:0.05em}
+.card h3{font-family:'Oswald',sans-serif;font-weight:500;font-size:19px;margin:8px 0 7px;letter-spacing:-0.005em}
+.card p{font-size:13px;line-height:1.5;color:var(--ink-muted);margin:0}
+.card .arw{position:absolute;right:20px;top:20px;color:var(--ink-dim);font-size:15px;transition:.2s}
+.card:hover .arw{color:var(--yellow);transform:translateX(3px)}
+.card.na{opacity:.34;pointer-events:none}
+.card.na .arw{content:''}
+.tag-na{display:inline-block;margin-top:9px;font-family:'Geist Mono',monospace;font-size:10px;color:var(--ink-dim);border:1px solid var(--hair);border-radius:4px;padding:2px 6px}
+
+/* FOLDER MAP */
+.map{margin:60px 0 0;background:var(--panel);border:1px solid var(--hair);border-radius:14px;padding:28px 30px}
+.map h3{font-family:'Oswald',sans-serif;font-weight:500;font-size:17px;margin:0 0 16px}
+.map pre{font-family:'Geist Mono',monospace;font-size:12.5px;line-height:1.85;color:var(--ink-muted);margin:0;white-space:pre-wrap}
+.map pre b{color:var(--ink-soft);font-weight:500}
+.map pre i{color:var(--ink-dim);font-style:normal}
+
+footer{margin-top:80px;border-top:1px solid var(--hair);padding:34px 0 60px}
+footer .f{display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--ink-dim);font-family:'Geist Mono',monospace}
+@media(max-width:640px){.wrap,.hdr-in{padding-left:22px;padding-right:22px}.hero{padding:66px 0 40px}}
+</style>
+</head>
+<body>
+
+<header class="hdr">
+  <div class="hdr-in">
+    <div class="logo">intelli<span>gaia</span></div>
+    <div class="hdr-meta">DESIGN SYSTEM · START HERE</div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Open this file first</div>
+    <h1 class="big">Every page in the system, in one place.</h1>
+    <p class="lede">Pick a theme, then pick a page. Light is the complete set — all 19 pages. Dark currently covers the home page, the four foundations pages and the playbooks. Everything below opens straight in your browser.</p>
+    <div class="themebar">
+      <button class="tbtn on" id="btn-light">Light theme</button>
+      <button class="tbtn" id="btn-dark">Dark theme</button>
+    </div>
+  </section>
+
+  <div id="sections"></div>
+
+  <div class="map">
+    <h3>Where everything lives</h3>
+<pre><b>Intelligaia Illustration Library/</b>
+├── <b>START HERE.html</b>              <i>← this page</i>
+├── <b>01 Light Theme/</b>              <i>19 pages · the complete system</i>
+├── <b>02 Dark Theme/</b>               <i>7 pages · home, foundations, playbooks</i>
+├── <b>Assets/</b>                      <i>all illustration source files (PNG/SVG)</i>
+├── <b>90 Approved Illustrations/</b>   <i>signed-off banners, humans, sections</i>
+└── <b>99 Archive/</b>                  <i>superseded versions — v1 through v9</i></pre>
+  </div>
+
+  <footer>
+    <div class="f">
+      <span>© 2026 Intelligaia · humanizing AI for enterprises</span>
+      <span>Type: Oswald 400/500 · Geist 400 · Geist Mono</span>
+    </div>
+  </footer>
+</div>
+
+<script>
+const DATA = {
+  light: { folder: '01 Light Theme', groups: [
+    { num:'00', title:'Start', items:[
+      ['00','Home','The system portal — chapters, foundations and library index.','00 Home.html'],
+    ]},
+    { num:'10', title:'Foundations', items:[
+      ['10','Foundations','Overview of principles, colour, type and layout in one page.','10 Foundations.html'],
+      ['11','Principles','The guiding principles behind every Intelligaia visual decision.','11 Principles.html'],
+      ['12','Colour','Palette, roles, tokens and do/don’t rules.','12 Colour.html'],
+      ['13','Typography','Oswald + Geist, the seven-step scale and layout rules.','13 Typography.html'],
+    ]},
+    { num:'20', title:'Illustration system', items:[
+      ['20','Illustration System','The ten dimensions that define the Intelligaia illustration style.','20 Illustration System.html'],
+      ['21','Construction','How an illustration is built — grid, deconstruction, final.','21 Construction.html'],
+      ['22','Characters','Male and female character library and usage rules.','22 Characters.html'],
+      ['23','Devices','Laptops, phones, screens and hardware illustrations.','23 Devices.html'],
+      ['24','Objects','Props and standalone object illustrations.','24 Objects.html'],
+      ['25','Nature','Plants, terrain and organic elements.','25 Nature.html'],
+      ['26','Icons','UI, AI, data, people and system icon sets.','26 Icons.html'],
+      ['27','Letters','Illustrated letterforms A–Z.','27 Letters.html'],
+      ['28','Waves','Ribbon and wave motifs — braided, folded, looped, zigzag.','28 Waves.html'],
+      ['29','Asset Library','The full searchable index of every asset in the library.','29 Asset Library.html'],
+    ]},
+    { num:'30', title:'Playbooks', items:[
+      ['30','Playbooks','Recipes for assembling pages from the system.','30 Playbooks.html'],
+      ['31','Landing Page Hero','Annotated spec for building a landing page hero.','31 Landing Page Hero.html'],
+    ]},
+    { num:'40', title:'Collateral', items:[
+      ['40','Marketing Collateral','Service catalogue, credentials and document layouts.','40 Marketing Collateral.html'],
+      ['41','Diagrams','Diagram styles and construction rules.','41 Diagrams.html'],
+    ]},
+  ]},
+  dark: { folder: '02 Dark Theme', groups: [
+    { num:'00', title:'Start', items:[
+      ['00','Home','The system portal in the dark treatment.','00 Home.html'],
+    ]},
+    { num:'10', title:'Foundations', items:[
+      ['10','Foundations','Overview of principles, colour, type and layout.','10 Foundations.html'],
+      ['11','Principles','The guiding principles behind every visual decision.','11 Principles.html'],
+      ['12','Colour','Palette, roles, tokens and do/don’t rules.','12 Colour.html'],
+      ['13','Typography','Oswald + Geist, the seven-step scale and layout rules.','13 Typography.html'],
+    ]},
+    { num:'20', title:'Illustration system', items:[
+      ['—','Illustration System','Not yet built in dark — open the light version.',null],
+    ]},
+    { num:'30', title:'Playbooks', items:[
+      ['30','Playbooks','Recipes for assembling pages from the system.','30 Playbooks.html'],
+      ['31','Landing Pages','Annotated spec for building landing pages.','31 Landing Pages.html'],
+    ]},
+    { num:'40', title:'Collateral', items:[
+      ['—','Marketing Collateral','Not yet built in dark — open the light version.',null],
+    ]},
+  ]},
+};
+
+function render(theme){
+  const d = DATA[theme];
+  document.getElementById('sections').innerHTML = d.groups.map(g => `
+    <section class="sec">
+      <div class="sec-hd">
+        <span class="sec-num">${g.num}</span>
+        <h2>${g.title}</h2>
+        <span class="n">${g.items.filter(i=>i[3]).length} page${g.items.filter(i=>i[3]).length===1?'':'s'}</span>
+      </div>
+      <div class="grid">
+        ${g.items.map(([no,t,p,file]) => file
+          ? `<a class="card" href="${encodeURI(d.folder + '/' + file)}"><span class="arw">→</span><div class="no">${no}</div><h3>${t}</h3><p>${p}</p></a>`
+          : `<div class="card na"><div class="no">${no}</div><h3>${t}</h3><p>${p}</p><span class="tag-na">not in this theme</span></div>`
+        ).join('')}
+      </div>
+    </section>`).join('');
+}
+document.getElementById('btn-light').onclick = e => { render('light'); setOn(e.target) };
+document.getElementById('btn-dark').onclick  = e => { render('dark');  setOn(e.target) };
+function setOn(el){ document.querySelectorAll('.tbtn').forEach(b=>b.classList.remove('on')); el.classList.add('on') }
+render('light');
+</script>
+</body>
+</html>

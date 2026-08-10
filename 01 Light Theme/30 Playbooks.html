@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intelligaia · Design System · Playbooks</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+
+:root { --bg: #FFFFFF; --bg-2: #F7F7F5; --bg-3: #EFEFEC; --ink: #121212; --hair: #E6E4DB; --hair-2: #D6D4CC; --footer-bg: #F4F4F2; --yellow: #FFC800; --purple: #6C3CD2; --blue: #3782F0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Geist', 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 15.5px; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; margin: 0; }
+h2, h3 { font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+.yellow-hero { background: var(--yellow); color: var(--ink); }
+.yellow-hero-inner { max-width: 1440px; margin: 0 auto; padding: 32px 48px 44px; }
+.yellow-hero .yh-crumb { display: flex; align-items: center; gap: 10px; font-family: 'Geist', sans-serif; font-size: 12.5px; margin-bottom: 24px; }
+.yellow-hero .yh-crumb a { color: var(--ink); opacity: 0.65; display: inline-flex; align-items: center; gap: 6px; }
+.yellow-hero .yh-crumb a:hover { opacity: 1; }
+.yellow-hero .yh-crumb .sep { opacity: 0.4; }
+.yellow-hero .yh-crumb .cur { font-weight: 500; }
+.yellow-hero h1 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(36px, 4vw, 52px); line-height: 1.05; letter-spacing: -0.018em; margin: 0 0 14px; }
+.yellow-hero .lede { font-size: 15.5px; line-height: 1.55; max-width: 68ch; margin: 0; opacity: 0.85; }
+.g-footer { background: var(--footer-bg); padding: 80px 0 56px; border-top: 1px solid var(--hair); margin-top: 40px; }
+.g-footer-inner { max-width: 1440px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1.1fr 0.9fr 1.3fr 1.3fr; gap: 48px; }
+.ig-col-brand .ig-logo-foot { display: inline-flex; flex-direction: column; margin-bottom: 32px; }
+.ig-col-brand .ig-logo-foot .word { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -0.024em; line-height: 1; }
+.ig-col-brand .ig-logo-foot .tag { font-size: 10.5px; margin-top: 4px; }
+.ig-col-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; font-size: 22px; font-family: 'Geist', sans-serif; }
+.ig-col-offices h5 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 500; margin: 0 0 14px; }
+.ig-col-offices p { font-size: 14.5px; line-height: 1.6; margin: 0 0 24px; }
+.ig-col-offices p a { text-decoration: underline; text-underline-offset: 3px; }
+.goodness { font-family: 'Oswald', sans-serif; font-size: 56px; line-height: 1.05; margin: 0 0 36px; }
+.ig-contact-pill { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border: 1px solid var(--ink); border-radius: 999px; font-size: 15px; }
+.ig-contact-pill:hover { background: var(--ink); color: var(--footer-bg); }
+
+.g-header { position: sticky; top: 0; z-index: 50; background: #FFFFFF; width: 100%; height: 114px; }
+.g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; gap: 0; }
+.g-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.g-logo img { height: 51px; width: auto; display: block; }
+.g-logo .word, .g-logo .tag { display: none; }
+.g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
+.g-nav a { font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 16px; line-height: 1; color: #000000; text-decoration: none; white-space: nowrap; transition: opacity 0.15s ease; }
+.g-nav a:hover { opacity: 0.6; }
+.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; line-height: 1; color: #000000; background: #FFFFFF; border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
+.g-cta:hover { background: #000000; color: #FFFFFF; }
+.g-cta svg { width: 14px; height: 14px; }
+.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: #FFFFFF; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
+.g-hamburger svg { width: 20px; height: 20px; color: #000000; }
+.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: #FFFFFF; z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
+.g-mobile-drawer.open { display: flex; }
+.g-mobile-drawer a { font-family: 'Geist', sans-serif; font-weight: 600; font-size: 20px; color: #000000; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #EAEAEA; }
+.g-mobile-drawer .g-cta { align-self: flex-start; margin-top: 12px; }
+@media (max-width: 1000px) {
+  .g-header { height: 88px; }
+  .g-header-inner { padding: 0 24px; gap: 24px; }
+  .g-logo img { height: 40px; }
+  .g-nav, .g-cta { display: none; }
+  .g-hamburger { display: inline-flex; margin-left: auto; }
+  .g-mobile-drawer { top: 88px; }
+}
+
+.pb-intro { max-width: 1440px; margin: 0 auto; padding: 40px 48px 8px; }
+.pb-intro h2 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 24px; margin: 0 0 6px; }
+.pb-intro p { font-size: 14.5px; opacity: 0.75; margin: 0; max-width: 68ch; }
+.pb-grid { max-width: 1440px; margin: 24px auto 0; padding: 0 48px 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 1000px) { .pb-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 640px) { .pb-grid { grid-template-columns: 1fr; } }
+.pb-card { display: flex; flex-direction: column; padding: 22px 22px 24px; border: 1px solid var(--hair); border-radius: 14px; background: var(--bg); text-decoration: none; color: var(--ink); transition: all 0.15s ease; }
+.pb-card.available:hover { border-color: var(--ink); box-shadow: 0 4px 12px rgba(18,18,18,0.06); transform: translateY(-2px); }
+.pb-card.soon { opacity: 0.65; cursor: default; }
+.pb-card.soon:hover { opacity: 0.75; }
+.pb-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; }
+.pb-num { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.5; letter-spacing: 0.06em; }
+.pb-status { font-family: 'Geist', sans-serif; font-size: 10px; padding: 3px 9px; border-radius: 999px; letter-spacing: 0.06em; }
+.pb-status.live { background: var(--yellow); color: var(--ink); }
+.pb-status.soon { background: var(--bg-2); color: var(--ink); opacity: 0.6; border: 1px dashed var(--hair-2); }
+.pb-card h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; letter-spacing: -0.01em; margin: 0 0 8px; }
+.pb-purpose { font-size: 13.5px; line-height: 1.5; opacity: 0.75; margin: 0 0 14px; flex: 1; }
+.pb-meta { display: flex; gap: 8px; font-size: 12px; margin-top: 4px; }
+.pb-meta-lbl { font-family: 'Geist', sans-serif; opacity: 0.5; letter-spacing: 0.04em; min-width: 60px; }
+.pb-meta-val { opacity: 0.85; }
+.pb-cta { font-family: 'Geist', sans-serif; font-size: 12px; letter-spacing: 0.02em; margin-top: 14px; opacity: 0.75; }
+.pb-card.available .pb-cta { opacity: 1; }
+.pb-note { max-width: 1440px; margin: 24px auto 40px; padding: 20px 24px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 12px; }
+.pb-note h4 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 14px; margin: 0 0 6px; }
+.pb-note p { font-size: 13px; opacity: 0.75; margin: 0; line-height: 1.55; }
+.pb-note code { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; background: var(--bg); padding: 1px 6px; border-radius: 4px; }
+
+</style>
+</head>
+<body>
+<header class="g-header">
+  <div class="g-header-inner">
+    <a href="https://www.intelligaia.com" class="g-logo" aria-label="Intelligaia">
+      <img src="../Assets/Brand/intelligaia-logo.png" alt="Intelligaia" />
+    </a>
+    <nav class="g-nav">
+      <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+      <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+      <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+      <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+      <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+      <a href="https://www.intelligaia.com/blog">Blog</a>
+      <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    </nav>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+    <button class="g-hamburger" aria-label="Menu" onclick="document.querySelector('.g-mobile-drawer').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 6 H20 M4 12 H20 M4 18 H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="g-mobile-drawer">
+    <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+    <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+    <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+    <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+    <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+    <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+    <a href="https://www.intelligaia.com/blog">Blog</a>
+    <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+  </div>
+</header>
+<section class="yellow-hero">
+  <div class="yellow-hero-inner">
+    <nav class="yh-crumb"><a href="00%20Home.html">Design System</a><span class="sep">/</span><span class="cur">Playbooks</span></nav>
+    <h1>Playbooks.</h1>
+    <p class="lede">Step-by-step recipes for producing Intelligaia-quality output — landing pages, decks, social posts, diagrams, documents. Every playbook ends with a machine-readable spec an AI agent can execute directly.</p>
+  </div>
+</section>
+<section class="pb-intro">
+  <h2>Pick what you're building.</h2>
+  <p>Each playbook lists the inputs it needs, the steps to follow, the guardrails, and a JSON spec at the bottom. Humans read it. Agents parse it. Same source of truth.</p>
+</section>
+<section class="pb-grid">
+    <a class="pb-card available" href="31%20Landing%20Page%20Hero.html">
+      <div class="pb-head">
+        <span class="pb-num">01</span>
+        <span class="pb-status live">Live</span>
+      </div>
+      <h3>Landing page hero</h3>
+      <p class="pb-purpose">A landing-page hero block ready to drop into any product or campaign page.</p>
+      <div class="pb-meta"><span class="pb-meta-lbl">Inputs</span><span class="pb-meta-val">Headline · Sub-copy · Primary CTA · Hero illustration</span></div>
+      <div class="pb-meta"><span class="pb-meta-lbl">Time</span><span class="pb-meta-val">10 min</span></div>
+      <span class="pb-cta">Open playbook →</span>
+    </a>
+    <a class="pb-card soon" href="#">
+      <div class="pb-head">
+        <span class="pb-num">02</span>
+        <span class="pb-status soon">Coming soon</span>
+      </div>
+      <h3>Marketing one-pager</h3>
+      <p class="pb-purpose">A single-page brief for a service, product or workshop offer.</p>
+      <div class="pb-meta"><span class="pb-meta-lbl">Inputs</span><span class="pb-meta-val">Offer name · Value pillars · Metrics · CTA</span></div>
+      <div class="pb-meta"><span class="pb-meta-lbl">Time</span><span class="pb-meta-val">20 min</span></div>
+      <span class="pb-cta">Coming soon</span>
+    </a>
+    <a class="pb-card soon" href="#">
+      <div class="pb-head">
+        <span class="pb-num">03</span>
+        <span class="pb-status soon">Coming soon</span>
+      </div>
+      <h3>Case study spread</h3>
+      <p class="pb-purpose">The 5-page arc: cover → problem → approach → artifacts → outcome.</p>
+      <div class="pb-meta"><span class="pb-meta-lbl">Inputs</span><span class="pb-meta-val">Client · Problem · Approach · Artifacts · Metrics</span></div>
+      <div class="pb-meta"><span class="pb-meta-lbl">Time</span><span class="pb-meta-val">45 min</span></div>
+      <span class="pb-cta">Coming soon</span>
+    </a>
+    <a class="pb-card soon" href="#">
+      <div class="pb-head">
+        <span class="pb-num">04</span>
+        <span class="pb-status soon">Coming soon</span>
+      </div>
+      <h3>Social media post</h3>
+      <p class="pb-purpose">A brand-consistent LinkedIn/Instagram post (square or portrait).</p>
+      <div class="pb-meta"><span class="pb-meta-lbl">Inputs</span><span class="pb-meta-val">Copy · Illustration slot · Aspect ratio</span></div>
+      <div class="pb-meta"><span class="pb-meta-lbl">Time</span><span class="pb-meta-val">5 min</span></div>
+      <span class="pb-cta">Coming soon</span>
+    </a>
+    <a class="pb-card soon" href="#">
+      <div class="pb-head">
+        <span class="pb-num">05</span>
+        <span class="pb-status soon">Coming soon</span>
+      </div>
+      <h3>Company website page</h3>
+      <p class="pb-purpose">A generic content page for intelligaia.com — hero, sections, footer.</p>
+      <div class="pb-meta"><span class="pb-meta-lbl">Inputs</span><span class="pb-meta-val">Page title · Section outline · Illustration slots</span></div>
+      <div class="pb-meta"><span class="pb-meta-lbl">Time</span><span class="pb-meta-val">30 min</span></div>
+      <span class="pb-cta">Coming soon</span>
+    </a>
+    <a class="pb-card soon" href="#">
+      <div class="pb-head">
+        <span class="pb-num">06</span>
+        <span class="pb-status soon">Coming soon</span>
+      </div>
+      <h3>Diagram / process graphic</h3>
+      <p class="pb-purpose">A geometric process diagram for a blog, post or explainer.</p>
+      <div class="pb-meta"><span class="pb-meta-lbl">Inputs</span><span class="pb-meta-val">Node names · Flow direction · Node count</span></div>
+      <div class="pb-meta"><span class="pb-meta-lbl">Time</span><span class="pb-meta-val">15 min</span></div>
+      <span class="pb-cta">Coming soon</span>
+    </a>
+</section>
+<div class="pb-note" style="margin-left: 48px; margin-right: 48px;">
+  <h4>How agents use this</h4>
+  <p>Every playbook page carries a <code>&lt;script type="application/json" id="page-spec"&gt;</code> block. An agent scraping the site reads the JSON, gets the exact rules, tokens and steps for the artifact it's building, and produces output that passes the guardrails without prose parsing.</p>
+</div>
+<footer class="g-footer">
+  <div class="g-footer-inner">
+    <div class="ig-col ig-col-brand">
+      <a href="https://www.intelligaia.com" class="ig-logo-foot">
+        <span class="word">intelligaia</span>
+        <span class="tag">humanizing AI for enterprises</span>
+      </a>
+    </div>
+    <div class="ig-col ig-col-nav">
+      <ul>
+        <li><a href="00%20Home.html">Design System</a></li>
+        <li><a href="30%20Playbooks.html">Playbooks</a></li>
+        <li><a href="20%20Illustration%20System.html">Illustration System</a></li>
+        <li><a href="40%20Marketing%20Collateral.html">Marketing Collateral</a></li>
+        <li><a href="41%20Diagrams.html">Diagrams</a></li>
+      </ul>
+    </div>
+    <div class="ig-col ig-col-offices">
+      <h5>United States</h5>
+      <p>548 Spire Bnd, Apex, NC 27523<br/><a href="mailto:sales@intelligaia.com">sales@intelligaia.com</a></p>
+    </div>
+    <div class="ig-col ig-col-cta">
+      <h2 class="goodness">Goodness =<br/>Rewards</h2>
+      <a href="https://www.intelligaia.com/contact" class="ig-contact-pill">Contact Us</a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

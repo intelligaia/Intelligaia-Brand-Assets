@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intelligaia · Illustration System · Characters</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400&family=Oswald:wght@400;500&family=Silkscreen&display=swap" rel="stylesheet" />
+<style>
+
+:root {
+  --bg: #FFFFFF; --bg-2: #F7F7F5; --bg-3: #EFEFEC;
+  --ink: #121212; --hair: #E6E4DB; --hair-2: #D6D4CC;
+  --footer-bg: #F4F4F2;
+  --yellow: #FFC800; --purple: #6C3CD2;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Geist', 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 15.5px; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; margin: 0; }
+h2, h3 { font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+
+.g-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,0.97); backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--hair); }
+.g-header-inner { max-width: 1440px; margin: 0 auto; padding: 0 48px; height: 88px; display: flex; align-items: center; gap: 32px; }
+.g-logo { display: inline-flex; flex-direction: column; color: var(--ink); }
+.g-logo .word { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -0.024em; line-height: 1; }
+.g-logo .tag { font-size: 10.5px; margin-top: 4px; }
+.g-nav { display: flex; gap: 28px; margin-left: 56px; flex: 1; justify-content: center; }
+.g-nav a { font-size: 14.5px; color: var(--ink); white-space: nowrap; }
+.g-cta { display: inline-flex; align-items: center; gap: 10px; font-size: 14.5px; color: var(--ink); border: 1px solid var(--ink); padding: 10px 22px; border-radius: 999px; background: var(--bg); }
+.g-cta:hover { background: var(--ink); color: var(--bg); }
+.g-cta svg { width: 14px; height: 14px; }
+@media (max-width: 1200px) { .g-nav { display: none; } }
+@media (max-width: 760px) { .g-header-inner { height: 72px; padding: 0 20px; } .g-logo .word { font-size: 24px; } }
+
+.ds-crumb-bar { background: var(--bg-2); border-bottom: 1px solid var(--hair); }
+.ds-crumb-inner { max-width: 1440px; margin: 0 auto; padding: 10px 56px; display: flex; align-items: center; gap: 10px; font-size: 12.5px; }
+.ds-crumb-inner a { color: var(--ink); opacity: 0.7; display: inline-flex; align-items: center; gap: 6px; }
+.ds-crumb-inner a:hover { opacity: 1; }
+.ds-crumb-inner .sep { opacity: 0.35; }
+.ds-crumb-inner .cur { font-weight: 500; }
+@media (max-width: 760px) { .ds-crumb-inner { padding: 10px 20px; } }
+
+.g-footer { background: var(--footer-bg); padding: 80px 0 56px; border-top: 1px solid var(--hair); margin-top: 40px; }
+.g-footer-inner { max-width: 1440px; margin: 0 auto; padding: 0 56px; display: grid; grid-template-columns: 1.1fr 0.9fr 1.3fr 1.3fr; gap: 48px; }
+.ig-col-brand .ig-logo-foot { display: inline-flex; flex-direction: column; margin-bottom: 32px; }
+.ig-col-brand .ig-logo-foot .word { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -0.024em; line-height: 1; }
+.ig-col-brand .ig-logo-foot .tag { font-size: 10.5px; margin-top: 4px; }
+.ig-social { display: flex; gap: 12px; margin-top: 220px; }
+.ig-sic { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; }
+.ig-sic svg { width: 22px; height: 22px; }
+.ig-col-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; font-size: 22px; font-family: 'Oswald', sans-serif; }
+.ig-col-offices h5 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 500; margin: 0 0 14px; }
+.ig-col-offices p { font-size: 14.5px; line-height: 1.6; margin: 0 0 24px; }
+.ig-col-offices p a { text-decoration: underline; text-underline-offset: 3px; }
+.goodness { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 56px; line-height: 1.05; margin: 0 0 36px; }
+.ig-contact-pill { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border: 1px solid var(--ink); border-radius: 999px; font-size: 15px; }
+.ig-contact-pill:hover { background: var(--ink); color: var(--footer-bg); }
+@media (max-width: 1080px) { .g-footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; } .ig-social { margin-top: 24px; } }
+@media (max-width: 640px) { .g-footer-inner { grid-template-columns: 1fr; padding: 0 24px; } .goodness { font-size: 40px; } }
+
+
+/* SLIM HERO */
+.detail-hero { max-width: 1440px; margin: 0 auto; padding: 36px 56px 28px; border-bottom: 1px solid var(--hair); display: flex; align-items: end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.detail-hero .l { max-width: 68ch; }
+.detail-hero .eyebrow { font-family: 'Oswald', sans-serif; font-size: 11px; font-weight: 500; opacity: 0.55; margin-bottom: 10px; letter-spacing: 0.04em; text-transform: uppercase; }
+.detail-hero h1 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 36px; letter-spacing: -0.018em; margin: 0 0 10px; }
+.detail-hero p.lede { font-size: 15px; line-height: 1.55; margin: 0; opacity: 0.8; }
+.detail-hero .r { display: flex; gap: 10px; align-items: center; }
+.dl-all { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: var(--ink); color: var(--yellow); border-radius: 999px; font-size: 13.5px; font-family: 'Geist', sans-serif; font-weight: 500; border: 1px solid var(--ink); cursor: pointer; }
+.dl-all:hover { background: transparent; color: var(--ink); }
+@media (max-width: 760px) { .detail-hero { padding: 24px 24px 20px; } .detail-hero h1 { font-size: 28px; } }
+
+/* PILL BAR — category switch (sticky under header) */
+.pill-bar { position: sticky; top: 88px; z-index: 40; background: rgba(255,255,255,0.97); backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--hair); }
+.pill-bar-inner { max-width: 1440px; margin: 0 auto; padding: 12px 56px; display: flex; gap: 8px; align-items: center; overflow-x: auto; scrollbar-width: none; }
+.pill-bar-inner::-webkit-scrollbar { display: none; }
+.pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border: 1px solid var(--hair-2); background: var(--bg); color: var(--ink); border-radius: 999px; font-size: 13px; white-space: nowrap; font-family: 'Geist', sans-serif; text-decoration: none; transition: all 0.15s ease; }
+.pill:hover { border-color: var(--ink); }
+.pill.active { background: var(--ink); color: var(--yellow); border-color: var(--ink); font-weight: 500; }
+.pill .count { opacity: 0.55; font-size: 11.5px; }
+.pill.active .count { opacity: 0.85; color: var(--yellow); }
+@media (max-width: 760px) { .pill-bar { top: 72px; } .pill-bar-inner { padding: 10px 20px; } }
+
+/* FLAT GRID */
+.grid-page { max-width: 1440px; margin: 0 auto; padding: 32px 56px 40px; }
+.asset-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 14px; }
+.asset-grid.wide { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+.asset-grid.narrow { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+.asset-card { display: flex; flex-direction: column; border: 1px solid var(--hair); border-radius: 10px; overflow: hidden; background: var(--bg); text-decoration: none; color: var(--ink); transition: all 0.15s ease; }
+.asset-card:hover { border-color: var(--ink); box-shadow: 0 4px 12px rgba(18,18,18,0.06); transform: translateY(-2px); }
+.asset-card .thumb { aspect-ratio: 1 / 1; background: var(--bg-2); display: flex; align-items: center; justify-content: center; overflow: hidden; padding: 12px; }
+.asset-card.banner .thumb { aspect-ratio: 16 / 9; padding: 0; }
+.asset-card.section .thumb { aspect-ratio: 4 / 3; padding: 0; }
+.asset-card.wide .thumb { aspect-ratio: 4 / 3; padding: 0; }
+.asset-card .thumb img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.asset-card.banner .thumb img, .asset-card.section .thumb img, .asset-card.wide .thumb img { width: 100%; height: 100%; object-fit: cover; }
+.asset-card .meta { padding: 10px 14px 12px; border-top: 1px solid var(--hair); }
+.asset-card .a-name { font-family: 'Oswald', sans-serif; font-size: 13px; font-weight: 500; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+</style>
+</head>
+<body>
+
+<header class="g-header">
+  <div class="g-header-inner">
+    <a href="https://www.intelligaia.com" class="g-logo">
+      <span class="word">intelligaia</span>
+      <span class="tag">humanizing AI for enterprises</span>
+    </a>
+    <nav class="g-nav">
+      <a href="Intelligaia Design System v2.html">Design System</a>
+      <a href="Intelligaia Illustration System v10.html" style="font-weight:500;">Illustration System</a>
+      <a href="Intelligaia Illustration System - Characters.html">Library</a>
+      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+      <a href="https://www.intelligaia.com/blog">Blog</a>
+    </nav>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us
+      <svg viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+</header>
+
+<div class="ds-crumb-bar">
+  <div class="ds-crumb-inner">
+    <a href="Intelligaia Design System v2.html">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M19 12 H5 M11 6 L5 12 L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Design System
+    </a>
+    <span class="sep">/</span>
+    <a href="Intelligaia Illustration System v10.html">Illustration System</a>
+    <span class="sep">/</span>
+    <span class="cur">Characters</span>
+  </div>
+</div>
+
+<section class="detail-hero">
+  <div class="l">
+    <div class="eyebrow">Library</div>
+    <h1>Characters.</h1>
+    <p class="lede">Human figures — the empathy layer of the system. Named concepts and signature workshop duos.</p>
+  </div>
+  <div class="r">
+    <button class="dl-all" onclick="downloadAll()">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 4 V16 M6 10 L12 16 L18 10 M5 20 H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Download all 39 characters
+    </button>
+  </div>
+</section>
+
+<div class="pill-bar">
+  <div class="pill-bar-inner">
+    <a class="pill active" href="Intelligaia Illustration System - Characters.html">Characters <span class="count">39</span></a>
+    <a class="pill" href="Intelligaia Illustration System - Icons.html">Icons <span class="count">41</span></a>
+    <a class="pill" href="Intelligaia Illustration System - Waves.html">Waves <span class="count">9</span></a>
+    <a class="pill" href="Intelligaia Illustration System - Letters.html">Letters <span class="count">26</span></a>
+    <a class="pill" href="Intelligaia Illustration System - Banners.html">Banners <span class="count">10</span></a>
+    <a class="pill" href="Intelligaia Illustration System - Sections.html">Sections <span class="count">13</span></a>
+  </div>
+</div>
+
+<section class="grid-page">
+  <div class="asset-grid">
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-priya">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%201.png" alt="Priya" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Priya</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-maya">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%202.png" alt="Maya" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Maya</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-aisha">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%203.png" alt="Aisha" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Aisha</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-sofia">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%204.png" alt="Sofia" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Sofia</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-nia">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%205.png" alt="Nia" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Nia</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-zara">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%206.png" alt="Zara" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Zara</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-leila">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%207.png" alt="Leila" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Leila</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-amara">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%208.png" alt="Amara" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Amara</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-yara">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%209.png" alt="Yara" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Yara</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-ines">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2010.png" alt="Ines" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Ines</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-arjun">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2011.png" alt="Arjun" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Arjun</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-david">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2012.png" alt="David" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">David</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-kenji">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2013.png" alt="Kenji" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Kenji</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-rohan">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2014.png" alt="Rohan" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Rohan</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-mateo">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2015.png" alt="Mateo" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Mateo</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-diego">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2016.png" alt="Diego" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Diego</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-malik">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2017.png" alt="Malik" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Malik</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-ren">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2018.png" alt="Ren" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Ren</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-ravi">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2019.png" alt="Ravi" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Ravi</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-nolan">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2020.png" alt="Nolan" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Nolan</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-ava">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2021.png" alt="Ava" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Ava</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-ivy">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2022.png" alt="Ivy" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Ivy</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-lina">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2023.png" alt="Lina" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Lina</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-hana">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2024.png" alt="Hana" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Hana</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-nora">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2025.png" alt="Nora" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Nora</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-elin">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2026.png" alt="Elin" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Elin</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-rue">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2027.png" alt="Rue" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Rue</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-cleo">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2028.png" alt="Cleo" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Cleo</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-talia">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2029.png" alt="Talia" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Talia</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-ezra">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2030.png" alt="Ezra" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Ezra</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-kai">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2031.png" alt="Kai" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Kai</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-jules">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2032.png" alt="Jules" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Jules</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-oren">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2033.png" alt="Oren" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Oren</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-sasha">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2034.png" alt="Sasha" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Sasha</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-milo">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2035.png" alt="Milo" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Milo</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-theo">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2036.png" alt="Theo" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Theo</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-kira">
+    <div class="thumb"><img src="approved/human/approved_human_character_concept%2037.png" alt="Kira" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Kira</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-ada-and-idris">
+    <div class="thumb"><img src="approved/human/approved_human_journey-mapping-cocreation_warm-mood_v01.png" alt="Ada &amp; Idris" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Ada &amp; Idris</p>
+    </div>
+  </a>
+  <a class="asset-card wide" href="Intelligaia Illustration System - Asset.html?id=character-rina-and-otis">
+    <div class="thumb"><img src="approved/human/approved_human_workshops-design-fiction_warm-mood_v01.png" alt="Rina &amp; Otis" loading="lazy" /></div>
+    <div class="meta">
+      <p class="a-name">Rina &amp; Otis</p>
+    </div>
+  </a>
+  </div>
+</section>
+
+<script>
+function downloadAll() {
+  const items = [{"path": "approved/human/approved_human_character_concept%201.png", "filename": "approved_human_character_concept 1.png"}, {"path": "approved/human/approved_human_character_concept%202.png", "filename": "approved_human_character_concept 2.png"}, {"path": "approved/human/approved_human_character_concept%203.png", "filename": "approved_human_character_concept 3.png"}, {"path": "approved/human/approved_human_character_concept%204.png", "filename": "approved_human_character_concept 4.png"}, {"path": "approved/human/approved_human_character_concept%205.png", "filename": "approved_human_character_concept 5.png"}, {"path": "approved/human/approved_human_character_concept%206.png", "filename": "approved_human_character_concept 6.png"}, {"path": "approved/human/approved_human_character_concept%207.png", "filename": "approved_human_character_concept 7.png"}, {"path": "approved/human/approved_human_character_concept%208.png", "filename": "approved_human_character_concept 8.png"}, {"path": "approved/human/approved_human_character_concept%209.png", "filename": "approved_human_character_concept 9.png"}, {"path": "approved/human/approved_human_character_concept%2010.png", "filename": "approved_human_character_concept 10.png"}, {"path": "approved/human/approved_human_character_concept%2011.png", "filename": "approved_human_character_concept 11.png"}, {"path": "approved/human/approved_human_character_concept%2012.png", "filename": "approved_human_character_concept 12.png"}, {"path": "approved/human/approved_human_character_concept%2013.png", "filename": "approved_human_character_concept 13.png"}, {"path": "approved/human/approved_human_character_concept%2014.png", "filename": "approved_human_character_concept 14.png"}, {"path": "approved/human/approved_human_character_concept%2015.png", "filename": "approved_human_character_concept 15.png"}, {"path": "approved/human/approved_human_character_concept%2016.png", "filename": "approved_human_character_concept 16.png"}, {"path": "approved/human/approved_human_character_concept%2017.png", "filename": "approved_human_character_concept 17.png"}, {"path": "approved/human/approved_human_character_concept%2018.png", "filename": "approved_human_character_concept 18.png"}, {"path": "approved/human/approved_human_character_concept%2019.png", "filename": "approved_human_character_concept 19.png"}, {"path": "approved/human/approved_human_character_concept%2020.png", "filename": "approved_human_character_concept 20.png"}, {"path": "approved/human/approved_human_character_concept%2021.png", "filename": "approved_human_character_concept 21.png"}, {"path": "approved/human/approved_human_character_concept%2022.png", "filename": "approved_human_character_concept 22.png"}, {"path": "approved/human/approved_human_character_concept%2023.png", "filename": "approved_human_character_concept 23.png"}, {"path": "approved/human/approved_human_character_concept%2024.png", "filename": "approved_human_character_concept 24.png"}, {"path": "approved/human/approved_human_character_concept%2025.png", "filename": "approved_human_character_concept 25.png"}, {"path": "approved/human/approved_human_character_concept%2026.png", "filename": "approved_human_character_concept 26.png"}, {"path": "approved/human/approved_human_character_concept%2027.png", "filename": "approved_human_character_concept 27.png"}, {"path": "approved/human/approved_human_character_concept%2028.png", "filename": "approved_human_character_concept 28.png"}, {"path": "approved/human/approved_human_character_concept%2029.png", "filename": "approved_human_character_concept 29.png"}, {"path": "approved/human/approved_human_character_concept%2030.png", "filename": "approved_human_character_concept 30.png"}, {"path": "approved/human/approved_human_character_concept%2031.png", "filename": "approved_human_character_concept 31.png"}, {"path": "approved/human/approved_human_character_concept%2032.png", "filename": "approved_human_character_concept 32.png"}, {"path": "approved/human/approved_human_character_concept%2033.png", "filename": "approved_human_character_concept 33.png"}, {"path": "approved/human/approved_human_character_concept%2034.png", "filename": "approved_human_character_concept 34.png"}, {"path": "approved/human/approved_human_character_concept%2035.png", "filename": "approved_human_character_concept 35.png"}, {"path": "approved/human/approved_human_character_concept%2036.png", "filename": "approved_human_character_concept 36.png"}, {"path": "approved/human/approved_human_character_concept%2037.png", "filename": "approved_human_character_concept 37.png"}, {"path": "approved/human/approved_human_journey-mapping-cocreation_warm-mood_v01.png", "filename": "approved_human_journey-mapping-cocreation_warm-mood_v01.png"}, {"path": "approved/human/approved_human_workshops-design-fiction_warm-mood_v01.png", "filename": "approved_human_workshops-design-fiction_warm-mood_v01.png"}];
+  items.forEach((it, i) => {
+    setTimeout(() => {
+      const a = document.createElement('a');
+      a.href = it.path;
+      a.download = it.filename;
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+    }, i * 150);
+  });
+}
+</script>
+
+<footer class="g-footer">
+  <div class="g-footer-inner">
+    <div class="ig-col ig-col-brand">
+      <a href="https://www.intelligaia.com" class="ig-logo-foot">
+        <span class="word">intelligaia</span>
+        <span class="tag">humanizing AI for enterprises</span>
+      </a>
+      <div class="ig-social">
+        <a href="https://www.linkedin.com/company/intelligaia/" aria-label="LinkedIn" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.27 18.5V10.13H5.5V18.5H8.27M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5Z"/></svg></a>
+        <a href="https://www.instagram.com/intelligaia" aria-label="Instagram" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/></svg></a>
+        <a href="https://youtube.com/@intelligaia-studio" aria-label="YouTube" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10 15L15.19 12L10 9V15M21.56 7.17C21.69 7.64 21.78 8.27 21.84 9.07C21.91 9.87 21.94 10.56 21.94 11.16L22 12C22 14.19 21.84 15.8 21.56 16.83C21.31 17.73 20.73 18.31 19.83 18.56C19.36 18.69 18.5 18.78 17.18 18.84C15.88 18.91 14.69 18.94 13.59 18.94L12 19C7.81 19 5.2 18.84 4.17 18.56C3.27 18.31 2.69 17.73 2.44 16.83C2.31 16.36 2.22 15.73 2.16 14.93C2.09 14.13 2.06 13.44 2.06 12.84L2 12C2 9.81 2.16 8.2 2.44 7.17C2.69 6.27 3.27 5.69 4.17 5.44C4.64 5.31 5.5 5.22 6.82 5.16C8.12 5.09 9.31 5.06 10.41 5.06L12 5C16.19 5 18.8 5.16 19.83 5.44C20.73 5.69 21.31 6.27 21.56 7.17Z"/></svg></a>
+      </div>
+    </div>
+    <div class="ig-col ig-col-nav">
+      <ul>
+        <li><a href="Intelligaia Design System v2.html">Design System</a></li>
+        <li><a href="Intelligaia Illustration System v10.html">Illustration System</a></li>
+        <li><a href="Intelligaia Illustration System - Characters.html">Library</a></li>
+      </ul>
+    </div>
+    <div class="ig-col ig-col-offices">
+      <h5>United States</h5>
+      <p>548 Spire Bnd, Apex, NC 27523<br/><a href="mailto:sales@intelligaia.com">sales@intelligaia.com</a><br/>Ph: <a href="tel:+12524001521">252-400-1521</a></p>
+      <h5>INDIA</h5>
+      <p>Industrial Plot I-63,<br/>Sector - 83 Alpha IT City,<br/>Mohali, Punjab - 140306</p>
+    </div>
+    <div class="ig-col ig-col-cta">
+      <h2 class="goodness">Goodness =<br/>Rewards</h2>
+      <a href="https://www.intelligaia.com/contact" class="ig-contact-pill">Contact Us
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

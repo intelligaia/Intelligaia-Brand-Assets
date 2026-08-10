@@ -1,0 +1,24 @@
+# ── macOS ───────────────────────────────────────────────
+.DS_Store
+._*
+.Spotlight-V100
+.Trashes
+.fseventsd
+Icon?
+
+# ── Editor / IDE cruft ──────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-workspace
+*.sublime-project
+
+# ── Project cleanup zones ──────────────────────────────
+_to_delete/
+
+# ── Node / build artifacts (in case JS tooling is added later) ──
+node_modules/
+dist/
+.cache/
