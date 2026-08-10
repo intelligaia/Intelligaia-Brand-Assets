@@ -6,7 +6,7 @@
 .fseventsd
 Icon?
 
-# ── Editor / IDE cruft ──────────────────────────────────
+# ── Editor / IDE ────────────────────────────────────────
 .vscode/
 .idea/
 *.swp
@@ -15,10 +15,11 @@ Icon?
 *.sublime-workspace
 *.sublime-project
 
-# ── Project cleanup zones ──────────────────────────────
-_to_delete/
-
-# ── Node / build artifacts (in case JS tooling is added later) ──
+# ── Build artifacts ─────────────────────────────────────
 node_modules/
 dist/
 .cache/
+
+# ── Scratch ─────────────────────────────────────────────
+_scratch/
+*.tmp
