@@ -95,20 +95,40 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 .df-tail { grid-column: 1 / -1; display: flex; justify-content: space-between; align-items: center; padding-top: 32px; margin-top: 32px; border-top: 1px solid var(--hair); font-family: 'Geist', sans-serif; font-size: 12.5px; color: var(--ink-muted); }
 .df-switch { color: var(--yellow); }
 @media (max-width: 800px) { .dark-footer-inner { grid-template-columns: 1fr; } .df-cols { grid-template-columns: 1fr 1fr; } }
+
+/* ── GLOBAL HEADER — brand mark + section nav ── */
+.g-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+.g-logo img { height:34px; width:auto; display:block; }
+.g-mark-wrap { display:flex; align-items:center; }
+.g-mark { height:15px; width:60px; display:block; }
+.g-sys { font-family:'Oswald',sans-serif; font-weight:500; font-size:15px; letter-spacing:-0.005em; white-space:nowrap; }
+.g-nav { display:flex; align-items:center; justify-content:flex-end; gap:19px; flex:1; margin:0; padding:0 24px; list-style:none; }
+.g-nav a { font-family:'Raleway',sans-serif; font-weight:500; font-size:12.5px; white-space:nowrap; text-decoration:none; transition:color 0.15s ease; }
+.g-nav a:hover { color:#FFC800; }
+@media (max-width:1240px){ .g-nav{ display:none; } }
+@media (max-width:1000px){ .g-cta{ display:none; } }
+
 </style>
 </head>
 <body>
 <header class="g-header">
   <div class="g-header-inner">
-    <a href="00%20Home.html" class="g-logo"><img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" /></a>
+    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
+      <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
+      <span class="g-mark-wrap" style="color:#EEF1FB"><svg class="g-mark" viewBox="0 0 64 16" aria-hidden="true"><circle cx="7" cy="8" r="6" fill="#FFC800"/><rect x="18" y="2" width="12" height="12" rx="2" fill="#4A8BF5"/><polygon points="42,2 48,14 36,14" fill="#8A5AF0"/><polygon points="57,2 63,8 57,14 51,8" fill="currentColor"/></svg></span>
+      <span class="g-sys">Brand Assets</span>
+    </a>
     <nav class="g-nav">
-      <a href="30%20Playbooks.html">Playbooks</a>
-      <a href="../light/20%20Illustration%20System.html">Illustration System</a>
-      <a href="../light/40%20Marketing%20Collateral.html">Marketing Collateral</a>
-      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
-      <a href="https://www.intelligaia.com/blog">Blog</a>
+      <a href="10%20Foundations.html">Foundations</a>
+      <a href="20%20Brand%20Assets.html">Brand Assets</a>
+      <a href="30%20Diagrams.html">Diagrams</a>
+      <a href="40%20Service%20Catalog.html">Service Catalog</a>
+      <a href="50%20Landing%20Pages.html">Landing</a>
+      <a href="60%20Case%20Studies.html">Case Studies</a>
+      <a href="70%20Whitepapers.html">Whitepapers</a>
+      <a href="80%20Social%20Media.html">Social</a>
     </nav>
-    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+    <a href="00%20Home.html" class="g-cta">Home</a>
   </div>
 </header>
 <main>
@@ -272,9 +292,9 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
   <div class="dark-footer-inner">
     <div><div class="df-logo"><img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" /></div><p class="df-tag">humanizing AI for enterprises</p></div>
     <div class="df-cols">
-      <div><h5>System</h5><ul><li><a href="00%20Home.html">Portal home</a></li><li><a href="10%20Foundations.html">Foundations</a></li><li><a href="../light/20%20Illustration%20System.html">Illustration library</a></li></ul></div>
+      <div><h5>System</h5><ul><li><a href="00%20Home.html">Portal home</a></li><li><a href="10%20Foundations.html">Foundations</a></li><li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li></ul></div>
       <div><h5>Foundations</h5><ul><li><a href="11%20Principles.html">Principles</a></li><li><a href="12%20Colour.html">Colour</a></li><li><a href="13%20Typography.html">Typography</a></li></ul></div>
-      <div><h5>Intelligaia</h5><ul><li><a href="https://www.intelligaia.com">intelligaia.com</a></li><li><a href="https://www.intelligaia.com/portfolio">Portfolio</a></li><li><a href="https://www.intelligaia.com/contact">Contact</a></li></ul></div>
+      <div><h5>Intelligaia</h5><ul><li><a href="https://www.intelligaia.com">intelligaia.com</a></li><li></li><li><a href="https://www.intelligaia.com/contact">Contact</a></li></ul></div>
     </div>
     <div class="df-tail"><span>© 2026 Intelligaia</span><a href="../light/12%20Colour.html" class="df-switch">Switch to light theme →</a></div>
   </div>

@@ -359,22 +359,73 @@ body::before {
 .pp-chip strong { font-weight: 500; color: var(--ink); }
 .pp-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); flex: none; }
 
+
+/* ── GLOBAL HEADER — brand mark + section nav ── */
+.g-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+.g-logo img { height:34px; width:auto; display:block; }
+.g-mark-wrap { display:flex; align-items:center; }
+.g-mark { height:15px; width:60px; display:block; }
+.g-sys { font-family:'Oswald',sans-serif; font-weight:500; font-size:15px; letter-spacing:-0.005em; white-space:nowrap; }
+.g-nav { display:flex; align-items:center; justify-content:flex-end; gap:19px; flex:1; margin:0; padding:0 24px; list-style:none; }
+.g-nav a { font-family:'Raleway',sans-serif; font-weight:500; font-size:12.5px; white-space:nowrap; text-decoration:none; transition:color 0.15s ease; }
+.g-nav a:hover { color:#FFC800; }
+@media (max-width:1240px){ .g-nav{ display:none; } }
+@media (max-width:1000px){ .g-cta{ display:none; } }
+
+
+/* ── PLAYBOOK GROUPS ── */
+.pb-group { margin-top: 40px; }
+.pb-group + .pb-group { margin-top: 64px; }
+.pb-group-hd { display:flex; align-items:baseline; gap:14px; padding-bottom:14px; }
+.pb-kind { font-family:'Raleway',sans-serif; font-size:10.5px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#04050A; background:var(--ink-muted); padding:4px 12px; border-radius:999px; }
+.pb-kind.produce { background:var(--yellow); }
+.pb-group-note { font-family:'Oswald',sans-serif; font-weight:400; font-size:15px; color:var(--ink-muted); }
+.portal-index { border-top:1px solid var(--hair); margin-top:0; }
+
+/* thumbnail variants */
+.ix-thumb.thumb-diagram svg { width:80%; height:80%; }
+.ix-thumb.thumb-sheet { flex-direction:column; align-items:stretch; justify-content:center; gap:4px; padding:14px; background:#F4EFDF; }
+.ix-thumb.thumb-sheet i { display:block; height:3px; background:rgba(4,5,10,0.25); border-radius:1px; }
+.ix-thumb.thumb-sheet i.head { height:7px; background:#04050A; width:65%; margin-bottom:3px; }
+.ix-thumb.thumb-sheet i.cta { height:8px; background:#FFC800; width:45%; border-radius:999px; margin-top:3px; }
+.ix-thumb.thumb-landing { flex-direction:column; align-items:flex-start; justify-content:center; gap:5px; padding:14px; background:#FFC800; }
+.ix-thumb.thumb-landing i { display:block; height:5px; background:#04050A; border-radius:1px; width:70%; }
+.ix-thumb.thumb-landing i:nth-child(2){ width:50%; }
+.ix-thumb.thumb-landing i.cta { height:9px; width:38%; border-radius:999px; margin-top:3px; }
+.ix-thumb.thumb-pages { gap:3px; padding:12px 8px; align-items:stretch; }
+.ix-thumb.thumb-pages i { display:block; flex:1; background:#F4EFDF; border-radius:2px; }
+.ix-thumb.thumb-pages i.y { background:#FFC800; }
+.ix-thumb.thumb-doc { gap:5px; padding:12px; background:#F4EFDF; align-items:stretch; }
+.ix-thumb.thumb-doc .c { display:flex; flex-direction:column; gap:2px; flex:1; }
+.ix-thumb.thumb-doc .c i { display:block; height:2px; background:rgba(4,5,10,0.3); border-radius:1px; }
+.ix-thumb.thumb-doc .c i.head { height:4px; background:#04050A; width:80%; margin-bottom:2px; }
+.ix-thumb.thumb-post { flex-direction:column; align-items:flex-start; justify-content:space-between; padding:14px; background:#FFC800; }
+.ix-thumb.thumb-post i { display:block; background:#04050A; border-radius:1px; height:4px; width:70%; }
+.ix-thumb.thumb-post i.big { height:8px; width:80%; }
+.ix-thumb.thumb-post i.mid { width:50%; }
+.ix-thumb.thumb-post i.dot { width:14px; height:14px; border-radius:50%; margin-top:auto; }
+
 </style>
 </head>
 <body>
 <header class="g-header">
   <div class="g-header-inner">
-    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia">
-      <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
+    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
+      <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
+      <span class="g-mark-wrap" style="color:#EEF1FB"><svg class="g-mark" viewBox="0 0 64 16" aria-hidden="true"><circle cx="7" cy="8" r="6" fill="#FFC800"/><rect x="18" y="2" width="12" height="12" rx="2" fill="#4A8BF5"/><polygon points="42,2 48,14 36,14" fill="#8A5AF0"/><polygon points="57,2 63,8 57,14 51,8" fill="currentColor"/></svg></span>
+      <span class="g-sys">Brand Assets</span>
     </a>
     <nav class="g-nav">
-      <a href="30%20Playbooks.html">Playbooks</a>
-      <a href="../light/20%20Illustration%20System.html">Illustration System</a>
-      <a href="30%20Playbooks.html">Marketing Collateral</a>
-      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
-      <a href="https://www.intelligaia.com/blog">Blog</a>
+      <a href="10%20Foundations.html">Foundations</a>
+      <a href="20%20Brand%20Assets.html">Brand Assets</a>
+      <a href="30%20Diagrams.html">Diagrams</a>
+      <a href="40%20Service%20Catalog.html">Service Catalog</a>
+      <a href="50%20Landing%20Pages.html">Landing</a>
+      <a href="60%20Case%20Studies.html">Case Studies</a>
+      <a href="70%20Whitepapers.html">Whitepapers</a>
+      <a href="80%20Social%20Media.html">Social</a>
     </nav>
-    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+    <a href="00%20Home.html" class="g-cta">Home</a>
   </div>
 </header>
 <main>
@@ -392,7 +443,7 @@ body::before {
       </h1>
       <p class="hero-h2 reveal" data-delay="5">A knowledge base for humans and agents to produce Intelligaia-quality output.</p>
       <div class="btn-row reveal" data-delay="6">
-        <a href="30%20Playbooks.html" class="btn-p">Start with a playbook →</a>
+        <a href="00%20Home.html#playbooks" class="btn-p">Start with a playbook →</a>
         <a href="#foundations" class="btn-o">Explore foundations</a>
       </div>
     </div>
@@ -470,129 +521,126 @@ body::before {
   </div>
 </section>
 
-<!-- PORTAL — Section index (Section 2) -->
-<section class="section" id="portal">
-  <span class="eyebrow reveal">The Portal</span>
+<!-- PLAYBOOKS — every section of the brand system -->
+<section class="section" id="playbooks">
+  <span class="eyebrow reveal">Playbooks</span>
   <h2 class="big-title reveal" data-delay="1">Written for humans. Structured for agents.</h2>
-  <p class="big-lede reveal" data-delay="2">Every rule, asset and template lives here once — as prose a designer reads and as JSON an agent parses. The same source feeds a person opening Figma and a skill generating a service catalog, case study, landing page or whitepaper. Guidelines, benchmarks and variations, always in sync.</p>
+  <p class="big-lede reveal" data-delay="2">Every rule, asset and template lives here once — as prose a designer reads and as JSON an agent parses. Reference playbooks define the language. Production playbooks turn it into artifacts.</p>
 
-  <div class="portal-index reveal" data-delay="3">
+  <div class="pb-group reveal" data-delay="3">
+    <div class="pb-group-hd"><span class="pb-kind">Reference</span><span class="pb-group-note">What the brand is made of</span></div>
+    <div class="portal-index">
 
-    <!-- 01 · Foundations -->
-    <a href="10%20Foundations.html" class="ix-row">
+      <a href="10%20Foundations.html" class="ix-row">
+        <div class="ix-title-wrap">
+          <span class="ix-sub">Principles · Colour · Type</span>
+          <h3 class="ix-title">Foundations</h3>
+        </div>
+        <div class="ix-thumbs">
+          <div class="ix-thumb thumb-nums"><span>Goodness</span><span>Intent</span><span>Human</span></div>
+          <div class="ix-thumb thumb-swatches"><span style="background:#FFC800"></span><span style="background:#4A8BF5"></span><span style="background:#8A5AF0"></span><span style="background:#F4F6FF"></span></div>
+          <div class="ix-thumb thumb-aa">Aa</div>
+        </div>
+        <span class="ix-arrow">→</span>
+      </a>
 
-      <div class="ix-title-wrap">
-        <span class="ix-sub">What defines us</span>
-        <h3 class="ix-title">Foundations</h3>
-      </div>
-      <div class="ix-thumbs">
-        <div class="ix-thumb thumb-nums"><span>Goodness</span><span>Intent</span><span>Human</span></div>
-        <div class="ix-thumb thumb-swatches"><span style="background:#FFC800"></span><span style="background:#4A8BF5"></span><span style="background:#8A5AF0"></span><span style="background:#F4F6FF"></span></div>
-        <div class="ix-thumb thumb-aa">Aa</div>
-      </div>
-      <span class="ix-arrow">→</span>
-    </a>
+      <a href="20%20Brand%20Assets.html" class="ix-row">
+        <div class="ix-title-wrap">
+          <span class="ix-sub">Illustrations · icons · waves</span>
+          <h3 class="ix-title">Brand assets</h3>
+        </div>
+        <div class="ix-thumbs">
+          <div class="ix-thumb"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Character"/></div>
+          <div class="ix-thumb"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Device"/></div>
+          <div class="ix-thumb"><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Nature"/></div>
+          <div class="ix-thumb"><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Object"/></div>
+        </div>
+        <span class="ix-arrow">→</span>
+      </a>
 
-    <!-- 02 · Assets & Diagrams -->
-    <a href="../light/20%20Illustration%20System.html" class="ix-row">
+      <a href="30%20Diagrams.html" class="ix-row">
+        <div class="ix-title-wrap">
+          <span class="ix-sub">Flows · matrices · journeys</span>
+          <h3 class="ix-title">Diagrams</h3>
+        </div>
+        <div class="ix-thumbs">
+          <div class="ix-thumb thumb-photo"><img src="../assets/marketing/sections/approved_section_journey-mapping-insights_tech-ai_v01.png" alt="Diagram"/></div>
+          <div class="ix-thumb thumb-diagram">
+            <svg viewBox="0 0 60 40" fill="none"><circle cx="10" cy="20" r="6" stroke="#FFC800" stroke-width="1.6"/><rect x="24" y="14" width="12" height="12" rx="2" stroke="#FFC800" stroke-width="1.6"/><polygon points="52,14 58,20 52,26 46,20" stroke="#FFC800" stroke-width="1.6"/><line x1="16" y1="20" x2="23" y2="20" stroke="#FFC800" stroke-width="1.4" stroke-dasharray="2 2"/><line x1="37" y1="20" x2="45" y2="20" stroke="#FFC800" stroke-width="1.4" stroke-dasharray="2 2"/></svg>
+          </div>
+        </div>
+        <span class="ix-arrow">→</span>
+      </a>
 
-      <div class="ix-title-wrap">
-        <span class="ix-sub">What we build with</span>
-        <h3 class="ix-title">Assets &amp; Diagrams</h3>
-      </div>
-      <div class="ix-thumbs">
-        <div class="ix-thumb"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Character"/></div>
-        <div class="ix-thumb"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Device"/></div>
-        <div class="ix-thumb"><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Nature"/></div>
-        <div class="ix-thumb thumb-photo"><img src="../assets/marketing/sections/approved_section_journey-mapping-insights_tech-ai_v01.png" alt="Diagram"/></div>
-      </div>
-      <span class="ix-arrow">→</span>
-    </a>
+      <a href="40%20Service%20Catalog.html" class="ix-row">
+        <div class="ix-title-wrap">
+          <span class="ix-sub">Document templates</span>
+          <h3 class="ix-title">Service catalog</h3>
+        </div>
+        <div class="ix-thumbs">
+          <div class="ix-thumb thumb-photo"><img src="../assets/marketing/sections/approved_section_ux-design-systems_vector-flat_v01.png" alt="Catalog"/></div>
+          <div class="ix-thumb thumb-sheet"><i class="head"></i><i></i><i></i><i></i><i class="cta"></i></div>
+        </div>
+        <span class="ix-arrow">→</span>
+      </a>
 
-    <!-- 03 · Templates & Catalog -->
-    <a href="../light/40%20Marketing%20Collateral.html" class="ix-row">
-
-      <div class="ix-title-wrap">
-        <span class="ix-sub">What we've built before</span>
-        <h3 class="ix-title">Templates &amp; Catalog</h3>
-      </div>
-      <div class="ix-thumbs">
-        <div class="ix-thumb thumb-photo"><img src="../assets/marketing/sections/approved_section_ux-design-systems_vector-flat_v01.png" alt="Marketing catalog"/></div>
-        <div class="ix-thumb thumb-photo"><img src="../assets/marketing/banners/approved_banner_homepage-hero_isometric-gradient_v01.png" alt="Landing page"/></div>
-        <div class="ix-thumb thumb-photo"><img src="../assets/marketing/sections/approved_section_ux-design-branding_3d-render_v01.png" alt="Case study"/></div>
-        <div class="ix-thumb thumb-soon"></div>
-      </div>
-      <span class="ix-arrow">→</span>
-    </a>
-
-    <!-- 04 · Playbooks -->
-    <a href="30%20Playbooks.html" class="ix-row">
-
-      <div class="ix-title-wrap">
-        <span class="ix-sub">How to build new work</span>
-        <h3 class="ix-title">Playbooks</h3>
-      </div>
-      <div class="ix-thumbs">
-        <div class="ix-thumb thumb-yellow-banner"></div>
-        <div class="ix-thumb thumb-soon"></div>
-        <div class="ix-thumb thumb-soon"></div>
-        <div class="ix-thumb thumb-soon"></div>
-      </div>
-      <span class="ix-arrow">→</span>
-    </a>
-
+    </div>
   </div>
-</section>
 
-<!-- FOUNDATIONS -->
-<section class="section" id="foundations">
-  <span class="eyebrow reveal">Foundations</span>
-  <h2 class="big-title reveal" data-delay="1">Four brand colours. Two type families. Three principles.</h2>
-  <p class="big-lede reveal" data-delay="2">Everything downstream — every artifact, every asset, every diagram — obeys these atoms.</p>
-  <div class="foundation-grid-dark">
-    <a href="11%20Principles.html" class="fnd-tile-dark reveal" data-delay="3">
-      <span class="fnd-tile-lbl">Principles</span>
-      <div class="fnd-p-list">
-        <div><span>Goodness leads</span></div>
-        <div><span>Intent-aware</span></div>
-        <div><span>Human-centered</span></div>
-      </div>
-      <span class="fnd-tile-cta">Open →</span>
-    </a>
-    <a href="12%20Colour.html" class="fnd-tile-dark reveal" data-delay="4">
-      <span class="fnd-tile-lbl">Colour</span>
-      <div class="fnd-c-grid">
-        <span style="background:#FFC800;"></span>
-        <span style="background:#F4F6FF;"></span>
-        <span style="background:#4A8BF5;"></span>
-        <span style="background:#8A5AF0;"></span>
-      </div>
-      <span class="fnd-tile-cta">Open →</span>
-    </a>
-    <a href="13%20Typography.html" class="fnd-tile-dark reveal" data-delay="5">
-      <span class="fnd-tile-lbl">Typography</span>
-      <div class="fnd-t-row">
-        <span style="font-family:'Oswald',sans-serif;font-weight:500;font-size:44px;letter-spacing:-0.01em;">Aa</span>
-        <span style="font-family:'Geist',sans-serif;font-weight:400;font-size:34px;opacity:0.7;">Aa</span>
-      </div>
-      <span class="fnd-tile-cta">Open →</span>
-    </a>
-  </div>
-</section>
+  <div class="pb-group reveal" data-delay="4">
+    <div class="pb-group-hd"><span class="pb-kind produce">Produce</span><span class="pb-group-note">What you ship with it</span></div>
+    <div class="portal-index">
 
-<!-- ILLUSTRATION LIBRARY -->
-<section class="section" id="illustration">
-  <span class="eyebrow reveal">Illustration Library</span>
-  <h2 class="big-title reveal" data-delay="1">166 assets across 7 categories.</h2>
-  <p class="big-lede reveal" data-delay="2">Every asset built from the same three primitives, the same three-stage construction, the same brand palette.</p>
-  <div class="lib-strip-dark reveal" data-delay="3">
-    <div class="lib-thumb-dark"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Characters"/><span>Characters</span></div>
-    <div class="lib-thumb-dark"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Devices"/><span>Devices</span></div>
-    <div class="lib-thumb-dark"><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Nature"/><span>Nature</span></div>
-    <div class="lib-thumb-dark"><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Objects"/><span>Objects</span></div>
-    <div class="lib-thumb-dark"><img src="../assets/icons/UI/Account-Circle-01.svg" alt="Icons"/><span>Icons</span></div>
+      <a href="50%20Landing%20Pages.html" class="ix-row">
+        <div class="ix-title-wrap">
+          <span class="ix-sub">Hero · sections · CTA</span>
+          <h3 class="ix-title">Landing pages</h3>
+        </div>
+        <div class="ix-thumbs">
+          <div class="ix-thumb thumb-landing"><i></i><i></i><i class="cta"></i></div>
+          <div class="ix-thumb thumb-photo"><img src="../assets/marketing/banners/approved_banner_homepage-hero_isometric-gradient_v01.png" alt="Landing"/></div>
+        </div>
+        <span class="ix-arrow">→</span>
+      </a>
+
+      <a href="60%20Case%20Studies.html" class="ix-row">
+        <div class="ix-title-wrap">
+          <span class="ix-sub">Problem → approach → outcome</span>
+          <h3 class="ix-title">Case studies</h3>
+        </div>
+        <div class="ix-thumbs">
+          <div class="ix-thumb thumb-pages"><i></i><i class="y"></i><i></i><i></i></div>
+          <div class="ix-thumb thumb-photo"><img src="../assets/marketing/sections/approved_section_ux-design-audit_tech-ai_v01.png" alt="Case study"/></div>
+        </div>
+        <span class="ix-arrow">→</span>
+      </a>
+
+      <a href="70%20Whitepapers.html" class="ix-row">
+        <div class="ix-title-wrap">
+          <span class="ix-sub">Engineering · dual-track</span>
+          <h3 class="ix-title">Whitepapers</h3>
+        </div>
+        <div class="ix-thumbs">
+          <div class="ix-thumb thumb-doc"><span class="c"><i class="head"></i><i></i><i></i><i></i></span><span class="c"><i class="head"></i><i></i><i></i><i></i></span></div>
+          <div class="ix-thumb thumb-photo"><img src="../assets/marketing/sections/approved_section_ux-design-strategy_isometric-gradient_v01.png" alt="Whitepaper"/></div>
+        </div>
+        <span class="ix-arrow">→</span>
+      </a>
+
+      <a href="80%20Social%20Media.html" class="ix-row">
+        <div class="ix-title-wrap">
+          <span class="ix-sub">Square · portrait · story</span>
+          <h3 class="ix-title">Social media</h3>
+        </div>
+        <div class="ix-thumbs">
+          <div class="ix-thumb thumb-post"><i class="big"></i><i class="mid"></i><i class="dot"></i></div>
+          <div class="ix-thumb thumb-photo"><img src="../assets/marketing/sections/approved_section_workshops-mvp_3d-render_v01.png" alt="Social"/></div>
+        </div>
+        <span class="ix-arrow">→</span>
+      </a>
+
+    </div>
   </div>
-  <a href="../light/20%20Illustration%20System.html" class="btn-o reveal" data-delay="4" style="margin-top: 32px; align-self: flex-start;">Open the library →</a>
 </section>
 
 </main>
@@ -609,7 +657,7 @@ body::before {
         <h5>System</h5>
         <ul>
           <li><a href="00%20Home.html">Home</a></li>
-          <li><a href="30%20Playbooks.html">Playbooks</a></li>
+          <li><a href="00%20Home.html#playbooks">Playbooks</a></li>
           <li><a href="12%20Colour.html">Colour</a></li>
           <li><a href="13%20Typography.html">Typography</a></li>
         </ul>
@@ -617,15 +665,15 @@ body::before {
       <div>
         <h5>Illustration</h5>
         <ul>
-          <li><a href="../light/20%20Illustration%20System.html">System</a></li>
+          <li><a href="../light/20%20Brand%20Assets.html">System</a></li>
           <li><a href="../light/22%20Characters.html">Library</a></li>
         </ul>
       </div>
       <div>
         <h5>Company</h5>
         <ul>
-          <li><a href="https://www.intelligaia.com/portfolio">Portfolio</a></li>
-          <li><a href="https://www.intelligaia.com/blog">Blog</a></li>
+          <li></li>
+          <li></li>
           <li><a href="https://www.intelligaia.com/contact">Contact</a></li>
         </ul>
       </div>

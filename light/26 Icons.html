@@ -141,40 +141,41 @@ a { color: inherit; text-decoration: none; }
 .asset-card .meta { padding: 10px 14px 12px; border-top: 1px solid var(--hair); }
 .asset-card .a-name { font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500; margin: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 
+
+/* ── GLOBAL HEADER — brand mark + section nav ── */
+.g-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+.g-logo img { height:34px; width:auto; display:block; }
+.g-mark-wrap { display:flex; align-items:center; }
+.g-mark { height:15px; width:60px; display:block; }
+.g-sys { font-family:'Oswald',sans-serif; font-weight:500; font-size:15px; letter-spacing:-0.005em; white-space:nowrap; }
+.g-nav { display:flex; align-items:center; justify-content:flex-end; gap:19px; flex:1; margin:0; padding:0 24px; list-style:none; }
+.g-nav a { font-family:'Raleway',sans-serif; font-weight:500; font-size:12.5px; white-space:nowrap; text-decoration:none; transition:color 0.15s ease; }
+.g-nav a:hover { color:#FFC800; }
+@media (max-width:1240px){ .g-nav{ display:none; } }
+@media (max-width:1000px){ .g-cta{ display:none; } }
+
 </style>
 </head>
 <body>
 
 <header class="g-header">
   <div class="g-header-inner">
-    <a href="https://www.intelligaia.com" class="g-logo" aria-label="Intelligaia">
+    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
       <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
+      <span class="g-mark-wrap" style="color:#121212"><svg class="g-mark" viewBox="0 0 64 16" aria-hidden="true"><circle cx="7" cy="8" r="6" fill="#FFC800"/><rect x="18" y="2" width="12" height="12" rx="2" fill="#4A8BF5"/><polygon points="42,2 48,14 36,14" fill="#8A5AF0"/><polygon points="57,2 63,8 57,14 51,8" fill="currentColor"/></svg></span>
+      <span class="g-sys">Brand Assets</span>
     </a>
     <nav class="g-nav">
-      <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
-      <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
-      <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
-      <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
-      <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
-      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
-      <a href="https://www.intelligaia.com/blog">Blog</a>
-      <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+      <a href="10%20Foundations.html">Foundations</a>
+      <a href="20%20Brand%20Assets.html">Brand Assets</a>
+      <a href="30%20Diagrams.html">Diagrams</a>
+      <a href="40%20Service%20Catalog.html">Service Catalog</a>
+      <a href="50%20Landing%20Pages.html">Landing</a>
+      <a href="60%20Case%20Studies.html">Case Studies</a>
+      <a href="70%20Whitepapers.html">Whitepapers</a>
+      <a href="80%20Social%20Media.html">Social</a>
     </nav>
-    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
-    <button class="g-hamburger" aria-label="Menu" onclick="document.querySelector('.g-mobile-drawer').classList.toggle('open')">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M4 6 H20 M4 12 H20 M4 18 H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-  <div class="g-mobile-drawer">
-    <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
-    <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
-    <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
-    <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
-    <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
-    <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
-    <a href="https://www.intelligaia.com/blog">Blog</a>
-    <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
-    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+    <a href="00%20Home.html" class="g-cta">Home</a>
   </div>
 </header>
 
@@ -185,7 +186,7 @@ a { color: inherit; text-decoration: none; }
       Design System
     </a>
     <span class="sep">/</span>
-    <a href="20%20Illustration%20System.html">Illustration System</a>
+    <a href="20%20Brand%20Assets.html">Illustration System</a>
     <span class="sep">/</span>
     <span class="cur">Icons</span>
   </div>
@@ -213,167 +214,167 @@ a { color: inherit; text-decoration: none; }
 
 <section class="grid-page">
   <div class="asset-grid">
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/AI/Bot-Face.svg" alt="Bot Face" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Bot Face</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/AI/Machine-Vision.svg" alt="Machine Vision" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Machine Vision</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/Abstract/Concentric-Arcs.svg" alt="Concentric Arcs" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Concentric Arcs</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/Abstract/Four-Point-Star.svg" alt="Four Point Star" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Four Point Star</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/Analytics/Data-Insights.svg" alt="Data Insights" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Data Insights</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/Analytics/Predictive-Forecast.svg" alt="Predictive Forecast" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Predictive Forecast</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/Data/List-To-Cards.svg" alt="List To Cards" loading="lazy" /></div>
     <div class="meta"><p class="a-name">List To Cards</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/Interface/Website-Search.svg" alt="Website Search" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Website Search</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/People/Business-Persona.svg" alt="Business Persona" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Business Persona</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/People/Peer-Connection.svg" alt="Peer Connection" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Peer Connection</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/People/User-Avatar.svg" alt="User Avatar" loading="lazy" /></div>
     <div class="meta"><p class="a-name">User Avatar</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/Strategy/Target-Goal.svg" alt="Target Goal" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Target Goal</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/System/Alert-Warning.svg" alt="Alert Warning" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Alert Warning</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/System/Process-Automation.svg" alt="Process Automation" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Process Automation</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Account-Circle-01.svg" alt="Account Circle 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Account Circle 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Account-Circle-02.svg" alt="Account Circle 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Account Circle 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Account-Circle-03.svg" alt="Account Circle 03" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Account Circle 03</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Account-Circle-04.svg" alt="Account Circle 04" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Account Circle 04</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Calendar-01.svg" alt="Calendar 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Calendar 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Calendar-02.svg" alt="Calendar 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Calendar 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Error-01.svg" alt="Error 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Error 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Error-02.svg" alt="Error 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Error 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Error-03.svg" alt="Error 03" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Error 03</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Event-01.svg" alt="Event 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Event 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Event-02.svg" alt="Event 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Event 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Help-01.svg" alt="Help 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Help 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Help-02.svg" alt="Help 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Help 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Language-Earth-01.svg" alt="Language Earth 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Language Earth 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Language-Earth-02.svg" alt="Language Earth 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Language Earth 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Language-Earth-03.svg" alt="Language Earth 03" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Language Earth 03</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Language-Earth-04.svg" alt="Language Earth 04" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Language Earth 04</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Lock-01.svg" alt="Lock 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Lock 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Schedule-01.svg" alt="Schedule 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Schedule 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Schedule-02.svg" alt="Schedule 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Schedule 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Schedule-03.svg" alt="Schedule 03" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Schedule 03</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Verified-01.svg" alt="Verified 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Verified 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Verified-02.svg" alt="Verified 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Verified 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Verified-03.svg" alt="Verified 03" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Verified 03</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Warning-01.svg" alt="Warning 01" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Warning 01</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Warning-02.svg" alt="Warning 02" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Warning 02</p></div>
   </a>
-  <a class="asset-card" href="29%20Asset%20Library.html">
+  <a class="asset-card" href="29%20Asset%20Detail.html">
     <div class="thumb"><img src="../assets/icons/UI/Warning-03.svg" alt="Warning 03" loading="lazy" /></div>
     <div class="meta"><p class="a-name">Warning 03</p></div>
   </a>
@@ -411,7 +412,7 @@ function downloadItems(items) {
     <div class="ig-col ig-col-nav">
       <ul>
         <li><a href="00%20Home.html">Design System</a></li>
-        <li><a href="20%20Illustration%20System.html">Illustration System</a></li>
+        <li><a href="20%20Brand%20Assets.html">Illustration System</a></li>
         <li><a href="22%20Characters.html">Library</a></li>
       </ul>
     </div>

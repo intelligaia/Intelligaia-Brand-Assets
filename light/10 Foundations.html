@@ -459,40 +459,41 @@ body.detail-page section:not(.yellow-hero):not(.g-header):first-of-type { paddin
 .yellow-hero + * { margin-top: 24px; }
 .yellow-hero + section, .yellow-hero + div.doc-toolbar { margin-top: 0; padding-top: 32px; }
 
+
+/* ── GLOBAL HEADER — brand mark + section nav ── */
+.g-logo { display:flex; align-items:center; gap:12px; text-decoration:none; flex-shrink:0; }
+.g-logo img { height:34px; width:auto; display:block; }
+.g-mark-wrap { display:flex; align-items:center; }
+.g-mark { height:15px; width:60px; display:block; }
+.g-sys { font-family:'Oswald',sans-serif; font-weight:500; font-size:15px; letter-spacing:-0.005em; white-space:nowrap; }
+.g-nav { display:flex; align-items:center; justify-content:flex-end; gap:19px; flex:1; margin:0; padding:0 24px; list-style:none; }
+.g-nav a { font-family:'Raleway',sans-serif; font-weight:500; font-size:12.5px; white-space:nowrap; text-decoration:none; transition:color 0.15s ease; }
+.g-nav a:hover { color:#FFC800; }
+@media (max-width:1240px){ .g-nav{ display:none; } }
+@media (max-width:1000px){ .g-cta{ display:none; } }
+
 </style>
 </head>
 <body>
 
 <header class="g-header">
   <div class="g-header-inner">
-    <a href="https://www.intelligaia.com" class="g-logo" aria-label="Intelligaia">
+    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
       <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
+      <span class="g-mark-wrap" style="color:#121212"><svg class="g-mark" viewBox="0 0 64 16" aria-hidden="true"><circle cx="7" cy="8" r="6" fill="#FFC800"/><rect x="18" y="2" width="12" height="12" rx="2" fill="#4A8BF5"/><polygon points="42,2 48,14 36,14" fill="#8A5AF0"/><polygon points="57,2 63,8 57,14 51,8" fill="currentColor"/></svg></span>
+      <span class="g-sys">Brand Assets</span>
     </a>
     <nav class="g-nav">
-      <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
-      <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
-      <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
-      <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
-      <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
-      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
-      <a href="https://www.intelligaia.com/blog">Blog</a>
-      <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+      <a href="10%20Foundations.html">Foundations</a>
+      <a href="20%20Brand%20Assets.html">Brand Assets</a>
+      <a href="30%20Diagrams.html">Diagrams</a>
+      <a href="40%20Service%20Catalog.html">Service Catalog</a>
+      <a href="50%20Landing%20Pages.html">Landing</a>
+      <a href="60%20Case%20Studies.html">Case Studies</a>
+      <a href="70%20Whitepapers.html">Whitepapers</a>
+      <a href="80%20Social%20Media.html">Social</a>
     </nav>
-    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
-    <button class="g-hamburger" aria-label="Menu" onclick="document.querySelector('.g-mobile-drawer').classList.toggle('open')">
-      <svg viewBox="0 0 24 24" fill="none"><path d="M4 6 H20 M4 12 H20 M4 18 H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
-  </div>
-  <div class="g-mobile-drawer">
-    <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
-    <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
-    <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
-    <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
-    <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
-    <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
-    <a href="https://www.intelligaia.com/blog">Blog</a>
-    <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
-    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+    <a href="00%20Home.html" class="g-cta">Home</a>
   </div>
 </header>
 
@@ -840,7 +841,7 @@ body.detail-page section:not(.yellow-hero):not(.g-header):first-of-type { paddin
     <span class="cn-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M15 5 L8 12 L15 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
     <div class="cn-txt"><span class="cn-lbl">Previous</span><span class="cn-nm">Typography</span></div>
   </a>
-  <a class="cn-card next" href="40%20Marketing%20Collateral.html">
+  <a class="cn-card next" href="40%20Service%20Catalog.html">
     <div class="cn-txt"><span class="cn-lbl">Next</span><span class="cn-nm">Service Catalog</span></div>
     <span class="cn-arrow"><svg viewBox="0 0 24 24" fill="none"><path d="M9 5 L16 12 L9 19" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
   </a>
@@ -861,9 +862,9 @@ body.detail-page section:not(.yellow-hero):not(.g-header):first-of-type { paddin
       <ul>
         <li><a href="00%20Home.html">Design System</a></li>
         <li><a href="10%20Foundations.html">Foundations</a></li>
-        <li><a href="20%20Illustration%20System.html">Illustration System</a></li>
-        <li><a href="40%20Marketing%20Collateral.html">Marketing Collateral</a></li>
-        <li><a href="41%20Diagrams.html">Diagrams</a></li>
+        <li><a href="20%20Brand%20Assets.html">Illustration System</a></li>
+        <li><a href="40%20Service%20Catalog.html">Marketing Collateral</a></li>
+        <li><a href="30%20Diagrams.html">Diagrams</a></li>
       </ul>
     </div>
     <div class="ig-col ig-col-offices">
