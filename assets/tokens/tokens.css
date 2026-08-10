@@ -1,0 +1,41 @@
+/* Intelligaia Brand Assets — CSS custom properties
+   Generated from tokens/design-tokens.json. Do not edit by hand.
+   Source of truth: Figma → design-tokens.json → this file. */
+
+:root {
+  /* brand */
+  --ig-yellow: #FFC800;
+  --ig-ink:    #04050A;
+  --ig-blue:   #4A8BF5;
+  --ig-purple: #8A5AF0;
+
+  /* semantic */
+  --ig-success: #6EE071;
+  --ig-danger:  #FF7A75;
+
+  /* type */
+  --ig-font-display: 'Oswald', 'Helvetica Neue', Arial, sans-serif;
+  --ig-font-body:    'Geist', 'Inter', system-ui, sans-serif;
+  --ig-font-mono:    'Geist Mono', ui-monospace, monospace;
+  --ig-weight-regular: 400;
+  --ig-weight-medium:  500;
+
+  /* layout */
+  --ig-max-width: 1440px;
+  --ig-gutter: 48px;
+  --ig-radius-sm: 10px;
+  --ig-radius-md: 18px;
+  --ig-radius-pill: 999px;
+}
+
+[data-theme="dark"], .ig-dark {
+  --ig-bg: #04050A; --ig-bg-2: #0A0C14; --ig-bg-3: #131522;
+  --ig-text: #F4F6FF; --ig-text-soft: #EEF1FB; --ig-text-muted: rgba(244,246,255,0.65);
+  --ig-hair: rgba(255,255,255,0.08); --ig-hair-2: rgba(255,255,255,0.14);
+}
+
+[data-theme="light"], .ig-light {
+  --ig-bg: #FFFFFF; --ig-bg-2: #FAFAF8; --ig-bg-3: #F4F1E8;
+  --ig-text: #121212; --ig-text-soft: #1A1A1A; --ig-text-muted: rgba(18,18,18,0.62);
+  --ig-hair: rgba(18,18,18,0.10); --ig-hair-2: rgba(18,18,18,0.18);
+}

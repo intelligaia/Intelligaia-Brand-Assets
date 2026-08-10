@@ -1,0 +1,448 @@
+{
+  "$schema": "https://intelligaia.github.io/schemas/repo-index-v1.json",
+  "name": "Intelligaia Brand Assets",
+  "version": "1.1.0",
+  "generated": "2026-08-10",
+  "description": "Single source of truth for Intelligaia's visual and editorial language. Human-readable portal plus machine-readable specs.",
+  "repository": "https://github.com/intelligaia/Intelligaia-Illustration-Library-",
+  "entry_points": {
+    "humans": {
+      "portal": "START HERE.html",
+      "dark": "dark/00 Home.html",
+      "light": "light/00 Home.html"
+    },
+    "agents": {
+      "this_file": "index.json",
+      "instructions": "AGENTS.md",
+      "asset_manifest": "assets/manifest.json",
+      "design_tokens": "assets/tokens/design-tokens.json",
+      "figma_source": "assets/tokens/figma.json"
+    }
+  },
+  "branches": {
+    "main": "full portal",
+    "assets": "assets at root for direct URL consumption"
+  },
+  "themes": [
+    "light",
+    "dark"
+  ],
+  "constraints": {
+    "colour": {
+      "allowed": [
+        "#FFC800",
+        "#04050A",
+        "#4A8BF5",
+        "#8A5AF0"
+      ],
+      "flat_only": true,
+      "accents_per_viewport": 1
+    },
+    "type": {
+      "display": "Oswald",
+      "body": "Geist",
+      "weights_allowed": [
+        400,
+        500
+      ],
+      "max_weight": 500,
+      "headings_family": "Oswald",
+      "body_family": "Geist"
+    },
+    "layout": {
+      "max_width_px": 1440,
+      "gutter_px": 48
+    },
+    "forbidden": [
+      "gradients on hero banner",
+      "weights above 500",
+      "pixel fonts",
+      "numbered heading prefixes",
+      "stock photography",
+      "AI-generated illustrations",
+      "third display family"
+    ]
+  },
+  "pages": {
+    "dark": [
+      {
+        "id": "dark-00",
+        "number": "00",
+        "title": "Home",
+        "type": "home",
+        "description": "Brand system landing \u2014 all sections",
+        "path": "dark/00 Home.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/00%20Home.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "dark-10",
+        "number": "10",
+        "title": "Foundations",
+        "type": "reference-hub",
+        "description": "Foundations hub \u2014 principles, colour, type",
+        "path": "dark/10 Foundations.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/10%20Foundations.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "dark-11",
+        "number": "11",
+        "title": "Principles",
+        "type": "reference",
+        "description": "Three design principles",
+        "path": "dark/11 Principles.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/11%20Principles.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "dark-12",
+        "number": "12",
+        "title": "Colour",
+        "type": "reference",
+        "description": "Four brand colours + token exports",
+        "path": "dark/12 Colour.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/12%20Colour.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "dark-13",
+        "number": "13",
+        "title": "Typography",
+        "type": "reference",
+        "description": "Two type families, seven-step scale + token exports",
+        "path": "dark/13 Typography.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/13%20Typography.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "dark-20",
+        "number": "20",
+        "title": "Brand Assets",
+        "type": "reference-hub",
+        "description": "Brand assets hub \u2014 the illustration system",
+        "path": "dark/20 Brand Assets.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/20%20Brand%20Assets.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "dark-30",
+        "number": "30",
+        "title": "Diagrams",
+        "type": "reference",
+        "description": "Process diagrams and flow charts",
+        "path": "dark/30 Diagrams.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/30%20Diagrams.html",
+        "has_page_spec": true,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "dark-40",
+        "number": "40",
+        "title": "Service Catalog",
+        "type": "template",
+        "description": "Service catalog template \u2014 six page types",
+        "path": "dark/40 Service Catalog.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/40%20Service%20Catalog.html",
+        "has_page_spec": true,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "dark-50",
+        "number": "50",
+        "title": "Landing Pages",
+        "type": "playbook",
+        "description": "Landing page playbook",
+        "path": "dark/50 Landing Pages.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/50%20Landing%20Pages.html",
+        "has_page_spec": true,
+        "has_agent_prompt": true
+      },
+      {
+        "id": "dark-60",
+        "number": "60",
+        "title": "Case Studies",
+        "type": "playbook",
+        "description": "Case study playbook",
+        "path": "dark/60 Case Studies.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/60%20Case%20Studies.html",
+        "has_page_spec": true,
+        "has_agent_prompt": true
+      },
+      {
+        "id": "dark-70",
+        "number": "70",
+        "title": "Whitepapers",
+        "type": "playbook",
+        "description": "Engineering whitepaper playbook",
+        "path": "dark/70 Whitepapers.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/70%20Whitepapers.html",
+        "has_page_spec": true,
+        "has_agent_prompt": true
+      },
+      {
+        "id": "dark-80",
+        "number": "80",
+        "title": "Social Media",
+        "type": "playbook",
+        "description": "Social media playbook",
+        "path": "dark/80 Social Media.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/dark/80%20Social%20Media.html",
+        "has_page_spec": true,
+        "has_agent_prompt": true
+      }
+    ],
+    "light": [
+      {
+        "id": "light-00",
+        "number": "00",
+        "title": "Home",
+        "type": "home",
+        "description": "Brand system landing \u2014 all sections",
+        "path": "light/00 Home.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/00%20Home.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-10",
+        "number": "10",
+        "title": "Foundations",
+        "type": "reference-hub",
+        "description": "Foundations hub \u2014 principles, colour, type",
+        "path": "light/10 Foundations.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/10%20Foundations.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-11",
+        "number": "11",
+        "title": "Principles",
+        "type": "reference",
+        "description": "Three design principles",
+        "path": "light/11 Principles.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/11%20Principles.html",
+        "has_page_spec": true,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-12",
+        "number": "12",
+        "title": "Colour",
+        "type": "reference",
+        "description": "Four brand colours + token exports",
+        "path": "light/12 Colour.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/12%20Colour.html",
+        "has_page_spec": true,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-13",
+        "number": "13",
+        "title": "Typography",
+        "type": "reference",
+        "description": "Two type families, seven-step scale + token exports",
+        "path": "light/13 Typography.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/13%20Typography.html",
+        "has_page_spec": true,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-20",
+        "number": "20",
+        "title": "Brand Assets",
+        "type": "reference-hub",
+        "description": "Brand assets hub \u2014 the illustration system",
+        "path": "light/20 Brand Assets.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/20%20Brand%20Assets.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-21",
+        "number": "21",
+        "title": "Construction",
+        "type": "reference",
+        "description": "Four-stage construction process",
+        "path": "light/21 Construction.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/21%20Construction.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-22",
+        "number": "22",
+        "title": "Characters",
+        "type": "library",
+        "description": "Character illustrations",
+        "path": "light/22 Characters.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/22%20Characters.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-23",
+        "number": "23",
+        "title": "Devices",
+        "type": "library",
+        "description": "Device illustrations",
+        "path": "light/23 Devices.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/23%20Devices.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-24",
+        "number": "24",
+        "title": "Objects",
+        "type": "library",
+        "description": "Object illustrations",
+        "path": "light/24 Objects.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/24%20Objects.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-25",
+        "number": "25",
+        "title": "Nature",
+        "type": "library",
+        "description": "Nature illustrations",
+        "path": "light/25 Nature.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/25%20Nature.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-26",
+        "number": "26",
+        "title": "Icons",
+        "type": "library",
+        "description": "UI icon set",
+        "path": "light/26 Icons.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/26%20Icons.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-27",
+        "number": "27",
+        "title": "Letters",
+        "type": "library",
+        "description": "Illustrated letterforms",
+        "path": "light/27 Letters.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/27%20Letters.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-28",
+        "number": "28",
+        "title": "Waves",
+        "type": "library",
+        "description": "Wave and flow shapes",
+        "path": "light/28 Waves.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/28%20Waves.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-29",
+        "number": "29",
+        "title": "Asset Detail",
+        "type": "library-detail",
+        "description": "Single asset detail view",
+        "path": "light/29 Asset Detail.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/29%20Asset%20Detail.html",
+        "has_page_spec": false,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-30",
+        "number": "30",
+        "title": "Diagrams",
+        "type": "reference",
+        "description": "Process diagrams and flow charts",
+        "path": "light/30 Diagrams.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/30%20Diagrams.html",
+        "has_page_spec": true,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-40",
+        "number": "40",
+        "title": "Service Catalog",
+        "type": "template",
+        "description": "Service catalog template \u2014 six page types",
+        "path": "light/40 Service Catalog.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/40%20Service%20Catalog.html",
+        "has_page_spec": true,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-50",
+        "number": "50",
+        "title": "Landing Pages",
+        "type": "playbook",
+        "description": "Landing page playbook",
+        "path": "light/50 Landing Pages.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/50%20Landing%20Pages.html",
+        "has_page_spec": true,
+        "has_agent_prompt": false
+      },
+      {
+        "id": "light-60",
+        "number": "60",
+        "title": "Case Studies",
+        "type": "playbook",
+        "description": "Case study playbook",
+        "path": "light/60 Case Studies.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/60%20Case%20Studies.html",
+        "has_page_spec": true,
+        "has_agent_prompt": true
+      },
+      {
+        "id": "light-70",
+        "number": "70",
+        "title": "Whitepapers",
+        "type": "playbook",
+        "description": "Engineering whitepaper playbook",
+        "path": "light/70 Whitepapers.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/70%20Whitepapers.html",
+        "has_page_spec": true,
+        "has_agent_prompt": true
+      },
+      {
+        "id": "light-80",
+        "number": "80",
+        "title": "Social Media",
+        "type": "playbook",
+        "description": "Social media playbook",
+        "path": "light/80 Social Media.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/light/80%20Social%20Media.html",
+        "has_page_spec": true,
+        "has_agent_prompt": true
+      }
+    ]
+  },
+  "assets": {
+    "manifest": "assets/manifest.json",
+    "count": 279,
+    "raw_base": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets"
+  },
+  "tokens": {
+    "design-tokens.json": "assets/tokens/design-tokens.json",
+    "tokens.css": "assets/tokens/tokens.css",
+    "_tokens.scss": "assets/tokens/_tokens.scss",
+    "colours.json": "assets/tokens/colours.json",
+    "typography.json": "assets/tokens/typography.json",
+    "figma.json": "assets/tokens/figma.json"
+  }
+}
