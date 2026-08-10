@@ -1,0 +1,28 @@
+{
+  "$schema": "https://intelligaia.github.io/schemas/figma-link-v1.json",
+  "name": "Intelligaia Brand Assets — Figma source",
+  "version": "1.0.0",
+  "note": "Figma is the design source of truth. This repo is the published, machine-readable mirror. When they disagree, Figma wins and this repo must be regenerated.",
+  "files": [
+    {
+      "id": "design-system",
+      "label": "Intelligaia Illustration DS — 2026",
+      "url": "https://www.figma.com/design/REPLACE_WITH_FILE_KEY/Intelligaia-Illustration-DS-2026",
+      "contains": ["colour styles", "text styles", "grid styles", "illustration components"],
+      "status": "link pending — paste the real Figma URL here"
+    }
+  ],
+  "sync": {
+    "direction": "figma -> repo",
+    "method": "Figma variables export -> tokens/design-tokens.json -> generated css/scss/json",
+    "cadence": "on release",
+    "owner": "design systems"
+  },
+  "mirrors": {
+    "w3c_tokens": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/design-tokens.json",
+    "css_variables": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/tokens.css",
+    "scss_variables": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/_tokens.scss",
+    "colour_json": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/colours.json",
+    "type_json": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/typography.json"
+  }
+}

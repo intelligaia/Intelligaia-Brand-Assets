@@ -1,0 +1,60 @@
+{
+  "$schema": "https://tr.designtokens.org/format/",
+  "$description": "Intelligaia Brand Assets — W3C Design Tokens Community Group format. Consumable by Style Dictionary, Tokens Studio, and most token pipelines.",
+  "color": {
+    "brand": {
+      "yellow": { "$type": "color", "$value": "#FFC800", "$description": "Signature. Hero banners, primary CTAs, highlights. Flat only." },
+      "ink":    { "$type": "color", "$value": "#04050A", "$description": "Dark surface; body type on light theme." },
+      "blue":   { "$type": "color", "$value": "#4A8BF5", "$description": "Trust. Data, information states, links." },
+      "purple": { "$type": "color", "$value": "#8A5AF0", "$description": "Insight. AI, agents, moments of insight." }
+    },
+    "dark": {
+      "bg":        { "$type": "color", "$value": "#04050A" },
+      "bg-2":      { "$type": "color", "$value": "#0A0C14" },
+      "bg-3":      { "$type": "color", "$value": "#131522" },
+      "ink":       { "$type": "color", "$value": "#F4F6FF" },
+      "ink-soft":  { "$type": "color", "$value": "#EEF1FB" },
+      "ink-muted": { "$type": "color", "$value": "rgba(244,246,255,0.65)" },
+      "hair":      { "$type": "color", "$value": "rgba(255,255,255,0.08)" },
+      "hair-2":    { "$type": "color", "$value": "rgba(255,255,255,0.14)" }
+    },
+    "light": {
+      "bg":        { "$type": "color", "$value": "#FFFFFF" },
+      "bg-2":      { "$type": "color", "$value": "#FAFAF8" },
+      "bg-3":      { "$type": "color", "$value": "#F4F1E8" },
+      "ink":       { "$type": "color", "$value": "#121212" },
+      "ink-soft":  { "$type": "color", "$value": "#1A1A1A" },
+      "ink-muted": { "$type": "color", "$value": "rgba(18,18,18,0.62)" },
+      "hair":      { "$type": "color", "$value": "rgba(18,18,18,0.10)" },
+      "hair-2":    { "$type": "color", "$value": "rgba(18,18,18,0.18)" }
+    },
+    "semantic": {
+      "success": { "$type": "color", "$value": "#6EE071" },
+      "danger":  { "$type": "color", "$value": "#FF7A75" }
+    }
+  },
+  "fontFamily": {
+    "display": { "$type": "fontFamily", "$value": ["Oswald", "Helvetica Neue", "Arial", "sans-serif"] },
+    "body":    { "$type": "fontFamily", "$value": ["Geist", "Inter", "system-ui", "sans-serif"] },
+    "mono":    { "$type": "fontFamily", "$value": ["Geist Mono", "ui-monospace", "monospace"] }
+  },
+  "fontWeight": {
+    "regular": { "$type": "fontWeight", "$value": 400 },
+    "medium":  { "$type": "fontWeight", "$value": 500, "$description": "Ceiling. No heavier weight exists in this system." }
+  },
+  "typography": {
+    "hero":    { "$type": "typography", "$value": { "fontFamily": "{fontFamily.display}", "fontWeight": "{fontWeight.medium}",  "fontSize": "clamp(44px,5.8vw,88px)", "lineHeight": 1.02, "letterSpacing": "-0.015em" } },
+    "section": { "$type": "typography", "$value": { "fontFamily": "{fontFamily.display}", "fontWeight": "{fontWeight.regular}", "fontSize": "clamp(28px,3vw,42px)",   "lineHeight": 1.06, "letterSpacing": "-0.012em" } },
+    "lede":    { "$type": "typography", "$value": { "fontFamily": "{fontFamily.body}",    "fontWeight": "{fontWeight.regular}", "fontSize": "15.5px", "lineHeight": 1.62 } },
+    "body":    { "$type": "typography", "$value": { "fontFamily": "{fontFamily.body}",    "fontWeight": "{fontWeight.regular}", "fontSize": "15px",   "lineHeight": 1.6 } },
+    "meta":    { "$type": "typography", "$value": { "fontFamily": "{fontFamily.body}",    "fontWeight": "{fontWeight.regular}", "fontSize": "12px",   "letterSpacing": "0.06em", "textCase": "uppercase" } }
+  },
+  "dimension": {
+    "maxWidth":  { "$type": "dimension", "$value": "1440px" },
+    "gutter":    { "$type": "dimension", "$value": "48px" },
+    "radius-sm": { "$type": "dimension", "$value": "10px" },
+    "radius-md": { "$type": "dimension", "$value": "18px" },
+    "radius-pill": { "$type": "dimension", "$value": "999px" },
+    "grid-unit": { "$type": "dimension", "$value": "50", "$description": "Illustration construction grid — 50 x 50 dot pixels." }
+  }
+}
