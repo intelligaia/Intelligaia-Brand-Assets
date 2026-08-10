@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intelligaia · Illustration System · Construction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+
+:root {
+  --bg: #FFFFFF; --bg-2: #F7F7F5; --bg-3: #EFEFEC;
+  --ink: #121212; --ink-soft: #3A3A36;
+  --hair: #E6E4DB; --hair-2: #D6D4CC;
+  --footer-bg: #F4F4F2;
+  --brand-hero-yellow: #FFC800;
+  --brand-hero-black: #121212;
+  --brand-hero-purple: #6C3CD2;
+  --yellow: #FFC800;
+  --purple: #6C3CD2;
+}
+
+/* ==== GLOBAL HEADER — pixel-matched to intelligaia.com (Wix) ==== */
+.g-header { position: sticky; top: 0; z-index: 50; background: #FFFFFF; width: 100%; height: 114px; }
+.g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; gap: 0; }
+.g-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.g-logo img { height: 51px; width: auto; display: block; }
+.g-logo .word, .g-logo .tag { display: none; }
+.g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
+.g-nav a { font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 16px; line-height: 1; color: #000000; text-decoration: none; white-space: nowrap; transition: opacity 0.15s ease; }
+.g-nav a:hover { opacity: 0.6; }
+.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; line-height: 1; color: #000000; background: #FFFFFF; border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
+.g-cta:hover { background: #000000; color: #FFFFFF; }
+.g-cta svg { width: 14px; height: 14px; }
+.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: #FFFFFF; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
+.g-hamburger svg { width: 20px; height: 20px; color: #000000; }
+.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: #FFFFFF; z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
+.g-mobile-drawer.open { display: flex; }
+.g-mobile-drawer a { font-family: 'Geist', sans-serif; font-weight: 600; font-size: 20px; color: #000000; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #EAEAEA; }
+.g-mobile-drawer .g-cta { align-self: flex-start; margin-top: 12px; }
+@media (max-width: 1000px) {
+  .g-header { height: 88px; }
+  .g-header-inner { padding: 0 24px; gap: 24px; }
+  .g-logo img { height: 40px; }
+  .g-nav, .g-cta { display: none; }
+  .g-hamburger { display: inline-flex; margin-left: auto; }
+  .g-mobile-drawer { top: 88px; }
+}
+/* ==== end canonical global header ==== */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Geist', 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 15.5px; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; margin: 0; }
+h2, h3 { font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+
+/* DS BREADCRUMB */
+.ds-crumb-bar { background: var(--bg-2); border-bottom: 1px solid var(--hair); }
+.ds-crumb-inner { max-width: 1440px; margin: 0 auto; padding: 10px 56px; display: flex; align-items: center; gap: 10px; font-size: 12.5px; font-family: 'Geist', sans-serif; }
+.ds-crumb-inner a { color: var(--ink); opacity: 0.7; display: inline-flex; align-items: center; gap: 6px; }
+.ds-crumb-inner a:hover { opacity: 1; }
+.ds-crumb-inner .sep { opacity: 0.35; }
+.ds-crumb-inner .cur { font-weight: 500; }
+.ds-crumb-inner .pill { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: var(--yellow); border-radius: 999px; font-weight: 500; color: var(--ink); }
+@media (max-width: 760px) { .ds-crumb-inner { padding: 10px 20px; } }
+
+/* FOOTER (light cream, intelligaia.com snapshot) */
+.g-footer { background: var(--footer-bg); color: var(--ink); padding: 80px 0 56px; border-top: 1px solid var(--hair); margin-top: 80px; }
+.g-footer-inner { max-width: 1440px; margin: 0 auto; padding: 0 56px; display: grid; grid-template-columns: 1.1fr 0.9fr 1.3fr 1.3fr; gap: 48px; align-items: start; }
+.ig-col-brand .ig-logo-foot { display: inline-flex; flex-direction: column; color: var(--ink); margin-bottom: 32px; }
+.ig-col-brand .ig-logo-foot .word { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -0.024em; line-height: 1; }
+.ig-col-brand .ig-logo-foot .tag { font-size: 10.5px; margin-top: 4px; }
+.ig-social { display: flex; gap: 12px; margin-top: 220px; }
+.ig-sic { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); }
+.ig-sic svg { width: 22px; height: 22px; }
+.ig-col-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; font-size: 22px; font-family: 'Geist', sans-serif; font-weight: 400; }
+.ig-col-nav ul a:hover { opacity: 0.65; }
+.ig-col-offices .ig-office { margin-bottom: 32px; }
+.ig-col-offices h5 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 500; margin: 0 0 14px; }
+.ig-col-offices p { font-size: 14.5px; line-height: 1.6; margin: 0; }
+.ig-col-offices p a { text-decoration: underline; text-underline-offset: 3px; }
+.goodness { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 56px; line-height: 1.05; margin: 0 0 36px; }
+.ig-contact-pill { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border: 1px solid var(--ink); border-radius: 999px; font-size: 15px; font-family: 'Geist', sans-serif; }
+.ig-contact-pill:hover { background: var(--ink); color: var(--footer-bg); }
+@media (max-width: 1080px) { .g-footer-inner { grid-template-columns: 1fr 1fr; gap: 56px; } .ig-social { margin-top: 24px; } }
+@media (max-width: 640px) { .g-footer-inner { grid-template-columns: 1fr; padding: 0 24px; } .goodness { font-size: 40px; } }
+
+.detail-hero { max-width: 1440px; margin: 0 auto; padding: 56px 56px 32px; border-bottom: 1px solid var(--hair); }
+.detail-hero .eyebrow { font-family: 'Geist', sans-serif; font-size: 12px; font-weight: 500; opacity: 0.6; margin-bottom: 14px; letter-spacing: 0.04em; display: inline-flex; align-items: center; gap: 12px; }
+.detail-hero .eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--ink); opacity: 0.5; }
+.detail-hero h1 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 48px; letter-spacing: -0.02em; margin: 0 0 14px; }
+.detail-hero p.lede { font-size: 17px; line-height: 1.55; margin: 0; max-width: 68ch; }
+
+.stage-page { max-width: 1440px; margin: 0 auto; padding: 64px 56px; }
+.stage-block { margin-bottom: 64px; padding-bottom: 64px; border-bottom: 1px solid var(--hair); }
+.stage-block:last-child { border-bottom: none; }
+.stage-head { display: flex; align-items: baseline; gap: 16px; margin-bottom: 24px; }
+.stage-num-big { font-family: 'Oswald', sans-serif; font-size: 96px; font-weight: 400; line-height: 1; color: var(--yellow); -webkit-text-stroke: 1px var(--ink); }
+.stage-title { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 36px; margin: 0; }
+.stage-lede { font-size: 16px; line-height: 1.6; max-width: 68ch; margin: 0 0 32px; opacity: 0.8; }
+.stage-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+.stage-preview { aspect-ratio: 4 / 3; background: var(--bg-2); border-radius: 12px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.stage-preview img { max-width: 82%; max-height: 82%; object-fit: contain; }
+.stage-rules { background: var(--bg-2); border-left: 3px solid var(--yellow); padding: 24px 28px; border-radius: 4px; }
+.stage-rules h4 { font-family: 'Oswald', sans-serif; font-size: 14px; font-weight: 500; letter-spacing: 0.02em; opacity: 0.65; margin: 0 0 14px; }
+.stage-rules ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; font-size: 14.5px; line-height: 1.55; }
+.stage-rules li { display: grid; grid-template-columns: 16px 1fr; gap: 12px; align-items: baseline; }
+.stage-rules li::before { content: ''; width: 6px; height: 6px; background: var(--ink); border-radius: 50%; margin-top: 8px; }
+.stage-rules code { font-family: 'Geist Mono', ui-monospace, monospace; font-size: 12px; background: var(--bg); padding: 2px 6px; border-radius: 3px; }
+@media (max-width: 900px) { .stage-grid { grid-template-columns: 1fr; } .stage-num-big { font-size: 64px; } .stage-title { font-size: 26px; } }
+</style>
+</head>
+<body>
+
+<header class="g-header">
+  <div class="g-header-inner">
+    <a href="https://www.intelligaia.com" class="g-logo" aria-label="Intelligaia">
+      <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
+    </a>
+    <nav class="g-nav">
+      <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+      <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+      <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+      <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+      <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+      <a href="https://www.intelligaia.com/blog">Blog</a>
+      <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    </nav>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+    <button class="g-hamburger" aria-label="Menu" onclick="document.querySelector('.g-mobile-drawer').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 6 H20 M4 12 H20 M4 18 H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="g-mobile-drawer">
+    <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+    <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+    <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+    <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+    <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+    <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+    <a href="https://www.intelligaia.com/blog">Blog</a>
+    <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+  </div>
+</header>
+
+<div class="ds-crumb-bar">
+  <div class="ds-crumb-inner">
+    <a href="00%20Home.html">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M19 12 H5 M11 6 L5 12 L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Design System
+    </a>
+    <span class="sep">/</span>
+    <a href="20%20Illustration%20System.html">Illustration System</a>
+    <span class="sep">/</span>
+    <span class="cur">Construction</span>
+    <a href="26%20Icons.html" class="pill">Asset Library →</a>
+  </div>
+</div>
+
+<section class="detail-hero">
+  <div class="eyebrow">Part 1 · The System</div>
+  <h1>Construction process.</h1>
+  <p class="lede">Every illustration in this library is built through the same 4-stage mechanism. Grid establishes structure, deconstruction lays the geometric primitives, outlining commits the silhouette, filling delivers the finished asset. Only the last stage ships — the others are process, not style.</p>
+</section>
+
+<section class="stage-page">
+
+  <!-- STAGE 1 · GRID -->
+  <div class="stage-block">
+    <div class="stage-head">
+      <span class="stage-num-big">01</span>
+      <h2 class="stage-title">Grid.</h2>
+    </div>
+    <p class="stage-lede">Every illustration starts on the 50×50 dot-pixel grid. Establishes proportion, rhythm and modularity before a single shape is drawn. The engineered aesthetic comes from precise alignment.</p>
+    <div class="stage-grid">
+      <div class="stage-preview"><img src="../assets/brand/grid-50x50.svg" alt="DP grid" /></div>
+      <div class="stage-rules">
+        <h4>Grid rules</h4>
+        <ul>
+          <li>Snap-to-grid is always on. Every anchor point lands on an intersection.</li>
+          <li>Minimum shape size and spacing: 1 unit (equivalent to 8 px in the source system).</li>
+          <li>When shapes layer, keep at least 1-unit safe area between them.</li>
+          <li>Never eyeball placement. If an anchor doesn't sit on grid, delete it and try again.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 2 · DECONSTRUCTED -->
+  <div class="stage-block">
+    <div class="stage-head">
+      <span class="stage-num-big">02</span>
+      <h2 class="stage-title">Deconstructed.</h2>
+    </div>
+    <p class="stage-lede">Rectangles, circles, semi-rectangles and triangles are layered directly on the grid to build the subject. This stage is pure geometry — no fill, no color, just the primitives that will resolve into the silhouette.</p>
+    <div class="stage-grid">
+      <div class="stage-preview"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png" alt="Deconstructed primitives" /></div>
+      <div class="stage-rules">
+        <h4>Deconstruction rules</h4>
+        <ul>
+          <li>Only 4 primitives allowed — rectangle, circle, semi-rectangle, triangle.</li>
+          <li>Standard angles only: <code>0°</code> · <code>15°</code> · <code>30°</code> · <code>45°</code> · <code>60°</code> · <code>75°</code> · <code>90°</code>.</li>
+          <li>Curves are quarter, half or full circles. Organic Bézier only when necessary, grounded in basic shapes.</li>
+          <li>Every visible primitive is a construction choice — remove what doesn't earn its place.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 3 · OUTLINED -->
+  <div class="stage-block">
+    <div class="stage-head">
+      <span class="stage-num-big">03</span>
+      <h2 class="stage-title">Outlined.</h2>
+    </div>
+    <p class="stage-lede">The primitives merge into a single wireframe silhouette. This is a blueprint stage — the moment where proportions get verified and the composition is committed. It is not a delivered style. If a user sees a red outline, they are looking at the blueprint, not the illustration.</p>
+    <div class="stage-grid">
+      <div class="stage-preview"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png" alt="Wireframe" /></div>
+      <div class="stage-rules">
+        <h4>Outlining rules</h4>
+        <ul>
+          <li>Single continuous outline per component. No hairlines, no dashed strokes.</li>
+          <li>Stroke width consistent across the illustration — a single voice.</li>
+          <li>Corner radius stays proportional and equal in nested shapes.</li>
+          <li>This stage is stored for review and version control, not for public delivery.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- STAGE 4 · FINAL -->
+  <div class="stage-block">
+    <div class="stage-head">
+      <span class="stage-num-big">04</span>
+      <h2 class="stage-title">Final.</h2>
+    </div>
+    <p class="stage-lede">Colour, character and finishing details from the brand palette. This is the only stage that ships to product. It carries the same construction underneath — that's what makes different illustrations by different hands still feel like one voice.</p>
+    <div class="stage-grid">
+      <div class="stage-preview"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Final" /></div>
+      <div class="stage-rules">
+        <h4>Final rules</h4>
+        <ul>
+          <li>Colours only from the locked <a href="00%20Home.html">brand palette</a> — Brand hero, Primary, Secondary, Base, Skin, Hair.</li>
+          <li>Opaque shapes preferred. Transparency / multiply used sparingly for depth.</li>
+          <li>Gradients allowed on select accents — refer to the 13 gradient paint styles on the DS home.</li>
+          <li>Every element is a Filled or Final variant — never an Outlined blueprint.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<footer class="g-footer">
+  <div class="g-footer-inner">
+    <div class="ig-col ig-col-brand">
+      <a href="https://www.intelligaia.com" class="ig-logo-foot">
+        <span class="word">intelligaia</span>
+        <span class="tag">humanizing AI for enterprises</span>
+      </a>
+      <div class="ig-social">
+        <a href="https://www.linkedin.com/company/intelligaia/" aria-label="LinkedIn" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg></a>
+        <a href="https://www.instagram.com/intelligaia" aria-label="Instagram" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M7.6 4A3.6 3.6 0 0 0 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4A3.6 3.6 0 0 0 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/></svg></a>
+        <a href="https://youtube.com/@intelligaia-studio" aria-label="YouTube" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/></svg></a>
+      </div>
+    </div>
+    <div class="ig-col ig-col-nav">
+      <ul>
+        <li><a href="00%20Home.html">Design System</a></li>
+        <li><a href="20%20Illustration%20System.html">Illustration System</a></li>
+        <li><a href="22%20Characters.html">Asset Library</a></li>
+      </ul>
+    </div>
+    <div class="ig-col ig-col-offices">
+      <div class="ig-office">
+        <h5>United States</h5>
+        <p>548 Spire Bnd, Apex, NC 27523<br/><a href="mailto:sales@intelligaia.com">sales@intelligaia.com</a><br/>Ph: <a href="tel:+12524001521">252-400-1521</a></p>
+      </div>
+      <div class="ig-office">
+        <h5>INDIA</h5>
+        <p>Industrial Plot I-63,<br/>Sector - 83 Alpha IT City,<br/>Mohali, Punjab - 140306</p>
+      </div>
+    </div>
+    <div class="ig-col ig-col-cta">
+      <h2 class="goodness">Goodness =<br/>Rewards</h2>
+      <a href="https://www.intelligaia.com/contact" class="ig-contact-pill">Contact Us
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

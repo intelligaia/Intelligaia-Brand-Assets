@@ -1,0 +1,394 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intelligaia · Illustration System</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+
+:root {
+  --bg: #FFFFFF; --bg-2: #F7F7F5; --bg-3: #EFEFEC;
+  --ink: #121212; --ink-soft: #3A3A36;
+  --hair: #E6E4DB; --hair-2: #D6D4CC;
+  --footer-bg: #F4F4F2;
+  --brand-hero-yellow: #FFC800;
+  --brand-hero-black: #121212;
+  --brand-hero-purple: #6C3CD2;
+  --yellow: #FFC800;
+  --purple: #6C3CD2;
+}
+
+/* ==== GLOBAL HEADER — pixel-matched to intelligaia.com (Wix) ==== */
+.g-header { position: sticky; top: 0; z-index: 50; background: #FFFFFF; width: 100%; height: 114px; }
+.g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; gap: 0; }
+.g-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.g-logo img { height: 51px; width: auto; display: block; }
+.g-logo .word, .g-logo .tag { display: none; }
+.g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
+.g-nav a { font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; font-weight: 600; font-size: 16px; line-height: 1; color: #000000; text-decoration: none; white-space: nowrap; transition: opacity 0.15s ease; }
+.g-nav a:hover { opacity: 0.6; }
+.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 600; font-size: 16px; line-height: 1; color: #000000; background: #FFFFFF; border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
+.g-cta:hover { background: #000000; color: #FFFFFF; }
+.g-cta svg { width: 14px; height: 14px; }
+.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: #FFFFFF; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
+.g-hamburger svg { width: 20px; height: 20px; color: #000000; }
+.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: #FFFFFF; z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
+.g-mobile-drawer.open { display: flex; }
+.g-mobile-drawer a { font-family: 'Geist', sans-serif; font-weight: 600; font-size: 20px; color: #000000; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #EAEAEA; }
+.g-mobile-drawer .g-cta { align-self: flex-start; margin-top: 12px; }
+@media (max-width: 1000px) {
+  .g-header { height: 88px; }
+  .g-header-inner { padding: 0 24px; gap: 24px; }
+  .g-logo img { height: 40px; }
+  .g-nav, .g-cta { display: none; }
+  .g-hamburger { display: inline-flex; margin-left: auto; }
+  .g-mobile-drawer { top: 88px; }
+}
+/* ==== end canonical global header ==== */
+
+/* ==== end canonical global header ==== */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Geist', 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 15.5px; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; margin: 0; }
+h2, h3 { font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+
+/* DS BREADCRUMB */
+.ds-crumb-bar { background: var(--bg-2); border-bottom: 1px solid var(--hair); }
+.ds-crumb-inner { max-width: 1440px; margin: 0 auto; padding: 10px 56px; display: flex; align-items: center; gap: 10px; font-size: 12.5px; font-family: 'Geist', sans-serif; }
+.ds-crumb-inner a { color: var(--ink); opacity: 0.7; display: inline-flex; align-items: center; gap: 6px; }
+.ds-crumb-inner a:hover { opacity: 1; }
+.ds-crumb-inner .sep { opacity: 0.35; }
+.ds-crumb-inner .cur { font-weight: 500; }
+.ds-crumb-inner .pill { margin-left: auto; display: inline-flex; align-items: center; gap: 6px; padding: 5px 12px; background: var(--yellow); border-radius: 999px; font-weight: 500; color: var(--ink); }
+@media (max-width: 760px) { .ds-crumb-inner { padding: 10px 20px; } }
+
+/* FOOTER (light cream, intelligaia.com snapshot) */
+.g-footer { background: var(--footer-bg); color: var(--ink); padding: 80px 0 56px; border-top: 1px solid var(--hair); margin-top: 80px; }
+.g-footer-inner { max-width: 1440px; margin: 0 auto; padding: 0 56px; display: grid; grid-template-columns: 1.1fr 0.9fr 1.3fr 1.3fr; gap: 48px; align-items: start; }
+.ig-col-brand .ig-logo-foot { display: inline-flex; flex-direction: column; color: var(--ink); margin-bottom: 32px; }
+.ig-col-brand .ig-logo-foot .word { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -0.024em; line-height: 1; }
+.ig-col-brand .ig-logo-foot .tag { font-size: 10.5px; margin-top: 4px; }
+.ig-social { display: flex; gap: 12px; margin-top: 220px; }
+.ig-sic { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; color: var(--ink); }
+.ig-sic svg { width: 22px; height: 22px; }
+.ig-col-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; font-size: 22px; font-family: 'Geist', sans-serif; font-weight: 400; }
+.ig-col-nav ul a:hover { opacity: 0.65; }
+.ig-col-offices .ig-office { margin-bottom: 32px; }
+.ig-col-offices h5 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 500; margin: 0 0 14px; }
+.ig-col-offices p { font-size: 14.5px; line-height: 1.6; margin: 0; }
+.ig-col-offices p a { text-decoration: underline; text-underline-offset: 3px; }
+.goodness { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 56px; line-height: 1.05; margin: 0 0 36px; }
+.ig-contact-pill { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border: 1px solid var(--ink); border-radius: 999px; font-size: 15px; font-family: 'Geist', sans-serif; }
+.ig-contact-pill:hover { background: var(--ink); color: var(--footer-bg); }
+@media (max-width: 1080px) { .g-footer-inner { grid-template-columns: 1fr 1fr; gap: 56px; } .ig-social { margin-top: 24px; } }
+@media (max-width: 640px) { .g-footer-inner { grid-template-columns: 1fr; padding: 0 24px; } .goodness { font-size: 40px; } }
+
+/* HOME COVER — aligned with global header (max 1440, padding 0 48) */
+.cover { background: var(--yellow); color: var(--ink); padding: 0; }
+.cover-inner { max-width: 1440px; margin: 0 auto; padding: 20px 48px 44px; }
+.cover-crumb { display: flex; align-items: center; gap: 10px; font-size: 12.5px; font-family: 'Geist', sans-serif; margin-bottom: 32px; }
+.cover-crumb a { color: var(--ink); opacity: 0.65; display: inline-flex; align-items: center; gap: 6px; text-decoration: none; }
+.cover-crumb a:hover { opacity: 1; }
+.cover-crumb .sep { opacity: 0.4; }
+.cover-crumb .cur { font-weight: 500; }
+.cover-row { display: grid; grid-template-columns: minmax(0, 1.4fr) minmax(360px, 460px); gap: 48px; align-items: center; }
+.cover-title { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: clamp(36px, 4.2vw, 56px); line-height: 1.05; letter-spacing: -0.018em; margin: 0 0 18px; }
+.cover-lead { font-size: 15.5px; line-height: 1.5; margin: 0 0 24px; max-width: 62ch; }
+
+/* Construction diagram (right side of cover) */
+.cover-r { display: flex; flex-direction: column; gap: 14px; }
+.diagram-label { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.6; letter-spacing: 0.06em; margin: 0; }
+.cover-diagram { display: flex; align-items: center; gap: 8px; }
+.cd-stage { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.cd-img { width: 100%; aspect-ratio: 1; background: rgba(255,255,255,0.55); border: 1px solid rgba(18,18,18,0.2); border-radius: 12px; display: flex; align-items: center; justify-content: center; padding: 10px; overflow: hidden; }
+.cd-img img { max-width: 100%; max-height: 100%; object-fit: contain; }
+.cd-label { font-family: 'Geist', sans-serif; font-size: 11px; letter-spacing: 0.04em; opacity: 0.75; }
+.cd-arrow { font-size: 14px; opacity: 0.5; }
+@media (max-width: 1000px) { .cover-row { grid-template-columns: 1fr; } .cover-title { white-space: normal; } .cover-diagram { max-width: 380px; } }
+.cover-actions { display: inline-flex; gap: 12px; flex-wrap: wrap; }
+.btn-primary { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; background: var(--ink); color: var(--yellow); border: 1px solid var(--ink); border-radius: 999px; font-size: 14.5px; font-family: 'Geist', sans-serif; font-weight: 500; }
+.btn-primary:hover { background: transparent; color: var(--ink); }
+.btn-outline { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; background: transparent; color: var(--ink); border: 1px solid var(--ink); border-radius: 999px; font-size: 14.5px; font-family: 'Geist', sans-serif; }
+.btn-outline:hover { background: var(--ink); color: var(--yellow); }
+@media (max-width: 760px) { .cover-inner { padding: 16px 20px 28px; } .cover-title { font-size: 22px; white-space: normal; } }
+
+/* PAGE FRAME — aligned to global header width */
+.page { max-width: 1440px; margin: 0 auto; padding: 64px 48px; }
+.section-head { margin-bottom: 36px; display: flex; align-items: end; justify-content: space-between; gap: 32px; flex-wrap: wrap; }
+.section-head .l { max-width: 68ch; }
+.section-head .eyebrow { font-size: 12px; font-weight: 500; opacity: 0.6; margin-bottom: 12px; display: inline-flex; align-items: center; gap: 12px; letter-spacing: 0.02em; font-family: 'Geist', sans-serif; }
+.section-head .eyebrow::before { content: ''; width: 22px; height: 1px; background: var(--ink); opacity: 0.5; }
+.section-head h2 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 40px; letter-spacing: -0.02em; margin: 0 0 10px; }
+.section-head p { font-size: 16px; opacity: 0.75; margin: 0; line-height: 1.55; }
+@media (max-width: 760px) { .page { padding: 40px 24px; } .section-head h2 { font-size: 30px; } }
+
+/* THEORY OF THE ILLUSTRATION */
+.theory-body { display: grid; grid-template-columns: minmax(0, 2fr) minmax(280px, 1fr); gap: 40px; align-items: start; }
+@media (max-width: 1000px) { .theory-body { grid-template-columns: 1fr; } }
+.theory-tenets { display: grid; grid-template-columns: 1fr 1fr; gap: 20px 32px; }
+@media (max-width: 700px) { .theory-tenets { grid-template-columns: 1fr; } }
+.tenet { padding: 20px 22px 24px; border: 1px solid var(--hair); border-radius: 14px; background: var(--bg); }
+.tn-icon { width: 40px; height: 40px; border: 1px solid var(--hair); border-radius: 8px; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 14px; color: var(--ink); opacity: 0.85; }
+.tn-icon svg { width: 24px; height: 24px; }
+.tenet h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 18px; letter-spacing: -0.008em; margin: 0 0 10px; line-height: 1.15; }
+.tenet p { font-size: 13.5px; line-height: 1.55; opacity: 0.78; margin: 0; }
+.tenet p b { font-weight: 500; opacity: 1; }
+
+.lineage { padding: 26px 26px 28px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 14px; position: sticky; top: 100px; }
+.lineage h4 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 15px; letter-spacing: -0.005em; margin: 0 0 12px; }
+.lineage p { font-size: 13px; line-height: 1.55; opacity: 0.75; margin: 0 0 12px; }
+.lineage ul { padding: 0; margin: 0 0 14px 0; list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.lineage li { font-size: 12.5px; line-height: 1.5; opacity: 0.75; padding-left: 12px; border-left: 2px solid var(--yellow); }
+.lineage li b { font-weight: 500; opacity: 1; }
+.lineage-motto { font-size: 13px; line-height: 1.5; opacity: 0.9; margin: 0; padding: 12px; background: var(--bg); border-radius: 8px; }
+.lineage p:last-child { margin-bottom: 0; }
+
+/* SYSTEM & LIBRARY CARDS */
+.sys-grid, .lib-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+@media (max-width: 900px) { .sys-grid, .lib-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 600px) { .sys-grid, .lib-grid { grid-template-columns: 1fr; } }
+
+.sys-card, .lib-card { display: flex; flex-direction: column; padding: 20px 20px 20px; border: 1px solid var(--hair); border-radius: 14px; background: var(--bg); transition: all 0.15s ease; text-decoration: none; color: var(--ink); }
+.sys-card:hover, .lib-card:hover { border-color: var(--ink); box-shadow: 0 4px 12px rgba(18,18,18,0.06); transform: translateY(-2px); }
+.sys-card .cn { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.5; margin-bottom: 8px; letter-spacing: 0.04em; }
+.sys-card h3, .lib-card h3 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 22px; letter-spacing: -0.012em; margin: 0; }
+.sys-card p, .lib-card p { font-size: 14px; opacity: 0.75; margin: 0 0 18px; line-height: 1.55; flex: 1; }
+.sys-card .arr, .lib-card .arr { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 500; color: var(--ink); font-family: 'Geist', sans-serif; letter-spacing: 0.02em; }
+.lib-card .preview { aspect-ratio: 16 / 10; background: var(--bg-2); border-radius: 8px; margin-bottom: 14px; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+.lib-card .preview img { max-width: 92%; max-height: 92%; object-fit: contain; }
+.lib-card .title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin: 0 0 8px; }
+.lib-card .count { display: inline-block; padding: 3px 10px; background: var(--yellow); color: var(--ink); border-radius: 999px; font-size: 10.5px; font-weight: 500; font-family: 'Geist', sans-serif; letter-spacing: 0.02em; white-space: nowrap; }
+
+/* PART BANNER (slim) */
+.part-banner { border-top: 1px solid var(--hair); background: var(--bg-2); }
+.part-banner-inner { max-width: 1440px; margin: 0 auto; padding: 14px 48px; display: flex; align-items: baseline; justify-content: space-between; gap: 24px; }
+.part-banner h2 { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 18px; letter-spacing: -0.005em; margin: 0; }
+.part-banner .meta { font-size: 12.5px; opacity: 0.55; font-family: 'Geist', sans-serif; }
+@media (max-width: 760px) { .part-banner-inner { padding: 12px 24px; flex-wrap: wrap; } }
+
+</style>
+</head>
+<body>
+
+<header class="g-header">
+  <div class="g-header-inner">
+    <a href="https://www.intelligaia.com" class="g-logo" aria-label="Intelligaia">
+      <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
+    </a>
+    <nav class="g-nav">
+      <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+      <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+      <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+      <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+      <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+      <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+      <a href="https://www.intelligaia.com/blog">Blog</a>
+      <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    </nav>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+    <button class="g-hamburger" aria-label="Menu" onclick="document.querySelector('.g-mobile-drawer').classList.toggle('open')">
+      <svg viewBox="0 0 24 24" fill="none"><path d="M4 6 H20 M4 12 H20 M4 18 H20" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+    </button>
+  </div>
+  <div class="g-mobile-drawer">
+    <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+    <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+    <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+    <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+    <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+    <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+    <a href="https://www.intelligaia.com/blog">Blog</a>
+    <a href="https://www.intelligaia.com/about-team-intelligaia">People</a>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact Us</a>
+  </div>
+</header>
+
+<section class="cover">
+  <div class="cover-inner">
+    <!-- Breadcrumb inside the yellow banner, top -->
+    <div class="cover-crumb">
+      <a href="00%20Home.html">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none"><path d="M19 12 H5 M11 6 L5 12 L11 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Design System
+      </a>
+      <span class="sep">/</span>
+      <span class="cur">Illustration System</span>
+    </div>
+    <div class="cover-row">
+      <div class="cover-l">
+        <h1 class="cover-title">Intelligaia Illustration System.</h1>
+        <p class="cover-lead">Two layers, no mixing. <b>The System</b> defines how every illustration is made — grid, shapes, construction, colour. <b>The Library</b> holds every asset grouped by subject.</p>
+        <div class="cover-actions">
+          <a href="21%20Construction.html" class="btn-primary">See how it's made</a>
+          <a href="#library" class="btn-outline">Jump to the library</a>
+        </div>
+      </div>
+      <div class="cover-r">
+        <!-- Small construction diagram: 3 stages of Priya, front face -->
+        <p class="diagram-label">Every asset — three stages</p>
+        <div class="cover-diagram">
+          <div class="cd-stage">
+            <div class="cd-img"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png" alt="Circles" /></div>
+            <span class="cd-label">Circles</span>
+          </div>
+          <span class="cd-arrow">→</span>
+          <div class="cd-stage">
+            <div class="cd-img"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png" alt="Wireframe" /></div>
+            <span class="cd-label">Wireframe</span>
+          </div>
+          <span class="cd-arrow">→</span>
+          <div class="cd-stage">
+            <div class="cd-img"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Final" /></div>
+            <span class="cd-label">Final</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================ THEORY OF THE ILLUSTRATION ================ -->
+<section class="page theory">
+  <div class="section-head">
+    <div class="l">
+      <div class="eyebrow">The Theory</div>
+      <h2>A theory of the illustration.</h2>
+      <p>Every illustration in this system is not drawn — it is <em>assembled</em>. What follows is the argument for why we build the way we build.</p>
+    </div>
+    <a href="21%20Construction.html" class="btn-primary">
+      See the construction sequence
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </a>
+  </div>
+
+  <div class="theory-body">
+    <div class="theory-tenets">
+      <div class="tenet">
+        <div class="tn-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="14" cy="17" r="9" stroke="currentColor" stroke-width="1.4"/><rect x="18" y="18" width="14" height="10" stroke="currentColor" stroke-width="1.4"/><path d="M8 32 Q 18 32 24 26" stroke="currentColor" stroke-width="1.4" fill="none"/></svg>
+        </div>
+        <h3>Three primitives, one alphabet.</h3>
+        <p>Every asset resolves to a <b>circle</b>, a <b>rectangle</b> and a <b>curved rectangle</b>. Characters, devices, landscapes — same three moves.</p>
+      </div>
+      <div class="tenet">
+        <div class="tn-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="15" cy="20" r="10" stroke="currentColor" stroke-width="1.4"/><circle cx="25" cy="20" r="10" stroke="currentColor" stroke-width="1.4"/><path d="M20 12 V 28" stroke="currentColor" stroke-width="1.4"/></svg>
+        </div>
+        <h3>The intersection is the character.</h3>
+        <p>Nothing is drawn in isolation. The residue between overlapping shapes is the illustration.</p>
+      </div>
+      <div class="tenet">
+        <div class="tn-icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none"><circle cx="10" cy="20" r="6" stroke="currentColor" stroke-width="1.4" stroke-dasharray="1 2"/><circle cx="20" cy="20" r="6" stroke="currentColor" stroke-width="1.4"/><circle cx="30" cy="20" r="6" fill="currentColor"/><path d="M13 30 L 17 30 M23 30 L 27 30" stroke="currentColor" stroke-width="1.2"/></svg>
+        </div>
+        <h3>Three-stage residue.</h3>
+        <p>Circles → Wireframe → Final. Every asset moves through the same three states; the shipped illustration is the last residue.</p>
+      </div>
+    </div>
+
+    <aside class="lineage">
+      <h4>The lineage.</h4>
+      <p>Suprematism · Bauhaus · isometric technical illustration. Three moves compressed into a method:</p>
+      <p class="lineage-motto"><b>Draw the primitives. Overlap them. Keep the residue.</b></p>
+    </aside>
+  </div>
+</section>
+
+<!-- ================ THE LIBRARY ================ -->
+<div class="part-banner" id="library">
+  <div class="part-banner-inner">
+    <h2>The Library.</h2>
+    <div class="meta">7 libraries · 166 assets</div>
+  </div>
+</div>
+
+<section class="page">
+  <div class="lib-grid">
+    <a href="22%20Characters.html" class="lib-card">
+      <div class="preview"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Characters" /></div>
+      <div class="title-row"><h3>Characters.</h3><span class="count">8 characters</span></div>
+      <p>Female and male figures — three construction stages (circles, wireframe, final) per front and side face.</p>
+      <span class="arr">Open library →</span>
+    </a>
+    <a href="23%20Devices.html" class="lib-card">
+      <div class="preview"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Devices" /></div>
+      <div class="title-row"><h3>Devices.</h3><span class="count">7 devices</span></div>
+      <p>MacBook, Apple Vision Pro, headphones and Meta glasses — three construction stages each.</p>
+      <span class="arr">Open library →</span>
+    </a>
+    <a href="25%20Nature.html" class="lib-card">
+      <div class="preview"><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Nature" /></div>
+      <div class="title-row"><h3>Nature.</h3><span class="count">3 subjects</span></div>
+      <p>Cloud, plants and trees — organic elements built through the same three stages.</p>
+      <span class="arr">Open library →</span>
+    </a>
+    <a href="24%20Objects.html" class="lib-card">
+      <div class="preview"><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Objects" /></div>
+      <div class="title-row"><h3>Objects.</h3><span class="count">5 subjects</span></div>
+      <p>Binoculars, magnifier, ships, lighthouse — narrative-supporting props.</p>
+      <span class="arr">Open library →</span>
+    </a>
+    <a href="26%20Icons.html" class="lib-card">
+      <div class="preview"><img src="../assets/icons/UI/Account-Circle-01.svg" alt="Icons" /></div>
+      <div class="title-row"><h3>Icons.</h3><span class="count">41 icons</span></div>
+      <p>System glyphs — grid-built, single-line stroke, brand-palette fill.</p>
+      <span class="arr">Open library →</span>
+    </a>
+    <a href="28%20Waves.html" class="lib-card">
+      <div class="preview"><img src="../assets/waves/Braided-Ribbon/Horizontal-01.svg" alt="Waves" /></div>
+      <div class="title-row"><h3>Waves.</h3><span class="count">9 waves</span></div>
+      <p>Ribbon and wave decorative elements — full-bleed accents.</p>
+      <span class="arr">Open library →</span>
+    </a>
+    <a href="27%20Letters.html" class="lib-card">
+      <div class="preview"><img src="../assets/letters/Alphabet%3DA.svg" alt="Letters" /></div>
+      <div class="title-row"><h3>Letters.</h3><span class="count">26 letters</span></div>
+      <p>Display alphabet — one geometric glyph per uppercase letter.</p>
+      <span class="arr">Open library →</span>
+    </a>
+  </div>
+</section>
+
+<footer class="g-footer">
+  <div class="g-footer-inner">
+    <div class="ig-col ig-col-brand">
+      <a href="https://www.intelligaia.com" class="ig-logo-foot">
+        <span class="word">intelligaia</span>
+        <span class="tag">humanizing AI for enterprises</span>
+      </a>
+      <div class="ig-social">
+        <a href="https://www.linkedin.com/company/intelligaia/" aria-label="LinkedIn" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M18.5 18.5V13.2A3.26 3.26 0 0 0 15.24 9.94C14.39 9.94 13.4 10.46 12.92 11.24V10.13H10.13V18.5H12.92V13.57C12.92 12.8 13.54 12.17 14.31 12.17A1.4 1.4 0 0 1 15.71 13.57V18.5H18.5M6.88 8.56A1.68 1.68 0 0 0 8.56 6.88C8.56 5.95 7.81 5.19 6.88 5.19A1.69 1.69 0 0 0 5.19 6.88C5.19 7.81 5.95 8.56 6.88 8.56M8.27 18.5V10.13H5.5V18.5H8.27Z"/></svg></a>
+        <a href="https://www.instagram.com/intelligaia" aria-label="Instagram" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M7.8 2H16.2C19.4 2 22 4.6 22 7.8V16.2A5.8 5.8 0 0 1 16.2 22H7.8C4.6 22 2 19.4 2 16.2V7.8A5.8 5.8 0 0 1 7.8 2M7.6 4A3.6 3.6 0 0 0 4 7.6V16.4C4 18.39 5.61 20 7.6 20H16.4A3.6 3.6 0 0 0 20 16.4V7.6C20 5.61 18.39 4 16.4 4H7.6M17.25 5.5A1.25 1.25 0 0 1 18.5 6.75A1.25 1.25 0 0 1 17.25 8A1.25 1.25 0 0 1 16 6.75A1.25 1.25 0 0 1 17.25 5.5M12 7A5 5 0 0 1 17 12A5 5 0 0 1 12 17A5 5 0 0 1 7 12A5 5 0 0 1 12 7M12 9A3 3 0 0 0 9 12A3 3 0 0 0 12 15A3 3 0 0 0 15 12A3 3 0 0 0 12 9Z"/></svg></a>
+        <a href="https://youtube.com/@intelligaia-studio" aria-label="YouTube" class="ig-sic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M10,15L15.19,12L10,9V15M21.56,7.17C21.69,7.64 21.78,8.27 21.84,9.07C21.91,9.87 21.94,10.56 21.94,11.16L22,12C22,14.19 21.84,15.8 21.56,16.83C21.31,17.73 20.73,18.31 19.83,18.56C19.36,18.69 18.5,18.78 17.18,18.84C15.88,18.91 14.69,18.94 13.59,18.94L12,19C7.81,19 5.2,18.84 4.17,18.56C3.27,18.31 2.69,17.73 2.44,16.83C2.31,16.36 2.22,15.73 2.16,14.93C2.09,14.13 2.06,13.44 2.06,12.84L2,12C2,9.81 2.16,8.2 2.44,7.17C2.69,6.27 3.27,5.69 4.17,5.44C4.64,5.31 5.5,5.22 6.82,5.16C8.12,5.09 9.31,5.06 10.41,5.06L12,5C16.19,5 18.8,5.16 19.83,5.44C20.73,5.69 21.31,6.27 21.56,7.17Z"/></svg></a>
+      </div>
+    </div>
+    <div class="ig-col ig-col-nav">
+      <ul>
+        <li><a href="00%20Home.html">Design System</a></li>
+        <li><a href="20%20Illustration%20System.html">Illustration System</a></li>
+        <li><a href="22%20Characters.html">Asset Library</a></li>
+      </ul>
+    </div>
+    <div class="ig-col ig-col-offices">
+      <div class="ig-office">
+        <h5>United States</h5>
+        <p>548 Spire Bnd, Apex, NC 27523<br/><a href="mailto:sales@intelligaia.com">sales@intelligaia.com</a><br/>Ph: <a href="tel:+12524001521">252-400-1521</a></p>
+      </div>
+      <div class="ig-office">
+        <h5>INDIA</h5>
+        <p>Industrial Plot I-63,<br/>Sector - 83 Alpha IT City,<br/>Mohali, Punjab - 140306</p>
+      </div>
+    </div>
+    <div class="ig-col ig-col-cta">
+      <h2 class="goodness">Goodness =<br/>Rewards</h2>
+      <a href="https://www.intelligaia.com/contact" class="ig-contact-pill">Contact Us
+        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12 H19 M13 6 L19 12 L13 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+</footer>
+</body>
+</html>

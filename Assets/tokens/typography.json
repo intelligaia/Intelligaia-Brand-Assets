@@ -1,0 +1,50 @@
+{
+  "$schema": "https://intelligaia.github.io/schemas/tokens-v1.json",
+  "name": "Intelligaia Typography Tokens",
+  "version": "1.0.0",
+  "families": {
+    "display": {
+      "name": "Oswald",
+      "source": "https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap",
+      "weights": [400, 500],
+      "role": "All headings and descriptive display copy. 500 = headings, 400 = descriptions."
+    },
+    "body": {
+      "name": "Geist",
+      "weights": [400],
+      "role": "Interface body copy, footer links. Never bold, never italic."
+    },
+    "label": {
+      "name": "Raleway",
+      "weights": [400, 500],
+      "role": "Small uppercase labels, eyebrows, chips, buttons."
+    },
+    "mono": {
+      "name": "Geist Mono",
+      "weights": [400],
+      "role": "Code, hex values, spec blocks, metadata."
+    }
+  },
+  "scale": [
+    { "id": "d1",     "role": "Hero",      "family": "Oswald", "weight": 500, "size": "clamp(44px, 5.8vw, 88px)", "line_height": 1.02, "tracking": "-0.015em" },
+    { "id": "d2",     "role": "Section",   "family": "Oswald", "weight": 500, "size": "clamp(38px, 5vw, 66px)",   "line_height": 1.08, "tracking": "-0.015em" },
+    { "id": "h1",     "role": "Page",      "family": "Oswald", "weight": 500, "size": "40px", "line_height": 1.1 },
+    { "id": "h2",     "role": "Sub",       "family": "Oswald", "weight": 500, "size": "28px", "line_height": 1.15 },
+    { "id": "lede",   "role": "Lede",      "family": "Oswald", "weight": 400, "size": "clamp(18px, 1.9vw, 24px)", "line_height": 1.4 },
+    { "id": "body",   "role": "Body",      "family": "Geist",  "weight": 400, "size": "15px", "line_height": 1.6 },
+    { "id": "meta",   "role": "Meta",      "family": "Raleway","weight": 500, "size": "12px", "tracking": "0.06em", "transform": "uppercase" }
+  ],
+  "rules": {
+    "do": [
+      "Headings Oswald Medium 500, descriptions Oswald Regular 400",
+      "Running case in headings — no all-caps except small labels under 13px",
+      "Cap reading line length at 62 characters"
+    ],
+    "dont": [
+      "No third display family — no pixel or novelty fonts",
+      "No weights above 500 anywhere",
+      "No Oswald below 24px — it loses its character",
+      "No bold or italic on Geist"
+    ]
+  }
+}
