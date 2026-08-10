@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intelligaia · Typography (Dark)</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500;600;700&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 :root { --bg: #04050A; --bg-2: #0A0C14; --bg-3: #131522; --ink: #F4F6FF; --ink-soft: #EEF1FB; --ink-muted: rgba(244,246,255,0.65); --hair: rgba(255,255,255,0.08); --hair-2: rgba(255,255,255,0.14); --yellow: #FFC800; --green: #6EE071; --red: #FF7A75; }
@@ -52,7 +52,7 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 .tp-big span { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(180px, 28vw, 360px); line-height: 0.85; color: var(--ink-soft); letter-spacing: -0.04em; }
 .tp-big.geist span { font-family: 'Geist', sans-serif; font-weight: 400; font-size: clamp(160px, 26vw, 320px); letter-spacing: -0.03em; }
 .tp-side h2 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(40px, 5.4vw, 72px); line-height: 1.02; letter-spacing: -0.015em; color: var(--ink-soft); margin: 0 0 8px;  }
-.tp-side .fam-role { font-family: 'Geist', sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;  color: var(--yellow); margin-bottom: 20px; }
+.tp-side .fam-role { font-family: 'Geist', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;  color: var(--yellow); margin-bottom: 20px; }
 .tp-side p { font-family: 'Geist', sans-serif; font-size: 16px; line-height: 1.6; color: var(--ink); margin: 0 0 22px; max-width: 44ch; }
 .tp-weights { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .tp-weights span { padding: 6px 12px; background: transparent; border: 1px solid var(--hair-2); border-radius: 999px; font-family: 'Geist', sans-serif; font-size: 12px; color: var(--ink); }
@@ -71,21 +71,21 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 .rules-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
 @media (max-width: 900px) { .rules-grid { grid-template-columns: 1fr; } }
 .rule-card { padding: 26px 28px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 14px; }
-.rule-card h4 { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase;  margin: 0 0 14px; }
+.rule-card h4 { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;  margin: 0 0 14px; }
 .rule-card.do h4 { color: var(--green); }
 .rule-card.dont h4 { color: var(--red); }
 .rule-card ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
 .rule-card li { font-family: 'Geist', sans-serif; font-size: 14.5px; line-height: 1.55; color: var(--ink); padding-left: 22px; position: relative; }
-.rule-card.do li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 700; }
-.rule-card.dont li::before { content: '✕'; position: absolute; left: 0; color: var(--red); font-weight: 700; }
+.rule-card.do li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 500; }
+.rule-card.dont li::before { content: '✕'; position: absolute; left: 0; color: var(--red); font-weight: 500; }
 
 /* PREV / NEXT */
 .pn-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 40px; }
 @media (max-width: 700px) { .pn-row { grid-template-columns: 1fr; } }
 .pn-tile { display: block; padding: 24px 28px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 12px; transition: all 0.2s; }
 .pn-tile:hover { border-color: var(--yellow); background: var(--bg-3); }
-.pn-tile .lbl { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;  color: var(--ink-muted); margin-bottom: 6px; }
-.pn-tile .name { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 20px; color: var(--ink-soft); }
+.pn-tile .lbl { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;  color: var(--ink-muted); margin-bottom: 6px; }
+.pn-tile .name { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 20px; color: var(--ink-soft); }
 .pn-tile.next { text-align: right; }
 
 /* FOOTER */
@@ -109,7 +109,7 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 .g-mark { height:15px; width:60px; display:block; }
 .g-sys { font-family:'Oswald',sans-serif; font-weight:500; font-size:15px; letter-spacing:-0.005em; white-space:nowrap; }
 .g-nav { display:flex; align-items:center; justify-content:flex-end; gap:19px; flex:1; margin:0; padding:0 24px; list-style:none; }
-.g-nav a { font-family:'Raleway',sans-serif; font-weight:500; font-size:12.5px; white-space:nowrap; text-decoration:none; transition:color 0.15s ease; }
+.g-nav a { font-family: 'Geist', sans-serif; font-weight:500; font-size:12.5px; white-space:nowrap; text-decoration:none; transition:color 0.15s ease; }
 .g-nav a:hover { color:#FFC800; }
 @media (max-width:1240px){ .g-nav{ display:none; } }
 @media (max-width:1000px){ .g-cta{ display:none; } }
