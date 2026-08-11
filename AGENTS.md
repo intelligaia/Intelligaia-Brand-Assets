@@ -101,12 +101,31 @@ Foundations pages (`10`–`13`) define principles, colour and type. Quote them; 
 
 ---
 
+## Two typography systems
+
+This repository deliberately carries **two** type systems. They are not a mistake and must not be merged ad hoc.
+
+| Surface | Display / headings | Body | Signature colour |
+|---|---|---|---|
+| **Web & digital** (`website/`) | Oswald 400/500 | Geist 400 | `#FFC800` |
+| **Presentations** (`Intelligaia Slide Deck Skill/`) | Montserrat Bold / ExtraBold / Black | Montserrat Medium 12pt | `#FFD700` |
+
+Rules of engagement:
+
+- Building a deck, readout or pitch → follow `Intelligaia Slide Deck Skill/intelligaia-deck-design/SKILL.md`. Montserrat, `#FFD700`, weights above 500 permitted.
+- Building anything for web, product or digital → follow `website/assets/tokens/`. Oswald/Geist, `#FFC800`, 500 is the ceiling.
+- Never mix the two within one artifact. Do not substitute Oswald into a deck or Montserrat into the site.
+
+**Status: intentional divergence, pending unification.** The deck system was derived from the existing corporate deck; the web system was authored separately. Unifying them — one signature yellow, one display family across both — is planned but not yet done. Until that work lands, treat the table above as authoritative and flag any brief that assumes a single system.
+
+---
+
 ## Hard constraints
 
-These are non-negotiable and apply to every artifact:
+These are non-negotiable for **web and digital** artifacts. Presentations follow the deck system above:
 
 - **Colour** — only `#FFC800`, `#04050A`, `#4A8BF5`, `#8A5AF0` plus theme neutrals. Flat fills. No gradients on the yellow. One accent (blue *or* purple) per viewport.
-- **Type** — Oswald 400/500 for headings only. Geist for body, labels, links and descriptions. **No weight above 500 exists.** No third display family. No pixel fonts.
+- **Type** — Oswald 400/500 for headings only. Geist for body, labels, links and descriptions. **No weight above 500 exists** on web surfaces. No third display family. No pixel fonts. (Presentations use Montserrat — see Two typography systems.)
 - **Case** — running case in headings. Uppercase only below 13px.
 - **Numbering** — no `01 / 02 / 03` prefixes on headings or cards.
 - **Illustrations** — from `website/assets/` only. Never generate one. If nothing fits, report the gap.
@@ -121,8 +140,9 @@ These are non-negotiable and apply to every artifact:
 | No asset matches the brief | Report the gap. Do not synthesise. |
 | `manifest.json` unreachable | Stop. Do not fall back to remembered paths. |
 | Brief requests an off-brand colour | Flag it, propose the nearest brand colour. |
-| Brief requests a bolder font | Refuse. 500 is the ceiling. |
+| Brief requests a bolder font | Refuse on web — 500 is the ceiling. In a deck, Montserrat Bold/ExtraBold/Black are correct. |
 | Figma and repo disagree | Figma wins. Flag the drift for regeneration. |
+| Brief spans web *and* deck | Use each system on its own surface. Do not average them. Flag for the unification work. |
 
 ---
 

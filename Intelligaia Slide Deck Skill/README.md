@@ -27,6 +27,14 @@ Just describe the deck in plain language:
 
 Claude builds it against the locked design system. You can also call specific layouts by name: cover, agenda, statement/CTA, services split, three concepts, growth stat, portfolio triptych, before/after, team, four-column services, contact closing.
 
+## Examples
+
+| Example | What it shows |
+|---|---|
+| [`examples/govtech-bhutan/`](examples/govtech-bhutan/) | Cover slide (blueprint B1) — custom client hero on the arc rings, client logo top-right, 27pt Bold title |
+
+---
+
 ## The design system in brief
 
 - **Canvas:** 16:9 (13.33" × 7.5"), 12-column grid, 20px gutters, 70px side margins, rule of thirds

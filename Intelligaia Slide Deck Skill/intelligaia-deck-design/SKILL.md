@@ -33,6 +33,7 @@ Rules: white `FFFFFF` background by default; full gold `FFD700` background only 
 | Element | Font | Size | Color |
 |---|---|---|---|
 | Slide title | Montserrat (bold; brand uses Montserrat ExtraBold/Black) | 36–44pt, left-aligned, sentence case | `231F20` or `002B5C` |
+| **Cover slide title** | **Montserrat Bold** | **27pt**, left-aligned, left column | `231F20` |
 | Eyebrow label above title | Montserrat or Lato, ALL CAPS, `charSpacing: 2` | 12–14pt | `231F20` or `666666` |
 | Section/card header | Montserrat bold (caps for column headers) | 18–24pt | `231F20` |
 | Body | **Montserrat Medium** | **12pt** | `002B5C` on white/gold, `666666` secondary |
@@ -97,7 +98,7 @@ Recreate with pptxgenjs shapes unless an asset is listed. Pick 1–2 per slide, 
 
 Archetypes 1 (→B1), 2 (→B6), 5 (→B4), 6 (→B5), 13 (→B3), 14 (→B7), and 15 (→B2) have locked blueprints in the Layout blueprints section — use those coordinates verbatim. The rest compose from the grid and motif rules.
 
-1. **Cover**: built strictly on the thirds grid. Left third: logo top-left (~2.2" wide at x:0.45, y:0.45), black mega-title (36–40pt Montserrat Black, 4–6 short lines) starting at the upper-third line (y≈2.5"), and a small facts block (8–10pt, e.g. established/certifications/locations) at the bottom. Right two-thirds: `assets/cover-arc-rings.png` (3840×2496 — a bold gold outer arc ring with a paler inner ring) placed LARGE — it must cover more than 60% of the slide area (~10.5" wide, bleeding off the right edge) — so the rings' open side faces up-right and their center sits on the right-third intersection. The rings are the stage for a custom hero graphic placed on top of them (supplied per deck; fallback: product screenshot inside a large dark circle), nested in the rings' center with the rings visibly framing it. Rings behind the hero, hero behind nothing. Image-rich, no footer.
+1. **Cover**: built strictly on the thirds grid. Left third: logo top-left (~2.2" wide at x:0.49, y:0.45), title in **Montserrat Bold 27pt** ink `231F20` (4–6 short lines) starting at y≈2.25", and an optional description block below it. Never invent cover copy — if the title or description isn't supplied, leave the slot empty and ask for it rather than borrowing text from another deck. Right two-thirds: `assets/cover-arc-rings.png` (3840×2496 — a bold gold outer arc ring with a paler inner ring) placed LARGE — it must cover more than 60% of the slide area (~10.5" wide, bleeding off the right edge) — so the rings' open side faces up-right and their center sits on the right-third intersection. The rings are the stage for a custom hero graphic placed on top of them (supplied per deck; fallback: product screenshot inside a large dark circle), nested in the rings' center with the rings visibly framing it. Rings behind the hero, hero behind nothing. Image-rich, no footer.
 2. **Hero stat / growth**: 3 label/value pairs down the left (caps gray label 12pt + navy 20pt value); right half = `assets/growth-burst-semicircle-dots.png` with the 260pt navy numeral straddling the solid half and a short tagline among the dots. Reserve this archetype for numbers that are growing.
 3. **Team**: title top-left as usual; `assets/team-blobs-arc.png` (3840×2496, transparent) as the backdrop — a pale gold smile-arc with colorful blobs (purple, gold, blue, orange, red) scattered along it. Place it large (~10–11" wide) centered under the title. Each blob anchors ONE circular headshot: crop headshots circular (Ø1.8–2.2") and place each overlapping its blob, staggered heights following the arc's curve. Teal/green underlined name (Montserrat SemiBold 14pt) + gray role (Montserrat Medium 12pt) below each headshot. **Rule — match shape count to team size:** the asset carries 5 blobs; for fewer members, crop or cover unused blobs (never leave an empty blob without a headshot); for 3 members use the left, center-top, and right blobs; for more than 5, draw extra freeform blobs in the same palette (diagram pastels + gold + coral) riding the same arc.
 4. **Certifications**: gold pill statement top-left; grid of badge/seal logos right; sunburst accent; 2 short body paragraphs bottom-left with bold navy emphasis phrases.
@@ -119,7 +120,7 @@ Seven locked layouts. All coordinates in inches on the 13.33"×7.5" canvas, deri
 
 **B1 — Cover** (no footer)
 - Logo: x:0.49 y:0.45 w:2.2
-- Mega-title: cols 1–4 → x:0.49 y:2.5 w:4.03 h:2.4 — Montserrat Black 38pt ink, 4–6 short lines
+- Title: cols 1–4 → x:0.49 y:2.25 w:3.6 h:3.0 — **Montserrat Bold 27pt** ink `231F20`, left-aligned, 4–6 short lines, `lineSpacingMultiple: 1.08`
 - Facts block: x:0.49 y:5.55 w:4.03 h:1.5 — Montserrat Medium 9–10pt, label lines bold
 - Arc rings: `cover-arc-rings.png` x:4.6 y:0.35 w:10.5 h:6.83 (bleeds right; covers >60% of the slide area — keep it this large, it's the stage for a custom hero graphic)
 - Hero: custom graphic (or product screenshot in a dark circle Ø5.2") placed ON TOP of the rings, centered in them at ≈ x:7.0 y:1.2; the rings must remain visible framing it
