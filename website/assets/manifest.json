@@ -1,7 +1,7 @@
 {
   "$schema": "https://intelligaia.github.io/schemas/asset-manifest-v1.json",
   "name": "Intelligaia Illustration Assets",
-  "version": "1.0.0",
+  "version": "1.2.0",
   "generated": "2026-08-10",
   "description": "Shared, versioned illustration and brand asset library for Intelligaia. Consumed by designers, engineers and AI agents.",
   "license": "Proprietary — Intelligaia internal and client work only.",
@@ -12,13 +12,13 @@
     "pages": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets"
   },
   "counts": {
-    "total": 279,
+    "total": 292,
     "by_category": {
       "brand": 3,
       "character": 48,
       "character-element": 14,
       "device": 21,
-      "diagram": 1,
+      "diagram": 14,
       "icon": 41,
       "letter": 26,
       "lettering": 1,
@@ -1806,6 +1806,153 @@
       "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/illustrations/devices/Meta Glasses 03 — Outlined.png"
     },
     {
+      "id": "fe592b962bdb",
+      "name": "AI-Generated Code",
+      "file": "AI-Generated Code.pdf",
+      "path": "diagrams/AI-Generated Code.pdf",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "pdf",
+      "bytes": 1263734,
+      "width": null,
+      "height": null,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/AI-Generated Code.pdf",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/AI-Generated Code.pdf"
+    },
+    {
+      "id": "55f6146c2115",
+      "name": "AI-Generated Code",
+      "file": "AI-Generated Code.png",
+      "path": "diagrams/AI-Generated Code.png",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "png",
+      "bytes": 528567,
+      "width": 1400,
+      "height": 1400,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/AI-Generated Code.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/AI-Generated Code.png"
+    },
+    {
+      "id": "ef275d2c217c",
+      "name": "Next Steps",
+      "file": "Next Steps.pdf",
+      "path": "diagrams/Next Steps.pdf",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "pdf",
+      "bytes": 1487506,
+      "width": null,
+      "height": null,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/Next Steps.pdf",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/Next Steps.pdf"
+    },
+    {
+      "id": "2f160e43a9e1",
+      "name": "Next Steps",
+      "file": "Next Steps.png",
+      "path": "diagrams/Next Steps.png",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "png",
+      "bytes": 481674,
+      "width": 1400,
+      "height": 1400,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/Next Steps.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/Next Steps.png"
+    },
+    {
+      "id": "921cf467df5b",
+      "name": "Production Analyst",
+      "file": "Production Analyst.pdf",
+      "path": "diagrams/Production Analyst.pdf",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "pdf",
+      "bytes": 536366,
+      "width": null,
+      "height": null,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/Production Analyst.pdf",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/Production Analyst.pdf"
+    },
+    {
+      "id": "f9f943fcf7bc",
+      "name": "Production Analyst",
+      "file": "Production Analyst.png",
+      "path": "diagrams/Production Analyst.png",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "png",
+      "bytes": 308342,
+      "width": 1400,
+      "height": 1400,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/Production Analyst.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/Production Analyst.png"
+    },
+    {
+      "id": "a195f1bc80f5",
+      "name": "Role based AI Deconstruction Process Graphic w icons",
+      "file": "Role based AI Deconstruction Process Graphic w icons.pdf",
+      "path": "diagrams/Role based AI Deconstruction Process Graphic w icons.pdf",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "pdf",
+      "bytes": 513052,
+      "width": null,
+      "height": null,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/Role based AI Deconstruction Process Graphic w icons.pdf",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/Role based AI Deconstruction Process Graphic w icons.pdf"
+    },
+    {
       "id": "745a03836e2c",
       "name": "Role based AI Deconstruction Process Graphic w icons",
       "file": "Role based AI Deconstruction Process Graphic w icons.png",
@@ -1813,16 +1960,144 @@
       "category": "diagram",
       "folder": "diagrams",
       "format": "png",
-      "bytes": 101396,
-      "width": 1080,
-      "height": 1080,
+      "bytes": 339327,
+      "width": 1400,
+      "height": 1400,
       "stage": null,
       "tags": [
         "diagram",
-        "icon"
+        "process",
+        "ai",
+        "framework"
       ],
       "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/Role based AI Deconstruction Process Graphic w icons.png",
       "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/Role based AI Deconstruction Process Graphic w icons.png"
+    },
+    {
+      "id": "31eacc2c09b1",
+      "name": "SAFE Framework - How We Use It",
+      "file": "SAFE Framework - How We Use It.pdf",
+      "path": "diagrams/SAFE Framework - How We Use It.pdf",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "pdf",
+      "bytes": 1728081,
+      "width": null,
+      "height": null,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/SAFE Framework - How We Use It.pdf",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/SAFE Framework - How We Use It.pdf"
+    },
+    {
+      "id": "84fa8bb58481",
+      "name": "SAFE Framework - How We Use It",
+      "file": "SAFE Framework - How We Use It.png",
+      "path": "diagrams/SAFE Framework - How We Use It.png",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "png",
+      "bytes": 607357,
+      "width": 1400,
+      "height": 1400,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/SAFE Framework - How We Use It.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/SAFE Framework - How We Use It.png"
+    },
+    {
+      "id": "b07d898e495f",
+      "name": "SAFE Workflow Evaluation",
+      "file": "SAFE Workflow Evaluation.pdf",
+      "path": "diagrams/SAFE Workflow Evaluation.pdf",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "pdf",
+      "bytes": 552218,
+      "width": null,
+      "height": null,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/SAFE Workflow Evaluation.pdf",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/SAFE Workflow Evaluation.pdf"
+    },
+    {
+      "id": "179fd3a7a6c7",
+      "name": "SAFE Workflow Evaluation",
+      "file": "SAFE Workflow Evaluation.png",
+      "path": "diagrams/SAFE Workflow Evaluation.png",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "png",
+      "bytes": 319653,
+      "width": 1400,
+      "height": 1400,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/SAFE Workflow Evaluation.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/SAFE Workflow Evaluation.png"
+    },
+    {
+      "id": "65c25a09456b",
+      "name": "Turning Software-Development Knowledge Into AI Context",
+      "file": "Turning Software-Development Knowledge Into AI Context.pdf",
+      "path": "diagrams/Turning Software-Development Knowledge Into AI Context.pdf",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "pdf",
+      "bytes": 1985520,
+      "width": null,
+      "height": null,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/Turning Software-Development Knowledge Into AI Context.pdf",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/Turning Software-Development Knowledge Into AI Context.pdf"
+    },
+    {
+      "id": "e4a30cdea0b0",
+      "name": "Turning Software-Development Knowledge Into AI Context",
+      "file": "Turning Software-Development Knowledge Into AI Context.png",
+      "path": "diagrams/Turning Software-Development Knowledge Into AI Context.png",
+      "category": "diagram",
+      "folder": "diagrams",
+      "format": "png",
+      "bytes": 507777,
+      "width": 1400,
+      "height": 1400,
+      "stage": null,
+      "tags": [
+        "diagram",
+        "process",
+        "ai",
+        "framework"
+      ],
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/diagrams/Turning Software-Development Knowledge Into AI Context.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/diagrams/Turning Software-Development Knowledge Into AI Context.png"
     },
     {
       "id": "3b673f12ff28",
