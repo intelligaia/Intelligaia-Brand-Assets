@@ -3,19 +3,30 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Intelligaia · Illustration System · Waves</title>
+<title>Intelligaia · Illustration System · Letters</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
 <style>
 
 :root {
-  --bg: #FFFFFF; --bg-2: #F7F7F5; --bg-3: #EFEFEC;
-  --ink: #121212; --hair: #E6E4DB; --hair-2: #D6D4CC;
-  --footer-bg: #F4F4F2;
-  --yellow: #FFC800; --purple: #6C3CD2;
+  --bg: #04050A;
+  --bg-2: #0A0C14;
+  --bg-3: #131522;
+  --ink: #F4F6FF;
+  --ink-soft: #EEF1FB;
+  --ink-muted: rgba(244,246,255,0.62);
+  --hair: rgba(255,255,255,0.08);
+  --hair-2: rgba(255,255,255,0.16);
+  --yellow: #FFC800;
+  --yellow-glow: rgba(255,200,0,0.15);
+  --blue: #4A8BF5;
+  --purple: #8A5AF0;
+  --green: #6EE071;
+  --red: #FF7A75;
+  --footer-bg: #0A0C14;
 }
 
 /* ==== GLOBAL HEADER — pixel-matched to intelligaia.com (Wix) ==== */
-.g-header { position: sticky; top: 0; z-index: 50; background: #FFFFFF; width: 100%; height: 114px; }
+.g-header { position: sticky; top: 0; z-index: 50; background: var(--bg-2); width: 100%; height: 114px; }
 .g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; gap: 0; }
 .g-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .g-logo img { height: 51px; width: auto; display: block; }
@@ -23,12 +34,12 @@
 .g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
 .g-nav a { font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1; color: #000000; text-decoration: none; white-space: nowrap; transition: opacity 0.15s ease; }
 .g-nav a:hover { opacity: 0.6; }
-.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 16px; line-height: 1; color: #000000; background: #FFFFFF; border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
+.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 16px; line-height: 1; color: #000000; background: var(--bg-2); border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
 .g-cta:hover { background: #000000; color: #FFFFFF; }
 .g-cta svg { width: 14px; height: 14px; }
-.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: #FFFFFF; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
+.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: var(--bg-2); align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
 .g-hamburger svg { width: 20px; height: 20px; color: #000000; }
-.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: #FFFFFF; z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
+.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: var(--bg-2); z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
 .g-mobile-drawer.open { display: flex; }
 .g-mobile-drawer a { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 20px; color: #000000; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #EAEAEA; }
 .g-mobile-drawer .g-cta { align-self: flex-start; margin-top: 12px; }
@@ -79,7 +90,7 @@ a { color: inherit; text-decoration: none; }
 .chr-hero p.lede { font-size: 16px; max-width: 68ch; margin: 0; opacity: 0.8; line-height: 1.5; }
 @media (max-width: 760px) { .chr-hero { padding: 24px 24px 16px; } .chr-hero h1 { font-size: 32px; } }
 
-.pill-bar { position: sticky; top: 88px; z-index: 40; background: rgba(255,255,255,0.97); backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--hair); border-top: 1px solid var(--hair); }
+.pill-bar { position: sticky; top: 88px; z-index: 40; background: rgba(4,5,10,0.94); backdrop-filter: saturate(180%) blur(10px); border-bottom: 1px solid var(--hair); border-top: 1px solid var(--hair); }
 .pill-bar-inner { max-width: 1440px; margin: 0 auto; padding: 12px 56px; display: flex; gap: 8px; align-items: center; overflow-x: auto; scrollbar-width: none; }
 .pill-bar-inner::-webkit-scrollbar { display: none; }
 .pill { display: inline-flex; align-items: center; gap: 6px; padding: 8px 16px; border: 1px solid var(--hair-2); background: var(--bg); color: var(--ink); border-radius: 999px; font-size: 13px; white-space: nowrap; font-family: 'Geist', sans-serif; text-decoration: none; transition: all 0.15s ease; }
@@ -171,7 +182,7 @@ a { color: inherit; text-decoration: none; }
 .ex-preview.placeholder{ background:repeating-linear-gradient(45deg,#F6F3EA 0 12px,#EDE9DD 12px 24px); }
 .hub-preview.ph{ background:linear-gradient(180deg,#F6F3EA 0%,#EAE6DA 100%); }
 .show-viz{ background:var(--bg-3); }
-.fnd-mini{ background:#FFFFFF; }
+.fnd-mini{ background:var(--bg-2); }
 .anatomy-canvas{ background:var(--bg-2); }
 .tp-big{ background:var(--bg-2); }
 .col-viz{ box-shadow:0 20px 50px -18px rgba(0,0,0,.22); }
@@ -183,6 +194,33 @@ a { color: inherit; text-decoration: none; }
 .dodont-col.do li::before{ color:#2E9E4F; } .dodont-col.dont li::before{ color:#D64541; }
 .instr-card .dodont .d.do span:first-child{ color:#2E9E4F; }
 .instr-card .dodont .d.dont span:first-child{ color:#D64541; }
+
+/* ── DARK LIBRARY ADJUSTMENTS ── */
+body{ background:var(--bg); color:var(--ink); }
+.g-logo img{ filter:invert(1) brightness(1.1); }
+.g-header{ background:rgba(4,5,10,0.78) !important; border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+.g-nav a{ color:rgba(244,246,255,0.82); }
+.pill-bar{ background:rgba(4,5,10,0.94) !important; border-color:var(--hair) !important; }
+.pill{ background:var(--bg-2); color:var(--ink); border-color:var(--hair-2); }
+.pill:hover{ border-color:var(--yellow); color:var(--yellow); }
+.pill.active{ background:var(--yellow); color:#04050A; border-color:var(--yellow); }
+.pill.active .count{ color:#04050A; opacity:.75; }
+.chr-hero h1{ color:var(--ink-soft); font-weight:400 !important; }
+.chr-hero p, .chr-hero .lede{ color:var(--ink-muted); }
+.stage-cell,.asset-cell,.grid-cell,.a-card,.card{ background:var(--bg-2); border-color:var(--hair); }
+.stage-cell:hover,.asset-cell:hover,.a-card:hover,.card:hover{ border-color:var(--yellow); background:var(--bg-3); }
+.stage-cell img,.asset-cell img,.a-card img{ background:transparent; }
+.lb-pill{ background:var(--yellow); color:#04050A; }
+.dl-btn,.btn-dl{ background:var(--yellow); color:#04050A; border-color:var(--yellow); }
+.dl-btn:hover,.btn-dl:hover{ background:transparent; color:var(--yellow); }
+.lightbox,.lb-backdrop{ background:rgba(4,5,10,0.94); }
+.lb-panel,.lb-inner{ background:var(--bg-2); border-color:var(--hair-2); }
+.dark-footer{ background:var(--bg-2); border-top:1px solid var(--hair); }
+.df-logo img{ filter:invert(1) brightness(1.1); }
+section, .page{ background:transparent; }
+.sec-hd,.stage-hd{ border-color:var(--hair); }
+h1,h2,h3,h4,h5,h6{ color:var(--ink-soft); }
+.hero h1,.cover-title,.chr-hero h1{ font-weight:400 !important; }
 
 /* ── DISPLAY HEADINGS — Oswald Regular, locked ── */
 .hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
@@ -235,13 +273,13 @@ body{ overscroll-behavior-y:none; }
     <span class="sep">/</span>
     <a href="20%20Brand%20Assets.html">Illustration System</a>
     <span class="sep">/</span>
-    <span class="cur">Waves</span>
+    <span class="cur">Letters</span>
   </div>
 </div>
 
 <section class="chr-hero">
-  <h1>Waves.</h1>
-  <p class="lede">Ribbon and wave elements — decorative full-bleed accents.</p>
+  <h1>Letters.</h1>
+  <p class="lede">Display alphabet — one glyph per uppercase letter.</p>
 </section>
 
 <div class="pill-bar">
@@ -251,10 +289,10 @@ body{ overscroll-behavior-y:none; }
     <a class="pill" href="25%20Nature.html">Nature</a>
     <a class="pill" href="24%20Objects.html">Objects</a>
     <a class="pill" href="26%20Icons.html">Icons</a>
-    <a class="pill active" href="28%20Waves.html">Waves</a>
-    <a class="pill" href="27%20Letters.html">Letters</a>
+    <a class="pill" href="28%20Waves.html">Waves</a>
+    <a class="pill active" href="27%20Letters.html">Letters</a>
     <div class="pill-bar-right">
-      <button class="dl-btn" onclick='downloadItems([{"path": "assets/waves/Braided-Ribbon/Horizontal-01.svg", "filename": "Horizontal-01.svg"}, {"path": "assets/waves/Braided-Ribbon/Vertical-Twist.svg", "filename": "Vertical-Twist.svg"}, {"path": "assets/waves/Crossing-Strand/Duo-Weave.svg", "filename": "Duo-Weave.svg"}, {"path": "assets/waves/Folded-Ribbon/Accordion-Wide.svg", "filename": "Accordion-Wide.svg"}, {"path": "assets/waves/Looped-Ribbon/Tunnel-Arch.svg", "filename": "Tunnel-Arch.svg"}, {"path": "assets/waves/Multicolour-Ribbon/Layered-Flow.svg", "filename": "Layered-Flow.svg"}, {"path": "assets/waves/Ramp-Ribbon/Arch-Rise.svg", "filename": "Arch-Rise.svg"}, {"path": "assets/waves/Soft-Crest/Cloud-Bump.svg", "filename": "Cloud-Bump.svg"}, {"path": "assets/waves/Zigzag-Ribbon/Vertical-Fold.svg", "filename": "Vertical-Fold.svg"}])'><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 4 V16 M6 10 L12 16 L18 10 M5 20 H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download all</button>
+      <button class="dl-btn" onclick='downloadItems([{"path": "assets/letters/Alphabet%3DA.svg", "filename": "Alphabet=A.svg"}, {"path": "assets/letters/Alphabet%3DB.svg", "filename": "Alphabet=B.svg"}, {"path": "assets/letters/Alphabet%3DC.svg", "filename": "Alphabet=C.svg"}, {"path": "assets/letters/Alphabet%3DD.svg", "filename": "Alphabet=D.svg"}, {"path": "assets/letters/Alphabet%3DE.svg", "filename": "Alphabet=E.svg"}, {"path": "assets/letters/Alphabet%3DF.svg", "filename": "Alphabet=F.svg"}, {"path": "assets/letters/Alphabet%3DG.svg", "filename": "Alphabet=G.svg"}, {"path": "assets/letters/Alphabet%3DH.svg", "filename": "Alphabet=H.svg"}, {"path": "assets/letters/Alphabet%3DI.svg", "filename": "Alphabet=I.svg"}, {"path": "assets/letters/Alphabet%3DJ.svg", "filename": "Alphabet=J.svg"}, {"path": "assets/letters/Alphabet%3DK.svg", "filename": "Alphabet=K.svg"}, {"path": "assets/letters/Alphabet%3DL.svg", "filename": "Alphabet=L.svg"}, {"path": "assets/letters/Alphabet%3DM.svg", "filename": "Alphabet=M.svg"}, {"path": "assets/letters/Alphabet%3DN.svg", "filename": "Alphabet=N.svg"}, {"path": "assets/letters/Alphabet%3DO.svg", "filename": "Alphabet=O.svg"}, {"path": "assets/letters/Alphabet%3DP.svg", "filename": "Alphabet=P.svg"}, {"path": "assets/letters/Alphabet%3DQ.svg", "filename": "Alphabet=Q.svg"}, {"path": "assets/letters/Alphabet%3DR.svg", "filename": "Alphabet=R.svg"}, {"path": "assets/letters/Alphabet%3DS.svg", "filename": "Alphabet=S.svg"}, {"path": "assets/letters/Alphabet%3DT.svg", "filename": "Alphabet=T.svg"}, {"path": "assets/letters/Alphabet%3DU.svg", "filename": "Alphabet=U.svg"}, {"path": "assets/letters/Alphabet%3DV.svg", "filename": "Alphabet=V.svg"}, {"path": "assets/letters/Alphabet%3DW.svg", "filename": "Alphabet=W.svg"}, {"path": "assets/letters/Alphabet%3DX.svg", "filename": "Alphabet=X.svg"}, {"path": "assets/letters/Alphabet%3DY.svg", "filename": "Alphabet=Y.svg"}, {"path": "assets/letters/Alphabet%3DZ.svg", "filename": "Alphabet=Z.svg"}])'><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 4 V16 M6 10 L12 16 L18 10 M5 20 H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download all</button>
     </div>
   </div>
 </div>
@@ -262,40 +300,108 @@ body{ overscroll-behavior-y:none; }
 <section class="grid-page">
   <div class="asset-grid">
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Braided-Ribbon/Horizontal-01.svg" alt="Braided Ribbon — Horizontal 01" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Braided Ribbon — Horizontal 01</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DA.svg" alt="Letter A" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter A</p></div>
   </a>
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Braided-Ribbon/Vertical-Twist.svg" alt="Braided Ribbon — Vertical Twist" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Braided Ribbon — Vertical Twist</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DB.svg" alt="Letter B" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter B</p></div>
   </a>
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Crossing-Strand/Duo-Weave.svg" alt="Crossing Strand — Duo Weave" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Crossing Strand — Duo Weave</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DC.svg" alt="Letter C" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter C</p></div>
   </a>
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Folded-Ribbon/Accordion-Wide.svg" alt="Folded Ribbon — Accordion Wide" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Folded Ribbon — Accordion Wide</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DD.svg" alt="Letter D" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter D</p></div>
   </a>
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Looped-Ribbon/Tunnel-Arch.svg" alt="Looped Ribbon — Tunnel Arch" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Looped Ribbon — Tunnel Arch</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DE.svg" alt="Letter E" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter E</p></div>
   </a>
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Multicolour-Ribbon/Layered-Flow.svg" alt="Multicolour Ribbon — Layered Flow" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Multicolour Ribbon — Layered Flow</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DF.svg" alt="Letter F" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter F</p></div>
   </a>
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Ramp-Ribbon/Arch-Rise.svg" alt="Ramp Ribbon — Arch Rise" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Ramp Ribbon — Arch Rise</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DG.svg" alt="Letter G" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter G</p></div>
   </a>
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Soft-Crest/Cloud-Bump.svg" alt="Soft Crest — Cloud Bump" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Soft Crest — Cloud Bump</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DH.svg" alt="Letter H" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter H</p></div>
   </a>
   <a class="asset-card" href="29%20Asset%20Detail.html">
-    <div class="thumb"><img src="../assets/waves/Zigzag-Ribbon/Vertical-Fold.svg" alt="Zigzag Ribbon — Vertical Fold" loading="lazy" /></div>
-    <div class="meta"><p class="a-name">Zigzag Ribbon — Vertical Fold</p></div>
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DI.svg" alt="Letter I" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter I</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DJ.svg" alt="Letter J" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter J</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DK.svg" alt="Letter K" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter K</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DL.svg" alt="Letter L" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter L</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DM.svg" alt="Letter M" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter M</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DN.svg" alt="Letter N" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter N</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DO.svg" alt="Letter O" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter O</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DP.svg" alt="Letter P" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter P</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DQ.svg" alt="Letter Q" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter Q</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DR.svg" alt="Letter R" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter R</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DS.svg" alt="Letter S" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter S</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DT.svg" alt="Letter T" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter T</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DU.svg" alt="Letter U" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter U</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DV.svg" alt="Letter V" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter V</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DW.svg" alt="Letter W" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter W</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DX.svg" alt="Letter X" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter X</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DY.svg" alt="Letter Y" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter Y</p></div>
+  </a>
+  <a class="asset-card" href="29%20Asset%20Detail.html">
+    <div class="thumb"><img src="../assets/letters/Alphabet%3DZ.svg" alt="Letter Z" loading="lazy" /></div>
+    <div class="meta"><p class="a-name">Letter Z</p></div>
   </a>
   </div>
 </section>
@@ -325,7 +431,7 @@ function downloadItems(items) {
       <div><h5>System</h5><ul>
         <li><a href="00%20Home.html">Home</a></li>
         <li><a href="10%20Foundations.html">Foundations</a></li>
-        <li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li>
+        <li><a href="20%20Brand%20Assets.html">Illustration library</a></li>
       </ul></div>
       <div><h5>Foundations</h5><ul>
         <li><a href="10%20Foundations.html#p1">Principles</a></li>
@@ -340,7 +446,7 @@ function downloadItems(items) {
     </div>
     <div class="df-tail">
       <span>© 2026 Intelligaia</span>
-      <a href="../dark/10%20Foundations.html" class="df-switch">Switch to dark theme →</a>
+      <a href="../light/10%20Foundations.html" class="df-switch">Switch to light theme </a>
     </div>
   </div>
 </footer>

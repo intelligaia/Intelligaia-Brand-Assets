@@ -8,14 +8,25 @@
 <style>
 
 :root {
-  --bg: #FFFFFF; --bg-2: #F7F7F5; --bg-3: #EFEFEC;
-  --ink: #121212; --hair: #E6E4DB; --hair-2: #D6D4CC;
-  --footer-bg: #F4F4F2;
-  --yellow: #FFC800; --purple: #6C3CD2;
+  --bg: #04050A;
+  --bg-2: #0A0C14;
+  --bg-3: #131522;
+  --ink: #F4F6FF;
+  --ink-soft: #EEF1FB;
+  --ink-muted: rgba(244,246,255,0.62);
+  --hair: rgba(255,255,255,0.08);
+  --hair-2: rgba(255,255,255,0.16);
+  --yellow: #FFC800;
+  --yellow-glow: rgba(255,200,0,0.15);
+  --blue: #4A8BF5;
+  --purple: #8A5AF0;
+  --green: #6EE071;
+  --red: #FF7A75;
+  --footer-bg: #0A0C14;
 }
 
 /* ==== GLOBAL HEADER — pixel-matched to intelligaia.com (Wix) ==== */
-.g-header { position: sticky; top: 0; z-index: 50; background: #FFFFFF; width: 100%; height: 114px; }
+.g-header { position: sticky; top: 0; z-index: 50; background: var(--bg-2); width: 100%; height: 114px; }
 .g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; gap: 0; }
 .g-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
 .g-logo img { height: 51px; width: auto; display: block; }
@@ -23,12 +34,12 @@
 .g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
 .g-nav a { font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1; color: #000000; text-decoration: none; white-space: nowrap; transition: opacity 0.15s ease; }
 .g-nav a:hover { opacity: 0.6; }
-.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 16px; line-height: 1; color: #000000; background: #FFFFFF; border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
+.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 16px; line-height: 1; color: #000000; background: var(--bg-2); border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
 .g-cta:hover { background: #000000; color: #FFFFFF; }
 .g-cta svg { width: 14px; height: 14px; }
-.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: #FFFFFF; align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
+.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: var(--bg-2); align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
 .g-hamburger svg { width: 20px; height: 20px; color: #000000; }
-.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: #FFFFFF; z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
+.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: var(--bg-2); z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
 .g-mobile-drawer.open { display: flex; }
 .g-mobile-drawer a { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 20px; color: #000000; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #EAEAEA; }
 .g-mobile-drawer .g-cta { align-self: flex-start; margin-top: 12px; }
@@ -148,7 +159,7 @@ a { color: inherit; text-decoration: none; }
 .ex-preview.placeholder{ background:repeating-linear-gradient(45deg,#F6F3EA 0 12px,#EDE9DD 12px 24px); }
 .hub-preview.ph{ background:linear-gradient(180deg,#F6F3EA 0%,#EAE6DA 100%); }
 .show-viz{ background:var(--bg-3); }
-.fnd-mini{ background:#FFFFFF; }
+.fnd-mini{ background:var(--bg-2); }
 .anatomy-canvas{ background:var(--bg-2); }
 .tp-big{ background:var(--bg-2); }
 .col-viz{ box-shadow:0 20px 50px -18px rgba(0,0,0,.22); }
@@ -160,6 +171,33 @@ a { color: inherit; text-decoration: none; }
 .dodont-col.do li::before{ color:#2E9E4F; } .dodont-col.dont li::before{ color:#D64541; }
 .instr-card .dodont .d.do span:first-child{ color:#2E9E4F; }
 .instr-card .dodont .d.dont span:first-child{ color:#D64541; }
+
+/* ── DARK LIBRARY ADJUSTMENTS ── */
+body{ background:var(--bg); color:var(--ink); }
+.g-logo img{ filter:invert(1) brightness(1.1); }
+.g-header{ background:rgba(4,5,10,0.78) !important; border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+.g-nav a{ color:rgba(244,246,255,0.82); }
+.pill-bar{ background:rgba(4,5,10,0.94) !important; border-color:var(--hair) !important; }
+.pill{ background:var(--bg-2); color:var(--ink); border-color:var(--hair-2); }
+.pill:hover{ border-color:var(--yellow); color:var(--yellow); }
+.pill.active{ background:var(--yellow); color:#04050A; border-color:var(--yellow); }
+.pill.active .count{ color:#04050A; opacity:.75; }
+.chr-hero h1{ color:var(--ink-soft); font-weight:400 !important; }
+.chr-hero p, .chr-hero .lede{ color:var(--ink-muted); }
+.stage-cell,.asset-cell,.grid-cell,.a-card,.card{ background:var(--bg-2); border-color:var(--hair); }
+.stage-cell:hover,.asset-cell:hover,.a-card:hover,.card:hover{ border-color:var(--yellow); background:var(--bg-3); }
+.stage-cell img,.asset-cell img,.a-card img{ background:transparent; }
+.lb-pill{ background:var(--yellow); color:#04050A; }
+.dl-btn,.btn-dl{ background:var(--yellow); color:#04050A; border-color:var(--yellow); }
+.dl-btn:hover,.btn-dl:hover{ background:transparent; color:var(--yellow); }
+.lightbox,.lb-backdrop{ background:rgba(4,5,10,0.94); }
+.lb-panel,.lb-inner{ background:var(--bg-2); border-color:var(--hair-2); }
+.dark-footer{ background:var(--bg-2); border-top:1px solid var(--hair); }
+.df-logo img{ filter:invert(1) brightness(1.1); }
+section, .page{ background:transparent; }
+.sec-hd,.stage-hd{ border-color:var(--hair); }
+h1,h2,h3,h4,h5,h6{ color:var(--ink-soft); }
+.hero h1,.cover-title,.chr-hero h1{ font-weight:400 !important; }
 
 /* ── DISPLAY HEADINGS — Oswald Regular, locked ── */
 .hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
@@ -359,7 +397,7 @@ render();
       <div><h5>System</h5><ul>
         <li><a href="00%20Home.html">Home</a></li>
         <li><a href="10%20Foundations.html">Foundations</a></li>
-        <li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li>
+        <li><a href="20%20Brand%20Assets.html">Illustration library</a></li>
       </ul></div>
       <div><h5>Foundations</h5><ul>
         <li><a href="10%20Foundations.html#p1">Principles</a></li>
@@ -374,7 +412,7 @@ render();
     </div>
     <div class="df-tail">
       <span>© 2026 Intelligaia</span>
-      <a href="../dark/10%20Foundations.html" class="df-switch">Switch to dark theme →</a>
+      <a href="../light/10%20Foundations.html" class="df-switch">Switch to light theme </a>
     </div>
   </div>
 </footer>

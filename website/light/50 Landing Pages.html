@@ -211,10 +211,6 @@ body::before {
 @media (max-width:1000px){ .g-cta{ display:none; } }
 
 
-/* ── HERO / DISPLAY HEADINGS — Oswald Regular, locked ── */
-.hero-h1, .hero h1, .cover-title, h1.big, .big-title, .show-card h2,
-.pr-body h2, .col-body h2, .tp-side h2 { font-weight: 400 !important; }
-
 /* ── LIGHT MODE ADJUSTMENTS ── */
 .spec-block, .prompt-block{ background:#0A0C14; border-color:rgba(18,18,18,.14); }
 .spec-block pre, .prompt-block pre{ color:#E8E8E8; }
@@ -238,6 +234,22 @@ body::before {
 .dodont-col.do li::before{ color:#2E9E4F; } .dodont-col.dont li::before{ color:#D64541; }
 .instr-card .dodont .d.do span:first-child{ color:#2E9E4F; }
 .instr-card .dodont .d.dont span:first-child{ color:#D64541; }
+
+/* ── DISPLAY HEADINGS — Oswald Regular, locked ── */
+.hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
+.show-card h2,.pr-body h2,.col-body h2,.tp-side h2,.trio-card h3,
+section h1,section h2{ font-weight:400 !important; }
+.hero-h1 .word{ font-weight:400 !important; }
+
+/* ── SCROLL — single owner, no fighting ── */
+html{ scroll-behavior:auto; }
+html.lenis, html.lenis body{ height:auto; }
+.lenis.lenis-smooth{ scroll-behavior:auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent]{ overscroll-behavior:contain; }
+.lenis.lenis-stopped{ overflow:hidden; }
+body{ overscroll-behavior-y:none; }
+.section{ scroll-margin-top:110px; }
+[id]{ scroll-margin-top:110px; }
 </style>
 </head>
 <body>
@@ -267,7 +279,7 @@ body::before {
 <!-- HERO -->
 <section class="section hero">
   <div class="crumbs reveal">
-    <a href="00%20Home.html">Portal</a>
+    <a href="00%20Home.html">Brand assets</a>
     <span class="sep">/</span>
     <a href="00%20Home.html#playbooks">Playbooks</a>
     <span class="sep">/</span>
@@ -471,7 +483,7 @@ body::before {
 <section class="section">
   <span class="eyebrow reveal">For agents</span>
   <h2 class="big-title reveal" data-delay="1">Prompt an agent can run.</h2>
-  <p class="big-lede reveal" data-delay="2">Copy the prompt below, replace bracketed inputs, and hand to an agent with access to this portal. The JSON spec at the bottom of this page is the authoritative source.</p>
+  <p class="big-lede reveal" data-delay="2">Copy the prompt below, replace bracketed inputs, and hand to an agent with access to this system. The JSON spec at the bottom of this page is the authoritative source.</p>
 
   <div class="prompt-block reveal" data-delay="3">
     <div class="lbl">Agent prompt</div>
@@ -634,7 +646,7 @@ Output: single self-contained HTML file. Include the JSON spec block for downstr
       <div>
         <h5>System</h5>
         <ul>
-          <li><a href="00%20Home.html">Portal home</a></li>
+          <li><a href="00%20Home.html">Home</a></li>
           <li><a href="10%20Foundations.html">Foundations</a></li>
           <li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li>
         </ul>
@@ -663,12 +675,44 @@ Output: single self-contained HTML file. Include the JSON spec block for downstr
 </footer>
 
 <script>
-const lenis = new Lenis({
-  duration: 1.4,
-  easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
-  smoothWheel: true,
-});
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+// Smooth scroll — one instance, anchor-aware
+(function initScroll(){
+  if (window.__igLenis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof Lenis === 'undefined') return;
+  // Smooth scroll — one instance, anchor-aware
+(function initScroll(){
+  if (window.__igLenis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof Lenis === 'undefined') return;
+  var lenis = new Lenis({ duration:1.05, easing:function(t){return 1-Math.pow(1-t,3);},
+                          smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
+  window.__igLenis = lenis;
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -100 });
+    });
+  });
+})(); }
+  requestAnimationFrame(raf);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -100 });
+    });
+  });
+})(); }
 requestAnimationFrame(raf);
 
 const io = new IntersectionObserver((entries) => {

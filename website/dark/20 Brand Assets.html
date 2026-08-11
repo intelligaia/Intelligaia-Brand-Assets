@@ -192,9 +192,37 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 @media (max-width:1000px){ .g-cta{ display:none; } }
 
 
-/* ── HERO / DISPLAY HEADINGS — Oswald Regular, locked ── */
-.hero-h1, .hero h1, .cover-title, h1.big, .big-title, .show-card h2,
-.pr-body h2, .col-body h2, .tp-side h2 { font-weight: 400 !important; }
+/* ── CATEGORY GRID — image-led, no counts ── */
+.cat-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:34px; }
+@media (max-width:1100px){ .cat-grid{ grid-template-columns:repeat(3,1fr);} }
+@media (max-width:760px){ .cat-grid{ grid-template-columns:repeat(2,1fr);} }
+.cat-tile{ display:flex; flex-direction:column; background:var(--bg-2); border:1px solid var(--hair-2); border-radius:14px; overflow:hidden; text-decoration:none; color:inherit;
+  opacity:0; transform:translateY(22px);
+  transition:opacity .6s cubic-bezier(.22,.9,.3,1), transform .6s cubic-bezier(.22,.9,.3,1), border-color .22s, background .22s; }
+.cat-tile.seen{ opacity:1; transform:none; }
+.cat-tile.seen:hover{ border-color:var(--yellow); background:var(--bg-3); transform:translateY(-4px); }
+.cat-thumb{ aspect-ratio:1/1; display:flex; align-items:center; justify-content:center; padding:24px; background:var(--bg-3); border-bottom:1px solid var(--hair); }
+.cat-thumb img{ max-width:100%; max-height:100%; object-fit:contain; transition:transform .4s cubic-bezier(.22,.9,.3,1); }
+.cat-tile:hover .cat-thumb img{ transform:scale(1.06); }
+.cat-name{ padding:15px 18px 17px; font-family:'Oswald',sans-serif; font-weight:400; font-size:19px; letter-spacing:-.005em; color:var(--ink-soft); display:flex; align-items:center; justify-content:space-between; gap:8px; }
+.cat-name::after{ content:'→'; font-size:15px; color:var(--ink-muted); transition:transform .2s,color .2s; }
+.cat-tile:hover .cat-name::after{ color:var(--yellow); transform:translateX(3px); }
+
+/* ── DISPLAY HEADINGS — Oswald Regular, locked ── */
+.hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
+.show-card h2,.pr-body h2,.col-body h2,.tp-side h2,.trio-card h3,
+section h1,section h2{ font-weight:400 !important; }
+.hero-h1 .word{ font-weight:400 !important; }
+
+/* ── SCROLL — single owner, no fighting ── */
+html{ scroll-behavior:auto; }
+html.lenis, html.lenis body{ height:auto; }
+.lenis.lenis-smooth{ scroll-behavior:auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent]{ overscroll-behavior:contain; }
+.lenis.lenis-stopped{ overflow:hidden; }
+body{ overscroll-behavior-y:none; }
+.section{ scroll-margin-top:110px; }
+[id]{ scroll-margin-top:110px; }
 </style>
 </head>
 <body>
@@ -237,65 +265,42 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 </section>
 
 <section class="section">
-  <span class="eyebrow reveal">The system</span>
-  <h2 class="big-title reveal" data-delay="1">Every asset from the same three primitives.</h2>
-  <p class="big-lede reveal" data-delay="2">Circle, rectangle, line — placed on a 50×50 grid, built through four stages, filled from four brand colours. That constraint is what makes an Intelligaia illustration recognisable at a glance.</p>
-  <div class="what-grid reveal" data-delay="3">
-    <div class="what-card"><div class="lbl">Grid</div><h4>50 × 50</h4><p>Every shape snaps to the dot-pixel grid before detail is added.</p></div>
-    <div class="what-card"><div class="lbl">Primitives</div><h4>Three shapes</h4><p>Circle, rectangle, line. Nothing else is drawn freehand.</p></div>
-    <div class="what-card"><div class="lbl">Stages</div><h4>Four steps</h4><p>Deconstructed → outlined → filled → final.</p></div>
-    <div class="what-card"><div class="lbl">Palette</div><h4>Four colours</h4><p>Yellow, ink, blue, purple. Flat fills only.</p></div>
-  </div>
-</section>
-
-<section class="section">
   <span class="eyebrow reveal">Library</span>
   <h2 class="big-title reveal" data-delay="1">Browse by category.</h2>
-  <p class="big-lede reveal" data-delay="2">Every asset downloadable as PNG or SVG, in all four construction stages where applicable.</p>
-  <div class="tile-grid reveal" data-delay="3">
-    <a href="../light/22%20Characters.html" class="tile">
-      <div class="tile-preview"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Characters" /></div>
-      <div class="tile-meta"><h3>Characters</h3><p>48 character illustrations across four construction stages.</p></div>
+  <div class="cat-grid">
+    <a href="22%20Characters.html" class="cat-tile">
+      <div class="cat-thumb"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Characters" loading="lazy"/></div>
+      <div class="cat-name">Characters</div>
     </a>
-    <a href="../light/23%20Devices.html" class="tile">
-      <div class="tile-preview"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Devices" /></div>
-      <div class="tile-meta"><h3>Devices</h3><p>Laptops, phones, headsets and hardware props.</p></div>
+    <a href="23%20Devices.html" class="cat-tile">
+      <div class="cat-thumb"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Devices" loading="lazy"/></div>
+      <div class="cat-name">Devices</div>
     </a>
-    <a href="../light/24%20Objects.html" class="tile">
-      <div class="tile-preview"><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Objects" /></div>
-      <div class="tile-meta"><h3>Objects</h3><p>Lighthouse, ship, binoculars, magnifier and more.</p></div>
+    <a href="24%20Objects.html" class="cat-tile">
+      <div class="cat-thumb"><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Objects" loading="lazy"/></div>
+      <div class="cat-name">Objects</div>
     </a>
-    <a href="../light/25%20Nature.html" class="tile">
-      <div class="tile-preview"><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Nature" /></div>
-      <div class="tile-meta"><h3>Nature</h3><p>Trees, plants, clouds and landscape elements.</p></div>
+    <a href="25%20Nature.html" class="cat-tile">
+      <div class="cat-thumb"><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Nature" loading="lazy"/></div>
+      <div class="cat-name">Nature</div>
     </a>
-    <a href="../light/26%20Icons.html" class="tile">
-      <div class="tile-preview"><svg viewBox="0 0 80 60" fill="none" style="width:70%"><rect x="6" y="8" width="20" height="20" rx="4" stroke="#FFC800" stroke-width="2"/><circle cx="52" cy="18" r="10" stroke="#4A8BF5" stroke-width="2"/><path d="M8 46 Q24 34 40 44 T74 40" stroke="#8A5AF0" stroke-width="2" fill="none"/></svg></div>
-      <div class="tile-meta"><h3>Icons</h3><p>The UI icon set — SVG, recolourable via currentColor.</p></div>
+    <a href="26%20Icons.html" class="cat-tile">
+      <div class="cat-thumb"><img src="../assets/icons/Abstract/Four-Point-Star.svg" alt="Icons" loading="lazy"/></div>
+      <div class="cat-name">Icons</div>
     </a>
-    <a href="../light/27%20Letters.html" class="tile">
-      <div class="tile-preview"><svg viewBox="0 0 80 60" fill="none" style="width:70%"><rect x="6" y="8" width="20" height="20" rx="4" stroke="#FFC800" stroke-width="2"/><circle cx="52" cy="18" r="10" stroke="#4A8BF5" stroke-width="2"/><path d="M8 46 Q24 34 40 44 T74 40" stroke="#8A5AF0" stroke-width="2" fill="none"/></svg></div>
-      <div class="tile-meta"><h3>Letters</h3><p>Illustrated letterforms and the full alphabet.</p></div>
+    <a href="27%20Letters.html" class="cat-tile">
+      <div class="cat-thumb"><img src="../assets/letters/Alphabet%3DO.svg" alt="Letters" loading="lazy"/></div>
+      <div class="cat-name">Letters</div>
     </a>
-    <a href="../light/28%20Waves.html" class="tile">
-      <div class="tile-preview"><svg viewBox="0 0 80 60" fill="none" style="width:70%"><rect x="6" y="8" width="20" height="20" rx="4" stroke="#FFC800" stroke-width="2"/><circle cx="52" cy="18" r="10" stroke="#4A8BF5" stroke-width="2"/><path d="M8 46 Q24 34 40 44 T74 40" stroke="#8A5AF0" stroke-width="2" fill="none"/></svg></div>
-      <div class="tile-meta"><h3>Waves</h3><p>Abstract wave and flow shapes for backgrounds.</p></div>
+    <a href="28%20Waves.html" class="cat-tile">
+      <div class="cat-thumb"><img src="../assets/waves/Folded-Ribbon/Accordion-Wide.svg" alt="Waves" loading="lazy"/></div>
+      <div class="cat-name">Waves</div>
+    </a>
+    <a href="21%20Construction.html" class="cat-tile">
+      <div class="cat-thumb"><img src="../assets/brand/grid-50x50.svg" alt="Construction" loading="lazy"/></div>
+      <div class="cat-name">Construction</div>
     </a>
   </div>
-</section>
-
-<section class="section">
-  <span class="eyebrow reveal">Method</span>
-  <h2 class="big-title reveal" data-delay="1">How a new asset gets made.</h2>
-  <p class="big-lede reveal" data-delay="2">Follow this when the library doesn't already have what you need. Never generate an illustration outside the process.</p>
-  <div class="step-list reveal" data-delay="3">
-    <div class="step-row"><div><h5>Place on the grid</h5><p>Start on the 50×50 dot grid. Block the silhouette with circles and rectangles only.</p></div><span class="hint">Deconstructed</span></div>
-    <div class="step-row"><div><h5>Trace the contour</h5><p>Resolve the primitive stack into a single stroke outline. No fills yet.</p></div><span class="hint">Outlined</span></div>
-    <div class="step-row"><div><h5>Apply flat colour</h5><p>Fill from the four brand colours. No gradients, no tints outside the palette.</p></div><span class="hint">Filled</span></div>
-    <div class="step-row"><div><h5>Add depth</h5><p>Shading, highlights, small detail. This is the production-ready stage.</p></div><span class="hint">Final</span></div>
-    <div class="step-row"><div><h5>Name and file</h5><p>Follow the naming convention, export PNG + SVG, add to the manifest.</p></div><span class="hint">Publish</span></div>
-  </div>
-  <a href="../light/21%20Construction.html" class="btn-o reveal" data-delay="4" style="margin-top:36px;align-self:flex-start;">Open the construction guide →</a>
 </section>
 
 <section class="section" style="min-height:auto;padding-top:40px;padding-bottom:40px;">
@@ -313,12 +318,12 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
     </div>
     <div class="df-cols">
       <div><h5>System</h5><ul>
-        <li><a href="00%20Home.html">Portal home</a></li>
+        <li><a href="00%20Home.html">Home</a></li>
         <li><a href="10%20Foundations.html">Foundations</a></li>
-        <li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li>
+        <li><a href="20%20Brand%20Assets.html">Illustration library</a></li>
       </ul></div>
       <div><h5>Foundations</h5><ul>
-        <li><a href="11%20Principles.html">Principles</a></li>
+        <li><a href="10%20Foundations.html#p1">Principles</a></li>
         <li><a href="12%20Colour.html">Colour</a></li>
         <li><a href="13%20Typography.html">Typography</a></li>
       </ul></div>
@@ -335,13 +340,50 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
   </div>
 </footer>
 <script>
-const lenis = new Lenis({ duration: 1.4, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+// Smooth scroll — one instance, anchor-aware
+(function initScroll(){
+  if (window.__igLenis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof Lenis === 'undefined') return;
+  // Smooth scroll — one instance, anchor-aware
+(function initScroll(){
+  if (window.__igLenis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof Lenis === 'undefined') return;
+  var lenis = new Lenis({ duration:1.05, easing:function(t){return 1-Math.pow(1-t,3);},
+                          smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
+  window.__igLenis = lenis;
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -100 });
+    });
+  });
+})(); }
+  requestAnimationFrame(raf);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -100 });
+    });
+  });
+})(); }
 requestAnimationFrame(raf);
 const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); e.target.querySelectorAll('.reveal').forEach(el => el.classList.add('in')); } });
+  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); e.target.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+      if(e.target.classList.contains('cat-tile')) e.target.classList.add('seen'); } });
 }, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
-document.querySelectorAll('.reveal, .section').forEach(el => io.observe(el));
+document.querySelectorAll('.reveal, .section, .cat-tile').forEach(el => io.observe(el));
 </script>
 </body>
 </html>

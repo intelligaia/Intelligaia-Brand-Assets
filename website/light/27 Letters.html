@@ -160,10 +160,6 @@ a { color: inherit; text-decoration: none; }
 @media (max-width:1000px){ .g-cta{ display:none; } }
 
 
-/* ── HERO / DISPLAY HEADINGS — Oswald Regular, locked ── */
-.hero-h1, .hero h1, .cover-title, h1.big, .big-title, .show-card h2,
-.pr-body h2, .col-body h2, .tp-side h2 { font-weight: 400 !important; }
-
 /* ── LIGHT MODE ADJUSTMENTS ── */
 .spec-block, .prompt-block{ background:#0A0C14; border-color:rgba(18,18,18,.14); }
 .spec-block pre, .prompt-block pre{ color:#E8E8E8; }
@@ -187,6 +183,22 @@ a { color: inherit; text-decoration: none; }
 .dodont-col.do li::before{ color:#2E9E4F; } .dodont-col.dont li::before{ color:#D64541; }
 .instr-card .dodont .d.do span:first-child{ color:#2E9E4F; }
 .instr-card .dodont .d.dont span:first-child{ color:#D64541; }
+
+/* ── DISPLAY HEADINGS — Oswald Regular, locked ── */
+.hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
+.show-card h2,.pr-body h2,.col-body h2,.tp-side h2,.trio-card h3,
+section h1,section h2{ font-weight:400 !important; }
+.hero-h1 .word{ font-weight:400 !important; }
+
+/* ── SCROLL — single owner, no fighting ── */
+html{ scroll-behavior:auto; }
+html.lenis, html.lenis body{ height:auto; }
+.lenis.lenis-smooth{ scroll-behavior:auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent]{ overscroll-behavior:contain; }
+.lenis.lenis-stopped{ overflow:hidden; }
+body{ overscroll-behavior-y:none; }
+.section{ scroll-margin-top:110px; }
+[id]{ scroll-margin-top:110px; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
@@ -234,13 +246,13 @@ a { color: inherit; text-decoration: none; }
 
 <div class="pill-bar">
   <div class="pill-bar-inner">
-    <a class="pill" href="22%20Characters.html">Characters <span class="count">48</span></a>
-    <a class="pill" href="23%20Devices.html">Devices <span class="count">21</span></a>
-    <a class="pill" href="25%20Nature.html">Nature <span class="count">9</span></a>
-    <a class="pill" href="24%20Objects.html">Objects <span class="count">12</span></a>
-    <a class="pill" href="26%20Icons.html">Icons <span class="count">41</span></a>
-    <a class="pill" href="28%20Waves.html">Waves <span class="count">9</span></a>
-    <a class="pill active" href="27%20Letters.html">Letters <span class="count">26</span></a>
+    <a class="pill" href="22%20Characters.html">Characters</a>
+    <a class="pill" href="23%20Devices.html">Devices</a>
+    <a class="pill" href="25%20Nature.html">Nature</a>
+    <a class="pill" href="24%20Objects.html">Objects</a>
+    <a class="pill" href="26%20Icons.html">Icons</a>
+    <a class="pill" href="28%20Waves.html">Waves</a>
+    <a class="pill active" href="27%20Letters.html">Letters</a>
     <div class="pill-bar-right">
       <button class="dl-btn" onclick='downloadItems([{"path": "assets/letters/Alphabet%3DA.svg", "filename": "Alphabet=A.svg"}, {"path": "assets/letters/Alphabet%3DB.svg", "filename": "Alphabet=B.svg"}, {"path": "assets/letters/Alphabet%3DC.svg", "filename": "Alphabet=C.svg"}, {"path": "assets/letters/Alphabet%3DD.svg", "filename": "Alphabet=D.svg"}, {"path": "assets/letters/Alphabet%3DE.svg", "filename": "Alphabet=E.svg"}, {"path": "assets/letters/Alphabet%3DF.svg", "filename": "Alphabet=F.svg"}, {"path": "assets/letters/Alphabet%3DG.svg", "filename": "Alphabet=G.svg"}, {"path": "assets/letters/Alphabet%3DH.svg", "filename": "Alphabet=H.svg"}, {"path": "assets/letters/Alphabet%3DI.svg", "filename": "Alphabet=I.svg"}, {"path": "assets/letters/Alphabet%3DJ.svg", "filename": "Alphabet=J.svg"}, {"path": "assets/letters/Alphabet%3DK.svg", "filename": "Alphabet=K.svg"}, {"path": "assets/letters/Alphabet%3DL.svg", "filename": "Alphabet=L.svg"}, {"path": "assets/letters/Alphabet%3DM.svg", "filename": "Alphabet=M.svg"}, {"path": "assets/letters/Alphabet%3DN.svg", "filename": "Alphabet=N.svg"}, {"path": "assets/letters/Alphabet%3DO.svg", "filename": "Alphabet=O.svg"}, {"path": "assets/letters/Alphabet%3DP.svg", "filename": "Alphabet=P.svg"}, {"path": "assets/letters/Alphabet%3DQ.svg", "filename": "Alphabet=Q.svg"}, {"path": "assets/letters/Alphabet%3DR.svg", "filename": "Alphabet=R.svg"}, {"path": "assets/letters/Alphabet%3DS.svg", "filename": "Alphabet=S.svg"}, {"path": "assets/letters/Alphabet%3DT.svg", "filename": "Alphabet=T.svg"}, {"path": "assets/letters/Alphabet%3DU.svg", "filename": "Alphabet=U.svg"}, {"path": "assets/letters/Alphabet%3DV.svg", "filename": "Alphabet=V.svg"}, {"path": "assets/letters/Alphabet%3DW.svg", "filename": "Alphabet=W.svg"}, {"path": "assets/letters/Alphabet%3DX.svg", "filename": "Alphabet=X.svg"}, {"path": "assets/letters/Alphabet%3DY.svg", "filename": "Alphabet=Y.svg"}, {"path": "assets/letters/Alphabet%3DZ.svg", "filename": "Alphabet=Z.svg"}])'><svg width="13" height="13" viewBox="0 0 24 24" fill="none"><path d="M12 4 V16 M6 10 L12 16 L18 10 M5 20 H19" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg> Download all</button>
     </div>
@@ -379,12 +391,12 @@ function downloadItems(items) {
     </div>
     <div class="df-cols">
       <div><h5>System</h5><ul>
-        <li><a href="00%20Home.html">Portal home</a></li>
+        <li><a href="00%20Home.html">Home</a></li>
         <li><a href="10%20Foundations.html">Foundations</a></li>
         <li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li>
       </ul></div>
       <div><h5>Foundations</h5><ul>
-        <li><a href="11%20Principles.html">Principles</a></li>
+        <li><a href="10%20Foundations.html#p1">Principles</a></li>
         <li><a href="12%20Colour.html">Colour</a></li>
         <li><a href="13%20Typography.html">Typography</a></li>
       </ul></div>
@@ -401,8 +413,44 @@ function downloadItems(items) {
   </div>
 </footer>
 <script>
-const lenis = new Lenis({ duration: 1.4, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+// Smooth scroll — one instance, anchor-aware
+(function initScroll(){
+  if (window.__igLenis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof Lenis === 'undefined') return;
+  // Smooth scroll — one instance, anchor-aware
+(function initScroll(){
+  if (window.__igLenis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof Lenis === 'undefined') return;
+  var lenis = new Lenis({ duration:1.05, easing:function(t){return 1-Math.pow(1-t,3);},
+                          smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
+  window.__igLenis = lenis;
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -100 });
+    });
+  });
+})(); }
+  requestAnimationFrame(raf);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -100 });
+    });
+  });
+})(); }
 requestAnimationFrame(raf);
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); e.target.querySelectorAll('.reveal').forEach(el => el.classList.add('in')); } });

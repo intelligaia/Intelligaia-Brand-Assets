@@ -139,10 +139,45 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 @media (max-width:1320px){ .g-nav{ display:none; } .g-header-inner{ grid-template-columns:auto 1fr auto; } }
 @media (max-width:1000px){ .g-cta{ display:none; } }
 
+/* PRINCIPLE SECTION LAYOUT */
+.pr-section { display: grid; grid-template-columns: minmax(0, 0.7fr) minmax(0, 1.3fr); gap: 60px; align-items: center; margin-top: 40px; }
+@media (max-width: 900px) { .pr-section { grid-template-columns: 1fr; gap: 32px; } }
+.pr-side .pr-num-big { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: clamp(120px, 18vw, 240px); line-height: 0.85; color: var(--yellow); letter-spacing: -0.04em; margin: 0 0 12px; }
+.pr-side .pr-lbl { font-family: 'Geist', sans-serif; font-size: 12px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;  color: var(--ink-muted); }
+.pr-body h2 { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: clamp(40px, 5.4vw, 72px); line-height: 1.02; letter-spacing: -0.015em; color: var(--ink-soft); margin: 0 0 24px;  }
+.pr-body .pr-p { font-family: 'Geist', sans-serif; font-size: 17px; line-height: 1.65; color: var(--ink); margin: 0 0 28px; max-width: 60ch; }
+.dodont { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 20px; }
+@media (max-width: 700px) { .dodont { grid-template-columns: 1fr; } }
+.dodont-col { padding: 22px 24px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 12px; }
+.dodont-col h4 { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;  margin: 0 0 14px; }
+.dodont-col.do h4 { color: var(--green); }
+.dodont-col.dont h4 { color: var(--red); }
+.dodont-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px; }
+.dodont-col li { font-family: 'Geist', sans-serif; font-size: 14px; line-height: 1.55; color: var(--ink); padding-left: 20px; position: relative; }
+.dodont-col.do li::before { content: '✓'; position: absolute; left: 0; color: var(--green); font-weight: 500; }
+.dodont-col.dont li::before { content: '✕'; position: absolute; left: 0; color: var(--red); font-weight: 500; }
 
-/* ── HERO / DISPLAY HEADINGS — Oswald Regular, locked ── */
-.hero-h1, .hero h1, .cover-title, h1.big, .big-title, .show-card h2,
-.pr-body h2, .col-body h2, .tp-side h2 { font-weight: 400 !important; }
+/* PHILOSOPHY QUOTE */
+.philo-quote { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: clamp(32px, 4vw, 54px); line-height: 1.15; letter-spacing: -0.01em; color: var(--ink-soft); margin: 0; max-width: 24ch; }
+.philo-quote em { font-style: normal; color: var(--yellow); }
+.philo-cite { font-family: 'Geist', sans-serif; font-size: 12px; letter-spacing: 0.18em;  color: var(--ink-muted); margin-top: 24px; }
+
+
+/* ── DISPLAY HEADINGS — Oswald Regular, locked ── */
+.hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
+.show-card h2,.pr-body h2,.col-body h2,.tp-side h2,.trio-card h3,
+section h1,section h2{ font-weight:400 !important; }
+.hero-h1 .word{ font-weight:400 !important; }
+
+/* ── SCROLL — single owner, no fighting ── */
+html{ scroll-behavior:auto; }
+html.lenis, html.lenis body{ height:auto; }
+.lenis.lenis-smooth{ scroll-behavior:auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent]{ overscroll-behavior:contain; }
+.lenis.lenis-stopped{ overflow:hidden; }
+body{ overscroll-behavior-y:none; }
+.section{ scroll-margin-top:110px; }
+[id]{ scroll-margin-top:110px; }
 </style>
 </head>
 <body>
@@ -172,7 +207,7 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 <!-- HERO -->
 <section class="section hero" id="hero">
   <div class="crumbs reveal">
-    <a href="00%20Home.html">Portal</a>
+    <a href="00%20Home.html">Brand assets</a>
     <span class="sep">/</span>
     <span class="current">Foundations</span>
   </div>
@@ -185,34 +220,113 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
   </h1>
   <p class="hero-h2 reveal" data-delay="4">The atoms every downstream artifact obeys — the rules a designer follows in Figma and the tokens an agent parses at build time.</p>
   <div class="reveal" data-delay="5" style="display:flex;gap:14px;flex-wrap:wrap;">
-    <a href="11%20Principles.html" class="btn-p">Open principles →</a>
+    <a href="10%20Foundations.html#p1" class="btn-p">Open principles →</a>
     <a href="#colour" class="btn-o">Jump to colour</a>
   </div>
 </section>
 
-<!-- PRINCIPLES PREVIEW -->
-<section class="section" id="principles">
-  <span class="eyebrow reveal">Principles</span>
-  <h2 class="big-title reveal" data-delay="1">How Intelligaia design decides.</h2>
-  <p class="big-lede reveal" data-delay="2">Three principles govern every visual and functional call. When two are in tension, resolve toward the one earlier in this list.</p>
-  <div class="pr-grid reveal" data-delay="3">
-    <a href="11%20Principles.html" class="pr-card">
-
-      <h3>Goodness leads</h3>
-      <p>Design serves the person on the other side, not the ego of the maker. Utility, dignity, delight — in that order.</p>
-    </a>
-    <a href="11%20Principles.html" class="pr-card">
-
-      <h3>Intent-aware</h3>
-      <p>Every element earns its place by serving the user's intent right now — not a hypothetical future need.</p>
-    </a>
-    <a href="11%20Principles.html" class="pr-card">
-
-      <h3>Human-centered</h3>
-      <p>Machines assist, but humans decide. Interfaces stay legible, reversible and honest about what's automated.</p>
-    </a>
+<section class="section">
+  <span class="eyebrow reveal">Philosophy</span>
+  <div class="reveal" data-delay="1" style="margin-top: 20px;">
+    <p class="philo-quote">Design is a tool, <em>not a taste.</em> It exists to make the person on the other side more capable — never to impress the person making it.</p>
+    <p class="philo-cite">— Intelligaia design philosophy</p>
   </div>
-  <a href="11%20Principles.html" class="btn-o reveal" data-delay="4" style="margin-top: 40px; align-self: flex-start;">Read the full principles →</a>
+</section>
+
+<section class="section" id="p1">
+  <span class="eyebrow reveal">Principle 01</span>
+  <div class="pr-section reveal" data-delay="1">
+    <div class="pr-side">
+
+      <div class="pr-lbl">Goodness leads</div>
+    </div>
+    <div class="pr-body">
+      <h2>Serve the person, not the maker.</h2>
+      <p class="pr-p">Every design decision passes a single test: does it make the person on the other side more capable, more informed, or more at ease? If the answer requires justification about brand, ego, or novelty — remove it and try again.</p>
+      <div class="dodont">
+        <div class="dodont-col do">
+          <h4>Do</h4>
+          <ul>
+            <li>Choose clarity over cleverness in every headline</li>
+            <li>Show progress and current state in every flow</li>
+            <li>Let content set the layout, not the reverse</li>
+          </ul>
+        </div>
+        <div class="dodont-col dont">
+          <h4>Don't</h4>
+          <ul>
+            <li>Add motion, illustration or texture that doesn't serve comprehension</li>
+            <li>Hide primary actions behind aesthetic choices</li>
+            <li>Optimize for portfolio screenshots</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="p2">
+  <span class="eyebrow reveal">Principle 02</span>
+  <div class="pr-section reveal" data-delay="1">
+    <div class="pr-side">
+
+      <div class="pr-lbl">Intent-aware</div>
+    </div>
+    <div class="pr-body">
+      <h2>Every pixel earns its place.</h2>
+      <p class="pr-p">Interfaces are the sum of user intents. Every element visible on screen must serve the intent the user has right now — not one they might have later. Postpone. Remove. When in doubt, cut.</p>
+      <div class="dodont">
+        <div class="dodont-col do">
+          <h4>Do</h4>
+          <ul>
+            <li>Surface the next best action given current context</li>
+            <li>Use progressive disclosure for advanced capabilities</li>
+            <li>Reveal density on demand — not by default</li>
+          </ul>
+        </div>
+        <div class="dodont-col dont">
+          <h4>Don't</h4>
+          <ul>
+            <li>Populate dashboards with every metric that could exist</li>
+            <li>Show empty states as blank space — treat them as first-run flows</li>
+            <li>Add tabs to postpone hard content decisions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="p3">
+  <span class="eyebrow reveal">Principle 03</span>
+  <div class="pr-section reveal" data-delay="1">
+    <div class="pr-side">
+
+      <div class="pr-lbl">Human-centered</div>
+    </div>
+    <div class="pr-body">
+      <h2>Machines assist. Humans decide.</h2>
+      <p class="pr-p">Agents write, generate, propose. Humans review, edit, ship. Interfaces stay legible and reversible. Automated actions are labelled as such. Consent is explicit — not buried.</p>
+      <div class="dodont">
+        <div class="dodont-col do">
+          <h4>Do</h4>
+          <ul>
+            <li>Label AI-generated content clearly and consistently</li>
+            <li>Provide a way to undo any automated action</li>
+            <li>Show the reasoning — sources, confidence, provenance</li>
+          </ul>
+        </div>
+        <div class="dodont-col dont">
+          <h4>Don't</h4>
+          <ul>
+            <li>Auto-apply agent-suggested changes without human review</li>
+            <li>Hide the "agent did this" attribution to feel more magical</li>
+            <li>Present opaque confidence as certainty</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- COLOUR PREVIEW -->
@@ -266,9 +380,9 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
   <div class="pn-row reveal">
     <a href="00%20Home.html" class="pn-tile">
       <div class="lbl">← Back to</div>
-      <div class="name">Portal home</div>
+      <div class="name">Home</div>
     </a>
-    <a href="../light/20%20Brand%20Assets.html" class="pn-tile next">
+    <a href="20%20Brand%20Assets.html" class="pn-tile next">
       <div class="lbl">Chapter 02 →</div>
       <div class="name">Assets &amp; Diagrams</div>
     </a>
@@ -284,12 +398,12 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
     </div>
     <div class="df-cols">
       <div><h5>System</h5><ul>
-        <li><a href="00%20Home.html">Portal home</a></li>
+        <li><a href="00%20Home.html">Home</a></li>
         <li><a href="10%20Foundations.html">Foundations</a></li>
-        <li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li>
+        <li><a href="20%20Brand%20Assets.html">Illustration library</a></li>
       </ul></div>
       <div><h5>Foundations</h5><ul>
-        <li><a href="11%20Principles.html">Principles</a></li>
+        <li><a href="10%20Foundations.html#p1">Principles</a></li>
         <li><a href="12%20Colour.html">Colour</a></li>
         <li><a href="13%20Typography.html">Typography</a></li>
       </ul></div>
@@ -306,8 +420,44 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
   </div>
 </footer>
 <script>
-const lenis = new Lenis({ duration: 1.4, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true });
-function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
+// Smooth scroll — one instance, anchor-aware
+(function initScroll(){
+  if (window.__igLenis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof Lenis === 'undefined') return;
+  // Smooth scroll — one instance, anchor-aware
+(function initScroll(){
+  if (window.__igLenis) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reduce || typeof Lenis === 'undefined') return;
+  var lenis = new Lenis({ duration:1.05, easing:function(t){return 1-Math.pow(1-t,3);},
+                          smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
+  window.__igLenis = lenis;
+  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
+  requestAnimationFrame(raf);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -100 });
+    });
+  });
+})(); }
+  requestAnimationFrame(raf);
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if (id.length < 2) return;
+      var el = document.querySelector(id);
+      if (!el) return;
+      e.preventDefault();
+      lenis.scrollTo(el, { offset: -100 });
+    });
+  });
+})(); }
 requestAnimationFrame(raf);
 const io = new IntersectionObserver((entries) => {
   entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); e.target.querySelectorAll('.reveal').forEach(el => el.classList.add('in')); } });
