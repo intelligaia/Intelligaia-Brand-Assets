@@ -188,7 +188,7 @@ a { color: inherit; text-decoration: none; }
 .hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
 .show-card h2,.pr-body h2,.col-body h2,.tp-side h2,.trio-card h3,
 section h1,section h2{ font-weight:400 !important; }
-.hero-h1 .word{ font-weight:400 !important; }
+
 
 /* ── SCROLL — single owner, no fighting ── */
 html{ scroll-behavior:auto; }
@@ -260,8 +260,74 @@ body{ overscroll-behavior-y:none; }
 .section.hero{ align-items:stretch; }
 .hero-left{ max-width:none; }
 @media (min-width:1600px){ .hero-grid{ grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr); } }
+
+/* ══════════ WORD-BY-WORD HEADING REVEAL ══════════
+   Applied by JS to every display heading. Words rise and fade in
+   sequence when their heading scrolls into view. */
+.w-split{ display:inline-block; overflow:hidden; vertical-align:top; }
+.w-split > span{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(0.9em);
+  transition:opacity .62s cubic-bezier(.22,.9,.3,1), transform .62s cubic-bezier(.22,.9,.3,1);
+  will-change:opacity, transform;
+}
+.w-on .w-split > span{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion:reduce){
+  .w-split > span{ opacity:1 !important; transform:none !important; transition:none !important; }
+}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
+// ── Word-by-word reveal on every display heading ──
+(function wordReveal(){
+  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
+            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
+  var heads = document.querySelectorAll(SEL);
+  if (!heads.length) return;
+
+  heads.forEach(function(h){
+    if (h.dataset.wsplit) return;
+    h.dataset.wsplit = '1';
+    var html = h.innerHTML;
+    // split on <br> so explicit line breaks survive
+    var lines = html.split(/<br\s*\/?>/i);
+    h.innerHTML = lines.map(function(line){
+      var tmp = document.createElement('div');
+      tmp.innerHTML = line;
+      var text = tmp.textContent.trim();
+      if (!text) return '';
+      return text.split(/\s+/).map(function(w){
+        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        return '<span class="w-split"><span>' + safe + '</span></span>';
+      }).join(' ');
+    }).filter(Boolean).join('<br>');
+
+    // stagger each word
+    var i = 0;
+    h.querySelectorAll('.w-split > span').forEach(function(sp){
+      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
+      i++;
+    });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('w-on');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+  heads.forEach(function(h){ io.observe(h); });
+
+  // safety net
+  setTimeout(function(){
+    heads.forEach(function(h){
+      var r = h.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
+    });
+  }, 1400);
+})();
+</script>
 </head>
 <body>
 
