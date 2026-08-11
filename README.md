@@ -8,7 +8,20 @@ The single source of truth for how Intelligaia work looks and reads — written 
 
 ---
 
-## Two audiences, one source
+## Modules
+
+The repo is organised as self-contained **modules** — each a brand deliverable with its own assets, rules and README. More will be added as siblings over time.
+
+| Module | What it is | Start at |
+|---|---|---|
+| **Website** — brand portal | The living brand guide and asset library, served on GitHub Pages | [`website/`](website/) → [`START HERE.html`](website/START%20HERE.html) |
+| **Slide Deck Skill** — presentation system | A Claude skill that generates on-brand Intelligaia decks (locked palette, Montserrat type, 15 slide archetypes, 16 brand graphics) | [`Intelligaia Slide Deck Skill/`](Intelligaia%20Slide%20Deck%20Skill/) → [`README.md`](Intelligaia%20Slide%20Deck%20Skill/README.md) |
+
+Setup notes that support the assets but aren't shipped live are in [`docs/`](docs/). Repo-wide rules for AI agents live in [`AGENTS.md`](AGENTS.md).
+
+---
+
+## The Website module: two audiences, one source
 
 | | Humans | Agents |
 |---|---|---|
@@ -22,30 +35,38 @@ Every playbook page carries an inline `<script type="application/json" id="page-
 
 ## Structure
 
+This repo is organised as **modules** — self-contained brand deliverables that share one root. More will be added as siblings over time; each carries its own `README.md`.
+
 ```
 ├── AGENTS.md              instructions for AI agents (also CLAUDE.md)
 ├── README.md              this file
 ├── .github/workflows/     CI — GitHub Actions (Pages build)
 ├── docs/                  setup notes
 │
-└── website/               the portal — served by GitHub Pages
-    ├── index.html         redirect → START HERE.html
-    ├── START HERE.html    human entry point
-    ├── index.json         machine-readable repository map
-    │
-    ├── assets/            shared by both themes — 279 files
-    │   ├── manifest.json      every asset, indexed
-    │   ├── AGENTS.md          asset-selection contract
-    │   ├── tokens/            design tokens in six formats
-    │   ├── illustrations/     characters · devices · nature · objects
-    │   ├── marketing/         banners · sections · people · lettering
-    │   ├── icons/ waves/ letters/ brand/ diagrams/ service-catalog/
-    │
-    ├── light/             21 pages
-    └── dark/              12 pages
+├── website/               MODULE · the portal — served by GitHub Pages
+│   ├── index.html         redirect → START HERE.html
+│   ├── START HERE.html    human entry point
+│   ├── index.json         machine-readable repository map
+│   │
+│   ├── assets/            shared by both themes — 279 files
+│   │   ├── manifest.json      every asset, indexed
+│   │   ├── AGENTS.md          asset-selection contract
+│   │   ├── tokens/            design tokens in six formats
+│   │   ├── illustrations/     characters · devices · nature · objects
+│   │   ├── marketing/         banners · sections · people · lettering
+│   │   ├── icons/ waves/ letters/ brand/ diagrams/ service-catalog/
+│   │
+│   ├── light/             21 pages
+│   └── dark/              12 pages
+│
+└── Intelligaia Slide Deck Skill/   MODULE · Claude skill for on-brand decks
+    ├── README.md                       install + usage
+    ├── Intelligaia Deck Design.skill   one-click installable skill
+    ├── Sample - Agenda Slide.pptx      example output
+    └── intelligaia-deck-design/        SKILL.md + assets/ (16 PNGs)
 ```
 
-Both themes read from the same `website/assets/` folder. Nothing is duplicated.
+Within the portal, both themes read from the same `website/assets/` folder. Nothing is duplicated.
 
 ---
 

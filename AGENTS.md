@@ -15,23 +15,36 @@ The single source of truth for how Intelligaia work looks and reads. Two audienc
 
 Nothing is documented in one place and defined in another.
 
+The repository is organised as **modules** — self-contained brand deliverables that share this root. `website/` is the brand portal; `Intelligaia Slide Deck Skill/` is a Claude skill for producing on-brand decks. More modules will be added as siblings over time. Each module carries its own `README.md`; this file (`AGENTS.md`) governs the repository as a whole.
+
 ---
 
 ## Repository layout
 
 ```
-├── AGENTS.md              this file (also CLAUDE.md)
-├── README.md              human-readable overview
-├── .github/workflows/     CI — GitHub Actions (Pages build, etc.)
-├── docs/                  setup notes
-└── website/               the portal — served by GitHub Pages
-    ├── index.html         redirect → START HERE.html
-    ├── START HERE.html    human entry point
-    ├── index.json         machine-readable repository map
-    ├── assets/            shared by both themes — 279 files
-    ├── light/             21 pages
-    └── dark/              12 pages
+├── AGENTS.md                      this file (also CLAUDE.md) — governs the whole repo
+├── README.md                      human-readable overview
+├── .github/workflows/             CI — GitHub Actions (Pages build, etc.)
+├── docs/                          setup notes
+│
+├── website/                       ── MODULE · the brand portal — served by GitHub Pages
+│   ├── index.html                 redirect → START HERE.html
+│   ├── START HERE.html            human entry point
+│   ├── index.json                 machine-readable repository map
+│   ├── assets/                    shared by both themes — 279 files
+│   ├── light/                     21 pages
+│   └── dark/                      12 pages
+│
+└── Intelligaia Slide Deck Skill/  ── MODULE · Claude skill for on-brand decks
+    ├── README.md                  install + usage
+    ├── Intelligaia Deck Design.skill    one-click installable skill
+    ├── Sample - Agenda Slide.pptx       example output
+    └── intelligaia-deck-design/   SKILL.md (design system) + assets/ (16 PNGs)
 ```
+
+Modules are independent: each owns its own assets, palette and rules. The brand
+portal's hard constraints below apply to portal artifacts; a module such as the
+deck skill documents its own system in its `SKILL.md` / `README.md`.
 
 ---
 
