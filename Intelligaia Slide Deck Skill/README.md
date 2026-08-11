@@ -37,7 +37,13 @@ Claude builds it against the locked design system. You can also call specific la
 
 ## Editing the system
 
-To change a rule, edit `intelligaia-deck-design/SKILL.md`, then re-zip the `intelligaia-deck-design` folder with a `.skill` extension and re-install. Assets can be swapped in place as long as filenames stay the same.
+To change a rule, edit `intelligaia-deck-design/SKILL.md`, then rebuild the bundle and re-install:
+
+```bash
+./build-skill.sh
+```
+
+This repackages `intelligaia-deck-design/` into `Intelligaia Deck Design.skill` (excluding this README, which isn't part of the skill payload). Assets can be swapped in place as long as filenames stay the same.
 
 ## Fonts
 
