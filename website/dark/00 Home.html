@@ -608,6 +608,67 @@ html.lenis, html.lenis body{ height:auto; }
 body{ overscroll-behavior-y:none; }
 .section{ scroll-margin-top:110px; }
 [id]{ scroll-margin-top:110px; }
+
+/* ══════════ WIDE-SCREEN LAYOUT ══════════
+   One wrapper rule for the whole system. Content starts at the same
+   left edge on every page and grows with the viewport instead of
+   stranding empty gutters on 2000–3000px displays. */
+:root{
+  --pad-x: 40px;              /* page gutter */
+  --shell: 1440px;            /* content shell */
+}
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1760px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2080px; } }
+@media (min-width:2800px){ :root{ --pad-x:160px; --shell:2400px; } }
+
+/* header spans the full viewport; its contents align to the shell */
+.g-header{ width:100%; left:0; right:0; }
+.g-header-inner{
+  max-width:none !important;
+  width:100%;
+  padding:0 var(--pad-x) !important;
+  margin:0 !important;
+}
+
+/* every section shares the same shell + left edge */
+.section,
+.pill-bar-inner,
+.dark-footer-inner,
+.g-footer-inner,
+.page,
+.wrap{
+  max-width:var(--shell) !important;
+  margin-left:auto; margin-right:auto;
+  padding-left:var(--pad-x) !important;
+  padding-right:var(--pad-x) !important;
+}
+.pill-bar{ width:100%; }
+
+/* wide screens: let grids breathe rather than stretching a single column */
+@media (min-width:1920px){
+  .cat-grid{ grid-template-columns:repeat(5,1fr); }
+  .trio{ gap:20px; }
+  .show-card{ gap:56px; padding:34px 40px; }
+  .tile-grid{ grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+  .what-grid{ gap:20px; }
+}
+@media (min-width:2400px){
+  .cat-grid{ grid-template-columns:repeat(6,1fr); }
+  .hero-grid{ gap:64px; }
+  .show-card h2{ font-size:clamp(30px,1.7vw,44px) !important; }
+  .show-desc{ font-size:15px; max-width:52ch; }
+  .big-lede{ max-width:72ch; }
+}
+@media (min-width:2800px){
+  .hero-h1{ font-size:clamp(72px,4.4vw,124px); }
+  .hero-h2{ font-size:clamp(24px,1.35vw,32px); max-width:46ch; }
+}
+
+/* hero keeps the same left edge as everything else */
+.section.hero{ align-items:stretch; }
+.hero-left{ max-width:none; }
+@media (min-width:1600px){ .hero-grid{ grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr); } }
 </style>
 </head>
 <body>
@@ -904,20 +965,14 @@ body{ overscroll-behavior-y:none; }
     </div>
   </div>
 </footer>
-<script>
 
-// Lenis smooth scroll init
-// Smooth scroll — one instance, anchor-aware
+<script>
+// ── Smooth scroll — one guarded instance, anchor-aware ──
 (function initScroll(){
   if (window.__igLenis) return;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || typeof Lenis === 'undefined') return;
-  // Smooth scroll — one instance, anchor-aware
-(function initScroll(){
-  if (window.__igLenis) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || typeof Lenis === 'undefined') return;
-  var lenis = new Lenis({ duration:1.05, easing:function(t){return 1-Math.pow(1-t,3);},
+  var lenis = new Lenis({ duration:1.05, easing:function(t){ return 1 - Math.pow(1-t,3); },
                           smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
   window.__igLenis = lenis;
   function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
@@ -932,69 +987,50 @@ body{ overscroll-behavior-y:none; }
       lenis.scrollTo(el, { offset: -100 });
     });
   });
-})(); }
-  requestAnimationFrame(raf);
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href');
-      if (id.length < 2) return;
-      var el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      lenis.scrollTo(el, { offset: -100 });
-    });
-  });
-})(); }
-requestAnimationFrame(raf);
-
-// IntersectionObserver: reveal-on-scroll
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.classList.add('in');
-      // Also reveal any child .reveal elements
-      e.target.querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
-    }
-  });
-}, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
-document.querySelectorAll('.reveal, .section').forEach(el => io.observe(el));
-
-// HERO COLLAGE — scroll-driven scatter
-// As the user scrolls past the hero, each cutout translates outward and fades.
-(function heroScatter(){
-  const collage = document.getElementById('heroCollage');
-  const hero = document.getElementById('hero');
-  if (!collage || !hero) return;
-  let ticking = false;
-  function update(){
-    const rect = hero.getBoundingClientRect();
-    const h = window.innerHeight;
-    // progress: 0 while hero is fully in view, 1 when hero has fully scrolled past
-    const scrolled = Math.max(0, -rect.top);
-    const p = Math.max(0, Math.min(1, scrolled / (h * 0.75)));
-    collage.style.setProperty('--scatter', p.toFixed(3));
-    if (p > 0.01) collage.setAttribute('data-scatter', ''); else collage.removeAttribute('data-scatter');
-    ticking = false;
-  }
-  window.addEventListener('scroll', () => {
-    if (!ticking) { requestAnimationFrame(update); ticking = true; }
-  }, { passive: true });
-  update();
 })();
 
-
-// Showcase cards reveal one at a time as they enter the viewport
-(function showcaseReveal(){
-  var cards = document.querySelectorAll('.show-card, .trio-card');
-  if(!cards.length) return;
+// ── Reveal on scroll ──
+(function reveals(){
+  var targets = document.querySelectorAll('.reveal, .section, .show-card, .trio-card, .cat-tile');
+  if (!targets.length) return;
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
-      if(e.isIntersecting){ e.target.classList.add('seen'); io.unobserve(e.target); }
+      if (!e.isIntersecting) return;
+      var t = e.target;
+      t.classList.add('in');
+      t.classList.add('seen');
+      t.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+      io.unobserve(t);
     });
-  }, { threshold: 0.22, rootMargin: '0px 0px -10% 0px' });
-  cards.forEach(function(c){ io.observe(c); });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function(t){ io.observe(t); });
+  // safety net — never leave content hidden
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.5) el.classList.add('in');
+    });
+  }, 1200);
 })();
 
+// ── Hero collage scatter ──
+(function heroScatter(){
+  var collage = document.getElementById('heroCollage');
+  var hero = document.getElementById('hero');
+  if (!collage || !hero) return;
+  var ticking = false;
+  function update(){
+    var rect = hero.getBoundingClientRect();
+    var p = Math.max(0, Math.min(1, Math.max(0, -rect.top) / (window.innerHeight * 0.75)));
+    collage.style.setProperty('--scatter', p.toFixed(3));
+    if (p > 0.01) collage.setAttribute('data-scatter',''); else collage.removeAttribute('data-scatter');
+    ticking = false;
+  }
+  window.addEventListener('scroll', function(){
+    if (!ticking) { requestAnimationFrame(update); ticking = true; }
+  }, { passive:true });
+  update();
+})();
 </script>
 </body>
 </html>

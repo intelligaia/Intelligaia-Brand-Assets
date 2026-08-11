@@ -199,6 +199,67 @@ html.lenis, html.lenis body{ height:auto; }
 body{ overscroll-behavior-y:none; }
 .section{ scroll-margin-top:110px; }
 [id]{ scroll-margin-top:110px; }
+
+/* ══════════ WIDE-SCREEN LAYOUT ══════════
+   One wrapper rule for the whole system. Content starts at the same
+   left edge on every page and grows with the viewport instead of
+   stranding empty gutters on 2000–3000px displays. */
+:root{
+  --pad-x: 40px;              /* page gutter */
+  --shell: 1440px;            /* content shell */
+}
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1760px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2080px; } }
+@media (min-width:2800px){ :root{ --pad-x:160px; --shell:2400px; } }
+
+/* header spans the full viewport; its contents align to the shell */
+.g-header{ width:100%; left:0; right:0; }
+.g-header-inner{
+  max-width:none !important;
+  width:100%;
+  padding:0 var(--pad-x) !important;
+  margin:0 !important;
+}
+
+/* every section shares the same shell + left edge */
+.section,
+.pill-bar-inner,
+.dark-footer-inner,
+.g-footer-inner,
+.page,
+.wrap{
+  max-width:var(--shell) !important;
+  margin-left:auto; margin-right:auto;
+  padding-left:var(--pad-x) !important;
+  padding-right:var(--pad-x) !important;
+}
+.pill-bar{ width:100%; }
+
+/* wide screens: let grids breathe rather than stretching a single column */
+@media (min-width:1920px){
+  .cat-grid{ grid-template-columns:repeat(5,1fr); }
+  .trio{ gap:20px; }
+  .show-card{ gap:56px; padding:34px 40px; }
+  .tile-grid{ grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+  .what-grid{ gap:20px; }
+}
+@media (min-width:2400px){
+  .cat-grid{ grid-template-columns:repeat(6,1fr); }
+  .hero-grid{ gap:64px; }
+  .show-card h2{ font-size:clamp(30px,1.7vw,44px) !important; }
+  .show-desc{ font-size:15px; max-width:52ch; }
+  .big-lede{ max-width:72ch; }
+}
+@media (min-width:2800px){
+  .hero-h1{ font-size:clamp(72px,4.4vw,124px); }
+  .hero-h2{ font-size:clamp(24px,1.35vw,32px); max-width:46ch; }
+}
+
+/* hero keeps the same left edge as everything else */
+.section.hero{ align-items:stretch; }
+.hero-left{ max-width:none; }
+@media (min-width:1600px){ .hero-grid{ grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr); } }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 </head>
@@ -368,20 +429,7 @@ body{ overscroll-behavior-y:none; }
   </div>
 </section>
 
-<script>
-function downloadItems(items) {
-  items.forEach((it, i) => {
-    setTimeout(() => {
-      const a = document.createElement('a');
-      a.href = it.path;
-      a.download = it.filename;
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
-    }, i * 150);
-  });
-}
-</script>
+
 
 <footer class="dark-footer">
   <div class="dark-footer-inner">
@@ -412,18 +460,14 @@ function downloadItems(items) {
     </div>
   </div>
 </footer>
+
 <script>
-// Smooth scroll — one instance, anchor-aware
+// ── Smooth scroll — one guarded instance, anchor-aware ──
 (function initScroll(){
   if (window.__igLenis) return;
   var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || typeof Lenis === 'undefined') return;
-  // Smooth scroll — one instance, anchor-aware
-(function initScroll(){
-  if (window.__igLenis) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || typeof Lenis === 'undefined') return;
-  var lenis = new Lenis({ duration:1.05, easing:function(t){return 1-Math.pow(1-t,3);},
+  var lenis = new Lenis({ duration:1.05, easing:function(t){ return 1 - Math.pow(1-t,3); },
                           smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
   window.__igLenis = lenis;
   function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
@@ -438,24 +482,32 @@ function downloadItems(items) {
       lenis.scrollTo(el, { offset: -100 });
     });
   });
-})(); }
-  requestAnimationFrame(raf);
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href');
-      if (id.length < 2) return;
-      var el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      lenis.scrollTo(el, { offset: -100 });
+})();
+
+// ── Reveal on scroll ──
+(function reveals(){
+  var targets = document.querySelectorAll('.reveal, .section, .show-card, .trio-card, .cat-tile');
+  if (!targets.length) return;
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      var t = e.target;
+      t.classList.add('in');
+      t.classList.add('seen');
+      t.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+      io.unobserve(t);
     });
-  });
-})(); }
-requestAnimationFrame(raf);
-const io = new IntersectionObserver((entries) => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); e.target.querySelectorAll('.reveal').forEach(el => el.classList.add('in')); } });
-}, { threshold: 0.15, rootMargin: '0px 0px -80px 0px' });
-document.querySelectorAll('.reveal, .section').forEach(el => io.observe(el));
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+  targets.forEach(function(t){ io.observe(t); });
+  // safety net — never leave content hidden
+  setTimeout(function(){
+    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
+      var r = el.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.5) el.classList.add('in');
+    });
+  }, 1200);
+})();
+
 </script>
 </body>
 </html>
