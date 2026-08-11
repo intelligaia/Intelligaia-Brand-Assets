@@ -370,6 +370,46 @@ body{ overscroll-behavior-y:none; }
 .secmap div{ padding:13px 14px; background:var(--bg-2); border:1px solid var(--hair); border-radius:9px;
   font-family:'Geist',sans-serif; font-size:12.5px; color:var(--ink); line-height:1.35; }
 .secmap div b{ display:block; font-family:'Geist',monospace; font-size:10.5px; color:var(--yellow); font-weight:400; margin-bottom:5px; letter-spacing:.08em; }
+
+/* ══════════ OUTPUT-FIRST DETAIL PAGES ══════════ */
+.section.lean{ min-height:auto; padding-top:44px; padding-bottom:44px; }
+.output-stage{ position:relative; margin-top:26px; border:1px solid var(--hair-2); border-radius:18px; overflow:hidden; background:var(--bg-2); }
+.output-stage .os-body{ display:flex; align-items:center; justify-content:center; padding:40px; min-height:320px; }
+.output-stage img{ max-width:100%; max-height:520px; object-fit:contain; display:block; }
+.output-stage .os-cap{ display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 20px; border-top:1px solid var(--hair); background:var(--bg-3); font-family:'Geist',sans-serif; font-size:11.5px; color:var(--ink-muted); letter-spacing:.04em; }
+.output-stage .os-cap a{ color:var(--yellow); }
+.os-frame{ position:relative; aspect-ratio:16/10; background:#FAFAF6; }
+.os-frame iframe{ position:absolute; inset:0; width:200%; height:200%; transform:scale(.5); transform-origin:0 0; border:0; pointer-events:none; }
+.out-strip{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:26px; }
+.out-item{ background:var(--bg-2); border:1px solid var(--hair-2); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+.out-item .oi-vis{ aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; padding:16px; background:var(--bg-3); }
+.out-item .oi-vis img{ max-width:100%; max-height:100%; object-fit:contain; }
+.out-item .oi-name{ padding:11px 14px 13px; font-family:'Geist',sans-serif; font-size:12px; color:var(--ink-muted); border-top:1px solid var(--hair); }
+.parts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; margin-top:24px; counter-reset:pt; }
+.part{ display:grid; grid-template-columns:26px 1fr; gap:12px; padding:15px 16px; background:var(--bg-2); border:1px solid var(--hair); border-radius:10px; }
+.part::before{ counter-increment:pt; content:counter(pt); width:22px; height:22px; border-radius:50%; background:var(--yellow); color:#04050A; font-family:'Geist',monospace; font-size:11px; display:flex; align-items:center; justify-content:center; }
+.part b{ display:block; font-family:'Oswald',sans-serif; font-weight:400; font-size:15px; color:var(--ink-soft); margin-bottom:3px; }
+.part span{ font-family:'Geist',sans-serif; font-size:12.5px; line-height:1.5; color:var(--ink-muted); }
+.theory{ font-family:'Geist',sans-serif; font-size:14.5px; line-height:1.6; color:var(--ink-muted); max-width:64ch; margin:0; padding-left:14px; border-left:2px solid var(--yellow); }
+.ai-build{ display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:18px; margin-top:24px; }
+@media (max-width:960px){ .ai-build{ grid-template-columns:1fr; } }
+.ai-rules{ padding:20px 22px; background:var(--bg-2); border:1px solid var(--hair); border-radius:12px; }
+.ai-rules h4{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-muted); margin:0 0 12px; }
+.ai-rules ul{ list-style:none; padding:0; margin:0 0 16px; display:flex; flex-direction:column; gap:7px; }
+.ai-rules ul:last-child{ margin-bottom:0; }
+.ai-rules li{ font-family:'Geist',sans-serif; font-size:12.5px; line-height:1.5; color:var(--ink); padding-left:18px; position:relative; }
+.ai-rules li::before{ content:'✓'; position:absolute; left:0; color:var(--yellow); }
+.ai-rules ul.no li::before{ content:'✕'; color:var(--red); }
+.fmt-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:26px; align-items:end; }
+@media (max-width:800px){ .fmt-row{ grid-template-columns:1fr; } }
+.fmt-b{ background:var(--bg-2); border:1px solid var(--hair-2); border-radius:14px; padding:20px; display:flex; flex-direction:column; align-items:center; gap:13px; }
+.fmt-m{ width:100%; background:#FFC800; border-radius:7px; padding:16px; display:flex; flex-direction:column; justify-content:space-between; }
+.fmt-m.sq{ aspect-ratio:1/1; } .fmt-m.pt{ aspect-ratio:4/5; } .fmt-m.st{ aspect-ratio:9/16; }
+.fmt-m i{ display:block; background:#04050A; border-radius:2px; height:6px; }
+.fmt-m i.big{ height:13px; width:84%; margin-bottom:6px; } .fmt-m i.mid{ width:58%; }
+.fmt-m .dot{ width:22px; height:22px; border-radius:50%; background:#04050A; margin-top:auto; }
+.fmt-b .fm{ text-align:center; font-family:'Geist',sans-serif; font-size:12px; color:var(--ink-muted); }
+.fmt-b .fm b{ display:block; font-family:'Oswald',sans-serif; font-weight:400; font-size:17px; color:var(--ink-soft); margin-bottom:2px; }
 </style>
 </head>
 <body>
@@ -397,112 +437,52 @@ body{ overscroll-behavior-y:none; }
 <main>
 
 <section class="section hero">
-  <div class="crumbs reveal"><a href="00%20Home.html">Brand Assets</a> <span class="sep">/</span> <span class="current">Whitepapers</span></div>
+  <div class="crumbs reveal"><a href="00%20Home.html">Brand assets</a> <span class="sep">/</span> <span class="current">Whitepapers</span></div>
   <span class="eyebrow reveal">Whitepapers</span>
-  <h1 class="hero-h1">Design and systems, paired.</h1>
-  <p class="hero-h2 reveal" data-delay="4">The engineering whitepaper format — two tracks addressed together, never in separate halves.</p>
+  <h1 class="hero-h1">Whitepapers.</h1>
+  <p class="hero-h2 reveal" data-delay="4">Ten sections, a sticky rail, design and engineering paired throughout.</p>
 </section>
 
-<section class="section">
-  <span class="eyebrow reveal">Purpose</span>
-  <h2 class="big-title reveal" data-delay="1">Two tracks, one document.</h2>
-  <p class="big-lede reveal" data-delay="2">An engineering whitepaper has to satisfy two readers at once — the design lead who wants to know why the interface behaves that way, and the architect who wants to know what it costs to run. Pair them explicitly rather than alternating chapters and hoping.</p>
-  <div class="dual reveal" data-delay="3">
-    <div class="dual-col design">
-      <div class="lbl">Design track</div>
-      <ul><li>User model and mental model gap</li><li>Interface behaviour and states</li>
-      <li>Information hierarchy decisions</li><li>Accessibility and failure states</li></ul>
+<section class="section lean">
+  <span class="eyebrow reveal">The output</span>
+  <h2 class="big-title reveal" data-delay="1">A finished whitepaper.</h2>
+  <p class="theory reveal" data-delay="2">Two readers at once — the design lead who wants to know why the interface behaves that way, and the architect who wants to know what it costs to run. Pair them in every section rather than alternating chapters.</p>
+  <div class="output-stage reveal" data-delay="3">
+    <div class="os-body" style="padding:0;">
+      <div class="os-frame"><iframe src="../examples/Whitepaper%20%E2%80%94%20D3%20AI%20Assistant.html" loading="lazy" title="D3 AI Assistant whitepaper" scrolling="no"></iframe></div>
     </div>
-    <div class="dual-col tech">
-      <div class="lbl">Engineering track</div>
-      <ul><li>Architecture and data flow</li><li>Latency, cost and scale characteristics</li>
-      <li>Integration surface and contracts</li><li>Observability and failure recovery</li></ul>
-    </div>
+    <div class="os-cap"><span>Harvard D³ Institute · research-first AI assistant</span><a href="../examples/Whitepaper%20%E2%80%94%20D3%20AI%20Assistant.html" target="_blank" rel="noopener">Open full document →</a></div>
   </div>
 </section>
 
-<section class="section">
-  <span class="eyebrow reveal">Structure</span>
-  <h2 class="big-title reveal" data-delay="1">Seven sections, paired throughout.</h2>
-  <p class="big-lede reveal" data-delay="2">Each section addresses both tracks before moving on. Never a design half and an engineering half.</p>
-  <div class="step-list reveal" data-delay="3">
-    <div class="step-row"><div><h5>Abstract</h5><p>What the product does, who it's for, what's technically distinctive. 150 words.</p></div><span class="hint">1 page</span></div>
-    <div class="step-row"><div><h5>The problem domain</h5><p>Why this is hard. Both the user-side difficulty and the systems-side difficulty.</p></div><span class="hint">2 pages</span></div>
-    <div class="step-row"><div><h5>Approach</h5><p>The design principle and the architectural principle, stated as a pair.</p></div><span class="hint">2 pages</span></div>
-    <div class="step-row"><div><h5>The system</h5><p>Architecture diagram, data flow, component responsibilities. Design annotations inline.</p></div><span class="hint">3–5 pages</span></div>
-    <div class="step-row"><div><h5>The interface</h5><p>Key screens with behaviour specs. Each paired with the technical constraint that shaped it.</p></div><span class="hint">3–5 pages</span></div>
-    <div class="step-row"><div><h5>Results</h5><p>Performance numbers, adoption, measured design outcomes. Honest about what wasn't measured.</p></div><span class="hint">2 pages</span></div>
-    <div class="step-row"><div><h5>What we'd change</h5><p>The section that earns trust. Real limitations, real next steps.</p></div><span class="hint">1 page</span></div>
+<section class="section lean">
+  <span class="eyebrow reveal">Deconstructed</span>
+  <h2 class="big-title reveal" data-delay="1">How the document is put together.</h2>
+  <div class="parts reveal" data-delay="2">
+    <div class="part"><div><b>Sticky rail</b><span>220px. Ten numbered sections, active state follows scroll.</span></div></div>
+    <div class="part"><div><b>Measure</b><span>1080px content inside a 1480px frame. Long-form reading width.</span></div></div>
+    <div class="part"><div><b>Type pairing</b><span>Trirong serif headings against Raleway sans body.</span></div></div>
+    <div class="part"><div><b>Paper</b><span>Warm #FAFAF6 rather than white. Reduces glare over long reads.</span></div></div>
+    <div class="part"><div><b>Section shape</b><span>Claim heading, then design track and engineering track together.</span></div></div>
+    <div class="part"><div><b>Close</b><span>Impact section, then a genuine limitations section. That is what earns trust.</span></div></div>
   </div>
 </section>
 
-<section class="section">
-  <span class="eyebrow reveal">Live example</span>
-  <h2 class="big-title reveal" data-delay="1">A whitepaper built this way.</h2>
-  <p class="big-lede reveal" data-delay="2">The D³ AI Assistant paper — a ten-section engineering case study for Harvard's Digital Data Design Institute. Open it to see the format working end to end.</p>
+<section class="section lean">
+  <span class="eyebrow reveal">Build it with AI</span>
+  <h2 class="big-title reveal" data-delay="1">Hand this to an agent.</h2>
+  <div class="ai-build reveal" data-delay="2">
+    <div class="spec-block" style="margin-top:0;">
+      <div class="lbl">Prompt</div>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('agent-prompt').textContent)">Copy</button>
+      <pre id="agent-prompt">Produce an Intelligaia engineering whitepaper for [PRODUCT].
 
-  <a href="../examples/Whitepaper%20%E2%80%94%20D3%20AI%20Assistant.html" target="_blank" rel="noopener" class="live-ex reveal" data-delay="3" style="text-decoration:none;color:inherit;">
-    <div>
-      <div class="lx-tag">Harvard D³ Institute</div>
-      <h3>Designing a research-first AI assistant.</h3>
-      <p>Bridging the gap between academic rigor and executive action. Ten sections, sticky section rail, dual-track design and research narrative.</p>
-      <div class="lx-meta">
-        <span>10 sections</span><span>Trirong + Raleway</span><span>Sticky rail</span><span>1080px measure</span>
-      </div>
-      <span class="show-open" style="color:var(--yellow);font-family:'Geist',sans-serif;font-size:13.5px;">Open the whitepaper</span>
-    </div>
-    <div class="lx-frame">
-      <iframe src="../examples/Whitepaper%20%E2%80%94%20D3%20AI%20Assistant.html" loading="lazy" title="D3 AI Assistant whitepaper preview" scrolling="no"></iframe>
-      <span class="lx-hover"></span>
-    </div>
-  </a>
-
-  <div class="secmap reveal" data-delay="4">
-    <div><b>01</b>Project context</div>
-    <div><b>02</b>Root issues</div>
-    <div><b>03</b>The proposal</div>
-    <div><b>04</b>Research approach</div>
-    <div><b>05</b>Discovery flow</div>
-    <div><b>06</b>AI design principles</div>
-    <div><b>07</b>Information architecture</div>
-    <div><b>08</b>Proposed workflows</div>
-    <div><b>09</b>Executive archetypes</div>
-    <div><b>10</b>Impact</div>
-  </div>
-</section>
-
-<section class="section">
-  <span class="eyebrow reveal">Rules</span>
-  <h2 class="big-title reveal" data-delay="1">Do &amp; don't.</h2>
-  <div class="rules-grid reveal" data-delay="2">
-    <div class="rule-card do"><h4>Do</h4><ul>
-      <li>Pair every design claim with its engineering consequence</li>
-      <li>Include one architecture diagram using the Diagrams playbook</li>
-      <li>State latency and cost in real units</li>
-      <li>Write a genuine limitations section</li></ul></div>
-    <div class="rule-card dont"><h4>Don't</h4><ul>
-      <li>No marketing language in a technical document</li>
-      <li>No architecture diagram without design annotation</li>
-      <li>No benchmark without stating the conditions</li>
-      <li>No claim of novelty without a citation or comparison</li></ul></div>
-  </div>
-</section>
-
-<section class="section">
-  <span class="eyebrow reveal">For agents</span>
-  <h2 class="big-title reveal" data-delay="1">Prompt an agent can run.</h2>
-  <p class="big-lede reveal" data-delay="2">Replace the bracketed inputs and hand this to an agent with system and manifest access.</p>
-  <div class="spec-block reveal" data-delay="3"><div class="lbl">Agent prompt</div>
-    <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('agent-prompt').textContent)">Copy</button>
-    <pre id="agent-prompt">Produce an Intelligaia engineering whitepaper for [PRODUCT / SYSTEM].
-
-Reference document: examples/Whitepaper — D3 AI Assistant.html
+Reference: examples/Whitepaper — D3 AI Assistant.html
 Playbook: 70 Whitepapers.html
 
 Match the reference layout:
-  - Trirong serif headings, Raleway sans body, warm paper #FAFAF6
-  - 1480px max, 1080px content measure, 220px sticky section rail
-  - Ten numbered sections; rail highlights the active one on scroll
+  Trirong serif, Raleway sans, warm paper #FAFAF6
+  1480px frame, 1080px measure, 220px sticky rail
 
 Sections:
   01 Project context      06 AI design principles
@@ -511,31 +491,44 @@ Sections:
   04 Research approach    09 Executive archetypes
   05 Discovery flow       10 Impact
 
-Inputs required:
-  - product_name, domain, audience
-  - design_track:  user_model, interface_behaviour, hierarchy_decisions, a11y_notes
-  - eng_track:     architecture, data_flow, latency_profile, cost_profile, integrations
-  - results, limitations
+Inputs:
+  design_track   user model, interface behaviour, hierarchy, accessibility
+  eng_track      architecture, data flow, latency, cost, integrations
+  results        measured outcomes
+  limitations    real, specific, unflattering
 
-Constraints:
-  - EVERY section addresses design AND engineering before advancing
-  - Never a design half followed by an engineering half
-  - One architecture diagram following the Diagrams playbook
-  - Latency and cost in real units, with test conditions
+Output: single self-contained HTML file plus the JSON spec block.</pre>
+    </div>
+    <div class="ai-rules">
+      <h4>Must</h4>
+      <ul>
+      <li>Every section covers design and engineering before advancing</li>
+      <li>One architecture diagram from the Diagrams playbook</li>
+      <li>Latency and cost in real units with test conditions</li>
+      <li>A genuine limitations section</li>
+      </ul>
+      <h4>Never</h4>
+      <ul class="no">
+      <li>Marketing language in a technical document</li>
+      <li>Architecture diagrams without annotation</li>
+      <li>Benchmarks without stated conditions</li>
+      <li>Novelty claims without comparison</li>
+      </ul>
+    </div>
+  </div>
+</section>
 
-Output: single self-contained HTML file with the JSON spec block appended.</pre></div>
-</section><section class="section">
-  <span class="eyebrow reveal">Machine-readable spec</span>
-  <h2 class="big-title reveal" data-delay="1">The authoritative source.</h2>
-  <p class="big-lede reveal" data-delay="2">Agents parse this block directly. Humans read the prose above.</p>
-  <div class="spec-block reveal" data-delay="3"><div class="lbl">page-spec</div>
+<section class="section lean">
+  <span class="eyebrow reveal">Spec</span>
+  <h2 class="big-title reveal" data-delay="1">Machine-readable.</h2>
+  <div class="spec-block reveal" data-delay="2">
+    <div class="lbl">page-spec</div>
     <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('page-spec').textContent)">Copy</button>
     <pre><script type="application/json" id="page-spec">{
   "playbook": "whitepapers",
   "version": "2.0.0",
   "variant": "engineering-dual-track",
   "reference_document": "examples/Whitepaper \u2014 D3 AI Assistant.html",
-  "reference_title": "Designing a research-first AI assistant \u2014 Harvard D\u00b3 Institute",
   "layout": {
     "serif": "Trirong",
     "sans": "Raleway",
@@ -543,76 +536,21 @@ Output: single self-contained HTML file with the JSON spec block appended.</pre>
     "max_width_px": 1480,
     "content_width_px": 1080,
     "rail_width_px": 220,
-    "gutter_px": 48,
-    "nav": "sticky numbered section rail, active state follows scroll"
+    "nav": "sticky numbered rail, active state follows scroll"
   },
   "sections": [
-    {
-      "n": "01",
-      "id": "project-context",
-      "title": "Project context"
-    },
-    {
-      "n": "02",
-      "id": "root-issues",
-      "title": "Root issues"
-    },
-    {
-      "n": "03",
-      "id": "the-proposal",
-      "title": "The proposal"
-    },
-    {
-      "n": "04",
-      "id": "research-approach",
-      "title": "Research approach"
-    },
-    {
-      "n": "05",
-      "id": "discovery-flow",
-      "title": "Discovery flow"
-    },
-    {
-      "n": "06",
-      "id": "design-principles",
-      "title": "AI design principles"
-    },
-    {
-      "n": "07",
-      "id": "information-architecture",
-      "title": "Information architecture"
-    },
-    {
-      "n": "08",
-      "id": "proposed-workflows",
-      "title": "Proposed workflows"
-    },
-    {
-      "n": "09",
-      "id": "archetypes",
-      "title": "Executive archetypes"
-    },
-    {
-      "n": "10",
-      "id": "impact",
-      "title": "Impact"
-    }
+    "project context",
+    "root issues",
+    "the proposal",
+    "research approach",
+    "discovery flow",
+    "AI design principles",
+    "information architecture",
+    "proposed workflows",
+    "executive archetypes",
+    "impact"
   ],
-  "tracks": {
-    "design": [
-      "user model",
-      "interface behaviour",
-      "information hierarchy",
-      "accessibility"
-    ],
-    "engineering": [
-      "architecture",
-      "latency & cost",
-      "integration surface",
-      "observability"
-    ]
-  },
-  "pairing_rule": "every section addresses both tracks before advancing",
+  "pairing_rule": "every section addresses design and engineering before advancing",
   "guardrails": {
     "dont": [
       "marketing language",
@@ -621,15 +559,17 @@ Output: single self-contained HTML file with the JSON spec block appended.</pre>
       "novelty claims without comparison"
     ]
   }
-}</script></pre></div>
+}</script></pre>
+  </div>
 </section>
 
-<section class="section" style="min-height:auto;padding-top:40px;padding-bottom:40px;">
+<section class="section" style="min-height:auto;padding-top:34px;padding-bottom:40px;">
   <div class="pn-row reveal">
     <a href="60%20Case%20Studies.html" class="pn-tile"><div class="lbl">← Previous</div><div class="name">Case studies</div></a>
     <a href="80%20Social%20Media.html" class="pn-tile next"><div class="lbl">Next →</div><div class="name">Social media</div></a>
   </div>
 </section>
+
 </main>
 <footer class="dark-footer">
   <div class="dark-footer-inner">

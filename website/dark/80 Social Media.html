@@ -352,6 +352,46 @@ body{ overscroll-behavior-y:none; }
 @media (prefers-reduced-motion:reduce){
   .w-split > span{ opacity:1 !important; transform:none !important; transition:none !important; }
 }
+
+/* ══════════ OUTPUT-FIRST DETAIL PAGES ══════════ */
+.section.lean{ min-height:auto; padding-top:44px; padding-bottom:44px; }
+.output-stage{ position:relative; margin-top:26px; border:1px solid var(--hair-2); border-radius:18px; overflow:hidden; background:var(--bg-2); }
+.output-stage .os-body{ display:flex; align-items:center; justify-content:center; padding:40px; min-height:320px; }
+.output-stage img{ max-width:100%; max-height:520px; object-fit:contain; display:block; }
+.output-stage .os-cap{ display:flex; justify-content:space-between; align-items:center; gap:12px; padding:13px 20px; border-top:1px solid var(--hair); background:var(--bg-3); font-family:'Geist',sans-serif; font-size:11.5px; color:var(--ink-muted); letter-spacing:.04em; }
+.output-stage .os-cap a{ color:var(--yellow); }
+.os-frame{ position:relative; aspect-ratio:16/10; background:#FAFAF6; }
+.os-frame iframe{ position:absolute; inset:0; width:200%; height:200%; transform:scale(.5); transform-origin:0 0; border:0; pointer-events:none; }
+.out-strip{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:14px; margin-top:26px; }
+.out-item{ background:var(--bg-2); border:1px solid var(--hair-2); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+.out-item .oi-vis{ aspect-ratio:4/5; display:flex; align-items:center; justify-content:center; padding:16px; background:var(--bg-3); }
+.out-item .oi-vis img{ max-width:100%; max-height:100%; object-fit:contain; }
+.out-item .oi-name{ padding:11px 14px 13px; font-family:'Geist',sans-serif; font-size:12px; color:var(--ink-muted); border-top:1px solid var(--hair); }
+.parts{ display:grid; grid-template-columns:repeat(auto-fit,minmax(230px,1fr)); gap:12px; margin-top:24px; counter-reset:pt; }
+.part{ display:grid; grid-template-columns:26px 1fr; gap:12px; padding:15px 16px; background:var(--bg-2); border:1px solid var(--hair); border-radius:10px; }
+.part::before{ counter-increment:pt; content:counter(pt); width:22px; height:22px; border-radius:50%; background:var(--yellow); color:#04050A; font-family:'Geist',monospace; font-size:11px; display:flex; align-items:center; justify-content:center; }
+.part b{ display:block; font-family:'Oswald',sans-serif; font-weight:400; font-size:15px; color:var(--ink-soft); margin-bottom:3px; }
+.part span{ font-family:'Geist',sans-serif; font-size:12.5px; line-height:1.5; color:var(--ink-muted); }
+.theory{ font-family:'Geist',sans-serif; font-size:14.5px; line-height:1.6; color:var(--ink-muted); max-width:64ch; margin:0; padding-left:14px; border-left:2px solid var(--yellow); }
+.ai-build{ display:grid; grid-template-columns:minmax(0,1.25fr) minmax(0,1fr); gap:18px; margin-top:24px; }
+@media (max-width:960px){ .ai-build{ grid-template-columns:1fr; } }
+.ai-rules{ padding:20px 22px; background:var(--bg-2); border:1px solid var(--hair); border-radius:12px; }
+.ai-rules h4{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-muted); margin:0 0 12px; }
+.ai-rules ul{ list-style:none; padding:0; margin:0 0 16px; display:flex; flex-direction:column; gap:7px; }
+.ai-rules ul:last-child{ margin-bottom:0; }
+.ai-rules li{ font-family:'Geist',sans-serif; font-size:12.5px; line-height:1.5; color:var(--ink); padding-left:18px; position:relative; }
+.ai-rules li::before{ content:'✓'; position:absolute; left:0; color:var(--yellow); }
+.ai-rules ul.no li::before{ content:'✕'; color:var(--red); }
+.fmt-row{ display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:26px; align-items:end; }
+@media (max-width:800px){ .fmt-row{ grid-template-columns:1fr; } }
+.fmt-b{ background:var(--bg-2); border:1px solid var(--hair-2); border-radius:14px; padding:20px; display:flex; flex-direction:column; align-items:center; gap:13px; }
+.fmt-m{ width:100%; background:#FFC800; border-radius:7px; padding:16px; display:flex; flex-direction:column; justify-content:space-between; }
+.fmt-m.sq{ aspect-ratio:1/1; } .fmt-m.pt{ aspect-ratio:4/5; } .fmt-m.st{ aspect-ratio:9/16; }
+.fmt-m i{ display:block; background:#04050A; border-radius:2px; height:6px; }
+.fmt-m i.big{ height:13px; width:84%; margin-bottom:6px; } .fmt-m i.mid{ width:58%; }
+.fmt-m .dot{ width:22px; height:22px; border-radius:50%; background:#04050A; margin-top:auto; }
+.fmt-b .fm{ text-align:center; font-family:'Geist',sans-serif; font-size:12px; color:var(--ink-muted); }
+.fmt-b .fm b{ display:block; font-family:'Oswald',sans-serif; font-weight:400; font-size:17px; color:var(--ink-soft); margin-bottom:2px; }
 </style>
 </head>
 <body>
@@ -379,126 +419,101 @@ body{ overscroll-behavior-y:none; }
 <main>
 
 <section class="section hero">
-  <div class="crumbs reveal"><a href="00%20Home.html">Brand Assets</a> <span class="sep">/</span> <span class="current">Social media</span></div>
+  <div class="crumbs reveal"><a href="00%20Home.html">Brand assets</a> <span class="sep">/</span> <span class="current">Social media</span></div>
   <span class="eyebrow reveal">Social media</span>
-  <h1 class="hero-h1">One idea, three seconds.</h1>
-  <p class="hero-h2 reveal" data-delay="4">Square, portrait and story formats — the anatomy of a post that reads as Intelligaia from the thumbnail.</p>
+  <h1 class="hero-h1">Social media.</h1>
+  <p class="hero-h2 reveal" data-delay="4">Three ratios, five layers, twelve words maximum.</p>
 </section>
 
-<section class="section">
-  <span class="eyebrow reveal">Purpose</span>
-  <h2 class="big-title reveal" data-delay="1">One idea, three seconds.</h2>
-  <p class="big-lede reveal" data-delay="2">A social post is the smallest unit of Intelligaia communication. It carries one idea, holds it for three seconds in a hostile feed, and looks unmistakably ours from the thumbnail alone. The yellow does most of that work.</p>
-  <div class="what-grid reveal" data-delay="3">
-    <div class="what-card"><div class="lbl">Idea</div><h4>Exactly one</h4><p>If it needs two, it's a carousel or two posts.</p></div>
-    <div class="what-card"><div class="lbl">Words</div><h4>12 maximum</h4><p>On the image itself. Detail belongs in the caption.</p></div>
-    <div class="what-card"><div class="lbl">Recognition</div><h4>Yellow first</h4><p>Signature colour visible at thumbnail size.</p></div>
-    <div class="what-card"><div class="lbl">Mark</div><h4>Always present</h4><p>Logo bottom-left or bottom-right. Never centred.</p></div>
+<section class="section lean">
+  <span class="eyebrow reveal">The output</span>
+  <h2 class="big-title reveal" data-delay="1">Three formats.</h2>
+  <p class="theory reveal" data-delay="2">One idea, three seconds, a hostile feed. The yellow does most of the recognition work before anyone reads a word.</p>
+  <div class="fmt-row reveal" data-delay="3">
+    <div class="fmt-b"><div class="fmt-m sq"><div><i class="big"></i><i class="mid"></i></div><span class="dot"></span></div><div class="fm"><b>Square</b>1080 × 1080 · LinkedIn, IG feed</div></div>
+    <div class="fmt-b"><div class="fmt-m pt"><div><i class="big"></i><i class="mid"></i></div><span class="dot"></span></div><div class="fm"><b>Portrait</b>1080 × 1350 · best feed space</div></div>
+    <div class="fmt-b"><div class="fmt-m st"><div><i class="big"></i><i class="mid"></i></div><span class="dot"></span></div><div class="fm"><b>Story</b>1080 × 1920 · stories, reels</div></div>
   </div>
 </section>
 
-<section class="section">
-  <span class="eyebrow reveal">Formats</span>
-  <h2 class="big-title reveal" data-delay="1">Three ratios, no others.</h2>
-  <p class="big-lede reveal" data-delay="2">Design once at the largest ratio, then crop deliberately — never let a platform auto-crop the headline.</p>
-  <div class="fmt-grid reveal" data-delay="3">
-    <div class="fmt">
-      <div class="fmt-mock square"><div><i class="big"></i><i class="mid"></i></div><span class="dot"></span></div>
-      <div class="fmt-meta"><h4>Square</h4><p>1080 × 1080</p><span>LinkedIn · Instagram feed</span></div>
+<section class="section lean">
+  <span class="eyebrow reveal">Deconstructed</span>
+  <h2 class="big-title reveal" data-delay="1">Five layers on the canvas.</h2>
+  <div class="parts reveal" data-delay="2">
+    <div class="part"><div><b>Background</b><span>Flat yellow, flat ink, or one approved illustration. Never a photo.</span></div></div>
+    <div class="part"><div><b>Headline</b><span>Oswald 400. Largest element. Twelve words maximum, six is better.</span></div></div>
+    <div class="part"><div><b>Support line</b><span>Optional. Oswald 400 at roughly half the headline size.</span></div></div>
+    <div class="part"><div><b>Illustration</b><span>One library asset, anchored to a corner. Never behind the text.</span></div></div>
+    <div class="part"><div><b>Logo mark</b><span>Bottom-left or bottom-right, 48px clear space.</span></div></div>
+    <div class="part"><div><b>Safe area</b><span>Keep the headline clear of the bottom 15% — platform UI sits there.</span></div></div>
+  </div>
+</section>
+
+<section class="section lean">
+  <span class="eyebrow reveal">Build it with AI</span>
+  <h2 class="big-title reveal" data-delay="1">Hand this to an agent.</h2>
+  <div class="ai-build reveal" data-delay="2">
+    <div class="spec-block" style="margin-top:0;">
+      <div class="lbl">Prompt</div>
+      <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('agent-prompt').textContent)">Copy</button>
+      <pre id="agent-prompt">Produce an Intelligaia social post for [TOPIC].
+
+Playbook: 80 Social Media.html
+
+Inputs:
+  headline       max 12 words, ideally 6
+  support_line   optional, one line
+  format         square 1080x1080 | portrait 1080x1350 | story 1080x1920
+  illustration   path from assets/manifest.json
+  caption        the nuance goes here, not on the image
+
+Layers: background → headline → support → illustration → logo
+
+Output: SVG or HTML canvas at exact pixel ratio, plus the caption separately.</pre>
     </div>
-    <div class="fmt">
-      <div class="fmt-mock portrait"><div><i class="big"></i><i class="mid"></i></div><span class="dot"></span></div>
-      <div class="fmt-meta"><h4>Portrait</h4><p>1080 × 1350</p><span>Instagram · best feed real estate</span></div>
+    <div class="ai-rules">
+      <h4>Must</h4>
+      <ul>
+      <li>Legible at 120px wide — thumbnail size</li>
+      <li>Headline clear of the bottom 15%</li>
+      <li>One illustration reused across a campaign</li>
+      <li>Nuance in the caption, not on the image</li>
+      </ul>
+      <h4>Never</h4>
+      <ul class="no">
+      <li>More than twelve words on the canvas</li>
+      <li>Stock or AI-generated imagery</li>
+      <li>Text over a busy area of an illustration</li>
+      <li>Platform logos or engagement bait</li>
+      </ul>
     </div>
-    <div class="fmt">
-      <div class="fmt-mock story"><div><i class="big"></i><i class="mid"></i></div><span class="dot"></span></div>
-      <div class="fmt-meta"><h4>Story</h4><p>1080 × 1920</p><span>Stories · Reels cover</span></div>
-    </div>
   </div>
 </section>
 
-<section class="section">
-  <span class="eyebrow reveal">Anatomy</span>
-  <h2 class="big-title reveal" data-delay="1">What goes on the canvas.</h2>
-  <div class="step-list reveal" data-delay="2">
-    <div class="step-row"><div><h5>Background</h5><p>Flat yellow, flat ink, or one approved illustration. Never a gradient, never a photo.</p></div><span class="hint">Layer 1</span></div>
-    <div class="step-row"><div><h5>Headline</h5><p>Oswald 500. Largest element on the canvas. Maximum 12 words, ideally 6.</p></div><span class="hint">Layer 2</span></div>
-    <div class="step-row"><div><h5>Support line</h5><p>Optional. Oswald 400 at roughly half the headline size. One line only.</p></div><span class="hint">Layer 3</span></div>
-    <div class="step-row"><div><h5>Illustration</h5><p>One asset from the library, anchored to a corner or edge. Never centred behind text.</p></div><span class="hint">Layer 4</span></div>
-    <div class="step-row"><div><h5>Logo mark</h5><p>Bottom-left or bottom-right, 48px clear space. Consistent across a campaign.</p></div><span class="hint">Layer 5</span></div>
-  </div>
-</section>
-
-<section class="section">
-  <span class="eyebrow reveal">Rules</span>
-  <h2 class="big-title reveal" data-delay="1">Do &amp; don't.</h2>
-  <div class="rules-grid reveal" data-delay="2">
-    <div class="rule-card do"><h4>Do</h4><ul>
-      <li>Test legibility at 120px wide — thumbnail size</li>
-      <li>Keep the headline clear of the bottom 15% (UI overlap)</li>
-      <li>Reuse one illustration across a campaign for recognition</li>
-      <li>Put the nuance in the caption, not on the image</li></ul></div>
-    <div class="rule-card dont"><h4>Don't</h4><ul>
-      <li>No more than 12 words on the canvas</li>
-      <li>No stock photography or AI-generated imagery</li>
-      <li>No text over a busy area of an illustration</li>
-      <li>No platform logos or engagement-bait graphics</li></ul></div>
-  </div>
-</section>
-
-<section class="section">
-  <span class="eyebrow reveal">For agents</span>
-  <h2 class="big-title reveal" data-delay="1">Prompt an agent can run.</h2>
-  <p class="big-lede reveal" data-delay="2">Replace the bracketed inputs and hand this to an agent with system and manifest access.</p>
-  <div class="spec-block reveal" data-delay="3"><div class="lbl">Agent prompt</div>
-    <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('agent-prompt').textContent)">Copy</button>
-    <pre id="agent-prompt">Produce an Intelligaia social post for [TOPIC / ANNOUNCEMENT].
-
-Follow the Social Media playbook at:  80 Social Media.html
-
-Inputs required:
-  - headline        (max 12 words, ideally 6)
-  - support_line    (optional, one line)
-  - format          (square 1080x1080 | portrait 1080x1350 | story 1080x1920)
-  - illustration    (path from assets/manifest.json)
-  - caption         (the nuance goes here, not on the image)
-
-Constraints:
-  - ONE idea per post
-  - Background: flat #FFC800, flat #04050A, or one approved illustration — no gradients, no photos
-  - Headline Oswald 500, largest element; support line Oswald 400 at ~half size
-  - Logo bottom-left or bottom-right, 48px clear space
-  - Headline clear of bottom 15% (platform UI overlap)
-  - Must stay legible at 120px wide
-
-Output: SVG or HTML canvas at the exact pixel ratio + the caption text separately.</pre></div>
-</section><section class="section">
-  <span class="eyebrow reveal">Machine-readable spec</span>
-  <h2 class="big-title reveal" data-delay="1">The authoritative source.</h2>
-  <p class="big-lede reveal" data-delay="2">Agents parse this block directly. Humans read the prose above.</p>
-  <div class="spec-block reveal" data-delay="3"><div class="lbl">page-spec</div>
+<section class="section lean">
+  <span class="eyebrow reveal">Spec</span>
+  <h2 class="big-title reveal" data-delay="1">Machine-readable.</h2>
+  <div class="spec-block reveal" data-delay="2">
+    <div class="lbl">page-spec</div>
     <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('page-spec').textContent)">Copy</button>
     <pre><script type="application/json" id="page-spec">{
   "playbook": "social-media",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "formats": [
     {
       "id": "square",
       "w": 1080,
-      "h": 1080,
-      "use": "LinkedIn, Instagram feed"
+      "h": 1080
     },
     {
       "id": "portrait",
       "w": 1080,
-      "h": 1350,
-      "use": "Instagram feed, max real estate"
+      "h": 1350
     },
     {
       "id": "story",
       "w": 1080,
-      "h": 1920,
-      "use": "Stories, Reels cover"
+      "h": 1920
     }
   ],
   "layers": [
@@ -508,26 +523,6 @@ Output: SVG or HTML canvas at the exact pixel ratio + the caption text separatel
     "illustration",
     "logo_mark"
   ],
-  "tokens": {
-    "bg_options": [
-      "#FFC800",
-      "#04050A",
-      "approved illustration"
-    ],
-    "headline": {
-      "family": "Oswald",
-      "weight": 500
-    },
-    "support": {
-      "family": "Oswald",
-      "weight": 400
-    },
-    "logo_position": [
-      "bottom-left",
-      "bottom-right"
-    ],
-    "logo_clear_space_px": 48
-  },
   "guardrails": {
     "max_words_on_canvas": 12,
     "ideas_per_post": 1,
@@ -541,15 +536,17 @@ Output: SVG or HTML canvas at the exact pixel ratio + the caption text separatel
       "platform logos"
     ]
   }
-}</script></pre></div>
+}</script></pre>
+  </div>
 </section>
 
-<section class="section" style="min-height:auto;padding-top:40px;padding-bottom:40px;">
+<section class="section" style="min-height:auto;padding-top:34px;padding-bottom:40px;">
   <div class="pn-row reveal">
     <a href="70%20Whitepapers.html" class="pn-tile"><div class="lbl">← Previous</div><div class="name">Whitepapers</div></a>
     <a href="00%20Home.html" class="pn-tile next"><div class="lbl">Next →</div><div class="name">Back to home</div></a>
   </div>
 </section>
+
 </main>
 <footer class="dark-footer">
   <div class="dark-footer-inner">
