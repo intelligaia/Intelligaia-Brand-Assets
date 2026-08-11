@@ -1,0 +1,1520 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Intelligaia Case Study — D³ AI Assistant</title>
+<link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink-950:#0D0D0A;
+  --ink-900:#1A1916;
+  --ink-700:#3A3A33;
+  --ink-500:#6B6B62;
+  --ink-300:#B5B5AD;
+  --ink-100:#E8E8E0;
+  --paper:#FFFFFF;
+  --paper-warm:#FAFAF6;
+  --paper-alt:#F5F4EF;
+  --rule:#E2E1DA;
+  --yellow:#FFD923;
+  --yellow-soft:#FFF6C7;
+  --yellow-deep:#B89500;
+  --red-soft:#FBE9E9;
+  --red-line:#E5A3A3;
+  --red-ink:#9B2C2C;
+  --serif:'Trirong', Georgia, 'Times New Roman', serif;
+  --sans:'Raleway', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  --maxw:1480px;
+  --content-w:1080px;
+  --rail-w:220px;
+  --gutter:48px;
+}
+
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+html { scroll-behavior:smooth; -webkit-font-smoothing:antialiased; -moz-osx-font-smoothing:grayscale; }
+
+body {
+  font-family:var(--sans);
+  font-size:16px;
+  line-height:1.7;
+  color:var(--ink-900);
+  background:var(--paper);
+}
+
+/* ── SITE HEADER ── */
+.site-header {
+  position:sticky;
+  top:0;
+  z-index:100;
+  background:var(--paper);
+  border-bottom:1px solid var(--rule);
+  backdrop-filter:blur(12px);
+}
+.site-header .row {
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:14px var(--gutter);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+.logo {
+  display:inline-flex;
+  align-items:center;
+  line-height:1;
+  text-decoration:none;
+}
+.logo img {
+  display:block;
+  height:34px;
+  width:auto;
+}
+.site-foot .logo img {
+  height:38px;
+  filter:invert(1) brightness(1.05);
+}
+.header-meta { display:flex; align-items:center; gap:12px; }
+.pill {
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--ink-500);
+  background:var(--paper-alt);
+  border:1px solid var(--rule);
+  border-radius:100px;
+  padding:4px 14px;
+}
+
+/* ── HERO ── */
+.hero {
+  background:var(--ink-950);
+  color:var(--paper);
+  padding:96px var(--gutter) 80px;
+}
+.hero-inner {
+  max-width:var(--content-w);
+  margin:0 auto;
+}
+.eyebrow {
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:600;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--yellow);
+  margin-bottom:20px;
+}
+.hero h1 {
+  font-family:var(--serif);
+  font-size:clamp(32px, 4vw, 56px);
+  font-weight:500;
+  line-height:1.15;
+  letter-spacing:-0.02em;
+  color:var(--paper);
+  margin-bottom:24px;
+}
+.hero h1 em {
+  font-style:italic;
+  color:var(--yellow);
+}
+.hero .tagline {
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:400;
+  line-height:1.7;
+  color:var(--ink-300);
+  max-width:780px;
+  margin-bottom:56px;
+}
+.meta-row {
+  display:grid;
+  grid-template-columns:repeat(4, 1fr);
+  gap:20px;
+}
+.meta-card {
+  background:var(--ink-900);
+  border:1px solid var(--ink-700);
+  border-radius:12px;
+  padding:24px;
+}
+.meta-card .meta-label {
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--yellow);
+  margin-bottom:10px;
+}
+.meta-card p {
+  font-family:var(--serif);
+  font-size:14px;
+  line-height:1.65;
+  color:var(--ink-300);
+}
+
+/* ── SHELL ── */
+.shell {
+  max-width:var(--maxw);
+  margin:0 auto;
+  padding:0 var(--gutter);
+  display:grid;
+  grid-template-columns:1fr var(--rail-w);
+  gap:var(--gutter);
+  align-items:start;
+}
+
+/* ── CONTENT ── */
+.content {
+  max-width:var(--content-w);
+  padding:80px 0 120px;
+}
+.content section {
+  margin-bottom:80px;
+}
+.content section:last-child {
+  margin-bottom:0;
+}
+.content .eyebrow {
+  color:var(--yellow-deep);
+  margin-bottom:12px;
+}
+.content h2 {
+  font-family:var(--serif);
+  font-size:clamp(26px, 3vw, 40px);
+  font-weight:500;
+  line-height:1.2;
+  letter-spacing:-0.01em;
+  color:var(--ink-950);
+  margin-bottom:20px;
+}
+.content h3 {
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:500;
+  color:var(--ink-950);
+  margin-top:48px;
+  margin-bottom:20px;
+}
+.content p {
+  font-family:var(--serif);
+  font-size:16px;
+  line-height:1.75;
+  color:var(--ink-700);
+  margin-bottom:20px;
+}
+.content p:last-child { margin-bottom:0; }
+.lead {
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:18px;
+  line-height:1.7;
+  color:var(--ink-500);
+  margin-bottom:24px;
+}
+
+/* ── JUMPER NAV ── */
+.jumper {
+  position:sticky;
+  top:80px;
+  padding:80px 0 40px;
+  align-self:start;
+}
+.jumper-list {
+  list-style:none;
+  border-left:2px solid var(--rule);
+  padding-left:20px;
+}
+.jumper-list li {
+  margin-bottom:8px;
+}
+.jumper-list a {
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:500;
+  color:var(--ink-300);
+  text-decoration:none;
+  transition:color 0.2s;
+  display:block;
+  padding:4px 0;
+}
+.jumper-list a:hover {
+  color:var(--ink-700);
+}
+.jumper-list a.active {
+  color:var(--ink-950);
+  font-weight:600;
+}
+
+/* ── QUOTE ── */
+.quote {
+  border-left:3px solid var(--yellow);
+  padding:24px 32px;
+  margin:32px 0;
+  background:var(--paper-warm);
+  border-radius:0 8px 8px 0;
+}
+.quote blockquote {
+  font-family:var(--serif);
+  font-style:italic;
+  font-size:18px;
+  line-height:1.65;
+  color:var(--ink-700);
+}
+.quote cite {
+  display:block;
+  font-family:var(--sans);
+  font-style:normal;
+  font-size:13px;
+  font-weight:500;
+  color:var(--ink-500);
+  margin-top:12px;
+}
+
+/* ── CARDS ── */
+.card {
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  padding:28px;
+}
+.card .tag {
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--yellow-deep);
+  margin-bottom:10px;
+}
+.card h4 {
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:500;
+  line-height:1.35;
+  color:var(--ink-950);
+  margin-bottom:12px;
+}
+.card h4 em {
+  font-style:italic;
+  color:var(--yellow-deep);
+}
+.card p {
+  font-family:var(--serif);
+  font-size:14px;
+  line-height:1.65;
+  color:var(--ink-700);
+  margin-bottom:0;
+}
+.card ul {
+  list-style:none;
+  padding:0;
+}
+.card ul li {
+  font-family:var(--serif);
+  font-size:14px;
+  line-height:1.65;
+  color:var(--ink-700);
+  padding:6px 0;
+  border-bottom:1px solid var(--rule);
+  padding-left:16px;
+  position:relative;
+}
+.card ul li:last-child { border-bottom:none; }
+.card ul li::before {
+  content:'';
+  position:absolute;
+  left:0;
+  top:14px;
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:var(--yellow-deep);
+}
+.card.root {
+  background:var(--ink-950);
+  border-color:var(--ink-700);
+}
+.card.root .tag { color:var(--yellow); }
+.card.root h4 { color:var(--paper); }
+.card.root p { color:var(--ink-300); }
+.card.dark {
+  background:var(--ink-950);
+  border-color:var(--ink-700);
+}
+.card.dark .tag { color:var(--yellow); }
+.card.dark h4 { color:var(--paper); }
+.card.dark ul li { color:var(--ink-300); border-bottom-color:var(--ink-700); }
+.card.dark ul li::before { background:var(--yellow); }
+
+/* ── CHIPS ── */
+.chips {
+  display:flex;
+  flex-wrap:wrap;
+  gap:6px;
+  margin-top:12px;
+}
+.chip {
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:600;
+  letter-spacing:0.02em;
+  color:var(--ink-500);
+  background:var(--paper-alt);
+  border:1px solid var(--rule);
+  border-radius:100px;
+  padding:4px 12px;
+}
+
+/* ── GRIDS ── */
+.grid-2 {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:20px;
+  margin:32px 0;
+}
+.grid-3 {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+  margin:32px 0;
+}
+
+/* ── PROPOSAL GRID ── */
+.proposal-grid {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+  margin:32px 0;
+}
+.proposal-grid .card { position:relative; padding-top:36px; }
+.proposal-grid .pnum {
+  font-family:var(--sans);
+  font-size:48px;
+  font-weight:700;
+  color:var(--yellow-soft);
+  position:absolute;
+  top:-8px;
+  right:20px;
+  line-height:1;
+}
+
+/* ── MATRIX ── */
+.matrix {
+  width:100%;
+  border-collapse:collapse;
+  margin:32px 0;
+  font-family:var(--serif);
+  font-size:14px;
+}
+.matrix th {
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-500);
+  text-align:left;
+  padding:14px 20px;
+  border-bottom:2px solid var(--ink-950);
+  background:var(--paper-alt);
+}
+.matrix td {
+  padding:16px 20px;
+  border-bottom:1px solid var(--rule);
+  color:var(--ink-700);
+  line-height:1.6;
+  vertical-align:top;
+}
+.matrix tr:last-child td { border-bottom:none; }
+
+/* ── TOUCH GRID ── */
+.touch-grid {
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:20px;
+  margin:32px 0;
+}
+.touch-card {
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  padding:28px;
+  text-align:center;
+}
+.touch-card .touch-icon {
+  width:48px;
+  height:48px;
+  margin:0 auto 16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--yellow-soft);
+  border-radius:50%;
+}
+.touch-card .touch-icon svg {
+  width:24px;
+  height:24px;
+  stroke:var(--yellow-deep);
+  fill:none;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.touch-card .touch-tag {
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--yellow-deep);
+  margin-bottom:10px;
+}
+.touch-card h4 {
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:500;
+  color:var(--ink-950);
+  margin-bottom:10px;
+}
+.touch-card p {
+  font-family:var(--serif);
+  font-size:14px;
+  line-height:1.65;
+  color:var(--ink-700);
+  margin-bottom:0;
+}
+
+/* ── DIAGRAM ── */
+.diagram {
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  border-radius:16px;
+  padding:40px;
+  margin:32px 0;
+}
+.diagram .diagram-title {
+  font-family:var(--sans);
+  font-size:13px;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-500);
+  margin-bottom:32px;
+  text-align:center;
+}
+.flow-steps {
+  display:flex;
+  align-items:flex-start;
+  gap:0;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+.flow-step-wrap {
+  display:flex;
+  align-items:flex-start;
+}
+.step {
+  background:var(--paper);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  padding:20px;
+  width:160px;
+  text-align:center;
+  flex-shrink:0;
+}
+.step .step-num {
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--ink-300);
+  margin-bottom:8px;
+}
+.step .step-name {
+  font-family:var(--serif);
+  font-size:14px;
+  font-weight:500;
+  color:var(--ink-950);
+  margin-bottom:6px;
+  line-height:1.35;
+}
+.step .step-sub {
+  font-family:var(--serif);
+  font-size:12px;
+  line-height:1.55;
+  color:var(--ink-500);
+}
+.step.hot {
+  background:var(--yellow-soft);
+  border-color:var(--yellow);
+}
+.step.hot .step-num { color:var(--yellow-deep); }
+.flow-arrow {
+  display:flex;
+  align-items:center;
+  padding-top:32px;
+  color:var(--ink-300);
+  flex-shrink:0;
+}
+.flow-arrow svg {
+  width:24px;
+  height:24px;
+  stroke:var(--ink-300);
+  fill:none;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+
+/* ── CALLOUT ── */
+.callout {
+  background:var(--yellow-soft);
+  border:1px solid var(--yellow);
+  border-radius:12px;
+  padding:24px 28px;
+  margin:32px 0;
+}
+.callout p {
+  font-family:var(--serif);
+  font-size:15px;
+  line-height:1.65;
+  color:var(--ink-700);
+  margin-bottom:0;
+}
+
+/* ── WORKFLOWS GRID ── */
+.workflows-grid {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+  margin:32px 0;
+}
+.workflow-card {
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  overflow:hidden;
+}
+.workflow-screen {
+  background:var(--ink-100);
+  padding:24px;
+  text-align:center;
+  min-height:180px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  border-bottom:1px solid var(--rule);
+}
+.workflow-screen.placeholder {
+  background:linear-gradient(135deg, var(--ink-100) 0%, var(--paper-alt) 100%);
+}
+.workflow-screen .screen-tag {
+  font-family:var(--sans);
+  font-size:10px;
+  font-weight:700;
+  letter-spacing:0.12em;
+  text-transform:uppercase;
+  color:var(--ink-300);
+  margin-bottom:8px;
+}
+.workflow-screen .screen-name {
+  font-family:var(--serif);
+  font-size:16px;
+  font-weight:500;
+  color:var(--ink-700);
+  margin-bottom:6px;
+}
+.workflow-screen .screen-hint {
+  font-family:var(--sans);
+  font-size:11px;
+  color:var(--ink-300);
+}
+.workflow-body {
+  padding:24px 28px;
+}
+.workflow-body .workflow-tag {
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--yellow-deep);
+  margin-bottom:10px;
+}
+.workflow-body h4 {
+  font-family:var(--serif);
+  font-size:18px;
+  font-weight:500;
+  color:var(--ink-950);
+  margin-bottom:10px;
+  line-height:1.35;
+}
+.workflow-body p {
+  font-family:var(--serif);
+  font-size:14px;
+  line-height:1.65;
+  color:var(--ink-700);
+  margin-bottom:14px;
+}
+.workflow-body ul {
+  list-style:none;
+  padding:0;
+}
+.workflow-body ul li {
+  font-family:var(--serif);
+  font-size:13px;
+  line-height:1.6;
+  color:var(--ink-500);
+  padding:4px 0 4px 16px;
+  position:relative;
+}
+.workflow-body ul li::before {
+  content:'';
+  position:absolute;
+  left:0;
+  top:11px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--yellow-deep);
+}
+
+/* ── PERSONA GRID ── */
+.persona-grid {
+  display:grid;
+  grid-template-columns:repeat(2, 1fr);
+  gap:24px;
+  margin:32px 0;
+}
+.persona-card {
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  padding:32px;
+  position:relative;
+}
+.persona-card .persona-icon {
+  width:48px;
+  height:48px;
+  margin-bottom:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:var(--yellow-soft);
+  border-radius:50%;
+}
+.persona-card .persona-icon svg {
+  width:24px;
+  height:24px;
+  stroke:var(--yellow-deep);
+  fill:none;
+  stroke-width:2;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.persona-card .persona-role {
+  font-family:var(--sans);
+  font-size:11px;
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--yellow-deep);
+  margin-bottom:10px;
+}
+.persona-card h4 {
+  font-family:var(--serif);
+  font-size:20px;
+  font-weight:500;
+  color:var(--ink-950);
+  margin-bottom:12px;
+}
+.persona-card p {
+  font-family:var(--serif);
+  font-size:14px;
+  line-height:1.65;
+  color:var(--ink-700);
+  margin-bottom:0;
+}
+
+/* ── TABLE WRAP ── */
+.table-wrap {
+  background:var(--paper-warm);
+  border:1px solid var(--rule);
+  border-radius:12px;
+  overflow:hidden;
+  margin:32px 0;
+}
+.table-wrap table {
+  width:100%;
+  border-collapse:collapse;
+}
+.table-wrap th {
+  font-family:var(--sans);
+  font-size:12px;
+  font-weight:700;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-500);
+  text-align:left;
+  padding:16px 24px;
+  border-bottom:2px solid var(--rule);
+  background:var(--paper-alt);
+}
+.table-wrap td {
+  font-family:var(--serif);
+  font-size:14px;
+  line-height:1.6;
+  color:var(--ink-700);
+  padding:16px 24px;
+  border-bottom:1px solid var(--rule);
+  vertical-align:top;
+}
+.table-wrap tr:last-child td { border-bottom:none; }
+
+/* ── PROTO NOTE ── */
+.proto-note {
+  font-family:var(--sans);
+  font-size:13px;
+  font-style:italic;
+  color:var(--ink-300);
+  margin-bottom:24px;
+  padding:12px 16px;
+  border-left:3px solid var(--rule);
+  background:var(--paper-alt);
+  border-radius:0 8px 8px 0;
+}
+
+/* ── FOOTER ── */
+.site-foot {
+  background:var(--ink-950);
+  padding:48px var(--gutter);
+}
+.foot-inner {
+  max-width:var(--maxw);
+  margin:0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+/* footer logo uses inverted img filter — see .site-foot .logo img above */
+.site-foot .meta {
+  font-family:var(--sans);
+  font-size:13px;
+  color:var(--ink-500);
+}
+
+/* ── RESPONSIVE ── */
+@media (max-width:1180px) {
+  .shell {
+    grid-template-columns:1fr;
+  }
+  .jumper {
+    display:none;
+  }
+}
+@media (max-width:960px) {
+  :root {
+    --gutter:32px;
+  }
+  .meta-row {
+    grid-template-columns:repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns:repeat(2, 1fr);
+  }
+  .touch-grid {
+    grid-template-columns:repeat(2, 1fr);
+  }
+  .hero {
+    padding:64px var(--gutter) 56px;
+  }
+  .flow-steps {
+    gap:0;
+  }
+  .step {
+    width:140px;
+    padding:16px;
+  }
+}
+@media (max-width:700px) {
+  :root {
+    --gutter:20px;
+  }
+  .meta-row {
+    grid-template-columns:1fr;
+  }
+  .grid-2,
+  .grid-3,
+  .proposal-grid,
+  .touch-grid,
+  .workflows-grid,
+  .persona-grid {
+    grid-template-columns:1fr;
+  }
+  .flow-steps {
+    flex-direction:column;
+    align-items:center;
+  }
+  .flow-step-wrap {
+    flex-direction:column;
+    align-items:center;
+  }
+  .flow-arrow {
+    padding-top:0;
+    padding:8px 0;
+    transform:rotate(90deg);
+  }
+  .step { width:100%; max-width:280px; }
+  .hero { padding:48px var(--gutter) 40px; }
+  .content { padding:48px 0 80px; }
+  .content section { margin-bottom:56px; }
+  .foot-inner { flex-direction:column; gap:16px; text-align:center; }
+  .matrix { font-size:13px; }
+  .matrix th, .matrix td { padding:10px 12px; }
+  .table-wrap th, .table-wrap td { padding:12px 16px; font-size:13px; }
+}
+@media (max-width:420px) {
+  .hero h1 { font-size:28px; }
+  .content h2 { font-size:24px; }
+  .card { padding:20px; }
+  .persona-card { padding:24px; }
+  .diagram { padding:24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ HEADER ════════ -->
+<header class="site-header">
+  <div class="row">
+    <a href="https://intelligaia.com" class="logo" aria-label="Intelligaia"><img src="data:image/avif;base64,AAAAIGZ0eXBhdmlmAAAAAGF2aWZtaWYxbWlhZk1BMUIAAAGNbWV0YQAAAAAAAAAoaGRscgAAAAAAAAAAcGljdAAAAAAAAAAAAAAAAGxpYmF2aWYAAAAADnBpdG0AAAAAAAEAAAAsaWxvYwAAAABEAAACAAEAAAABAAAUiQAABPUAAgAAAAEAAAG1AAAS1AAAAEJpaW5mAAAAAAACAAAAGmluZmUCAAAAAAEAAGF2MDFDb2xvcgAAAAAaaW5mZQIAAAAAAgAAYXYwMUFscGhhAAAAABppcmVmAAAAAAAAAA5hdXhsAAIAAQABAAAAw2lwcnAAAACdaXBjbwAAABRpc3BlAAAAAAAAARgAAABmAAAAEHBpeGkAAAAAAwgICAAAAAxhdjFDgQAMAAAAABNjb2xybmNseAACAAIAAoAAAAAOcGl4aQAAAAABCAAAAAxhdjFDgQAcAAAAADhhdXhDAAAAAHVybjptcGVnOm1wZWdCOmNpY3A6c3lzdGVtczphdXhpbGlhcnk6YWxwaGEAAAAAHmlwbWEAAAAAAAAAAgABBAECgwQAAgQBBYYHAAAX0W1kYXQSAAoKAAAABDRfKbXyVDLDJRAAjYA44kEg3S1vUc7ejutZmGgFSbBRtxULY9/xnnNKkIa0s0KXx1lnjaXXnjSQ9EtOKweXq6oGwx1TGdZZBhSEplN81J8kZvaFVMiM0OALN4CiL83wXfUPVJ9kB0xmESZFQgcni8f/sSdxwHerm5bL53OnpJAbVDlx99Rt3qkLKaqrJbU7fUQTM9WYWHItXI7UyMzvLezoaFchrHR7M/db3CNaAZDpmTq9J310pf6R+YtKcIxgMLfLx+pQzH5TBhwPkIWF5dRNIQTCyn2cUDeXpyjDG6zXO3V7EHDt3UrfOqk/Y+wrpZDnAqbbCxaL5rRz3QAVvzu9reixLRqD/S9S5MnItdbXlgiKVgCcH9GAJroNtzP5G9wwlx22pWSYpIIsc8CAmXrVB8K0EIQAVp+5ONeaPP3OoOAIQtdYqyKcjLaOmYBQ0WL3gqZJMZ2aXKbiHgG+9suIIW0B3YHdCATJemj6leEXzrkyPI3vcQh5bUHPPLAYTlwfjpLrtY3Cz/M+ZvqYy2vPyInY+EBBYrw6/vBd4dN2FIvOh2mWNoOruq+Fk4MYJIJPcGsZFUdWzP5vmaEu9arzP+srVBv6uf/7rhfn8zGybW15jwIzF2OmyW1J/dJ9+Mt0ykFKzOUhJka9FUZRJiImwEO3c8tHpPkh2MugcnntOzfp9SqvLuamJjQifLUsigDvxq7gFk0D2ErfWJSMcxm5BZcJybhem5GaLzluj5p5YvGqYCU2l5gS/vVW4HmrNDzyHBlMVljO7HngXIuZajamiQBSng6jAyeANrnQFdqpW1o/Qo1gfjepWnSde3nMEuc5F3jLJqj1LNAl+RLlgKNLXoxCJfSfbRHOkmEhSN3Ixlvp//75Nrda/reSBUZRWS6sTC8W2OdWFzIFZGNnjSllx4fiBRlRR55i2ggNr1x4FhdUlWY2D0IISZqX56bjiJCWykktsyUCUc9Orz2AmEoSa4ab+I4nluaC5NHraer5EbdAZIACJGpUjxN7AieQJD0oewGRI88I0n4FIcXcU4wGBqZ6OLBwY3PUuaHBR7DbvO84jQTVedHI7gqNSpwFwsFMXbj8jhE8xq2ypj7dauZAsSDUwTx1sDJC1+q7Eqe0Bvny177KoI20WTZXGd/mnrOBO8NgckkPh9+K/dfaOQM7W3IDL714kcRVGeeifM0UG7E3PVly3D9ABv5HiQ3//ycSXmVppsdtQq3IEPKg7obwAIIAto3P1NNu84URCHaw2tTHRNCJH7Dhx6jJSJxh+FsgSY1pizXrH2IEyR0MLXascuvfcY55/LG5EiMCgfKepV8UODHHupR0BVawe73oe3LOzu5po3DTq5uhyv0u6PcX0+ixf5Pq6rjHskAWlRgItwKSo4MKY/5QLxdINmkgi9DbDFmYU9/0zePkyHL6dpGtaPipmvodi7goh09KorvR0xHmZR0I7ecXjI1Sv9sGrb/OhW0oPBG5VJPhiuvwR6cyL6nDjAux55d7fyUB2TXKiffqFCobV0lRpl2KC+1LDj3QE/PZDUlWvjU9mos6Ny11ymw3r/+mmdc3/jlOT4ikJWr1xN62pdlW2Gvu+pSWSiI9wPPQaj03AcjKd45Kuvhn+GQB579GCs2Qfkx7sX/bAmXw6vjwosFppK6hRVut4TqOzvXhIW9o6Qz1zQtr6jKJAw5ImXPFjUW3TtHb3IwxMFaFH0ttHUEvtMWfIw3wCGqF5d/jo5+ZHN7UkQsXTMljdZ+QQT/onX4GnXxHkrHfdHBs6249MIa0Di4Qq+fEbJjii0Y0TwvsUJpY9CF4+ba3l95Jz5doMXrnSo8qDjyHadXHizMEFR8isN0UjIjj3J0sTVXOZahfyK3qnOvJB5QokX7D8Yi07Ym/6d88AWJZsEpF7EoN0AqrPy/yJQNqIf4eDij6ibIw2AvRXJT88kUI12wHgdhZkgPfz1nY4seymPWTTk7mR36ve3FrlLEakd7MQwBbbFceh+MOFqguj8D/mS8Y02d2RTYZxbMPbllPFmp7gx2yVsjnExbpsldgvFwV+Yc5wgX4wyULJ0zfUqMiPLbhYuVjeUGt0S0M+Fe5LwUgZxrCeCBkjwKB1cVHYEIgM/uhev2ABhWyPkwZ610mdHluMZL5/R4F59oIzu099e+Kd5kwpQbrvhJN02R0xYZ9qvmzC7oMdF4lwFNClrlbVzEnP7wlMDzishypbcXDpFcFR0Sxh6PliIygnW7z/3ckfa2DDAj+QDEro+8JNfWthtLmp5vf1pxBYEVK9ctUuHwsq41XG84f6Myjxsq7Dx87lFNa94IqqCKXloOdRGkCWmxyD8ihM2n7PpbS9zZ1cbZ/OACP+wPyDm2AJmsmczqGkag6vQGhY67UZpF8eJxp6XeTV8mP20ZShAy/kCaKspFA0vUPY4krxyMDcIYoG5jcV0R4+6PjRXUw0QViBzdVgYWmH0CuDwxUH0owQkR9C4s+WbltGeSt6w4+t5ST9APbEn7OGCUt5+tfBh2ymx2znh5YrN0NKzMLxopz0T4AhpbhBq9c0ZcrrugomMfVA43AZvam30L1INfvgXRxaT9KPNaTw+HK84KRgyLV253sA/pbUJPdZZ6XZqWmt7UA5c9z5oMmnYTyKe/ZUf95CSbe4tbZoTVAg3FhMYPMBi320vJ6vXyCWoEFVP7I6U3xifpHbdmmoFLFpyReuLnShl05OGNMETZ0m/kA8n9lSrxTHAbW/5TTsRryNpPI56TrYCjoW6L5rMsg6zCTsLuoZe61t8cRX3xCA4ncsWnUtCz9QZqf9aW1BVdENkZcIabIvEv4z5d9wMyjolYfuDWSYBvN6nTUAi7zBCDy3RBICG1ff/4dGzdfbH48YYCjH9x00IrxSlnHF8WkihUbDesdonyIPTaex412CMZ1nCLn1yxdsoO8oGYzaN00Wm+tHStVTb2q63tYKZOekyaKo8E/1dtSo1Zqw/vKzYiQvNbsM0RQ/e/CM6cxEPEdgGvDimj0V2lta2JahKOkSGH/JOlViyDRHBDsq/6asJcj9ZjBK1+zV6ecPzKd7tDuibABxBZ3uX7q5zCOsOvpHS8xN5yTZqdGUP0wYGOrBzofKEkyxmSGQ3riVoOalJVEB66v7ogu9z8WJvy1D/kP8dY/vOC+LmaUc6W/6kgVJ9J2zD0x76aZieIks71Qy85HdxKHFi1k46/8EsQ86VXXlJKj+hHJKWzGduYMq8EAxGzKeFdC3YRLYfGCVwa73ZX5Q8OSXAkgrRaiefBbMRQYfXJQZFei+zO3Eh8hqNrehW1B0Dn62Gbe1LOrCy7NQpRcbjSpnCKyii8DjWNo95UxLnDVc8J16uLpccYCwax61QwwomwdPq7p0Yjagw60b70gr5zC8gS+YLfvnEA78NS1aB3QkdnKBBGTr6cpObozz9OCEUVBi3tOC5fwOD4ks0GyYyYWODwzdYb2ZC+mI19Dcph9iXyEXaT4HJF8zRjU88EMnnSk1HPHe9kHqEn+kWD9mTymbPhdu2rnp4rYqGRoQ4RmOx+umXn4zQcAiUsC/uEuU9IPwkabNt/QQL1dsjfK9uVgKK70cahjceuHkTu+cQJf+YgqdAoqK5LVAUnFX/GMRn26LZ/gZCxOK6RoCZfxxmVCRx67f0MBnA3w3FW+cQ3M7YMucF7v1c9OH06fzaBkJhmnvLyHNR5vG69pxNGVRw0DXGpDYTyztGhgGuUA1NOmNzpn1jOpGf+rscQE0v/N+r+n2YRu6ugxAx7UkAlPgvOXbk8mHy1cXeURBu6X8cyDWlheJHQKSsQYJ8GAh3exTGxsKDq5U/i6PmebGTfQRcxSSF+AoOQCoSxVdJfkXOWy/w5CD5wHP9gSJPZ8vyIlCp42UQCZGf4S0tI5nFI55B9Kow4OG1NvCN/5q/GXTjwFb4QkBMP89E93SZegqico+VEZmRdVGBd83xLHXaKsQSaPAmu+lA+xl2OwlZEvRXKrjg2spBgo1j4jJs3F/GEuMz25FFpcSvwIE9/NIN8UdusEnvV7ZjFfVwSEM/yKGsuuO+C9NQ89EpsYkEpiT/w+CVh8Vc0AkmFfC5srd1sd3PvM18gDc5Ovm4BkM2OAAibBQC17yx0e4/i3uaBej9aff5hJ4g9Porh3EnJMwuFLr1Brnh3j4Fx3+ZW6te01jb/DsoPFsRjq3i9RIqbgN8ZK/0HlkvdWo4P1oLBsHB0PTxu839hjaYEs6iDTzH39stgdN8ZMRdoeKgAUGyzEPoUuIe+fTGZSHCZCo/OBtlY/DjQ1KGeOzHfhW2gkC/EOEpLU3RdNwc6k1w0ntPmW1peJmkGbptNONkxQp5ww525vmjlkokQgq6V+Vgsy5rGFIheaC1MvQaWxojUc3Dp76gRLzaUelvPtU34vc2i3WR4zNXu4rKH7fMGKFxHMxTGslrBdG0DF0rBvS8EyUUGE2vnzHkVnVuJ18LO2rJicgDzs0lPokQ3VZsN7AxoIzg0u+ZcohCE721uomKLukXCS9tQ4tk33WUxloR9YaPwhpn1Xu47LPLj42AR3UTtDZZ5OPaC1kbujwQH8bURvs150YxfqZPMMOh2j0gIAFvE+0dMlpgwhXe1wnfKhq6Gxxm9d/fsyITnFotArVt+EZ2o1jLlUZwwZ9sOXEOvRVC7b/aY9ypKYsNUP2Sy5LmRFJfXCKKCGHO8+OmvubLahI2D/G6HQYp4ccDd2XlVYvMzoA830CXg8taSGAse7d3zQyMLXULl7dd571nKp9jJm410nqbBE/7Ee6FvDYWiU42oisPQI3PzVneECm8jV9rwOlkrZVLDqAHBIFCzkXXSzWbNON1NnymDJN7sr4ei0wqEWhgLpCFoB6SMC1xkJIXcNLkAFgDtMtL1eqTYDzeoctIfM89JV9K0O1m3NOJy3rUVSZapK97eunh1hEbJea98GE/x1cUObL/4KZ2Pi/II3buAu89gmqgEwOmHxTfnQGLYhAnsEat7UywtcBsbkM1Ko1cPbQ+8K1s+UvdyxYr6NVix2PDXB8Zmepti/+00JPspOwDdeZmn0mSEUhFhPCjg1xRMPfhGruMRFiJ71tWRVo1rcingHi2cI4O9/yP8E6ATZtgjyJ1eP+C8g8Nxli25qA5IXsQBe7/exlNm15Br/nsG9LDY40/QbR1RnLHGcVcltsvpKaly/QRmun2GUsebHaF70j+Sk5y1gKw65SbJ/////g5lV90AeumKlfPVQN4G5Xgwap1l640rXrWH/eSX5Pj9SDI37IDrN/3qpToUq09lfS3zEAazV25ZZXPbyM0L1mx2pAvepkJiBp2ar23DnqpWvTdcSyMX3bqgHX7o77w3F5QPdOTx31xTYcSWEhCTuFfCrpfK8jmQSP3HRG9M5CK2l9jldeSRPI1UDABObjDUQfFwoi376Fah09AzS2jYTNpvhl3f5jMYn49R81lKzjbjI4Mx6eIsStkyDWMRvqagVtLTprkFdQOFNlcs2gKyWGmIiIK2tJvTgfuze4Z3yGVQq0vmleR9BFGTFPKeaS50zPB4u5IRaIKVCfF5IbFZixvn36WZ+kkcKqWm7KoEfhpTxTOVrA9aSdU9ImTLTbUg76TUjwhBh8B+EoJPNWPKfSGZcFbHgWWxR2uDFLs0PSCslDaRMvDz2v5U+M2pTlo6GbMk+j+IkprMIhe0qZ5c8C4U+xBy461gsSt0ykxihnk0er1/8LlN+5oDMpG38UL4qt4Jfn+MjTjxIyLSnwMNDPPgx/2imVMmwAj0P+IevkM4fq6+oZRoEe9kpwlkZ8Ug7Bwfow/PA2Qapi8VYjacvUy7zXmI/9d1AbHQU2KH3mURP9mKhY6gDL43/WiaDBI3gvceajnA+CKXEjiYJIKMnBxdr2+c6kZhyje2Y+nPmIeWFljnnsc1fs45d5iPd51WPgmDuYcIJu4Nsn2ogwSHF7ttjoSX/4f7xvFhhNbEyOBgGfRlTokrJ1AesGf37HrgFVG5l0S61s4ejKXeCCE+V/kr0tAtd6gdsU8P8erloJ1ShDnYoB4lCpcK5DvyJmkqLArhGGXxMiH0d9RXGT7xYfa+28kJT8r8phF6AJ28OPdtrJx//zpiZRFu6XZTHc8UYOUU53n5wjAEOcjpYkopz+ZWtfEP1rrN0kTJsui1bkxJNO2fgP093EG993klrmur9zbjeHgGuF7Ie/toXgTQOc+WjpYxuQQ8KDETGzQrnMini4zmtp8H7Hbw1fDM2bmc41SPJ2RjR88komQB4SCzUPLnJL4nstfc/MerYDve2UO/bCwN/M5mIhso14p7h2qtDJAOdaE3ncvvBvsnmlEnMFtG7UQuj7yvsrITOeQLmgpE3OHrcaooOC2HT+Sjj9lp1R/eHDAwAz1939X4S692npVXAnravHbUmAE/xgMKhfZRs1aZijBIACgsAAAAENF8ptfIQgDLjCRAAiAAGGGGJBBLBuvTlLucRzcGtZdcsngSAcdEyoEv3qFQnjmur84qCxbDLLv7mPPejdUuStaUagRe1Q5ggpf4PClZaDMGR7zkcV1qYBkGxCgxHLihAtCDNarQ0seMQdnz1/wkGBfAbBIwzAY4TEaa4KI9dKdrQivtyCqxrYunLeyAAHTqqDsQGdh1RKLo2M6OCpOTmSz+Iy75cYyKt8EkyZi/jzxTT3+EENB03JN11E9eTW8r85TltPHHVIwLJ0rZV1Plr+hBK2zbWJedbrgaMH4wKPbKpey0SvLbQRWR9VcKfSG+2tNZq9MC4oW6U+3lDil6a3DZ+tQnL/SFvNAuYjMSk+dHHKbnWcDEF2zkSb2o7xPhyUFmf2yM0WdjFgpofdupAH84Way00AuLXdURw6THGu5G/bzOiJfukGfY3wHpJITCQA/YTPfgwbe8AZ9SYcPCMemNBeAaQyp75Jpvg/rfkPUKZbsDcMNBOyOC0IpoMzxucZHEFMOBNHUulQ6Ry7xpjHl7BXFBV3WZaEtUCDo6JOIxl21X+GcTtLfdjy3wD2l3f1hj7p/Su2WrqqMk8NsR+6N9O2A+3bvb/D9hmqCln6AsIWv9YvPP7HXqVfW1pqLvooKEOMuiXbf+nHRYLZnqAZqVu++7I5Gk7mZYWiXdd0A1O7nPwONolqgv5BAuSikjaptP5Jtmhw6QEcSXKy0v3D/d4rANbwnUKRR1U71WLR/LKWNeS2pc7lvE9YdJPqgQvid/IAdsZcWIHA3Tuhp2IgTXWEuQIKwfWUsQOdqQASJAdUapVqSd3tH7Vx2+0LHNXNhN6FJf7kbITelXi6ietUEUarJqZXGxb4Av4dd3b6j58/xnCq0zQFPUqFMoEvSeD05gpbFc8HxBnAu5t/2/OXqzJEkoLKXQUOf8IMLBOC4YVFlDn0+a7kjCk1XXwsMPiW7kxL2Ca+7oFnL8cCw8IbDjvnUbfJKAsZdCOfHGgKiMAu9un4Qx52J1zNLFRP89fQ4qpfckixp4RotoMVvL835/grktPKIrUD1WyNJYlPBsoYWnRoJGSW1BE8i+f7TMjzQBsuhhR0rAvLPNts53AwhVTImJa/kMV6Wu+kSB9PyIDGmMUwk2rNrb+S0t5h+PfCXV9DINRMF5vpuaP6pneyGsRvylSPekpyW3gIXSJecrglV0kv5OZlJUuGnI0Fky2fbZGfwZ30LiQApcigHCaDKENOzV8fGM5n5wjkqFDBcCuujNs4c1Yaz3Q9b6UUEi0nBi8ac57iI8hpT1w/JO5BZJHLfpjOKO/ARRFHgAwtoOhkU2sKJAIQNSyzdrYGZ+QvRVn2QPqcIAA3TTQp3qbsTpCWdwo9mxjLuAduBm+yysBeLCn4kpPD+LeCYyEhs9x/S7mNjajmLgzvpdPUhwEtUP9FYU/+wIIuVVyp5U/Ag1JFP7kko1gcZw/XcD3k06s/6iInx7bduqWx/3NHCvUDzgcO0r/AsBs9ikqu2ExzubXUTQ22CTVUKCtP+We/FU6eKZ4JVuTr7A9b3aX4eFjU/By2inAUwKL3itJJPKz7OL2gS4/SUuGjCusO1E1R4eWirlwDQcJbzAn9x3e1ZGW8xR1qNfJbqt3dyq9lEuVD8QT6HVXEZjWxFeAl8Z6hYqfD5wJSZ3sVeUQErBoJA==" alt="Intelligaia"></a>
+    <div class="header-meta">
+      <span class="pill">v1.0 · June 2026</span>
+    </div>
+  </div>
+</header>
+
+<!-- ════════ HERO ════════ -->
+<div class="hero">
+  <div class="hero-inner">
+    <div class="eyebrow">Whitepaper — D&#179; AI Assistant</div>
+    <h1>Designing a research-first AI assistant for <em>Harvard's D&#179; Institute.</em></h1>
+    <p class="tagline">End-to-end UX strategy, intensive user research, and AI design principles for a platform that transforms how global executives access and apply academic research on digital transformation.</p>
+    <div class="meta-row">
+      <div class="meta-card">
+        <div class="meta-label">Client state</div>
+        <p>Research-rich institute with dense academic output and a growing executive membership seeking actionable insights on AI and digital transformation.</p>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Core challenge</div>
+        <p>Content was dense, delivery was passive, personalization was nonexistent &mdash; executives couldn&rsquo;t find insights specific to their industry or role.</p>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">What we built</div>
+        <p>Research framework, executive archetypes, AI design principles, information architecture, and a proposed AI-powered research assistant.</p>
+      </div>
+      <div class="meta-card">
+        <div class="meta-label">Direction</div>
+        <p>A personalized, AI-driven platform grounded in behavioral archetypes &mdash; from passive content delivery to adaptive executive intelligence.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ════════ SHELL ════════ -->
+<div class="shell">
+
+<!-- ── MAIN CONTENT ── -->
+<main class="content">
+
+  <!-- §01 ── PROJECT CONTEXT ── -->
+  <section id="s01">
+    <div class="eyebrow">01 · Project context</div>
+    <h2>Bridging the gap between academic rigor and executive action.</h2>
+    <p class="lead">Harvard's Digital, Data, and Design (D&#179;) Institute produces and shares research-rooted knowledge on how society and business interact with artificial intelligence and digital technologies.</p>
+    <p>D&#179; serves a global membership of C-suite leaders, CTOs, VPs, and senior professionals across industries &mdash; from banking and consulting to hospitality and development. Its conferences, curated insights, and research papers represent some of the most rigorous thinking on AI-driven transformation.</p>
+    <p>Yet the Institute&rsquo;s digital presence had not kept pace with its audience&rsquo;s needs. Members relied on fragmented channels &mdash; email newsletters, Slack updates, and full-length academic papers &mdash; to access content that was often too dense to act on and too broad to feel personal.</p>
+    <div class="quote">
+      <blockquote>&ldquo;Even 2 or 3 more sentences to give that context will be really valuable.&rdquo;</blockquote>
+      <cite>&mdash; Feedback from D&#179; member interview</cite>
+    </div>
+  </section>
+
+  <!-- §02 ── ROOT ISSUES ── -->
+  <section id="s02">
+    <div class="eyebrow">02 · Root issues</div>
+    <h2>Six barriers between research and executive action.</h2>
+    <p>Intensive user research &mdash; spanning 5+ in-depth interviews with global executives and qualitative analysis of 600+ conference attendees &mdash; surfaced a consistent set of obstacles.</p>
+    <div class="grid-3">
+      <div class="card">
+        <div class="tag">CONTENT</div>
+        <h4>Content overload</h4>
+        <div class="chips">
+          <span class="chip">Newsletters</span>
+          <span class="chip">LinkedIn</span>
+          <span class="chip">Podcasts</span>
+          <span class="chip">Papers</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tag">DELIVERY</div>
+        <h4>Passive delivery model</h4>
+        <div class="chips">
+          <span class="chip">One-way</span>
+          <span class="chip">No interaction</span>
+          <span class="chip">Static pages</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tag">PERSONALIZATION</div>
+        <h4>No personalization</h4>
+        <div class="chips">
+          <span class="chip">Generic content</span>
+          <span class="chip">No role filtering</span>
+          <span class="chip">No industry lens</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tag">FORMAT</div>
+        <h4>Dense academic papers</h4>
+        <div class="chips">
+          <span class="chip">Full-length papers</span>
+          <span class="chip">No summaries</span>
+          <span class="chip">No bite-size</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="tag">SOURCES</div>
+        <h4>Fragmented channels</h4>
+        <div class="chips">
+          <span class="chip">Email</span>
+          <span class="chip">Slack</span>
+          <span class="chip">Web</span>
+          <span class="chip">Events</span>
+          <span class="chip">JSTOR</span>
+        </div>
+      </div>
+      <div class="card root">
+        <div class="tag">Root issue</div>
+        <h4>No path from insight to action</h4>
+        <p>Executives valued D&#179;&rsquo;s academic rigor but had no mechanism to translate research findings into decisions specific to their industry, role, or strategic challenge.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §03 ── THE PROPOSAL ── -->
+  <section id="s03">
+    <div class="eyebrow">03 · The proposal</div>
+    <h2>Two strategic bets for the D&#179; platform.</h2>
+    <p>Intelligaia proposed two foundational design strategies &mdash; each informed by research, each requiring the AI assistant to behave differently for different users.</p>
+    <div class="proposal-grid">
+      <div class="card">
+        <span class="pnum">01</span>
+        <div class="tag">STRATEGY</div>
+        <h4>Archetype-based <em>personalization.</em></h4>
+        <p>Use executive decision-making archetypes &mdash; derived from literature study &mdash; to tailor content delivery, recommendations, and AI interactions to each user&rsquo;s strategic profile rather than surface-level preferences.</p>
+      </div>
+      <div class="card">
+        <span class="pnum">02</span>
+        <div class="tag">STRATEGY</div>
+        <h4>AI principles as <em>reasoned tradeoffs.</em></h4>
+        <p>Frame every AI design principle as a genuine tradeoff where both sides are plausible &mdash; forcing the team to confront real choices like Conclusion-First vs. Reasoning-First rather than defaulting to generic truisms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §04 ── RESEARCH APPROACH ── -->
+  <section id="s04">
+    <div class="eyebrow">04 · Research approach</div>
+    <h2>Multi-method research across three evidence layers.</h2>
+    <p>Rather than relying on a single research stream, Intelligaia layered qualitative interviews, quantitative survey analysis, and academic literature synthesis to build a design-ready framework.</p>
+
+    <table class="matrix">
+      <thead>
+        <tr>
+          <th>Method</th>
+          <th>What it revealed</th>
+          <th>Scale</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Qualitative interviews</td>
+          <td>How executives consume, evaluate, and apply research. Their preferred formats, sources, and frustrations with existing content delivery.</td>
+          <td>5+ in-depth sessions with executives across development, consulting, banking, and hospitality</td>
+        </tr>
+        <tr>
+          <td>Survey analysis</td>
+          <td>Behavioral archetypes among conference attendees. Four distinct engagement patterns emerged from decomposing open-ended feedback into themes.</td>
+          <td>600+ attendees of D&#179;&rsquo;s &lsquo;Leading with AI&rsquo; conference</td>
+        </tr>
+        <tr>
+          <td>Literature study</td>
+          <td>Academic frameworks for AI-driven executive decision-making. Strategic tensions that differentiate how leaders approach AI adoption.</td>
+          <td>5 research volumes synthesized into a design-ready archetype framework</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h3>Three research layers &mdash; what each contributed</h3>
+
+    <div class="touch-grid">
+      <div class="touch-card">
+        <div class="touch-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 3l1.5 3.6 3.9.3-3 2.7.9 3.9L12 11.4 8.7 13.5l.9-3.9-3-2.7 3.9-.3z"/><path d="M5 20l1.5-3.6"/><path d="M19 20l-1.5-3.6"/></svg>
+        </div>
+        <div class="touch-tag">QUALITATIVE</div>
+        <h4>Executive voice</h4>
+        <p>In-depth interviews revealed that executives wanted deeper engagement &mdash; connections to active research, networking with peers solving similar problems, and content specific to their industry context.</p>
+      </div>
+      <div class="touch-card">
+        <div class="touch-icon">
+          <svg viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="10" rx="2"/><path d="M12 11V7a4 4 0 0 0-4-4H6"/><circle cx="12" cy="16" r="1"/></svg>
+        </div>
+        <div class="touch-tag">BEHAVIORAL</div>
+        <h4>Attendee archetypes</h4>
+        <p>Survey analysis surfaced four distinct attendee types: Critical Thinkers focused on practicality, Explorers of diverse concepts, Collaborative Thinkers advocating networking, and Fans of conference format and efficiency.</p>
+      </div>
+      <div class="touch-card">
+        <div class="touch-icon">
+          <svg viewBox="0 0 24 24"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M6 8H5a4 4 0 0 0 0 8h1"/><line x1="8" y1="12" x2="16" y2="12"/></svg>
+        </div>
+        <div class="touch-tag">STRATEGIC</div>
+        <h4>Decision-making frameworks</h4>
+        <p>Literature synthesis produced four executive archetypes mapped against strategic tensions &mdash; Scale vs. Customization, Speed vs. Constraints, Independence vs. Partnership, Safety vs. Hierarchy.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §05 ── DISCOVERY FLOW ── -->
+  <section id="s05">
+    <div class="eyebrow">05 · Discovery flow</div>
+    <h2>From raw data to design-ready archetypes.</h2>
+    <p>Intelligaia&rsquo;s discovery process followed a structured pipeline &mdash; each phase producing artifacts that fed directly into the next.</p>
+
+    <div class="diagram">
+      <div class="diagram-title">Research-to-design pipeline</div>
+      <div class="flow-steps">
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-name">Demographic analysis</div>
+            <div class="step-sub">Profiled 600+ attendees by age, education, and professional background</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-name">Survey decomposition</div>
+            <div class="step-sub">Broke open-ended feedback into discussion topics and behavioral themes</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-name">Archetype clustering</div>
+            <div class="step-sub">Grouped attendees into four behavioral archetypes based on recurring patterns</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">04</div>
+            <div class="step-name">Executive interviews</div>
+            <div class="step-sub">Conducted 5+ in-depth sessions to validate and deepen archetype hypotheses</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step hot">
+            <div class="step-num">05</div>
+            <div class="step-name">Literature synthesis</div>
+            <div class="step-sub">Cross-referenced academic research to produce decision-making archetypes</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">06</div>
+            <div class="step-name">Design framework</div>
+            <div class="step-sub">Mapped archetypes to strategic tensions and AI assistant behavior models</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §06 ── AI DESIGN PRINCIPLES ── -->
+  <section id="s06">
+    <div class="eyebrow">06 · AI design principles</div>
+    <h2>Principles framed as reasoned tradeoffs, not truisms.</h2>
+    <p class="lead">Rather than defaulting to generic AI principles &mdash; &lsquo;be trustworthy,&rsquo; &lsquo;prioritize the user&rsquo; &mdash; Intelligaia developed each principle as a genuine tradeoff where both sides are plausible.</p>
+    <p>This forced the team to confront real design choices. The central tradeoff &mdash; Conclusion-First vs. Reasoning-First &mdash; determined whether the AI assistant would lead with strategic takeaways or walk users through the data to derive their own conclusions.</p>
+
+    <div class="grid-3">
+      <div class="card">
+        <div class="tag">TRADEOFF 01</div>
+        <h4>Conclusion-first vs. Reasoning-first</h4>
+        <p>Should the AI lead with the strategic takeaway, or guide users through the evidence? The answer depends on the archetype &mdash; time-constrained executives prefer conclusions; analytical leaders prefer reasoning.</p>
+      </div>
+      <div class="card">
+        <div class="tag">TRADEOFF 02</div>
+        <h4>Breadth vs. Depth</h4>
+        <p>Should the platform surface a wide range of topics or go deep on a few? Personalization by archetype resolved this &mdash; each user sees depth in their domain and breadth as discovery.</p>
+      </div>
+      <div class="card">
+        <div class="tag">TRADEOFF 03</div>
+        <h4>Curation vs. Exploration</h4>
+        <p>Should AI curate a focused feed or enable open exploration? The design balanced both &mdash; a personalized dashboard for daily use and a search interface for deeper research moments.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <p>Each principle was tested against the four executive archetypes. A principle that worked for Legacy Navigators but failed for Urgent Executioners was refined until it held across all profiles.</p>
+    </div>
+  </section>
+
+  <!-- §07 ── INFORMATION ARCHITECTURE ── -->
+  <section id="s07">
+    <div class="eyebrow">07 · Information architecture</div>
+    <h2>Four user roles, six core journeys.</h2>
+    <p>The platform&rsquo;s information architecture was structured around distinct user roles &mdash; each with its own feature set, permissions, and interaction patterns.</p>
+
+    <div class="grid-2">
+      <div class="card">
+        <div class="tag">ROLE 01</div>
+        <h4>Executive User</h4>
+        <ul>
+          <li>Personalized dashboard</li>
+          <li>AI-generated summaries</li>
+          <li>Virtual assistant with text-to-speech</li>
+          <li>Recommendation engine</li>
+          <li>Curated reading lists</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag">ROLE 02</div>
+        <h4>University Staff</h4>
+        <ul>
+          <li>Upload interface with metadata input</li>
+          <li>Batch upload capabilities</li>
+          <li>Collaboration tools</li>
+          <li>Document quality checks</li>
+          <li>Version control</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="tag">ROLE 03</div>
+        <h4>Administrator</h4>
+        <ul>
+          <li>User management and role assignment</li>
+          <li>Content management</li>
+          <li>Analytics and reporting</li>
+          <li>Security and compliance</li>
+        </ul>
+      </div>
+      <div class="card dark">
+        <div class="tag">ROLE 04</div>
+        <h4>Common Features</h4>
+        <ul>
+          <li>Login and authentication</li>
+          <li>Help center</li>
+          <li>Notification system</li>
+          <li>Profile management</li>
+        </ul>
+      </div>
+    </div>
+
+    <p>User flows were mapped across six key journeys &mdash; each representing a complete task from entry to outcome.</p>
+
+    <div class="diagram">
+      <div class="diagram-title">Executive user journey</div>
+      <div class="flow-steps">
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">01</div>
+            <div class="step-name">Onboarding</div>
+            <div class="step-sub">Navigate to platform, seamless login</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">02</div>
+            <div class="step-name">Dashboard</div>
+            <div class="step-sub">Review personalized feed and updates</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">03</div>
+            <div class="step-name">Search &amp; Select</div>
+            <div class="step-sub">Find articles by keyword and filters</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step hot">
+            <div class="step-num">04</div>
+            <div class="step-name">Article Engagement</div>
+            <div class="step-sub">AI summaries, highlights, notes, text-to-speech</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">05</div>
+            <div class="step-name">Virtual Assistant</div>
+            <div class="step-sub">Conversational AI explaining research findings</div>
+          </div>
+          <div class="flow-arrow"><svg viewBox="0 0 24 24"><path d="M5 12h14"/><path d="M13 6l6 6-6 6"/></svg></div>
+        </div>
+        <div class="flow-step-wrap">
+          <div class="step">
+            <div class="step-num">06</div>
+            <div class="step-name">Reading Lists</div>
+            <div class="step-sub">Organize and curate resources for later</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §08 ── PROPOSED WORKFLOWS ── -->
+  <section id="s08">
+    <div class="eyebrow">08 · Proposed workflows</div>
+    <h2>Four surfaces, each shaped by research.</h2>
+    <p>Every proposed workflow was directly informed by user interview findings and archetype behaviors.</p>
+    <div class="proto-note">Each card represents a key surface of the D&#179; AI Assistant. Screenshots are placeholders &mdash; the design is informed by the research framework documented above.</div>
+
+    <div class="workflows-grid">
+      <div class="workflow-card">
+        <div class="workflow-screen placeholder">
+          <div class="screen-tag">UI SCREEN</div>
+          <div class="screen-name">Executive Dashboard</div>
+          <div class="screen-hint">[SCREEN &middot; exec-dashboard &middot; 16:9 &middot; ref: &sect;08]</div>
+        </div>
+        <div class="workflow-body">
+          <div class="workflow-tag">WORKFLOW 01</div>
+          <h4>Personalized Research Feed</h4>
+          <p>A role-aware dashboard that surfaces AI-generated summaries tailored to the executive&rsquo;s archetype, industry, and strategic interests.</p>
+          <ul>
+            <li>Archetype-driven content ranking</li>
+            <li>AI-generated 3-sentence summaries</li>
+            <li>Save-to-reading-list actions</li>
+            <li>Cross-domain discovery feed</li>
+          </ul>
+        </div>
+      </div>
+      <div class="workflow-card">
+        <div class="workflow-screen placeholder">
+          <div class="screen-tag">UI SCREEN</div>
+          <div class="screen-name">Virtual Assistant</div>
+          <div class="screen-hint">[SCREEN &middot; virtual-assistant &middot; 16:9 &middot; ref: &sect;08]</div>
+        </div>
+        <div class="workflow-body">
+          <div class="workflow-tag">WORKFLOW 02</div>
+          <h4>Conversational AI Interface</h4>
+          <p>An AI assistant that explains research findings in plain language, generates video summaries, and responds to follow-up questions.</p>
+          <ul>
+            <li>Natural language Q&amp;A on papers</li>
+            <li>Text-to-speech for multitasking</li>
+            <li>Generated video explanations</li>
+            <li>Context-aware follow-ups</li>
+          </ul>
+        </div>
+      </div>
+      <div class="workflow-card">
+        <div class="workflow-screen placeholder">
+          <div class="screen-tag">UI SCREEN</div>
+          <div class="screen-name">Article Engagement</div>
+          <div class="screen-hint">[SCREEN &middot; article-engagement &middot; 16:9 &middot; ref: &sect;08]</div>
+        </div>
+        <div class="workflow-body">
+          <div class="workflow-tag">WORKFLOW 03</div>
+          <h4>AI-Enhanced Reading</h4>
+          <p>An enriched article view where AI highlights key points, generates notes, and connects findings to related research.</p>
+          <ul>
+            <li>AI-generated key takeaways</li>
+            <li>Inline annotation and notes</li>
+            <li>Related article recommendations</li>
+            <li>One-click reading list addition</li>
+          </ul>
+        </div>
+      </div>
+      <div class="workflow-card">
+        <div class="workflow-screen placeholder">
+          <div class="screen-tag">UI SCREEN</div>
+          <div class="screen-name">Faculty Dashboard</div>
+          <div class="screen-hint">[SCREEN &middot; faculty-dashboard &middot; 16:9 &middot; ref: &sect;08]</div>
+        </div>
+        <div class="workflow-body">
+          <div class="workflow-tag">WORKFLOW 04</div>
+          <h4>Research Impact Tracker</h4>
+          <p>A faculty-facing dashboard for tracking research visibility, managing uploads, and monitoring collaboration impact.</p>
+          <ul>
+            <li>Citation and Altmetric tracking</li>
+            <li>Collaboration project management</li>
+            <li>Upload interface with metadata</li>
+            <li>Industry engagement analytics</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- §09 ── EXECUTIVE ARCHETYPES ── -->
+  <section id="s09">
+    <div class="eyebrow">09 · Executive archetypes</div>
+    <h2>Four archetypes that shaped the AI&rsquo;s behavior.</h2>
+    <p class="lead">The literature study produced four executive decision-making archetypes &mdash; each defined by the strategic tensions they navigate and the type of AI support they need.</p>
+
+    <div class="persona-grid">
+      <div class="persona-card">
+        <div class="persona-icon">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg>
+        </div>
+        <div class="persona-role">ARCHETYPE 01</div>
+        <h4>Legacy Navigators</h4>
+        <p>Leaders in slow-moving, durable systems navigating inherited complexity. They value deep context, historical grounding, and AI that surfaces institutional knowledge before recommending change.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">
+          <svg viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+        </div>
+        <div class="persona-role">ARCHETYPE 02</div>
+        <h4>Urgent Executioners</h4>
+        <p>Operating under tight structural constraints with no margin for improvisation. They need AI that delivers conclusions first, prioritizes speed, and flags only the decisions that require human judgment.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 1v4"/><path d="M12 19v4"/><path d="M4.22 4.22l2.83 2.83"/><path d="M16.95 16.95l2.83 2.83"/><path d="M1 12h4"/><path d="M19 12h4"/><path d="M4.22 19.78l2.83-2.83"/><path d="M16.95 7.05l2.83-2.83"/></svg>
+        </div>
+        <div class="persona-role">ARCHETYPE 03</div>
+        <h4>Coordinated Builders</h4>
+        <p>Thriving in modular systems where value depends on precise cross-functional timing. They prefer AI that maps dependencies, sequences actions, and highlights coordination risks across teams.</p>
+      </div>
+      <div class="persona-card">
+        <div class="persona-icon">
+          <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <div class="persona-role">ARCHETYPE 04</div>
+        <h4>Principled Orchestrators</h4>
+        <p>Navigating long-horizon decisions where ethical tension and systemic integration dominate. They need AI that surfaces tradeoffs transparently and supports reasoning-first exploration.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- §10 ── IMPACT ── -->
+  <section id="s10">
+    <div class="eyebrow">10 · Impact &amp; outcomes</div>
+    <h2>Qualitative outcomes that reshaped D&#179;&rsquo;s approach.</h2>
+    <p>Intelligaia&rsquo;s research-first approach transformed D&#179;&rsquo;s understanding of its executive audience &mdash; shifting from a one-size-fits-all content delivery model to a personalized, AI-driven platform grounded in behavioral archetypes.</p>
+
+    <div class="table-wrap">
+      <table>
+        <thead>
+          <tr>
+            <th>Outcome</th>
+            <th>What changed</th>
+            <th>Evidence</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Audience clarity</td>
+            <td>D&#179; moved from a broad &lsquo;executive membership&rsquo; to four named archetypes with distinct content and interaction needs.</td>
+            <td>Literature study + interview synthesis</td>
+          </tr>
+          <tr>
+            <td>Content strategy</td>
+            <td>Shifted from full academic papers to AI-generated summaries, bite-sized insights, and personalized feeds.</td>
+            <td>User interview findings across 5+ sessions</td>
+          </tr>
+          <tr>
+            <td>Platform architecture</td>
+            <td>Designed around 4 user roles and 6 core journeys rather than a single-view content hub.</td>
+            <td>Information architecture + user flow mapping</td>
+          </tr>
+          <tr>
+            <td>AI design philosophy</td>
+            <td>Established principles as reasoned tradeoffs &mdash; forcing genuine design decisions instead of truisms.</td>
+            <td>AI design principles framework</td>
+          </tr>
+          <tr>
+            <td>Research method</td>
+            <td>Proved a multi-method approach (qualitative + behavioral + academic) for complex AI product design.</td>
+            <td>600+ attendees analyzed + 5+ interviews + 5 literature volumes</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── JUMPER NAV ── -->
+<nav class="jumper" aria-label="Section navigation">
+  <ul class="jumper-list">
+    <li><a href="#s01" data-section="s01">01 &middot; Project context</a></li>
+    <li><a href="#s02" data-section="s02">02 &middot; Root issues</a></li>
+    <li><a href="#s03" data-section="s03">03 &middot; The proposal</a></li>
+    <li><a href="#s04" data-section="s04">04 &middot; Research approach</a></li>
+    <li><a href="#s05" data-section="s05">05 &middot; Discovery flow</a></li>
+    <li><a href="#s06" data-section="s06">06 &middot; AI design principles</a></li>
+    <li><a href="#s07" data-section="s07">07 &middot; Information architecture</a></li>
+    <li><a href="#s08" data-section="s08">08 &middot; Proposed workflows</a></li>
+    <li><a href="#s09" data-section="s09">09 &middot; Executive archetypes</a></li>
+    <li><a href="#s10" data-section="s10">10 &middot; Impact</a></li>
+  </ul>
+</nav>
+
+</div><!-- /shell -->
+
+<!-- ════════ FOOTER ════════ -->
+<footer class="site-foot">
+  <div class="foot-inner">
+    <a href="https://intelligaia.com" class="logo" aria-label="Intelligaia"><img src="data:image/avif;base64,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" alt="Intelligaia"></a>
+    <div class="meta">D&#179; AI assistant case study &middot; v1.0 &middot; June 2026 &middot; &copy; 2026 Intelligaia</div>
+  </div>
+</footer>
+
+<!-- ════════ INTERSECTION OBSERVER ════════ -->
+<script>
+(function(){
+  const sections = document.querySelectorAll('.content section[id]');
+  const links = document.querySelectorAll('.jumper-list a');
+
+  if (!sections.length || !links.length) return;
+
+  const observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        links.forEach(function(link) { link.classList.remove('active'); });
+        const active = document.querySelector('.jumper-list a[data-section="' + entry.target.id + '"]');
+        if (active) active.classList.add('active');
+      }
+    });
+  }, {
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  });
+
+  sections.forEach(function(section) { observer.observe(section); });
+
+  // Set first as active by default
+  if (links[0]) links[0].classList.add('active');
+})();
+</script>
+
+</body>
+</html>

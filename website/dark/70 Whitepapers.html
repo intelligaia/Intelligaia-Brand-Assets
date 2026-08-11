@@ -349,6 +349,27 @@ body{ overscroll-behavior-y:none; }
 @media (prefers-reduced-motion:reduce){
   .w-split > span{ opacity:1 !important; transform:none !important; transition:none !important; }
 }
+
+/* ── LIVE EXAMPLE CARD ── */
+.live-ex{ display:grid; grid-template-columns:minmax(0,1.15fr) minmax(0,1fr); gap:40px; align-items:center;
+  margin-top:34px; padding:32px 36px; background:var(--bg-2); border:1px solid var(--hair-2); border-radius:16px; }
+@media (max-width:960px){ .live-ex{ grid-template-columns:1fr; gap:24px; padding:24px 22px; } }
+.live-ex .lx-tag{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--yellow); margin-bottom:10px; }
+.live-ex h3{ font-family:'Oswald',sans-serif; font-weight:400; font-size:clamp(24px,2.2vw,34px); line-height:1.08; color:var(--ink-soft); margin:0 0 12px; }
+.live-ex p{ font-family:'Geist',sans-serif; font-size:14px; line-height:1.6; color:var(--ink-muted); margin:0 0 18px; max-width:46ch; }
+.lx-meta{ display:flex; flex-wrap:wrap; gap:7px; margin-bottom:20px; }
+.lx-meta span{ font-family:'Geist',sans-serif; font-size:11.5px; padding:4px 10px; border:1px solid var(--hair-2); border-radius:999px; color:var(--ink); }
+.lx-frame{ position:relative; aspect-ratio:16/11; border-radius:11px; overflow:hidden; border:1px solid var(--hair-2); background:#FAFAF6; }
+.lx-frame iframe{ position:absolute; top:0; left:0; width:200%; height:200%; transform:scale(.5); transform-origin:0 0; border:0; pointer-events:none; }
+.lx-frame .lx-hover{ position:absolute; inset:0; background:rgba(4,5,10,.0); transition:background .2s; }
+.live-ex:hover .lx-frame .lx-hover{ background:rgba(4,5,10,.06); }
+
+/* section map from the real document */
+.secmap{ display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-top:26px; }
+@media (max-width:900px){ .secmap{ grid-template-columns:repeat(2,1fr);} }
+.secmap div{ padding:13px 14px; background:var(--bg-2); border:1px solid var(--hair); border-radius:9px;
+  font-family:'Geist',sans-serif; font-size:12.5px; color:var(--ink); line-height:1.35; }
+.secmap div b{ display:block; font-family:'Geist',monospace; font-size:10.5px; color:var(--yellow); font-weight:400; margin-bottom:5px; letter-spacing:.08em; }
 </style>
 </head>
 <body>
@@ -416,12 +437,37 @@ body{ overscroll-behavior-y:none; }
 </section>
 
 <section class="section">
-  <span class="eyebrow reveal">Examples</span>
-  <h2 class="big-title reveal" data-delay="1">Whitepapers built this way.</h2>
-  <div class="tile-grid reveal" data-delay="2">
-    <a href="#" class="tile"><div class="tile-preview ph"></div><div class="tile-meta"><h3>AI-assisted engineering</h3><p>Agentic workflow inside an enterprise asset system.</p></div></a>
-    <a href="#" class="tile"><div class="tile-preview ph"></div><div class="tile-meta"><h3>Subscription billing platform</h3><p>Data-heavy SaaS — CPQ and revenue recognition.</p></div></a>
-    <a href="#" class="tile"><div class="tile-preview ph"></div><div class="tile-meta"><h3>Design system at scale</h3><p>Token pipeline from Figma to production.</p></div></a>
+  <span class="eyebrow reveal">Live example</span>
+  <h2 class="big-title reveal" data-delay="1">A whitepaper built this way.</h2>
+  <p class="big-lede reveal" data-delay="2">The D³ AI Assistant paper — a ten-section engineering case study for Harvard's Digital Data Design Institute. Open it to see the format working end to end.</p>
+
+  <a href="../examples/Whitepaper%20%E2%80%94%20D3%20AI%20Assistant.html" target="_blank" rel="noopener" class="live-ex reveal" data-delay="3" style="text-decoration:none;color:inherit;">
+    <div>
+      <div class="lx-tag">Harvard D³ Institute</div>
+      <h3>Designing a research-first AI assistant.</h3>
+      <p>Bridging the gap between academic rigor and executive action. Ten sections, sticky section rail, dual-track design and research narrative.</p>
+      <div class="lx-meta">
+        <span>10 sections</span><span>Trirong + Raleway</span><span>Sticky rail</span><span>1080px measure</span>
+      </div>
+      <span class="show-open" style="color:var(--yellow);font-family:'Geist',sans-serif;font-size:13.5px;">Open the whitepaper</span>
+    </div>
+    <div class="lx-frame">
+      <iframe src="../examples/Whitepaper%20%E2%80%94%20D3%20AI%20Assistant.html" loading="lazy" title="D3 AI Assistant whitepaper preview" scrolling="no"></iframe>
+      <span class="lx-hover"></span>
+    </div>
+  </a>
+
+  <div class="secmap reveal" data-delay="4">
+    <div><b>01</b>Project context</div>
+    <div><b>02</b>Root issues</div>
+    <div><b>03</b>The proposal</div>
+    <div><b>04</b>Research approach</div>
+    <div><b>05</b>Discovery flow</div>
+    <div><b>06</b>AI design principles</div>
+    <div><b>07</b>Information architecture</div>
+    <div><b>08</b>Proposed workflows</div>
+    <div><b>09</b>Executive archetypes</div>
+    <div><b>10</b>Impact</div>
   </div>
 </section>
 
@@ -450,22 +496,32 @@ body{ overscroll-behavior-y:none; }
     <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('agent-prompt').textContent)">Copy</button>
     <pre id="agent-prompt">Produce an Intelligaia engineering whitepaper for [PRODUCT / SYSTEM].
 
-Follow the Whitepapers playbook at:  70 Whitepapers.html
+Reference document: examples/Whitepaper — D3 AI Assistant.html
+Playbook: 70 Whitepapers.html
+
+Match the reference layout:
+  - Trirong serif headings, Raleway sans body, warm paper #FAFAF6
+  - 1480px max, 1080px content measure, 220px sticky section rail
+  - Ten numbered sections; rail highlights the active one on scroll
+
+Sections:
+  01 Project context      06 AI design principles
+  02 Root issues          07 Information architecture
+  03 The proposal         08 Proposed workflows
+  04 Research approach    09 Executive archetypes
+  05 Discovery flow       10 Impact
 
 Inputs required:
   - product_name, domain, audience
   - design_track:  user_model, interface_behaviour, hierarchy_decisions, a11y_notes
   - eng_track:     architecture, data_flow, latency_profile, cost_profile, integrations
-  - results        (performance numbers + measured design outcomes)
-  - limitations    (real, specific, unflattering)
+  - results, limitations
 
 Constraints:
-  - Seven sections; EVERY section addresses design AND engineering before moving on
+  - EVERY section addresses design AND engineering before advancing
   - Never a design half followed by an engineering half
   - One architecture diagram following the Diagrams playbook
-  - Latency and cost stated in real units, with test conditions
-  - Oswald 500 headings, Oswald 400 descriptions, Geist 400 body
-  - Illustrations from approved library only (assets/manifest.json)
+  - Latency and cost in real units, with test conditions
 
 Output: single self-contained HTML file with the JSON spec block appended.</pre></div>
 </section><section class="section">
@@ -476,42 +532,70 @@ Output: single self-contained HTML file with the JSON spec block appended.</pre>
     <button class="copy-btn" onclick="navigator.clipboard.writeText(document.getElementById('page-spec').textContent)">Copy</button>
     <pre><script type="application/json" id="page-spec">{
   "playbook": "whitepapers",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "variant": "engineering-dual-track",
+  "reference_document": "examples/Whitepaper \u2014 D3 AI Assistant.html",
+  "reference_title": "Designing a research-first AI assistant \u2014 Harvard D\u00b3 Institute",
+  "layout": {
+    "serif": "Trirong",
+    "sans": "Raleway",
+    "paper": "#FAFAF6",
+    "max_width_px": 1480,
+    "content_width_px": 1080,
+    "rail_width_px": 220,
+    "gutter_px": 48,
+    "nav": "sticky numbered section rail, active state follows scroll"
+  },
   "sections": [
     {
-      "id": "abstract",
-      "pages": 1
+      "n": "01",
+      "id": "project-context",
+      "title": "Project context"
     },
     {
-      "id": "problem-domain",
-      "pages": 2
+      "n": "02",
+      "id": "root-issues",
+      "title": "Root issues"
     },
     {
-      "id": "approach",
-      "pages": 2
+      "n": "03",
+      "id": "the-proposal",
+      "title": "The proposal"
     },
     {
-      "id": "the-system",
-      "pages": [
-        3,
-        5
-      ]
+      "n": "04",
+      "id": "research-approach",
+      "title": "Research approach"
     },
     {
-      "id": "the-interface",
-      "pages": [
-        3,
-        5
-      ]
+      "n": "05",
+      "id": "discovery-flow",
+      "title": "Discovery flow"
     },
     {
-      "id": "results",
-      "pages": 2
+      "n": "06",
+      "id": "design-principles",
+      "title": "AI design principles"
     },
     {
-      "id": "limitations",
-      "pages": 1
+      "n": "07",
+      "id": "information-architecture",
+      "title": "Information architecture"
+    },
+    {
+      "n": "08",
+      "id": "proposed-workflows",
+      "title": "Proposed workflows"
+    },
+    {
+      "n": "09",
+      "id": "archetypes",
+      "title": "Executive archetypes"
+    },
+    {
+      "n": "10",
+      "id": "impact",
+      "title": "Impact"
     }
   ],
   "tracks": {
@@ -528,7 +612,7 @@ Output: single self-contained HTML file with the JSON spec block appended.</pre>
       "observability"
     ]
   },
-  "pairing_rule": "every section must address both tracks before advancing",
+  "pairing_rule": "every section addresses both tracks before advancing",
   "guardrails": {
     "dont": [
       "marketing language",
