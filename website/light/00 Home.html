@@ -784,9 +784,17 @@ body{ font-size:var(--body); }
 .trio-card h3{ font-size:calc(var(--h2) * .62) !important; }
 .part span,.dg-field .v{ font-size:calc(var(--body) * .93) !important; }
 .dg-body h3{ font-size:calc(var(--h2) * .52) !important; }
+
+/* ══════════ SECTION BASELINE ══════════
+   .section originally carried min-height:100vh with flex centring, which
+   turned every short section into a blank screen. Only the home hero keeps it. */
+.section{ min-height:auto !important; display:block !important; }
+.section.hero{ display:flex !important; flex-direction:column; justify-content:center; }
+body:not(.home) .section.hero{ min-height:auto !important; }
+body.home .section.hero{ min-height:100vh !important; }
 </style>
 </head>
-<body>
+<body class="home">
 <header class="g-header">
   <div class="g-header-inner">
     <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">

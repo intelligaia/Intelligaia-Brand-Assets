@@ -343,6 +343,13 @@ body{ font-size:var(--body); }
 .stage-cell,.asset-cell,.a-card{ border-radius:13px !important; }
 .stage-cell img,.asset-cell img,.a-card img{ padding:clamp(14px,1.1vw,24px) !important; }
 section.page,.page{ padding-top:clamp(28px,2.2vw,48px) !important; padding-bottom:clamp(28px,2.2vw,48px) !important; min-height:auto !important; }
+
+/* ══════════ SECTION BASELINE ══════════
+   .section originally carried min-height:100vh with flex centring, which
+   turned every short section into a blank screen. Only the home hero keeps it. */
+.section{ min-height:auto !important; display:block !important; }
+.section.hero{ display:flex !important; flex-direction:column; justify-content:center; }
+body:not(.home) .section.hero{ min-height:auto !important; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
 // ── Word-by-word reveal on every display heading ──

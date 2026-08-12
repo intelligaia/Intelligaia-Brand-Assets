@@ -461,6 +461,13 @@ body{ font-size:var(--body); }
 .fig-bar b{ font-family:'Oswald',sans-serif; font-weight:400; font-size:calc(var(--h2) * .44); color:var(--ink-soft); }
 .fig-bar span{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.55;
   color:var(--ink-muted); flex:1; min-width:250px; }
+
+/* ══════════ SECTION BASELINE ══════════
+   .section originally carried min-height:100vh with flex centring, which
+   turned every short section into a blank screen. Only the home hero keeps it. */
+.section{ min-height:auto !important; display:block !important; }
+.section.hero{ display:flex !important; flex-direction:column; justify-content:center; }
+body:not(.home) .section.hero{ min-height:auto !important; }
 </style>
 </head>
 <body>

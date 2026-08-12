@@ -649,6 +649,13 @@ body{ font-size:var(--body); }
 .guide{ margin-top:22px !important; }
 .ai-build{ margin-top:20px !important; }
 .spec-block{ margin-top:18px !important; }
+
+/* ══════════ SECTION BASELINE ══════════
+   .section originally carried min-height:100vh with flex centring, which
+   turned every short section into a blank screen. Only the home hero keeps it. */
+.section{ min-height:auto !important; display:block !important; }
+.section.hero{ display:flex !important; flex-direction:column; justify-content:center; }
+body:not(.home) .section.hero{ min-height:auto !important; }
 </style>
 </head>
 <body>
