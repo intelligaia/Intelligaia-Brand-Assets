@@ -632,6 +632,24 @@ body{ font-size:var(--body); }
 .section{ min-height:auto !important; display:block !important; }
 .section.hero{ display:flex !important; flex-direction:column; justify-content:center; }
 body:not(.home) .section.hero{ min-height:auto !important; }
+
+/* ══════════ LABEL SCALE — small text was unreadable ══════════ */
+:root{ --label:13px; }
+@media (min-width:1920px){ :root{ --label:14.5px; } }
+@media (min-width:2400px){ :root{ --label:16px; } }
+@media (min-width:2800px){ :root{ --label:17.5px; } }
+.eyebrow,.crumbs,.vw-mode,.vw-count,.vw-cap a,.vw-thumb .tn,
+.brief .bk,.brief .bf .k,.brief .chips span,.brief .dl a,
+.guide .g span,.ai-rules h4,.ai-rules li,.part span,
+.dg-kick,.dg-field .k,.dg-field .v,.dg-reads span,.dg-foot a,
+.tile-meta p,.tile-meta .n,.ba-stats span,.ba-m span.d,
+.pn-tile .lbl,.show-eyebrow,.show-kids span,.show-open,
+.trio-card .tc-lbl,.trio-open,.ix-sub,.fmt-b .fm,
+.pill,.cat-name,.ad-rail a,.ad-rail .rt,.spec-block .lbl,
+.vw-cap .t,.out-item .oi-name{ font-size:var(--label) !important; }
+.brief .bf .v,.philo-pts span,.pr-dd li{ font-size:var(--body) !important; }
+.vw-cap .t{ font-size:calc(var(--label) * 1.25) !important; }
+.dg-body h3,.tile-meta h3{ font-size:calc(var(--h2) * .5) !important; }
 </style>
 </head>
 <body>
