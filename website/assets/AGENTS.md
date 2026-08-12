@@ -7,9 +7,9 @@ Instructions for AI agents producing Intelligaia collateral. Read `manifest.json
 ## Base URLs
 
 ```
-MANIFEST  https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/manifest.json
-RAW       https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/<path>
-PAGES     https://intelligaia.github.io/Intelligaia-Illustration-Library-/assets/<path>
+MANIFEST  https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/manifest.json
+RAW       https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/<path>
+PAGES     https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/<path>
 TOKENS    <RAW>/tokens/colours.json  ·  <RAW>/tokens/typography.json
 ```
 

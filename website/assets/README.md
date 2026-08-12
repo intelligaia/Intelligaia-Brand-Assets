@@ -11,7 +11,7 @@ Shared, versioned asset library for Intelligaia. One source, consumed by designe
 Every asset has a stable URL. Nothing needs to be cloned.
 
 ```
-https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/<path>
+https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/<path>
 ```
 
 Example:

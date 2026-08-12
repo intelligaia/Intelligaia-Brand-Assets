@@ -19,10 +19,10 @@
     "owner": "design systems"
   },
   "mirrors": {
-    "w3c_tokens": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/design-tokens.json",
-    "css_variables": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/tokens.css",
-    "scss_variables": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/_tokens.scss",
-    "colour_json": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/colours.json",
-    "type_json": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Illustration-Library-/assets/tokens/typography.json"
+    "w3c_tokens": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/tokens/design-tokens.json",
+    "css_variables": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/tokens/tokens.css",
+    "scss_variables": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/tokens/_tokens.scss",
+    "colour_json": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/tokens/colours.json",
+    "type_json": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/tokens/typography.json"
   }
 }
