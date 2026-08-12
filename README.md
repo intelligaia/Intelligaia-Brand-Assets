@@ -15,7 +15,7 @@ The repo is organised as self-contained **modules** — each a brand deliverable
 | Module | What it is | Start at |
 |---|---|---|
 | **Website** — brand portal | The living brand guide and asset library, served on GitHub Pages | [`website/`](website/) → [`START HERE.html`](website/START%20HERE.html) |
-| **Intelligaia Skills** — Claude skills | Grouped Intelligaia skills: Slide Deck Skill (live — on-brand decks); Google Doc & CPQ skills planned (placeholders) | [`Intelligaia Skills/`](Intelligaia%20Skills/) |
+| **Intelligaia Skills** — Claude skills | Grouped Intelligaia skills: Slide Deck (on-brand decks), Landing Page (agentic pages), CPQ (Quote-to-Cash knowledge); Google Doc planned | [`Intelligaia Skills/`](Intelligaia%20Skills/) |
 | **Nucleux Base Components** — UI component skill | Nucleux React component-library skill (`SKILL.md` + `.skill`) | [`Nucleux Base Components/`](Nucleux%20Base%20Components/) |
 | **Readout Tracker** — status templates | A 10-slide project readout & status deck plus a `pptxgenjs` generator, built on the deck design system | [`Readout Tracker Project Status/`](Readout%20Tracker%20Project%20Status/) → `build-readout-templates.js` |
 
@@ -63,8 +63,9 @@ This repo is organised as **modules** — self-contained brand deliverables that
 │
 ├── Intelligaia Skills/             Intelligaia Claude skills (grouped)
 │   ├── Intelligaia Slide Deck Skill/    on-brand decks — README, .skill, examples/, assets
-│   ├── Intelligaia Google Doc Skill/    planned — see issue #1 (placeholder)
-│   └── Intelligaia CPQ Skill/           planned (placeholder)
+│   ├── Intelligaia Landing Page skill/  agentic landing pages — SKILL.md, .skill, levels, reference
+│   ├── Intelligaia CPQ Skill/           CPQ / Quote-to-Cash knowledge skill (SKILL.md + modules)
+│   └── Intelligaia Google Doc Skill/    planned — see issue #1 (placeholder)
 │
 ├── Nucleux Base Components/        MODULE · Nucleux UI component skill (SKILL.md + .skill)
 │
