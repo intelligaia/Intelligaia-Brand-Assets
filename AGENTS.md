@@ -15,7 +15,7 @@ The single source of truth for how Intelligaia work looks and reads. Two audienc
 
 Nothing is documented in one place and defined in another.
 
-The repository is organised as **modules** — self-contained brand deliverables that share this root. `website/` is the brand portal. The Intelligaia Claude skills live together under `Intelligaia Skills/` (Slide Deck, Google Doc, CPQ). Other modules sit at root: `Nucleux Base Components/` (a Nucleux UI component skill) and `Readout Tracker Project Status/` (a template deck of readout & status slides built on the deck system). More modules will be added over time. Each module carries its own `README.md`; this file (`AGENTS.md`) governs the repository as a whole.
+The repository is organised as **modules** — self-contained brand deliverables that share this root. `website/` is the brand portal. The Intelligaia Claude skills live together under `Intelligaia Skills/` (Slide Deck, Landing Page, CPQ, Google Doc). Other modules sit at root: `Nucleux Base Components/` (a Nucleux UI component skill) and `Readout Tracker Project Status/` (a template deck of readout & status slides built on the deck system). More modules will be added over time. Each module carries its own `README.md`; this file (`AGENTS.md`) governs the repository as a whole.
 
 ---
 
@@ -36,9 +36,10 @@ The repository is organised as **modules** — self-contained brand deliverables
 │   └── dark/                      12 pages
 │
 ├── Intelligaia Skills/            ── Intelligaia Claude skills (grouped)
-│   ├── Intelligaia Slide Deck Skill/    on-brand decks — SKILL.md, .skill, examples/, assets
-│   ├── Intelligaia Google Doc Skill/    planned — see issue #1 (placeholder)
-│   └── Intelligaia CPQ Skill/           planned (placeholder)
+│   ├── Intelligaia Slide Deck Skill/     on-brand decks — SKILL.md, .skill, examples/, assets
+│   ├── Intelligaia Landing Page skill/   agentic landing pages — SKILL.md, .skill, levels, reference
+│   ├── Intelligaia CPQ Skill/            CPQ / Quote-to-Cash knowledge skill (SKILL.md + modules)
+│   └── Intelligaia Google Doc Skill/     planned — see issue #1 (placeholder)
 │
 ├── Nucleux Base Components/       ── MODULE · Nucleux UI component skill (SKILL.md + .skill)
 │
