@@ -20,6 +20,13 @@ node_modules/
 dist/
 .cache/
 
+# ── npm project files (not part of brand repo) ─────────
+package.json
+package-lock.json
+
+# ── Office temp files ───────────────────────────────────
+~$*
+
 # ── Scratch ─────────────────────────────────────────────
 _scratch/
 *.tmp
