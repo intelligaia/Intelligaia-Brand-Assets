@@ -1,9 +1,9 @@
 ---
-name: intelligaia-base-ui
+name: nucleux-base-component-ui
 description: Build and render a non-AI Nucleux UI surface as a working, self-contained HTML preview you can actually look at — buttons, form controls, navigation, layout surfaces, overlays, feedback, and data display, styled from tokens and geometry measured off the Intelligaia Figma library. Use this whenever someone wants to see, mock up, preview, lay out, or design a screen, form, card, modal, table, list, dashboard panel, or empty state, including short asks like "make a pricing card", "build a settings form", "create a data table", "design a login screen", "show me an empty state". This is the design-side skill and its output is a rendered preview, not production code — for writing real React against the @nucleux/* npm packages use nucleux-base-components instead, and for AI/agent surfaces (prompt bars, streaming responses, tool timelines, approval gates) use the agentic pattern set.
 ---
 
-# Intelligaia Base UI
+# Nucleux Base Component UI
 
 Turn a one-line request into a real, on-brand component preview. The user should never
 have to describe padding, colors, or states — that is what this skill already knows.
