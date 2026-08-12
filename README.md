@@ -15,7 +15,9 @@ The repo is organised as self-contained **modules** — each a brand deliverable
 | Module | What it is | Start at |
 |---|---|---|
 | **Website** — brand portal | The living brand guide and asset library, served on GitHub Pages | [`website/`](website/) → [`START HERE.html`](website/START%20HERE.html) |
-| **Slide Deck Skill** — presentation system | A Claude skill that generates on-brand Intelligaia decks (locked palette, Montserrat type, 15 slide archetypes, 16 brand graphics) | [`Intelligaia Slide Deck Skill/`](Intelligaia%20Slide%20Deck%20Skill/) → [`README.md`](Intelligaia%20Slide%20Deck%20Skill/README.md) |
+| **Intelligaia Skills** — Claude skills | Grouped Intelligaia skills: Slide Deck Skill (live — on-brand decks); Google Doc & CPQ skills planned (placeholders) | [`Intelligaia Skills/`](Intelligaia%20Skills/) |
+| **Nucleux Base Components** — UI component skill | Nucleux React component-library skill (`SKILL.md` + `.skill`) | [`Nucleux Base Components/`](Nucleux%20Base%20Components/) |
+| **Readout Tracker** — status templates | A 10-slide project readout & status deck plus a `pptxgenjs` generator, built on the deck design system | [`Readout Tracker Project Status/`](Readout%20Tracker%20Project%20Status/) → `build-readout-templates.js` |
 
 Setup notes that support the assets but aren't shipped live are in [`docs/`](docs/). Repo-wide rules for AI agents live in [`AGENTS.md`](AGENTS.md).
 
@@ -59,11 +61,16 @@ This repo is organised as **modules** — self-contained brand deliverables that
 │   ├── light/             21 pages
 │   └── dark/              12 pages
 │
-└── Intelligaia Slide Deck Skill/   MODULE · Claude skill for on-brand decks
-    ├── README.md                       install + usage
-    ├── Intelligaia Deck Design.skill   one-click installable skill
-    ├── Sample - Agenda Slide.pptx      example output
-    └── intelligaia-deck-design/        SKILL.md + assets/ (16 PNGs)
+├── Intelligaia Skills/             Intelligaia Claude skills (grouped)
+│   ├── Intelligaia Slide Deck Skill/    on-brand decks — README, .skill, examples/, assets
+│   ├── Intelligaia Google Doc Skill/    planned — see issue #1 (placeholder)
+│   └── Intelligaia CPQ Skill/           planned (placeholder)
+│
+├── Nucleux Base Components/        MODULE · Nucleux UI component skill (SKILL.md + .skill)
+│
+└── Readout Tracker Project Status/ MODULE · project readout & status templates
+    ├── Intelligaia Readout & Status Templates.pptx   10-slide template deck
+    └── build-readout-templates.js                    pptxgenjs generator
 ```
 
 Within the portal, both themes read from the same `website/assets/` folder. Nothing is duplicated.

@@ -474,9 +474,9 @@
     {
       "id": "slide-deck-skill",
       "name": "Slide Deck Skill",
-      "path": "Intelligaia Slide Deck Skill/",
+      "path": "Intelligaia Skills/Intelligaia Slide Deck Skill/",
       "what": "Claude skill generating on-brand decks \u2014 locked palette, Montserrat, 15 slide archetypes, 16 brand graphics",
-      "entry_human": "Intelligaia Slide Deck Skill/README.md",
+      "entry_human": "Intelligaia Skills/Intelligaia Slide Deck Skill/README.md",
       "note": "Presentations use their own type system (Montserrat, #FFD700). Do not mix with the web system."
     },
     {

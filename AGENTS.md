@@ -15,7 +15,7 @@ The single source of truth for how Intelligaia work looks and reads. Two audienc
 
 Nothing is documented in one place and defined in another.
 
-The repository is organised as **modules** — self-contained brand deliverables that share this root. `website/` is the brand portal; `Intelligaia Slide Deck Skill/` is a Claude skill for producing on-brand decks. More modules will be added as siblings over time. Each module carries its own `README.md`; this file (`AGENTS.md`) governs the repository as a whole.
+The repository is organised as **modules** — self-contained brand deliverables that share this root. `website/` is the brand portal. The Intelligaia Claude skills live together under `Intelligaia Skills/` (Slide Deck, Google Doc, CPQ). Other modules sit at root: `Nucleux Base Components/` (a Nucleux UI component skill) and `Readout Tracker Project Status/` (a template deck of readout & status slides built on the deck system). More modules will be added over time. Each module carries its own `README.md`; this file (`AGENTS.md`) governs the repository as a whole.
 
 ---
 
@@ -35,11 +35,16 @@ The repository is organised as **modules** — self-contained brand deliverables
 │   ├── light/                     21 pages
 │   └── dark/                      12 pages
 │
-└── Intelligaia Slide Deck Skill/  ── MODULE · Claude skill for on-brand decks
-    ├── README.md                  install + usage
-    ├── Intelligaia Deck Design.skill    one-click installable skill
-    ├── Sample - Agenda Slide.pptx       example output
-    └── intelligaia-deck-design/   SKILL.md (design system) + assets/ (16 PNGs)
+├── Intelligaia Skills/            ── Intelligaia Claude skills (grouped)
+│   ├── Intelligaia Slide Deck Skill/    on-brand decks — SKILL.md, .skill, examples/, assets
+│   ├── Intelligaia Google Doc Skill/    planned — see issue #1 (placeholder)
+│   └── Intelligaia CPQ Skill/           planned (placeholder)
+│
+├── Nucleux Base Components/       ── MODULE · Nucleux UI component skill (SKILL.md + .skill)
+│
+└── Readout Tracker Project Status/ ── MODULE · project readout & status templates
+    ├── Intelligaia Readout & Status Templates.pptx   10-slide template deck
+    └── build-readout-templates.js                    pptxgenjs generator
 ```
 
 Modules are independent: each owns its own assets, palette and rules. The brand

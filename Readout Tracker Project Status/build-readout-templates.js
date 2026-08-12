@@ -52,7 +52,7 @@ const FONT = "Montserrat";
 const FONT_MED = "Montserrat Medium";
 
 // Asset paths
-const A = path.join(__dirname, "Intelligaia Slide Deck Skill/intelligaia-deck-design/assets/");
+const A = path.join(__dirname, "../Intelligaia Skills/Intelligaia Slide Deck Skill/intelligaia-deck-design/assets/");
 
 // ── Helpers ──
 
