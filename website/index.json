@@ -1,7 +1,7 @@
 {
   "$schema": "https://intelligaia.github.io/schemas/repo-index-v1.json",
   "name": "Intelligaia Brand Assets",
-  "version": "1.4.0",
+  "version": "1.5.0",
   "generated": "2026-08-10",
   "description": "Single source of truth for Intelligaia's visual and editorial language. Human-readable system plus machine-readable specs.",
   "repository": "https://github.com/intelligaia/Intelligaia-Brand-Assets",
@@ -486,5 +486,19 @@
       "what": "10-slide project status / readout template deck",
       "entry_human": "Readout Tracker Project Status/"
     }
-  ]
+  ],
+  "asset_categories": {
+    "illustrations": "characters, devices, nature, objects",
+    "marketing": "banners, sections, people, lettering",
+    "diagrams": "process graphics and flow charts (PNG + PDF)",
+    "service-catalog": "document template pages",
+    "whitepapers": "published engineering whitepapers \u2014 drop new files here",
+    "case-studies": "published client case studies \u2014 drop new files here",
+    "landing-pages": "published landing pages \u2014 drop new files here",
+    "icons": "UI icon set",
+    "waves": "abstract shapes",
+    "letters": "illustrated letterforms",
+    "brand": "logos and marks",
+    "tokens": "design tokens in six formats"
+  }
 }

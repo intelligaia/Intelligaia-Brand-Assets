@@ -72,6 +72,85 @@
   box.addEventListener('click', function(e){ if (e.target === box || e.target.classList.contains('x')) close(); });
   document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
 })();
+
+// ── Asset viewer: carousel / list, arrows, dots, lightbox ──
+(function viewer(){
+  var root = document.querySelector('[data-viewer]');
+  if (!root) return;
+  var slides = root.querySelectorAll('.vw-slide');
+  var dots   = root.querySelectorAll('.vw-dot');
+  var thumbs = root.querySelectorAll('.vw-thumb');
+  var stage  = root.querySelector('.vw-stage');
+  var list   = root.querySelector('.vw-list');
+  var dotwrap= root.querySelector('.vw-dots');
+  var i = 0;
+
+  function show(n){
+    i = (n + slides.length) % slides.length;
+    slides.forEach(function(s,k){ s.classList.toggle('on', k===i); });
+    dots.forEach(function(d,k){ d.classList.toggle('on', k===i); });
+  }
+  root.querySelectorAll('.vw-nav').forEach(function(b){
+    b.addEventListener('click', function(){ show(i + (b.classList.contains('next') ? 1 : -1)); });
+  });
+  dots.forEach(function(d,k){ d.addEventListener('click', function(){ show(k); }); });
+
+  // mode toggle
+  root.querySelectorAll('.vw-mode').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      var m = btn.dataset.mode;
+      root.querySelectorAll('.vw-mode').forEach(function(b){ b.classList.toggle('on', b===btn); });
+      var carousel = (m === 'carousel');
+      stage.style.display   = carousel ? '' : 'none';
+      if (dotwrap) dotwrap.style.display = carousel ? '' : 'none';
+      list.classList.toggle('on', !carousel);
+      try { localStorage.setItem('ig-view-mode', m); } catch(e){}
+    });
+  });
+  // restore preference
+  try {
+    var saved = localStorage.getItem('ig-view-mode');
+    if (saved === 'list') {
+      var lb = root.querySelector('.vw-mode[data-mode="list"]');
+      if (lb) lb.click();
+    }
+  } catch(e){}
+
+  // thumb -> open that slide in carousel
+  thumbs.forEach(function(t,k){
+    t.addEventListener('click', function(){
+      var cb = root.querySelector('.vw-mode[data-mode="carousel"]');
+      if (cb) cb.click();
+      show(k);
+      stage.scrollIntoView({ behavior:'smooth', block:'center' });
+    });
+  });
+
+  // keyboard
+  document.addEventListener('keydown', function(e){
+    if (document.querySelector('.vlb.on')) return;
+    if (e.key === 'ArrowLeft')  show(i-1);
+    if (e.key === 'ArrowRight') show(i+1);
+  });
+
+  // lightbox
+  var lb = document.getElementById('vlb');
+  if (lb){
+    var img = lb.querySelector('img'), cap = lb.querySelector('.cap');
+    root.querySelectorAll('.vw-canvas:not(.doc)').forEach(function(c){
+      c.addEventListener('click', function(){
+        var im = c.querySelector('img'); if (!im) return;
+        img.src = im.src; cap.textContent = im.alt;
+        lb.classList.add('on'); document.body.style.overflow='hidden';
+      });
+    });
+    function close(){ lb.classList.remove('on'); document.body.style.overflow=''; }
+    lb.addEventListener('click', function(e){
+      if (e.target===lb || e.target.classList.contains('x')) close();
+    });
+    document.addEventListener('keydown', function(e){ if (e.key==='Escape') close(); });
+  }
+})();
 </script>
 <style>
 :root {
@@ -244,22 +323,6 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 
 
 
-/* ── GLOBAL HEADER — logo · separator · brand mark · centred nav ── */
-.g-header-inner{ height:100%; padding:0 40px; display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:24px; max-width:1560px; margin:0 auto; }
-.g-logo{ display:flex; align-items:center; gap:16px; text-decoration:none; flex-shrink:0; }
-.g-logo img{ height:44px; width:auto; display:block; }
-.g-sep{ width:1px; height:26px; background:var(--hair-2); flex:none; }
-.g-mark-wrap{ display:flex; align-items:center; }
-.g-mark{ height:14px; width:56px; display:block; }
-.g-sys{ font-family:'Oswald',sans-serif; font-weight:400; font-size:16px; letter-spacing:-.005em; white-space:nowrap; }
-.g-nav{ display:flex; align-items:center; justify-content:center; gap:20px; margin:0; padding:0; list-style:none; }
-.g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:12.5px; white-space:nowrap; text-decoration:none; opacity:.82; transition:color .15s ease, opacity .15s ease; }
-.g-nav a:hover{ color:#FFC800; opacity:1; }
-.g-cta{ justify-self:end; }
-@media (max-width:1320px){ .g-nav{ display:none; } .g-header-inner{ grid-template-columns:auto 1fr auto; } }
-@media (max-width:1000px){ .g-cta{ display:none; } }
-
-
 /* ── DISPLAY HEADINGS — Oswald Regular, locked ── */
 .hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
 .show-card h2,.pr-body h2,.col-body h2,.tp-side h2,.trio-card h3,
@@ -275,19 +338,6 @@ html.lenis, html.lenis body{ height:auto; }
 body{ overscroll-behavior-y:none; }
 .section{ scroll-margin-top:110px; }
 [id]{ scroll-margin-top:110px; }
-
-/* ══════════ WIDE-SCREEN LAYOUT ══════════
-   One wrapper rule for the whole system. Content starts at the same
-   left edge on every page and grows with the viewport instead of
-   stranding empty gutters on 2000–3000px displays. */
-:root{
-  --pad-x: 40px;              /* page gutter */
-  --shell: 1440px;            /* content shell */
-}
-@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; } }
-@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1760px; } }
-@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2080px; } }
-@media (min-width:2800px){ :root{ --pad-x:160px; --shell:2400px; } }
 
 /* header spans the full viewport; its contents align to the shell */
 .g-header{ width:100%; left:0; right:0; }
@@ -429,6 +479,161 @@ body{ overscroll-behavior-y:none; }
   background:transparent; color:#F4F6FF; font-size:20px; cursor:pointer; line-height:1; }
 .dlb .x:hover{ border-color:#FFC800; color:#FFC800; }
 .dlb .cap{ position:absolute; bottom:24px; left:0; right:0; text-align:center; font-family:'Geist',sans-serif; font-size:12.5px; color:rgba(244,246,255,.7); }
+
+/* ══════════ ASSET VIEWER ══════════ */
+.viewer{ display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:26px; margin-top:26px; align-items:start; }
+@media (max-width:1180px){ .viewer{ grid-template-columns:1fr; } }
+@media (min-width:2000px){ .viewer{ grid-template-columns:minmax(0,1fr) 440px; gap:34px; } }
+@media (min-width:2600px){ .viewer{ grid-template-columns:minmax(0,1fr) 500px; gap:40px; } }
+
+/* toolbar */
+.vw-bar{ display:flex; align-items:center; gap:12px; flex-wrap:wrap; margin-bottom:14px; }
+.vw-modes{ display:flex; gap:4px; padding:4px; background:var(--bg-2); border:1px solid var(--hair); border-radius:999px; }
+.vw-mode{ font-family:'Geist',sans-serif; font-size:13px; padding:7px 16px; border-radius:999px; border:0;
+  background:transparent; color:var(--ink-muted); cursor:pointer; transition:.18s; }
+.vw-mode.on{ background:var(--yellow); color:#04050A; }
+.vw-mode:hover:not(.on){ color:var(--ink); }
+.vw-count{ font-family:'Geist',sans-serif; font-size:13px; color:var(--ink-muted); margin-left:auto; }
+
+/* stage */
+.vw-stage{ position:relative; background:var(--bg-2); border:1px solid var(--hair-2); border-radius:16px; overflow:hidden; }
+.vw-slide{ display:none; }
+.vw-slide.on{ display:block; }
+.vw-canvas{ position:relative; background:#FFFFFF; display:flex; align-items:center; justify-content:center;
+  min-height:560px; padding:22px; cursor:zoom-in; }
+@media (min-width:2000px){ .vw-canvas{ min-height:720px; } }
+@media (min-width:2600px){ .vw-canvas{ min-height:860px; } }
+.vw-canvas img{ max-width:100%; max-height:78vh; object-fit:contain; display:block; }
+.vw-canvas.doc{ padding:0; cursor:default; background:#FAFAF6; }
+.vw-canvas.doc iframe{ width:100%; height:78vh; border:0; display:block; }
+@media (min-width:2000px){ .vw-canvas.doc iframe{ height:80vh; } }
+
+/* arrows */
+.vw-nav{ position:absolute; top:50%; transform:translateY(-50%); width:48px; height:48px; border-radius:50%;
+  background:rgba(4,5,10,.72); color:#fff; border:1px solid rgba(255,255,255,.22); cursor:pointer;
+  font-size:20px; line-height:1; display:flex; align-items:center; justify-content:center; z-index:5;
+  backdrop-filter:blur(8px); transition:.18s; }
+.vw-nav:hover{ background:var(--yellow); color:#04050A; border-color:var(--yellow); }
+.vw-nav.prev{ left:16px; } .vw-nav.next{ right:16px; }
+
+/* caption strip */
+.vw-cap{ display:flex; align-items:center; justify-content:space-between; gap:14px; padding:14px 20px;
+  border-top:1px solid var(--hair); background:var(--bg-3); }
+.vw-cap .t{ font-family:'Oswald',sans-serif; font-weight:400; font-size:17px; color:var(--ink-soft); }
+.vw-cap .a{ display:flex; gap:14px; }
+.vw-cap a{ font-family:'Geist',sans-serif; font-size:12.5px; color:var(--yellow); white-space:nowrap; }
+.vw-cap a.mute{ color:var(--ink-muted); }
+
+/* dots */
+.vw-dots{ display:flex; gap:7px; justify-content:center; padding:14px 0 2px; flex-wrap:wrap; }
+.vw-dot{ width:8px; height:8px; border-radius:50%; background:var(--hair-2); border:0; cursor:pointer; transition:.18s; padding:0; }
+.vw-dot.on{ background:var(--yellow); transform:scale(1.3); }
+
+/* list mode */
+.vw-list{ display:none; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:16px; }
+.vw-list.on{ display:grid; }
+@media (min-width:2000px){ .vw-list{ grid-template-columns:repeat(auto-fill,minmax(320px,1fr)); } }
+.vw-thumb{ background:var(--bg-2); border:1px solid var(--hair-2); border-radius:12px; overflow:hidden; cursor:pointer;
+  transition:border-color .2s, transform .2s; }
+.vw-thumb:hover{ border-color:var(--yellow); transform:translateY(-3px); }
+.vw-thumb .tv{ aspect-ratio:1/1; background:#fff; display:flex; align-items:center; justify-content:center; padding:12px; }
+.vw-thumb .tv img{ max-width:100%; max-height:100%; object-fit:contain; }
+.vw-thumb .tn{ padding:12px 14px; font-family:'Geist',sans-serif; font-size:12.5px; color:var(--ink-muted);
+  border-top:1px solid var(--hair); }
+
+/* brief card */
+.brief{ position:sticky; top:112px; background:var(--bg-2); border:1px solid var(--hair-2); border-radius:16px;
+  padding:24px 24px 26px; display:flex; flex-direction:column; gap:0; }
+@media (max-width:1180px){ .brief{ position:static; } }
+.brief .bk{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase;
+  color:var(--yellow); margin-bottom:9px; }
+.brief h3{ font-family:'Oswald',sans-serif; font-weight:400; font-size:26px; line-height:1.12; color:var(--ink-soft); margin:0 0 16px; }
+@media (min-width:2000px){ .brief h3{ font-size:30px; } }
+.brief .bf{ padding:14px 0; border-top:1px solid var(--hair); }
+.brief .bf .k{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.12em; text-transform:uppercase;
+  color:var(--ink-muted); margin-bottom:6px; }
+.brief .bf .v{ font-family:'Geist',sans-serif; font-size:14px; line-height:1.6; color:var(--ink); }
+@media (min-width:2000px){ .brief .bf .v{ font-size:15px; } }
+.brief .chips{ display:flex; flex-wrap:wrap; gap:6px; }
+.brief .chips span{ font-family:'Geist',sans-serif; font-size:11.5px; padding:4px 10px; border:1px solid var(--hair-2);
+  border-radius:999px; color:var(--ink-muted); }
+.brief .dl{ margin-top:18px; display:flex; flex-direction:column; gap:9px; }
+.brief .dl a{ display:flex; align-items:center; justify-content:space-between; gap:10px; padding:12px 16px;
+  border-radius:10px; font-family:'Geist',sans-serif; font-size:13.5px; transition:.18s; }
+.brief .dl a.p{ background:var(--yellow); color:#04050A; }
+.brief .dl a.p:hover{ opacity:.85; }
+.brief .dl a.s{ background:transparent; color:var(--ink); border:1px solid var(--hair-2); }
+.brief .dl a.s:hover{ border-color:var(--yellow); color:var(--yellow); }
+
+/* full-screen lightbox */
+.vlb{ position:fixed; inset:0; z-index:300; background:rgba(4,5,10,.96); display:none;
+  align-items:center; justify-content:center; padding:34px; }
+.vlb.on{ display:flex; }
+.vlb img{ max-width:95vw; max-height:90vh; object-fit:contain; background:#fff; border-radius:5px; }
+.vlb .x{ position:absolute; top:22px; right:26px; width:42px; height:42px; border-radius:50%;
+  border:1px solid rgba(255,255,255,.3); background:transparent; color:#F4F6FF; font-size:21px; cursor:pointer; }
+.vlb .x:hover{ border-color:#FFC800; color:#FFC800; }
+.vlb .cap{ position:absolute; bottom:22px; left:0; right:0; text-align:center;
+  font-family:'Geist',sans-serif; font-size:13px; color:rgba(244,246,255,.72); }
+
+/* guidelines block */
+.guide{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin-top:24px; }
+.guide .g{ padding:16px 18px; background:var(--bg-2); border:1px solid var(--hair); border-radius:11px; }
+.guide .g b{ display:block; font-family:'Oswald',sans-serif; font-weight:400; font-size:16px;
+  color:var(--ink-soft); margin-bottom:5px; }
+.guide .g span{ font-family:'Geist',sans-serif; font-size:13px; line-height:1.55; color:var(--ink-muted); }
+
+/* ══════════ GLOBAL SCALE — readable at 2.5K–3K ══════════ */
+:root{
+  --pad-x:40px; --shell:1440px;
+  --nav-fs:15px; --logo-h:46px; --sys-fs:18px; --hdr-h:92px;
+  --h1:clamp(48px,6vw,92px); --h2:clamp(30px,3.2vw,46px);
+  --lede:17px; --body:15px; --meta:12.5px;
+}
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:50px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:54px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:62px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
+  --h1:clamp(80px,4.6vw,130px); --h2:clamp(44px,2.5vw,64px); } }
+@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:70px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
+  --h1:clamp(96px,4.4vw,150px); --h2:clamp(52px,2.4vw,74px); } }
+
+.g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
+.g-header-inner{ max-width:none !important; width:100%; height:100%;
+  padding:0 var(--pad-x) !important; margin:0 !important;
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:30px; }
+.g-logo{ display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.g-logo img{ height:var(--logo-h) !important; width:auto; }
+.g-sep{ width:1px; height:calc(var(--logo-h) * .58); background:var(--hair-2); flex:none; }
+.g-mark{ height:calc(var(--logo-h) * .32); width:auto; }
+.g-sys{ font-family:'Oswald',sans-serif; font-weight:400; font-size:var(--sys-fs) !important; letter-spacing:-.005em; white-space:nowrap; }
+.g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.7vw,38px); }
+.g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
+  white-space:nowrap; opacity:.86; transition:color .15s, opacity .15s; }
+.g-nav a:hover{ color:#FFC800; opacity:1; }
+.g-cta{ justify-self:end; font-size:var(--nav-fs) !important;
+  height:calc(var(--hdr-h) * .46); padding:0 clamp(22px,1.5vw,34px); }
+@media (max-width:1400px){ .g-nav{ display:none; } }
+@media (max-width:1000px){ .g-cta{ display:none; } }
+
+/* body scale follows the same steps */
+body{ font-size:var(--body); }
+.hero-h1{ font-size:var(--h1) !important; }
+.hero-h2{ font-size:calc(var(--lede) * 1.28) !important; max-width:44ch; }
+.big-title{ font-size:var(--h2) !important; }
+.big-lede,.theory{ font-size:var(--lede) !important; }
+.section{ padding-top:clamp(44px,3.4vw,78px); padding-bottom:clamp(44px,3.4vw,78px); }
+.section.hero{ padding-top:calc(var(--hdr-h) + clamp(40px,3vw,80px)); }
+.section,.pill-bar-inner,.dark-footer-inner,.g-footer-inner,.page,.wrap{
+  max-width:var(--shell) !important; margin-left:auto; margin-right:auto;
+  padding-left:var(--pad-x) !important; padding-right:var(--pad-x) !important; }
+[id]{ scroll-margin-top:calc(var(--hdr-h) + 22px); }
+.crumbs{ font-size:var(--meta) !important; }
+.eyebrow{ font-size:var(--meta) !important; }
+.show-card h2{ font-size:calc(var(--h2) * .74) !important; }
+.show-desc{ font-size:var(--body) !important; }
+.trio-card h3{ font-size:calc(var(--h2) * .62) !important; }
+.part span,.dg-field .v{ font-size:calc(var(--body) * .93) !important; }
+.dg-body h3{ font-size:calc(var(--h2) * .52) !important; }
 </style>
 </head>
 <body>
@@ -463,150 +668,78 @@ body{ overscroll-behavior-y:none; }
 </section>
 
 <section class="section lean">
-  <span class="eyebrow reveal">The output</span>
-  <h2 class="big-title reveal" data-delay="1">The reference diagram.</h2>
-  <p class="theory reveal" data-delay="2">A diagram earns its place by making one relationship legible at a glance. Node shape carries meaning, one accent marks the path that matters, everything else recedes.</p>
-  <div class="output-stage reveal" data-delay="3">
-    <div class="os-body"><img src="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png" alt="Role-based AI deconstruction process" /></div>
-    <div class="os-cap"><span>Role-based AI deconstruction · matrix + readiness row</span><span>PNG · 1080²</span></div>
+  <span class="eyebrow reveal">Reference library</span>
+  <h2 class="big-title reveal" data-delay="1">Seven published diagrams.</h2>
+
+  <div class="viewer" data-viewer>
+    <div>
+      <div class="vw-bar">
+        <div class="vw-modes">
+          <button class="vw-mode on" data-mode="carousel">Carousel</button>
+          <button class="vw-mode" data-mode="list">List</button>
+        </div>
+        <span class="vw-count">7 items</span>
+      </div>
+
+      <div class="vw-stage">
+      <div class="vw-slide on">
+        <div class="vw-canvas"><img src="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png" alt="Role-based AI deconstruction" loading="lazy" /></div>
+        <div class="vw-cap"><span class="t">Role-based AI deconstruction</span><span class="a"><a href="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png" target="_blank" rel="noopener">Open full size</a><a href="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.pdf" target="_blank" rel="noopener" class="mute">PDF</a></span></div>
+      </div>
+      <div class="vw-slide">
+        <div class="vw-canvas"><img src="../assets/diagrams/Production%20Analyst.png" alt="Deconstructing a role for AI" loading="lazy" /></div>
+        <div class="vw-cap"><span class="t">Deconstructing a role for AI</span><span class="a"><a href="../assets/diagrams/Production%20Analyst.png" target="_blank" rel="noopener">Open full size</a><a href="../assets/diagrams/Production%20Analyst.pdf" target="_blank" rel="noopener" class="mute">PDF</a></span></div>
+      </div>
+      <div class="vw-slide">
+        <div class="vw-canvas"><img src="../assets/diagrams/SAFE%20Workflow%20Evaluation.png" alt="SAFE workflow evaluation" loading="lazy" /></div>
+        <div class="vw-cap"><span class="t">SAFE workflow evaluation</span><span class="a"><a href="../assets/diagrams/SAFE%20Workflow%20Evaluation.png" target="_blank" rel="noopener">Open full size</a><a href="../assets/diagrams/SAFE%20Workflow%20Evaluation.pdf" target="_blank" rel="noopener" class="mute">PDF</a></span></div>
+      </div>
+      <div class="vw-slide">
+        <div class="vw-canvas"><img src="../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png" alt="The SAFE framework" loading="lazy" /></div>
+        <div class="vw-cap"><span class="t">The SAFE framework</span><span class="a"><a href="../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png" target="_blank" rel="noopener">Open full size</a><a href="../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.pdf" target="_blank" rel="noopener" class="mute">PDF</a></span></div>
+      </div>
+      <div class="vw-slide">
+        <div class="vw-canvas"><img src="../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png" alt="SDLC knowledge into AI context" loading="lazy" /></div>
+        <div class="vw-cap"><span class="t">SDLC knowledge into AI context</span><span class="a"><a href="../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png" target="_blank" rel="noopener">Open full size</a><a href="../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.pdf" target="_blank" rel="noopener" class="mute">PDF</a></span></div>
+      </div>
+      <div class="vw-slide">
+        <div class="vw-canvas"><img src="../assets/diagrams/AI-Generated%20Code.png" alt="AI-generated code: system impact" loading="lazy" /></div>
+        <div class="vw-cap"><span class="t">AI-generated code: system impact</span><span class="a"><a href="../assets/diagrams/AI-Generated%20Code.png" target="_blank" rel="noopener">Open full size</a><a href="../assets/diagrams/AI-Generated%20Code.pdf" target="_blank" rel="noopener" class="mute">PDF</a></span></div>
+      </div>
+      <div class="vw-slide">
+        <div class="vw-canvas"><img src="../assets/diagrams/Next%20Steps.png" alt="Next steps: deconstruction to automation" loading="lazy" /></div>
+        <div class="vw-cap"><span class="t">Next steps: deconstruction to automation</span><span class="a"><a href="../assets/diagrams/Next%20Steps.png" target="_blank" rel="noopener">Open full size</a><a href="../assets/diagrams/Next%20Steps.pdf" target="_blank" rel="noopener" class="mute">PDF</a></span></div>
+      </div>
+        <button class="vw-nav prev" aria-label="Previous">&#8249;</button><button class="vw-nav next" aria-label="Next">&#8250;</button>
+      </div>
+      <div class="vw-dots"><button class="vw-dot on" aria-label="Role-based AI deconstruction"></button><button class="vw-dot" aria-label="Deconstructing a role for AI"></button><button class="vw-dot" aria-label="SAFE workflow evaluation"></button><button class="vw-dot" aria-label="The SAFE framework"></button><button class="vw-dot" aria-label="SDLC knowledge into AI context"></button><button class="vw-dot" aria-label="AI-generated code: system impact"></button><button class="vw-dot" aria-label="Next steps: deconstruction to automation"></button></div>
+
+      <div class="vw-list">
+      <div class="vw-thumb"><div class="tv"><img src="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png" alt="Role-based AI deconstruction" loading="lazy"/></div><div class="tn">Role-based AI deconstruction</div></div>
+      <div class="vw-thumb"><div class="tv"><img src="../assets/diagrams/Production%20Analyst.png" alt="Deconstructing a role for AI" loading="lazy"/></div><div class="tn">Deconstructing a role for AI</div></div>
+      <div class="vw-thumb"><div class="tv"><img src="../assets/diagrams/SAFE%20Workflow%20Evaluation.png" alt="SAFE workflow evaluation" loading="lazy"/></div><div class="tn">SAFE workflow evaluation</div></div>
+      <div class="vw-thumb"><div class="tv"><img src="../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png" alt="The SAFE framework" loading="lazy"/></div><div class="tn">The SAFE framework</div></div>
+      <div class="vw-thumb"><div class="tv"><img src="../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png" alt="SDLC knowledge into AI context" loading="lazy"/></div><div class="tn">SDLC knowledge into AI context</div></div>
+      <div class="vw-thumb"><div class="tv"><img src="../assets/diagrams/AI-Generated%20Code.png" alt="AI-generated code: system impact" loading="lazy"/></div><div class="tn">AI-generated code: system impact</div></div>
+      <div class="vw-thumb"><div class="tv"><img src="../assets/diagrams/Next%20Steps.png" alt="Next steps: deconstruction to automation" loading="lazy"/></div><div class="tn">Next steps: deconstruction to automation</div></div>
+      </div>
+    </div>
+
+    <aside class="brief">
+      <div class="bk">Diagram library</div>
+      <h3>Process graphics &amp; flow charts</h3>
+      <div class="bf"><div class="k">Purpose</div><div class="v">Make one relationship legible at a glance — which workflow to automate, who decides what, what a change touches.</div></div><div class="bf"><div class="k">Format</div><div class="v">1:1 canvas, 1400px PNG for screen, vector PDF for print and editing.</div></div><div class="bf"><div class="k">Patterns</div><div class="v">Matrix, swimlane, hub-and-spoke, numbered journey, three-band process.</div></div><div class="bf"><div class="k">Convention</div><div class="v">Title lock with the operative phrase underlined. One accent marks the path that matters. Tinted footer strip.</div></div>
+      <div class="bf"><div class="k">Reads</div><div class="chips"><span>Matrix 2×2</span><span>Swimlane</span><span>Hub &amp; spoke</span><span>Journey</span><span>Three-band</span></div></div>
+      <div class="dl"><a href="../assets/diagrams/" class="p" target="_blank" rel="noopener">Browse all files<span>&rarr;</span></a><a href="../assets/manifest.json" class="s" target="_blank" rel="noopener">Asset manifest<span>&rarr;</span></a></div>
+    </aside>
+  </div>
+
+  <div class="guide">
+<div class="g"><b>One accent</b><span>Yellow marks the path that matters. Everything else stays neutral.</span></div><div class="g"><b>Three words</b><span>Node labels of three words or fewer, or the diagram stops scanning.</span></div><div class="g"><b>Seven nodes</b><span>More than seven in one view and it needs splitting.</span></div><div class="g"><b>No legend</b><span>Label the nodes directly. A legend means the diagram failed.</span></div>
   </div>
 </section>
 
-<section class="section lean">
-  <span class="eyebrow reveal">Gallery</span>
-  <h2 class="big-title reveal" data-delay="1">Seven diagrams, one argument.</h2>
-  <p class="theory reveal" data-delay="2">Read in order they make a single case: find the workflow worth automating, prove it on a real role, design the human's place in it, govern it, feed it context, watch what it touches, then decide how far to take it.</p>
-  <div class="dg-grid">
-    <div class="dg-card">
-      <div class="dg-vis" data-full="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png" data-cap="Role-based AI deconstruction">
-        <span class="dg-pat">matrix-2x2</span>
-        <img src="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png" alt="Role-based AI deconstruction" loading="lazy" />
-      </div>
-      <div class="dg-body">
-        <div class="dg-kick">Friction × Frequency matrix</div>
-        <h3>Role-based AI deconstruction</h3>
-        <div class="dg-field"><span class="k">Purpose</span><span class="v strong">Find which workflows are worth handing to an AI agent.</span></div>
-        <div class="dg-field"><span class="k">Objective</span><span class="v">Plot every task in a role against friction and frequency, then read the high-friction, high-frequency quadrant as the agent goldmine. A five-point readiness check gates anything before it moves into SAFE.</span></div>
-        <div class="dg-field"><span class="k">Use when</span><span class="v">Opening an engagement, or triaging a backlog of automation requests.</span></div>
-        <div class="dg-reads"><span>Automate — simple rules</span><span>AI agent goldmine</span><span>Ignore / do manually</span><span>Outsource / deep work</span></div>
-        <div class="dg-foot">
-          <a href="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png" target="_blank" rel="noopener">View full size</a>
-          <a href="../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.pdf" target="_blank" rel="noopener" class="mute">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="dg-card">
-      <div class="dg-vis" data-full="../assets/diagrams/Production%20Analyst.png" data-cap="Deconstructing a role for AI">
-        <span class="dg-pat">hub-spoke → checklist</span>
-        <img src="../assets/diagrams/Production%20Analyst.png" alt="Deconstructing a role for AI" loading="lazy" />
-      </div>
-      <div class="dg-body">
-        <div class="dg-kick">Production analyst, oil &amp; gas</div>
-        <h3>Deconstructing a role for AI</h3>
-        <div class="dg-field"><span class="k">Purpose</span><span class="v strong">Show the readiness framework applied to one real job.</span></div>
-        <div class="dg-field"><span class="k">Objective</span><span class="v">Break a single role into its five recurring tasks, run the whole set through the readiness test, and land on a verdict. Makes the abstract framework concrete for a client who wants to see it on their own domain.</span></div>
-        <div class="dg-field"><span class="k">Use when</span><span class="v">A client asks what the framework looks like against their team.</span></div>
-        <div class="dg-reads"><span>Collect sensor data</span><span>Compare historical production</span><span>Detect deviations</span><span>Investigate anomalies</span><span>Create daily summary</span></div>
-        <div class="dg-foot">
-          <a href="../assets/diagrams/Production%20Analyst.png" target="_blank" rel="noopener">View full size</a>
-          <a href="../assets/diagrams/Production%20Analyst.pdf" target="_blank" rel="noopener" class="mute">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="dg-card">
-      <div class="dg-vis" data-full="../assets/diagrams/SAFE%20Workflow%20Evaluation.png" data-cap="SAFE workflow evaluation">
-        <span class="dg-pat">swimlane flow</span>
-        <img src="../assets/diagrams/SAFE%20Workflow%20Evaluation.png" alt="SAFE workflow evaluation" loading="lazy" />
-      </div>
-      <div class="dg-body">
-        <div class="dg-kick">Human and agent swimlanes</div>
-        <h3>SAFE workflow evaluation</h3>
-        <div class="dg-field"><span class="k">Purpose</span><span class="v strong">Design where the human sits in an AI-run workflow.</span></div>
-        <div class="dg-field"><span class="k">Objective</span><span class="v">Two lanes — human above, agent below. The four SAFE letters attach to the transitions: scope wraps the frame, authority governs the delegation, feedback governs the escalation, evaluation loops the whole thing back.</span></div>
-        <div class="dg-field"><span class="k">Use when</span><span class="v">Specifying an agent workflow before anyone writes code.</span></div>
-        <div class="dg-reads"><span>Workflow trigger</span><span>Delegate to AI</span><span>Perform task</span><span>Execute action</span><span>Approve / review / override</span></div>
-        <div class="dg-foot">
-          <a href="../assets/diagrams/SAFE%20Workflow%20Evaluation.png" target="_blank" rel="noopener">View full size</a>
-          <a href="../assets/diagrams/SAFE%20Workflow%20Evaluation.pdf" target="_blank" rel="noopener" class="mute">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="dg-card">
-      <div class="dg-vis" data-full="../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png" data-cap="The SAFE framework">
-        <span class="dg-pat">four-pillar + process strip</span>
-        <img src="../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png" alt="The SAFE framework" loading="lazy" />
-      </div>
-      <div class="dg-body">
-        <div class="dg-kick">Scope · Authority · Feedback · Evaluation</div>
-        <h3>The SAFE framework</h3>
-        <div class="dg-field"><span class="k">Purpose</span><span class="v strong">Explain the whole framework on one page.</span></div>
-        <div class="dg-field"><span class="k">Objective</span><span class="v">Four coloured pillars, each with its governing question, three rules and a worked example. Beneath them, how the engineering team actually runs it, the five metrics tracked, and what it achieved. The reference sheet for the method.</span></div>
-        <div class="dg-field"><span class="k">Use when</span><span class="v">Onboarding a team, or the framework slide in a pitch.</span></div>
-        <div class="dg-reads"><span>Scope — what needs to be done</span><span>Authority — what the AI may do</span><span>Feedback — how we test</span><span>Evaluation — how it performed</span></div>
-        <div class="dg-foot">
-          <a href="../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png" target="_blank" rel="noopener">View full size</a>
-          <a href="../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.pdf" target="_blank" rel="noopener" class="mute">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="dg-card">
-      <div class="dg-vis" data-full="../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png" data-cap="Turning SDLC knowledge into AI context">
-        <span class="dg-pat">2×2 narrative</span>
-        <img src="../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png" alt="Turning SDLC knowledge into AI context" loading="lazy" />
-      </div>
-      <div class="dg-body">
-        <div class="dg-kick">Four-quadrant narrative</div>
-        <h3>Turning SDLC knowledge into AI context</h3>
-        <div class="dg-field"><span class="k">Purpose</span><span class="v strong">Argue that the fix is context, not new tooling.</span></div>
-        <div class="dg-field"><span class="k">Objective</span><span class="v">Quadrant one: the structure teams already had. Quadrant two: why direct prompting still failed. Quadrant three: the structured inputs that closed the gap. Quadrant four: the same flow running in practice. The through-line is that nothing new had to be invented.</span></div>
-        <div class="dg-field"><span class="k">Use when</span><span class="v">Countering the assumption that AI adoption means replacing the process.</span></div>
-        <div class="dg-reads"><span>What already existed</span><span>Problems faced</span><span>How we solved it</span><span>Real-world scenario</span></div>
-        <div class="dg-foot">
-          <a href="../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png" target="_blank" rel="noopener">View full size</a>
-          <a href="../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.pdf" target="_blank" rel="noopener" class="mute">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="dg-card">
-      <div class="dg-vis" data-full="../assets/diagrams/AI-Generated%20Code.png" data-cap="AI-generated code: impact on existing systems">
-        <span class="dg-pat">three-band process</span>
-        <img src="../assets/diagrams/AI-Generated%20Code.png" alt="AI-generated code: impact on existing systems" loading="lazy" />
-      </div>
-      <div class="dg-body">
-        <div class="dg-kick">Blast radius and regression risk</div>
-        <h3>AI-generated code: impact on existing systems</h3>
-        <div class="dg-field"><span class="k">Purpose</span><span class="v strong">Make the risk of AI-written pull requests visible before merge.</span></div>
-        <div class="dg-field"><span class="k">Objective</span><span class="v">Band one names the visibility gap and sets expected against actual changes side by side. Band two walks the agent through mapping connected systems to an impact report. Band three keeps the human holding the decision. Ends on outcomes.</span></div>
-        <div class="dg-field"><span class="k">Use when</span><span class="v">Explaining AI-assisted engineering governance to a client or a review board.</span></div>
-        <div class="dg-reads"><span>The challenge</span><span>AI agent for PR impact analysis</span><span>Human + AI review</span><span>Outcome</span></div>
-        <div class="dg-foot">
-          <a href="../assets/diagrams/AI-Generated%20Code.png" target="_blank" rel="noopener">View full size</a>
-          <a href="../assets/diagrams/AI-Generated%20Code.pdf" target="_blank" rel="noopener" class="mute">PDF</a>
-        </div>
-      </div>
-    </div>
-    <div class="dg-card">
-      <div class="dg-vis" data-full="../assets/diagrams/Next%20Steps.png" data-cap="Next steps: from deconstruction to automation">
-        <span class="dg-pat">numbered journey + feedback loop</span>
-        <img src="../assets/diagrams/Next%20Steps.png" alt="Next steps: from deconstruction to automation" loading="lazy" />
-      </div>
-      <div class="dg-body">
-        <div class="dg-kick">Five-stage maturity path</div>
-        <h3>Next steps: from deconstruction to automation</h3>
-        <div class="dg-field"><span class="k">Purpose</span><span class="v strong">Show the client where the engagement goes after the first win.</span></div>
-        <div class="dg-field"><span class="k">Objective</span><span class="v">Five numbered stages, each with its own outcome chip, wired back through a continuous feedback loop. Underneath, the three automation levels — no touch, low touch, high touch — chosen by confidence against risk, plus the five enablers that have to be in place.</span></div>
-        <div class="dg-field"><span class="k">Use when</span><span class="v">Closing a discovery phase, or scoping a follow-on engagement.</span></div>
-        <div class="dg-reads"><span>Role deconstruction</span><span>Set up agentic tool</span><span>Discover patterns</span><span>Predict and foresee</span><span>Decide automation level</span></div>
-        <div class="dg-foot">
-          <a href="../assets/diagrams/Next%20Steps.png" target="_blank" rel="noopener">View full size</a>
-          <a href="../assets/diagrams/Next%20Steps.pdf" target="_blank" rel="noopener" class="mute">PDF</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<div class="dlb" id="dlb"><button class="x" aria-label="Close">&times;</button><img alt="" /><div class="cap"></div></div>
+<div class="vlb" id="vlb"><button class="x" aria-label="Close">&times;</button><img alt="" /><div class="cap"></div></div>
 
 <section class="section lean">
   <span class="eyebrow reveal">Build it with AI</span>
