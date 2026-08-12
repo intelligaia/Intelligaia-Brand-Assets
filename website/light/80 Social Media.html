@@ -61,7 +61,7 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 /* GLOBAL HEADER */
 .g-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255,255,255,0.78); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(18,18,18,0.08); width: 100%; height: 88px; }
 .g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; }
-.g-logo img { height: 42px;  }
+.g-logo img { height: 35px;  }
 .g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
 .g-nav a { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14.5px; color: rgba(18,18,18,0.78); white-space: nowrap; transition: color 0.15s ease; }
 .g-nav a:hover { color: #FFC800; }
@@ -444,15 +444,15 @@ body{ overscroll-behavior-y:none; }
 /* ══════════ GLOBAL SCALE — readable at 2.5K–3K ══════════ */
 :root{
   --pad-x:40px; --shell:1440px;
-  --nav-fs:15px; --logo-h:46px; --sys-fs:18px; --hdr-h:92px;
+  --nav-fs:15px; --logo-h:38px; --sys-fs:18px; --hdr-h:92px;
   --h1:clamp(48px,6vw,92px); --h2:clamp(30px,3.2vw,46px);
   --lede:17px; --body:15px; --meta:12.5px;
 }
-@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:50px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
-@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:54px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
-@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:62px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
   --h1:clamp(80px,4.6vw,130px); --h2:clamp(44px,2.5vw,64px); } }
-@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:70px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
+@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
   --h1:clamp(96px,4.4vw,150px); --h2:clamp(52px,2.4vw,74px); } }
 
 .g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
@@ -707,43 +707,47 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   white-space:nowrap; flex:none; }
 
 /* ══════════ PAGE HEADER SPACING ══════════
-   Hero was sitting tight under the fixed header and hard against the
-   content below it. Give it real clearance at both ends, and let the
-   description run on one line where there is room for it. */
-.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero{
-  padding-top:calc(var(--hdr-h) + clamp(46px,3.6vw,86px)) !important;
-  padding-bottom:clamp(34px,2.6vw,56px) !important; }
-.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1{ margin-bottom:clamp(14px,1.1vw,20px) !important; }
-.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.cg-hero #cgDesc{
+   The hero was sitting tight under the fixed header and hard against the
+   content below it. Real clearance at both ends, on every page type. */
+.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero,.wp-hero{
+  padding-top:calc(var(--hdr-h) + clamp(72px,5vw,132px)) !important;
+  padding-bottom:clamp(56px,4vw,98px) !important; }
+.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1,.fx-hero h1,.ad-top h1{
+  margin-bottom:clamp(18px,1.4vw,28px) !important; }
+.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p,.cg-hero #cgDesc{
   max-width:none !important; margin:0 !important; }
-/* one line where it fits, two on narrower screens */
+/* one line where there is room, two where there is not */
 @media (min-width:1500px){
-  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p{
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 }
 @media (max-width:1499px){
-  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:normal; max-width:78ch !important; }
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p{
+    white-space:normal; max-width:74ch !important; }
 }
-/* first content block gets air under the hero */
-.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(10px,.9vw,18px) !important; }
-.av-bar{ margin-bottom:clamp(16px,1.3vw,24px) !important; }
+/* and air before the first content block */
+.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(18px,1.5vw,32px) !important; }
+.av-bar{ margin-bottom:clamp(20px,1.6vw,30px) !important; }
+.section.hero{ padding-top:calc(var(--hdr-h) + clamp(56px,4vw,104px)) !important; }
 </style>
 <script>window.IG_ITEMS = [{"src": "../assets/marketing/sections/approved_section_workshops-mvp_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "Workshops — MVP", "kind": "Post", "doc": false, "fields": [["Notes", "Square feed post. Single idea, headline under twelve words, illustration anchored to a corner."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_ux-design-branding_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "Branding", "kind": "Post", "doc": false, "fields": [["Notes", "3D render works at thumbnail size because the silhouette stays simple."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_workshops-journey-map_vector-flat_v01.png", "dl": "", "dlLabel": "", "title": "Journey map", "kind": "Post", "doc": false, "fields": [["Notes", "Vector-flat reads more clearly when the post carries a process idea."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_user-research-processes_vector-flat_v01.png", "dl": "", "dlLabel": "", "title": "Research process", "kind": "Post", "doc": false, "fields": [["Notes", "Method-led post. The illustration does the explaining, the caption carries detail."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_ux-design-audit_tech-ai_v01.png", "dl": "", "dlLabel": "", "title": "Design audit", "kind": "Post", "doc": false, "fields": [["Notes", "Tech-AI treatment for anything touching automation or tooling."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_workshops-partner-cta_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Partner CTA", "kind": "Post", "doc": false, "fields": [["Notes", "Closing post in a campaign. Carries the ask."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}];</script>
 </head>
 <body>
 <header class="g-header">
   <div class="g-header-inner">
-    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
+    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Branding">
       <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
       <span class="g-sep"></span>
-      <span class="g-sys">Brand Assets</span>
+      <span class="g-sys">Branding</span>
     </a>
     <nav class="g-nav">
       <a href="10%20Foundations.html">Foundations</a>
-      <a href="20%20Brand%20Assets.html">Brand assets</a>
+      <a href="20%20Brand%20Assets.html">Assets</a>
       <a href="30%20Diagrams.html">Diagrams</a>
       <a href="40%20Service%20Catalog.html">Service catalog</a>
       <a href="50%20Landing%20Pages.html">Landing pages</a>
       <a href="60%20Case%20Studies.html">Case studies</a>
+      <a href="70%20Whitepapers.html">Whitepapers</a>
       <a href="80%20Social%20Media.html" class="on">Social</a>
     </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>

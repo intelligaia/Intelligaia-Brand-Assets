@@ -61,7 +61,7 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 /* GLOBAL HEADER */
 .g-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255,255,255,0.78); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(18,18,18,0.08); width: 100%; height: 88px; }
 .g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; }
-.g-logo img { height: 42px;  }
+.g-logo img { height: 35px;  }
 .g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
 .g-nav a { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14.5px; color: rgba(18,18,18,0.78); white-space: nowrap; transition: color 0.15s ease; }
 .g-nav a:hover { color: #FFC800; }
@@ -427,15 +427,15 @@ body{ overscroll-behavior-y:none; }
 /* ══════════ GLOBAL SCALE — readable at 2.5K–3K ══════════ */
 :root{
   --pad-x:40px; --shell:1440px;
-  --nav-fs:15px; --logo-h:46px; --sys-fs:18px; --hdr-h:92px;
+  --nav-fs:15px; --logo-h:38px; --sys-fs:18px; --hdr-h:92px;
   --h1:clamp(48px,6vw,92px); --h2:clamp(30px,3.2vw,46px);
   --lede:17px; --body:15px; --meta:12.5px;
 }
-@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:50px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
-@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:54px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
-@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:62px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
   --h1:clamp(80px,4.6vw,130px); --h2:clamp(44px,2.5vw,64px); } }
-@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:70px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
+@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
   --h1:clamp(96px,4.4vw,150px); --h2:clamp(52px,2.4vw,74px); } }
 
 .g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
@@ -714,43 +714,47 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .gt[hidden]{ display:none; }
 
 /* ══════════ PAGE HEADER SPACING ══════════
-   Hero was sitting tight under the fixed header and hard against the
-   content below it. Give it real clearance at both ends, and let the
-   description run on one line where there is room for it. */
-.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero{
-  padding-top:calc(var(--hdr-h) + clamp(46px,3.6vw,86px)) !important;
-  padding-bottom:clamp(34px,2.6vw,56px) !important; }
-.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1{ margin-bottom:clamp(14px,1.1vw,20px) !important; }
-.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.cg-hero #cgDesc{
+   The hero was sitting tight under the fixed header and hard against the
+   content below it. Real clearance at both ends, on every page type. */
+.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero,.wp-hero{
+  padding-top:calc(var(--hdr-h) + clamp(72px,5vw,132px)) !important;
+  padding-bottom:clamp(56px,4vw,98px) !important; }
+.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1,.fx-hero h1,.ad-top h1{
+  margin-bottom:clamp(18px,1.4vw,28px) !important; }
+.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p,.cg-hero #cgDesc{
   max-width:none !important; margin:0 !important; }
-/* one line where it fits, two on narrower screens */
+/* one line where there is room, two where there is not */
 @media (min-width:1500px){
-  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p{
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 }
 @media (max-width:1499px){
-  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:normal; max-width:78ch !important; }
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p{
+    white-space:normal; max-width:74ch !important; }
 }
-/* first content block gets air under the hero */
-.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(10px,.9vw,18px) !important; }
-.av-bar{ margin-bottom:clamp(16px,1.3vw,24px) !important; }
+/* and air before the first content block */
+.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(18px,1.5vw,32px) !important; }
+.av-bar{ margin-bottom:clamp(20px,1.6vw,30px) !important; }
+.section.hero{ padding-top:calc(var(--hdr-h) + clamp(56px,4vw,104px)) !important; }
 </style>
 <script>window.IG_ITEMS = [{"src": "../assets/service-catalog/Cover%20%28with%20lines%29.png", "grid": "../assets/service-catalog/With%20Grid/Cover%20%28with%20lines%29.png", "dl": "../assets/service-catalog/DNA/Cover.png", "dlLabel": "annotation sheet", "doc": false, "title": "Cover", "kind": "Catalog page", "fields": [["Page job", "Orient the reader in under five seconds: offer, difference and brand confidence."], ["Emphasis", "The headline is the first fixation point. Its regular setup carries context; the bold outcome span — trust, use and adopt — carries the proposition."], ["Illustration / evidence", "The wave is a brand and motion anchor, not decoration. Its mass closes the page edge while the open field protects the headline."], ["Layout logic", "A left-led title, narrow capability index and quiet copy tier create a clear primary–secondary–tertiary scan."], ["Design philosophy", "Paper and ink establish authority; selective yellow makes the brand memorable because it is scarce."], ["Do / don't", "DO protect the H1 quiet field. DON'T add a second hero, recolour the wave or place copy across its crest."]]}, {"src": "../assets/service-catalog/About%20Intelligaia.png", "grid": "../assets/service-catalog/With%20Grid/About%20Intelligaia.png", "dl": "../assets/service-catalog/DNA/About.png", "dlLabel": "annotation sheet", "doc": false, "title": "About Intelligaia", "kind": "Catalog page", "fields": [["Page job", "Move from company history to one operating belief."], ["Emphasis", "The drop cap opens an editorial reading rhythm; the oversized numeral isolates the one specialization the reader should remember."], ["Illustration / evidence", "No hero illustration is needed. The typographic field carries the argument and preserves confidence through whitespace."], ["Layout logic", "Biography and belief are separated vertically so evidence does not compete with the concluding statement."], ["Design philosophy", "Use type, rules and space before containers. One irregular gesture is enough."], ["Do / don't", "DO preserve editorial breathing room. DON'T turn the belief, number or biography into separate cards."]]}, {"src": "../assets/service-catalog/Capabilities%20Overview.png", "grid": "../assets/service-catalog/With%20Grid/Capabilities%20Overview.png", "dl": "../assets/service-catalog/DNA/Capabilities.png", "dlLabel": "annotation sheet", "doc": false, "title": "Capabilities overview", "kind": "Catalog page", "fields": [["Page job", "Translate capability into a low-risk path from framing to ownership."], ["Emphasis", "From Vision to Value gives the sequence one memorable promise; the follow-up remains a quieter action tier."], ["Illustration / evidence", "The supporting image provides context only; the three engagement stages carry the decision."], ["Layout logic", "Frame, prototype and own are an ordered progression — not three equal comparisons."], ["Design philosophy", "Reduce commitment risk by making the next decision visible."]]}, {"src": "../assets/service-catalog/What%20Intelligaia%20Does%20best.png", "grid": "../assets/service-catalog/With%20Grid/What%20Intelligaia%20Does%20best.png", "dl": "", "dlLabel": "", "doc": false, "title": "What Intelligaia does best", "kind": "Catalog page", "fields": [["Page job", "Name the difference in terms a buyer can repeat internally."], ["Emphasis", "Each column leads with a claim and lands on a concrete example, so the difference is demonstrated rather than asserted."], ["Illustration / evidence", "Restraint. The page earns credibility through specificity, not imagery."], ["Layout logic", "Three equal columns signal three peers — use this only when the items genuinely rank equally."], ["Design philosophy", "A claim without an example is decoration. Cut it."]]}, {"src": "../assets/service-catalog/Business%20Value%20of%20Intelligaia%20Services%20to%20Autodesk.png", "grid": "../assets/service-catalog/With%20Grid/Business%20Value%20of%20Intelligaia%20Services%20to%20Autodesk.png", "dl": "", "dlLabel": "", "doc": false, "title": "Business value", "kind": "Catalog page", "fields": [["Page job", "Map our services onto this client's problem and outcome."], ["Emphasis", "The client's name appears here, not just on the cover. This is the page that decides the pitch."], ["Illustration / evidence", "Their problem, our service, the measurable outcome — in that order, as a table the reader can scan."], ["Layout logic", "Rows pair problem and response so the reader never holds two columns in memory."], ["Design philosophy", "Generic capability lists get deleted. Mapped value gets forwarded."]]}, {"src": "../assets/service-catalog/Case%20Study%20Page%205.png", "grid": "../assets/service-catalog/With%20Grid/Case%20Study%20Page%205.png", "dl": "../assets/service-catalog/DNA/AI%20ML%20Platform.png", "dlLabel": "annotation sheet", "doc": false, "title": "Case study · AI/ML platform", "kind": "Catalog page", "fields": [["Page job", "Prove depth in a technically demanding domain."], ["Emphasis", "The system diagram leads; the narrative supports it rather than the reverse."], ["Illustration / evidence", "Real interface, real architecture. Nothing illustrative stands in for the actual work."], ["Layout logic", "Technical density is broken by a single wide artifact so the eye can rest."], ["Design philosophy", "In technical domains, showing the system is the argument."]]}, {"src": "../assets/service-catalog/Case%20Study%20page%2013.png", "grid": "../assets/service-catalog/With%20Grid/Case%20Study%20page%2013.png", "dl": "../assets/service-catalog/DNA/B2B%20Commerce.png", "dlLabel": "annotation sheet", "doc": false, "title": "Case study · B2B commerce", "kind": "Catalog page", "fields": [["Page job", "Show platform breadth across three commerce environments."], ["Emphasis", "The single headline consolidates several proof artifacts into one delivery claim."], ["Illustration / evidence", "Screens, photographs and approved marks demonstrate real platform range; grouped as evidence, not a logo wall."], ["Layout logic", "The page alternates large proof and compact qualifiers so dense content stays navigable."], ["Design philosophy", "Complexity becomes credible through structured evidence, not extra visual effects."]]}];</script>
 </head>
 <body>
 <header class="g-header">
   <div class="g-header-inner">
-    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
+    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Branding">
       <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
       <span class="g-sep"></span>
-      <span class="g-sys">Brand Assets</span>
+      <span class="g-sys">Branding</span>
     </a>
     <nav class="g-nav">
       <a href="10%20Foundations.html">Foundations</a>
-      <a href="20%20Brand%20Assets.html">Brand assets</a>
+      <a href="20%20Brand%20Assets.html">Assets</a>
       <a href="30%20Diagrams.html">Diagrams</a>
       <a href="40%20Service%20Catalog.html" class="on">Service catalog</a>
       <a href="50%20Landing%20Pages.html">Landing pages</a>
       <a href="60%20Case%20Studies.html">Case studies</a>
+      <a href="70%20Whitepapers.html">Whitepapers</a>
       <a href="80%20Social%20Media.html">Social</a>
     </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>

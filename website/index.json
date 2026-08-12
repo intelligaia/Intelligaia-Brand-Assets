@@ -1,8 +1,8 @@
 {
   "$schema": "https://intelligaia.github.io/schemas/repo-index-v1.json",
   "name": "Intelligaia Brand Assets",
-  "version": "1.7.0",
-  "generated": "2026-08-10",
+  "version": "1.8.0",
+  "generated": "2026-08-12",
   "description": "Single source of truth for Intelligaia's visual and editorial language. Human-readable system plus machine-readable specs.",
   "repository": "https://github.com/intelligaia/Intelligaia-Brand-Assets",
   "entry_points": {
@@ -82,7 +82,7 @@
       {
         "id": "dark-20",
         "number": "20",
-        "title": "Brand Assets",
+        "title": "Assets",
         "path": "dark/20 Brand Assets.html",
         "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/20%20Brand%20Assets.html"
       },
@@ -124,9 +124,16 @@
       {
         "id": "dark-60",
         "number": "60",
-        "title": "Case Studies",
+        "title": "Case studies",
         "path": "dark/60 Case Studies.html",
         "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/60%20Case%20Studies.html"
+      },
+      {
+        "id": "dark-70",
+        "number": "70",
+        "title": "Whitepapers",
+        "path": "dark/70 Whitepapers.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/70%20Whitepapers.html"
       },
       {
         "id": "dark-80",
@@ -154,7 +161,7 @@
       {
         "id": "light-20",
         "number": "20",
-        "title": "Brand Assets",
+        "title": "Assets",
         "path": "light/20 Brand Assets.html",
         "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/20%20Brand%20Assets.html"
       },
@@ -196,9 +203,16 @@
       {
         "id": "light-60",
         "number": "60",
-        "title": "Case Studies",
+        "title": "Case studies",
         "path": "light/60 Case Studies.html",
         "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/60%20Case%20Studies.html"
+      },
+      {
+        "id": "light-70",
+        "number": "70",
+        "title": "Whitepapers",
+        "path": "light/70 Whitepapers.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/70%20Whitepapers.html"
       },
       {
         "id": "light-80",
@@ -225,9 +239,9 @@
   "examples": [
     {
       "id": "whitepaper-d3-ai",
-      "title": "Designing a research-first AI assistant \u2014 Harvard D\u00b3 Institute",
+      "title": "Designing a research-first AI assistant — Harvard D³ Institute",
       "type": "whitepaper",
-      "path": "website/examples/Whitepaper \u2014 D3 AI Assistant.html",
+      "path": "website/examples/Whitepaper — D3 AI Assistant.html",
       "sections": 10,
       "fonts": [
         "Trirong",
@@ -255,7 +269,7 @@
       "id": "slide-deck-skill",
       "name": "Slide Deck Skill",
       "path": "Intelligaia Skills/Intelligaia Slide Deck Skill/",
-      "what": "Claude skill generating on-brand decks \u2014 locked palette, Montserrat, 15 slide archetypes, 16 brand graphics",
+      "what": "Claude skill generating on-brand decks — locked palette, Montserrat, 15 slide archetypes, 16 brand graphics",
       "entry_human": "Intelligaia Skills/Intelligaia Slide Deck Skill/README.md",
       "note": "Presentations use their own type system (Montserrat, #FFD700). Do not mix with the web system."
     },
@@ -272,16 +286,16 @@
     "marketing": "banners, sections, people, lettering",
     "diagrams": "process graphics and flow charts (PNG + PDF)",
     "service-catalog": "document template pages",
-    "whitepapers": "published engineering whitepapers \u2014 drop new files here",
-    "case-studies": "published client case studies \u2014 drop new files here",
-    "landing-pages": "published landing pages \u2014 drop new files here",
+    "whitepapers": "published engineering whitepapers — drop new files here",
+    "case-studies": "published client case studies — drop new files here",
+    "landing-pages": "published landing pages — drop new files here",
     "icons": "UI icon set",
     "waves": "abstract shapes",
     "letters": "illustrated letterforms",
     "brand": "logos and marks",
     "tokens": "design tokens in six formats"
   },
-  "note": "Case studies and whitepapers share one page. Foundations is a single page. Brand assets is category cards \u2192 category listing \u2192 asset detail.",
+  "note": "Case studies and whitepapers share one page. Foundations is a single page. Brand assets is category cards → category listing → asset detail.",
   "resources": {
     "figma": "assets/tokens/figma.json",
     "git": "website/assets/",

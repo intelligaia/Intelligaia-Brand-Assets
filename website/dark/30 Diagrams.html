@@ -61,7 +61,7 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 /* GLOBAL HEADER */
 .g-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(4,5,10,0.72); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; height: 88px; }
 .g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; }
-.g-logo img { height: 42px; filter: invert(1) brightness(1.1); }
+.g-logo img { height: 35px; filter: invert(1) brightness(1.1); }
 .g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
 .g-nav a { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14.5px; color: rgba(244,246,255,0.82); white-space: nowrap; transition: color 0.15s ease; }
 .g-nav a:hover { color: #FFC800; }
@@ -440,15 +440,15 @@ body{ overscroll-behavior-y:none; }
 /* ══════════ GLOBAL SCALE — readable at 2.5K–3K ══════════ */
 :root{
   --pad-x:40px; --shell:1440px;
-  --nav-fs:15px; --logo-h:46px; --sys-fs:18px; --hdr-h:92px;
+  --nav-fs:15px; --logo-h:38px; --sys-fs:18px; --hdr-h:92px;
   --h1:clamp(48px,6vw,92px); --h2:clamp(30px,3.2vw,46px);
   --lede:17px; --body:15px; --meta:12.5px;
 }
-@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:50px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
-@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:54px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
-@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:62px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
   --h1:clamp(80px,4.6vw,130px); --h2:clamp(44px,2.5vw,64px); } }
-@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:70px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
+@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
   --h1:clamp(96px,4.4vw,150px); --h2:clamp(52px,2.4vw,74px); } }
 
 .g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
@@ -703,43 +703,47 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   white-space:nowrap; flex:none; }
 
 /* ══════════ PAGE HEADER SPACING ══════════
-   Hero was sitting tight under the fixed header and hard against the
-   content below it. Give it real clearance at both ends, and let the
-   description run on one line where there is room for it. */
-.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero{
-  padding-top:calc(var(--hdr-h) + clamp(46px,3.6vw,86px)) !important;
-  padding-bottom:clamp(34px,2.6vw,56px) !important; }
-.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1{ margin-bottom:clamp(14px,1.1vw,20px) !important; }
-.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.cg-hero #cgDesc{
+   The hero was sitting tight under the fixed header and hard against the
+   content below it. Real clearance at both ends, on every page type. */
+.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero,.wp-hero{
+  padding-top:calc(var(--hdr-h) + clamp(72px,5vw,132px)) !important;
+  padding-bottom:clamp(56px,4vw,98px) !important; }
+.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1,.fx-hero h1,.ad-top h1{
+  margin-bottom:clamp(18px,1.4vw,28px) !important; }
+.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p,.cg-hero #cgDesc{
   max-width:none !important; margin:0 !important; }
-/* one line where it fits, two on narrower screens */
+/* one line where there is room, two where there is not */
 @media (min-width:1500px){
-  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p{
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
 }
 @media (max-width:1499px){
-  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:normal; max-width:78ch !important; }
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p{
+    white-space:normal; max-width:74ch !important; }
 }
-/* first content block gets air under the hero */
-.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(10px,.9vw,18px) !important; }
-.av-bar{ margin-bottom:clamp(16px,1.3vw,24px) !important; }
+/* and air before the first content block */
+.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(18px,1.5vw,32px) !important; }
+.av-bar{ margin-bottom:clamp(20px,1.6vw,30px) !important; }
+.section.hero{ padding-top:calc(var(--hdr-h) + clamp(56px,4vw,104px)) !important; }
 </style>
 <script>window.IG_ITEMS = [{"src": "../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png", "dl": "../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.pdf", "dlLabel": "PDF", "title": "Role-based AI deconstruction", "kind": "Matrix 2×2", "doc": false, "fields": [["Purpose", "Find which workflows are worth handing to an agent."], ["How it works", "Plot every task against friction and frequency; the high-high quadrant is the agent goldmine. A five-point readiness check gates anything before it moves into SAFE."], ["Use when", "Opening an engagement, or triaging automation requests."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Production%20Analyst.png", "dl": "../assets/diagrams/Production%20Analyst.pdf", "dlLabel": "PDF", "title": "Deconstructing a role for AI", "kind": "Hub-spoke → checklist", "doc": false, "fields": [["Purpose", "Show the readiness framework applied to one real job."], ["How it works", "Break a role into its five recurring tasks, run the set through the readiness test, land on a verdict. Makes the abstract framework concrete on a client's own domain."], ["Use when", "A client asks what the framework looks like against their team."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/SAFE%20Workflow%20Evaluation.png", "dl": "../assets/diagrams/SAFE%20Workflow%20Evaluation.pdf", "dlLabel": "PDF", "title": "SAFE workflow evaluation", "kind": "Swimlane flow", "doc": false, "fields": [["Purpose", "Design where the human sits in an AI-run workflow."], ["How it works", "Two lanes — human above, agent below. The four SAFE letters attach to the transitions: scope wraps the frame, authority governs delegation, feedback governs escalation, evaluation loops it back."], ["Use when", "Specifying an agent workflow before anyone writes code."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png", "dl": "../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.pdf", "dlLabel": "PDF", "title": "The SAFE framework", "kind": "Four-pillar + process strip", "doc": false, "fields": [["Purpose", "Explain the whole framework on one page."], ["How it works", "Four pillars, each with its governing question, three rules and a worked example. Beneath them, how the engineering team runs it, the five metrics tracked, and what it achieved."], ["Use when", "Onboarding a team, or the framework slide in a pitch."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png", "dl": "../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.pdf", "dlLabel": "PDF", "title": "SDLC knowledge into AI context", "kind": "2×2 narrative", "doc": false, "fields": [["Purpose", "Argue that the fix is context, not new tooling."], ["How it works", "What teams already had, why direct prompting still failed, the structured inputs that closed the gap, and the same flow running in practice. The through-line is that nothing new had to be invented."], ["Use when", "Countering the idea that AI adoption means replacing the process."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/AI-Generated%20Code.png", "dl": "../assets/diagrams/AI-Generated%20Code.pdf", "dlLabel": "PDF", "title": "AI-generated code: system impact", "kind": "Three-band process", "doc": false, "fields": [["Purpose", "Make the risk of AI-written pull requests visible before merge."], ["How it works", "Band one names the visibility gap, expected against actual. Band two walks the agent from mapping connected systems to an impact report. Band three keeps the human holding the decision."], ["Use when", "Explaining AI-assisted engineering governance to a review board."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Next%20Steps.png", "dl": "../assets/diagrams/Next%20Steps.pdf", "dlLabel": "PDF", "title": "Next steps: deconstruction to automation", "kind": "Numbered journey + loop", "doc": false, "fields": [["Purpose", "Show the client where the engagement goes after the first win."], ["How it works", "Five stages, each with its outcome, wired through a continuous feedback loop. Underneath, the three automation levels — no touch, low touch, high touch — chosen by confidence against risk."], ["Use when", "Closing discovery, or scoping a follow-on engagement."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}];</script>
 </head>
 <body>
 <header class="g-header">
   <div class="g-header-inner">
-    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
+    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Branding">
       <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
       <span class="g-sep"></span>
-      <span class="g-sys">Brand Assets</span>
+      <span class="g-sys">Branding</span>
     </a>
     <nav class="g-nav">
       <a href="10%20Foundations.html">Foundations</a>
-      <a href="20%20Brand%20Assets.html">Brand assets</a>
+      <a href="20%20Brand%20Assets.html">Assets</a>
       <a href="30%20Diagrams.html" class="on">Diagrams</a>
       <a href="40%20Service%20Catalog.html">Service catalog</a>
       <a href="50%20Landing%20Pages.html">Landing pages</a>
       <a href="60%20Case%20Studies.html">Case studies</a>
+      <a href="70%20Whitepapers.html">Whitepapers</a>
       <a href="80%20Social%20Media.html">Social</a>
     </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>
