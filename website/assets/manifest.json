@@ -1,7 +1,7 @@
 {
   "$schema": "https://intelligaia.github.io/schemas/asset-manifest-v1.json",
   "name": "Intelligaia Illustration Assets",
-  "version": "1.3.0",
+  "version": "1.4.0",
   "generated": "2026-08-10",
   "description": "Shared, versioned illustration and brand asset library for Intelligaia. Consumed by designers, engineers and AI agents.",
   "license": "Proprietary — Intelligaia internal and client work only.",
@@ -12,11 +12,10 @@
     "pages": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets"
   },
   "counts": {
-    "total": 293,
+    "total": 279,
     "by_category": {
       "brand": 3,
       "character": 48,
-      "character-element": 14,
       "device": 21,
       "diagram": 14,
       "icon": 41,
@@ -42,11 +41,6 @@
       "id": "character",
       "description": "Male character illustrations, three-stage construction",
       "count": 48
-    },
-    {
-      "id": "character-element",
-      "description": "Modular character parts — heads, torsos, limbs",
-      "count": 14
     },
     {
       "id": "device",
@@ -1153,258 +1147,6 @@
       ],
       "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/characters-male/Male Character 04 — Side face — Outlined.png",
       "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/characters-male/Male Character 04 — Side face — Outlined.png"
-    },
-    {
-      "id": "2c5531d75248",
-      "name": "Screenshot 2026-01-24 at 9.06.13 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.06.13 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.06.13 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 383943,
-      "width": 1282,
-      "height": 755,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.06.13 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.06.13 PM 1.png"
-    },
-    {
-      "id": "5e98bedc2808",
-      "name": "Screenshot 2026-01-24 at 9.06.20 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.06.20 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.06.20 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 135263,
-      "width": 1287,
-      "height": 658,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.06.20 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.06.20 PM 1.png"
-    },
-    {
-      "id": "6b30cb8f3b88",
-      "name": "Screenshot 2026-01-24 at 9.06.31 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.06.31 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.06.31 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 114396,
-      "width": 1284,
-      "height": 758,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.06.31 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.06.31 PM 1.png"
-    },
-    {
-      "id": "8793611f4caa",
-      "name": "Screenshot 2026-01-24 at 9.13.22 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.13.22 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.13.22 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 119458,
-      "width": 1292,
-      "height": 749,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.13.22 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.13.22 PM 1.png"
-    },
-    {
-      "id": "403b6efea26d",
-      "name": "Screenshot 2026-01-24 at 9.13.33 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.13.33 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.13.33 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 118447,
-      "width": 1286,
-      "height": 755,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.13.33 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.13.33 PM 1.png"
-    },
-    {
-      "id": "dcab154c0b66",
-      "name": "Screenshot 2026-01-24 at 9.14.20 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.14.20 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.14.20 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 117783,
-      "width": 1295,
-      "height": 764,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.14.20 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.14.20 PM 1.png"
-    },
-    {
-      "id": "0ee4d946a608",
-      "name": "Screenshot 2026-01-24 at 9.14.32 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.14.32 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.14.32 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 87169,
-      "width": 1289,
-      "height": 753,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.14.32 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.14.32 PM 1.png"
-    },
-    {
-      "id": "5c64d9e3ded6",
-      "name": "Screenshot 2026-01-24 at 9.14.41 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.14.41 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.14.41 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 116424,
-      "width": 1288,
-      "height": 756,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.14.41 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.14.41 PM 1.png"
-    },
-    {
-      "id": "dc41d152ed8f",
-      "name": "Screenshot 2026-01-24 at 9.14.50 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.14.50 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.14.50 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 165449,
-      "width": 1291,
-      "height": 757,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.14.50 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.14.50 PM 1.png"
-    },
-    {
-      "id": "417fd3f3a68f",
-      "name": "Screenshot 2026-01-24 at 9.15.01 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.15.01 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.15.01 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 134480,
-      "width": 1284,
-      "height": 736,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.01 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.01 PM 1.png"
-    },
-    {
-      "id": "61037dc2f757",
-      "name": "Screenshot 2026-01-24 at 9.15.12 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.15.12 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.15.12 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 104321,
-      "width": 1299,
-      "height": 760,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.12 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.12 PM 1.png"
-    },
-    {
-      "id": "2f69c84859ab",
-      "name": "Screenshot 2026-01-24 at 9.15.28 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.15.28 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.15.28 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 138047,
-      "width": 1283,
-      "height": 754,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.28 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.28 PM 1.png"
-    },
-    {
-      "id": "7f724ee5f385",
-      "name": "Screenshot 2026-01-24 at 9.15.38 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.15.38 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.15.38 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 91097,
-      "width": 1290,
-      "height": 755,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.38 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.38 PM 1.png"
-    },
-    {
-      "id": "a4bfcaa79d41",
-      "name": "Screenshot 2026-01-24 at 9.15.51 PM 1",
-      "file": "Screenshot 2026-01-24 at 9.15.51 PM 1.png",
-      "path": "illustrations/character-elements/Screenshot 2026-01-24 at 9.15.51 PM 1.png",
-      "category": "character-element",
-      "folder": "illustrations/character-elements",
-      "format": "png",
-      "bytes": 80991,
-      "width": 1300,
-      "height": 757,
-      "stage": null,
-      "tags": [
-        "character-element"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.51 PM 1.png",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/character-elements/Screenshot 2026-01-24 at 9.15.51 PM 1.png"
     },
     {
       "id": "5ad50b991195",
