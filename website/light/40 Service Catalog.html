@@ -688,8 +688,53 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .res .st{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
   padding:3px 10px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted);
   white-space:nowrap; flex:none; }
+
+/* ══════════ CATALOG STAGE — fixed A4, no size jumping ══════════ */
+.av-stage.sheet{ padding:clamp(20px,1.8vw,36px) !important; }
+.av-sheet{ position:relative; height:min(74vh,900px); aspect-ratio:595/842;
+  background:#fff; box-shadow:0 24px 60px -24px rgba(0,0,0,.5); }
+@media (min-width:2000px){ .av-sheet{ height:min(76vh,1080px); } }
+.av-sheet img{ position:absolute; inset:0; width:100% !important; height:100% !important;
+  max-width:none !important; max-height:none !important; object-fit:fill; display:block; }
+.av-sheet img.grid{ opacity:0; transition:opacity .22s ease; }
+.av-sheet.on img.grid{ opacity:1; }
+
+/* grid toggle */
+.gt{ display:inline-flex; align-items:center; gap:9px; padding:8px 15px; border-radius:999px;
+  border:1px solid var(--hair-2); background:var(--bg-2); color:var(--ink-muted);
+  font-family:'Geist',sans-serif; font-size:var(--label); cursor:pointer; transition:.16s; }
+.gt:hover{ color:var(--ink); border-color:var(--ink-muted); }
+.gt.on{ background:var(--yellow); border-color:var(--yellow); color:#04050A; }
+.gt .sw{ width:30px; height:17px; border-radius:999px; background:var(--hair-2);
+  position:relative; transition:.18s; flex:none; }
+.gt.on .sw{ background:rgba(4,5,10,.32); }
+.gt .sw::after{ content:''; position:absolute; top:2px; left:2px; width:13px; height:13px;
+  border-radius:50%; background:var(--ink-muted); transition:.18s; }
+.gt.on .sw::after{ transform:translateX(13px); background:#04050A; }
+.gt[hidden]{ display:none; }
+
+/* ══════════ PAGE HEADER SPACING ══════════
+   Hero was sitting tight under the fixed header and hard against the
+   content below it. Give it real clearance at both ends, and let the
+   description run on one line where there is room for it. */
+.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero{
+  padding-top:calc(var(--hdr-h) + clamp(46px,3.6vw,86px)) !important;
+  padding-bottom:clamp(34px,2.6vw,56px) !important; }
+.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1{ margin-bottom:clamp(14px,1.1vw,20px) !important; }
+.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.cg-hero #cgDesc{
+  max-width:none !important; margin:0 !important; }
+/* one line where it fits, two on narrower screens */
+@media (min-width:1500px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+}
+@media (max-width:1499px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:normal; max-width:78ch !important; }
+}
+/* first content block gets air under the hero */
+.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(10px,.9vw,18px) !important; }
+.av-bar{ margin-bottom:clamp(16px,1.3vw,24px) !important; }
 </style>
-<script>window.IG_ITEMS = [{"src": "../assets/service-catalog/Cover%20%28with%20lines%29.png", "dl": "../assets/service-catalog/DNA/Cover.png", "dlLabel": "annotation sheet", "doc": false, "title": "Cover", "kind": "Catalog page", "fields": [["Page job", "Orient the reader in under five seconds: offer, difference and brand confidence."], ["Emphasis", "The headline is the first fixation point. Its regular setup carries context; the bold outcome span — trust, use and adopt — carries the proposition."], ["Illustration / evidence", "The wave is a brand and motion anchor, not decoration. Its mass closes the page edge while the open field protects the headline."], ["Layout logic", "A left-led title, narrow capability index and quiet copy tier create a clear primary–secondary–tertiary scan."], ["Design philosophy", "Paper and ink establish authority; selective yellow makes the brand memorable because it is scarce."], ["Do / don't", "DO protect the H1 quiet field. DON'T add a second hero, recolour the wave or place copy across its crest."]]}, {"src": "../assets/service-catalog/About%20Intelligaia.png", "dl": "../assets/service-catalog/DNA/About.png", "dlLabel": "annotation sheet", "doc": false, "title": "About Intelligaia", "kind": "Catalog page", "fields": [["Page job", "Move from company history to one operating belief."], ["Emphasis", "The drop cap opens an editorial reading rhythm; the oversized numeral isolates the one specialization the reader should remember."], ["Illustration / evidence", "No hero illustration is needed. The typographic field carries the argument and preserves confidence through whitespace."], ["Layout logic", "Biography and belief are separated vertically so evidence does not compete with the concluding statement."], ["Design philosophy", "Use type, rules and space before containers. One irregular gesture is enough."], ["Do / don't", "DO preserve editorial breathing room. DON'T turn the belief, number or biography into separate cards."]]}, {"src": "../assets/service-catalog/Capabilities%20Overview.png", "dl": "../assets/service-catalog/DNA/Capabilities.png", "dlLabel": "annotation sheet", "doc": false, "title": "Capabilities overview", "kind": "Catalog page", "fields": [["Page job", "Translate capability into a low-risk path from framing to ownership."], ["Emphasis", "From Vision to Value gives the sequence one memorable promise; the follow-up remains a quieter action tier."], ["Illustration / evidence", "The supporting image provides context only; the three engagement stages carry the decision."], ["Layout logic", "Frame, prototype and own are an ordered progression — not three equal comparisons."], ["Design philosophy", "Reduce commitment risk by making the next decision visible."]]}, {"src": "../assets/service-catalog/What%20Intelligaia%20Does%20best.png", "dl": "", "dlLabel": "", "doc": false, "title": "What Intelligaia does best", "kind": "Catalog page", "fields": [["Page job", "Name the difference in terms a buyer can repeat internally."], ["Emphasis", "Each column leads with a claim and lands on a concrete example, so the difference is demonstrated rather than asserted."], ["Illustration / evidence", "Restraint. The page earns credibility through specificity, not imagery."], ["Layout logic", "Three equal columns signal three peers — use this only when the items genuinely rank equally."], ["Design philosophy", "A claim without an example is decoration. Cut it."]]}, {"src": "../assets/service-catalog/Business%20Value%20of%20Intelligaia%20Services%20to%20Autodesk.png", "dl": "", "dlLabel": "", "doc": false, "title": "Business value", "kind": "Catalog page", "fields": [["Page job", "Map our services onto this client's problem and outcome."], ["Emphasis", "The client's name appears here, not just on the cover. This is the page that decides the pitch."], ["Illustration / evidence", "Their problem, our service, the measurable outcome — in that order, as a table the reader can scan."], ["Layout logic", "Rows pair problem and response so the reader never has to hold two columns in memory."], ["Design philosophy", "Generic capability lists get deleted. Mapped value gets forwarded."]]}, {"src": "../assets/service-catalog/Case%20Study%20Page%203.png", "dl": "../assets/service-catalog/DNA/B2B%20Commerce.png", "dlLabel": "annotation sheet", "doc": false, "title": "Case study · B2B commerce", "kind": "Catalog page", "fields": [["Page job", "Show platform breadth across three commerce environments."], ["Emphasis", "The single headline consolidates several proof artifacts into one delivery claim."], ["Illustration / evidence", "Screens, photographs and approved marks demonstrate real platform range; they are grouped as evidence, not a logo wall."], ["Layout logic", "The page alternates large proof and compact qualifiers so dense content remains navigable."], ["Design philosophy", "Complexity becomes credible through structured evidence, not extra visual effects."]]}, {"src": "../assets/service-catalog/Case%20Study%20Page%205.png", "dl": "../assets/service-catalog/DNA/AI%20ML%20Platform.png", "dlLabel": "annotation sheet", "doc": false, "title": "Case study · AI/ML platform", "kind": "Catalog page", "fields": [["Page job", "Prove depth in a technically demanding domain."], ["Emphasis", "The system diagram leads; the narrative supports it rather than the reverse."], ["Illustration / evidence", "Real interface, real architecture. Nothing illustrative stands in for the actual work."], ["Layout logic", "Technical density is broken by a single wide artifact so the eye can rest."], ["Design philosophy", "In technical domains, showing the system is the argument."]]}, {"src": "../assets/service-catalog/Case%20Study%20page%208.png", "dl": "../assets/service-catalog/DNA/Adoption%20Problem.png", "dlLabel": "annotation sheet", "doc": false, "title": "Case study · adoption", "kind": "Catalog page", "fields": [["Page job", "Address the objection the buyer has not voiced yet."], ["Emphasis", "The adoption problem is stated before the solution, so the reader recognises their own situation."], ["Illustration / evidence", "Before and after states carry the claim; commentary stays minimal."], ["Layout logic", "Problem above, response below — never side by side, which reads as equivalence."], ["Design philosophy", "Naming the difficulty earns more trust than claiming its absence."]]}, {"src": "../assets/service-catalog/Case%20Study%20page%209.png", "dl": "../assets/service-catalog/DNA/Follow%20Up.png", "dlLabel": "annotation sheet", "doc": false, "title": "Case study · follow up", "kind": "Catalog page", "fields": [["Page job", "Close with the next decision, not a summary."], ["Emphasis", "The action tier is the last thing read and the only thing asked for."], ["Illustration / evidence", "Outcome figures where they exist; honest qualitative where they do not."], ["Layout logic", "A quiet page. Everything has already been argued."], ["Design philosophy", "End on the ask. A catalog that summarises itself wastes its last page."]]}];</script>
+<script>window.IG_ITEMS = [{"src": "../assets/service-catalog/Cover%20%28with%20lines%29.png", "grid": "../assets/service-catalog/With%20Grid/Cover%20%28with%20lines%29.png", "dl": "../assets/service-catalog/DNA/Cover.png", "dlLabel": "annotation sheet", "doc": false, "title": "Cover", "kind": "Catalog page", "fields": [["Page job", "Orient the reader in under five seconds: offer, difference and brand confidence."], ["Emphasis", "The headline is the first fixation point. Its regular setup carries context; the bold outcome span — trust, use and adopt — carries the proposition."], ["Illustration / evidence", "The wave is a brand and motion anchor, not decoration. Its mass closes the page edge while the open field protects the headline."], ["Layout logic", "A left-led title, narrow capability index and quiet copy tier create a clear primary–secondary–tertiary scan."], ["Design philosophy", "Paper and ink establish authority; selective yellow makes the brand memorable because it is scarce."], ["Do / don't", "DO protect the H1 quiet field. DON'T add a second hero, recolour the wave or place copy across its crest."]]}, {"src": "../assets/service-catalog/About%20Intelligaia.png", "grid": "../assets/service-catalog/With%20Grid/About%20Intelligaia.png", "dl": "../assets/service-catalog/DNA/About.png", "dlLabel": "annotation sheet", "doc": false, "title": "About Intelligaia", "kind": "Catalog page", "fields": [["Page job", "Move from company history to one operating belief."], ["Emphasis", "The drop cap opens an editorial reading rhythm; the oversized numeral isolates the one specialization the reader should remember."], ["Illustration / evidence", "No hero illustration is needed. The typographic field carries the argument and preserves confidence through whitespace."], ["Layout logic", "Biography and belief are separated vertically so evidence does not compete with the concluding statement."], ["Design philosophy", "Use type, rules and space before containers. One irregular gesture is enough."], ["Do / don't", "DO preserve editorial breathing room. DON'T turn the belief, number or biography into separate cards."]]}, {"src": "../assets/service-catalog/Capabilities%20Overview.png", "grid": "../assets/service-catalog/With%20Grid/Capabilities%20Overview.png", "dl": "../assets/service-catalog/DNA/Capabilities.png", "dlLabel": "annotation sheet", "doc": false, "title": "Capabilities overview", "kind": "Catalog page", "fields": [["Page job", "Translate capability into a low-risk path from framing to ownership."], ["Emphasis", "From Vision to Value gives the sequence one memorable promise; the follow-up remains a quieter action tier."], ["Illustration / evidence", "The supporting image provides context only; the three engagement stages carry the decision."], ["Layout logic", "Frame, prototype and own are an ordered progression — not three equal comparisons."], ["Design philosophy", "Reduce commitment risk by making the next decision visible."]]}, {"src": "../assets/service-catalog/What%20Intelligaia%20Does%20best.png", "grid": "../assets/service-catalog/With%20Grid/What%20Intelligaia%20Does%20best.png", "dl": "", "dlLabel": "", "doc": false, "title": "What Intelligaia does best", "kind": "Catalog page", "fields": [["Page job", "Name the difference in terms a buyer can repeat internally."], ["Emphasis", "Each column leads with a claim and lands on a concrete example, so the difference is demonstrated rather than asserted."], ["Illustration / evidence", "Restraint. The page earns credibility through specificity, not imagery."], ["Layout logic", "Three equal columns signal three peers — use this only when the items genuinely rank equally."], ["Design philosophy", "A claim without an example is decoration. Cut it."]]}, {"src": "../assets/service-catalog/Business%20Value%20of%20Intelligaia%20Services%20to%20Autodesk.png", "grid": "../assets/service-catalog/With%20Grid/Business%20Value%20of%20Intelligaia%20Services%20to%20Autodesk.png", "dl": "", "dlLabel": "", "doc": false, "title": "Business value", "kind": "Catalog page", "fields": [["Page job", "Map our services onto this client's problem and outcome."], ["Emphasis", "The client's name appears here, not just on the cover. This is the page that decides the pitch."], ["Illustration / evidence", "Their problem, our service, the measurable outcome — in that order, as a table the reader can scan."], ["Layout logic", "Rows pair problem and response so the reader never holds two columns in memory."], ["Design philosophy", "Generic capability lists get deleted. Mapped value gets forwarded."]]}, {"src": "../assets/service-catalog/Case%20Study%20Page%205.png", "grid": "../assets/service-catalog/With%20Grid/Case%20Study%20Page%205.png", "dl": "../assets/service-catalog/DNA/AI%20ML%20Platform.png", "dlLabel": "annotation sheet", "doc": false, "title": "Case study · AI/ML platform", "kind": "Catalog page", "fields": [["Page job", "Prove depth in a technically demanding domain."], ["Emphasis", "The system diagram leads; the narrative supports it rather than the reverse."], ["Illustration / evidence", "Real interface, real architecture. Nothing illustrative stands in for the actual work."], ["Layout logic", "Technical density is broken by a single wide artifact so the eye can rest."], ["Design philosophy", "In technical domains, showing the system is the argument."]]}, {"src": "../assets/service-catalog/Case%20Study%20page%2013.png", "grid": "../assets/service-catalog/With%20Grid/Case%20Study%20page%2013.png", "dl": "../assets/service-catalog/DNA/B2B%20Commerce.png", "dlLabel": "annotation sheet", "doc": false, "title": "Case study · B2B commerce", "kind": "Catalog page", "fields": [["Page job", "Show platform breadth across three commerce environments."], ["Emphasis", "The single headline consolidates several proof artifacts into one delivery claim."], ["Illustration / evidence", "Screens, photographs and approved marks demonstrate real platform range; grouped as evidence, not a logo wall."], ["Layout logic", "The page alternates large proof and compact qualifiers so dense content stays navigable."], ["Design philosophy", "Complexity becomes credible through structured evidence, not extra visual effects."]]}];</script>
 </head>
 <body>
 <header class="g-header">
@@ -715,7 +760,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 
 <section class="section av-hero">
   <h1>Service catalog.</h1>
-  <p>Nine template pages. Each carries its page job and the annotation that explains why it is built that way.</p>
+  <p>Seven template pages, each with its page job, annotation and golden-ratio grid.</p>
 </section>
 
 <section class="section av-body">
@@ -724,6 +769,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
       <button class="av-mode on" data-mode="carousel"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="5" width="10" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 8v8M20 8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
       <button class="av-mode" data-mode="list"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.8"/></svg></button>
     </div>
+    <button class="gt" id="gridToggle" hidden><span class="sw"></span>Golden-ratio grid</button>
     <span class="av-pos" id="avPos"></span>
   </div>
   <div class="av-grid">
@@ -921,12 +967,19 @@ document.addEventListener('DOMContentLoaded', function(){
     return '<div class="av-t">'+v+'<div class="n">'+it.title+'</div></div>';
   }).join('');
 
+  function gtOn(){ var g=document.getElementById('gridToggle'); return g&&g.classList.contains('on'); }
   function render(){
     var it=I[i];
-    stage.className='av-stage'+(it.doc?' doc':'');
-    stage.innerHTML=(I.length>1?'<button class="av-nav p">&#8249;</button><button class="av-nav n">&#8250;</button>':'')+
-      (it.doc?'<iframe src="'+it.src+'" loading="lazy" title="'+it.title+'"></iframe>'
-             :'<img src="'+it.src+'" alt="'+it.title+'"/>');
+    var sheet=it.grid!==undefined;
+    stage.className='av-stage'+(it.doc?' doc':'')+(it.grid?' sheet':'');
+    var inner=it.doc
+      ? '<iframe src="'+it.src+'" loading="lazy" title="'+it.title+'"></iframe>'
+      : (it.grid
+          ? '<div class="av-sheet'+(gtOn()?' on':'')+'"><img src="'+it.src+'" alt="'+it.title+'"/><img class="grid" src="'+it.grid+'" alt=""/></div>'
+          : '<img src="'+it.src+'" alt="'+it.title+'"/>');
+    stage.innerHTML=(I.length>1?'<button class="av-nav p">&#8249;</button><button class="av-nav n">&#8250;</button>':'')+inner;
+    var gtb=document.getElementById('gridToggle');
+    if(gtb) gtb.hidden=!it.grid;
     side.innerHTML='<div class="k">'+it.kind+'</div><h3>'+it.title+'</h3>'+
       it.fields.map(function(f){return '<div class="f"><div class="fk">'+f[0]+'</div><div class="fv">'+f[1]+'</div></div>';}).join('')+
       '<div class="dl"><a class="p" href="'+it.src+'" target="_blank" rel="noopener">Open full size<span>↗</span></a>'+
@@ -973,6 +1026,16 @@ document.addEventListener('DOMContentLoaded', function(){
   document.addEventListener('keydown',function(e){
     if(e.key==='Escape'){lb.classList.remove('on');document.body.style.overflow='';}
   });
+
+  // golden-ratio grid overlay
+  var gt=document.getElementById('gridToggle');
+  if(gt){
+    gt.addEventListener('click',function(){
+      gt.classList.toggle('on');
+      var sh=document.querySelector('.av-sheet');
+      if(sh) sh.classList.toggle('on', gt.classList.contains('on'));
+    });
+  }
   render();
 })();
 

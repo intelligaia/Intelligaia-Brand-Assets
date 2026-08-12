@@ -687,6 +687,27 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .res .st{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
   padding:3px 10px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted);
   white-space:nowrap; flex:none; }
+
+/* ══════════ PAGE HEADER SPACING ══════════
+   Hero was sitting tight under the fixed header and hard against the
+   content below it. Give it real clearance at both ends, and let the
+   description run on one line where there is room for it. */
+.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero{
+  padding-top:calc(var(--hdr-h) + clamp(46px,3.6vw,86px)) !important;
+  padding-bottom:clamp(34px,2.6vw,56px) !important; }
+.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1{ margin-bottom:clamp(14px,1.1vw,20px) !important; }
+.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.cg-hero #cgDesc{
+  max-width:none !important; margin:0 !important; }
+/* one line where it fits, two on narrower screens */
+@media (min-width:1500px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+}
+@media (max-width:1499px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:normal; max-width:78ch !important; }
+}
+/* first content block gets air under the hero */
+.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(10px,.9vw,18px) !important; }
+.av-bar{ margin-bottom:clamp(16px,1.3vw,24px) !important; }
 </style>
 <script>window.IG_ITEMS = [{"src": "https://www.intelligaia.com/portfolio/unifying-30%2B-brands-into-a-single%2C-scalable-commerce-platform", "dl": "https://www.intelligaia.com/portfolio", "dlLabel": "portfolio", "doc": true, "title": "Colibri Group — Unifying 30+ brands", "kind": "Case study", "fields": [["Summary", "Cart and checkout standardised across 30+ brands through one atomic, brand-themable design system."], ["Services", "UX audit, design system architecture, atomic component library, frontend engineering, Storybook handoff"], ["Outcomes", "Shared commerce system across 30+ brands · standardised cart and checkout · scalable multi-brand growth"], ["Blocks", "Title, summary, services, methods, three outcomes, why Intelligaia, four to six narrative sections, close"]]}, {"src": "../assets/whitepapers/D3%20AI%20Assistant%20%E2%80%94%20Harvard.html", "dl": "../assets/whitepapers/D3%20AI%20Assistant%20%E2%80%94%20Harvard.html", "dlLabel": "HTML", "doc": true, "title": "D³ AI Assistant — Harvard Digital Data Design Institute", "kind": "Whitepaper", "fields": [["Summary", "A research-first AI assistant bridging academic rigor and executive action."], ["Layout", "Trirong serif, Raleway sans, warm #FAFAF6 paper. 1480px frame, 1080px measure, 220px sticky rail."], ["Sections", "Ten, numbered — context, root issues, proposal, research, discovery, principles, IA, workflows, archetypes, impact"], ["Pairing rule", "Every section covers design and engineering before advancing"]]}];</script>
 </head>
@@ -714,7 +735,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 
 <section class="section av-hero">
   <h1>Case studies &amp; whitepapers.</h1>
-  <p>Published client work and engineering papers. Page through them to see the format each one follows.</p>
+  <p>Published client work and engineering papers, and the format each one follows.</p>
 </section>
 
 <section class="section av-body">

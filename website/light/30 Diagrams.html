@@ -725,6 +725,27 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .res .st{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
   padding:3px 10px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted);
   white-space:nowrap; flex:none; }
+
+/* ══════════ PAGE HEADER SPACING ══════════
+   Hero was sitting tight under the fixed header and hard against the
+   content below it. Give it real clearance at both ends, and let the
+   description run on one line where there is room for it. */
+.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero{
+  padding-top:calc(var(--hdr-h) + clamp(46px,3.6vw,86px)) !important;
+  padding-bottom:clamp(34px,2.6vw,56px) !important; }
+.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1{ margin-bottom:clamp(14px,1.1vw,20px) !important; }
+.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.cg-hero #cgDesc{
+  max-width:none !important; margin:0 !important; }
+/* one line where it fits, two on narrower screens */
+@media (min-width:1500px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+}
+@media (max-width:1499px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:normal; max-width:78ch !important; }
+}
+/* first content block gets air under the hero */
+.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(10px,.9vw,18px) !important; }
+.av-bar{ margin-bottom:clamp(16px,1.3vw,24px) !important; }
 </style>
 <script>window.IG_ITEMS = [{"src": "../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png", "dl": "../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.pdf", "dlLabel": "PDF", "title": "Role-based AI deconstruction", "kind": "Matrix 2×2", "doc": false, "fields": [["Purpose", "Find which workflows are worth handing to an agent."], ["How it works", "Plot every task against friction and frequency; the high-high quadrant is the agent goldmine. A five-point readiness check gates anything before it moves into SAFE."], ["Use when", "Opening an engagement, or triaging automation requests."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Production%20Analyst.png", "dl": "../assets/diagrams/Production%20Analyst.pdf", "dlLabel": "PDF", "title": "Deconstructing a role for AI", "kind": "Hub-spoke → checklist", "doc": false, "fields": [["Purpose", "Show the readiness framework applied to one real job."], ["How it works", "Break a role into its five recurring tasks, run the set through the readiness test, land on a verdict. Makes the abstract framework concrete on a client's own domain."], ["Use when", "A client asks what the framework looks like against their team."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/SAFE%20Workflow%20Evaluation.png", "dl": "../assets/diagrams/SAFE%20Workflow%20Evaluation.pdf", "dlLabel": "PDF", "title": "SAFE workflow evaluation", "kind": "Swimlane flow", "doc": false, "fields": [["Purpose", "Design where the human sits in an AI-run workflow."], ["How it works", "Two lanes — human above, agent below. The four SAFE letters attach to the transitions: scope wraps the frame, authority governs delegation, feedback governs escalation, evaluation loops it back."], ["Use when", "Specifying an agent workflow before anyone writes code."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png", "dl": "../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.pdf", "dlLabel": "PDF", "title": "The SAFE framework", "kind": "Four-pillar + process strip", "doc": false, "fields": [["Purpose", "Explain the whole framework on one page."], ["How it works", "Four pillars, each with its governing question, three rules and a worked example. Beneath them, how the engineering team runs it, the five metrics tracked, and what it achieved."], ["Use when", "Onboarding a team, or the framework slide in a pitch."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png", "dl": "../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.pdf", "dlLabel": "PDF", "title": "SDLC knowledge into AI context", "kind": "2×2 narrative", "doc": false, "fields": [["Purpose", "Argue that the fix is context, not new tooling."], ["How it works", "What teams already had, why direct prompting still failed, the structured inputs that closed the gap, and the same flow running in practice. The through-line is that nothing new had to be invented."], ["Use when", "Countering the idea that AI adoption means replacing the process."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/AI-Generated%20Code.png", "dl": "../assets/diagrams/AI-Generated%20Code.pdf", "dlLabel": "PDF", "title": "AI-generated code: system impact", "kind": "Three-band process", "doc": false, "fields": [["Purpose", "Make the risk of AI-written pull requests visible before merge."], ["How it works", "Band one names the visibility gap, expected against actual. Band two walks the agent from mapping connected systems to an impact report. Band three keeps the human holding the decision."], ["Use when", "Explaining AI-assisted engineering governance to a review board."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Next%20Steps.png", "dl": "../assets/diagrams/Next%20Steps.pdf", "dlLabel": "PDF", "title": "Next steps: deconstruction to automation", "kind": "Numbered journey + loop", "doc": false, "fields": [["Purpose", "Show the client where the engagement goes after the first win."], ["How it works", "Five stages, each with its outcome, wired through a continuous feedback loop. Underneath, the three automation levels — no touch, low touch, high touch — chosen by confidence against risk."], ["Use when", "Closing discovery, or scoping a follow-on engagement."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}];</script>
 </head>
@@ -752,7 +773,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 
 <section class="section av-hero">
   <h1>Process diagrams &amp; flow charts.</h1>
-  <p>Seven published diagrams. Page through them, read what each is for, and download the source.</p>
+  <p>Seven published diagrams — page through them, read what each is for, download the source.</p>
 </section>
 
 <section class="section av-body">

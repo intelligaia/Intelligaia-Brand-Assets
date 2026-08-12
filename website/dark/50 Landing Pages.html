@@ -681,6 +681,27 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .res .st{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
   padding:3px 10px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted);
   white-space:nowrap; flex:none; }
+
+/* ══════════ PAGE HEADER SPACING ══════════
+   Hero was sitting tight under the fixed header and hard against the
+   content below it. Give it real clearance at both ends, and let the
+   description run on one line where there is room for it. */
+.av-hero,.cl-hero,.cg-hero,.lib-hero,.ad-top,.fx-hero{
+  padding-top:calc(var(--hdr-h) + clamp(46px,3.6vw,86px)) !important;
+  padding-bottom:clamp(34px,2.6vw,56px) !important; }
+.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1{ margin-bottom:clamp(14px,1.1vw,20px) !important; }
+.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.cg-hero #cgDesc{
+  max-width:none !important; margin:0 !important; }
+/* one line where it fits, two on narrower screens */
+@media (min-width:1500px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+}
+@media (max-width:1499px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p{ white-space:normal; max-width:78ch !important; }
+}
+/* first content block gets air under the hero */
+.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(10px,.9vw,18px) !important; }
+.av-bar{ margin-bottom:clamp(16px,1.3vw,24px) !important; }
 </style>
 <script>window.IG_ITEMS = [{"src": "../assets/marketing/banners/approved_banner_homepage-hero_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Homepage hero", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "The canonical treatment — flat yellow banner, Oswald headline, one primary CTA, isometric illustration held right."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}, {"src": "../assets/marketing/banners/approved_banner_homepage-hero_isometric-gradient_v03.png", "dl": "", "dlLabel": "", "title": "Homepage hero, variant", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "Same anatomy, different illustration weight. Use when the headline runs longer."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}, {"src": "../assets/marketing/banners/approved_banner_ux-strategy-hero_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "UX strategy", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "Service page hero. 3D render carries more depth for a strategy-led offer."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}, {"src": "../assets/marketing/banners/approved_banner_workshops-hero_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Workshops", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "Event and workshop promotion. Warmer composition, people-led."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}, {"src": "../assets/marketing/banners/approved_banner_user-research-hero_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "User research", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "Research service page. Process-led illustration rather than outcome-led."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}, {"src": "../assets/marketing/banners/approved_banner_journey-mapping-hero_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Journey mapping", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "Method page. The illustration reads as a sequence."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}, {"src": "../assets/marketing/banners/approved_banner_service-blueprint-hero_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Service blueprint", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "System-level offer. Denser composition suits the subject."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}, {"src": "../assets/marketing/banners/approved_banner_gov-services-hero_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Gov services", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "Public sector. More restrained palette weighting."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}, {"src": "../assets/marketing/banners/approved_banner_ux-design-hero_modular-systems_v01.png", "dl": "", "dlLabel": "", "title": "UX design", "kind": "Hero treatment", "doc": false, "fields": [["Where it is used", "Modular systems treatment for design-system engagements."], ["Anatomy", "Eyebrow, Oswald headline (8 words max), Geist sub-copy (24 words max), one primary CTA, illustration right"], ["Banner", "Flat #FFC800, full bleed, 1440px inner container"]]}];</script>
 </head>
@@ -708,7 +729,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 
 <section class="section av-hero">
   <h1>Landing pages.</h1>
-  <p>Nine published hero treatments. Each shows where it is used and the anatomy it follows.</p>
+  <p>Nine published hero treatments, each with where it is used and the anatomy it follows.</p>
 </section>
 
 <section class="section av-body">
