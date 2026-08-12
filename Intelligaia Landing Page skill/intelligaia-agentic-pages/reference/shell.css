@@ -1,0 +1,103 @@
+<style id="shell-css">
+  /* ══ THE SHELL — one header, one page width, one hero line ════════════════
+     The HOME PAGE is the reference. Every page must land on these numbers.
+
+     |            |  390 | 1440 | 1920 | 2560 | 3440 |
+     |------------|------|------|------|------|------|
+     | logo x     |   16 |   43 |   58 |   90 |  120 |
+     | content x  |   23 |   86 |  115 |  154 |  206 |
+     | content w  |  343 | 1267 | 1690 | 2253 | 3027 |   ← 88vw, always
+     | header h   |   63 |   69 |   69 |  111 |  128 |   ← measured into --hdrh
+
+     🔴🔴 THE HEADER IS NOT ON THE CONTENT RAIL.
+     The header rides the SCREEN (3vw); the content rides the PAGE (6vw). They
+     are deliberately different on the home page. An earlier version of this
+     file bound the header to a column-centring value (`--railpad`), which put
+     the logo 400px inboard of the home page's at 3440. Never do that again.
+     ═══════════════════════════════════════════════════════════════════════ */
+  :root{
+    --gut:    clamp(20px, 4.4vw, 128px);
+    --page:   88vw;
+    --hdrpad: 3vw;
+  }
+  @media (min-width:1921px){ :root{ --hdrpad: clamp(2.5rem, 3.5vw, 7rem) } }
+  /* 🔴 do NOT override --page on phones — 88vw already resolves to the home
+     page's 6vw inset at 390 (min(343,350) → 343). */
+  @media (max-width:760px){ :root{ --hdrpad: 4vw } }
+
+  header{
+    padding-left:  var(--hdrpad) !important;
+    padding-right: var(--hdrpad) !important;
+  }
+
+  .wrap, .awrap, .bwrap, .csmeasure, .hvid, #sitefooter .ft-grid,
+  main > section:first-of-type .pmeasure{
+    width: min(var(--page), calc(100% - var(--gut) * 2)) !important;
+    max-width: none !important;
+    margin-inline: auto !important;
+    padding-inline: 0 !important;
+  }
+
+  /* reading measures stay narrow but must GROW, not freeze. A 770px column with
+     type that scales around it loses characters per line as the screen grows. */
+  .pmeasure, .ameasure{
+    width: min(calc(100% - var(--gut) * 2), 1060px,
+               calc(770px + max(0px, (100vw - 1440px)) * 0.22)) !important;
+  }
+  main > section:first-of-type .pmeasure{ max-width:none !important }
+
+  /* ── the hero line ──────────────────────────────────────────────────────
+     Home's headline sits ~21vh BELOW THE HEADER at every size (192/900,
+     295/1400, 290/1440). The header grows 69 → 111 → 128 with :root, so this
+     must read a measured --hdrh, never a literal. */
+  main > section:first-of-type{
+    align-items: flex-start !important;
+    padding-top: calc(var(--hdrh, 72px) + clamp(4.6rem, 21vh, 22rem)) !important;
+    padding-bottom: clamp(3.2rem, 7vh, 5.6rem) !important;
+  }
+  main > section:first-of-type h1{ margin-top:0 !important }
+
+  /* ── ONE HEADING, every page below L0 ───────────────────────────────────
+     🔴 Oswald REGULAR (400). The sub-pages shipped at 200 and 300 and at seven
+     different sizes — 64px to 100.8px at 1440. */
+  main > section:first-of-type h1{
+    font-family:'Oswald', sans-serif !important;
+    font-weight:400 !important;
+    font-size:clamp(2.4rem, 5.3vw, 5.6rem) !important;   /* 34 · 76 · 120 · 151 */
+    line-height:1.05 !important;
+    letter-spacing:.004em !important;
+    max-width:16ch !important;
+    text-wrap:balance;
+  }
+  main > section:first-of-type .lede,
+  main > section:first-of-type > * > .lede{
+    font-family:'Geist','Inter',sans-serif !important;
+    font-weight:400 !important;
+    font-size:clamp(1.04rem, 1.24vw, 1.3rem) !important;
+    line-height:1.64 !important;
+    max-width:66ch !important;
+    margin-top:clamp(1.3rem, 2.6vh, 2rem) !important;
+  }
+  @media (max-width:760px){
+    main > section:first-of-type h1{
+      font-size:clamp(2.1rem, 8.4vw, 3.2rem) !important; max-width:none !important }
+  }
+
+  #bg{ background:
+    radial-gradient(46% 40% at 78% 8%,  rgba(255,255,255,.11), transparent 68%),
+    radial-gradient(52% 44% at 8%  32%, rgba(255,255,255,.13), transparent 70%),
+    radial-gradient(44% 40% at 88% 78%, rgba(255,255,255,.09), transparent 70%) !important }
+
+  /* ── 🔴 descriptions are GEIST ───────────────────────────────────────────
+     `.lede` was Oswald 300 on all seven sub-pages — a DISPLAY face doing body
+     work. Oswald is display only; Geist carries every description. */
+  .lede, .csdeck{
+    font-family:'Geist', system-ui, sans-serif !important;
+    font-weight:400 !important;
+    font-size:clamp(1.04rem, 1.24vw, 1.3rem) !important;
+    line-height:1.64 !important;
+    letter-spacing:0 !important;
+    color:rgba(244,246,255,.72) !important;
+    max-width:66ch !important;
+  }
+</style>
