@@ -491,6 +491,11 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .brief .bf .v,.philo-pts span,.pr-dd li{ font-size:var(--body) !important; }
 .vw-cap .t{ font-size:calc(var(--label) * 1.25) !important; }
 .dg-body h3,.tile-meta h3{ font-size:calc(var(--h2) * .5) !important; }
+
+/* nav: mark the module you are on */
+.g-nav a.on{ color:var(--yellow) !important; opacity:1 !important; position:relative; }
+.g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-9px;
+  height:2px; background:var(--yellow); border-radius:2px; }
 </style>
 </head>
 <body>
@@ -503,7 +508,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
       <span class="g-sys">Brand assets</span>
     </a>
     <nav class="g-nav">
-      <a href="10%20Foundations.html">Foundations</a>
+      <a href="10%20Foundations.html" class="on">Foundations</a>
       <a href="20%20Brand%20Assets.html">Brand assets</a>
       <a href="30%20Diagrams.html">Diagrams</a>
       <a href="40%20Service%20Catalog.html">Service catalog</a>

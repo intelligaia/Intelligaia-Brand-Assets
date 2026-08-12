@@ -375,6 +375,11 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   border:1px solid var(--hair-2); border-radius:999px;
   font-family:'Geist',sans-serif; font-size:var(--label); color:var(--ink); }
 .prim svg{ flex:none; }
+
+/* nav: mark the module you are on */
+.g-nav a.on{ color:var(--yellow) !important; opacity:1 !important; position:relative; }
+.g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-9px;
+  height:2px; background:var(--yellow); border-radius:2px; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
 // ── Word-by-word reveal on every display heading ──
@@ -439,7 +444,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
     </a>
     <nav class="g-nav">
       <a href="10%20Foundations.html">Foundations</a>
-      <a href="20%20Brand%20Assets.html">Brand assets</a>
+      <a href="20%20Brand%20Assets.html" class="on">Brand assets</a>
       <a href="30%20Diagrams.html">Diagrams</a>
       <a href="40%20Service%20Catalog.html">Service catalog</a>
       <a href="50%20Landing%20Pages.html">Landing pages</a>
