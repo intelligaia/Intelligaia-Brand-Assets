@@ -1,0 +1,60 @@
+{
+  "docType": "proposal",
+  "meta": {
+    "title": "Agent Console UX Redesign",
+    "eyebrow": "Proposal",
+    "company": "Intelligaia",
+    "client": "Nimbus AI — Product & Platform",
+    "project": "Agent Operator Console",
+    "purpose": "Cut time-to-first-successful-run for new operators by redesigning the console around the tasks they actually perform.",
+    "docId": "IG-PRO-0207",
+    "date": "12 August 2026",
+    "confidential": true,
+    "treatment": "technical"
+  },
+  "blocks": [
+    { "type": "contents", "title": "Contents", "items": [
+      "The problem",
+      "Our approach",
+      "Scope",
+      "Timeline",
+      "Why Intelligaia",
+      "Investment",
+      "Next steps"
+    ]},
+    { "type": "pagebreak" },
+    { "type": "h1", "text": "The problem" },
+    { "type": "body", "text": "New operators reach a working agent run slowly. The console exposes the full API surface up front, so the first session is spent decoding concepts — runs, tools, traces, evals — before any value appears. Your own funnel shows the drop-off between signup and first successful run. **The interface is organised around the platform's architecture, not the operator's task.**" },
+    { "type": "h1", "text": "Our approach" },
+    { "type": "body", "text": "We redesign the console around a small number of operator jobs — launch a run, inspect a trace, fix a failing eval — and let the API surface recede until it is needed. The design system stays the source of truth; every screen is built from tokens and documented states, including the ones teams usually skip: empty, loading, partial, and error." },
+    { "type": "bullets", "items": [
+      "Task-first information architecture, validated with your operators before any high-fidelity design.",
+      "A state-complete component set — empty, loading, error, first-run, and power-user for every core view.",
+      "Accessibility to WCAG 2.1 AA as a build requirement, not a later audit."
+    ]},
+    { "type": "callout", "text": "First successful run becomes a guided path, not a scavenger hunt." },
+    { "type": "h1", "text": "Scope" },
+    { "type": "kv", "rows": [
+      ["Discovery", "Operator interviews, task analysis, current-console audit"],
+      ["IA & flows", "Task-first navigation model, first-run path, key flows"],
+      ["UI system", "Console screens on your design system, state-complete"],
+      ["Handoff", "Figma (auto-layout, variables), documented states, a11y notes"]
+    ]},
+    { "type": "h1", "text": "Timeline" },
+    { "type": "table", "headers": ["Phase", "Weeks", "Output"], "rows": [
+      ["Discovery", "1–2", "Task map, audit findings"],
+      ["IA & flows", "3–4", "Navigation model, first-run path"],
+      ["UI system", "5–8", "State-complete console screens + handoff"]
+    ]},
+    { "type": "h1", "text": "Why Intelligaia" },
+    { "type": "bullets", "items": [
+      "Enterprise, data-dense product design is the core practice — not a side offering.",
+      "System-first delivery: output maps to your components, so it survives past the engagement.",
+      "Accessibility and edge-case rigor are built into how we work, not bolted on."
+    ]},
+    { "type": "h1", "text": "Investment" },
+    { "type": "body", "text": "[TK: pricing — provide fee basis and payment schedule]" },
+    { "type": "h1", "text": "Next steps" },
+    { "type": "body", "text": "A 45-minute working session to confirm the operator jobs and lock the discovery start date." }
+  ]
+}

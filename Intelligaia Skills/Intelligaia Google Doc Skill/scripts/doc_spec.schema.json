@@ -1,0 +1,56 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Intelligaia doc_spec",
+  "description": "Content contract for build_docx.js. The model fills this; the script makes it on-brand. Never invent facts — use [TK: …] for gaps.",
+  "type": "object",
+  "required": ["docType", "meta", "blocks"],
+  "properties": {
+    "docType": { "enum": ["description", "proposal", "architecture", "qna"] },
+    "meta": {
+      "type": "object",
+      "required": ["title", "eyebrow", "client", "project", "purpose"],
+      "properties": {
+        "title": { "type": "string", "description": "Document title on the cover." },
+        "eyebrow": { "type": "string", "description": "Small caps label / doc type, e.g. 'Description', 'Proposal', 'Discovery Questionnaire'." },
+        "company": { "type": "string", "description": "Defaults to 'Intelligaia'. Shown in the cover 'Prepared by' line." },
+        "client": { "type": "string", "description": "REQUIRED on the cover. Who the document is for. Ask if missing; render [TK: client] if unknown." },
+        "project": { "type": "string", "description": "REQUIRED on the cover. The project/engagement this doc belongs to. Ask if missing." },
+        "purpose": { "type": "string", "description": "REQUIRED on the cover. One line on why this document exists. Ask if missing." },
+        "docId": { "type": "string", "description": "Reference id, shown on the cover meta line." },
+        "date": { "type": "string" },
+        "audience": { "type": "string" },
+        "confidential": { "type": "boolean" },
+        "draft": { "type": "boolean", "description": "Adds a DRAFT mark on the cover." },
+        "treatment": { "enum": ["standard", "technical"], "description": "Client-adaptive treatment; 'technical' = mono labels + tighter grid (deep-tech clients)." }
+      }
+    },
+    "blocks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type"],
+        "properties": {
+          "type": { "enum": ["h1","h2","lede","body","bullets","numbered","callout","kv","table","qa","qform","contents","figure","quote","divider","pagebreak"] },
+          "text": { "type": "string", "description": "For h1/h2/lede/body/callout/quote. Body/bullets/table cells support **bold** for navy-bold emphasis." },
+          "items": { "type": "array", "items": { "type": "string" }, "description": "For bullets/numbered, and for contents when only section names are known." },
+          "entries": { "type": "array", "items": { "type": "object", "properties": { "title": { "type": "string" }, "page": { "type": "number" } } }, "description": "For DOCX contents when cached page numbers are known: [{title,page}]. Titles should match h1 section names in order." },
+          "title": { "type": "string", "description": "For contents (heading, default 'Contents'). Every doc type should include a visible heading-based Word TOC block after the cover, followed by pagebreak. Google Docs-native TOC must be inserted in Google Docs after headings exist." },
+          "rows": { "type": "array", "description": "kv: [[key,value],…]. table: [[cell,…],…]." },
+          "muted": { "type": "boolean", "description": "For kv: render values as grey hint text (template/example asks)." },
+          "headers": { "type": "array", "items": { "type": "string" }, "description": "For table." },
+          "question": { "type": "string", "description": "For qa and qform." },
+          "answer": { "type": "string", "description": "For qa. Use \\n to split paragraphs." },
+          "number": { "type": "string", "description": "For qform: the item number, e.g. '1.1'." },
+          "hint": { "type": "string", "description": "For qform: optional grey hint shown inside the response box." },
+          "lines": { "type": "number", "description": "For qform: approximate blank lines of height in the response box (default 2)." },
+          "assetId": { "type": "string", "description": "manifest.json asset id (figure). Resolved to raw_url + dimensions." },
+          "path": { "type": "string", "description": "manifest path fallback for a figure." },
+          "rawUrl": { "type": "string", "description": "Direct PNG url for a figure." },
+          "localPath": { "type": "string", "description": "Local PNG path for a figure (e.g. a user-supplied diagram)." },
+          "caption": { "type": "string", "description": "For figure." },
+          "attribution": { "type": "string", "description": "For quote." }
+        }
+      }
+    }
+  }
+}

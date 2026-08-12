@@ -1,0 +1,53 @@
+{
+  "docType": "description",
+  "meta": {
+    "title": "AI-Assisted Product Design",
+    "eyebrow": "Description",
+    "lede": "A practice that pairs senior designers with AI tooling to move enterprise products from idea to validated interface faster — without giving up craft, research rigor, or accessibility.",
+    "docId": "IG-DOC-0142",
+    "date": "12 August 2026",
+    "audience": "Product & design leaders",
+    "confidential": false,
+    "draft": false
+  },
+  "blocks": [
+    { "type": "contents", "title": "Contents", "items": [
+      "Overview",
+      "How it works",
+      "Key capabilities",
+      "Who it's for",
+      "Where it fits"
+    ]},
+    { "type": "pagebreak" },
+    { "type": "h1", "text": "Overview" },
+    { "type": "body", "text": "AI-Assisted Product Design is how Intelligaia builds enterprise interfaces when speed and quality both matter. Designers stay in charge of the decisions — the strategy, the information architecture, the interaction model — while AI handles the mechanical weight: generating first-pass layouts, filling realistic content, exploring variants, and checking work against a design system. The result is fewer days spent on production and more spent on the parts of the problem that need human judgment." },
+    { "type": "body", "text": "The practice exists because most enterprise design time is not spent designing. It is spent redrawing the same card three ways, wiring up states, and reconciling a mockup with a component library. **When that work is automated, the designer's attention returns to the user's actual problem.**" },
+    { "type": "h1", "text": "How it works" },
+    { "type": "body", "text": "Every engagement starts with the problem, not the tool. We establish who the user is, what outcome they need, and what is blocking them today. Only then does AI enter the loop — always inside guardrails set by the design system, never as an unsupervised author." },
+    { "type": "h2", "text": "The loop" },
+    { "type": "numbered", "items": [
+      "Frame the problem — personas, jobs-to-be-done, and the one decision the screen has to support.",
+      "Generate structured options — AI produces layout and content variants bound to the system's tokens and components, so nothing off-brand reaches the canvas.",
+      "Direct and refine — the designer edits, combines, and pushes back, treating AI output as a fast first draft rather than a finished answer.",
+      "Validate — accessibility, edge cases, and the full state spectrum (empty, loading, error, first-use, power-user) are checked before handoff."
+    ]},
+    { "type": "callout", "text": "AI never ships unreviewed. A person owns every decision that reaches a user." },
+    { "type": "h1", "text": "Key capabilities" },
+    { "type": "h2", "text": "System-bound generation" },
+    { "type": "body", "text": "Generated screens use real tokens, variants, and states — not free-floating pixels. Output that cannot map to the component library is rejected, so the design system stays the source of truth instead of being quietly bypassed." },
+    { "type": "h2", "text": "Real content, real edge cases" },
+    { "type": "body", "text": "We design for the content that will actually exist: long names, empty tables, failed loads, and the power user with two hundred rows. Placeholder text is never the finished state." },
+    { "type": "h2", "text": "Accessibility by default" },
+    { "type": "body", "text": "WCAG 2.1 AA is a floor, not a finishing pass. Contrast, focus order, target size, and screen-reader behavior are part of the brief from the first frame." },
+    { "type": "h1", "text": "Who it's for" },
+    { "type": "body", "text": "Teams shipping enterprise software — dense, data-heavy tools where clarity beats decoration — that need to move at product speed without accumulating design debt. It fits best where a design system already exists or is being built alongside the work." },
+    { "type": "kv", "rows": [
+      ["Best fit", "Enterprise & data-dense product teams"],
+      ["Prerequisite", "A design system, or willingness to build one"],
+      ["Typical engagement", "[TK: engagement length]"],
+      ["Handoff", "Figma with auto-layout, variables, and documented states"]
+    ]},
+    { "type": "h1", "text": "Where it fits" },
+    { "type": "body", "text": "AI-Assisted Product Design sits between research and engineering. It consumes strategy and research inputs and produces build-ready, accessible interfaces — connecting Intelligaia's UX research, design-system, and delivery practices into one continuous path from insight to shipped screen." }
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "docType": "qna",
+  "meta": {
+    "title": "Discovery & Clarification Questionnaire",
+    "eyebrow": "Discovery Questionnaire",
+    "company": "Intelligaia",
+    "client": "Habib Dieye — IPRES / CSS",
+    "project": "AI Chatbot Integration",
+    "purpose": "Gathers IPRES’s goals, users, systems, and the task workflows behind each service, so the chatbot proposal we bring back is scoped to how the organisation actually operates.",
+    "date": "12 August 2026",
+    "docId": "IG-QNA-0031",
+    "treatment": "standard"
+  },
+  "blocks": [
+    { "type": "body", "text": "Thank you for showing us your portal — it gave us a clear first picture of your services. The chatbot we have in mind goes beyond answering questions: it carries out tasks for your users and keeps your services available 24/7, well past working hours. The questions below help us understand your goals, your users, the systems the bot will work with, and the steps behind each task, so the proposal we bring back is grounded in how you really operate." },
+    { "type": "contents", "title": "Contents", "entries": [
+      { "title": "Project goals and success", "page": 5 },
+      { "title": "The platform today", "page": 6 },
+      { "title": "Chatbot scope and actions", "page": 6 },
+      { "title": "Tools and system access", "page": 7 },
+      { "title": "Action workflows", "page": 8 },
+      { "title": "Users and volume", "page": 10 },
+      { "title": "Languages", "page": 11 },
+      { "title": "Data, security and residency", "page": 11 },
+      { "title": "Technical and integration", "page": 12 },
+      { "title": "Compliance and rules", "page": 13 },
+      { "title": "Timeline, budget and access", "page": 13 },
+      { "title": "Anything else", "page": 14 }
+    ]},
+    { "type": "pagebreak" },
+
+    { "type": "h1", "text": "Project goals and success" },
+    { "type": "qform", "number": "1.1", "question": "Why do you want the chatbot now? Is there a date or event driving it?" },
+    { "type": "qform", "number": "1.2", "question": "Six months after launch, what will a good result look like for you?" },
+    { "type": "qform", "number": "1.3", "question": "How do you want to measure success? For example: how many after-hours questions the bot handles, or how many requests are done without an agent." },
+
+    { "type": "h1", "text": "The platform today" },
+    { "type": "qform", "number": "2.1", "question": "Which three to five services do users use the most? For example: career and points, claims, declarations, payments." },
+    { "type": "qform", "number": "2.2", "question": "Where do users get stuck most often, or contact support most often?" },
+    { "type": "qform", "number": "2.3", "question": "Which features work well today and should not change?" },
+    { "type": "qform", "number": "2.4", "question": "Can you give us test access to the inner pages and full flows, not just the dashboard?" },
+
+    { "type": "h1", "text": "Chatbot scope and actions" },
+    { "type": "qform", "number": "3.1", "question": "Please list the tasks the bot must do for the user, in priority order. For example: retirement and points simulation, submit a claim, check status, update details." },
+    { "type": "qform", "number": "3.2", "question": "For each task, what are the details the bot will need to finish it fully, or to collect and pass to an agent?" },
+    { "type": "qform", "number": "3.3", "question": "Should employers and employees get different options in the bot? Please note any differences." },
+    { "type": "qform", "number": "3.4", "question": "Should the bot send messages on its own (reminders, deadlines, status), or only reply when asked?" },
+    { "type": "qform", "number": "3.5", "question": "Are there tasks that must never be automated and always need a person?" },
+
+    { "type": "h1", "text": "Tools and system access" },
+    { "type": "qform", "number": "4.1", "question": "For each task or action, is there an API or service the bot can call to run it?" },
+    { "type": "qform", "number": "4.2", "question": "Can you give us a test environment with test accounts and access keys, so we can build and test tasks without touching live data?" },
+    { "type": "qform", "number": "4.3", "question": "How should the bot sign in to these systems (service account, API key, token)? How should it act for a logged-in user?" },
+    { "type": "qform", "number": "4.4", "question": "Which tasks change data (submit, update), and which only read data (look up, simulate)? Do any changes need extra approval, like an OTP or a supervisor, before they are saved?" },
+    { "type": "qform", "number": "4.5", "question": "Are there limits or maintenance windows on these systems we must respect?" },
+    { "type": "qform", "number": "4.6", "question": "What records or logs do you need when the bot does a task for a user?" },
+
+    { "type": "h1", "text": "Action workflows" },
+    { "type": "body", "text": "To do a task well, the bot needs the steps behind it. We have started the claim example below — please correct anything that is wrong. The grey text is only a hint." },
+    { "type": "h2", "text": "Example: claim for missing career years (please confirm or correct)" },
+    { "type": "kv", "muted": true, "rows": [
+      ["Task name", "Claim for missing career years"],
+      ["Who can do it", "employee (please confirm)"],
+      ["When it is used", "the user finds one or more years missing from the career record"],
+      ["What the user must give", "employee ID, employer name, the missing period, supporting documents"],
+      ["What the bot looks up, and from which system", "career and points record from [system?]"],
+      ["Checks and rules", "the period is not already recorded; the employer exists; within the time limit"],
+      ["Approval steps (who, and how long)", "reviewed by [role], approved in [X] days"],
+      ["What is created or updated, and in which system", "a claim case is opened in [system]"],
+      ["What the user gets back", "a claim reference number and a status link"],
+      ["Special cases", "duplicate claim, missing documents, employer not found"],
+      ["Time it takes today", "done in [X] days"]
+    ]},
+    { "type": "h2", "text": "Blank template — copy this for each other task" },
+    { "type": "kv", "muted": true, "rows": [
+      ["Task name", ""],
+      ["Who can do it", "employer / employee / both"],
+      ["When it is used", ""],
+      ["What the user must give", ""],
+      ["What the bot looks up, and from which system", ""],
+      ["Checks and rules", ""],
+      ["Approval steps (who, and how long)", ""],
+      ["What is created or updated, and in which system", ""],
+      ["What the user gets back (reference number, document)", ""],
+      ["Special cases (rejection, missing data, duplicate)", ""],
+      ["Time it takes today", ""]
+    ]},
+
+    { "type": "h1", "text": "Users and volume" },
+    { "type": "qform", "number": "6.1", "question": "Please confirm the persona types and roles: Employers and Employees." },
+    { "type": "qform", "number": "6.2", "question": "How many users do you expect at the same time, or at busy times?" },
+    { "type": "qform", "number": "6.3", "question": "How much growth do you expect in the next one to two years?" },
+
+    { "type": "h1", "text": "Languages" },
+    { "type": "qform", "number": "7.1", "question": "Please confirm the languages you need. We noted French (official), English, Spanish." },
+    { "type": "qform", "number": "7.2", "question": "Should the bot detect the language on its own, or let the user pick?" },
+
+    { "type": "h1", "text": "Data, security and residency" },
+    { "type": "qform", "number": "8.1", "question": "Please confirm: the bot must use locally hosted models, and no public LLMs (like OpenAI or Anthropic). Is that correct?" },
+    { "type": "qform", "number": "8.2", "question": "Where must the data and the models be hosted? For example: on your servers, a national or government cloud, or a set country." },
+    { "type": "qform", "number": "8.3", "question": "What data will the bot use (for example salary, career and points, payments)? Is any data off limits or hidden from the bot?" },
+    { "type": "qform", "number": "8.4", "question": "Who owns data governance? Are there data levels we must follow?" },
+    { "type": "qform", "number": "8.5", "question": "Are there security standards, certificates, or log and retention rules we must meet?" },
+
+    { "type": "h1", "text": "Technical and integration" },
+    { "type": "qform", "number": "9.1", "question": "What database and technology run the current portal? Your technical team can help here." },
+    { "type": "qform", "number": "9.2", "question": "How do you handle login and role-based access today?" },
+    { "type": "qform", "number": "9.3", "question": "Does the bot need to talk to more than one government service?" },
+    { "type": "qform", "number": "9.4", "question": "Is there any chatbot or automation in place now? You mentioned a demo about six months ago — can you share the details or a recording so we can look at it?" },
+
+    { "type": "h1", "text": "Compliance and rules" },
+    { "type": "qform", "number": "10.1", "question": "Which data protection laws and regulators apply? For example, Senegal data law (Law 2008-12) and its regulator, the CDP." },
+    { "type": "qform", "number": "10.2", "question": "Are there complaint or grievance steps the bot must follow?" },
+    { "type": "qform", "number": "10.3", "question": "Are there contract or compliance terms we must accept to work with you or the connected government services?" },
+
+    { "type": "h1", "text": "Timeline, budget and access" },
+    { "type": "qform", "number": "11.1", "question": "Is there a fixed go-live date or deadline? What is driving it?" },
+    { "type": "qform", "number": "11.2", "question": "What kind of engagement do you prefer: fixed scope, retainer, or time and material?" },
+    { "type": "qform", "number": "11.3", "question": "Who will be our main technical and business contacts, and when can access start?" },
+
+    { "type": "h1", "text": "Anything else" },
+    { "type": "qform", "number": "12.1", "question": "Is there anything important we did not ask that we should know?" }
+  ]
+}
