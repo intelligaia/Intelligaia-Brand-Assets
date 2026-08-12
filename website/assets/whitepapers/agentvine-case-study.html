@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>AgentVine: The Reasoning-Layer Ad Network for AI Agents | Intelligaia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Trirong:ital,wght@0,400;0,500;0,600;1,400&family=Raleway:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  /* ==================== Base ==================== */
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    font-family: 'Raleway', Arial, Helvetica, sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    color: #000;
+    background: #fff;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  a { color: inherit; text-decoration: none; }
+  img { max-width: 100%; display: block; }
+  h1,h2,h3,h4 { font-family: 'Trirong', Times, serif; font-weight: 500; color: #000; letter-spacing: -0.005em; margin: 0; }
+  button { font-family: inherit;}
+
+  .container { max-width: 1240px; margin: 0 auto; padding: 0 64px;}
+  .container-narrow { max-width: 1080px; margin: 0 auto; padding: 0 64px;}
+  .container-wide { max-width: 1440px; margin: 0 auto; padding: 0 40px;}
+
+  :root {
+    --soft-sage:
+      radial-gradient(80% 60% at 0% 0%, rgba(255,255,255,0.7), transparent 60%),
+      radial-gradient(60% 60% at 100% 100%, rgba(43,90,37,0.13), transparent 60%),
+      linear-gradient(155deg, #f0f7e6 0%, #dceac8 50%, #c2db9f 100%);
+    --soft-lavender: linear-gradient(118deg, #e8e0fa 0%, #f4eef4 40%, #d6e5ec 100%);
+    --soft-cream: linear-gradient(180deg, #fbf7f0 0%, #f3eddf 100%);
+    --banner-grad:
+      radial-gradient(120% 80% at 14% 10%, rgba(122, 158, 70, 0.55), transparent 55%),
+      radial-gradient(110% 90% at 6% 50%, rgba(146, 178, 92, 0.42), transparent 55%),
+      radial-gradient(95% 80% at 0% 100%, rgba(60, 105, 48, 0.45), transparent 60%),
+      radial-gradient(120% 100% at 100% 18%, rgba(20, 80, 50, 0.55), transparent 55%),
+      radial-gradient(140% 100% at 100% 90%, rgba(12, 60, 38, 0.7), transparent 60%),
+      linear-gradient(110deg, #0e2418 0%, #18382a 35%, #1f4a2d 55%, #0e2918 100%);
+  }
+
+  /* ==================== Header ==================== */
+  .ig-header { position: sticky; top: 0; z-index: 100; background: #fff; border-bottom: 1px solid rgba(0,0,0,0.04);}
+  .ig-header__inner { max-width: 1440px; margin: 0 auto; padding: 14px 40px; display: flex; align-items: center; gap: 48px;}
+  .ig-logo { flex-shrink: 0;}
+  .ig-logo img { height: 42px; width: auto; display: block;}
+  .ig-nav { display: flex; align-items: center; gap: 36px; flex: 1; justify-content: center;}
+  .ig-nav a {
+    font-family: 'Raleway', sans-serif; font-size: 14.5px; font-weight: 500; color: #000;
+    padding: 6px 0; border-bottom: 2px solid transparent; transition: border-color .2s;
+  }
+  .ig-nav a:hover, .ig-nav a.active { border-bottom-color: #000;}
+  .ig-contact {
+    flex-shrink: 0; display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 22px; border: 1px solid #000; border-radius: 100px;
+    font-size: 14.5px; font-weight: 500; color: #000;
+  }
+  .ig-contact:hover { background: #000; color: #fff;}
+  .ig-contact::after { content: "→"; font-size: 16px;}
+
+  /* ==================== Top / Title ==================== */
+  .top-area { padding: 60px 0 0; background: #fff;}
+  .back-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    font-family: 'Raleway', sans-serif; font-size: 15px; color: #000;
+    text-decoration: underline; text-underline-offset: 4px;
+    margin-bottom: 48px;
+  }
+  .back-link::before { content: "←";}
+  .client-mark { margin-bottom: 28px;}
+  .client-mark img { height: 42px; width: auto;}
+  .title-h1 {
+    font-family: 'Trirong', Times, serif; font-weight: 500;
+    font-size: clamp(40px, 6.2vw, 78px); line-height: 1.05; letter-spacing: -0.012em;
+    margin: 0 0 56px; max-width: 1140px;
+  }
+
+  /* ==================== Hero banner ==================== */
+  .hero-image { width: 100%; max-width: 1440px; margin: 0 auto; border-radius: 18px; overflow: hidden; box-shadow: 0 30px 80px -30px rgba(20,50,30,0.4);}
+  .hero-image img { width: 100%; height: auto; display: block;}
+
+  /* ==================== Summary ==================== */
+  .summary { background: var(--soft-lavender); padding: 100px 0 110px; margin-top: 100px;}
+  .summary__grid { display: grid; grid-template-columns: 1.05fr 1fr; gap: 96px; align-items: start;}
+  .summary__copy h2 { font-family: 'Trirong', Times, serif; font-weight: 600; font-size: clamp(22px, 2.3vw, 30px); line-height: 1.35; color: #000; margin-bottom: 32px;}
+  .summary__copy p { font-family: 'Raleway', sans-serif; font-size: 16px; line-height: 1.6; color: #000; margin: 0 0 12px;}
+  .summary__copy p.tags { margin-top: 32px; font-weight: 500;}
+  .summary__pills { display: flex; flex-direction: column; gap: 18px;}
+  .sm-pill {
+    background: rgba(255,255,255,0.6);
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255,255,255,0.85);
+    border-radius: 16px; padding: 22px 28px;
+    font-family: 'Trirong', Times, serif; font-weight: 500;
+    font-size: 19px; line-height: 1.4; color: #000;
+  }
+
+  /* ==================== Why Intelligaia ==================== */
+  .why { padding: 120px 0 110px; background: #fff;}
+  .why h2 {
+    font-family: 'Trirong', Times, serif; font-weight: 500;
+    font-size: clamp(30px, 3.6vw, 46px); color: #000;
+    padding-bottom: 18px; border-bottom: 1.5px solid #000;
+    max-width: 540px; margin-bottom: 56px;
+  }
+  .why__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: flex-start;}
+  .why__points { display: flex; flex-direction: column; gap: 28px; padding-top: 10px;}
+  .why__point {
+    font-family: 'Trirong', Times, serif; font-weight: 500;
+    font-size: 22px; line-height: 1.35; color: #000;
+    padding-left: 22px; border-left: 3px solid #2b5a25;
+  }
+  .why__cta-row { margin-top: 12px;}
+  .why__cta {
+    display: inline-flex; align-items: center; gap: 10px;
+    padding: 12px 24px; border: 1px solid #000; border-radius: 100px;
+    font-family: 'Raleway', sans-serif; font-size: 14.5px; font-weight: 500; color: #000;
+  }
+  .why__cta:hover { background: #000; color: #fff;}
+  .why__visual {
+    position: relative; border-radius: 18px; overflow: hidden;
+    background: var(--soft-sage);
+    padding: 32px; aspect-ratio: 1.1 / 1;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .why__visual-cap {
+    position: absolute; top: 22px; left: 22px;
+    display: flex; align-items: center; gap: 10px;
+    background: rgba(255,255,255,0.78);
+    padding: 8px 16px; border-radius: 100px;
+    font-family: 'Raleway',sans-serif; font-size: 12px; color: #1a3d18;
+    backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    z-index: 2;
+  }
+  .why__visual-cap::before { content:""; width:8px; height:8px; border-radius:50%; background:#2b5a25;}
+  .why__visual img { width: 100%; border-radius: 10px; box-shadow: 0 18px 36px -12px rgba(20,50,30,0.32);}
+
+  /* ==================== Personas ==================== */
+  .personas { padding: 110px 0 90px; background: linear-gradient(180deg, #fbf6fa 0%, #fff 100%);}
+  .personas h2 { font-family:'Trirong', serif; font-weight:500; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; text-align: center; max-width: 1000px; margin: 0 auto 24px;}
+  .personas__sub { text-align: center; font-size: 17px; color: #000; max-width: 720px; margin: 0 auto 56px;}
+  .personas__grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; max-width: 1240px; margin: 0 auto;}
+  .pcard { background:#fff; border: 1px solid #ececea; border-radius: 18px; overflow: hidden;}
+  .pcard__head { display: grid; grid-template-columns: 96px 1fr; padding: 28px 30px; gap: 18px; align-items: center; border-bottom: 1px solid #ececea;}
+  .pcard__role { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #2b5a25; margin-bottom: 6px; font-weight: 600;}
+  .pcard__name { font-family:'Trirong', serif; font-weight: 500; font-size: 28px; margin-bottom: 4px;}
+  .pcard__meta { font-size: 12px; color: #6b6b62;}
+  .pcard__body { padding: 24px 30px 30px;}
+  .pcard__bio { font-size: 14px; line-height: 1.55; color: #2a2a24; margin: 0 0 22px; padding-bottom: 22px; border-bottom: 1px dashed #d5d5d0;}
+  .pcard__section { margin-bottom: 22px;}
+  .pcard__section-l { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #7a7a72; font-weight: 600; margin-bottom: 10px;}
+  .plist { list-style:none; padding:0; margin:0; display:flex; flex-direction:column; gap: 7px;}
+  .plist li { padding-left: 16px; position: relative; font-size: 13.5px; color: #1a1916; line-height: 1.5;}
+  .plist li::before { content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background: #2b5a25;}
+  .plist--pain li::before { background: #b85742;}
+  .ptraits { display: flex; flex-direction: column; gap: 12px;}
+  .ptrait { display: grid; grid-template-columns: 90px 1fr 90px; gap: 14px; align-items:center; font-size: 11px;}
+  .ptrait__l, .ptrait__r { color: #8a8a80; font-family: 'Raleway', sans-serif;}
+  .ptrait__l.active, .ptrait__r.active { color: #1a1916; font-weight: 600;}
+  .ptrait__r { text-align: right;}
+  .ptrait__bar { height: 5px; background: #ececea; border-radius: 4px; position: relative; overflow: hidden;}
+  .ptrait__fill { position: absolute; left: 0; top: 0; height: 100%; background: #1a1916; border-radius: 4px;}
+  .pstack { display: flex; flex-wrap: wrap; gap: 6px;}
+  .pstack span { font-size: 11.5px; padding: 4px 10px; background: #f4f4ee; color: #1a1916; border-radius: 5px;}
+
+  /* ==================== Transformation ==================== */
+  .transform { background: #fff; padding: 110px 0;}
+  .transform-head { text-align: center; max-width: 1080px; margin: 0 auto 56px;}
+  .transform-head h2 { font-family: 'Trirong', Times, serif; font-weight: 500; font-size: clamp(34px, 4.4vw, 60px); line-height: 1.1; margin-bottom: 24px;}
+  .transform__sub { font-family: 'Raleway', sans-serif; font-size: 18px; line-height: 1.55; color: #000; max-width: 780px; margin: 0 auto;}
+  .transform__visual { background: var(--soft-sage); border-radius: 22px; padding: 44px; max-width: 1240px; margin: 0 auto;}
+  .transform__visual-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 28px;}
+  .tv-card {
+    background: rgba(255,255,255,0.62);
+    border: 1px solid rgba(255,255,255,0.9);
+    backdrop-filter: blur(6px); -webkit-backdrop-filter: blur(6px);
+    border-radius: 16px; padding: 30px; color: #142a10; min-height: 320px; text-align: left;
+  }
+  .tv-card h3 { color: #142a10; font-family: 'Trirong', serif; font-size: 24px; margin-bottom: 14px;}
+  .tv-list { list-style: none; padding: 0; margin: 0;}
+  .tv-list li { font-family:'Raleway',sans-serif; font-size: 14px; color: #2c4523; padding: 11px 0; border-top: 1px solid rgba(20,42,16,0.08); display: flex; align-items: flex-start; gap: 12px;}
+  .tv-list li:first-child { border-top: none;}
+  .tv-list li::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #b85742; flex-shrink: 0; margin-top: 6px;}
+  .tv-list--good li::before { background: #2b5a25;}
+  .tv-card--good { background: rgba(43,90,37,0.92); border-color: rgba(142,200,37,0.4); color: #f0f4ec;}
+  .tv-card--good h3 { color: #fff;}
+  .tv-card--good h3 small { display: inline-block; margin-left: 10px; font-size: 11px; padding: 3px 10px; background: #8ec825; color: #142a10; border-radius: 100px; font-family:'Raleway',sans-serif; vertical-align: middle; font-weight: 700;}
+  .tv-card--good .tv-list li { color: rgba(255,255,255,0.88); border-top-color: rgba(255,255,255,0.1);}
+  .tv-card--good .tv-list li::before { background: #8ec825;}
+
+  /* ==================== IA ==================== */
+  .ia { padding: 110px 0 100px; background: #f4f4ee;}
+  .ia h2 { font-family:'Trirong', serif; font-weight: 500; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; text-align: center; margin: 0 auto 24px; max-width: 1000px;}
+  .ia__sub { text-align: center; font-size: 17px; color: #000; max-width: 720px; margin: 0 auto 56px;}
+  .ia__board { background: #fff; border: 1px solid #ececea; border-radius: 18px; padding: 36px; max-width: 1240px; margin: 0 auto;}
+  .ia__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;}
+  .ia__col-h { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #7a7a72; font-weight: 600; padding-bottom: 10px; border-bottom: 1px solid #ececea; margin-bottom: 12px;}
+  .ia__root { background:#1a1916; color:#fff; border-radius: 8px; padding: 11px 13px; font-family: 'Trirong', serif; font-size: 14px; margin-bottom: 8px;}
+  .ia__root--vine { background: #2b5a25;}
+  .ia__children { padding-left: 12px; margin: 4px 0 10px 8px; border-left: 1.5px solid #ececea;}
+  .ia__child { padding: 5px 0 5px 10px; font-size: 12.5px; color: #1a1916; font-weight: 500; position: relative;}
+  .ia__child::before { content: ""; position: absolute; left: -1px; top: 13px; width: 8px; height: 1px; background: #c8c8c2;}
+  .ia__sub-list { padding-left: 14px; margin: 2px 0 4px; border-left: 1px dashed #d5d5d0;}
+  .ia__sub-item { font-size: 11px; color: #6b6b62; padding: 3px 0 3px 8px;}
+
+  /* ==================== Journey — Auto Carousel ==================== */
+  .journey { padding: 110px 0 100px; background: var(--soft-sage); position: relative; overflow: hidden;}
+  .journey h2 { font-family:'Trirong', serif; font-weight: 500; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; text-align: center; max-width: 1000px; margin: 0 auto 24px;}
+  .journey__sub { text-align: center; font-size: 17px; color: #142a10; max-width: 720px; margin: 0 auto 32px;}
+  .play-tag {
+    display: inline-flex; align-items: center; gap: 8px;
+    padding: 5px 14px; background: rgba(20,42,16,0.06); border-radius: 100px;
+    font-family:'Raleway',sans-serif; font-size: 11px; font-weight: 600;
+    color: #142a10; letter-spacing: 0.06em;
+    margin: 0 auto 56px; text-align: center;
+  }
+  .play-tag::before { content: "▸"; color: #2b5a25; font-size: 13px;}
+
+  .carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: 80px 0 32px;
+    margin: 0 auto;
+    max-width: 1440px;
+  }
+  .carousel__track {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    transition: transform 0.85s cubic-bezier(0.45, 0.05, 0.15, 0.95);
+    will-change: transform;
+    padding: 0;
+  }
+  .cscene {
+    flex: 0 0 360px;
+    background: rgba(255,255,255,0.82);
+    backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.9);
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow: 0 12px 30px -12px rgba(20,50,30,0.2);
+    transform: scale(0.74);
+    opacity: 0.42;
+    transition: transform 0.85s cubic-bezier(0.45,0.05,0.15,0.95), opacity 0.85s, box-shadow 0.85s;
+    position: relative;
+    cursor: pointer;
+  }
+  .cscene.is-active {
+    transform: scale(1.22);
+    opacity: 1;
+    box-shadow: 0 36px 70px -18px rgba(20,50,30,0.38), 0 8px 14px rgba(20,50,30,0.12);
+    z-index: 3;
+  }
+  .cscene.is-near {
+    transform: scale(0.9);
+    opacity: 0.7;
+    z-index: 2;
+  }
+  .cscene__thumb {
+    width: 100%; aspect-ratio: 16/10;
+    border-radius: 12px; overflow: hidden;
+    background: linear-gradient(135deg, #f4f4ee, #ecf2e6);
+    margin-bottom: 18px;
+    box-shadow: 0 2px 10px rgba(20,50,30,0.15);
+  }
+  .cscene__thumb img { width: 100%; height: 100%; object-fit: cover; object-position: top center;}
+  .cscene__thumb-ph {
+    width: 100%; height: 100%;
+    display: flex; align-items: center; justify-content: center;
+    font-family:'Trirong',serif; color: #2b5a25; font-size: 26px;
+    background: linear-gradient(135deg, #f0f7e6, #d4e6c0);
+  }
+  .cscene__phase { font-family:'Trirong', serif; font-weight: 500; font-size: 24px; color: #142a10; margin-bottom: 4px;}
+  .cscene__touch { font-size: 11px; color: #2b5a25; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 14px;}
+  .cscene__think { font-family:'Trirong', serif; font-style: italic; font-size: 15px; color: #2c4523; line-height: 1.4; margin-bottom: 14px;}
+  .cscene__emo { display: flex; align-items: center; gap: 10px; padding-top: 12px; border-top: 1px dashed rgba(20,50,30,0.18);}
+  .cscene__emo-icon { font-size: 30px; line-height: 1;}
+  .cscene__emo-label { font-family:'Raleway',sans-serif; font-size: 12.5px; color: #2c4523; font-weight: 600;}
+
+  .carousel__dots {
+    display: flex; justify-content: center; gap: 10px;
+    margin-top: 28px;
+  }
+  .carousel__dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: rgba(20,42,16,0.18);
+    border: none; cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+    padding: 0;
+  }
+  .carousel__dot.is-active { background: #2b5a25; transform: scale(1.25);}
+  .carousel__btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 52px; height: 52px; border-radius: 50%;
+    background: rgba(255,255,255,0.92);
+    border: 1px solid rgba(20,42,16,0.18);
+    color: #142a10; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; transition: background .2s, transform .2s;
+    z-index: 10;
+    box-shadow: 0 8px 18px -6px rgba(20,50,30,0.25);
+  }
+  .carousel__btn:hover { background: #fff; }
+  .carousel__btn--prev { left: 32px; }
+  .carousel__btn--next { right: 32px; }
+  .carousel__btn--prev:hover { transform: translateY(-50%) translateX(-2px); }
+  .carousel__btn--next:hover { transform: translateY(-50%) translateX(2px); }
+  .journey__caption {
+    text-align: center; max-width: 720px; margin: 32px auto 0;
+    font-family:'Raleway',sans-serif; font-size: 13px; color: #2c4523; font-style: italic;
+  }
+
+  /* ==================== Design System — Hero Components (visual snippets only) ==================== */
+  .ds { padding: 110px 0 100px; background: #fff;}
+  .ds-head { max-width: 1080px; margin: 0 auto 56px;}
+  .ds h2 {
+    font-family:'Trirong', serif; font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 60px); line-height: 1.1;
+    padding-bottom: 18px; border-bottom: 1.5px solid #000;
+    margin-bottom: 24px;
+    max-width: 760px;
+  }
+  .ds__sub { font-size: 17px; color: #000; max-width: 720px; margin: 0;}
+  .hero-comps {
+    display: grid; grid-template-columns: repeat(12, 1fr); gap: 24px;
+    max-width: 1240px; margin: 0 auto;
+  }
+  .hero-comp {
+    background: var(--soft-sage);
+    border-radius: 18px;
+    padding: 32px;
+    display: flex; flex-direction: column; gap: 22px;
+  }
+  .hero-comp--wide { grid-column: span 12;}
+  .hero-comp--half { grid-column: span 6;}
+  .hero-comp--third { grid-column: span 4;}
+  .hero-comp__meta { display: flex; flex-direction: column; gap: 8px;}
+  .hero-comp__title {
+    font-family:'Raleway', sans-serif;
+    font-weight: 700;
+    font-size: 28px;
+    color: #142a10;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+  }
+  .hero-comp__d {
+    font-family:'Raleway', sans-serif;
+    font-size: 15px;
+    color: #2c4523;
+    line-height: 1.55;
+    max-width: 560px;
+  }
+  .hero-comp__visual {
+    background: #fff;
+    border-radius: 14px;
+    padding: 20px;
+    box-shadow: 0 14px 28px -14px rgba(20,50,30,0.24);
+    overflow: hidden;
+    display: block;
+  }
+  .hero-comp__visual img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 4px;
+  }
+
+  /* ==================== Metrics ==================== */
+  .metrics { background: var(--banner-grad); color: #f0f4ec; padding: 110px 0; position: relative; overflow: hidden;}
+  .metrics .container { position: relative; z-index: 2;}
+  .metrics h2 { color: #fff; font-family:'Trirong', serif; font-weight: 500; font-size: clamp(32px, 4vw, 56px); line-height: 1.1; max-width: 800px; margin-bottom: 64px;}
+  .metrics__grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 28px; padding-top: 48px; border-top: 1px solid rgba(255,255,255,0.12);}
+  .metric__v { color: #fff; font-family:'Trirong', serif; font-weight: 500; font-size: 56px; line-height: 1; margin-bottom: 12px;}
+  .metric__l { font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: #b8d68a; margin-bottom: 10px; font-weight: 600;}
+  .metric__d { font-size: 14px; color: rgba(255,255,255,0.82); line-height: 1.55;}
+
+  /* ==================== Hi-fi & Dev Handoff ==================== */
+  .handoff { padding: 130px 0 110px; background: #fff;}
+  .handoff__head {
+    max-width: 1080px;
+    margin: 0 auto 80px;
+    text-align: center;
+  }
+  .handoff h2 {
+    font-family:'Trirong', serif; font-weight: 500;
+    font-size: clamp(40px, 5.4vw, 72px); line-height: 1.05; letter-spacing: -0.012em;
+    margin: 0 auto 28px;
+    max-width: 1000px;
+  }
+  .handoff__sub {
+    font-size: 18px; color: #000;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .hf-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 36px;
+    max-width: 1320px;
+    margin: 0 auto;
+  }
+  .hf-grid--2 {
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    margin-top: 36px;
+  }
+  .hf-tile {
+    border-radius: 22px;
+    background: var(--soft-sage);
+    padding: 28px;
+    overflow: hidden;
+    cursor: zoom-in;
+    transition: transform .3s ease, box-shadow .3s ease;
+    box-shadow: 0 20px 44px -20px rgba(20,50,30,0.28);
+    position: relative;
+  }
+  .hf-tile:hover { transform: translateY(-3px); box-shadow: 0 28px 56px -22px rgba(20,50,30,0.36);}
+  .hf-tile__zoom {
+    position: absolute; top: 40px; right: 40px;
+    width: 40px; height: 40px; border-radius: 50%;
+    background: rgba(255,255,255,0.94);
+    display: flex; align-items: center; justify-content: center;
+    color: #142a10; opacity: 0;
+    transition: opacity .3s;
+    z-index: 2;
+  }
+  .hf-tile:hover .hf-tile__zoom { opacity: 1;}
+  .hf-tile__zoom svg { width: 18px; height: 18px;}
+  .hf-tile__inner {
+    background: #fff;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 10px 24px -10px rgba(20,50,30,0.22);
+  }
+  .hf-tile__inner img { width: 100%; display: block;}
+  .hf-tile__caption {
+    text-align: center;
+    margin: 4px 0 22px; padding: 0 8px;
+    font-family:'Trirong', serif; font-weight: 500;
+    font-size: 24px; color: #142a10; line-height: 1.2;
+  }
+  .hf-tile__caption small {
+    display: block; margin-top: 8px;
+    font-family:'Raleway', sans-serif; font-weight: 500; font-size: 14px;
+    color: #2b5a25; letter-spacing: 0.01em;
+  }
+
+  /* Lightbox */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 9999;
+    background: rgba(10,18,12,0.94);
+    display: none;
+    align-items: center; justify-content: center;
+    padding: 40px;
+    cursor: zoom-out;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+  }
+  .lightbox.is-open { display: flex;}
+  .lightbox__img {
+    max-width: 96vw; max-height: 90vh;
+    border-radius: 12px;
+    box-shadow: 0 40px 80px -20px rgba(0,0,0,0.6);
+  }
+  .lightbox__close {
+    position: absolute; top: 24px; right: 24px;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: rgba(255,255,255,0.12); color: #fff;
+    border: 1px solid rgba(255,255,255,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; cursor: pointer;
+    transition: background .2s;
+  }
+  .lightbox__close:hover { background: rgba(255,255,255,0.2);}
+
+  /* ==================== Next CS ==================== */
+  .next-cs { padding: 90px 0 110px; text-align: center; background: #fff;}
+  .next-cs__btn {
+    display: inline-flex; align-items: center; gap: 14px;
+    padding: 14px 30px; border: 1px solid #000; border-radius: 100px;
+    font-family: 'Raleway', sans-serif; font-size: 17px; font-weight: 500; color: #000;
+  }
+  .next-cs__btn::after { content: "→";}
+  .next-cs__btn:hover { background: #000; color: #fff;}
+
+  /* ==================== Footer ==================== */
+  .ig-footer { background: #fff; padding: 90px 0 50px; border-top: 1px solid rgba(0,0,0,0.06);}
+  .ig-footer__grid { display: grid; grid-template-columns: 1.1fr 0.8fr 1.2fr 1fr; gap: 48px; max-width: 1240px; margin: 0 auto; padding: 0 64px;}
+  .ig-footer__brand img { height: 50px; width: auto;}
+  .ig-footer__col { display: flex; flex-direction: column; gap: 14px;}
+  .ig-footer__col a { font-family: 'Trirong', serif; font-size: 22px; color: #000;}
+  .ig-footer__col a:hover { text-decoration: underline;}
+  .ig-footer__addr h4 { font-family:'Trirong', serif; font-size: 22px; margin-bottom: 8px;}
+  .ig-footer__addr p { margin: 0 0 18px; font-size: 14px; line-height: 1.55;}
+  .ig-footer__motto { font-family: 'Trirong', serif; font-weight: 500; font-size: clamp(34px, 3.4vw, 52px); line-height: 1.05; margin-bottom: 32px;}
+  .ig-footer__contact-cta { display: inline-flex; align-items: center; gap: 10px; padding: 12px 22px; border: 1px solid #000; border-radius: 100px; font-size: 14.5px; font-weight: 500; color: #000;}
+  .ig-footer__contact-cta::after { content: "→";}
+  .ig-footer__contact-cta:hover { background: #000; color: #fff;}
+  .ig-footer__copy {
+    max-width: 1240px; margin: 56px auto 0; padding: 24px 64px 0;
+    border-top: 1px solid rgba(0,0,0,0.06);
+    font-size: 13px; color: #555550;
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .ig-footer__copy a { text-decoration: underline;}
+
+  /* ==================== Design × Engineering ==================== */
+  .parallel { padding: 120px 0 110px; background: var(--soft-cream);}
+  .parallel__head { max-width: 1080px; margin: 0 auto 64px; text-align: center;}
+  .parallel h2 {
+    font-family:'Trirong', serif; font-weight: 500;
+    font-size: clamp(34px, 4.4vw, 60px); line-height: 1.08; letter-spacing: -0.012em;
+    margin: 0 auto 24px; max-width: 940px;
+  }
+  .parallel__sub { font-size: 18px; color: #000; max-width: 760px; margin: 0 auto; line-height: 1.55;}
+  .parallel__grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 28px;
+    max-width: 1320px; margin: 0 auto;
+  }
+  .par-card {
+    background: #fff;
+    border: 1px solid #ececea;
+    border-radius: 20px;
+    padding: 36px;
+    display: flex; flex-direction: column; gap: 18px;
+    position: relative;
+    box-shadow: 0 14px 32px -18px rgba(20,50,30,0.16);
+  }
+  .par-card__eyebrow {
+    font-family:'Raleway', sans-serif; font-weight: 700;
+    font-size: 11px; letter-spacing: 0.16em; text-transform: uppercase;
+    color: #2b5a25;
+  }
+  .par-card--be .par-card__eyebrow { color: #4a3b78;}
+  .par-card__title {
+    font-family:'Trirong', serif; font-weight: 500;
+    font-size: 28px; line-height: 1.2; color: #142a10;
+    letter-spacing: -0.005em;
+  }
+  .par-card__list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 10px;}
+  .par-card__list li {
+    font-family:'Raleway', sans-serif; font-size: 14.5px;
+    color: #2a2a24; line-height: 1.5;
+    padding-left: 18px; position: relative;
+  }
+  .par-card__list li::before {
+    content: ""; position: absolute; left: 0; top: 8px;
+    width: 7px; height: 7px; border-radius: 50%;
+    background: #2b5a25;
+  }
+  .par-card--be .par-card__list li::before { background: #6a55a8;}
+  .par-card__code {
+    background: linear-gradient(160deg, #1d2a18 0%, #0e1b10 100%);
+    border-radius: 12px;
+    padding: 20px 22px;
+    color: #d8e5cf;
+    font-family: 'Menlo', 'Courier New', monospace;
+    font-size: 12.5px;
+    line-height: 1.6;
+    overflow-x: auto;
+    margin-top: 6px;
+  }
+  .par-card--be .par-card__code {
+    background: linear-gradient(160deg, #20183a 0%, #110d22 100%);
+    color: #e3dff2;
+  }
+  .par-card__code pre { margin: 0; white-space: pre-wrap; word-wrap: break-word;}
+  .par-card__code .kw { color: #c792ea;}
+  .par-card__code .str { color: #8ec825;}
+  .par-card__code .com { color: rgba(216,229,207,0.45); font-style: italic;}
+  .par-card__code .fn { color: #82aaff;}
+  .par-card__code .vn { color: #ffcb6b;}
+  .par-card--be .par-card__code .str { color: #c5e1a5;}
+  .par-card--be .par-card__code .com { color: rgba(227,223,242,0.45);}
+
+  .parallel__stats {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 24px;
+    max-width: 1320px;
+    margin: 80px auto 0;
+    padding-top: 56px;
+    border-top: 1px solid rgba(20,42,16,0.12);
+  }
+  .par-stat { text-align: left;}
+  .par-stat__v {
+    font-family:'Trirong', serif; font-weight: 500;
+    font-size: clamp(34px, 3.6vw, 46px); line-height: 1;
+    color: #142a10; margin-bottom: 10px;
+  }
+  .par-stat__l {
+    font-family:'Raleway', sans-serif; font-size: 13px;
+    color: #2c4523; line-height: 1.45;
+  }
+
+  .fade-in { opacity: 0; transform: translateY(28px); transition: opacity .8s ease, transform .8s ease;}
+  .fade-in.visible { opacity: 1; transform: translateY(0);}
+
+  /* ==================== Responsive ==================== */
+  @media (max-width: 1100px) {
+    .hero-comp--half, .hero-comp--third { grid-column: span 12;}
+    .hf-grid--2 { grid-template-columns: 1fr;}
+    .parallel__grid { grid-template-columns: 1fr;}
+    .parallel__stats { grid-template-columns: repeat(3, 1fr);}
+  }
+  @media (max-width: 640px) {
+    .parallel__stats { grid-template-columns: 1fr 1fr;}
+  }
+  @media (max-width: 1000px) {
+    .container, .container-narrow { padding: 0 24px;}
+    .container-wide { padding: 0 16px;}
+    .ig-header__inner { padding: 12px 24px; gap: 20px;}
+    .ig-nav { display: none;}
+    .summary__grid, .why__grid { grid-template-columns: 1fr; gap: 40px;}
+    .summary { padding: 64px 0 80px;}
+    .why, .personas, .ia, .journey, .ds, .handoff, .next-cs, .transform { padding: 72px 0 60px;}
+    .metrics { padding: 72px 0;}
+    .personas__grid { grid-template-columns: 1fr;}
+    .transform__visual-inner { grid-template-columns: 1fr;}
+    .metrics__grid { grid-template-columns: 1fr 1fr;}
+    .ia__grid { grid-template-columns: 1fr 1fr;}
+    .cscene { flex: 0 0 280px;}
+    .ig-footer__grid { grid-template-columns: 1fr; padding: 0 24px; gap: 40px;}
+    .ig-footer__copy { padding: 24px 24px 0; flex-direction: column; gap: 10px;}
+  }
+  @media (max-width: 700px) {
+    .ia__grid { grid-template-columns: 1fr;}
+    .metrics__grid { grid-template-columns: 1fr;}
+    .top-area { padding: 36px 0 0;}
+    .title-h1 { font-size: 40px;}
+    .cscene { flex: 0 0 240px;}
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============== Header ============== -->
+  <header class="ig-header">
+    <div class="ig-header__inner">
+      <a href="https://www.intelligaia.com/" class="ig-logo" aria-label="Intelligaia">
+        <img src="intelligaia-logo.png" alt="Intelligaia — humanizing AI for enterprises" />
+      </a>
+      <nav class="ig-nav" aria-label="Primary">
+        <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+        <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+        <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scaled System</a>
+        <a href="https://www.intelligaia.com/tech-ai">Tech + AI</a>
+        <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+        <a href="https://www.intelligaia.com/portfolio" class="active">Portfolio</a>
+        <a href="https://www.intelligaia.com/blog">Blog</a>
+        <a href="https://www.intelligaia.com/people">People</a>
+      </nav>
+      <a href="https://www.intelligaia.com/contact" class="ig-contact">Contact Us</a>
+    </div>
+  </header>
+
+  <!-- ============== Title + Hero ============== -->
+  <section class="top-area">
+    <div class="container">
+      <a href="https://www.intelligaia.com/portfolio" class="back-link">Back</a>
+      <div class="client-mark"><img src="agentvine-logo.svg" alt="AgentVine" /></div>
+      <h1 class="title-h1">AgentVine: The Reasoning-Layer Ad Network for AI Agents</h1>
+    </div>
+    <div class="container-wide" style="padding-bottom: 0;">
+      <div class="hero-image fade-in">
+        <img src="screenshots/00_hero_banner.jpg" alt="AgentVine dashboard — Welcome, with Add Funds and Total Spend cards floating around the laptop on the AgentVine green brand gradient" />
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Summary ============== -->
+  <section class="summary fade-in">
+    <div class="container-narrow">
+      <div class="summary__grid">
+        <div class="summary__copy">
+          <h2>Intelligaia partnered with AgentVine to turn a new AI monetization concept into a build-ready product experience — a reasoning-layer ad network where AI agents evaluate sponsored options as one affordance among many, never as banners and never inside prompts.</h2>
+          <p class="tags">UX Strategy, User Research, Information Architecture, Product Design, Design System, Prototyping, Developer Experience.</p>
+          <p>Agentic Workflows, Reasoning-Layer Ads, Two-Sided Marketplaces.</p>
+        </div>
+        <div class="summary__pills">
+          <div class="sm-pill">Designed a two-sided platform — Advertiser and Developer — sharing one identity, billing, and design system.</div>
+          <div class="sm-pill">Compressed offer creation from 17+ legacy ad-platform steps down to a four-step wizard with a live ad preview.</div>
+          <div class="sm-pill">Defined the visual language for an entirely new ad surface: agent reasoning, never banner or prompt.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Why Intelligaia ============== -->
+  <section class="why fade-in">
+    <div class="container">
+      <h2>Why Intelligaia?</h2>
+      <div class="why__grid">
+        <div class="why__points">
+          <div class="why__point">Mapped the agent-reasoning ad surface from concept to a shipped two-sided product</div>
+          <div class="why__point">Compressed offer creation to a four-step wizard with a live Ad Preview</div>
+          <div class="why__point">Designed a developer SDK experience that earns trust in a single integration</div>
+          <div class="why__point">Built a token-first design system across marketing, advertiser, developer, and SDK surfaces</div>
+          <div class="why__cta-row"><a href="https://www.intelligaia.com/contact" class="why__cta">Contact Us</a></div>
+        </div>
+        <div class="why__visual">
+          <span class="why__visual-cap">Offer Wizard · Targeting by Intent</span>
+          <img src="screenshots/09_offer_step2_filled_clean.jpg" alt="AgentVine offer creation — Targeting by Intent with live Ad Preview" />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Personas ============== -->
+  <section class="personas fade-in">
+    <div class="container-narrow">
+      <h2>Two buyers, designed in parallel</h2>
+      <p class="personas__sub">Fourteen discovery conversations with independent AI developers, growth marketers, and founding advertisers crystallized into two primary personas — and a shared platform spine.</p>
+    </div>
+    <div class="container">
+      <div class="personas__grid">
+
+        <!-- Alex Chen -->
+        <div class="pcard">
+          <div class="pcard__head">
+            <svg viewBox="0 0 96 96" width="96" height="96" xmlns="http://www.w3.org/2000/svg" aria-label="Alex Chen">
+              <defs><linearGradient id="ac" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#2b5a25"/><stop offset="1" stop-color="#8ec825"/></linearGradient></defs>
+              <circle cx="48" cy="48" r="48" fill="url(#ac)"/>
+              <circle cx="48" cy="40" r="16" fill="#fafaf6"/>
+              <path d="M16 96 C 16 72 30 64 48 64 C 66 64 80 72 80 96 Z" fill="#fafaf6"/>
+              <rect x="36" y="36" width="24" height="3" fill="#1a1916" opacity="0.4"/>
+              <circle cx="41" cy="42" r="1.8" fill="#1a1916"/>
+              <circle cx="55" cy="42" r="1.8" fill="#1a1916"/>
+              <path d="M42 48 Q 48 52 54 48" stroke="#1a1916" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <div class="pcard__role">Developer Persona</div>
+              <div class="pcard__name">Alex Chen</div>
+              <div class="pcard__meta">Independent AI Developer · Technical Cofounder · 31 · San Francisco</div>
+            </div>
+          </div>
+          <div class="pcard__body">
+            <p class="pcard__bio">A self-taught developer and former ML engineer, Alex builds autonomous agents using LangChain, AutoGen, and CrewAI. He's passionate about reasoning systems, transparency, and monetizing agent decisions without compromising user trust.</p>
+            <div class="pcard__section"><div class="pcard__section-l">Goals</div>
+              <ul class="plist"><li>Launch agents that feel intelligent, helpful, monetizable.</li><li>Earn from clicks and actions — never impressions.</li><li>Keep full control over agent logic, language, and tools.</li><li>Integrate the SDK in under 15 minutes.</li></ul>
+            </div>
+            <div class="pcard__section"><div class="pcard__section-l">Pain Points</div>
+              <ul class="plist plist--pain"><li>Ads that break agent reasoning or feel forced.</li><li>Unclear attribution — &ldquo;did this click come from my agent?&rdquo;</li><li>SDKs that make heavy UI assumptions.</li><li>No native monetization path in existing agent frameworks.</li></ul>
+            </div>
+            <div class="pcard__section"><div class="pcard__section-l">Behaviour</div>
+              <div class="ptraits">
+                <div class="ptrait"><span class="ptrait__l">Introvert</span><div class="ptrait__bar"><div class="ptrait__fill" style="width:30%"></div></div><span class="ptrait__r active">Analytical</span></div>
+                <div class="ptrait"><span class="ptrait__l">Time Rich</span><div class="ptrait__bar"><div class="ptrait__fill" style="width:92%"></div></div><span class="ptrait__r active">Busy</span></div>
+                <div class="ptrait"><span class="ptrait__l active">Messy</span><div class="ptrait__bar"><div class="ptrait__fill" style="width:20%"></div></div><span class="ptrait__r">Organized</span></div>
+                <div class="ptrait"><span class="ptrait__l active">Independent</span><div class="ptrait__bar"><div class="ptrait__fill" style="width:25%"></div></div><span class="ptrait__r">Team Player</span></div>
+              </div>
+            </div>
+            <div class="pcard__section"><div class="pcard__section-l">Stack</div>
+              <div class="pstack"><span>LangChain</span><span>AutoGen</span><span>CrewAI</span><span>LangGraph</span><span>MCP</span><span>Vercel</span><span>GitHub</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Maya Lin -->
+        <div class="pcard">
+          <div class="pcard__head">
+            <svg viewBox="0 0 96 96" width="96" height="96" xmlns="http://www.w3.org/2000/svg" aria-label="Maya Lin">
+              <defs><linearGradient id="mc" x1="0" x2="1" y1="0" y2="1"><stop offset="0" stop-color="#7a4a3a"/><stop offset="1" stop-color="#a96b53"/></linearGradient></defs>
+              <circle cx="48" cy="48" r="48" fill="url(#mc)"/>
+              <circle cx="48" cy="40" r="16" fill="#fafaf6"/>
+              <path d="M16 96 C 16 72 30 64 48 64 C 66 64 80 72 80 96 Z" fill="#fafaf6"/>
+              <path d="M32 32 Q 33 22 48 22 Q 63 22 64 32 Q 60 40 54 36 L 42 36 Q 36 40 32 32 Z" fill="#1a1916"/>
+              <circle cx="42" cy="42" r="1.8" fill="#1a1916"/>
+              <circle cx="54" cy="42" r="1.8" fill="#1a1916"/>
+              <path d="M43 48 Q 48 52 53 48" stroke="#1a1916" stroke-width="1.8" fill="none" stroke-linecap="round"/>
+            </svg>
+            <div>
+              <div class="pcard__role">Advertiser Persona</div>
+              <div class="pcard__name">Maya Lin</div>
+              <div class="pcard__meta">Head of Growth · B2B SaaS · 34 · San Francisco</div>
+            </div>
+          </div>
+          <div class="pcard__body">
+            <p class="pcard__bio">Maya scales acquisition channels for a mid-sized B2B SaaS. Tired of low-intent ad platforms, she's drawn to ecosystems like AgentVine where she can place contextual offers inside intelligent workflows. Her north star is measurable, intent-driven ROI with transparent attribution.</p>
+            <div class="pcard__section"><div class="pcard__section-l">Goals</div>
+              <ul class="plist"><li>Reduce customer acquisition costs and prove attribution.</li><li>Reach developers and ops managers evaluating solutions.</li><li>Shift budget from low-intent display to high-context placements.</li><li>Launch a new offer in under 10 minutes.</li></ul>
+            </div>
+            <div class="pcard__section"><div class="pcard__section-l">Pain Points</div>
+              <ul class="plist plist--pain"><li>Banner ads ignored or blocklisted inside AI interfaces.</li><li>Prompt-injection ads break agent trust.</li><li>Paid social and SEM offer weak targeting and low ROI.</li><li>No way to place performance offers where intent is clear.</li></ul>
+            </div>
+            <div class="pcard__section"><div class="pcard__section-l">Behaviour</div>
+              <div class="ptraits">
+                <div class="ptrait"><span class="ptrait__l">Introvert</span><div class="ptrait__bar"><div class="ptrait__fill" style="width:85%"></div></div><span class="ptrait__r active">Extrovert</span></div>
+                <div class="ptrait"><span class="ptrait__l">Time Rich</span><div class="ptrait__bar"><div class="ptrait__fill" style="width:95%"></div></div><span class="ptrait__r active">Busy</span></div>
+                <div class="ptrait"><span class="ptrait__l">Messy</span><div class="ptrait__bar"><div class="ptrait__fill" style="width:80%"></div></div><span class="ptrait__r active">Organized</span></div>
+                <div class="ptrait"><span class="ptrait__l">Independent</span><div class="ptrait__bar"><div class="ptrait__fill" style="width:78%"></div></div><span class="ptrait__r active">Team Player</span></div>
+              </div>
+            </div>
+            <div class="pcard__section"><div class="pcard__section-l">Stack</div>
+              <div class="pstack"><span>HubSpot</span><span>Looker</span><span>Mixpanel</span><span>Segment</span><span>Iterable</span><span>LinkedIn Ads</span><span>Google Ads</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Transformation ============== -->
+  <section class="transform fade-in">
+    <div class="container-narrow transform-head">
+      <h2>From three broken ad models to a reasoning-layer network agents can trust</h2>
+      <p class="transform__sub">Every existing way to put an ad in front of an AI agent fails at the same place — the agent never gets to <em>reason</em> about the offer. Intelligaia and AgentVine reframed the entire surface.</p>
+    </div>
+    <div class="container">
+      <div class="transform__visual">
+        <div class="transform__visual-inner">
+          <div class="tv-card">
+            <h3>Before</h3>
+            <ul class="tv-list">
+              <li>Display banners rendered outside the LLM — ignored by users, invisible to reasoning.</li>
+              <li>Prompt-level injection — brittle, opaque, vulnerable to prompt-injection attacks.</li>
+              <li>RAG retrieval — better fit, but the agent never evaluates the ad as a candidate.</li>
+              <li>Attribution lives outside the decision moment; developers earn on impressions, not outcomes.</li>
+              <li>UX assumes a screen; agents don't have one.</li>
+            </ul>
+          </div>
+          <div class="tv-card tv-card--good">
+            <h3>After <small>AgentVine</small></h3>
+            <ul class="tv-list tv-list--good">
+              <li>Structured, signed JSON candidates arrive at decision moments — tool selection, plan generation, retrieval.</li>
+              <li>The agent evaluates each candidate against user intent like any other affordance.</li>
+              <li>Skepticism, filtering, and frequency capping run inside the SDK — not in product code.</li>
+              <li>Attribution is per-decision — developers earn from clicks and actions, never impressions.</li>
+              <li>One SDK call. One live Ad Preview. Sandbox before production.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== IA ============== -->
+  <section class="ia fade-in">
+    <div class="container-narrow">
+      <h2>One spine, four surfaces</h2>
+      <p class="ia__sub">Forty-seven screens across marketing, advertiser, developer, and a system layer for the agent runtime — mapped, sequenced, and shipped to engineering as a single IA.</p>
+    </div>
+    <div class="container">
+      <div class="ia__board">
+        <div class="ia__grid">
+          <div>
+            <div class="ia__col-h">Marketing</div>
+            <div class="ia__root">Marketing Site</div>
+            <div class="ia__children">
+              <div class="ia__child">Landing</div><div class="ia__child">How It Works</div><div class="ia__child">For Developers</div><div class="ia__child">For Advertisers</div><div class="ia__child">Pricing · Docs</div><div class="ia__child">Blog · Investors</div>
+            </div>
+            <div class="ia__root">Auth</div>
+            <div class="ia__children">
+              <div class="ia__child">Sign Up · Role Toggle</div><div class="ia__child">Sign In · SSO</div><div class="ia__child">Forgot Password</div>
+            </div>
+          </div>
+          <div>
+            <div class="ia__col-h">Advertiser</div>
+            <div class="ia__root">Advertiser App</div>
+            <div class="ia__children">
+              <div class="ia__child">Onboarding · 3 steps</div>
+              <div class="ia__sub-list"><div class="ia__sub-item">Company Setup</div><div class="ia__sub-item">Goals &amp; Budget</div><div class="ia__sub-item">Verification</div></div>
+              <div class="ia__child">Dashboard</div><div class="ia__child">Products &amp; Offers</div>
+              <div class="ia__sub-list"><div class="ia__sub-item">Products · Offers tabs</div><div class="ia__sub-item">Create Offer · 4 steps</div><div class="ia__sub-item">Offer Detail · Edit</div></div>
+              <div class="ia__child">Performance</div><div class="ia__child">Eligibility &amp; Targeting</div>
+              <div class="ia__sub-list"><div class="ia__sub-item">Agent Targeting</div><div class="ia__sub-item">User Eligibility</div><div class="ia__sub-item">Geographic Rules</div></div>
+              <div class="ia__child">Wallet · Financial Hub</div>
+            </div>
+          </div>
+          <div>
+            <div class="ia__col-h">Developer</div>
+            <div class="ia__root">Developer App</div>
+            <div class="ia__children">
+              <div class="ia__child">Onboarding · 2 steps</div>
+              <div class="ia__sub-list"><div class="ia__sub-item">Profile &amp; Org</div><div class="ia__sub-item">Generate API Key</div></div>
+              <div class="ia__child">Dashboard</div><div class="ia__child">Agents &amp; Integrations</div>
+              <div class="ia__sub-list"><div class="ia__sub-item">Register Agent</div><div class="ia__sub-item">Injection Points</div><div class="ia__sub-item">Surfacing Controls</div><div class="ia__sub-item">Blocklists &amp; Fallbacks</div></div>
+              <div class="ia__child">SDK · Docs</div><div class="ia__child">Playground · Sandbox</div>
+              <div class="ia__sub-list"><div class="ia__sub-item">Debug Mode</div><div class="ia__sub-item">Reasoning Logs</div></div>
+              <div class="ia__child">Earnings · Performance</div><div class="ia__child">Bank &amp; Withdrawal</div>
+            </div>
+          </div>
+          <div>
+            <div class="ia__col-h">System · Runtime</div>
+            <div class="ia__root ia__root--vine">Agent Runtime</div>
+            <div class="ia__children">
+              <div class="ia__child">SDK · /requestOffer</div><div class="ia__child">Embedding Relevance</div><div class="ia__child">Bid × Relevance Auction</div><div class="ia__child">Filtering · Skepticism</div><div class="ia__child">Signed JSON Payload</div><div class="ia__child">Agent Evaluates Option</div><div class="ia__child">Click / Action Attribution</div><div class="ia__child">Conversion Webhook</div><div class="ia__child">CTR Feedback Loop</div>
+            </div>
+            <div class="ia__root">Shared Services</div>
+            <div class="ia__children">
+              <div class="ia__child">Identity · SSO</div><div class="ia__child">Billing · Stripe</div><div class="ia__child">Content Moderation</div><div class="ia__child">Notifications</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Journey — Auto Carousel ============== -->
+  <section class="journey fade-in">
+    <div class="container-narrow">
+      <h2>Day 0 to live offer — in ten minutes flat</h2>
+      <p class="journey__sub">A storyboard of the advertiser's path, with the actual screen at each scene, what they're thinking, and how they feel.</p>
+    </div>
+    <div class="carousel" data-carousel>
+      <button class="carousel__btn carousel__btn--prev" data-carousel-prev aria-label="Previous scene">‹</button>
+      <button class="carousel__btn carousel__btn--next" data-carousel-next aria-label="Next scene">›</button>
+
+      <div class="carousel__track" data-carousel-track>
+
+        <div class="cscene" data-scene="0" data-lightbox="">
+          <div class="cscene__thumb"><div class="cscene__thumb-ph">agentvine.com</div></div>
+          <div class="cscene__phase">Discover</div>
+          <div class="cscene__touch">Marketing · Landing</div>
+          <div class="cscene__think">"Is this real or vapor?"</div>
+          <div class="cscene__emo"><span class="cscene__emo-icon">🤔</span><span class="cscene__emo-label">Curious</span></div>
+        </div>
+
+        <div class="cscene" data-scene="1" data-lightbox="screenshots/01_signup_advertiser.jpg">
+          <div class="cscene__thumb"><img src="screenshots/01_signup_advertiser.jpg" alt="Sign Up · Advertiser" /></div>
+          <div class="cscene__phase">Sign Up</div>
+          <div class="cscene__touch">Role Tabs</div>
+          <div class="cscene__think">"Just let me see the dashboard."</div>
+          <div class="cscene__emo"><span class="cscene__emo-icon">🙂</span><span class="cscene__emo-label">Hopeful</span></div>
+        </div>
+
+        <div class="cscene" data-scene="2" data-lightbox="screenshots/04_onboarding_goals.jpg">
+          <div class="cscene__thumb"><img src="screenshots/04_onboarding_goals.jpg" alt="Onboarding · Goals & Budget" /></div>
+          <div class="cscene__phase">Onboard</div>
+          <div class="cscene__touch">3-Step Stepper</div>
+          <div class="cscene__think">"Do I have to set this all now?"</div>
+          <div class="cscene__emo"><span class="cscene__emo-icon">😐</span><span class="cscene__emo-label">Cautious</span></div>
+        </div>
+
+        <div class="cscene" data-scene="3" data-lightbox="screenshots/06_offer_step1_modal.jpg">
+          <div class="cscene__thumb"><img src="screenshots/06_offer_step1_modal.jpg" alt="Add Product modal" /></div>
+          <div class="cscene__phase">Add Product</div>
+          <div class="cscene__touch">Modal · Categories</div>
+          <div class="cscene__think">"Is this how the agent reads it?"</div>
+          <div class="cscene__emo"><span class="cscene__emo-icon">😀</span><span class="cscene__emo-label">Confident</span></div>
+        </div>
+
+        <div class="cscene" data-scene="4" data-lightbox="screenshots/09_offer_step2_filled.jpg">
+          <div class="cscene__thumb"><img src="screenshots/09_offer_step2_filled.jpg" alt="Targeting by Intent" /></div>
+          <div class="cscene__phase">Create Offer</div>
+          <div class="cscene__touch">4-Step Wizard</div>
+          <div class="cscene__think">"What does 'intent' actually mean?"</div>
+          <div class="cscene__emo"><span class="cscene__emo-icon">😕</span><span class="cscene__emo-label">Confused</span></div>
+        </div>
+
+        <div class="cscene" data-scene="5" data-lightbox="screenshots/11_offer_step4_review.jpg">
+          <div class="cscene__thumb"><img src="screenshots/11_offer_step4_review.jpg" alt="Review & Submit" /></div>
+          <div class="cscene__phase">Approve · Fund</div>
+          <div class="cscene__touch">Review &amp; Submit</div>
+          <div class="cscene__think">"How soon will I see impressions?"</div>
+          <div class="cscene__emo"><span class="cscene__emo-icon">🙂</span><span class="cscene__emo-label">Reassured</span></div>
+        </div>
+
+        <div class="cscene" data-scene="6" data-lightbox="screenshots/12_dashboard_day1_clean.jpg">
+          <div class="cscene__thumb"><img src="screenshots/12_dashboard_day1_clean.jpg" alt="Dashboard Day 1" /></div>
+          <div class="cscene__phase">Live</div>
+          <div class="cscene__touch">Dashboard · Day 1</div>
+          <div class="cscene__think">"Where's the spend, where's the data?"</div>
+          <div class="cscene__emo"><span class="cscene__emo-icon">🤩</span><span class="cscene__emo-label">Delighted</span></div>
+        </div>
+
+      </div>
+
+      <div class="carousel__dots" data-carousel-dots></div>
+    </div>
+    <div class="journey__caption">Each scene was prototyped as a short transition reel — zoom-in on the active field, panning between the form and the live Ad Preview, fade-through to the next phase. Click any scene to see the full screen.</div>
+  </section>
+
+  <!-- ============== Design System — Hero Components ============== -->
+  <section class="ds fade-in">
+    <div class="container ds-head">
+      <h2>Components that carried the platform</h2>
+      <p class="ds__sub">A few opinionated, token-first components reused across the advertiser app, developer app, and SDK. Each was shipped with anatomy, states, and behavior notes inside Figma.</p>
+    </div>
+    <div class="container">
+      <div class="hero-comps">
+
+        <div class="hero-comp hero-comp--wide">
+          <div class="hero-comp__meta">
+            <div class="hero-comp__title">Stepper</div>
+            <div class="hero-comp__d">Used in onboarding (3-step) and offer creation (4-step). Always shows progress with check-mark, current, and pending states — never traps the user.</div>
+          </div>
+          <div class="hero-comp__visual hero-comp__visual--stepper">
+            <img src="screenshots/comp_stepper_centered.jpg" alt="Stepper — Offer Identity · Targeting by Intent · Scheduling & Budget · Review & Submit" />
+          </div>
+        </div>
+
+        <div class="hero-comp hero-comp--half">
+          <div class="hero-comp__meta">
+            <div class="hero-comp__title">Intent Include / Exclude</div>
+            <div class="hero-comp__d">Two affordances per intent. Reads like a query, not a setting. Builds a transparent rule the agent can evaluate.</div>
+          </div>
+          <div class="hero-comp__visual">
+            <img src="screenshots/comp_intent_final.jpg" alt="Intent Targeting — Legal Helpers, Contract Reviewers, Policy Advisors with Include and Exclude" />
+          </div>
+        </div>
+
+        <div class="hero-comp hero-comp--half">
+          <div class="hero-comp__meta">
+            <div class="hero-comp__title">Live Ad Preview</div>
+            <div class="hero-comp__d">Renders the agent-reasoning view of the offer. Updates per keystroke during offer creation — the highest-rated change in usability testing.</div>
+          </div>
+          <div class="hero-comp__visual">
+            <img src="screenshots/comp_ad_preview_final.jpg" alt="Ad Preview Card — Global Onboarding Toolkit · Start Free Trial · by AgentVine API" />
+          </div>
+        </div>
+
+        <div class="hero-comp hero-comp--half">
+          <div class="hero-comp__meta">
+            <div class="hero-comp__title">Performance KPI Tile</div>
+            <div class="hero-comp__d">Value, delta vs previous, micro-trend, and a Day-0 zero-state that coaches the user rather than just showing dashes.</div>
+          </div>
+          <div class="hero-comp__visual">
+            <img src="screenshots/comp_kpi_final.jpg" alt="KPI Tile — Total Spend $23.40 with delta and Fund More action" />
+          </div>
+        </div>
+
+        <div class="hero-comp hero-comp--half">
+          <div class="hero-comp__meta">
+            <div class="hero-comp__title">Recommendation Engine</div>
+            <div class="hero-comp__d">Surfaces the next-best action on the dashboard — budget warnings, bid increases, agent expansion, keyword tuning — never buried in settings.</div>
+          </div>
+          <div class="hero-comp__visual">
+            <img src="screenshots/comp_recommendation_v2.jpg" alt="Recommendation Engine — Budget cap, Increase Offer Unit, Expand to Research Agents, Optimize targeting keywords" />
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Metrics ============== -->
+  <section class="metrics fade-in">
+    <div class="container">
+      <h2>Public beta shipped on time. Two-sided onboarding measured in minutes.</h2>
+      <div class="metrics__grid">
+        <div><div class="metric__l">Advertiser onboarding</div><div class="metric__v">10 min</div><div class="metric__d">Sign-up to first live offer — verified across five test accounts.</div></div>
+        <div><div class="metric__l">Offer creation</div><div class="metric__v">4 steps</div><div class="metric__d">Down from 17+ in incumbent ad platforms. Every step has a live preview.</div></div>
+        <div><div class="metric__l">Developer SDK</div><div class="metric__v">1 call</div><div class="metric__d">A single import, a single function. Sandbox available before production.</div></div>
+        <div><div class="metric__l">Screens shipped</div><div class="metric__v">47</div><div class="metric__d">Across four surfaces, one design system, three engineering targets.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== High-fidelity & Developer Handoff (final) ============== -->
+  <section class="handoff fade-in">
+    <div class="container handoff__head">
+      <h2>High-fidelity &amp; Developer Handoff</h2>
+      <p class="handoff__sub">A curated walk through what shipped to engineering — paired with component specs, token mappings, and behavior notes inside Figma. Click any screen to view full-size.</p>
+    </div>
+
+    <div class="container">
+
+      <!-- Anchor 1 · Dashboard (single, full width) -->
+      <div class="hf-grid">
+        <div class="hf-tile" data-lightbox="screenshots/12_dashboard_day1_fixed.jpg">
+          <div class="hf-tile__caption">
+            Advertiser Dashboard — Day 1
+            <small>Live Account · Recommendation Engine</small>
+          </div>
+          <div class="hf-tile__zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1 V 7 H 1 M 7 7 L 1 13 M 9 1 H 15 V 7 M 15 1 L 9 7 M 1 9 V 15 H 7 M 1 15 L 7 9 M 15 9 V 15 H 9 M 15 15 L 9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hf-tile__inner"><img src="screenshots/12_dashboard_day1_fixed.jpg" alt="Advertiser Dashboard · Day 1" /></div>
+        </div>
+      </div>
+
+      <!-- Anchor 2 · Offer Wizard (single, full width) -->
+      <div class="hf-grid" style="margin-top: 36px;">
+        <div class="hf-tile" data-lightbox="screenshots/09_offer_step2_fixed.jpg">
+          <div class="hf-tile__caption">
+            Offer Wizard — Targeting by Intent
+            <small>4-Step Wizard · Live Ad Preview</small>
+          </div>
+          <div class="hf-tile__zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1 V 7 H 1 M 7 7 L 1 13 M 9 1 H 15 V 7 M 15 1 L 9 7 M 1 9 V 15 H 7 M 1 15 L 7 9 M 15 9 V 15 H 9 M 15 15 L 9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hf-tile__inner"><img src="screenshots/09_offer_step2_fixed.jpg" alt="Offer Wizard · Targeting by Intent with live Ad Preview" /></div>
+        </div>
+      </div>
+
+      <!-- Pair · Performance + Eligibility -->
+      <div class="hf-grid hf-grid--2">
+        <div class="hf-tile" data-lightbox="screenshots/15_performance_fixed.jpg">
+          <div class="hf-tile__caption">
+            Performance Analytics
+            <small>KPIs · Key Insights · Metrics</small>
+          </div>
+          <div class="hf-tile__zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1 V 7 H 1 M 7 7 L 1 13 M 9 1 H 15 V 7 M 15 1 L 9 7 M 1 9 V 15 H 7 M 1 15 L 7 9 M 15 9 V 15 H 9 M 15 15 L 9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hf-tile__inner"><img src="screenshots/15_performance_fixed.jpg" alt="Performance Analytics" /></div>
+        </div>
+
+        <div class="hf-tile" data-lightbox="screenshots/16_eligibility_fixed.jpg">
+          <div class="hf-tile__caption">
+            Eligibility — Match Score
+            <small>Targeting · Audience Segments</small>
+          </div>
+          <div class="hf-tile__zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1 V 7 H 1 M 7 7 L 1 13 M 9 1 H 15 V 7 M 15 1 L 9 7 M 1 9 V 15 H 7 M 1 15 L 7 9 M 15 9 V 15 H 9 M 15 15 L 9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hf-tile__inner"><img src="screenshots/16_eligibility_fixed.jpg" alt="Eligibility · Match Score" /></div>
+        </div>
+      </div>
+
+      <!-- Pair · Wallet + Onboarding Goals -->
+      <div class="hf-grid hf-grid--2">
+        <div class="hf-tile" data-lightbox="screenshots/17_wallet_fixed.jpg">
+          <div class="hf-tile__caption">
+            Wallet — Financial Hub
+            <small>Balance · Budget · Transactions</small>
+          </div>
+          <div class="hf-tile__zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1 V 7 H 1 M 7 7 L 1 13 M 9 1 H 15 V 7 M 15 1 L 9 7 M 1 9 V 15 H 7 M 1 15 L 7 9 M 15 9 V 15 H 9 M 15 15 L 9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hf-tile__inner"><img src="screenshots/17_wallet_fixed.jpg" alt="Wallet · Financial Hub" /></div>
+        </div>
+
+        <div class="hf-tile" data-lightbox="screenshots/04_onboarding_goals_fixed.jpg">
+          <div class="hf-tile__caption">
+            Onboarding — Goals &amp; Budget
+            <small>3-Step Stepper · Objectives</small>
+          </div>
+          <div class="hf-tile__zoom" aria-hidden="true">
+            <svg viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M7 1 V 7 H 1 M 7 7 L 1 13 M 9 1 H 15 V 7 M 15 1 L 9 7 M 1 9 V 15 H 7 M 1 15 L 7 9 M 15 9 V 15 H 9 M 15 15 L 9 9" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+          </div>
+          <div class="hf-tile__inner"><img src="screenshots/04_onboarding_goals_fixed.jpg" alt="Onboarding · Goals &amp; Budget" /></div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ============== Design × Engineering, shipped in parallel ============== -->
+  <section class="parallel fade-in">
+    <div class="container parallel__head">
+      <h2>Design × Engineering, shipped in parallel</h2>
+      <p class="parallel__sub">A token-first Figma library, a React + TypeScript front-end in lock-step with the design components, and a FastAPI scoring service that backs every agent decision. Three disciplines, one git tree, one cadence.</p>
+    </div>
+
+    <div class="container">
+      <div class="parallel__grid">
+
+        <!-- Frontend column -->
+        <div class="par-card par-card--fe">
+          <div class="par-card__eyebrow">Frontend · React + TypeScript</div>
+          <div class="par-card__title">Components in lock-step with Figma</div>
+          <ul class="par-card__list">
+            <li>React 18 + TypeScript wired through Style Dictionary tokens</li>
+            <li>32 components mirroring the Figma library 1&hairsp;:&hairsp;1 (Stepper, Wizard, Ad&nbsp;Preview, KPI Tile, Recommendation Row…)</li>
+            <li>Tailwind utility classes composed against semantic tokens</li>
+            <li>React Hook Form + Zod for the four-step Offer Wizard</li>
+            <li>React Query for SDK calls, live previews, and revalidation</li>
+            <li>Storybook with visual regression on every PR; Vite build, &lt;&nbsp;4&nbsp;s HMR, 230&nbsp;kb gzipped</li>
+          </ul>
+          <div class="par-card__code"><pre><span class="com">// OfferWizard/IntentTargeting.tsx</span>
+<span class="kw">import</span> { useFieldArray } <span class="kw">from</span> <span class="str">'react-hook-form'</span>
+<span class="kw">import</span> { Card, ToggleGroup } <span class="kw">from</span> <span class="str">'@agentvine/ui'</span>
+
+<span class="kw">export const</span> <span class="fn">IntentTargeting</span> = ({ control }) =&gt; {
+  <span class="kw">const</span> { fields } = <span class="fn">useFieldArray</span>({ control, name: <span class="str">'intents'</span> })
+  <span class="kw">return</span> (
+    &lt;<span class="vn">Card</span> variant=<span class="str">"emphasis"</span>&gt;
+      &lt;<span class="vn">Card.Header</span>&gt;Configure Intent Targeting&lt;/<span class="vn">Card.Header</span>&gt;
+      {fields.map(intent =&gt; (
+        &lt;<span class="vn">ToggleGroup</span>
+          key={intent.id}
+          name={`intents.${intent.id}.mode`}
+          options={[
+            { value: <span class="str">'include'</span>, label: <span class="str">'+ Include'</span> },
+            { value: <span class="str">'exclude'</span>, label: <span class="str">'– Exclude'</span> },
+          ]}
+        /&gt;
+      ))}
+    &lt;/<span class="vn">Card</span>&gt;
+  )
+}</pre></div>
+        </div>
+
+        <!-- Backend column -->
+        <div class="par-card par-card--be">
+          <div class="par-card__eyebrow">Backend · FastAPI + pgvector</div>
+          <div class="par-card__title">A scoring service every agent talks to</div>
+          <ul class="par-card__list">
+            <li>FastAPI on Python 3.12, async-first, deployed on Fly.io across three regions</li>
+            <li>Postgres + pgvector embeddings for relevance scoring at the decision moment</li>
+            <li>HMAC-signed JSON payloads — agents verify before evaluating</li>
+            <li>Stripe billing, webhook attribution, exhausted-budget auto-pause</li>
+            <li>Content moderation pipeline (OpenAI Moderation + custom rules)</li>
+            <li>P95 <span style="font-family:'Menlo',monospace;">/requestOffer</span> latency 64&nbsp;ms across regions; sandbox spins up in &lt;&nbsp;2&nbsp;s</li>
+          </ul>
+          <div class="par-card__code"><pre><span class="com"># services/offers/api.py</span>
+<span class="kw">@app</span>.<span class="fn">post</span>(<span class="str">'/v1/offers/request'</span>)
+<span class="kw">async def</span> <span class="fn">request_offer</span>(req: <span class="vn">OfferRequest</span>, user: <span class="vn">AuthedDeveloper</span>):
+    candidates = <span class="kw">await</span> retrieval.<span class="fn">embedding_search</span>(
+        intent=req.intent_category,
+        k=<span class="vn">24</span>,
+        filters={<span class="str">'agent_type'</span>: req.agent_type},
+    )
+    scored = relevance.<span class="fn">rank</span>(candidates, query=req.context)
+    winners = auction.<span class="fn">run</span>(
+        scored,
+        max_options=req.max_options <span class="kw">or</span> <span class="vn">2</span>,
+        budget_check=billing.check_advertiser_balance,
+        frequency_cap=fairness.cap_for(user.developer_id),
+    )
+    <span class="kw">return</span> [payload.<span class="fn">sign</span>(o, user.developer_id) <span class="kw">for</span> o <span class="kw">in</span> winners]</pre></div>
+        </div>
+
+      </div>
+
+      <div class="parallel__stats">
+        <div class="par-stat"><div class="par-stat__v">47</div><div class="par-stat__l">Figma screens shipped to engineering</div></div>
+        <div class="par-stat"><div class="par-stat__v">32</div><div class="par-stat__l">React + TypeScript components</div></div>
+        <div class="par-stat"><div class="par-stat__v">14</div><div class="par-stat__l">Python services &amp; workers</div></div>
+        <div class="par-stat"><div class="par-stat__v">3</div><div class="par-stat__l">SDK targets — LangGraph, AutoGen, CrewAI</div></div>
+        <div class="par-stat"><div class="par-stat__v">64 ms</div><div class="par-stat__l">P95 /requestOffer latency</div></div>
+        <div class="par-stat"><div class="par-stat__v">12 wks</div><div class="par-stat__l">Concept to public beta</div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============== Next CS ============== -->
+  <section class="next-cs fade-in">
+    <a href="https://www.intelligaia.com/portfolio" class="next-cs__btn">Next Case Study</a>
+  </section>
+
+  <!-- ============== Footer ============== -->
+  <footer class="ig-footer">
+    <div class="ig-footer__grid">
+      <div class="ig-footer__brand">
+        <a href="https://www.intelligaia.com/" aria-label="Intelligaia"><img src="intelligaia-logo.png" alt="Intelligaia" /></a>
+      </div>
+      <div class="ig-footer__col">
+        <a href="https://www.intelligaia.com/portfolio">Portfolio</a>
+        <a href="https://www.intelligaia.com/design-workshops">Workshops</a>
+        <a href="https://www.intelligaia.com/ux-ui-design-services">UX Design</a>
+        <a href="https://www.intelligaia.com/ai-poc-to-scaled-systems">AI PoC to Scale</a>
+        <a href="https://www.intelligaia.com/federal-public-services">Gov Services</a>
+        <a href="https://www.intelligaia.com/careers">Careers</a>
+      </div>
+      <div class="ig-footer__addr">
+        <h4>United States</h4>
+        <p>548 Spire Bnd, Apex, NC 27523<br /><a href="mailto:sales@intelligaia.com" style="text-decoration: underline;">sales@intelligaia.com</a><br />Ph: <a href="tel:2524001521" style="text-decoration: underline;">252-400-1521</a></p>
+        <h4>India</h4>
+        <p>Industrial Plot I-63,<br />Sector 83, Alpha IT City,<br />Mohali, Punjab — 140306</p>
+      </div>
+      <div>
+        <div class="ig-footer__motto">Goodness <br/> = Rewards</div>
+        <a href="https://www.intelligaia.com/contact" class="ig-footer__contact-cta">Contact Us</a>
+      </div>
+    </div>
+    <div class="ig-footer__copy">
+      <span>© Copyright 2026 Intelligaia.</span>
+      <a href="https://www.intelligaia.com/privacy">Website Privacy Policy</a>
+    </div>
+  </footer>
+
+  <!-- ============== Lightbox ============== -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Full-size screenshot viewer">
+    <button class="lightbox__close" aria-label="Close" id="lightbox-close">✕</button>
+    <img class="lightbox__img" id="lightbox-img" src="" alt="" />
+  </div>
+
+  <script>
+    // ---- Fade-in observer ----
+    const fades = document.querySelectorAll('.fade-in');
+    if ('IntersectionObserver' in window) {
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); }});
+      }, { threshold: 0.1 });
+      fades.forEach(el => io.observe(el));
+    } else { fades.forEach(el => el.classList.add('visible')); }
+
+    // ---- Journey carousel ----
+    (function () {
+      const carousel = document.querySelector('[data-carousel]');
+      if (!carousel) return;
+      const track = carousel.querySelector('[data-carousel-track]');
+      const scenes = Array.from(track.querySelectorAll('.cscene'));
+      const dotsWrap = carousel.querySelector('[data-carousel-dots]');
+      const prevBtn = carousel.querySelector('[data-carousel-prev]');
+      const nextBtn = carousel.querySelector('[data-carousel-next]');
+      let activeIndex = 0;
+      let timer = null;
+      const ROTATE_MS = 2500;
+
+      // Build dots
+      scenes.forEach((_, i) => {
+        const d = document.createElement('button');
+        d.className = 'carousel__dot';
+        d.setAttribute('aria-label', `Go to scene ${i+1}`);
+        d.addEventListener('click', () => { setActive(i, true); });
+        dotsWrap.appendChild(d);
+      });
+      const dots = Array.from(dotsWrap.children);
+
+      function updateTransform() {
+        // Position so the active scene is centered in the carousel viewport
+        const containerW = carousel.clientWidth;
+        const target = scenes[activeIndex];
+        const sceneW = target.offsetWidth;
+        const sceneLeft = target.offsetLeft;
+        const offset = (containerW / 2) - (sceneLeft + sceneW / 2);
+        track.style.transform = `translateX(${offset}px)`;
+      }
+      function setActive(idx, restartTimer) {
+        activeIndex = (idx + scenes.length) % scenes.length;
+        scenes.forEach((s, i) => {
+          s.classList.remove('is-active', 'is-near');
+          if (i === activeIndex) s.classList.add('is-active');
+          else if (i === activeIndex - 1 || i === activeIndex + 1 ||
+                   (activeIndex === 0 && i === scenes.length - 1) ||
+                   (activeIndex === scenes.length - 1 && i === 0)) s.classList.add('is-near');
+        });
+        dots.forEach((d, i) => d.classList.toggle('is-active', i === activeIndex));
+        // wait a frame so transitions apply
+        requestAnimationFrame(updateTransform);
+        if (restartTimer) { stop(); start(); }
+      }
+      function start() {
+        stop();
+        timer = setInterval(() => setActive(activeIndex + 1, false), ROTATE_MS);
+      }
+      function stop() {
+        if (timer) { clearInterval(timer); timer = null; }
+      }
+      carousel.addEventListener('mouseenter', stop);
+      carousel.addEventListener('mouseleave', start);
+      prevBtn.addEventListener('click', () => setActive(activeIndex - 1, true));
+      nextBtn.addEventListener('click', () => setActive(activeIndex + 1, true));
+      window.addEventListener('resize', () => requestAnimationFrame(updateTransform));
+
+      // Initialize
+      setActive(0, false);
+      start();
+    })();
+
+    // ---- Lightbox ----
+    (function () {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lightbox-img');
+      const lbClose = document.getElementById('lightbox-close');
+      const tiles = document.querySelectorAll('[data-lightbox]');
+      function open(src) {
+        lbImg.src = src;
+        lb.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+      }
+      function close() {
+        lb.classList.remove('is-open');
+        lbImg.src = '';
+        document.body.style.overflow = '';
+      }
+      tiles.forEach(t => {
+        t.addEventListener('click', (e) => {
+          const src = t.getAttribute('data-lightbox');
+          if (src) open(src);
+        });
+      });
+      lb.addEventListener('click', (e) => { if (e.target === lb) close(); });
+      lbClose.addEventListener('click', close);
+      document.addEventListener('keydown', (e) => { if (e.key === 'Escape') close(); });
+    })();
+  </script>
+</body>
+</html>
