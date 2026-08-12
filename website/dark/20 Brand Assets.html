@@ -5,61 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intelligaia · Brand assets · Brand Assets</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
-// ── Word-by-word reveal on every display heading ──
-(function wordReveal(){
-  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
-            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
-  var heads = document.querySelectorAll(SEL);
-  if (!heads.length) return;
-
-  heads.forEach(function(h){
-    if (h.dataset.wsplit) return;
-    h.dataset.wsplit = '1';
-    var html = h.innerHTML;
-    // split on <br> so explicit line breaks survive
-    var lines = html.split(/<br\s*\/?>/i);
-    h.innerHTML = lines.map(function(line){
-      var tmp = document.createElement('div');
-      tmp.innerHTML = line;
-      var text = tmp.textContent.trim();
-      if (!text) return '';
-      return text.split(/\s+/).map(function(w){
-        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        return '<span class="w-split"><span>' + safe + '</span></span>';
-      }).join(' ');
-    }).filter(Boolean).join('<br>');
-
-    // stagger each word
-    var i = 0;
-    h.querySelectorAll('.w-split > span').forEach(function(sp){
-      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
-      i++;
-    });
-  });
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      e.target.classList.add('w-on');
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
-  heads.forEach(function(h){ io.observe(h); });
-
-  // safety net
-  setTimeout(function(){
-    heads.forEach(function(h){
-      var r = h.getBoundingClientRect();
-      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
-    });
-  }, 1400);
-})();
-
-
-
-
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 :root {
   --bg: #04050A; --bg-2: #0A0C14; --bg-3: #131522;
@@ -593,10 +539,12 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function(){
+
 // ── Smooth scroll — one guarded instance, anchor-aware ──
 (function initScroll(){
   if (window.__igLenis) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   if (reduce || typeof Lenis === 'undefined') return;
   var lenis = new Lenis({ duration:1.05, easing:function(t){ return 1 - Math.pow(1-t,3); },
                           smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
@@ -639,6 +587,67 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   }, 1200);
 })();
 
+
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+// ── Word-by-word reveal on every display heading ──
+(function wordReveal(){
+  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
+            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
+  var heads = document.querySelectorAll(SEL);
+  if (!heads.length) return;
+
+  heads.forEach(function(h){
+    if (h.dataset.wsplit) return;
+    h.dataset.wsplit = '1';
+    var html = h.innerHTML;
+    // split on <br> so explicit line breaks survive
+    var lines = html.split(/<br\s*\/?>/i);
+    h.innerHTML = lines.map(function(line){
+      var tmp = document.createElement('div');
+      tmp.innerHTML = line;
+      var text = tmp.textContent.trim();
+      if (!text) return '';
+      return text.split(/\s+/).map(function(w){
+        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        return '<span class="w-split"><span>' + safe + '</span></span>';
+      }).join(' ');
+    }).filter(Boolean).join('<br>');
+
+    // stagger each word
+    var i = 0;
+    h.querySelectorAll('.w-split > span').forEach(function(sp){
+      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
+      i++;
+    });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('w-on');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+  heads.forEach(function(h){ io.observe(h); });
+
+  // safety net
+  setTimeout(function(){
+    heads.forEach(function(h){
+      var r = h.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
+    });
+  }, 1400);
+})();
+
+
+
+
+
+});
 </script>
 </body>
 </html>

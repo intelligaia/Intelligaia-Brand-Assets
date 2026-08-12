@@ -5,148 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intelligaia · Diagrams · Brand Assets</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
-// ── Word-by-word reveal on every display heading ──
-(function wordReveal(){
-  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
-            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
-  var heads = document.querySelectorAll(SEL);
-  if (!heads.length) return;
-
-  heads.forEach(function(h){
-    if (h.dataset.wsplit) return;
-    h.dataset.wsplit = '1';
-    var html = h.innerHTML;
-    // split on <br> so explicit line breaks survive
-    var lines = html.split(/<br\s*\/?>/i);
-    h.innerHTML = lines.map(function(line){
-      var tmp = document.createElement('div');
-      tmp.innerHTML = line;
-      var text = tmp.textContent.trim();
-      if (!text) return '';
-      return text.split(/\s+/).map(function(w){
-        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        return '<span class="w-split"><span>' + safe + '</span></span>';
-      }).join(' ');
-    }).filter(Boolean).join('<br>');
-
-    // stagger each word
-    var i = 0;
-    h.querySelectorAll('.w-split > span').forEach(function(sp){
-      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
-      i++;
-    });
-  });
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      e.target.classList.add('w-on');
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
-  heads.forEach(function(h){ io.observe(h); });
-
-  // safety net
-  setTimeout(function(){
-    heads.forEach(function(h){
-      var r = h.getBoundingClientRect();
-      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
-    });
-  }, 1400);
-})();
-
-// ── Diagram lightbox ──
-(function dlb(){
-  var box = document.getElementById('dlb');
-  if (!box) return;
-  var img = box.querySelector('img'), cap = box.querySelector('.cap');
-  document.querySelectorAll('.dg-vis').forEach(function(v){
-    v.addEventListener('click', function(){
-      img.src = v.dataset.full; img.alt = v.dataset.cap;
-      cap.textContent = v.dataset.cap; box.classList.add('on');
-      document.body.style.overflow = 'hidden';
-    });
-  });
-  function close(){ box.classList.remove('on'); document.body.style.overflow = ''; }
-  box.addEventListener('click', function(e){ if (e.target === box || e.target.classList.contains('x')) close(); });
-  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
-})();
-
-
-
-// ── Artifact viewer: carousel + per-item panel ──
-(function artifact(){
-  var root=document.getElementById('av'); if(!root||!window.IG_ITEMS) return;
-  var I=window.IG_ITEMS, i=0;
-  var stage=document.getElementById('avStage');
-  var side=document.getElementById('avSide');
-  var pos=document.getElementById('avPos');
-  var dots=root.querySelector('.av-dots');
-  var list=root.querySelector('.av-list');
-
-  dots.innerHTML=I.map(function(_,k){return '<button class="av-dot'+(k?'':' on')+'"></button>';}).join('');
-  list.innerHTML=I.map(function(it){
-    var v=it.doc?'<div class="v" style="background:var(--bg-3);font-family:Geist,sans-serif;font-size:12px;color:var(--ink-muted)">Document</div>'
-                :'<div class="v"><img src="'+it.src+'" alt="" loading="lazy"/></div>';
-    return '<div class="av-t">'+v+'<div class="n">'+it.title+'</div></div>';
-  }).join('');
-
-  function render(){
-    var it=I[i];
-    stage.className='av-stage'+(it.doc?' doc':'');
-    stage.innerHTML=(I.length>1?'<button class="av-nav p">&#8249;</button><button class="av-nav n">&#8250;</button>':'')+
-      (it.doc?'<iframe src="'+it.src+'" loading="lazy" title="'+it.title+'"></iframe>'
-             :'<img src="'+it.src+'" alt="'+it.title+'"/>');
-    side.innerHTML='<div class="k">'+it.kind+'</div><h3>'+it.title+'</h3>'+
-      it.fields.map(function(f){return '<div class="f"><div class="fk">'+f[0]+'</div><div class="fv">'+f[1]+'</div></div>';}).join('')+
-      '<div class="dl"><a class="p" href="'+it.src+'" target="_blank" rel="noopener">Open full size<span>↗</span></a>'+
-      (it.dl?'<a class="s" href="'+it.dl+'" target="_blank" rel="noopener">Download '+it.dlLabel+'<span>↓</span></a>':'')+'</div>';
-    pos.textContent=(i+1)+' of '+I.length;
-    dots.querySelectorAll('.av-dot').forEach(function(d,k){d.classList.toggle('on',k===i);});
-    var p=stage.querySelector('.av-nav.p'), n=stage.querySelector('.av-nav.n');
-    if(p)p.onclick=function(){step(-1);}; if(n)n.onclick=function(){step(1);};
-    var im=stage.querySelector('img');
-    if(im)im.onclick=function(){
-      var lb=document.getElementById('avlb');
-      lb.querySelector('img').src=it.src; lb.querySelector('.cap').textContent=it.title;
-      lb.classList.add('on'); document.body.style.overflow='hidden';
-    };
-  }
-  function step(d){ i=(i+d+I.length)%I.length; render(); }
-  dots.addEventListener('click',function(e){
-    var b=e.target.closest('.av-dot'); if(!b) return;
-    i=Array.prototype.indexOf.call(dots.children,b); render();
-  });
-  list.addEventListener('click',function(e){
-    var t=e.target.closest('.av-t'); if(!t) return;
-    i=Array.prototype.indexOf.call(list.children,t);
-    root.querySelector('.av-mode[data-mode="carousel"]').click(); render();
-    root.querySelector('.av-grid').scrollIntoView({behavior:'smooth',block:'center'});
-  });
-  root.querySelectorAll('.av-mode').forEach(function(b){
-    b.addEventListener('click',function(){
-      var car=b.dataset.mode==='carousel';
-      root.querySelectorAll('.av-mode').forEach(function(x){x.classList.toggle('on',x===b);});
-      root.querySelector('.av-grid').style.display=car?'':'none';
-      dots.style.display=car?'':'none';
-      list.classList.toggle('on',!car);
-    });
-  });
-  document.addEventListener('keydown',function(e){
-    if(document.querySelector('.avlb.on')) return;
-    if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1);
-  });
-  var lb=document.getElementById('avlb');
-  lb.addEventListener('click',function(e){
-    if(e.target===lb||e.target.classList.contains('x')){lb.classList.remove('on');document.body.style.overflow='';}
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){lb.classList.remove('on');document.body.style.overflow='';}
-  });
-  render();
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 :root {
   --bg: #04050A; --bg-2: #0A0C14; --bg-3: #131522;
@@ -784,6 +643,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-9px;
   height:2px; background:var(--yellow); border-radius:2px; }
 </style>
+<script>window.IG_ITEMS = [{"src": "../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png", "dl": "../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.pdf", "dlLabel": "PDF", "title": "Role-based AI deconstruction", "kind": "Matrix 2×2", "doc": false, "fields": [["Purpose", "Find which workflows are worth handing to an agent."], ["How it works", "Plot every task against friction and frequency; the high-high quadrant is the agent goldmine. A five-point readiness check gates anything before it moves into SAFE."], ["Use when", "Opening an engagement, or triaging automation requests."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Production%20Analyst.png", "dl": "../assets/diagrams/Production%20Analyst.pdf", "dlLabel": "PDF", "title": "Deconstructing a role for AI", "kind": "Hub-spoke → checklist", "doc": false, "fields": [["Purpose", "Show the readiness framework applied to one real job."], ["How it works", "Break a role into its five recurring tasks, run the set through the readiness test, land on a verdict. Makes the abstract framework concrete on a client's own domain."], ["Use when", "A client asks what the framework looks like against their team."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/SAFE%20Workflow%20Evaluation.png", "dl": "../assets/diagrams/SAFE%20Workflow%20Evaluation.pdf", "dlLabel": "PDF", "title": "SAFE workflow evaluation", "kind": "Swimlane flow", "doc": false, "fields": [["Purpose", "Design where the human sits in an AI-run workflow."], ["How it works", "Two lanes — human above, agent below. The four SAFE letters attach to the transitions: scope wraps the frame, authority governs delegation, feedback governs escalation, evaluation loops it back."], ["Use when", "Specifying an agent workflow before anyone writes code."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png", "dl": "../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.pdf", "dlLabel": "PDF", "title": "The SAFE framework", "kind": "Four-pillar + process strip", "doc": false, "fields": [["Purpose", "Explain the whole framework on one page."], ["How it works", "Four pillars, each with its governing question, three rules and a worked example. Beneath them, how the engineering team runs it, the five metrics tracked, and what it achieved."], ["Use when", "Onboarding a team, or the framework slide in a pitch."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png", "dl": "../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.pdf", "dlLabel": "PDF", "title": "SDLC knowledge into AI context", "kind": "2×2 narrative", "doc": false, "fields": [["Purpose", "Argue that the fix is context, not new tooling."], ["How it works", "What teams already had, why direct prompting still failed, the structured inputs that closed the gap, and the same flow running in practice. The through-line is that nothing new had to be invented."], ["Use when", "Countering the idea that AI adoption means replacing the process."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/AI-Generated%20Code.png", "dl": "../assets/diagrams/AI-Generated%20Code.pdf", "dlLabel": "PDF", "title": "AI-generated code: system impact", "kind": "Three-band process", "doc": false, "fields": [["Purpose", "Make the risk of AI-written pull requests visible before merge."], ["How it works", "Band one names the visibility gap, expected against actual. Band two walks the agent from mapping connected systems to an impact report. Band three keeps the human holding the decision."], ["Use when", "Explaining AI-assisted engineering governance to a review board."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Next%20Steps.png", "dl": "../assets/diagrams/Next%20Steps.pdf", "dlLabel": "PDF", "title": "Next steps: deconstruction to automation", "kind": "Numbered journey + loop", "doc": false, "fields": [["Purpose", "Show the client where the engagement goes after the first win."], ["How it works", "Five stages, each with its outcome, wired through a continuous feedback loop. Underneath, the three automation levels — no touch, low touch, high touch — chosen by confidence against risk."], ["Use when", "Closing discovery, or scoping a follow-on engagement."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}];</script>
 </head>
 <body>
 <header class="g-header">
@@ -852,8 +712,6 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </main>
 
 <div class="avlb" id="avlb"><button class="x">&times;</button><img alt=""/><div class="cap"></div></div>
-<script>window.IG_ITEMS = [{"src": "../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png", "dl": "../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.pdf", "dlLabel": "PDF", "title": "Role-based AI deconstruction", "kind": "Matrix 2×2", "doc": false, "fields": [["Purpose", "Find which workflows are worth handing to an agent."], ["How it works", "Plot every task against friction and frequency; the high-high quadrant is the agent goldmine. A five-point readiness check gates anything before it moves into SAFE."], ["Use when", "Opening an engagement, or triaging automation requests."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Production%20Analyst.png", "dl": "../assets/diagrams/Production%20Analyst.pdf", "dlLabel": "PDF", "title": "Deconstructing a role for AI", "kind": "Hub-spoke → checklist", "doc": false, "fields": [["Purpose", "Show the readiness framework applied to one real job."], ["How it works", "Break a role into its five recurring tasks, run the set through the readiness test, land on a verdict. Makes the abstract framework concrete on a client's own domain."], ["Use when", "A client asks what the framework looks like against their team."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/SAFE%20Workflow%20Evaluation.png", "dl": "../assets/diagrams/SAFE%20Workflow%20Evaluation.pdf", "dlLabel": "PDF", "title": "SAFE workflow evaluation", "kind": "Swimlane flow", "doc": false, "fields": [["Purpose", "Design where the human sits in an AI-run workflow."], ["How it works", "Two lanes — human above, agent below. The four SAFE letters attach to the transitions: scope wraps the frame, authority governs delegation, feedback governs escalation, evaluation loops it back."], ["Use when", "Specifying an agent workflow before anyone writes code."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png", "dl": "../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.pdf", "dlLabel": "PDF", "title": "The SAFE framework", "kind": "Four-pillar + process strip", "doc": false, "fields": [["Purpose", "Explain the whole framework on one page."], ["How it works", "Four pillars, each with its governing question, three rules and a worked example. Beneath them, how the engineering team runs it, the five metrics tracked, and what it achieved."], ["Use when", "Onboarding a team, or the framework slide in a pitch."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png", "dl": "../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.pdf", "dlLabel": "PDF", "title": "SDLC knowledge into AI context", "kind": "2×2 narrative", "doc": false, "fields": [["Purpose", "Argue that the fix is context, not new tooling."], ["How it works", "What teams already had, why direct prompting still failed, the structured inputs that closed the gap, and the same flow running in practice. The through-line is that nothing new had to be invented."], ["Use when", "Countering the idea that AI adoption means replacing the process."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/AI-Generated%20Code.png", "dl": "../assets/diagrams/AI-Generated%20Code.pdf", "dlLabel": "PDF", "title": "AI-generated code: system impact", "kind": "Three-band process", "doc": false, "fields": [["Purpose", "Make the risk of AI-written pull requests visible before merge."], ["How it works", "Band one names the visibility gap, expected against actual. Band two walks the agent from mapping connected systems to an impact report. Band three keeps the human holding the decision."], ["Use when", "Explaining AI-assisted engineering governance to a review board."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../assets/diagrams/Next%20Steps.png", "dl": "../assets/diagrams/Next%20Steps.pdf", "dlLabel": "PDF", "title": "Next steps: deconstruction to automation", "kind": "Numbered journey + loop", "doc": false, "fields": [["Purpose", "Show the client where the engagement goes after the first win."], ["How it works", "Five stages, each with its outcome, wired through a continuous feedback loop. Underneath, the three automation levels — no touch, low touch, high touch — chosen by confidence against risk."], ["Use when", "Closing discovery, or scoping a follow-on engagement."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}];</script>
-
 <footer class="dark-footer">
   <div class="dark-footer-inner">
     <div>
@@ -885,10 +743,12 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function(){
+
 // ── Smooth scroll — one guarded instance, anchor-aware ──
 (function initScroll(){
   if (window.__igLenis) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   if (reduce || typeof Lenis === 'undefined') return;
   var lenis = new Lenis({ duration:1.05, easing:function(t){ return 1 - Math.pow(1-t,3); },
                           smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
@@ -931,6 +791,154 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   }, 1200);
 })();
 
+
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+// ── Word-by-word reveal on every display heading ──
+(function wordReveal(){
+  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
+            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
+  var heads = document.querySelectorAll(SEL);
+  if (!heads.length) return;
+
+  heads.forEach(function(h){
+    if (h.dataset.wsplit) return;
+    h.dataset.wsplit = '1';
+    var html = h.innerHTML;
+    // split on <br> so explicit line breaks survive
+    var lines = html.split(/<br\s*\/?>/i);
+    h.innerHTML = lines.map(function(line){
+      var tmp = document.createElement('div');
+      tmp.innerHTML = line;
+      var text = tmp.textContent.trim();
+      if (!text) return '';
+      return text.split(/\s+/).map(function(w){
+        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        return '<span class="w-split"><span>' + safe + '</span></span>';
+      }).join(' ');
+    }).filter(Boolean).join('<br>');
+
+    // stagger each word
+    var i = 0;
+    h.querySelectorAll('.w-split > span').forEach(function(sp){
+      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
+      i++;
+    });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('w-on');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+  heads.forEach(function(h){ io.observe(h); });
+
+  // safety net
+  setTimeout(function(){
+    heads.forEach(function(h){
+      var r = h.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
+    });
+  }, 1400);
+})();
+
+// ── Diagram lightbox ──
+(function dlb(){
+  var box = document.getElementById('dlb');
+  if (!box) return;
+  var img = box.querySelector('img'), cap = box.querySelector('.cap');
+  document.querySelectorAll('.dg-vis').forEach(function(v){
+    v.addEventListener('click', function(){
+      img.src = v.dataset.full; img.alt = v.dataset.cap;
+      cap.textContent = v.dataset.cap; box.classList.add('on');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+  function close(){ box.classList.remove('on'); document.body.style.overflow = ''; }
+  box.addEventListener('click', function(e){ if (e.target === box || e.target.classList.contains('x')) close(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape') close(); });
+})();
+
+
+
+// ── Artifact viewer: carousel + per-item panel ──
+(function artifact(){
+  var root=document.getElementById('av'); if(!root||!window.IG_ITEMS) return;
+  var I=window.IG_ITEMS, i=0;
+  var stage=document.getElementById('avStage');
+  var side=document.getElementById('avSide');
+  var pos=document.getElementById('avPos');
+  var dots=root.querySelector('.av-dots');
+  var list=root.querySelector('.av-list');
+
+  dots.innerHTML=I.map(function(_,k){return '<button class="av-dot'+(k?'':' on')+'"></button>';}).join('');
+  list.innerHTML=I.map(function(it){
+    var v=it.doc?'<div class="v" style="background:var(--bg-3);font-family:Geist,sans-serif;font-size:12px;color:var(--ink-muted)">Document</div>'
+                :'<div class="v"><img src="'+it.src+'" alt="" loading="lazy"/></div>';
+    return '<div class="av-t">'+v+'<div class="n">'+it.title+'</div></div>';
+  }).join('');
+
+  function render(){
+    var it=I[i];
+    stage.className='av-stage'+(it.doc?' doc':'');
+    stage.innerHTML=(I.length>1?'<button class="av-nav p">&#8249;</button><button class="av-nav n">&#8250;</button>':'')+
+      (it.doc?'<iframe src="'+it.src+'" loading="lazy" title="'+it.title+'"></iframe>'
+             :'<img src="'+it.src+'" alt="'+it.title+'"/>');
+    side.innerHTML='<div class="k">'+it.kind+'</div><h3>'+it.title+'</h3>'+
+      it.fields.map(function(f){return '<div class="f"><div class="fk">'+f[0]+'</div><div class="fv">'+f[1]+'</div></div>';}).join('')+
+      '<div class="dl"><a class="p" href="'+it.src+'" target="_blank" rel="noopener">Open full size<span>↗</span></a>'+
+      (it.dl?'<a class="s" href="'+it.dl+'" target="_blank" rel="noopener">Download '+it.dlLabel+'<span>↓</span></a>':'')+'</div>';
+    pos.textContent=(i+1)+' of '+I.length;
+    dots.querySelectorAll('.av-dot').forEach(function(d,k){d.classList.toggle('on',k===i);});
+    var p=stage.querySelector('.av-nav.p'), n=stage.querySelector('.av-nav.n');
+    if(p)p.onclick=function(){step(-1);}; if(n)n.onclick=function(){step(1);};
+    var im=stage.querySelector('img');
+    if(im)im.onclick=function(){
+      var lb=document.getElementById('avlb');
+      lb.querySelector('img').src=it.src; lb.querySelector('.cap').textContent=it.title;
+      lb.classList.add('on'); document.body.style.overflow='hidden';
+    };
+  }
+  function step(d){ i=(i+d+I.length)%I.length; render(); }
+  dots.addEventListener('click',function(e){
+    var b=e.target.closest('.av-dot'); if(!b) return;
+    i=Array.prototype.indexOf.call(dots.children,b); render();
+  });
+  list.addEventListener('click',function(e){
+    var t=e.target.closest('.av-t'); if(!t) return;
+    i=Array.prototype.indexOf.call(list.children,t);
+    root.querySelector('.av-mode[data-mode="carousel"]').click(); render();
+    root.querySelector('.av-grid').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  root.querySelectorAll('.av-mode').forEach(function(b){
+    b.addEventListener('click',function(){
+      var car=b.dataset.mode==='carousel';
+      root.querySelectorAll('.av-mode').forEach(function(x){x.classList.toggle('on',x===b);});
+      root.querySelector('.av-grid').style.display=car?'':'none';
+      dots.style.display=car?'':'none';
+      list.classList.toggle('on',!car);
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(document.querySelector('.avlb.on')) return;
+    if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1);
+  });
+  var lb=document.getElementById('avlb');
+  lb.addEventListener('click',function(e){
+    if(e.target===lb||e.target.classList.contains('x')){lb.classList.remove('on');document.body.style.overflow='';}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){lb.classList.remove('on');document.body.style.overflow='';}
+  });
+  render();
+})();
+
+});
 </script>
 </body>
 </html>

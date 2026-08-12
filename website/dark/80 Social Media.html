@@ -5,131 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intelligaia · Social media · Brand Assets</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
-// ── Word-by-word reveal on every display heading ──
-(function wordReveal(){
-  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
-            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
-  var heads = document.querySelectorAll(SEL);
-  if (!heads.length) return;
-
-  heads.forEach(function(h){
-    if (h.dataset.wsplit) return;
-    h.dataset.wsplit = '1';
-    var html = h.innerHTML;
-    // split on <br> so explicit line breaks survive
-    var lines = html.split(/<br\s*\/?>/i);
-    h.innerHTML = lines.map(function(line){
-      var tmp = document.createElement('div');
-      tmp.innerHTML = line;
-      var text = tmp.textContent.trim();
-      if (!text) return '';
-      return text.split(/\s+/).map(function(w){
-        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        return '<span class="w-split"><span>' + safe + '</span></span>';
-      }).join(' ');
-    }).filter(Boolean).join('<br>');
-
-    // stagger each word
-    var i = 0;
-    h.querySelectorAll('.w-split > span').forEach(function(sp){
-      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
-      i++;
-    });
-  });
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      e.target.classList.add('w-on');
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
-  heads.forEach(function(h){ io.observe(h); });
-
-  // safety net
-  setTimeout(function(){
-    heads.forEach(function(h){
-      var r = h.getBoundingClientRect();
-      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
-    });
-  }, 1400);
-})();
-
-
-
-// ── Artifact viewer: carousel + per-item panel ──
-(function artifact(){
-  var root=document.getElementById('av'); if(!root||!window.IG_ITEMS) return;
-  var I=window.IG_ITEMS, i=0;
-  var stage=document.getElementById('avStage');
-  var side=document.getElementById('avSide');
-  var pos=document.getElementById('avPos');
-  var dots=root.querySelector('.av-dots');
-  var list=root.querySelector('.av-list');
-
-  dots.innerHTML=I.map(function(_,k){return '<button class="av-dot'+(k?'':' on')+'"></button>';}).join('');
-  list.innerHTML=I.map(function(it){
-    var v=it.doc?'<div class="v" style="background:var(--bg-3);font-family:Geist,sans-serif;font-size:12px;color:var(--ink-muted)">Document</div>'
-                :'<div class="v"><img src="'+it.src+'" alt="" loading="lazy"/></div>';
-    return '<div class="av-t">'+v+'<div class="n">'+it.title+'</div></div>';
-  }).join('');
-
-  function render(){
-    var it=I[i];
-    stage.className='av-stage'+(it.doc?' doc':'');
-    stage.innerHTML=(I.length>1?'<button class="av-nav p">&#8249;</button><button class="av-nav n">&#8250;</button>':'')+
-      (it.doc?'<iframe src="'+it.src+'" loading="lazy" title="'+it.title+'"></iframe>'
-             :'<img src="'+it.src+'" alt="'+it.title+'"/>');
-    side.innerHTML='<div class="k">'+it.kind+'</div><h3>'+it.title+'</h3>'+
-      it.fields.map(function(f){return '<div class="f"><div class="fk">'+f[0]+'</div><div class="fv">'+f[1]+'</div></div>';}).join('')+
-      '<div class="dl"><a class="p" href="'+it.src+'" target="_blank" rel="noopener">Open full size<span>↗</span></a>'+
-      (it.dl?'<a class="s" href="'+it.dl+'" target="_blank" rel="noopener">Download '+it.dlLabel+'<span>↓</span></a>':'')+'</div>';
-    pos.textContent=(i+1)+' of '+I.length;
-    dots.querySelectorAll('.av-dot').forEach(function(d,k){d.classList.toggle('on',k===i);});
-    var p=stage.querySelector('.av-nav.p'), n=stage.querySelector('.av-nav.n');
-    if(p)p.onclick=function(){step(-1);}; if(n)n.onclick=function(){step(1);};
-    var im=stage.querySelector('img');
-    if(im)im.onclick=function(){
-      var lb=document.getElementById('avlb');
-      lb.querySelector('img').src=it.src; lb.querySelector('.cap').textContent=it.title;
-      lb.classList.add('on'); document.body.style.overflow='hidden';
-    };
-  }
-  function step(d){ i=(i+d+I.length)%I.length; render(); }
-  dots.addEventListener('click',function(e){
-    var b=e.target.closest('.av-dot'); if(!b) return;
-    i=Array.prototype.indexOf.call(dots.children,b); render();
-  });
-  list.addEventListener('click',function(e){
-    var t=e.target.closest('.av-t'); if(!t) return;
-    i=Array.prototype.indexOf.call(list.children,t);
-    root.querySelector('.av-mode[data-mode="carousel"]').click(); render();
-    root.querySelector('.av-grid').scrollIntoView({behavior:'smooth',block:'center'});
-  });
-  root.querySelectorAll('.av-mode').forEach(function(b){
-    b.addEventListener('click',function(){
-      var car=b.dataset.mode==='carousel';
-      root.querySelectorAll('.av-mode').forEach(function(x){x.classList.toggle('on',x===b);});
-      root.querySelector('.av-grid').style.display=car?'':'none';
-      dots.style.display=car?'':'none';
-      list.classList.toggle('on',!car);
-    });
-  });
-  document.addEventListener('keydown',function(e){
-    if(document.querySelector('.avlb.on')) return;
-    if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1);
-  });
-  var lb=document.getElementById('avlb');
-  lb.addEventListener('click',function(e){
-    if(e.target===lb||e.target.classList.contains('x')){lb.classList.remove('on');document.body.style.overflow='';}
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){lb.classList.remove('on');document.body.style.overflow='';}
-  });
-  render();
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 :root {
   --bg: #04050A; --bg-2: #0A0C14; --bg-3: #131522;
@@ -747,6 +623,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-9px;
   height:2px; background:var(--yellow); border-radius:2px; }
 </style>
+<script>window.IG_ITEMS = [{"src": "../assets/marketing/sections/approved_section_workshops-mvp_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "Workshops — MVP", "kind": "Post", "doc": false, "fields": [["Notes", "Square feed post. Single idea, headline under twelve words, illustration anchored to a corner."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_ux-design-branding_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "Branding", "kind": "Post", "doc": false, "fields": [["Notes", "3D render works at thumbnail size because the silhouette stays simple."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_workshops-journey-map_vector-flat_v01.png", "dl": "", "dlLabel": "", "title": "Journey map", "kind": "Post", "doc": false, "fields": [["Notes", "Vector-flat reads more clearly when the post carries a process idea."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_user-research-processes_vector-flat_v01.png", "dl": "", "dlLabel": "", "title": "Research process", "kind": "Post", "doc": false, "fields": [["Notes", "Method-led post. The illustration does the explaining, the caption carries detail."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_ux-design-audit_tech-ai_v01.png", "dl": "", "dlLabel": "", "title": "Design audit", "kind": "Post", "doc": false, "fields": [["Notes", "Tech-AI treatment for anything touching automation or tooling."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_workshops-partner-cta_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Partner CTA", "kind": "Post", "doc": false, "fields": [["Notes", "Closing post in a campaign. Carries the ask."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}];</script>
 </head>
 <body>
 <header class="g-header">
@@ -815,8 +692,6 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </main>
 
 <div class="avlb" id="avlb"><button class="x">&times;</button><img alt=""/><div class="cap"></div></div>
-<script>window.IG_ITEMS = [{"src": "../assets/marketing/sections/approved_section_workshops-mvp_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "Workshops — MVP", "kind": "Post", "doc": false, "fields": [["Notes", "Square feed post. Single idea, headline under twelve words, illustration anchored to a corner."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_ux-design-branding_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "Branding", "kind": "Post", "doc": false, "fields": [["Notes", "3D render works at thumbnail size because the silhouette stays simple."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_workshops-journey-map_vector-flat_v01.png", "dl": "", "dlLabel": "", "title": "Journey map", "kind": "Post", "doc": false, "fields": [["Notes", "Vector-flat reads more clearly when the post carries a process idea."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_user-research-processes_vector-flat_v01.png", "dl": "", "dlLabel": "", "title": "Research process", "kind": "Post", "doc": false, "fields": [["Notes", "Method-led post. The illustration does the explaining, the caption carries detail."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_ux-design-audit_tech-ai_v01.png", "dl": "", "dlLabel": "", "title": "Design audit", "kind": "Post", "doc": false, "fields": [["Notes", "Tech-AI treatment for anything touching automation or tooling."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../assets/marketing/sections/approved_section_workshops-partner-cta_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Partner CTA", "kind": "Post", "doc": false, "fields": [["Notes", "Closing post in a campaign. Carries the ask."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}];</script>
-
 <footer class="dark-footer">
   <div class="dark-footer-inner">
     <div>
@@ -848,10 +723,12 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function(){
+
 // ── Smooth scroll — one guarded instance, anchor-aware ──
 (function initScroll(){
   if (window.__igLenis) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   if (reduce || typeof Lenis === 'undefined') return;
   var lenis = new Lenis({ duration:1.05, easing:function(t){ return 1 - Math.pow(1-t,3); },
                           smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
@@ -894,6 +771,137 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   }, 1200);
 })();
 
+
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+// ── Word-by-word reveal on every display heading ──
+(function wordReveal(){
+  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
+            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
+  var heads = document.querySelectorAll(SEL);
+  if (!heads.length) return;
+
+  heads.forEach(function(h){
+    if (h.dataset.wsplit) return;
+    h.dataset.wsplit = '1';
+    var html = h.innerHTML;
+    // split on <br> so explicit line breaks survive
+    var lines = html.split(/<br\s*\/?>/i);
+    h.innerHTML = lines.map(function(line){
+      var tmp = document.createElement('div');
+      tmp.innerHTML = line;
+      var text = tmp.textContent.trim();
+      if (!text) return '';
+      return text.split(/\s+/).map(function(w){
+        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        return '<span class="w-split"><span>' + safe + '</span></span>';
+      }).join(' ');
+    }).filter(Boolean).join('<br>');
+
+    // stagger each word
+    var i = 0;
+    h.querySelectorAll('.w-split > span').forEach(function(sp){
+      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
+      i++;
+    });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('w-on');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+  heads.forEach(function(h){ io.observe(h); });
+
+  // safety net
+  setTimeout(function(){
+    heads.forEach(function(h){
+      var r = h.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
+    });
+  }, 1400);
+})();
+
+
+
+// ── Artifact viewer: carousel + per-item panel ──
+(function artifact(){
+  var root=document.getElementById('av'); if(!root||!window.IG_ITEMS) return;
+  var I=window.IG_ITEMS, i=0;
+  var stage=document.getElementById('avStage');
+  var side=document.getElementById('avSide');
+  var pos=document.getElementById('avPos');
+  var dots=root.querySelector('.av-dots');
+  var list=root.querySelector('.av-list');
+
+  dots.innerHTML=I.map(function(_,k){return '<button class="av-dot'+(k?'':' on')+'"></button>';}).join('');
+  list.innerHTML=I.map(function(it){
+    var v=it.doc?'<div class="v" style="background:var(--bg-3);font-family:Geist,sans-serif;font-size:12px;color:var(--ink-muted)">Document</div>'
+                :'<div class="v"><img src="'+it.src+'" alt="" loading="lazy"/></div>';
+    return '<div class="av-t">'+v+'<div class="n">'+it.title+'</div></div>';
+  }).join('');
+
+  function render(){
+    var it=I[i];
+    stage.className='av-stage'+(it.doc?' doc':'');
+    stage.innerHTML=(I.length>1?'<button class="av-nav p">&#8249;</button><button class="av-nav n">&#8250;</button>':'')+
+      (it.doc?'<iframe src="'+it.src+'" loading="lazy" title="'+it.title+'"></iframe>'
+             :'<img src="'+it.src+'" alt="'+it.title+'"/>');
+    side.innerHTML='<div class="k">'+it.kind+'</div><h3>'+it.title+'</h3>'+
+      it.fields.map(function(f){return '<div class="f"><div class="fk">'+f[0]+'</div><div class="fv">'+f[1]+'</div></div>';}).join('')+
+      '<div class="dl"><a class="p" href="'+it.src+'" target="_blank" rel="noopener">Open full size<span>↗</span></a>'+
+      (it.dl?'<a class="s" href="'+it.dl+'" target="_blank" rel="noopener">Download '+it.dlLabel+'<span>↓</span></a>':'')+'</div>';
+    pos.textContent=(i+1)+' of '+I.length;
+    dots.querySelectorAll('.av-dot').forEach(function(d,k){d.classList.toggle('on',k===i);});
+    var p=stage.querySelector('.av-nav.p'), n=stage.querySelector('.av-nav.n');
+    if(p)p.onclick=function(){step(-1);}; if(n)n.onclick=function(){step(1);};
+    var im=stage.querySelector('img');
+    if(im)im.onclick=function(){
+      var lb=document.getElementById('avlb');
+      lb.querySelector('img').src=it.src; lb.querySelector('.cap').textContent=it.title;
+      lb.classList.add('on'); document.body.style.overflow='hidden';
+    };
+  }
+  function step(d){ i=(i+d+I.length)%I.length; render(); }
+  dots.addEventListener('click',function(e){
+    var b=e.target.closest('.av-dot'); if(!b) return;
+    i=Array.prototype.indexOf.call(dots.children,b); render();
+  });
+  list.addEventListener('click',function(e){
+    var t=e.target.closest('.av-t'); if(!t) return;
+    i=Array.prototype.indexOf.call(list.children,t);
+    root.querySelector('.av-mode[data-mode="carousel"]').click(); render();
+    root.querySelector('.av-grid').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  root.querySelectorAll('.av-mode').forEach(function(b){
+    b.addEventListener('click',function(){
+      var car=b.dataset.mode==='carousel';
+      root.querySelectorAll('.av-mode').forEach(function(x){x.classList.toggle('on',x===b);});
+      root.querySelector('.av-grid').style.display=car?'':'none';
+      dots.style.display=car?'':'none';
+      list.classList.toggle('on',!car);
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(document.querySelector('.avlb.on')) return;
+    if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1);
+  });
+  var lb=document.getElementById('avlb');
+  lb.addEventListener('click',function(e){
+    if(e.target===lb||e.target.classList.contains('x')){lb.classList.remove('on');document.body.style.overflow='';}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){lb.classList.remove('on');document.body.style.overflow='';}
+  });
+  render();
+})();
+
+});
 </script>
 </body>
 </html>

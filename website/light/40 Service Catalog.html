@@ -5,131 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intelligaia · Service catalog · Brand Assets</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
-<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
-// ── Word-by-word reveal on every display heading ──
-(function wordReveal(){
-  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
-            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
-  var heads = document.querySelectorAll(SEL);
-  if (!heads.length) return;
-
-  heads.forEach(function(h){
-    if (h.dataset.wsplit) return;
-    h.dataset.wsplit = '1';
-    var html = h.innerHTML;
-    // split on <br> so explicit line breaks survive
-    var lines = html.split(/<br\s*\/?>/i);
-    h.innerHTML = lines.map(function(line){
-      var tmp = document.createElement('div');
-      tmp.innerHTML = line;
-      var text = tmp.textContent.trim();
-      if (!text) return '';
-      return text.split(/\s+/).map(function(w){
-        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-        return '<span class="w-split"><span>' + safe + '</span></span>';
-      }).join(' ');
-    }).filter(Boolean).join('<br>');
-
-    // stagger each word
-    var i = 0;
-    h.querySelectorAll('.w-split > span').forEach(function(sp){
-      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
-      i++;
-    });
-  });
-
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      e.target.classList.add('w-on');
-      io.unobserve(e.target);
-    });
-  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
-  heads.forEach(function(h){ io.observe(h); });
-
-  // safety net
-  setTimeout(function(){
-    heads.forEach(function(h){
-      var r = h.getBoundingClientRect();
-      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
-    });
-  }, 1400);
-})();
-
-
-
-// ── Artifact viewer: carousel + per-item panel ──
-(function artifact(){
-  var root=document.getElementById('av'); if(!root||!window.IG_ITEMS) return;
-  var I=window.IG_ITEMS, i=0;
-  var stage=document.getElementById('avStage');
-  var side=document.getElementById('avSide');
-  var pos=document.getElementById('avPos');
-  var dots=root.querySelector('.av-dots');
-  var list=root.querySelector('.av-list');
-
-  dots.innerHTML=I.map(function(_,k){return '<button class="av-dot'+(k?'':' on')+'"></button>';}).join('');
-  list.innerHTML=I.map(function(it){
-    var v=it.doc?'<div class="v" style="background:var(--bg-3);font-family:Geist,sans-serif;font-size:12px;color:var(--ink-muted)">Document</div>'
-                :'<div class="v"><img src="'+it.src+'" alt="" loading="lazy"/></div>';
-    return '<div class="av-t">'+v+'<div class="n">'+it.title+'</div></div>';
-  }).join('');
-
-  function render(){
-    var it=I[i];
-    stage.className='av-stage'+(it.doc?' doc':'');
-    stage.innerHTML=(I.length>1?'<button class="av-nav p">&#8249;</button><button class="av-nav n">&#8250;</button>':'')+
-      (it.doc?'<iframe src="'+it.src+'" loading="lazy" title="'+it.title+'"></iframe>'
-             :'<img src="'+it.src+'" alt="'+it.title+'"/>');
-    side.innerHTML='<div class="k">'+it.kind+'</div><h3>'+it.title+'</h3>'+
-      it.fields.map(function(f){return '<div class="f"><div class="fk">'+f[0]+'</div><div class="fv">'+f[1]+'</div></div>';}).join('')+
-      '<div class="dl"><a class="p" href="'+it.src+'" target="_blank" rel="noopener">Open full size<span>↗</span></a>'+
-      (it.dl?'<a class="s" href="'+it.dl+'" target="_blank" rel="noopener">Download '+it.dlLabel+'<span>↓</span></a>':'')+'</div>';
-    pos.textContent=(i+1)+' of '+I.length;
-    dots.querySelectorAll('.av-dot').forEach(function(d,k){d.classList.toggle('on',k===i);});
-    var p=stage.querySelector('.av-nav.p'), n=stage.querySelector('.av-nav.n');
-    if(p)p.onclick=function(){step(-1);}; if(n)n.onclick=function(){step(1);};
-    var im=stage.querySelector('img');
-    if(im)im.onclick=function(){
-      var lb=document.getElementById('avlb');
-      lb.querySelector('img').src=it.src; lb.querySelector('.cap').textContent=it.title;
-      lb.classList.add('on'); document.body.style.overflow='hidden';
-    };
-  }
-  function step(d){ i=(i+d+I.length)%I.length; render(); }
-  dots.addEventListener('click',function(e){
-    var b=e.target.closest('.av-dot'); if(!b) return;
-    i=Array.prototype.indexOf.call(dots.children,b); render();
-  });
-  list.addEventListener('click',function(e){
-    var t=e.target.closest('.av-t'); if(!t) return;
-    i=Array.prototype.indexOf.call(list.children,t);
-    root.querySelector('.av-mode[data-mode="carousel"]').click(); render();
-    root.querySelector('.av-grid').scrollIntoView({behavior:'smooth',block:'center'});
-  });
-  root.querySelectorAll('.av-mode').forEach(function(b){
-    b.addEventListener('click',function(){
-      var car=b.dataset.mode==='carousel';
-      root.querySelectorAll('.av-mode').forEach(function(x){x.classList.toggle('on',x===b);});
-      root.querySelector('.av-grid').style.display=car?'':'none';
-      dots.style.display=car?'':'none';
-      list.classList.toggle('on',!car);
-    });
-  });
-  document.addEventListener('keydown',function(e){
-    if(document.querySelector('.avlb.on')) return;
-    if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1);
-  });
-  var lb=document.getElementById('avlb');
-  lb.addEventListener('click',function(e){
-    if(e.target===lb||e.target.classList.contains('x')){lb.classList.remove('on');document.body.style.overflow='';}
-  });
-  document.addEventListener('keydown',function(e){
-    if(e.key==='Escape'){lb.classList.remove('on');document.body.style.overflow='';}
-  });
-  render();
-})();
-</script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 :root {
   --bg: #FFFFFF; --bg-2: #FAFAF8; --bg-3: #F4F1E8;
@@ -754,6 +630,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-9px;
   height:2px; background:var(--yellow); border-radius:2px; }
 </style>
+<script>window.IG_ITEMS = [{"src": "../assets/service-catalog/Cover%20%28with%20lines%29.png", "dl": "", "dlLabel": "", "title": "Cover", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Yellow banner, client name, engagement title, one positioning line. The only page that carries the full-bleed signature colour."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/About%20Intelligaia.png", "dl": "", "dlLabel": "", "title": "About", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Who Intelligaia is, in three proof points rather than three paragraphs. Establishes credibility before any capability claim."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Capabilities%20Overview.png", "dl": "", "dlLabel": "", "title": "Capabilities", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Service grid. Library icons, one line each, no marketing adjectives. The reader should be able to scan it in fifteen seconds."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/What%20Intelligaia%20Does%20best.png", "dl": "", "dlLabel": "", "title": "Differentiators", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Three columns, each pairing a claim with a concrete example. A claim without an example gets cut."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Business%20Value%20of%20Intelligaia%20Services%20to%20Autodesk.png", "dl": "", "dlLabel": "", "title": "Business value", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Client-specific mapping — their problem, our service, the measurable outcome. This is the page that decides the pitch."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Case%20Study%20Page%203.png", "dl": "", "dlLabel": "", "title": "Case spread, problem", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Opens the proof. Context and the friction that justified the engagement."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Case%20Study%20Page%205.png", "dl": "", "dlLabel": "", "title": "Case spread, approach", "kind": "Catalog page", "doc": false, "fields": [["What it does", "How we framed it — research method and the insight that changed direction."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Case%20Study%20page%208.png", "dl": "", "dlLabel": "", "title": "Case spread, artifacts", "kind": "Catalog page", "doc": false, "fields": [["What it does", "The work itself. Flows, screens, systems, annotated with why rather than what."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Case%20Study%20page%209.png", "dl": "", "dlLabel": "", "title": "Case spread, outcome", "kind": "Catalog page", "doc": false, "fields": [["What it does", "What changed, in the client's terms. Numbers where they exist, honest qualitative where they don't."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}];</script>
 </head>
 <body>
 <header class="g-header">
@@ -822,8 +699,6 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </main>
 
 <div class="avlb" id="avlb"><button class="x">&times;</button><img alt=""/><div class="cap"></div></div>
-<script>window.IG_ITEMS = [{"src": "../assets/service-catalog/Cover%20%28with%20lines%29.png", "dl": "", "dlLabel": "", "title": "Cover", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Yellow banner, client name, engagement title, one positioning line. The only page that carries the full-bleed signature colour."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/About%20Intelligaia.png", "dl": "", "dlLabel": "", "title": "About", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Who Intelligaia is, in three proof points rather than three paragraphs. Establishes credibility before any capability claim."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Capabilities%20Overview.png", "dl": "", "dlLabel": "", "title": "Capabilities", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Service grid. Library icons, one line each, no marketing adjectives. The reader should be able to scan it in fifteen seconds."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/What%20Intelligaia%20Does%20best.png", "dl": "", "dlLabel": "", "title": "Differentiators", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Three columns, each pairing a claim with a concrete example. A claim without an example gets cut."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Business%20Value%20of%20Intelligaia%20Services%20to%20Autodesk.png", "dl": "", "dlLabel": "", "title": "Business value", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Client-specific mapping — their problem, our service, the measurable outcome. This is the page that decides the pitch."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Case%20Study%20Page%203.png", "dl": "", "dlLabel": "", "title": "Case spread, problem", "kind": "Catalog page", "doc": false, "fields": [["What it does", "Opens the proof. Context and the friction that justified the engagement."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Case%20Study%20Page%205.png", "dl": "", "dlLabel": "", "title": "Case spread, approach", "kind": "Catalog page", "doc": false, "fields": [["What it does", "How we framed it — research method and the insight that changed direction."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Case%20Study%20page%208.png", "dl": "", "dlLabel": "", "title": "Case spread, artifacts", "kind": "Catalog page", "doc": false, "fields": [["What it does", "The work itself. Flows, screens, systems, annotated with why rather than what."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}, {"src": "../assets/service-catalog/Case%20Study%20page%209.png", "dl": "", "dlLabel": "", "title": "Case spread, outcome", "kind": "Catalog page", "doc": false, "fields": [["What it does", "What changed, in the client's terms. Numbers where they exist, honest qualitative where they don't."], ["Format", "A4 landscape · 12 column · 88px gutter"], ["Rule", "One idea per page. Body copy under 120 words."]]}];</script>
-
 <footer class="dark-footer">
   <div class="dark-footer-inner">
     <div>
@@ -855,10 +730,12 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </footer>
 
 <script>
+document.addEventListener('DOMContentLoaded', function(){
+
 // ── Smooth scroll — one guarded instance, anchor-aware ──
 (function initScroll(){
   if (window.__igLenis) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduce = !!(window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches);
   if (reduce || typeof Lenis === 'undefined') return;
   var lenis = new Lenis({ duration:1.05, easing:function(t){ return 1 - Math.pow(1-t,3); },
                           smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
@@ -901,6 +778,137 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   }, 1200);
 })();
 
+
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+// ── Word-by-word reveal on every display heading ──
+(function wordReveal(){
+  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
+            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
+  var heads = document.querySelectorAll(SEL);
+  if (!heads.length) return;
+
+  heads.forEach(function(h){
+    if (h.dataset.wsplit) return;
+    h.dataset.wsplit = '1';
+    var html = h.innerHTML;
+    // split on <br> so explicit line breaks survive
+    var lines = html.split(/<br\s*\/?>/i);
+    h.innerHTML = lines.map(function(line){
+      var tmp = document.createElement('div');
+      tmp.innerHTML = line;
+      var text = tmp.textContent.trim();
+      if (!text) return '';
+      return text.split(/\s+/).map(function(w){
+        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        return '<span class="w-split"><span>' + safe + '</span></span>';
+      }).join(' ');
+    }).filter(Boolean).join('<br>');
+
+    // stagger each word
+    var i = 0;
+    h.querySelectorAll('.w-split > span').forEach(function(sp){
+      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
+      i++;
+    });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('w-on');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+  heads.forEach(function(h){ io.observe(h); });
+
+  // safety net
+  setTimeout(function(){
+    heads.forEach(function(h){
+      var r = h.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
+    });
+  }, 1400);
+})();
+
+
+
+// ── Artifact viewer: carousel + per-item panel ──
+(function artifact(){
+  var root=document.getElementById('av'); if(!root||!window.IG_ITEMS) return;
+  var I=window.IG_ITEMS, i=0;
+  var stage=document.getElementById('avStage');
+  var side=document.getElementById('avSide');
+  var pos=document.getElementById('avPos');
+  var dots=root.querySelector('.av-dots');
+  var list=root.querySelector('.av-list');
+
+  dots.innerHTML=I.map(function(_,k){return '<button class="av-dot'+(k?'':' on')+'"></button>';}).join('');
+  list.innerHTML=I.map(function(it){
+    var v=it.doc?'<div class="v" style="background:var(--bg-3);font-family:Geist,sans-serif;font-size:12px;color:var(--ink-muted)">Document</div>'
+                :'<div class="v"><img src="'+it.src+'" alt="" loading="lazy"/></div>';
+    return '<div class="av-t">'+v+'<div class="n">'+it.title+'</div></div>';
+  }).join('');
+
+  function render(){
+    var it=I[i];
+    stage.className='av-stage'+(it.doc?' doc':'');
+    stage.innerHTML=(I.length>1?'<button class="av-nav p">&#8249;</button><button class="av-nav n">&#8250;</button>':'')+
+      (it.doc?'<iframe src="'+it.src+'" loading="lazy" title="'+it.title+'"></iframe>'
+             :'<img src="'+it.src+'" alt="'+it.title+'"/>');
+    side.innerHTML='<div class="k">'+it.kind+'</div><h3>'+it.title+'</h3>'+
+      it.fields.map(function(f){return '<div class="f"><div class="fk">'+f[0]+'</div><div class="fv">'+f[1]+'</div></div>';}).join('')+
+      '<div class="dl"><a class="p" href="'+it.src+'" target="_blank" rel="noopener">Open full size<span>↗</span></a>'+
+      (it.dl?'<a class="s" href="'+it.dl+'" target="_blank" rel="noopener">Download '+it.dlLabel+'<span>↓</span></a>':'')+'</div>';
+    pos.textContent=(i+1)+' of '+I.length;
+    dots.querySelectorAll('.av-dot').forEach(function(d,k){d.classList.toggle('on',k===i);});
+    var p=stage.querySelector('.av-nav.p'), n=stage.querySelector('.av-nav.n');
+    if(p)p.onclick=function(){step(-1);}; if(n)n.onclick=function(){step(1);};
+    var im=stage.querySelector('img');
+    if(im)im.onclick=function(){
+      var lb=document.getElementById('avlb');
+      lb.querySelector('img').src=it.src; lb.querySelector('.cap').textContent=it.title;
+      lb.classList.add('on'); document.body.style.overflow='hidden';
+    };
+  }
+  function step(d){ i=(i+d+I.length)%I.length; render(); }
+  dots.addEventListener('click',function(e){
+    var b=e.target.closest('.av-dot'); if(!b) return;
+    i=Array.prototype.indexOf.call(dots.children,b); render();
+  });
+  list.addEventListener('click',function(e){
+    var t=e.target.closest('.av-t'); if(!t) return;
+    i=Array.prototype.indexOf.call(list.children,t);
+    root.querySelector('.av-mode[data-mode="carousel"]').click(); render();
+    root.querySelector('.av-grid').scrollIntoView({behavior:'smooth',block:'center'});
+  });
+  root.querySelectorAll('.av-mode').forEach(function(b){
+    b.addEventListener('click',function(){
+      var car=b.dataset.mode==='carousel';
+      root.querySelectorAll('.av-mode').forEach(function(x){x.classList.toggle('on',x===b);});
+      root.querySelector('.av-grid').style.display=car?'':'none';
+      dots.style.display=car?'':'none';
+      list.classList.toggle('on',!car);
+    });
+  });
+  document.addEventListener('keydown',function(e){
+    if(document.querySelector('.avlb.on')) return;
+    if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1);
+  });
+  var lb=document.getElementById('avlb');
+  lb.addEventListener('click',function(e){
+    if(e.target===lb||e.target.classList.contains('x')){lb.classList.remove('on');document.body.style.overflow='';}
+  });
+  document.addEventListener('keydown',function(e){
+    if(e.key==='Escape'){lb.classList.remove('on');document.body.style.overflow='';}
+  });
+  render();
+})();
+
+});
 </script>
 </body>
 </html>
