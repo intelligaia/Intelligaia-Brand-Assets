@@ -58,28 +58,7 @@
 
 
 
-// ── Library filter ──
-(function library(){
-  var grid=document.getElementById('libGrid'); if(!grid) return;
-  var items=Array.prototype.slice.call(grid.querySelectorAll('.lib-i'));
-  var countEl=document.getElementById('libCount'), empty=document.getElementById('libEmpty');
-  function apply(cat){
-    var n=0;
-    items.forEach(function(el){
-      var ok=(cat==='all'||el.dataset.cat===cat);
-      el.style.display=ok?'':'none'; if(ok)n++;
-    });
-    countEl.textContent=n+(n===1?' asset':' assets');
-    empty.style.display=n?'none':'block';
-  }
-  document.querySelectorAll('[data-cat-btn]').forEach(function(b){
-    b.addEventListener('click',function(){
-      document.querySelectorAll('[data-cat-btn]').forEach(function(x){x.classList.toggle('on',x===b);});
-      apply(b.dataset.catBtn);
-    });
-  });
-  apply('all');
-})();
+
 </script>
 <style>
 :root {
@@ -450,52 +429,51 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .dg-body h3,.tile-meta h3{ font-size:calc(var(--h2) * .5) !important; }
 
 
-/* ══════════ ASSET LIBRARY ══════════ */
-.section.lib-hero,.section.lib-body{ min-height:auto !important; display:block !important; }
-.lib-hero{ padding-top:calc(var(--hdr-h) + clamp(30px,2.3vw,54px)) !important;
-  padding-bottom:clamp(20px,1.6vw,32px) !important; }
-.lib-hero h1{ font-family:'Oswald',sans-serif; font-weight:400 !important; font-size:var(--h1);
-  line-height:1.02; letter-spacing:-.018em; color:var(--ink-soft); margin:0 0 14px; }
-.lib-hero p{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.6;
-  color:var(--ink-muted); margin:0; max-width:66ch; }
-.lib-bar{ position:sticky; top:var(--hdr-h); z-index:40;
-  background:color-mix(in srgb, var(--bg) 92%, transparent);
-  backdrop-filter:saturate(180%) blur(14px);
-  border-top:1px solid var(--hair); border-bottom:1px solid var(--hair); }
-.lib-bar-in{ max-width:var(--shell); margin:0 auto; padding:14px var(--pad-x);
-  display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
-.lib-f{ display:flex; gap:7px; flex-wrap:wrap; }
-.lib-f button{ font-family:'Geist',sans-serif; font-size:var(--label); padding:9px 18px;
-  border-radius:999px; border:1px solid var(--hair-2); background:transparent;
-  color:var(--ink-muted); cursor:pointer; transition:.16s; white-space:nowrap; }
-.lib-f button:hover{ border-color:var(--ink-muted); color:var(--ink); }
-.lib-f button.on{ background:var(--yellow); border-color:var(--yellow); color:#04050A; }
-.lib-f button .n{ opacity:.55; margin-left:6px; }
-.lib-count{ margin-left:auto; font-family:'Geist',sans-serif; font-size:var(--label); color:var(--ink-muted); }
-.lib-body{ padding-top:clamp(22px,1.8vw,34px) !important; padding-bottom:clamp(44px,3.2vw,72px) !important; }
-.lib-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:clamp(12px,1vw,18px); }
-@media (min-width:1920px){ .lib-grid{ grid-template-columns:repeat(auto-fill,minmax(235px,1fr)); } }
-@media (min-width:2600px){ .lib-grid{ grid-template-columns:repeat(auto-fill,minmax(275px,1fr)); } }
-.lib-i{ background:var(--bg-2); border:1px solid var(--hair); border-radius:12px; overflow:hidden;
-  transition:border-color .18s, transform .18s; display:flex; flex-direction:column; }
-.lib-i:hover{ border-color:var(--yellow); transform:translateY(-3px); }
-.lib-i .v{ aspect-ratio:1/1; background:#fff; display:flex; align-items:center; justify-content:center;
-  padding:clamp(15px,1.2vw,24px); position:relative; }
-.lib-i .v img{ max-width:100%; max-height:100%; object-fit:contain; }
-.lib-i .badge{ position:absolute; top:9px; right:9px; font-family:'Geist',sans-serif;
-  font-size:calc(var(--label) * .8); padding:3px 9px; border-radius:999px;
-  background:rgba(4,5,10,.78); color:#FFC800; backdrop-filter:blur(6px); }
-.lib-i .n{ padding:12px 14px 14px; border-top:1px solid var(--hair);
-  font-family:'Geist',sans-serif; font-size:calc(var(--label) * .92); color:var(--ink-muted); line-height:1.35; }
-.lib-i .n b{ display:block; color:var(--ink); font-weight:400; margin-bottom:2px;
-  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
-.lib-empty{ padding:70px 0; text-align:center; font-family:'Geist',sans-serif;
-  font-size:var(--lede); color:var(--ink-muted); }
 
-/* nav: mark the module you are on */
-.g-nav a.on{ color:var(--yellow) !important; opacity:1 !important; position:relative; }
-.g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-9px;
-  height:2px; background:var(--yellow); border-radius:2px; }
+/* source strip — where the asset lives */
+.src-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin-top:16px; }
+.src{ display:flex; align-items:center; gap:13px; padding:14px 17px; background:var(--bg-2);
+  border:1px solid var(--hair); border-radius:11px; transition:.18s; }
+.src:hover{ border-color:var(--yellow); }
+.src svg{ flex:none; }
+.src .t{ font-family:'Geist',sans-serif; font-size:var(--label); color:var(--ink); display:block; }
+.src .p{ font-family:'Geist',monospace; font-size:calc(var(--label) * .84); color:var(--ink-muted);
+  display:block; margin-top:3px; word-break:break-all; }
+.src .soon{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
+  padding:3px 9px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted); white-space:nowrap; }
+
+/* ══════════ CATEGORY CARDS ══════════ */
+.section.cl-hero,.section.cl-body{ min-height:auto !important; display:block !important; }
+.cl-hero{ padding-top:calc(var(--hdr-h) + clamp(30px,2.3vw,54px)) !important;
+  padding-bottom:clamp(22px,1.7vw,34px) !important; }
+.cl-hero h1{ font-family:'Oswald',sans-serif; font-weight:400 !important; font-size:var(--h1);
+  line-height:1.02; letter-spacing:-.018em; color:var(--ink-soft); margin:0 0 14px; }
+.cl-hero p{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.6;
+  color:var(--ink-muted); margin:0; max-width:66ch; }
+.cl-body{ padding-top:0 !important; padding-bottom:clamp(44px,3.2vw,72px) !important; }
+.cl-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(16px,1.4vw,26px); }
+@media (min-width:1700px){ .cl-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (max-width:1000px){ .cl-grid{ grid-template-columns:1fr; } }
+.cl-c{ display:flex; flex-direction:column; background:var(--bg-2); border:1px solid var(--hair-2);
+  border-radius:16px; overflow:hidden; transition:border-color .2s, transform .2s, background .2s; }
+.cl-c:hover{ border-color:var(--yellow); transform:translateY(-4px); background:var(--bg-3); }
+.cl-thumbs{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hair);
+  border-bottom:1px solid var(--hair); }
+.cl-thumbs div{ aspect-ratio:1/1; background:#fff; display:flex; align-items:center; justify-content:center;
+  padding:clamp(14px,1.2vw,24px); overflow:hidden; }
+.cl-thumbs img{ max-width:100%; max-height:100%; object-fit:contain;
+  transition:transform .4s cubic-bezier(.22,.9,.3,1); }
+.cl-c:hover .cl-thumbs img{ transform:scale(1.05); }
+.cl-m{ padding:clamp(20px,1.6vw,28px); display:flex; flex-direction:column; gap:8px; flex:1; }
+.cl-m .top{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
+.cl-m b{ font-family:'Oswald',sans-serif; font-weight:400; font-size:calc(var(--h2) * .52);
+  color:var(--ink-soft); line-height:1.1; }
+.cl-m .ct{ font-family:'Geist',sans-serif; font-size:var(--label); color:var(--yellow); white-space:nowrap; }
+.cl-m p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.58;
+  color:var(--ink-muted); margin:0; }
+.cl-m .go{ margin-top:auto; padding-top:14px; font-family:'Geist',sans-serif; font-size:var(--label);
+  color:var(--ink-muted); display:flex; align-items:center; gap:7px; }
+.cl-c:hover .cl-m .go{ color:var(--yellow); }
 </style>
 </head>
 <body>
@@ -522,132 +500,82 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </header>
 <main>
 
-<section class="section lib-hero">
+<section class="section cl-hero">
   <h1>Brand assets.</h1>
-  <p>Every finished illustration, icon, wave and letterform. Open any asset to see how it was constructed — grid, geometry, outline, final.</p>
+  <p>Seven categories, 107 finished assets. Open a category to browse it, then any asset to see how it was built.</p>
 </section>
 
-<div class="lib-bar">
-  <div class="lib-bar-in">
-    <div class="lib-f"><button data-cat-btn="all" class="on">All<span class="n">107</span></button><button data-cat-btn="character">Characters<span class="n">16</span></button><button data-cat-btn="device">Devices<span class="n">7</span></button><button data-cat-btn="object">Objects<span class="n">5</span></button><button data-cat-btn="nature">Nature<span class="n">3</span></button><button data-cat-btn="icon">Icons<span class="n">41</span></button><button data-cat-btn="letter">Letters<span class="n">26</span></button><button data-cat-btn="wave">Waves<span class="n">9</span></button></div>
-    <span class="lib-count" id="libCount">107 assets</span>
+<section class="section cl-body">
+  <div class="cl-grid">
+    <a href="21%20Category.html?c=character" class="cl-c">
+      <div class="cl-thumbs"><div><img src="../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Aisha · Front face" loading="lazy"/></div><div><img src="../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Aisha · Side face" loading="lazy"/></div><div><img src="../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Arjun · Front face" loading="lazy"/></div></div>
+      <div class="cl-m">
+        <div class="top"><b>Characters</b><span class="ct">16 assets</span></div>
+        <p>Eight named characters, each in front and side view, built through geometry, outline and final.</p>
+        <span class="go">Open characters →</span>
+      </div>
+    </a>
+    <a href="21%20Category.html?c=device" class="cl-c">
+      <div class="cl-thumbs"><div><img src="../assets/illustrations/devices/Apple%20Vision%20Pro%20%E2%80%94%20Filled.png" alt="Apple Vision Pro" loading="lazy"/></div><div><img src="../assets/illustrations/devices/Headphones%2001%20%E2%80%94%20Filled.png" alt="Headphones 01" loading="lazy"/></div><div><img src="../assets/illustrations/devices/Headphones%2002%20%E2%80%94%20Filled.png" alt="Headphones 02" loading="lazy"/></div></div>
+      <div class="cl-m">
+        <div class="top"><b>Devices</b><span class="ct">7 assets</span></div>
+        <p>Laptops, phones, headsets and hardware props used alongside characters in scenes.</p>
+        <span class="go">Open devices →</span>
+      </div>
+    </a>
+    <a href="21%20Category.html?c=object" class="cl-c">
+      <div class="cl-thumbs"><div><img src="../assets/illustrations/objects/Binoculars%20%E2%80%94%20Final.png" alt="Binoculars" loading="lazy"/></div><div><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Lighthouse" loading="lazy"/></div><div><img src="../assets/illustrations/objects/Magnifying%20Glass%20%E2%80%94%20Final.png" alt="Magnifying Glass" loading="lazy"/></div></div>
+      <div class="cl-m">
+        <div class="top"><b>Objects</b><span class="ct">5 assets</span></div>
+        <p>Lighthouse, ship, binoculars, magnifier and other narrative props.</p>
+        <span class="go">Open objects →</span>
+      </div>
+    </a>
+    <a href="21%20Category.html?c=nature" class="cl-c">
+      <div class="cl-thumbs"><div><img src="../assets/illustrations/nature/Cloud%20%E2%80%94%20Final.png" alt="Cloud" loading="lazy"/></div><div><img src="../assets/illustrations/nature/Plants%20%E2%80%94%20Final.png" alt="Plants" loading="lazy"/></div><div><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Trees" loading="lazy"/></div></div>
+      <div class="cl-m">
+        <div class="top"><b>Nature</b><span class="ct">3 assets</span></div>
+        <p>Trees, plants and clouds. Scene-setting elements that sit behind the subject.</p>
+        <span class="go">Open nature →</span>
+      </div>
+    </a>
+    <a href="21%20Category.html?c=icon" class="cl-c">
+      <div class="cl-thumbs"><div><img src="../assets/icons/UI/Account-Circle-01.svg" alt="Account-Circle-01" loading="lazy"/></div><div><img src="../assets/icons/UI/Account-Circle-02.svg" alt="Account-Circle-02" loading="lazy"/></div><div><img src="../assets/icons/UI/Account-Circle-03.svg" alt="Account-Circle-03" loading="lazy"/></div></div>
+      <div class="cl-m">
+        <div class="top"><b>Icons</b><span class="ct">41 assets</span></div>
+        <p>The UI icon set. Single-weight SVG, recolourable through currentColor.</p>
+        <span class="go">Open icons →</span>
+      </div>
+    </a>
+    <a href="21%20Category.html?c=letter" class="cl-c">
+      <div class="cl-thumbs"><div><img src="../assets/letters/Alphabet%3DA.svg" alt="Letter A" loading="lazy"/></div><div><img src="../assets/letters/Alphabet%3DB.svg" alt="Letter B" loading="lazy"/></div><div><img src="../assets/letters/Alphabet%3DC.svg" alt="Letter C" loading="lazy"/></div></div>
+      <div class="cl-m">
+        <div class="top"><b>Letters</b><span class="ct">26 assets</span></div>
+        <p>Illustrated isometric letterforms covering the full alphabet.</p>
+        <span class="go">Open letters →</span>
+      </div>
+    </a>
+    <a href="21%20Category.html?c=wave" class="cl-c">
+      <div class="cl-thumbs"><div><img src="../assets/waves/Folded-Ribbon/Accordion-Wide.svg" alt="Accordion-Wide" loading="lazy"/></div><div><img src="../assets/waves/Ramp-Ribbon/Arch-Rise.svg" alt="Arch-Rise" loading="lazy"/></div><div><img src="../assets/waves/Soft-Crest/Cloud-Bump.svg" alt="Cloud-Bump" loading="lazy"/></div></div>
+      <div class="cl-m">
+        <div class="top"><b>Waves</b><span class="ct">9 assets</span></div>
+        <p>Abstract ribbon and flow shapes for backgrounds and section breaks.</p>
+        <span class="go">Open waves →</span>
+      </div>
+    </a>
   </div>
-</div>
-
-<section class="section lib-body">
-  <div class="lib-grid" id="libGrid">
-    <a href="29%20Asset%20Detail.html?a=character-female-character-01-front-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Female Character 01 · Front face" loading="lazy"/></div><div class="n"><b>Female Character 01 · Front face</b>PNG · 2000×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-01-side-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Female Character 01 · Side face" loading="lazy"/></div><div class="n"><b>Female Character 01 · Side face</b>PNG · 2000×2000</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-02-front-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Female Character 02 · Front face" loading="lazy"/></div><div class="n"><b>Female Character 02 · Front face</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-02-side-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Female Character 02 · Side face" loading="lazy"/></div><div class="n"><b>Female Character 02 · Side face</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-03-front-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Female Character 03 · Front face" loading="lazy"/></div><div class="n"><b>Female Character 03 · Front face</b>PNG · 1850×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-03-side-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Female Character 03 · Side face" loading="lazy"/></div><div class="n"><b>Female Character 03 · Side face</b>PNG · 1850×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-04-front-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Female Character 04 · Front face" loading="lazy"/></div><div class="n"><b>Female Character 04 · Front face</b>PNG · 1852×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-04-side-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Female Character 04 · Side face" loading="lazy"/></div><div class="n"><b>Female Character 04 · Side face</b>PNG · 1852×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-05-front-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Female Character 05 · Front face" loading="lazy"/></div><div class="n"><b>Female Character 05 · Front face</b>PNG · 1852×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-female-character-05-side-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Female Character 05 · Side face" loading="lazy"/></div><div class="n"><b>Female Character 05 · Side face</b>PNG · 1852×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-male-character-01-front-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Male Character 01 · Front face" loading="lazy"/></div><div class="n"><b>Male Character 01 · Front face</b>PNG · 2000×2000</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-male-character-01-side-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Male Character 01 · Side face" loading="lazy"/></div><div class="n"><b>Male Character 01 · Side face</b>PNG · 2000×2000</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-male-character-02-front-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Male Character 02 · Front face" loading="lazy"/></div><div class="n"><b>Male Character 02 · Front face</b>PNG · 1848×1947</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-male-character-02-side-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Male Character 02 · Side face" loading="lazy"/></div><div class="n"><b>Male Character 02 · Side face</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-male-character-04-front-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Male Character 04 · Front face" loading="lazy"/></div><div class="n"><b>Male Character 04 · Front face</b>PNG · 1852×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=character-male-character-04-side-face" class="lib-i" data-cat="character"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Male Character 04 · Side face" loading="lazy"/></div><div class="n"><b>Male Character 04 · Side face</b>PNG · 1852×1930</div></a>
-    <a href="29%20Asset%20Detail.html?a=device-apple-vision-pro" class="lib-i" data-cat="device"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/devices/Apple%20Vision%20Pro%20%E2%80%94%20Filled.png" alt="Apple Vision Pro" loading="lazy"/></div><div class="n"><b>Apple Vision Pro</b>PNG · 1852×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=device-headphones-01" class="lib-i" data-cat="device"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/devices/Headphones%2001%20%E2%80%94%20Filled.png" alt="Headphones 01" loading="lazy"/></div><div class="n"><b>Headphones 01</b>PNG · 1852×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=device-headphones-02" class="lib-i" data-cat="device"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/devices/Headphones%2002%20%E2%80%94%20Filled.png" alt="Headphones 02" loading="lazy"/></div><div class="n"><b>Headphones 02</b>PNG · 1852×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=device-macbook-front-face" class="lib-i" data-cat="device"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="MacBook · Front face" loading="lazy"/></div><div class="n"><b>MacBook · Front face</b>PNG · 1848×1947</div></a>
-    <a href="29%20Asset%20Detail.html?a=device-meta-glasses-01-front-face" class="lib-i" data-cat="device"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/devices/Meta%20Glasses%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Meta Glasses 01 · Front face" loading="lazy"/></div><div class="n"><b>Meta Glasses 01 · Front face</b>PNG · 1848×1947</div></a>
-    <a href="29%20Asset%20Detail.html?a=device-meta-glasses-02" class="lib-i" data-cat="device"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/devices/Meta%20Glasses%2002%20%E2%80%94%20Filled.png" alt="Meta Glasses 02" loading="lazy"/></div><div class="n"><b>Meta Glasses 02</b>PNG · 1852×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=device-meta-glasses-03" class="lib-i" data-cat="device"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/devices/Meta%20Glasses%2003%20%E2%80%94%20Final.png" alt="Meta Glasses 03" loading="lazy"/></div><div class="n"><b>Meta Glasses 03</b>PNG · 1848×1947</div></a>
-    <a href="29%20Asset%20Detail.html?a=object-binoculars" class="lib-i" data-cat="object"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/objects/Binoculars%20%E2%80%94%20Final.png" alt="Binoculars" loading="lazy"/></div><div class="n"><b>Binoculars</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=object-lighthouse" class="lib-i" data-cat="object"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Lighthouse" loading="lazy"/></div><div class="n"><b>Lighthouse</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=object-magnifying-glass" class="lib-i" data-cat="object"><div class="v"><span class="badge">2 stages</span><img src="../assets/illustrations/objects/Magnifying%20Glass%20%E2%80%94%20Final.png" alt="Magnifying Glass" loading="lazy"/></div><div class="n"><b>Magnifying Glass</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=object-ship-01" class="lib-i" data-cat="object"><div class="v"><span class="badge">2 stages</span><img src="../assets/illustrations/objects/Ship%2001%20%E2%80%94%20Final.png" alt="Ship 01" loading="lazy"/></div><div class="n"><b>Ship 01</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=object-ship-02" class="lib-i" data-cat="object"><div class="v"><span class="badge">2 stages</span><img src="../assets/illustrations/objects/Ship%2002%20%E2%80%94%20Final.png" alt="Ship 02" loading="lazy"/></div><div class="n"><b>Ship 02</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=nature-cloud" class="lib-i" data-cat="nature"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/nature/Cloud%20%E2%80%94%20Final.png" alt="Cloud" loading="lazy"/></div><div class="n"><b>Cloud</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=nature-plants" class="lib-i" data-cat="nature"><div class="v"><span class="badge">4 stages</span><img src="../assets/illustrations/nature/Plants%20%E2%80%94%20Final.png" alt="Plants" loading="lazy"/></div><div class="n"><b>Plants</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=nature-trees" class="lib-i" data-cat="nature"><div class="v"><span class="badge">3 stages</span><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Trees" loading="lazy"/></div><div class="n"><b>Trees</b>PNG · 1850×1850</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-account-circle-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Account-Circle-01.svg" alt="Account-Circle-01" loading="lazy"/></div><div class="n"><b>Account-Circle-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-account-circle-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Account-Circle-02.svg" alt="Account-Circle-02" loading="lazy"/></div><div class="n"><b>Account-Circle-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-account-circle-03" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Account-Circle-03.svg" alt="Account-Circle-03" loading="lazy"/></div><div class="n"><b>Account-Circle-03</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-account-circle-04" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Account-Circle-04.svg" alt="Account-Circle-04" loading="lazy"/></div><div class="n"><b>Account-Circle-04</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-alert-warning" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/System/Alert-Warning.svg" alt="Alert-Warning" loading="lazy"/></div><div class="n"><b>Alert-Warning</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-bot-face" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/AI/Bot-Face.svg" alt="Bot-Face" loading="lazy"/></div><div class="n"><b>Bot-Face</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-business-persona" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/People/Business-Persona.svg" alt="Business-Persona" loading="lazy"/></div><div class="n"><b>Business-Persona</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-calendar-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Calendar-01.svg" alt="Calendar-01" loading="lazy"/></div><div class="n"><b>Calendar-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-calendar-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Calendar-02.svg" alt="Calendar-02" loading="lazy"/></div><div class="n"><b>Calendar-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-concentric-arcs" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/Abstract/Concentric-Arcs.svg" alt="Concentric-Arcs" loading="lazy"/></div><div class="n"><b>Concentric-Arcs</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-data-insights" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/Analytics/Data-Insights.svg" alt="Data-Insights" loading="lazy"/></div><div class="n"><b>Data-Insights</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-error-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Error-01.svg" alt="Error-01" loading="lazy"/></div><div class="n"><b>Error-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-error-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Error-02.svg" alt="Error-02" loading="lazy"/></div><div class="n"><b>Error-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-error-03" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Error-03.svg" alt="Error-03" loading="lazy"/></div><div class="n"><b>Error-03</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-event-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Event-01.svg" alt="Event-01" loading="lazy"/></div><div class="n"><b>Event-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-event-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Event-02.svg" alt="Event-02" loading="lazy"/></div><div class="n"><b>Event-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-four-point-star" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/Abstract/Four-Point-Star.svg" alt="Four-Point-Star" loading="lazy"/></div><div class="n"><b>Four-Point-Star</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-help-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Help-01.svg" alt="Help-01" loading="lazy"/></div><div class="n"><b>Help-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-help-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Help-02.svg" alt="Help-02" loading="lazy"/></div><div class="n"><b>Help-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-language-earth-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Language-Earth-01.svg" alt="Language-Earth-01" loading="lazy"/></div><div class="n"><b>Language-Earth-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-language-earth-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Language-Earth-02.svg" alt="Language-Earth-02" loading="lazy"/></div><div class="n"><b>Language-Earth-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-language-earth-03" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Language-Earth-03.svg" alt="Language-Earth-03" loading="lazy"/></div><div class="n"><b>Language-Earth-03</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-language-earth-04" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Language-Earth-04.svg" alt="Language-Earth-04" loading="lazy"/></div><div class="n"><b>Language-Earth-04</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-list-to-cards" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/Data/List-To-Cards.svg" alt="List-To-Cards" loading="lazy"/></div><div class="n"><b>List-To-Cards</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-lock-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Lock-01.svg" alt="Lock-01" loading="lazy"/></div><div class="n"><b>Lock-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-machine-vision" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/AI/Machine-Vision.svg" alt="Machine-Vision" loading="lazy"/></div><div class="n"><b>Machine-Vision</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-peer-connection" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/People/Peer-Connection.svg" alt="Peer-Connection" loading="lazy"/></div><div class="n"><b>Peer-Connection</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-predictive-forecast" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/Analytics/Predictive-Forecast.svg" alt="Predictive-Forecast" loading="lazy"/></div><div class="n"><b>Predictive-Forecast</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-process-automation" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/System/Process-Automation.svg" alt="Process-Automation" loading="lazy"/></div><div class="n"><b>Process-Automation</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-schedule-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Schedule-01.svg" alt="Schedule-01" loading="lazy"/></div><div class="n"><b>Schedule-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-schedule-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Schedule-02.svg" alt="Schedule-02" loading="lazy"/></div><div class="n"><b>Schedule-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-schedule-03" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Schedule-03.svg" alt="Schedule-03" loading="lazy"/></div><div class="n"><b>Schedule-03</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-target-goal" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/Strategy/Target-Goal.svg" alt="Target-Goal" loading="lazy"/></div><div class="n"><b>Target-Goal</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-user-avatar" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/People/User-Avatar.svg" alt="User-Avatar" loading="lazy"/></div><div class="n"><b>User-Avatar</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-verified-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Verified-01.svg" alt="Verified-01" loading="lazy"/></div><div class="n"><b>Verified-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-verified-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Verified-02.svg" alt="Verified-02" loading="lazy"/></div><div class="n"><b>Verified-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-verified-03" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Verified-03.svg" alt="Verified-03" loading="lazy"/></div><div class="n"><b>Verified-03</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-warning-01" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Warning-01.svg" alt="Warning-01" loading="lazy"/></div><div class="n"><b>Warning-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-warning-02" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Warning-02.svg" alt="Warning-02" loading="lazy"/></div><div class="n"><b>Warning-02</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-warning-03" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/UI/Warning-03.svg" alt="Warning-03" loading="lazy"/></div><div class="n"><b>Warning-03</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=icon-website-search" class="lib-i" data-cat="icon"><div class="v"><img src="../assets/icons/Interface/Website-Search.svg" alt="Website-Search" loading="lazy"/></div><div class="n"><b>Website-Search</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-a" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DA.svg" alt="Alphabet=A" loading="lazy"/></div><div class="n"><b>Alphabet=A</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-b" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DB.svg" alt="Alphabet=B" loading="lazy"/></div><div class="n"><b>Alphabet=B</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-c" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DC.svg" alt="Alphabet=C" loading="lazy"/></div><div class="n"><b>Alphabet=C</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-d" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DD.svg" alt="Alphabet=D" loading="lazy"/></div><div class="n"><b>Alphabet=D</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-e" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DE.svg" alt="Alphabet=E" loading="lazy"/></div><div class="n"><b>Alphabet=E</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-f" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DF.svg" alt="Alphabet=F" loading="lazy"/></div><div class="n"><b>Alphabet=F</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-g" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DG.svg" alt="Alphabet=G" loading="lazy"/></div><div class="n"><b>Alphabet=G</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-h" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DH.svg" alt="Alphabet=H" loading="lazy"/></div><div class="n"><b>Alphabet=H</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-i" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DI.svg" alt="Alphabet=I" loading="lazy"/></div><div class="n"><b>Alphabet=I</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-j" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DJ.svg" alt="Alphabet=J" loading="lazy"/></div><div class="n"><b>Alphabet=J</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-k" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DK.svg" alt="Alphabet=K" loading="lazy"/></div><div class="n"><b>Alphabet=K</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-l" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DL.svg" alt="Alphabet=L" loading="lazy"/></div><div class="n"><b>Alphabet=L</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-m" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DM.svg" alt="Alphabet=M" loading="lazy"/></div><div class="n"><b>Alphabet=M</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-n" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DN.svg" alt="Alphabet=N" loading="lazy"/></div><div class="n"><b>Alphabet=N</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-o" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DO.svg" alt="Alphabet=O" loading="lazy"/></div><div class="n"><b>Alphabet=O</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-p" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DP.svg" alt="Alphabet=P" loading="lazy"/></div><div class="n"><b>Alphabet=P</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-q" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DQ.svg" alt="Alphabet=Q" loading="lazy"/></div><div class="n"><b>Alphabet=Q</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-r" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DR.svg" alt="Alphabet=R" loading="lazy"/></div><div class="n"><b>Alphabet=R</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-s" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DS.svg" alt="Alphabet=S" loading="lazy"/></div><div class="n"><b>Alphabet=S</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-t" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DT.svg" alt="Alphabet=T" loading="lazy"/></div><div class="n"><b>Alphabet=T</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-u" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DU.svg" alt="Alphabet=U" loading="lazy"/></div><div class="n"><b>Alphabet=U</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-v" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DV.svg" alt="Alphabet=V" loading="lazy"/></div><div class="n"><b>Alphabet=V</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-w" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DW.svg" alt="Alphabet=W" loading="lazy"/></div><div class="n"><b>Alphabet=W</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-x" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DX.svg" alt="Alphabet=X" loading="lazy"/></div><div class="n"><b>Alphabet=X</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-y" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DY.svg" alt="Alphabet=Y" loading="lazy"/></div><div class="n"><b>Alphabet=Y</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=letter-alphabet-z" class="lib-i" data-cat="letter"><div class="v"><img src="../assets/letters/Alphabet%3DZ.svg" alt="Alphabet=Z" loading="lazy"/></div><div class="n"><b>Alphabet=Z</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-accordion-wide" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Folded-Ribbon/Accordion-Wide.svg" alt="Accordion-Wide" loading="lazy"/></div><div class="n"><b>Accordion-Wide</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-arch-rise" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Ramp-Ribbon/Arch-Rise.svg" alt="Arch-Rise" loading="lazy"/></div><div class="n"><b>Arch-Rise</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-cloud-bump" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Soft-Crest/Cloud-Bump.svg" alt="Cloud-Bump" loading="lazy"/></div><div class="n"><b>Cloud-Bump</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-duo-weave" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Crossing-Strand/Duo-Weave.svg" alt="Duo-Weave" loading="lazy"/></div><div class="n"><b>Duo-Weave</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-horizontal-01" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Braided-Ribbon/Horizontal-01.svg" alt="Horizontal-01" loading="lazy"/></div><div class="n"><b>Horizontal-01</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-layered-flow" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Multicolour-Ribbon/Layered-Flow.svg" alt="Layered-Flow" loading="lazy"/></div><div class="n"><b>Layered-Flow</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-tunnel-arch" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Looped-Ribbon/Tunnel-Arch.svg" alt="Tunnel-Arch" loading="lazy"/></div><div class="n"><b>Tunnel-Arch</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-vertical-fold" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Zigzag-Ribbon/Vertical-Fold.svg" alt="Vertical-Fold" loading="lazy"/></div><div class="n"><b>Vertical-Fold</b>SVG</div></a>
-    <a href="29%20Asset%20Detail.html?a=wave-vertical-twist" class="lib-i" data-cat="wave"><div class="v"><img src="../assets/waves/Braided-Ribbon/Vertical-Twist.svg" alt="Vertical-Twist" loading="lazy"/></div><div class="n"><b>Vertical-Twist</b>SVG</div></a>
+  <div class="src-row">
+    <a class="src" href="https://www.figma.com/design/REPLACE_WITH_FILE_KEY/Intelligaia-Brand-Assets" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="15" cy="12" r="3.2" stroke="#FFC800" stroke-width="1.7"/><path d="M12 4h3.2a3.2 3.2 0 0 1 0 6.4H12zM12 4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 10.4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 16.8H8.8a3.2 3.2 0 1 0 3.2 3.2z" stroke="#FFC800" stroke-width="1.7" stroke-linejoin="round"/></svg><span><span class="t">Figma source</span><span class="p">Intelligaia Brand Assets</span></span>
+      <span class="soon">Link pending</span>
+    </a>
+    <a class="src" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/website/assets/" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.7A5.2 5.2 0 0 0 19 3.4a4.9 4.9 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.6 12.6 0 0 0-6.6 0C6 -.5 4.9-.2 4.9-.2a4.9 4.9 0 0 0-.1 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.2 3.2 6.4 6.2 6.7a3.4 3.4 0 0 0-.9 2.6V21" stroke="#FFC800" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,2)"/></svg><span><span class="t">Git repository</span><span class="p">website/assets/</span></span>
+    </a>
   </div>
-  <div class="lib-empty" id="libEmpty" style="display:none;">No assets in that category.</div>
 </section>
 
-<section class="section" style="padding-top:0 !important;padding-bottom:clamp(40px,3vw,64px) !important;">
+<section class="section" style="padding-top:clamp(28px,2.2vw,44px) !important;padding-bottom:clamp(40px,3vw,64px) !important;border-top:1px solid var(--hair);">
   <div class="pn-row reveal">
     <a href="10%20Foundations.html" class="pn-tile"><div class="lbl">← Previous</div><div class="name">Foundations</div></a>
     <a href="30%20Diagrams.html" class="pn-tile next"><div class="lbl">Next →</div><div class="name">Diagrams</div></a>
@@ -655,6 +583,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </section>
 
 </main>
+
 
 
 <footer class="dark-footer">

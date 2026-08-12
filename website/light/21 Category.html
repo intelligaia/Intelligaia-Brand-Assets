@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Intelligaia · Brand assets · Brand Assets</title>
+<title>Category · Intelligaia · Brand assets · Brand Assets</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
 // ── Word-by-word reveal on every display heading ──
@@ -62,17 +62,17 @@
 </script>
 <style>
 :root {
-  --bg: #04050A; --bg-2: #0A0C14; --bg-3: #131522;
-  --ink: #F4F6FF; --ink-soft: #EEF1FB; --ink-muted: rgba(244, 246, 255, 0.65);
-  --hair: rgba(255, 255, 255, 0.08); --hair-2: rgba(255, 255, 255, 0.14);
-  --yellow: #FFC800; --blue: #4A8BF5; --purple: #8A5AF0;
+  --bg: #FFFFFF; --bg-2: #FAFAF8; --bg-3: #F4F1E8;
+  --ink: #121212; --ink-soft: #1A1A1A; --ink-muted: rgba(18,18,18,0.62);
+  --hair: rgba(18,18,18,0.10); --hair-2: rgba(18,18,18,0.18);
+  --yellow: #FFC800; --blue: #4A8BF5; --purple: #8A5AF0; --green: #2E9E4F; --red: #D64541;
 }
 * { box-sizing: border-box; }
 html { overflow: hidden auto; } html, body { margin: 0; padding: 0; }
 body { font-family: 'Geist', 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 16px; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; overscroll-behavior: none; }
 h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', sans-serif; font-weight: 400; margin: 0; color: var(--ink-soft); }
 a { color: inherit; text-decoration: none; }
-body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1; background-image: radial-gradient(circle at 20% 20%, rgba(74,139,245,0.06) 0%, transparent 50%), radial-gradient(circle at 80% 60%, rgba(138,90,240,0.05) 0%, transparent 45%); }
+body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-index: 1; background-image: radial-gradient(circle at 20% 20%, rgba(74,139,245,0.05) 0%, transparent 50%), radial-gradient(circle at 80% 60%, rgba(138,90,240,0.04) 0%, transparent 45%); }
 
 .section { position: relative; min-height: 100vh; max-width: 1440px; margin: 0 auto; padding: 88px 48px 64px; display: flex; flex-direction: column; justify-content: center; z-index: 2; }
 .section.hero { padding-top: 140px; align-items: flex-start; }
@@ -113,11 +113,11 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 .btn-o:hover { border-color: var(--yellow); color: var(--yellow); }
 
 /* GLOBAL HEADER */
-.g-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(4,5,10,0.72); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; height: 88px; }
+.g-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(255,255,255,0.78); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(18,18,18,0.08); width: 100%; height: 88px; }
 .g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; }
-.g-logo img { height: 42px; filter: invert(1) brightness(1.1); }
+.g-logo img { height: 42px;  }
 .g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
-.g-nav a { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14.5px; color: rgba(244,246,255,0.82); white-space: nowrap; transition: color 0.15s ease; }
+.g-nav a { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14.5px; color: rgba(18,18,18,0.78); white-space: nowrap; transition: color 0.15s ease; }
 .g-nav a:hover { color: #FFC800; }
 .g-cta { display: inline-flex; align-items: center; justify-content: center; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 14.5px; color: #04050A; background: #FFC800; border: 1px solid #FFC800; border-radius: 999px; height: 44px; padding: 0 24px; }
 .g-cta:hover { background: transparent; color: #FFC800; }
@@ -163,9 +163,9 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 .pn-tile.next { text-align: right; }
 
 /* FOOTER */
-.dark-footer { border-top: 1px solid var(--hair); background: var(--bg); padding: 64px 0 40px; margin-top: 40px; position: relative; z-index: 2; }
+.dark-footer { border-top: 1px solid var(--hair); background: var(--bg-2); padding: 64px 0 40px; margin-top: 40px; position: relative; z-index: 2; }
 .dark-footer-inner { max-width: 1440px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1fr 2fr; gap: 48px; }
-.df-logo img { height: 32px; filter: invert(1) brightness(1.1); }
+.df-logo img { height: 32px;  }
 .df-tag { font-family: 'Geist', sans-serif; font-size: 12px; color: var(--ink-muted); margin: 12px 0 0; }
 .df-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
 .df-cols h5 { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;  color: var(--ink-muted); margin: 0 0 14px; }
@@ -229,6 +229,30 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 .pn-tile .name { font-family: 'Geist', sans-serif; font-weight:500; font-size:20px; color:var(--ink-soft); }
 .pn-tile.next { text-align:right; }
 
+
+/* ── LIGHT MODE ADJUSTMENTS ── */
+.spec-block, .prompt-block{ background:#0A0C14; border-color:rgba(18,18,18,.14); }
+.spec-block pre, .prompt-block pre{ color:#E8E8E8; }
+.cut-typo{ background:#0A0A0A; }
+.cut-typo .aa{ color:#F4EFDF; }
+.cut-typo .meta{ color:#F4EFDF; }
+.ix-thumb.thumb-aa{ color:var(--ink-soft); }
+.tile-preview.ph{ background:repeating-linear-gradient(45deg,#F6F3EA 0 12px,#EDE9DD 12px 24px); border-color:rgba(18,18,18,.18); }
+.ex-preview.placeholder{ background:repeating-linear-gradient(45deg,#F6F3EA 0 12px,#EDE9DD 12px 24px); }
+.hub-preview.ph{ background:linear-gradient(180deg,#F6F3EA 0%,#EAE6DA 100%); }
+.show-viz{ background:var(--bg-3); }
+.fnd-mini{ background:#FFFFFF; }
+.anatomy-canvas{ background:var(--bg-2); }
+.tp-big{ background:var(--bg-2); }
+.col-viz{ box-shadow:0 20px 50px -18px rgba(0,0,0,.22); }
+.cutout{ box-shadow:0 22px 44px -18px rgba(0,0,0,.26),0 8px 18px -8px rgba(0,0,0,.16),inset 0 0 0 1px rgba(0,0,0,.05); }
+.dual-col.tech .lbl{ color:#2F6FD0; }
+.rule-card.do h4{ color:#2E9E4F; } .rule-card.dont h4{ color:#D64541; }
+.rule-card.do li::before{ color:#2E9E4F; } .rule-card.dont li::before{ color:#D64541; }
+.dodont-col.do h4{ color:#2E9E4F; } .dodont-col.dont h4{ color:#D64541; }
+.dodont-col.do li::before{ color:#2E9E4F; } .dodont-col.dont li::before{ color:#D64541; }
+.instr-card .dodont .d.do span:first-child{ color:#2E9E4F; }
+.instr-card .dodont .d.dont span:first-child{ color:#D64541; }
 
 /* ── CATEGORY GRID — image-led, no counts ── */
 .cat-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:34px; }
@@ -418,47 +442,61 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .src .soon{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
   padding:3px 9px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted); white-space:nowrap; }
 
-/* ══════════ CATEGORY CARDS ══════════ */
-.section.cl-hero,.section.cl-body{ min-height:auto !important; display:block !important; }
-.cl-hero{ padding-top:calc(var(--hdr-h) + clamp(30px,2.3vw,54px)) !important;
-  padding-bottom:clamp(22px,1.7vw,34px) !important; }
-.cl-hero h1{ font-family:'Oswald',sans-serif; font-weight:400 !important; font-size:var(--h1);
-  line-height:1.02; letter-spacing:-.018em; color:var(--ink-soft); margin:0 0 14px; }
-.cl-hero p{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.6;
+
+/* source strip — where the asset lives */
+.src-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin-top:16px; }
+.src{ display:flex; align-items:center; gap:13px; padding:14px 17px; background:var(--bg-2);
+  border:1px solid var(--hair); border-radius:11px; transition:.18s; }
+.src:hover{ border-color:var(--yellow); }
+.src svg{ flex:none; }
+.src .t{ font-family:'Geist',sans-serif; font-size:var(--label); color:var(--ink); display:block; }
+.src .p{ font-family:'Geist',monospace; font-size:calc(var(--label) * .84); color:var(--ink-muted);
+  display:block; margin-top:3px; word-break:break-all; }
+.src .soon{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
+  padding:3px 9px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted); white-space:nowrap; }
+
+/* ══════════ CATEGORY LISTING ══════════ */
+.section.cg-hero,.section.cg-body{ min-height:auto !important; display:block !important; }
+.cg-hero{ padding-top:calc(var(--hdr-h) + clamp(28px,2.2vw,50px)) !important;
+  padding-bottom:clamp(18px,1.5vw,28px) !important; }
+.cg-back{ display:inline-flex; align-items:center; gap:8px; font-family:'Geist',sans-serif;
+  font-size:var(--label); color:var(--ink-muted); margin-bottom:18px; }
+.cg-back:hover{ color:var(--yellow); }
+.cg-hero h1{ font-family:'Oswald',sans-serif; font-weight:400 !important; font-size:var(--h1);
+  line-height:1.02; letter-spacing:-.018em; color:var(--ink-soft); margin:0 0 12px; }
+.cg-hero p{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.6;
   color:var(--ink-muted); margin:0; max-width:66ch; }
-.cl-body{ padding-top:0 !important; padding-bottom:clamp(44px,3.2vw,72px) !important; }
-.cl-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:clamp(16px,1.4vw,26px); }
-@media (min-width:1700px){ .cl-grid{ grid-template-columns:repeat(3,1fr); } }
-@media (max-width:1000px){ .cl-grid{ grid-template-columns:1fr; } }
-.cl-c{ display:flex; flex-direction:column; background:var(--bg-2); border:1px solid var(--hair-2);
-  border-radius:16px; overflow:hidden; transition:border-color .2s, transform .2s, background .2s; }
-.cl-c:hover{ border-color:var(--yellow); transform:translateY(-4px); background:var(--bg-3); }
-.cl-thumbs{ display:grid; grid-template-columns:repeat(3,1fr); gap:1px; background:var(--hair);
-  border-bottom:1px solid var(--hair); }
-.cl-thumbs div{ aspect-ratio:1/1; background:#fff; display:flex; align-items:center; justify-content:center;
-  padding:clamp(14px,1.2vw,24px); overflow:hidden; }
-.cl-thumbs img{ max-width:100%; max-height:100%; object-fit:contain;
-  transition:transform .4s cubic-bezier(.22,.9,.3,1); }
-.cl-c:hover .cl-thumbs img{ transform:scale(1.05); }
-.cl-m{ padding:clamp(20px,1.6vw,28px); display:flex; flex-direction:column; gap:8px; flex:1; }
-.cl-m .top{ display:flex; align-items:baseline; justify-content:space-between; gap:12px; }
-.cl-m b{ font-family:'Oswald',sans-serif; font-weight:400; font-size:calc(var(--h2) * .52);
-  color:var(--ink-soft); line-height:1.1; }
-.cl-m .ct{ font-family:'Geist',sans-serif; font-size:var(--label); color:var(--yellow); white-space:nowrap; }
-.cl-m p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.58;
-  color:var(--ink-muted); margin:0; }
-.cl-m .go{ margin-top:auto; padding-top:14px; font-family:'Geist',sans-serif; font-size:var(--label);
-  color:var(--ink-muted); display:flex; align-items:center; gap:7px; }
-.cl-c:hover .cl-m .go{ color:var(--yellow); }
+.cg-tabs{ display:flex; gap:7px; flex-wrap:wrap; margin-top:22px; }
+.cg-tabs a{ font-family:'Geist',sans-serif; font-size:var(--label); padding:9px 18px;
+  border-radius:999px; border:1px solid var(--hair-2); color:var(--ink-muted); transition:.16s; }
+.cg-tabs a:hover{ border-color:var(--ink-muted); color:var(--ink); }
+.cg-tabs a.on{ background:var(--yellow); border-color:var(--yellow); color:#04050A; }
+.cg-body{ padding-top:clamp(20px,1.6vw,30px) !important; padding-bottom:clamp(44px,3.2vw,70px) !important; }
+.cg-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:clamp(13px,1.1vw,20px); }
+@media (min-width:1920px){ .cg-grid{ grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); } }
+@media (min-width:2600px){ .cg-grid{ grid-template-columns:repeat(auto-fill,minmax(290px,1fr)); } }
+.cg-i{ background:var(--bg-2); border:1px solid var(--hair); border-radius:12px; overflow:hidden;
+  transition:border-color .18s, transform .18s; display:flex; flex-direction:column; }
+.cg-i:hover{ border-color:var(--yellow); transform:translateY(-3px); }
+.cg-i .v{ aspect-ratio:1/1; background:#fff; display:flex; align-items:center; justify-content:center;
+  padding:clamp(16px,1.3vw,26px); position:relative; }
+.cg-i .v img{ max-width:100%; max-height:100%; object-fit:contain; }
+.cg-i .badge{ position:absolute; top:9px; right:9px; font-family:'Geist',sans-serif;
+  font-size:calc(var(--label) * .78); padding:3px 9px; border-radius:999px;
+  background:rgba(4,5,10,.78); color:#FFC800; }
+.cg-i .n{ padding:13px 15px 15px; border-top:1px solid var(--hair); }
+.cg-i .n b{ display:block; font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:calc(var(--h2) * .36); color:var(--ink-soft); line-height:1.15; margin-bottom:4px; }
+.cg-i .n span{ font-family:'Geist',monospace; font-size:calc(var(--label) * .86); color:var(--ink-muted); }
 </style>
 </head>
 <body>
 <header class="g-header">
   <div class="g-header-inner">
     <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
-      <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
+      <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
       <span class="g-sep"></span>
-      <span class="g-mark-wrap" style="color:#EEF1FB"><svg class="g-mark" viewBox="0 0 60 16" aria-hidden="true"><circle cx="7" cy="8" r="6" fill="#FFC800"/><rect x="17" y="2" width="12" height="12" rx="2" fill="#4A8BF5"/><polygon points="40,2 46,14 34,14" fill="#8A5AF0"/><polygon points="54,3 59,8 54,13 49,8" fill="currentColor"/></svg></span>
+      <span class="g-mark-wrap" style="color:#121212"><svg class="g-mark" viewBox="0 0 60 16" aria-hidden="true"><circle cx="7" cy="8" r="6" fill="#FFC800"/><rect x="17" y="2" width="12" height="12" rx="2" fill="#4A8BF5"/><polygon points="40,2 46,14 34,14" fill="#8A5AF0"/><polygon points="54,3 59,8 54,13 49,8" fill="currentColor"/></svg></span>
       <span class="g-sys">Brand assets</span>
     </a>
     <nav class="g-nav">
@@ -476,91 +514,32 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </header>
 <main>
 
-<section class="section cl-hero">
-  <h1>Brand assets.</h1>
-  <p>Seven categories, 107 finished assets. Open a category to browse it, then any asset to see how it was built.</p>
+<section class="section cg-hero">
+  <a href="20%20Brand%20Assets.html" class="cg-back">← All categories</a>
+  <h1 id="cgTitle">Characters.</h1>
+  <p id="cgDesc"></p>
+  <div class="cg-tabs"><a href="21%20Category.html?c=character" data-c="character">Characters</a><a href="21%20Category.html?c=device" data-c="device">Devices</a><a href="21%20Category.html?c=object" data-c="object">Objects</a><a href="21%20Category.html?c=nature" data-c="nature">Nature</a><a href="21%20Category.html?c=icon" data-c="icon">Icons</a><a href="21%20Category.html?c=letter" data-c="letter">Letters</a><a href="21%20Category.html?c=wave" data-c="wave">Waves</a></div>
 </section>
 
-<section class="section cl-body">
-  <div class="cl-grid">
-    <a href="21%20Category.html?c=character" class="cl-c">
-      <div class="cl-thumbs"><div><img src="../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Aisha · Front face" loading="lazy"/></div><div><img src="../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png" alt="Aisha · Side face" loading="lazy"/></div><div><img src="../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Arjun · Front face" loading="lazy"/></div></div>
-      <div class="cl-m">
-        <div class="top"><b>Characters</b><span class="ct">16 assets</span></div>
-        <p>Eight named characters, each in front and side view, built through geometry, outline and final.</p>
-        <span class="go">Open characters →</span>
-      </div>
-    </a>
-    <a href="21%20Category.html?c=device" class="cl-c">
-      <div class="cl-thumbs"><div><img src="../assets/illustrations/devices/Apple%20Vision%20Pro%20%E2%80%94%20Filled.png" alt="Apple Vision Pro" loading="lazy"/></div><div><img src="../assets/illustrations/devices/Headphones%2001%20%E2%80%94%20Filled.png" alt="Headphones 01" loading="lazy"/></div><div><img src="../assets/illustrations/devices/Headphones%2002%20%E2%80%94%20Filled.png" alt="Headphones 02" loading="lazy"/></div></div>
-      <div class="cl-m">
-        <div class="top"><b>Devices</b><span class="ct">7 assets</span></div>
-        <p>Laptops, phones, headsets and hardware props used alongside characters in scenes.</p>
-        <span class="go">Open devices →</span>
-      </div>
-    </a>
-    <a href="21%20Category.html?c=object" class="cl-c">
-      <div class="cl-thumbs"><div><img src="../assets/illustrations/objects/Binoculars%20%E2%80%94%20Final.png" alt="Binoculars" loading="lazy"/></div><div><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Lighthouse" loading="lazy"/></div><div><img src="../assets/illustrations/objects/Magnifying%20Glass%20%E2%80%94%20Final.png" alt="Magnifying Glass" loading="lazy"/></div></div>
-      <div class="cl-m">
-        <div class="top"><b>Objects</b><span class="ct">5 assets</span></div>
-        <p>Lighthouse, ship, binoculars, magnifier and other narrative props.</p>
-        <span class="go">Open objects →</span>
-      </div>
-    </a>
-    <a href="21%20Category.html?c=nature" class="cl-c">
-      <div class="cl-thumbs"><div><img src="../assets/illustrations/nature/Cloud%20%E2%80%94%20Final.png" alt="Cloud" loading="lazy"/></div><div><img src="../assets/illustrations/nature/Plants%20%E2%80%94%20Final.png" alt="Plants" loading="lazy"/></div><div><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Trees" loading="lazy"/></div></div>
-      <div class="cl-m">
-        <div class="top"><b>Nature</b><span class="ct">3 assets</span></div>
-        <p>Trees, plants and clouds. Scene-setting elements that sit behind the subject.</p>
-        <span class="go">Open nature →</span>
-      </div>
-    </a>
-    <a href="21%20Category.html?c=icon" class="cl-c">
-      <div class="cl-thumbs"><div><img src="../assets/icons/UI/Account-Circle-01.svg" alt="Account-Circle-01" loading="lazy"/></div><div><img src="../assets/icons/UI/Account-Circle-02.svg" alt="Account-Circle-02" loading="lazy"/></div><div><img src="../assets/icons/UI/Account-Circle-03.svg" alt="Account-Circle-03" loading="lazy"/></div></div>
-      <div class="cl-m">
-        <div class="top"><b>Icons</b><span class="ct">41 assets</span></div>
-        <p>The UI icon set. Single-weight SVG, recolourable through currentColor.</p>
-        <span class="go">Open icons →</span>
-      </div>
-    </a>
-    <a href="21%20Category.html?c=letter" class="cl-c">
-      <div class="cl-thumbs"><div><img src="../assets/letters/Alphabet%3DA.svg" alt="Letter A" loading="lazy"/></div><div><img src="../assets/letters/Alphabet%3DB.svg" alt="Letter B" loading="lazy"/></div><div><img src="../assets/letters/Alphabet%3DC.svg" alt="Letter C" loading="lazy"/></div></div>
-      <div class="cl-m">
-        <div class="top"><b>Letters</b><span class="ct">26 assets</span></div>
-        <p>Illustrated isometric letterforms covering the full alphabet.</p>
-        <span class="go">Open letters →</span>
-      </div>
-    </a>
-    <a href="21%20Category.html?c=wave" class="cl-c">
-      <div class="cl-thumbs"><div><img src="../assets/waves/Folded-Ribbon/Accordion-Wide.svg" alt="Accordion-Wide" loading="lazy"/></div><div><img src="../assets/waves/Ramp-Ribbon/Arch-Rise.svg" alt="Arch-Rise" loading="lazy"/></div><div><img src="../assets/waves/Soft-Crest/Cloud-Bump.svg" alt="Cloud-Bump" loading="lazy"/></div></div>
-      <div class="cl-m">
-        <div class="top"><b>Waves</b><span class="ct">9 assets</span></div>
-        <p>Abstract ribbon and flow shapes for backgrounds and section breaks.</p>
-        <span class="go">Open waves →</span>
-      </div>
-    </a>
-  </div>
+<section class="section cg-body">
+  <p style="font-family:'Geist',sans-serif;font-size:var(--label);color:var(--ink-muted);margin:0 0 16px;" id="cgCount"></p>
+  <div class="cg-grid" id="cgGrid"></div>
+  <div id="cgSrc">
   <div class="src-row">
     <a class="src" href="https://www.figma.com/design/REPLACE_WITH_FILE_KEY/Intelligaia-Brand-Assets" target="_blank" rel="noopener">
       <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="15" cy="12" r="3.2" stroke="#FFC800" stroke-width="1.7"/><path d="M12 4h3.2a3.2 3.2 0 0 1 0 6.4H12zM12 4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 10.4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 16.8H8.8a3.2 3.2 0 1 0 3.2 3.2z" stroke="#FFC800" stroke-width="1.7" stroke-linejoin="round"/></svg><span><span class="t">Figma source</span><span class="p">Intelligaia Brand Assets</span></span>
       <span class="soon">Link pending</span>
     </a>
-    <a class="src" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/website/assets/" target="_blank" rel="noopener">
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.7A5.2 5.2 0 0 0 19 3.4a4.9 4.9 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.6 12.6 0 0 0-6.6 0C6 -.5 4.9-.2 4.9-.2a4.9 4.9 0 0 0-.1 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.2 3.2 6.4 6.2 6.7a3.4 3.4 0 0 0-.9 2.6V21" stroke="#FFC800" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,2)"/></svg><span><span class="t">Git repository</span><span class="p">website/assets/</span></span>
+    <a class="src" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/website/assets/__FOLDER__" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.9a3.4 3.4 0 0 0-.9-2.6c3-.3 6.2-1.5 6.2-6.7A5.2 5.2 0 0 0 19 3.4a4.9 4.9 0 0 0-.1-3.6s-1.1-.3-3.7 1.4a12.6 12.6 0 0 0-6.6 0C6 -.5 4.9-.2 4.9-.2a4.9 4.9 0 0 0-.1 3.6 5.2 5.2 0 0 0-1.4 3.6c0 5.2 3.2 6.4 6.2 6.7a3.4 3.4 0 0 0-.9 2.6V21" stroke="#FFC800" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,2)"/></svg><span><span class="t">Git repository</span><span class="p">website/assets/__FOLDER__</span></span>
     </a>
   </div>
-</section>
-
-<section class="section" style="padding-top:clamp(28px,2.2vw,44px) !important;padding-bottom:clamp(40px,3vw,64px) !important;border-top:1px solid var(--hair);">
-  <div class="pn-row reveal">
-    <a href="10%20Foundations.html" class="pn-tile"><div class="lbl">← Previous</div><div class="name">Foundations</div></a>
-    <a href="30%20Diagrams.html" class="pn-tile next"><div class="lbl">Next →</div><div class="name">Diagrams</div></a>
   </div>
 </section>
 
 </main>
 
-
+<script>window.IG_CATS = {"meta": {"character": {"label": "Characters", "desc": "Eight named characters, each in front and side view, built through geometry, outline and final.", "folder": "characters"}, "device": {"label": "Devices", "desc": "Laptops, phones, headsets and hardware props used alongside characters in scenes.", "folder": "devices"}, "object": {"label": "Objects", "desc": "Lighthouse, ship, binoculars, magnifier and other narrative props.", "folder": "objects"}, "nature": {"label": "Nature", "desc": "Trees, plants and clouds. Scene-setting elements that sit behind the subject.", "folder": "nature"}, "icon": {"label": "Icons", "desc": "The UI icon set. Single-weight SVG, recolourable through currentColor.", "folder": "icons"}, "letter": {"label": "Letters", "desc": "Illustrated isometric letterforms covering the full alphabet.", "folder": "letters"}, "wave": {"label": "Waves", "desc": "Abstract ribbon and flow shapes for backgrounds and section breaks.", "folder": "waves"}}, "items": [{"cat": "character", "slug": "character-female-character-03-front-face", "name": "Aisha · Front face", "src": "../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "1850×1930", "stages": 3}, {"cat": "character", "slug": "character-female-character-03-side-face", "name": "Aisha · Side face", "src": "../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "dim": "1850×1930", "stages": 3}, {"cat": "character", "slug": "character-male-character-01-front-face", "name": "Arjun · Front face", "src": "../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "2000×2000", "stages": 3}, {"cat": "character", "slug": "character-male-character-01-side-face", "name": "Arjun · Side face", "src": "../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "dim": "2000×2000", "stages": 3}, {"cat": "character", "slug": "character-male-character-02-front-face", "name": "David · Front face", "src": "../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "1848×1947", "stages": 3}, {"cat": "character", "slug": "character-male-character-02-side-face", "name": "David · Side face", "src": "../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 3}, {"cat": "character", "slug": "character-male-character-04-front-face", "name": "Kenji · Front face", "src": "../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "1852×1930", "stages": 3}, {"cat": "character", "slug": "character-male-character-04-side-face", "name": "Kenji · Side face", "src": "../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "dim": "1852×1930", "stages": 3}, {"cat": "character", "slug": "character-female-character-02-front-face", "name": "Maya · Front face", "src": "../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 3}, {"cat": "character", "slug": "character-female-character-02-side-face", "name": "Maya · Side face", "src": "../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 3}, {"cat": "character", "slug": "character-female-character-05-front-face", "name": "Nia · Front face", "src": "../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "1852×1930", "stages": 3}, {"cat": "character", "slug": "character-female-character-05-side-face", "name": "Nia · Side face", "src": "../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "dim": "1852×1930", "stages": 3}, {"cat": "character", "slug": "character-female-character-01-front-face", "name": "Priya · Front face", "src": "../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "2000×1930", "stages": 3}, {"cat": "character", "slug": "character-female-character-01-side-face", "name": "Priya · Side face", "src": "../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "dim": "2000×2000", "stages": 3}, {"cat": "character", "slug": "character-female-character-04-front-face", "name": "Sofia · Front face", "src": "../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "1852×1930", "stages": 3}, {"cat": "character", "slug": "character-female-character-04-side-face", "name": "Sofia · Side face", "src": "../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "dim": "1852×1930", "stages": 3}, {"cat": "device", "slug": "device-apple-vision-pro", "name": "Apple Vision Pro", "src": "../assets/illustrations/devices/Apple%20Vision%20Pro%20%E2%80%94%20Filled.png", "dim": "1852×1850", "stages": 3}, {"cat": "device", "slug": "device-headphones-01", "name": "Headphones 01", "src": "../assets/illustrations/devices/Headphones%2001%20%E2%80%94%20Filled.png", "dim": "1852×1850", "stages": 3}, {"cat": "device", "slug": "device-headphones-02", "name": "Headphones 02", "src": "../assets/illustrations/devices/Headphones%2002%20%E2%80%94%20Filled.png", "dim": "1852×1850", "stages": 3}, {"cat": "device", "slug": "device-macbook-front-face", "name": "MacBook · Front face", "src": "../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "1848×1947", "stages": 3}, {"cat": "device", "slug": "device-meta-glasses-01-front-face", "name": "Meta Glasses 01 · Front face", "src": "../assets/illustrations/devices/Meta%20Glasses%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "dim": "1848×1947", "stages": 3}, {"cat": "device", "slug": "device-meta-glasses-02", "name": "Meta Glasses 02", "src": "../assets/illustrations/devices/Meta%20Glasses%2002%20%E2%80%94%20Filled.png", "dim": "1852×1850", "stages": 3}, {"cat": "device", "slug": "device-meta-glasses-03", "name": "Meta Glasses 03", "src": "../assets/illustrations/devices/Meta%20Glasses%2003%20%E2%80%94%20Final.png", "dim": "1848×1947", "stages": 3}, {"cat": "object", "slug": "object-binoculars", "name": "Binoculars", "src": "../assets/illustrations/objects/Binoculars%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 3}, {"cat": "object", "slug": "object-lighthouse", "name": "Lighthouse", "src": "../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 3}, {"cat": "object", "slug": "object-magnifying-glass", "name": "Magnifying Glass", "src": "../assets/illustrations/objects/Magnifying%20Glass%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 2}, {"cat": "object", "slug": "object-ship-01", "name": "Ship 01", "src": "../assets/illustrations/objects/Ship%2001%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 2}, {"cat": "object", "slug": "object-ship-02", "name": "Ship 02", "src": "../assets/illustrations/objects/Ship%2002%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 2}, {"cat": "nature", "slug": "nature-cloud", "name": "Cloud", "src": "../assets/illustrations/nature/Cloud%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 3}, {"cat": "nature", "slug": "nature-plants", "name": "Plants", "src": "../assets/illustrations/nature/Plants%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 4}, {"cat": "nature", "slug": "nature-trees", "name": "Trees", "src": "../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png", "dim": "1850×1850", "stages": 3}, {"cat": "icon", "slug": "icon-account-circle-01", "name": "Account-Circle-01", "src": "../assets/icons/UI/Account-Circle-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-account-circle-02", "name": "Account-Circle-02", "src": "../assets/icons/UI/Account-Circle-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-account-circle-03", "name": "Account-Circle-03", "src": "../assets/icons/UI/Account-Circle-03.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-account-circle-04", "name": "Account-Circle-04", "src": "../assets/icons/UI/Account-Circle-04.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-alert-warning", "name": "Alert-Warning", "src": "../assets/icons/System/Alert-Warning.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-bot-face", "name": "Bot-Face", "src": "../assets/icons/AI/Bot-Face.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-business-persona", "name": "Business-Persona", "src": "../assets/icons/People/Business-Persona.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-calendar-01", "name": "Calendar-01", "src": "../assets/icons/UI/Calendar-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-calendar-02", "name": "Calendar-02", "src": "../assets/icons/UI/Calendar-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-concentric-arcs", "name": "Concentric-Arcs", "src": "../assets/icons/Abstract/Concentric-Arcs.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-data-insights", "name": "Data-Insights", "src": "../assets/icons/Analytics/Data-Insights.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-error-01", "name": "Error-01", "src": "../assets/icons/UI/Error-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-error-02", "name": "Error-02", "src": "../assets/icons/UI/Error-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-error-03", "name": "Error-03", "src": "../assets/icons/UI/Error-03.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-event-01", "name": "Event-01", "src": "../assets/icons/UI/Event-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-event-02", "name": "Event-02", "src": "../assets/icons/UI/Event-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-four-point-star", "name": "Four-Point-Star", "src": "../assets/icons/Abstract/Four-Point-Star.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-help-01", "name": "Help-01", "src": "../assets/icons/UI/Help-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-help-02", "name": "Help-02", "src": "../assets/icons/UI/Help-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-language-earth-01", "name": "Language-Earth-01", "src": "../assets/icons/UI/Language-Earth-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-language-earth-02", "name": "Language-Earth-02", "src": "../assets/icons/UI/Language-Earth-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-language-earth-03", "name": "Language-Earth-03", "src": "../assets/icons/UI/Language-Earth-03.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-language-earth-04", "name": "Language-Earth-04", "src": "../assets/icons/UI/Language-Earth-04.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-list-to-cards", "name": "List-To-Cards", "src": "../assets/icons/Data/List-To-Cards.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-lock-01", "name": "Lock-01", "src": "../assets/icons/UI/Lock-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-machine-vision", "name": "Machine-Vision", "src": "../assets/icons/AI/Machine-Vision.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-peer-connection", "name": "Peer-Connection", "src": "../assets/icons/People/Peer-Connection.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-predictive-forecast", "name": "Predictive-Forecast", "src": "../assets/icons/Analytics/Predictive-Forecast.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-process-automation", "name": "Process-Automation", "src": "../assets/icons/System/Process-Automation.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-schedule-01", "name": "Schedule-01", "src": "../assets/icons/UI/Schedule-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-schedule-02", "name": "Schedule-02", "src": "../assets/icons/UI/Schedule-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-schedule-03", "name": "Schedule-03", "src": "../assets/icons/UI/Schedule-03.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-target-goal", "name": "Target-Goal", "src": "../assets/icons/Strategy/Target-Goal.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-user-avatar", "name": "User-Avatar", "src": "../assets/icons/People/User-Avatar.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-verified-01", "name": "Verified-01", "src": "../assets/icons/UI/Verified-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-verified-02", "name": "Verified-02", "src": "../assets/icons/UI/Verified-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-verified-03", "name": "Verified-03", "src": "../assets/icons/UI/Verified-03.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-warning-01", "name": "Warning-01", "src": "../assets/icons/UI/Warning-01.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-warning-02", "name": "Warning-02", "src": "../assets/icons/UI/Warning-02.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-warning-03", "name": "Warning-03", "src": "../assets/icons/UI/Warning-03.svg", "dim": "SVG", "stages": 1}, {"cat": "icon", "slug": "icon-website-search", "name": "Website-Search", "src": "../assets/icons/Interface/Website-Search.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-a", "name": "Letter A", "src": "../assets/letters/Alphabet%3DA.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-b", "name": "Letter B", "src": "../assets/letters/Alphabet%3DB.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-c", "name": "Letter C", "src": "../assets/letters/Alphabet%3DC.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-d", "name": "Letter D", "src": "../assets/letters/Alphabet%3DD.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-e", "name": "Letter E", "src": "../assets/letters/Alphabet%3DE.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-f", "name": "Letter F", "src": "../assets/letters/Alphabet%3DF.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-g", "name": "Letter G", "src": "../assets/letters/Alphabet%3DG.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-h", "name": "Letter H", "src": "../assets/letters/Alphabet%3DH.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-i", "name": "Letter I", "src": "../assets/letters/Alphabet%3DI.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-j", "name": "Letter J", "src": "../assets/letters/Alphabet%3DJ.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-k", "name": "Letter K", "src": "../assets/letters/Alphabet%3DK.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-l", "name": "Letter L", "src": "../assets/letters/Alphabet%3DL.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-m", "name": "Letter M", "src": "../assets/letters/Alphabet%3DM.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-n", "name": "Letter N", "src": "../assets/letters/Alphabet%3DN.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-o", "name": "Letter O", "src": "../assets/letters/Alphabet%3DO.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-p", "name": "Letter P", "src": "../assets/letters/Alphabet%3DP.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-q", "name": "Letter Q", "src": "../assets/letters/Alphabet%3DQ.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-r", "name": "Letter R", "src": "../assets/letters/Alphabet%3DR.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-s", "name": "Letter S", "src": "../assets/letters/Alphabet%3DS.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-t", "name": "Letter T", "src": "../assets/letters/Alphabet%3DT.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-u", "name": "Letter U", "src": "../assets/letters/Alphabet%3DU.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-v", "name": "Letter V", "src": "../assets/letters/Alphabet%3DV.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-w", "name": "Letter W", "src": "../assets/letters/Alphabet%3DW.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-x", "name": "Letter X", "src": "../assets/letters/Alphabet%3DX.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-y", "name": "Letter Y", "src": "../assets/letters/Alphabet%3DY.svg", "dim": "SVG", "stages": 1}, {"cat": "letter", "slug": "letter-alphabet-z", "name": "Letter Z", "src": "../assets/letters/Alphabet%3DZ.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-accordion-wide", "name": "Accordion-Wide", "src": "../assets/waves/Folded-Ribbon/Accordion-Wide.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-arch-rise", "name": "Arch-Rise", "src": "../assets/waves/Ramp-Ribbon/Arch-Rise.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-cloud-bump", "name": "Cloud-Bump", "src": "../assets/waves/Soft-Crest/Cloud-Bump.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-duo-weave", "name": "Duo-Weave", "src": "../assets/waves/Crossing-Strand/Duo-Weave.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-horizontal-01", "name": "Horizontal-01", "src": "../assets/waves/Braided-Ribbon/Horizontal-01.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-layered-flow", "name": "Layered-Flow", "src": "../assets/waves/Multicolour-Ribbon/Layered-Flow.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-tunnel-arch", "name": "Tunnel-Arch", "src": "../assets/waves/Looped-Ribbon/Tunnel-Arch.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-vertical-fold", "name": "Vertical-Fold", "src": "../assets/waves/Zigzag-Ribbon/Vertical-Fold.svg", "dim": "SVG", "stages": 1}, {"cat": "wave", "slug": "wave-vertical-twist", "name": "Vertical-Twist", "src": "../assets/waves/Braided-Ribbon/Vertical-Twist.svg", "dim": "SVG", "stages": 1}]};</script>
 
 <footer class="dark-footer">
   <div class="dark-footer-inner">
@@ -572,7 +551,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
       <div><h5>System</h5><ul>
         <li><a href="00%20Home.html">Home</a></li>
         <li><a href="10%20Foundations.html">Foundations</a></li>
-        <li><a href="20%20Brand%20Assets.html">Illustration library</a></li>
+        <li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li>
       </ul></div>
       <div><h5>Foundations</h5><ul>
         <li><a href="10%20Foundations.html#principles">Principles</a></li>
@@ -591,54 +570,29 @@ body:not(.home) .section.hero{ min-height:auto !important; }
     </div>
   </div>
 </footer>
-
 <script>
-// ── Smooth scroll — one guarded instance, anchor-aware ──
-(function initScroll(){
-  if (window.__igLenis) return;
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reduce || typeof Lenis === 'undefined') return;
-  var lenis = new Lenis({ duration:1.05, easing:function(t){ return 1 - Math.pow(1-t,3); },
-                          smoothWheel:true, wheelMultiplier:1, touchMultiplier:1.6 });
-  window.__igLenis = lenis;
-  function raf(t){ lenis.raf(t); requestAnimationFrame(raf); }
-  requestAnimationFrame(raf);
-  document.querySelectorAll('a[href^="#"]').forEach(function(a){
-    a.addEventListener('click', function(e){
-      var id = a.getAttribute('href');
-      if (id.length < 2) return;
-      var el = document.querySelector(id);
-      if (!el) return;
-      e.preventDefault();
-      lenis.scrollTo(el, { offset: -100 });
-    });
+
+// ── Category listing ──
+(function cat(){
+  var g=document.getElementById('cgGrid'); if(!g||!window.IG_CATS) return;
+  var c=new URLSearchParams(location.search).get('c')||'character';
+  var D=window.IG_CATS, meta=D.meta[c]||D.meta.character;
+  document.getElementById('cgTitle').textContent=meta.label+'.';
+  document.getElementById('cgDesc').textContent=meta.desc;
+  document.querySelectorAll('.cg-tabs a').forEach(function(a){
+    a.classList.toggle('on', a.dataset.c===c);
   });
+  var list=D.items.filter(function(i){return i.cat===c;});
+  document.getElementById('cgCount').textContent=list.length+(list.length===1?' asset':' assets');
+  g.innerHTML=list.map(function(i){
+    return '<a href="29%20Asset%20Detail.html?a='+i.slug+'" class="cg-i">'+
+      '<div class="v">'+(i.stages>1?'<span class="badge">'+i.stages+' stages</span>':'')+
+      '<img src="'+i.src+'" alt="'+i.name+'" loading="lazy"/></div>'+
+      '<div class="n"><b>'+i.name+'</b><span>'+i.dim+'</span></div></a>';
+  }).join('');
+  var sp=document.getElementById('cgSrc');
+  if(sp) sp.innerHTML=sp.innerHTML.replace(/__FOLDER__/g, meta.folder);
 })();
-
-// ── Reveal on scroll ──
-(function reveals(){
-  var targets = document.querySelectorAll('.reveal, .section, .show-card, .trio-card, .cat-tile');
-  if (!targets.length) return;
-  var io = new IntersectionObserver(function(entries){
-    entries.forEach(function(e){
-      if (!e.isIntersecting) return;
-      var t = e.target;
-      t.classList.add('in');
-      t.classList.add('seen');
-      t.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
-      io.unobserve(t);
-    });
-  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
-  targets.forEach(function(t){ io.observe(t); });
-  // safety net — never leave content hidden
-  setTimeout(function(){
-    document.querySelectorAll('.reveal:not(.in)').forEach(function(el){
-      var r = el.getBoundingClientRect();
-      if (r.top < window.innerHeight * 1.5) el.classList.add('in');
-    });
-  }, 1200);
-})();
-
 </script>
 </body>
 </html>
