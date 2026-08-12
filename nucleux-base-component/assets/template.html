@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Component preview</title>
+<style>
+/* ===== PASTE THE FULL CONTENTS OF assets/base-ui.css HERE ===== */
+/* The preview must be a single self-contained file — no external stylesheet. */
+
+/* Page frame for the preview itself (not part of the design system) */
+.preview-page{min-height:100vh;padding:48px 32px;background:var(--ds-background);}
+.preview-shell{max-width:1100px;margin:0 auto;display:flex;flex-direction:column;gap:32px;}
+.preview-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;}
+.preview-caption{font:400 12px/16px var(--ds-font-sans);letter-spacing:.015em;color:var(--ds-muted-foreground);}
+</style>
+</head>
+<body class="ds-body">
+<div class="preview-page">
+  <div class="preview-shell">
+
+    <div class="preview-bar">
+      <span class="preview-caption">Intelligaia base UI &middot; component preview</span>
+      <button class="ds-btn ds-btn--ghost ds-btn--sm" onclick="toggleTheme()">Toggle theme</button>
+    </div>
+
+    <!-- ===== COMPONENT GOES HERE ===== -->
+
+  </div>
+</div>
+
+<script>
+function toggleTheme(){
+  const el = document.documentElement;
+  el.dataset.theme = el.dataset.theme === 'dark' ? 'light' : 'dark';
+}
+</script>
+</body>
+</html>
