@@ -397,6 +397,30 @@ body{ font-size:var(--body); }
 .trio-card h3{ font-size:calc(var(--h2) * .62) !important; }
 .part span,.dg-field .v{ font-size:calc(var(--body) * .93) !important; }
 .dg-body h3{ font-size:calc(var(--h2) * .52) !important; }
+
+/* ══════════ BRAND ASSETS — straight to the library ══════════ */
+.ba-hero{ padding-top:calc(var(--hdr-h) + clamp(30px,2.4vw,58px)); padding-bottom:clamp(24px,2vw,42px); }
+.ba-hero h1{ font-family:'Oswald',sans-serif; font-weight:400 !important; font-size:var(--h1);
+  line-height:1.02; letter-spacing:-.018em; color:var(--ink-soft); margin:0 0 16px; }
+.ba-hero p{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.55;
+  color:var(--ink-muted); margin:0; max-width:62ch; }
+.ba-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(14px,1.3vw,24px);
+  padding-bottom:clamp(40px,3vw,70px); }
+@media (max-width:1400px){ .ba-grid{ grid-template-columns:repeat(3,1fr); } }
+@media (max-width:900px){ .ba-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (min-width:2400px){ .ba-grid{ grid-template-columns:repeat(4,1fr); } }
+.ba-c{ display:flex; flex-direction:column; background:var(--bg-2); border:1px solid var(--hair-2);
+  border-radius:15px; overflow:hidden; transition:border-color .22s, transform .22s, background .22s; }
+.ba-c:hover{ border-color:var(--yellow); transform:translateY(-4px); background:var(--bg-3); }
+.ba-v{ aspect-ratio:1/1; background:#fff; display:flex; align-items:center; justify-content:center;
+  padding:clamp(22px,2vw,44px); border-bottom:1px solid var(--hair); }
+.ba-v img{ max-width:100%; max-height:100%; object-fit:contain; transition:transform .4s cubic-bezier(.22,.9,.3,1); }
+.ba-c:hover .ba-v img{ transform:scale(1.05); }
+.ba-m{ padding:clamp(16px,1.3vw,24px); display:flex; align-items:center; justify-content:space-between; gap:10px; }
+.ba-m b{ font-family:'Oswald',sans-serif; font-weight:400; font-size:calc(var(--h2) * .46); color:var(--ink-soft); display:block; }
+.ba-m span{ font-family:'Geist',sans-serif; font-size:var(--meta); color:var(--ink-muted); display:block; margin-top:3px; }
+.ba-m .ar{ font-family:'Oswald',sans-serif; font-size:19px; color:var(--ink-muted); transition:.2s; }
+.ba-c:hover .ba-m .ar{ color:var(--yellow); transform:translateX(3px); }
 </style>
 </head>
 <body>
@@ -423,61 +447,53 @@ body{ font-size:var(--body); }
 </header>
 <main>
 
-<section class="section hero">
-  <div class="crumbs reveal">
-    <a href="00%20Home.html">Brand Assets</a> <span class="sep">/</span>
-    <span class="current">Brand assets</span>
-  </div>
-  <span class="eyebrow reveal">Brand assets</span>
-  <h1 class="hero-h1">Every asset, one system.</h1>
-  <p class="hero-h2 reveal" data-delay="4">Illustrations, icons, waves and letterforms — all built from the same three primitives on the same grid.</p>
+<section class="section ba-hero">
+  <h1>Brand assets.</h1>
+  <p>Every illustration, icon, wave and letterform approved for Intelligaia work — built from three primitives on a 50&times;50 grid, through four construction stages.</p>
 </section>
 
-<section class="section">
-  <span class="eyebrow reveal">Library</span>
-  <h2 class="big-title reveal" data-delay="1">Browse by category.</h2>
-  <div class="cat-grid">
-    <a href="22%20Characters.html" class="cat-tile">
-      <div class="cat-thumb"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Characters" loading="lazy"/></div>
-      <div class="cat-name">Characters</div>
+<section class="section ba-grid">
+    <a href="22%20Characters.html" class="ba-c">
+      <div class="ba-v"><img src="../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Characters" loading="lazy"/></div>
+      <div class="ba-m"><div><b>Characters</b><span>48 assets · four construction stages</span></div><span class="ar">→</span></div>
     </a>
-    <a href="23%20Devices.html" class="cat-tile">
-      <div class="cat-thumb"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Devices" loading="lazy"/></div>
-      <div class="cat-name">Devices</div>
+    <a href="23%20Devices.html" class="ba-c">
+      <div class="ba-v"><img src="../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Devices" loading="lazy"/></div>
+      <div class="ba-m"><div><b>Devices</b><span>21 assets · laptops, phones, headsets</span></div><span class="ar">→</span></div>
     </a>
-    <a href="24%20Objects.html" class="cat-tile">
-      <div class="cat-thumb"><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Objects" loading="lazy"/></div>
-      <div class="cat-name">Objects</div>
+    <a href="24%20Objects.html" class="ba-c">
+      <div class="ba-v"><img src="../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png" alt="Objects" loading="lazy"/></div>
+      <div class="ba-m"><div><b>Objects</b><span>12 assets · lighthouse, ship, props</span></div><span class="ar">→</span></div>
     </a>
-    <a href="25%20Nature.html" class="cat-tile">
-      <div class="cat-thumb"><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Nature" loading="lazy"/></div>
-      <div class="cat-name">Nature</div>
+    <a href="25%20Nature.html" class="ba-c">
+      <div class="ba-v"><img src="../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png" alt="Nature" loading="lazy"/></div>
+      <div class="ba-m"><div><b>Nature</b><span>10 assets · trees, plants, clouds</span></div><span class="ar">→</span></div>
     </a>
-    <a href="26%20Icons.html" class="cat-tile">
-      <div class="cat-thumb"><img src="../assets/icons/Abstract/Four-Point-Star.svg" alt="Icons" loading="lazy"/></div>
-      <div class="cat-name">Icons</div>
+    <a href="26%20Icons.html" class="ba-c">
+      <div class="ba-v"><img src="../assets/icons/Abstract/Four-Point-Star.svg" alt="Icons" loading="lazy"/></div>
+      <div class="ba-m"><div><b>Icons</b><span>41 assets · UI set, recolourable SVG</span></div><span class="ar">→</span></div>
     </a>
-    <a href="27%20Letters.html" class="cat-tile">
-      <div class="cat-thumb"><img src="../assets/letters/Alphabet%3DO.svg" alt="Letters" loading="lazy"/></div>
-      <div class="cat-name">Letters</div>
+    <a href="27%20Letters.html" class="ba-c">
+      <div class="ba-v"><img src="../assets/letters/Alphabet%3DO.svg" alt="Letters" loading="lazy"/></div>
+      <div class="ba-m"><div><b>Letters</b><span>26 assets · illustrated alphabet</span></div><span class="ar">→</span></div>
     </a>
-    <a href="28%20Waves.html" class="cat-tile">
-      <div class="cat-thumb"><img src="../assets/waves/Folded-Ribbon/Accordion-Wide.svg" alt="Waves" loading="lazy"/></div>
-      <div class="cat-name">Waves</div>
+    <a href="28%20Waves.html" class="ba-c">
+      <div class="ba-v"><img src="../assets/waves/Folded-Ribbon/Accordion-Wide.svg" alt="Waves" loading="lazy"/></div>
+      <div class="ba-m"><div><b>Waves</b><span>9 assets · abstract flow shapes</span></div><span class="ar">→</span></div>
     </a>
-    <a href="21%20Construction.html" class="cat-tile">
-      <div class="cat-thumb"><img src="../assets/brand/grid-50x50.svg" alt="Construction" loading="lazy"/></div>
-      <div class="cat-name">Construction</div>
+    <a href="21%20Construction.html" class="ba-c">
+      <div class="ba-v"><img src="../assets/brand/grid-50x50.svg" alt="Construction" loading="lazy"/></div>
+      <div class="ba-m"><div><b>Construction</b><span>The four-stage build process</span></div><span class="ar">→</span></div>
     </a>
-  </div>
 </section>
 
-<section class="section" style="min-height:auto;padding-top:40px;padding-bottom:40px;">
+<section class="section" style="min-height:auto;padding-top:0;padding-bottom:50px;">
   <div class="pn-row reveal">
     <a href="10%20Foundations.html" class="pn-tile"><div class="lbl">← Previous</div><div class="name">Foundations</div></a>
     <a href="30%20Diagrams.html" class="pn-tile next"><div class="lbl">Next →</div><div class="name">Diagrams</div></a>
   </div>
 </section>
+
 </main>
 <footer class="dark-footer">
   <div class="dark-footer-inner">
@@ -492,9 +508,9 @@ body{ font-size:var(--body); }
         <li><a href="../light/20%20Brand%20Assets.html">Illustration library</a></li>
       </ul></div>
       <div><h5>Foundations</h5><ul>
-        <li><a href="10%20Foundations.html#p1">Principles</a></li>
-        <li><a href="12%20Colour.html">Colour</a></li>
-        <li><a href="13%20Typography.html">Typography</a></li>
+        <li><a href="10%20Foundations.html#principles">Principles</a></li>
+        <li><a href="10%20Foundations.html#colour">Colour</a></li>
+        <li><a href="10%20Foundations.html#type">Typography</a></li>
       </ul></div>
       <div><h5>Intelligaia</h5><ul>
         <li><a href="https://www.intelligaia.com">intelligaia.com</a></li>

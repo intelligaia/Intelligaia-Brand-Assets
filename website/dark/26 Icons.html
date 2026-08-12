@@ -337,6 +337,21 @@ body{ font-size:var(--body); }
 .trio-card h3{ font-size:calc(var(--h2) * .62) !important; }
 .part span,.dg-field .v{ font-size:calc(var(--body) * .93) !important; }
 .dg-body h3{ font-size:calc(var(--h2) * .52) !important; }
+
+/* ══════════ LIBRARY PAGES — bigger assets, tighter rhythm ══════════ */
+.chr-hero{ padding-top:calc(var(--hdr-h) + clamp(26px,2vw,50px)) !important;
+  padding-bottom:clamp(22px,1.8vw,38px) !important; min-height:auto !important; }
+.chr-hero h1{ font-size:var(--h1) !important; font-weight:400 !important; margin-bottom:12px !important; }
+.chr-hero p,.chr-hero .lede{ font-size:var(--lede) !important; max-width:62ch; }
+.pill-bar{ top:var(--hdr-h) !important; }
+.pill{ font-size:var(--meta) !important; padding:9px 18px !important; }
+.stage-grid,.asset-grid,.grid,.a-grid{ grid-template-columns:repeat(auto-fill,minmax(240px,1fr)) !important;
+  gap:clamp(14px,1.2vw,22px) !important; }
+@media (min-width:1920px){ .stage-grid,.asset-grid,.grid,.a-grid{ grid-template-columns:repeat(auto-fill,minmax(280px,1fr)) !important; } }
+@media (min-width:2600px){ .stage-grid,.asset-grid,.grid,.a-grid{ grid-template-columns:repeat(auto-fill,minmax(320px,1fr)) !important; } }
+.stage-cell,.asset-cell,.a-card{ border-radius:13px !important; }
+.stage-cell img,.asset-cell img,.a-card img{ padding:clamp(14px,1.1vw,24px) !important; }
+section.page,.page{ padding-top:clamp(28px,2.2vw,48px) !important; padding-bottom:clamp(28px,2.2vw,48px) !important; min-height:auto !important; }
 </style>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js">
 // ── Word-by-word reveal on every display heading ──
@@ -631,9 +646,9 @@ body{ font-size:var(--body); }
         <li><a href="20%20Brand%20Assets.html">Illustration library</a></li>
       </ul></div>
       <div><h5>Foundations</h5><ul>
-        <li><a href="10%20Foundations.html#p1">Principles</a></li>
-        <li><a href="12%20Colour.html">Colour</a></li>
-        <li><a href="13%20Typography.html">Typography</a></li>
+        <li><a href="10%20Foundations.html#principles">Principles</a></li>
+        <li><a href="10%20Foundations.html#colour">Colour</a></li>
+        <li><a href="10%20Foundations.html#type">Typography</a></li>
       </ul></div>
       <div><h5>Intelligaia</h5><ul>
         <li><a href="https://www.intelligaia.com">intelligaia.com</a></li>
