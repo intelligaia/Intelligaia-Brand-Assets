@@ -1,42 +1,53 @@
 # New Business Journey
 
 ## Purpose
-Take a qualified opportunity through a valid commercial proposal to an executable order.
+Define the end-to-end vendor-neutral CPQ/Q2C journey for selling a new product/service relationship to a customer, connecting opportunity context, product selection, configuration, pricing, discounting, quoting, approvals, ordering, subscription creation, and billing.
 
-## Personas
-Seller/AE, Solution/Product specialist, Deal Desk, Finance/Pricing, Legal, Approver, Customer, Order/Billing Ops.
+This is the journey entry module. Detailed orchestration, decisions/data, UX/diagnostics, and requirement patterns are delegated to linked modules.
 
-## L1
-Opportunity → Quote → Configure → Price → Approve → Contract/Accept → Order → Billing/Provisioning.
+## Journey Outcome
+A valid customer need is converted into an accepted, approved, executable commercial transaction whose ordered, subscribed, and billed state remains traceable to the quote the customer accepted.
 
-## L2
-1. Confirm account/contact/opportunity and quote type.
-2. Create/reopen quote.
-3. Add products/services.
-4. Configure options/attributes/bundles.
-5. Apply standard pricing and discounts.
-6. Add non-standard discount if required.
-7. Qualify T&Cs.
-8. Validate and submit quote.
-9. Complete approvals.
-10. Generate proposal/order form.
-11. If special terms exist, execute agreement/CLM path.
-12. Customer reviews and signs.
-13. Reopen/reapprove if commercial changes occur.
-14. Create order.
-15. Capture PO and downstream-required information.
-16. Pre-validate order.
-17. Submit/integrate to order management/billing/provisioning.
-18. Confirm downstream acceptance/status.
+## Journey Boundary
+**Start:** qualified commercial intent requiring a new quote/configuration.  
+**End:** order/subscription/billing handoff is completed or the transaction is closed/lost/cancelled according to process.
 
-## Key decisions
-Configuration valid? Discount/terms require approval? Special language? Agreement required? Customer change? Reapproval? Credit/order validation passed?
+## Core Journey
+**Opportunity/Customer Context → Quote Initiation → Product Selection → Configuration → Pricing → Discounting → Validation → Approval → Proposal → Negotiation/Revision → Acceptance → Order → Fulfillment/Activation → Subscription → Billing → Reconciliation**
 
-## Failure/rework
-Invalid product/configuration; missing price; approval rejection; missing information; customer redline; missing PO/billing data; quote/order mismatch; integration failure.
+## Primary Actors
+Seller/AE, Partner Seller where applicable, Solution Specialist, Deal Desk, Pricing/Finance, Approver, Customer/Buyer, Order Operations, Fulfillment/Provisioning, Billing Operations.
 
-## Data lineage
-Account/Opportunity → Quote/Lines → Approval → Proposal/Agreement → Order/Lines → Subscription/Asset/Billing context.
+## Major Decision Gates
+1. Is customer/opportunity context complete?
+2. Is the requested solution sellable and configurable?
+3. Is the configuration valid?
+4. Is pricing complete and current?
+5. Are discounts within policy?
+6. Is approval required?
+7. Is the quote/proposal ready for customer presentation?
+8. Has the customer accepted the exact current version?
+9. Is the accepted quote ready to order?
+10. Did order/subscription/billing reflect accepted intent?
 
-## UX requirements
-Clear progress, guided configuration, explainable pricing, approval preview/status, error prevention, proposal self-service where governed, downstream status visibility.
+## Detail Modules
+| Topic | Module |
+|---|---|
+| End-to-end steps, loops, exception paths and handoffs | [`new-business-flows.md`](new-business-flows.md) |
+| Cross-capability data, decisions, ownership and control points | [`new-business-controls.md`](new-business-controls.md) |
+| Seller/operations UX, diagnostics and KPIs | [`new-business-ux-diagnostics.md`](new-business-ux-diagnostics.md) |
+| Reusable journey stories and acceptance patterns | [`new-business-requirements.md`](new-business-requirements.md) |
+
+## Capability Routing
+- Catalog: [`../capabilities/product-catalog.md`](../capabilities/product-catalog.md)
+- Configuration: [`../capabilities/configuration.md`](../capabilities/configuration.md)
+- Pricing: [`../capabilities/pricing.md`](../capabilities/pricing.md)
+- Discounting: [`../capabilities/discounting.md`](../capabilities/discounting.md)
+- Quoting: [`../capabilities/quoting.md`](../capabilities/quoting.md)
+- Approvals: [`../capabilities/approvals.md`](../capabilities/approvals.md)
+- Ordering: [`../capabilities/ordering.md`](../capabilities/ordering.md)
+- Subscriptions: [`../capabilities/subscriptions.md`](../capabilities/subscriptions.md)
+- Billing: [`../capabilities/billing.md`](../capabilities/billing.md)
+
+## Evidence Rule
+Do not invent customer-specific opportunity stages, required fields, approval thresholds, proposal templates, acceptance methods, order mappings, fulfillment triggers, activation events, or billing rules.

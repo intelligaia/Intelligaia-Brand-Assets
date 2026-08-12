@@ -1,33 +1,31 @@
 # Renewal Journey
 
-## Trigger
-Subscription/asset approaches renewal window (for example, expiring in X days according to configured business policy).
+## Purpose
+Define the end-to-end customer lifecycle journey for continuing, renegotiating, expanding, contracting, migrating, or ending an expiring subscription relationship.
 
-## L1
-Detect renewal → Opportunity → Renewal Quote → Review installed/subscription base → Price → Modify/Upsell/Co-term → Approve → Contract/Accept → Order → Billing/lifecycle update.
+## Journey Outcome
+The renewal is identified early enough for the governed process, constructed from authoritative subscription state, commercially evaluated, approved and accepted where required, executed into the next term, and reconciled across subscription, billing and entitlements.
 
-## L2
-1. Detect expiring/evergreen subscription population.
-2. Create or identify renewal opportunity.
-3. Create renewal quote.
-4. Load existing products/subscriptions and purchase history.
-5. Determine renewal scope: full, partial, expansion, upgrade, add-on.
-6. Apply renewal pricing/uplift/discount policy.
-7. Add upsell/cross-sell if applicable.
-8. Apply short/forward co-term if needed.
-9. Validate.
-10. Submit for approvals.
-11. Handle special terms/agreement.
-12. Customer accepts/signs.
-13. Place renewal order.
-14. Synchronize subscription/billing lifecycle.
-15. Close/update renewal opportunity and reporting.
+## Boundary
+**Start:** a subscription/term enters the governed renewal horizon or another evidenced renewal trigger occurs.  
+**End:** the relationship is renewed, partially renewed, auto-renewed, non-renewed, or otherwise resolved and downstream state is reconciled.
 
-## Decisions
-Auto-renew vs seller-managed? Full vs partial? Price increase notification? Co-term? Upsell/upgrade? Approval? Agreement? Customer change?
+## Core Journey
+**Identify Renewal → Assess Readiness → Retrieve Authoritative Baseline → Account for Pending Changes → Determine Renewal Motion → Carry Forward/Migrate → Configure Changes → Price/Uplift → Discount → Approve → Quote → Negotiate → Accept/Non-Renew → Order → Establish Next Term → Update Billing/Entitlements → Reconcile**
 
-## Common project pain points in supplied material
-Manual opportunity/quote creation, duplicate renewal records, historical pricing visibility, add-on/amendment complexity, external notification dependency, and downstream reconciliation. Treat as project findings, not universal platform limitations.
+## Renewal Motions
+Assisted renewal; auto-renew; renewal with expansion/contraction; partial renewal; product migration; co-term/consolidated renewal; non-renewal/churn.
 
-## KPIs
-Renewal preparation lead time, seller touches, renewal quote cycle, approval time, renewal rate, expansion value, manual touch rate, billing reconciliation errors.
+## Detail Modules
+| Topic | Module |
+|---|---|
+| Detailed renewal flows, loops and outcome paths | [`renewal-flows.md`](renewal-flows.md) |
+| Baseline, timing, pricing, migration, decision and lineage controls | [`renewal-controls.md`](renewal-controls.md) |
+| Renewal seller/CS/operations UX, diagnostics and KPIs | [`renewal-ux-diagnostics.md`](renewal-ux-diagnostics.md) |
+| Journey-level stories and acceptance patterns | [`renewal-requirements.md`](renewal-requirements.md) |
+
+## Capability Routing
+[`../capabilities/subscriptions.md`](../capabilities/subscriptions.md), [`../capabilities/renewals.md`](../capabilities/renewals.md), [`../capabilities/amendments.md`](../capabilities/amendments.md), [`../capabilities/configuration.md`](../capabilities/configuration.md), [`../capabilities/pricing.md`](../capabilities/pricing.md), [`../capabilities/discounting.md`](../capabilities/discounting.md), [`../capabilities/approvals.md`](../capabilities/approvals.md), [`../capabilities/quoting.md`](../capabilities/quoting.md), [`../capabilities/ordering.md`](../capabilities/ordering.md), [`../capabilities/billing.md`](../capabilities/billing.md)
+
+## Evidence Rule
+Do not invent renewal horizons, auto-renew rules, notice periods, uplift percentages, pricing basis, migration mappings, discount carry-forward, co-term rules, forecast formulas, churn policy, or downstream renewal mechanics.
