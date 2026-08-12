@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intelligaia · Case studies · Brand Assets</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 :root {
@@ -444,7 +444,6 @@ body{ overscroll-behavior-y:none; }
 .g-logo{ display:flex; align-items:center; gap:18px; flex-shrink:0; }
 .g-logo img{ height:var(--logo-h) !important; width:auto; }
 .g-sep{ width:1px; height:calc(var(--logo-h) * .58); background:var(--hair-2); flex:none; }
-.g-mark{ height:calc(var(--logo-h) * .32); width:auto; }
 .g-sys{ font-family:'Oswald',sans-serif; font-weight:400; font-size:var(--sys-fs) !important; letter-spacing:-.005em; white-space:nowrap; }
 .g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.7vw,38px); }
 .g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
@@ -624,12 +623,72 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 .avlb .cap{ position:absolute; bottom:22px; left:0; right:0; text-align:center;
   font-family:'Geist',sans-serif; font-size:var(--label); color:rgba(244,246,255,.7); }
 
-/* nav: mark the module you are on */
-.g-nav a.on{ color:var(--yellow) !important; opacity:1 !important; position:relative; }
-.g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-9px;
+
+/* ══════════ HEADER ══════════ */
+.g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
+.g-header-inner{ max-width:none !important; width:100%; height:100%;
+  padding:0 var(--pad-x) !important; margin:0 !important;
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:30px; }
+.g-logo{ display:flex; align-items:center; gap:clamp(14px,1.1vw,22px); flex-shrink:0; text-decoration:none; }
+.g-logo img{ height:var(--logo-h) !important; width:auto; display:block; }
+.g-sep{ width:1px; height:calc(var(--logo-h) * .62); background:var(--hair-2); flex:none; }
+/* brand wordmark — spectrum, its own typeface */
+.g-sys{ font-family:'Syne',var(--font-display),sans-serif; font-weight:700;
+  font-size:calc(var(--sys-fs) * 1.06); letter-spacing:-.012em; white-space:nowrap; line-height:1;
+  background:linear-gradient(96deg,#FFC800 0%,#FF8A3D 22%,#F0506E 44%,#8A5AF0 68%,#4A8BF5 88%,#26D0C4 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+  background-size:180% 100%; transition:background-position .5s ease; }
+.g-logo:hover .g-sys{ background-position:100% 0; }
+.g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.8vw,40px); }
+.g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
+  white-space:nowrap; opacity:.86; transition:color .15s, opacity .15s; position:relative; }
+.g-nav a:hover{ color:#FFC800; opacity:1; }
+.g-nav a.on{ color:var(--yellow) !important; opacity:1 !important; }
+.g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-10px;
   height:2px; background:var(--yellow); border-radius:2px; }
+/* contact — was collapsing; explicit box */
+.g-cta{ justify-self:end; display:inline-flex !important; align-items:center; justify-content:center;
+  height:auto !important; min-height:0;
+  padding:clamp(11px,.75vw,15px) clamp(20px,1.5vw,30px) !important;
+  font-family:'Geist',sans-serif; font-size:var(--nav-fs) !important; font-weight:400;
+  line-height:1; white-space:nowrap; border-radius:999px;
+  background:var(--yellow); color:#04050A !important; border:1px solid var(--yellow);
+  transition:background .18s, color .18s; }
+.g-cta:hover{ background:transparent; color:var(--yellow) !important; }
+@media (max-width:1400px){ .g-nav{ display:none; } }
+@media (max-width:700px){ .g-cta{ display:none !important; } }
+
+/* view toggle — icons, not words */
+.av-modes,.vw-modes{ display:flex; gap:3px; padding:4px; background:var(--bg-2);
+  border:1px solid var(--hair); border-radius:10px; }
+.av-mode,.vw-mode{ width:38px; height:34px; padding:0 !important; border-radius:7px !important;
+  border:0; background:transparent; color:var(--ink-muted); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:.16s; font-size:0 !important; }
+.av-mode svg,.vw-mode svg{ width:17px; height:17px; }
+.av-mode.on,.vw-mode.on{ background:var(--yellow); color:#04050A; }
+.av-mode:hover:not(.on),.vw-mode:hover:not(.on){ color:var(--ink); background:var(--bg-3); }
+
+/* ══════════ RESOURCES — same three links on every asset page ══════════ */
+.res{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1vw,18px);
+  margin-top:clamp(20px,1.7vw,30px); }
+@media (max-width:900px){ .res{ grid-template-columns:1fr; } }
+.res a{ display:flex; align-items:center; gap:14px; padding:clamp(16px,1.3vw,22px);
+  background:var(--bg-2); border:1px solid var(--hair-2); border-radius:12px; transition:.18s; }
+.res a:hover{ border-color:var(--yellow); background:var(--bg-3); }
+.res .ico{ width:36px; height:36px; border-radius:9px; background:var(--bg-3);
+  display:flex; align-items:center; justify-content:center; flex:none; }
+.res .tx{ min-width:0; }
+.res .tx b{ display:block; font-family:'Geist',sans-serif; font-weight:400;
+  font-size:var(--label); color:var(--ink); }
+.res .tx span{ display:block; font-family:'Geist',monospace;
+  font-size:calc(var(--label) * .84); color:var(--ink-muted); margin-top:3px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.res .st{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
+  padding:3px 10px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted);
+  white-space:nowrap; flex:none; }
 </style>
-<script>window.IG_ITEMS = [{"src": "https://www.intelligaia.com/portfolio/unifying-30%2B-brands-into-a-single%2C-scalable-commerce-platform", "dl": "https://www.intelligaia.com/portfolio", "dlLabel": "all case studies", "title": "Colibri Group — Unifying 30+ brands", "kind": "Published", "doc": true, "fields": [["Summary", "Cart and checkout standardised across 30+ brands through one atomic, brand-themable design system."], ["Services", "UX audit, design system architecture, atomic component library, frontend engineering, Storybook handoff"], ["Outcomes", "Shared commerce system across 30+ brands · standardised cart and checkout patterns · scalable multi-brand growth"], ["Structure", "Title, summary, services, methods, three outcomes, why Intelligaia, four to six narrative sections, close"]]}];</script>
+<script>window.IG_ITEMS = [{"src": "https://www.intelligaia.com/portfolio/unifying-30%2B-brands-into-a-single%2C-scalable-commerce-platform", "dl": "https://www.intelligaia.com/portfolio", "dlLabel": "portfolio", "doc": true, "title": "Colibri Group — Unifying 30+ brands", "kind": "Case study", "fields": [["Summary", "Cart and checkout standardised across 30+ brands through one atomic, brand-themable design system."], ["Services", "UX audit, design system architecture, atomic component library, frontend engineering, Storybook handoff"], ["Outcomes", "Shared commerce system across 30+ brands · standardised cart and checkout · scalable multi-brand growth"], ["Blocks", "Title, summary, services, methods, three outcomes, why Intelligaia, four to six narrative sections, close"]]}, {"src": "../assets/whitepapers/D3%20AI%20Assistant%20%E2%80%94%20Harvard.html", "dl": "../assets/whitepapers/D3%20AI%20Assistant%20%E2%80%94%20Harvard.html", "dlLabel": "HTML", "doc": true, "title": "D³ AI Assistant — Harvard Digital Data Design Institute", "kind": "Whitepaper", "fields": [["Summary", "A research-first AI assistant bridging academic rigor and executive action."], ["Layout", "Trirong serif, Raleway sans, warm #FAFAF6 paper. 1480px frame, 1080px measure, 220px sticky rail."], ["Sections", "Ten, numbered — context, root issues, proposal, research, discovery, principles, IA, workflows, archetypes, impact"], ["Pairing rule", "Every section covers design and engineering before advancing"]]}];</script>
 </head>
 <body>
 <header class="g-header">
@@ -637,8 +696,7 @@ body:not(.home) .section.hero{ min-height:auto !important; }
     <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Brand Assets">
       <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
       <span class="g-sep"></span>
-      <span class="g-mark-wrap" style="color:#EEF1FB"><svg class="g-mark" viewBox="0 0 60 16" aria-hidden="true"><circle cx="7" cy="8" r="6" fill="#FFC800"/><rect x="17" y="2" width="12" height="12" rx="2" fill="#4A8BF5"/><polygon points="40,2 46,14 34,14" fill="#8A5AF0"/><polygon points="54,3 59,8 54,13 49,8" fill="currentColor"/></svg></span>
-      <span class="g-sys">Brand assets</span>
+      <span class="g-sys">Brand Assets</span>
     </a>
     <nav class="g-nav">
       <a href="10%20Foundations.html">Foundations</a>
@@ -647,7 +705,6 @@ body:not(.home) .section.hero{ min-height:auto !important; }
       <a href="40%20Service%20Catalog.html">Service catalog</a>
       <a href="50%20Landing%20Pages.html">Landing pages</a>
       <a href="60%20Case%20Studies.html" class="on">Case studies</a>
-      <a href="70%20Whitepapers.html">Whitepapers</a>
       <a href="80%20Social%20Media.html">Social</a>
     </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>
@@ -656,15 +713,15 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 <main id="av">
 
 <section class="section av-hero">
-  <h1>Case studies.</h1>
-  <p>The published intelligaia.com/portfolio format, and the blocks every case study carries.</p>
+  <h1>Case studies &amp; whitepapers.</h1>
+  <p>Published client work and engineering papers. Page through them to see the format each one follows.</p>
 </section>
 
 <section class="section av-body">
   <div class="av-bar">
     <div class="av-modes">
-      <button class="av-mode on" data-mode="carousel">Carousel</button>
-      <button class="av-mode" data-mode="list">List</button>
+      <button class="av-mode on" data-mode="carousel"><svg viewBox="0 0 24 24" fill="none"><rect x="7" y="5" width="10" height="14" rx="2" stroke="currentColor" stroke-width="1.8"/><path d="M4 8v8M20 8v8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
+      <button class="av-mode" data-mode="list"><svg viewBox="0 0 24 24" fill="none"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6" stroke="currentColor" stroke-width="1.8"/></svg></button>
     </div>
     <span class="av-pos" id="avPos"></span>
   </div>
@@ -679,19 +736,30 @@ body:not(.home) .section.hero{ min-height:auto !important; }
 </section>
 
 <section class="section av-guide">
-  <h2>Rules for a new case study.</h2>
+  <h2>Rules for both formats.</h2>
   <div class="gd"><div><b>Claim plus proof</b><span>Every section: a heading that claims, a paragraph that earns it, an artifact that proves it.</span></div><div><b>Three outcomes</b><span>Exactly three. Completed actions, not adjectives.</span></div><div><b>Name the constraint</b><span>What limited the solution space. This is what makes it credible.</span></div><div><b>No invented metrics</b><span>Client approval before any number is published.</span></div></div>
 </section>
 
-<section class="section av-skill">
-  <div class="sk">
-    <div>
-      <div class="k">Agent skill</div>
-      <h3>Case study skill</h3>
-      <p>Takes the engagement facts and produces the case study in the published portfolio format — all eight blocks filled, narrative in the right order, no empty rows.</p>
-      <p style="margin:0;"><code>intelligaia-case-study</code></p>
-    </div>
-    <span class="sk-btn">Download skill <span class="soon">Coming soon</span></span>
+
+
+<section class="section res-sec" style="min-height:auto;display:block;padding-top:clamp(30px,2.4vw,50px);padding-bottom:clamp(40px,3vw,64px);border-top:1px solid var(--hair);">
+  <h2 style="font-family:'Oswald',sans-serif;font-weight:400;font-size:calc(var(--h2) * .68);color:var(--ink-soft);margin:0 0 6px;">Resources.</h2>
+  <p style="font-family:'Geist',sans-serif;font-size:var(--body);color:var(--ink-muted);margin:0;">Design source, repository location and the agent skill that produces this artifact.</p>
+  <div class="res">
+    <a href="https://www.figma.com/design/REPLACE_WITH_FILE_KEY/Intelligaia-Brand-Assets" target="_blank" rel="noopener">
+      <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="15" cy="12" r="3.2" stroke="#FFC800" stroke-width="1.7"/><path d="M12 4h3.2a3.2 3.2 0 0 1 0 6.4H12zM12 4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 10.4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 16.8H8.8a3.2 3.2 0 1 0 3.2 3.2z" stroke="#FFC800" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+      <span class="tx"><b>Figma source</b><span>Intelligaia Brand Assets</span></span>
+      <span class="st">Link pending</span>
+    </a>
+    <a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/website/assets/case-studies" target="_blank" rel="noopener">
+      <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M6 3v13a3 3 0 0 0 3 3h7" stroke="#FFC800" stroke-width="1.7" stroke-linecap="round"/><circle cx="6" cy="4.5" r="2.2" stroke="#FFC800" stroke-width="1.7"/><circle cx="18" cy="10" r="2.2" stroke="#FFC800" stroke-width="1.7"/><circle cx="6" cy="19.5" r="2.2" stroke="#FFC800" stroke-width="1.7"/><path d="M16 10H9" stroke="#FFC800" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <span class="tx"><b>Git repository</b><span>website/assets/case-studies</span></span>
+    </a>
+    <a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/skills" target="_blank" rel="noopener">
+      <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 6.1 6.6.6-5 4.3 1.5 6.5L12 16l-5.7 3.5 1.5-6.5-5-4.3 6.6-.6z" stroke="#FFC800" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+      <span class="tx"><b>Case study skill</b><span>intelligaia-case-study</span></span>
+      <span class="st">Coming soon</span>
+    </a>
   </div>
 </section>
 

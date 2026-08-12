@@ -1,7 +1,7 @@
 {
   "$schema": "https://intelligaia.github.io/schemas/repo-index-v1.json",
   "name": "Intelligaia Brand Assets",
-  "version": "1.6.0",
+  "version": "1.7.0",
   "generated": "2026-08-10",
   "description": "Single source of truth for Intelligaia's visual and editorial language. Human-readable system plus machine-readable specs.",
   "repository": "https://github.com/intelligaia/Intelligaia-Brand-Assets",
@@ -69,163 +69,71 @@
         "id": "dark-00",
         "number": "00",
         "title": "Home",
-        "path": "website/dark/00 Home.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/00%20Home.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "path": "dark/00 Home.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/00%20Home.html"
       },
       {
         "id": "dark-10",
         "number": "10",
         "title": "Foundations",
-        "path": "website/dark/10 Foundations.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/10%20Foundations.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "path": "dark/10 Foundations.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/10%20Foundations.html"
       },
       {
         "id": "dark-20",
         "number": "20",
         "title": "Brand Assets",
-        "path": "website/dark/20 Brand Assets.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/20%20Brand%20Assets.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "path": "dark/20 Brand Assets.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/20%20Brand%20Assets.html"
       },
       {
         "id": "dark-21",
         "number": "21",
-        "title": "Construction",
-        "path": "website/dark/21 Construction.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/21%20Construction.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "dark-22",
-        "number": "22",
-        "title": "Characters",
-        "path": "website/dark/22 Characters.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/22%20Characters.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "dark-23",
-        "number": "23",
-        "title": "Devices",
-        "path": "website/dark/23 Devices.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/23%20Devices.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "dark-24",
-        "number": "24",
-        "title": "Objects",
-        "path": "website/dark/24 Objects.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/24%20Objects.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "dark-25",
-        "number": "25",
-        "title": "Nature",
-        "path": "website/dark/25 Nature.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/25%20Nature.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "dark-26",
-        "number": "26",
-        "title": "Icons",
-        "path": "website/dark/26 Icons.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/26%20Icons.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "dark-27",
-        "number": "27",
-        "title": "Letters",
-        "path": "website/dark/27 Letters.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/27%20Letters.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "dark-28",
-        "number": "28",
-        "title": "Waves",
-        "path": "website/dark/28 Waves.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/28%20Waves.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "title": "Category",
+        "path": "dark/21 Category.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/21%20Category.html"
       },
       {
         "id": "dark-29",
         "number": "29",
         "title": "Asset Detail",
-        "path": "website/dark/29 Asset Detail.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/29%20Asset%20Detail.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "path": "dark/29 Asset Detail.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/29%20Asset%20Detail.html"
       },
       {
         "id": "dark-30",
         "number": "30",
         "title": "Diagrams",
-        "path": "website/dark/30 Diagrams.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/30%20Diagrams.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "dark/30 Diagrams.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/30%20Diagrams.html"
       },
       {
         "id": "dark-40",
         "number": "40",
         "title": "Service Catalog",
-        "path": "website/dark/40 Service Catalog.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/40%20Service%20Catalog.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "dark/40 Service Catalog.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/40%20Service%20Catalog.html"
       },
       {
         "id": "dark-50",
         "number": "50",
         "title": "Landing Pages",
-        "path": "website/dark/50 Landing Pages.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/50%20Landing%20Pages.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "dark/50 Landing Pages.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/50%20Landing%20Pages.html"
       },
       {
         "id": "dark-60",
         "number": "60",
         "title": "Case Studies",
-        "path": "website/dark/60 Case Studies.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/60%20Case%20Studies.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
-      },
-      {
-        "id": "dark-70",
-        "number": "70",
-        "title": "Whitepapers",
-        "path": "website/dark/70 Whitepapers.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/70%20Whitepapers.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "dark/60 Case Studies.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/60%20Case%20Studies.html"
       },
       {
         "id": "dark-80",
         "number": "80",
         "title": "Social Media",
-        "path": "website/dark/80 Social Media.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/80%20Social%20Media.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "dark/80 Social Media.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/dark/80%20Social%20Media.html"
       }
     ],
     "light": [
@@ -233,163 +141,71 @@
         "id": "light-00",
         "number": "00",
         "title": "Home",
-        "path": "website/light/00 Home.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/00%20Home.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "path": "light/00 Home.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/00%20Home.html"
       },
       {
         "id": "light-10",
         "number": "10",
         "title": "Foundations",
-        "path": "website/light/10 Foundations.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/10%20Foundations.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "path": "light/10 Foundations.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/10%20Foundations.html"
       },
       {
         "id": "light-20",
         "number": "20",
         "title": "Brand Assets",
-        "path": "website/light/20 Brand Assets.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/20%20Brand%20Assets.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "path": "light/20 Brand Assets.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/20%20Brand%20Assets.html"
       },
       {
         "id": "light-21",
         "number": "21",
-        "title": "Construction",
-        "path": "website/light/21 Construction.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/21%20Construction.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "light-22",
-        "number": "22",
-        "title": "Characters",
-        "path": "website/light/22 Characters.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/22%20Characters.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "light-23",
-        "number": "23",
-        "title": "Devices",
-        "path": "website/light/23 Devices.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/23%20Devices.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "light-24",
-        "number": "24",
-        "title": "Objects",
-        "path": "website/light/24 Objects.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/24%20Objects.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "light-25",
-        "number": "25",
-        "title": "Nature",
-        "path": "website/light/25 Nature.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/25%20Nature.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "light-26",
-        "number": "26",
-        "title": "Icons",
-        "path": "website/light/26 Icons.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/26%20Icons.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "light-27",
-        "number": "27",
-        "title": "Letters",
-        "path": "website/light/27 Letters.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/27%20Letters.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
-      },
-      {
-        "id": "light-28",
-        "number": "28",
-        "title": "Waves",
-        "path": "website/light/28 Waves.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/28%20Waves.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "title": "Category",
+        "path": "light/21 Category.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/21%20Category.html"
       },
       {
         "id": "light-29",
         "number": "29",
         "title": "Asset Detail",
-        "path": "website/light/29 Asset Detail.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/29%20Asset%20Detail.html",
-        "has_page_spec": false,
-        "has_agent_prompt": false
+        "path": "light/29 Asset Detail.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/29%20Asset%20Detail.html"
       },
       {
         "id": "light-30",
         "number": "30",
         "title": "Diagrams",
-        "path": "website/light/30 Diagrams.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/30%20Diagrams.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "light/30 Diagrams.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/30%20Diagrams.html"
       },
       {
         "id": "light-40",
         "number": "40",
         "title": "Service Catalog",
-        "path": "website/light/40 Service Catalog.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/40%20Service%20Catalog.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "light/40 Service Catalog.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/40%20Service%20Catalog.html"
       },
       {
         "id": "light-50",
         "number": "50",
         "title": "Landing Pages",
-        "path": "website/light/50 Landing Pages.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/50%20Landing%20Pages.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "light/50 Landing Pages.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/50%20Landing%20Pages.html"
       },
       {
         "id": "light-60",
         "number": "60",
         "title": "Case Studies",
-        "path": "website/light/60 Case Studies.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/60%20Case%20Studies.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
-      },
-      {
-        "id": "light-70",
-        "number": "70",
-        "title": "Whitepapers",
-        "path": "website/light/70 Whitepapers.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/70%20Whitepapers.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "light/60 Case Studies.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/60%20Case%20Studies.html"
       },
       {
         "id": "light-80",
         "number": "80",
         "title": "Social Media",
-        "path": "website/light/80 Social Media.html",
-        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/80%20Social%20Media.html",
-        "has_page_spec": true,
-        "has_agent_prompt": true
+        "path": "light/80 Social Media.html",
+        "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/light/80%20Social%20Media.html"
       }
     ]
   },
@@ -465,5 +281,10 @@
     "brand": "logos and marks",
     "tokens": "design tokens in six formats"
   },
-  "note": "Foundations is a single complete page \u2014 philosophy, principles, colour, typography and tokens. There are no separate Colour or Typography pages."
+  "note": "Case studies and whitepapers share one page. Foundations is a single page. Brand assets is category cards \u2192 category listing \u2192 asset detail.",
+  "resources": {
+    "figma": "assets/tokens/figma.json",
+    "git": "website/assets/",
+    "skills": "skills/ (pending)"
+  }
 }
