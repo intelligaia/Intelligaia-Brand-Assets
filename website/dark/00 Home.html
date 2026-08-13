@@ -115,49 +115,58 @@ body::before {
 .cut-photo img { display: block; width: 100%; height: 100%; object-fit: cover; background: #EDE8D8; }
 .cut-photo .cap-strip { text-transform: uppercase; position: absolute; left: 12px; right: 12px; bottom: 10px; font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 10px; color: #333; opacity: 0.55; display: flex; justify-content: space-between; letter-spacing: 0.02em; }
 
-/* ─── BIG — hero banner (dominant, top-right) ─── */
-.cut-big { top: 4%; right: 2%; width: 340px; height: 320px; --rest: 4deg; }
-.cut-big img { height: 240px; }
+/* ═══ CUTOUT ART — the five supplied PNG cutouts ═══════════════════════════
+   Torn edges, tape and paper shadow are baked into the artwork, so these get
+   no cream mount, no #paperEdge filter and no CSS tape — only a drop-shadow
+   (alpha-aware, unlike box-shadow) to lift them off the canvas.
 
-/* ─── MEDIUM 1 — character (mid-right/center) ─── */
-.cut-med1 { top: 32%; right: 34%; width: 220px; height: 260px; --rest: -6deg; }
-.cut-med1 img { height: 190px; object-fit: contain; padding: 8px; background: #F4EFDF; }
+   Arrangement is a story diagonal in the site's own IA order:
+     foundations (swatches, type) → brand assets (characters)
+     → construction (lighthouse) → shipped artifact (capability statement).
+   Small/raw at the left edge, large/finished at the bottom-right, front-most.
 
-/* ─── MEDIUM 2 — section illustration (bottom-right) ─── */
-.cut-med2 { bottom: 6%; right: 10%; width: 260px; height: 220px; --rest: 5deg; }
-.cut-med2 img { height: 150px; }
+   Widths are % of the collage box, so the composition holds its proportions
+   from 1440px up through the 2440px --shell used at 2.5K–3K.
 
-/* ─── SMALL — palette swatch (top-left) ─── */
-.cut-palette { top: 8%; left: 4%; width: 180px; padding: 16px 16px 18px; --rest: -8deg; }
-.cut-palette .cap { font-family: 'Geist', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 0.16em;  color: #1a1a1a; opacity: 0.55; margin-bottom: 10px; }
-.cut-palette h4 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 18px; color: #0a0a0a; margin: 0 0 12px; letter-spacing: -0.01em; line-height: 1.1; }
-.cut-palette .swatch-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; margin-bottom: 10px; }
-.cut-palette .sw { aspect-ratio: 1; border-radius: 3px; box-shadow: inset 0 0 0 1px rgba(0,0,0,0.06); }
-.cut-palette .sw-y { background: #FFC800; }
-.cut-palette .sw-b { background: #4A8BF5; }
-.cut-palette .sw-p { background: #8A5AF0; }
-.cut-palette .sw-k { background: #0A0A0A; }
-.cut-palette .hex { font-family: 'Geist Mono', monospace; font-size: 8px; color: #333; opacity: 0.55; display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; text-align: center; }
+   !important on background/box-shadow is load-bearing: a later theme block
+   re-asserts a box-shadow on .cutout and would paint a rectangle behind the art. */
+.cut-art { background: none !important; padding: 0; box-shadow: none !important; filter: drop-shadow(0 26px 40px rgba(0,0,0,0.60)) drop-shadow(0 8px 14px rgba(0,0,0,0.40)) !important; }
+.cut-art img { display: block; width: 100%; height: auto; }
 
-/* ─── SMALL — typography specimen "Aa" (mid-left) ─── */
-.cut-typo { top: 34%; left: 12%; width: 160px; height: 200px; padding: 14px; --rest: 6deg; display: flex; flex-direction: column; justify-content: space-between; background: #0A0A0A; }
-.cut-typo .cap { font-family: 'Geist', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 0.16em;  color: #FFC800; }
-.cut-typo .aa { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 140px; line-height: 0.85; color: #F4EFDF; margin: 0; letter-spacing: -0.04em; text-align: center; flex: 1; display: flex; align-items: center; justify-content: center; }
-.cut-typo .meta { display: flex; justify-content: space-between; font-family: 'Geist Mono', monospace; font-size: 9px; color: #F4EFDF; opacity: 0.6; }
+/* The collage runs past the right gutter and is cropped by .section.hero's
+   overflow:hidden — the pile reads as bigger than the frame, not as a set of
+   floating cards. Layering is back-to-front: big anchor first, small bits last. */
+.hero-collage { width: calc(100% + var(--pad-x, 40px)); margin-right: calc(-1 * var(--pad-x, 40px)); height: min(88vh, 900px); min-height: 620px; }
 
-/* ─── SMALL — torn sticky note (bottom-left) ─── */
-.cut-note { bottom: 8%; left: 2%; width: 200px; padding: 18px 16px 18px; --rest: -5deg; background: #FFF3B8; filter: url(#paperEdgeSticky); }
-.cut-note .cap { font-family: 'Geist', sans-serif; font-size: 9px; font-weight: 500; letter-spacing: 0.16em;  color: #1a1a1a; opacity: 0.5; margin-bottom: 10px; }
-.cut-note .quote { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 18px; line-height: 1.25; color: #0a0a0a; margin: 0; letter-spacing: -0.005em; }
+/* BACK — construction prints. Overlap the anchor's top edge, bleed right. */
+.cut-lighthouse { top: -6%;  right: -3%;  width: 71%;   min-width: 340px; max-width: 900px; --rest: 3deg;   z-index: 1; }
+
+/* ANCHOR — the yellow characters sheet. Everything else tucks onto its edges. */
+.cut-characters { top: 27%;  left: 5%;    width: 73%;   min-width: 330px; max-width: 850px; --rest: -2.5deg; z-index: 3; }
+
+/* OUTPUT — capability statement, over the anchor's bottom-right, bleeds down. */
+.cut-capability { top: 65%;  right: 4%;   width: 31%;   min-width: 165px; max-width: 380px; --rest: -3deg;  z-index: 4; }
+
+/* FOUNDATION — colour strip laid across the anchor's left edge. */
+.cut-swatches   { top: 22%;  left: 0%;    width: 12%;   min-width: 66px;  max-width: 150px; --rest: -5deg;  z-index: 5; }
+
+/* FOUNDATION — type specimen over the anchor's bottom-left corner. */
+.cut-typespec   { top: 64%;  left: 11%;   width: 22%;   min-width: 124px; max-width: 280px; --rest: 6deg;   z-index: 5; }
+
+/* ─── KEPT — torn sticky note, front-most, over the anchor's bottom edge ─── */
+.cut-note { bottom: 9%; left: 31%; width: 24%; min-width: 186px; max-width: 330px; padding: clamp(16px, 1.2vw, 26px) clamp(15px, 1.1vw, 24px); --rest: -4deg; background: #FFF3B8; filter: url(#paperEdgeSticky); z-index: 6; }
+.cut-note .cap { font-family: 'Geist', sans-serif; font-size: clamp(9px, 0.6vw, 13px); font-weight: 500; letter-spacing: 0.16em; color: #1a1a1a; opacity: 0.5; margin-bottom: 10px; }
+.cut-note .quote { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: clamp(18px, 1.25vw, 28px); line-height: 1.25; color: #0a0a0a; margin: 0; letter-spacing: -0.005em; }
 .cut-note .quote .hl { background: linear-gradient(180deg, transparent 55%, #FFC800 55%); padding: 0 2px; }
-.cut-note .sig { font-family: 'Geist Mono', monospace; font-size: 9px; color: #333; opacity: 0.55; margin-top: 12px; }
+.cut-note .sig { font-family: 'Geist Mono', monospace; font-size: clamp(9px, 0.6vw, 13px); color: #333; opacity: 0.55; margin-top: 12px; }
 
-/* ─── Tape strips over image corners (extra realism) ─── */
-.tape { position: absolute; width: 78px; height: 22px; background: linear-gradient(180deg, rgba(255,200,0,0.55) 0%, rgba(255,200,0,0.75) 50%, rgba(255,200,0,0.55) 100%); box-shadow: 0 2px 6px rgba(0,0,0,0.2); opacity: 0; transition: opacity 0.5s ease 2.2s; z-index: 5; }
-.section.in .tape { opacity: 1; }
-.tape-1 { top: 3%; right: 24%; transform: rotate(-18deg); }
-.tape-2 { top: 30%; left: 8%; width: 60px; transform: rotate(24deg); }
-.tape-3 { bottom: 22%; right: 40%; width: 68px; transform: rotate(-12deg); }
+/* Give the pile more of the row than the old 0.9/1.1 split, and let the box
+   grow with the shell so the composition holds its proportions at 2.5K–3K. */
+.hero-grid { grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr) !important; }
+@media (min-width: 1600px) { .hero-grid { grid-template-columns: minmax(0, 0.76fr) minmax(0, 1.24fr) !important; } }
+@media (min-width: 1920px) { .hero-collage { height: min(86vh, 1000px); } }
+@media (min-width: 2400px) { .hero-collage { height: min(84vh, 1140px); } }
+@media (min-width: 2800px) { .hero-collage { height: min(82vh, 1260px); } }
 
 /* SVG filter defs container (invisible) */
 .paper-defs { position: absolute; width: 0; height: 0; pointer-events: none; }
@@ -857,57 +866,39 @@ body.home .section.hero{ min-height:100vh !important; }
         </defs>
       </svg>
 
-      <!-- BIG — hero banner photo, top-right (dominant) -->
-      <div class="cutout cut-photo cut-big" data-delay="1" style="--sx:380px; --sy:-140px; --sr:22deg;">
-        <img src="../assets/marketing/banners/approved_banner_homepage-hero_isometric-gradient_v03.png" alt="Homepage hero illustration" />
-        <div class="cap-strip"><span>Banner · Homepage</span><span>Iso · v03</span></div>
+      <!-- Story diagonal · foundations → assets → construction → shipped artifact -->
+
+      <!-- 1 · FOUNDATION — colour -->
+      <div class="cutout cut-art cut-swatches" data-delay="1" style="--sx:-330px; --sy:-230px; --sr:-26deg;">
+        <img src="../assets/Website%20banner%20assets/Swatches.png" alt="Brand colour swatches — #FFC800, #4A8BF5, #8A5AF0, #0A0A0A" />
       </div>
 
-      <!-- SMALL — palette, top-left -->
-      <div class="cutout cut-palette" data-delay="2" style="--sx:-320px; --sy:-200px; --sr:-24deg;">
-        <div class="cap">Palette · Core</div>
-        <h4>4 brand colors.</h4>
-        <div class="swatch-row">
-          <div class="sw sw-y"></div>
-          <div class="sw sw-b"></div>
-          <div class="sw sw-p"></div>
-          <div class="sw sw-k"></div>
-        </div>
-        <div class="hex">
-          <span>FFC800</span><span>4A8BF5</span><span>8A5AF0</span><span>0A0A0A</span>
-        </div>
+      <!-- 2 · FOUNDATION — type -->
+      <div class="cutout cut-art cut-typespec" data-delay="2" style="--sx:-390px; --sy:70px; --sr:20deg;">
+        <img src="../assets/Website%20banner%20assets/Typo.png" alt="Type specimen — Oswald 400–500" />
       </div>
 
-      <!-- MEDIUM 1 — character illustration -->
-      <div class="cutout cut-photo cut-med1" data-delay="3" style="--sx:80px; --sy:-260px; --sr:-16deg;">
-        <img src="../assets/marketing/people/approved_human_character_concept 14.png" alt="Character illustration" />
-        <div class="cap-strip"><span>Character · concept</span><span>PNG</span></div>
+      <!-- 3 · BRAND ASSETS — characters -->
+      <div class="cutout cut-art cut-characters" data-delay="3" style="--sx:-40px; --sy:310px; --sr:-14deg;">
+        <img src="../assets/Website%20banner%20assets/Characters.png" alt="Intelligaia character illustrations on torn yellow paper" />
       </div>
 
-      <!-- SMALL — typography specimen, mid-left -->
-      <div class="cutout cut-typo" data-delay="4" style="--sx:-360px; --sy:0px; --sr:18deg;">
-        <div class="cap">Oswald · 400–500</div>
-        <div class="aa">Aa</div>
-        <div class="meta"><span>MEDIUM</span><span>500</span></div>
+      <!-- 4 · CONSTRUCTION — blueprint to finished -->
+      <div class="cutout cut-art cut-lighthouse" data-delay="4" style="--sx:410px; --sy:-240px; --sr:24deg;">
+        <img src="../assets/Website%20banner%20assets/Lighthouse.png" alt="Lighthouse illustration across three construction stages, wireframe to finished" />
       </div>
 
-      <!-- MEDIUM 2 — section illustration, bottom-right -->
-      <div class="cutout cut-photo cut-med2" data-delay="5" style="--sx:420px; --sy:200px; --sr:16deg;">
-        <img src="../assets/marketing/sections/approved_section_ux-design-strategy_isometric-gradient_v01.png" alt="Design strategy section illustration" />
-        <div class="cap-strip"><span>Section · Strategy</span><span>Iso gradient</span></div>
+      <!-- 5 · OUTPUT — the artifact that ships -->
+      <div class="cutout cut-art cut-capability" data-delay="5" style="--sx:390px; --sy:250px; --sr:18deg;">
+        <img src="../assets/Website%20banner%20assets/Capability%20Statement.png" alt="Intelligaia capability statement cover" />
       </div>
 
-      <!-- SMALL — torn sticky note, bottom-left -->
+      <!-- KEPT — torn sticky note, bottom-left -->
       <div class="cutout cut-note" data-delay="6" style="--sx:-380px; --sy:240px; --sr:-22deg;">
         <div class="cap">Principle</div>
         <p class="quote">Design is a tool, <span class="hl">not a taste.</span></p>
         <div class="sig">— Intelligaia playbook</div>
       </div>
-
-      <!-- Tape strips over image corners -->
-      <div class="tape tape-1"></div>
-      <div class="tape tape-2"></div>
-      <div class="tape tape-3"></div>
 
     </div>
   </div>
