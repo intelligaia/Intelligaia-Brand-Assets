@@ -1,7 +1,7 @@
 ---
 name: cpq-insight
 description: Evidence-grounded CPQ/Q2C analysis across processes, platforms, journeys, integrations, UX, requirements, and advisory opportunities.
-version: 4.3.0
+version: 6.3.0
 ---
 
 # CPQ Insight
@@ -203,3 +203,11 @@ For integration analysis, start with [`integrations/README.md`](integrations/REA
 
 ## UX routing
 For CPQ/Q2C experience analysis, start with [`ux/README.md`](ux/README.md).
+
+
+## Analysis routing
+For requirements, gap, dependency, impact, and acceptance analysis, start with [`analysis/README.md`](analysis/README.md).
+
+
+## Source evidence
+Use [`assets/source-index.md`](assets/source-index.md) as the canonical provenance registry. Source/reference evidence belongs in `assets/`; derived reusable knowledge belongs in domain knowledge folders.

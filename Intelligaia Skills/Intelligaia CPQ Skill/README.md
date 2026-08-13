@@ -195,3 +195,63 @@ Deepened Design Opportunities into a progressive-disclosure module set. Added ou
 
 ## v4.3
 Completed the UX-layer consistency and completeness audit. Added an explicit UX ownership/completeness record, strengthened the UX router, standardized evidence states and finding-to-design traceability, clarified current-state versus proposed-future-state boundaries, and added a full-package next-phase assessment. The UX layer is now structurally complete. The next recommended major phase is Analysis Frameworks.
+
+## v4.4
+Started the Analysis Frameworks phase by deepening Story Analysis. Added an Analysis router plus focused modules for story intake/normalization, flow/rule/decision analysis, data/platform/integration analysis, dependency/risk/impact analysis, and story quality/readiness. The framework preserves original source intent, separates requirement from proposed solution, exposes lifecycle/version/effective-date semantics, maps system boundaries without inventing implementation detail, and carries evidence/unknowns into testable acceptance work.
+
+## v4.5
+Deepened Gap Analysis into a progressive-disclosure module set. Added gap identification/classification, current-vs-target comparison, root-cause/consequence/dependency analysis, prioritization/closure, and a reusable gap record template. The framework explicitly separates evidence gaps from capability gaps, prevents feature-comparison bias, distinguishes required/validated/proposed/benchmark targets, and carries evidence through closure and residual-risk validation.
+
+## v4.6
+Deepened Dependency Analysis into a progressive-disclosure module set. Added dependency identification/taxonomy, directed mapping and sequencing, cross-system/lifecycle dependency analysis, risk/resolution/readiness guidance, and a reusable dependency record template. The framework distinguishes dependency from relationship, hard from soft prerequisites, exposes shared/circular/decision/evidence dependencies, and explicitly covers identity, semantics, source-of-truth, freshness, version, asynchronous state, unknown outcomes, idempotency, reconciliation, security and lifecycle dependencies.
+
+## v4.7
+Deepened Impact Analysis into a progressive-disclosure module set. Added impact scope/taxonomy, commercial and lifecycle impact, system/data/integration impact, user/operations/rollout impact, and a reusable impact record. The framework separates baseline evidence from predicted impact, traces direct/upstream/downstream consequences, explicitly checks commercial/version/approval/lifecycle integrity, contract/data/security/reporting/migration implications, in-flight transition states, operational readiness, and success/guardrail evidence without inventing quantitative impact.
+
+## v4.8
+Deepened Acceptance Criteria into a progressive-disclosure module set. Added criteria writing/structure, commercial/configuration/quote coverage, order/lifecycle coverage, integration/error/recovery coverage, quality/traceability checks, and a reusable acceptance template. The framework tests observable business outcomes rather than implementation preferences; explicitly covers quote/version/approval integrity, lifecycle current/pending/effective state, asynchronous submission versus completion, timeout/unknown outcome, duplicate prevention, partial success, reconciliation, authorization, regression and evidence-driven TBDs.
+
+## v4.9
+Completed the Analysis-layer consistency and completeness audit. Added `analysis/ANALYSIS-AUDIT.md`, strengthened the Analysis router, standardized STORY/GAP/DEP/IMP/AC traceability, confirmed evidence and ownership boundaries, and verified CPQ commercial, quote/version, order, lifecycle, integration, security, recovery and reconciliation coverage. The Analysis phase is now structurally complete. The next major phase is User Stories.
+
+## v5.0
+Started User Stories by establishing a global `assets/` source-evidence layer and deepening the User Stories router/taxonomy. Added source IDs, provenance rules, evidence states, conflict handling, source folders, source-vs-derived separation, story taxonomy/ID conventions, CPQ integrity checks and SRC→STORY→GAP→DEP→IMP→AC traceability. Next: deepen the reusable story template.
+
+## v5.1
+Deepened the reusable CPQ/Q2C user-story template while preserving progressive disclosure. The primary template now captures provenance, normalized outcome, business context, trigger/preconditions, flow, rules, data/state, platform/integration, exceptions/recovery, security/audit, dependencies, impact, acceptance summary, CPQ integrity checks, traceability and readiness. Detailed guidance, scenario prompts and traceability rules were split into companion modules to keep the main template compact. Next: CCW story architecture/content.
+
+## v5.2
+Deepened the Cisco CCW user-story layer. Added a CCW story router plus focused modules for quoting, configuration/pricing, discounts/approvals, ordering, partner/channel sales, and exceptions/recovery. The modules provide evidence-safe normalization patterns and CPQ integrity prompts without asserting unsupported Cisco-specific behavior. Concrete CCW stories must trace to `SRC-CCW-*` evidence. Next: Zuora user-story architecture and lifecycle content.
+
+## v5.3
+Deepened the Zuora User Stories layer with focused modules for CPQ/quoting, subscription baseline/state, amendments, renewals, cancellation/non-renewal, billing consequences, and lifecycle exceptions/recovery. Added a lifecycle integrity model that traces authoritative current state, pending/future state, requested delta, effective date, commercial consequence, processing, resulting subscription state, and billing/service consequence. The modules deliberately separate CPQ intent/estimate from authoritative lifecycle and billing outcomes and require `SRC-ZUORA-*` evidence for concrete product-specific claims. Next: Salesforce User Stories.
+
+## v5.4
+Deepened Salesforce User Stories with modules for opportunity/deal context, CPQ/quoting, approvals, customer/partner identity, integrations, and exceptions/recovery. The layer separates CRM state from quote, approval, order and lifecycle state; avoids assuming Salesforce CPQ vs Revenue Cloud vs custom implementation; and requires `SRC-SFDC-*` evidence for org/package-specific claims. Next: cross-platform end-to-end User Stories.
+
+## v5.5
+Added cross-platform end-to-end User Stories covering deal-to-quote, quote-to-order, order-to-subscription/billing, lifecycle changes, partner/channel transactions, and exceptions/reconciliation. The new layer preserves business outcomes across system boundaries, explicitly separates submitted/processing/completed states, and requires evidence for system ownership, source-of-truth and technical contracts. Next: User Stories consistency/completeness audit.
+
+## v5.6
+Completed the User Stories consistency and completeness audit. The audit verifies evidence discipline, taxonomy coverage, platform boundaries, end-to-end and lifecycle integrity, state/version handling, exception/recovery, party identity, commercial/data/integration integrity, traceability and progressive disclosure. The User Stories architecture is now considered complete for the architecture phase; actual platform behavior remains subject to source evidence. Next: Platform Evidence & Completeness Audit.
+
+## v5.7
+Completed the Platform Evidence & Completeness Audit. Added explicit rules for generic-vs-platform-specific knowledge, Salesforce/CCW/Zuora boundaries, source-of-truth validation, integration/lifecycle completeness, exception/party/security coverage, and source-enrichment readiness. Added a platform evidence register for unresolved claims and questions. The platform layer is structurally ready for evidence enrichment without expanding unsupported implementation claims. Next: Intelligaia Opportunity / Service Mapping.
+
+## v5.8
+Added Intelligaia Opportunity / Service Mapping. The new layer converts evidenced CPQ/Q2C findings into proportionate advisory, UX/research, engineering/modernization, integration/data and transformation opportunities. It uses an evidence-first chain and explicitly prevents service-first selling, fabricated customer pain, unsupported implementation claims and ungrounded ROI. Added a reusable opportunity template and validation/confidence rules. Next: full cross-layer consistency audit.
+
+## v5.9
+Completed the Full Cross-Layer Consistency Audit. The package now has an explicit end-to-end layering model from source evidence through normalized knowledge, stories, analysis, opportunity mapping and validation. The audit verifies evidence states, identifiers/traceability, generic-vs-platform boundaries, journey/capability alignment, state/version integrity, cross-system and party identity, exception/recovery consistency, progressive disclosure and duplication rules. Added a formal source-evidence enrichment protocol. The architecture phase is complete. Next: enrich the skill from the supplied CPQ/Q2C project artifacts.
+
+## v6.0
+Started source-evidence enrichment. Registered `CPQ Tools & Renewal Process.docx` as `SRC-PROCESS-DOC-001` and classified its mixed content without converting illustrative scenarios or recommendations into customer current-state facts. Next: claim-level normalization, followed by Zuora research/advisory evidence.
+
+## v6.1
+Completed claim-level normalization of Wave 1 process evidence. Candidate process claims, reference scenarios and twelve proposed custom-functionality items are separated, with validation questions and traceability. Next: Zuora research/advisory evidence enrichment.
+
+## v6.2
+Completed Zuora research/advisory evidence enrichment architecture. Separated research/current-state findings from recommendations and service proposals, established duplicate-source and quantified-value guardrails, and added traceability/validation questions. Next: Cisco Commerce evidence enrichment.
+
+## v6.3
+Completed the Cisco Commerce evidence wave. Added case-study scoping, duplicate-PDF handling, design-vs-implementation rules, CommerceX roadmap-vs-delivered safeguards, measured-vs-claimed outcome classification, traceability and validation questions. Next: detailed user-story spreadsheet enrichment.
