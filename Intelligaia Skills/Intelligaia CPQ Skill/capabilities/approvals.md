@@ -1,41 +1,39 @@
-# Approvals
+# Approvals Capability
 
-## 1. Trigger model
-Check discount, product, configuration, pricing, payment terms, commercial terms, contract language, and other validated exception criteria.
+## Purpose
+Define the vendor-neutral CPQ capability for governing commercial exceptions and transaction decisions through explicit approval policy, routing, decision context, and audit.
 
-## 2. Governance
-- Is an approval matrix defined?
-- Are quote and contract approvals distinguished?
-- Are thresholds and exception criteria rationalized?
-- Are reopen/reapproval scenarios defined?
-- Are SLAs, escalation, delegation, and notifications defined?
+## Boundary
+**Pricing/Discounting = commercial calculation and exception request. Quoting = commercial transaction/version. Approvals = authorization decision.**
 
-## 3. Routing patterns
-Sequential, parallel, group/quorum, delegation, email-assisted approval, and other platform-supported patterns.
+## Scope
+Approval triggers; authority; routing; sequential/parallel decisions; escalation; delegation; approval context; approve/reject/request-change; resubmission; reapproval; expiry; SLA; audit; version integrity.
 
-## 4. Seller experience
-Preview required approvals; explain why approval is needed; show status/owner/SLA; preserve business justification and supporting context.
+## Core Flow
+**Detect Trigger → Determine Required Authority → Build Decision Context → Route → Decide → Apply Outcome → Revalidate Commercial State → Preserve Audit**
 
-## 5. Approver experience
-Deal context, line-level commercial information, business justification, supporting documents, approve/reject/request-change actions, and audit trail.
+## Key Questions
+- What conditions require approval?
+- Which measure drives authority?
+- Who can approve each exception?
+- Are approvals sequential, parallel, or conditional?
+- What happens when an approver is unavailable?
+- What information must an approver see?
+- What happens after rejection or requested changes?
+- Which commercial changes invalidate approval?
+- Can approval expire?
+- How are approval decisions tied to quote version?
 
-## 6. Reapproval intelligence
-Assess whether materially improved or immaterial changes can avoid unnecessary full reapproval, subject to policy and platform support.
+## Detail Modules
+| Topic | Module |
+|---|---|
+| Submission, routing, decision, escalation and reapproval flows | `approvals-flows.md` |
+| Policy, authority, routing, state, SLA and audit | `approvals-rules-data.md` |
+| Seller/approver UX, diagnostics and KPIs | `approvals-ux-diagnostics.md` |
+| Reusable stories and acceptance patterns | `approvals-requirements.md` |
 
-## KPIs
-Approval turnaround, % auto/standard approval, Deal Desk touch, reapproval frequency, aged approvals, quote cycle time.
+## Cross-Links
+`discounting.md`, `quoting.md`, `pricing.md`, `../foundations/personas-governance.md`, `../analysis/dependency-analysis.md`
 
-## L3 approval flow
-1. Quote is submitted.
-2. Determine applicable approval chain.
-3. Approver reviews commercial context and justification.
-4. Approver chooses Approve, Reject, or Need More Information.
-5. Reject → reason/comments required → Sales revises/resubmits.
-6. Need More Information → request routes to Sales or previous approver → context supplied → review resumes.
-7. Approve → comments captured if needed → route to next approver.
-8. Repeat until complete.
-9. Final approval updates quote status; implementation may synchronize/finalize authoritative quote.
-10. Any subsequent material change must be evaluated for reapproval.
-
-## Exception cases
-Approver unavailable/delegation; stale approval after quote revision; changed hierarchy; missing justification; parallel approvals partially complete; approval timeout/escalation; customer-driven change after approval.
+## Evidence Rule
+Do not invent thresholds, approvers, hierarchy, SLA, delegation rules, escalation timing, approval sequence, expiration, or reapproval policy.

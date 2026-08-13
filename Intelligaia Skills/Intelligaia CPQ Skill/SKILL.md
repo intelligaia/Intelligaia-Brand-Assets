@@ -1,7 +1,7 @@
 ---
 name: cpq-insight
 description: Evidence-grounded CPQ/Q2C analysis across processes, platforms, journeys, integrations, UX, requirements, and advisory opportunities.
-version: 1.0.0
+version: 4.3.0
 ---
 
 # CPQ Insight
@@ -195,3 +195,11 @@ Before answering, verify:
 - unknowns and validation questions are visible;
 - recommendations trace to evidence and measurable outcomes;
 - the answer uses only the context needed for the task.
+
+
+## Integration routing
+For integration analysis, start with [`integrations/README.md`](integrations/README.md).
+
+
+## UX routing
+For CPQ/Q2C experience analysis, start with [`ux/README.md`](ux/README.md).
