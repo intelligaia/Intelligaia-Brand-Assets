@@ -1,0 +1,17 @@
+# CODEOWNERS — required reviewers for matching paths.
+#
+# When "Require review from Code Owners" is enabled in branch protection,
+# any pull request that changes a matching path must be approved by the
+# listed owner before it can be merged.
+#
+# NOTE ON SPACES: GitHub CODEOWNERS treats a space as the delimiter between
+# the path pattern and its owners, and provides no way to escape a literal
+# space. These folder names contain spaces, so each space is written as `*`
+# (which matches any run of non-slash characters). e.g. `Intelligaia*Skills`
+# matches the "Intelligaia Skills" directory.
+
+# All Intelligaia skill modules — owned by Neeraj
+Intelligaia*Skills/**                              @NeerajDevGit
+
+# CPQ Insight skill — owned exclusively by Neeraj (no third-party edits)
+Intelligaia*Skills/Intelligaia*CPQ*Skill/**        @NeerajDevGit
