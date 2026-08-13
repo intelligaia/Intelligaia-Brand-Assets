@@ -10,8 +10,7 @@
 # (which matches any run of non-slash characters). e.g. `Intelligaia*Skills`
 # matches the "Intelligaia Skills" directory.
 
-# All Intelligaia skill modules — owned by Neeraj
-Intelligaia*Skills/**                              @NeerajDevGit
-
-# CPQ Insight skill — owned exclusively by Neeraj (no third-party edits)
+# CPQ Insight skill — owned exclusively by Neeraj (no third-party edits).
+# Only this folder is code-owned; the other skill modules are intentionally
+# left open for the team.
 Intelligaia*Skills/Intelligaia*CPQ*Skill/**        @NeerajDevGit
