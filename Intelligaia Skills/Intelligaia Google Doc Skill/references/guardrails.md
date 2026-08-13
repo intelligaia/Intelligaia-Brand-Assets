@@ -19,6 +19,9 @@ this skill can and cannot do, disclosed so no one is surprised.
   cream-arc + starburst motifs, title, the gold Client/Project card, and Purpose. Its required fields
   are `client`, `project`, `purpose` (+ `title`, `eyebrow`) — **ask if missing**, and if still unknown
   render `[TK: …]` rather than inventing a client, project, or reason for the document.
+- **A Table of Contents is auto-inserted on page 2** for any doc with ≥2 headings (`h1`/`h2`), with
+  computed page numbers. Authors never hand-build one — do not add a manual contents list, it would
+  duplicate the automatic TOC.
 
 **Content integrity** (inherited from the org's skill-builder rule "never invent content")
 - Never invent a metric, client name, testimonial, quote, date, fee, headcount, or outcome. If it's
@@ -46,7 +49,6 @@ this skill can and cannot do, disclosed so no one is surprised.
 | User asks for a diagram image and supplies none | Placeholder frame + `[TK: diagram]`. Never fabricate. |
 | Required proof/number missing | `[TK: …]`, keep drafting, list it. Do not invent. |
 | Cover field (client/project/purpose) not supplied | Ask during scoping; if still unknown, render `[TK: …]` on the cover. Never invent a client or purpose. |
-| User expects the Google Docs menu-inserted Table of contents | Do not fake it with bookmarks, named ranges, or local DOCX output. Create real headings first, then insert the TOC in Google Docs' Page elements UI if an interactive editor session is available; otherwise disclose the manual step. |
 | User asks for slides | Out of scope → `intelligaia-deck-design`. |
 | User asks for a web/HTML page | Out of scope → the library's web playbooks / `intelligaia-artifact-design` covers styled artifacts. |
 | User pastes approved copy and wants *only* styling | Fine — run in style-only mode (skip drafting), still apply the brand + QA. |
@@ -66,14 +68,13 @@ this skill can and cannot do, disclosed so no one is surprised.
    generally skipped in DOCX by design (enterprise docs stay clean).
 3. **QA renders via LibreOffice**, which substitutes Montserrat with a metric-similar face — so QA
    screenshots show approximate type. Judge layout/hierarchy/colour from QA, not exact letterforms.
+   The auto-TOC is a real, refreshable Word/Google-Docs TOC field with the page numbers **cached** in
+   it (computed via LibreOffice + `pdftotext` at build; if either tool is missing it falls back to a
+   list without page numbers). It shows immediately everywhere; after heavy edits, refresh it in-app
+   (Word F9 / Google Docs "Update table of contents") or regenerate.
 4. **It drafts; it does not research.** No web lookups, no fact-finding, no case-study authoring. It
    turns a brief + supplied facts into an on-brand draft. Verification of claims is the human's.
 5. **Four doc types only.** Description, proposal, architecture, Q&A. A genuinely different artifact
    (a contract, a spreadsheet, a slide deck) is out of scope.
 6. **Not a template-filler for arbitrary client templates.** It produces Intelligaia-branded docs. If a
    client mandates their own template, that's a different job.
-7. **Google Docs native TOC is editor-native.** The DOCX generator can create a Word TOC field with
-   visible dot leaders and page numbers, but that is not the same as Google Docs' **Insert → Table of
-   contents** element. The public Google Docs API request surface does not expose a request for creating
-   that editor-native TOC. For Google Docs deliverables, create the heading structure and insert the TOC
-   in the editor UI, then verify it visually.

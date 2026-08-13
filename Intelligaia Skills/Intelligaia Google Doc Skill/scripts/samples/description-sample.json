@@ -11,14 +11,6 @@
     "draft": false
   },
   "blocks": [
-    { "type": "contents", "title": "Contents", "items": [
-      "Overview",
-      "How it works",
-      "Key capabilities",
-      "Who it's for",
-      "Where it fits"
-    ]},
-    { "type": "pagebreak" },
     { "type": "h1", "text": "Overview" },
     { "type": "body", "text": "AI-Assisted Product Design is how Intelligaia builds enterprise interfaces when speed and quality both matter. Designers stay in charge of the decisions — the strategy, the information architecture, the interaction model — while AI handles the mechanical weight: generating first-pass layouts, filling realistic content, exploring variants, and checking work against a design system. The result is fewer days spent on production and more spent on the parts of the problem that need human judgment." },
     { "type": "body", "text": "The practice exists because most enterprise design time is not spent designing. It is spent redrawing the same card three ways, wiring up states, and reconciling a mockup with a component library. **When that work is automated, the designer's attention returns to the user's actual problem.**" },

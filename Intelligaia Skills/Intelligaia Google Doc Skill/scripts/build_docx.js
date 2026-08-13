@@ -10,12 +10,14 @@
 const fs = require('fs');
 const path = require('path');
 const https = require('https');
+const os = require('os');
+const { execSync } = require('child_process');
 const {
   Document, Packer, Paragraph, TextRun, ImageRun, Table, TableRow, TableCell,
   WidthType, BorderStyle, ShadingType, AlignmentType, HeadingLevel, PageBreak,
   Footer, PageNumber, LevelFormat, VerticalAlign, convertInchesToTwip,
   Tab, TabStopType, LeaderType, HorizontalPositionAlign, VerticalPositionAlign,
-  TableOfContents, UnderlineType
+  Bookmark, InternalHyperlink
 } = require('docx');
 
 // ---------- Brand tokens (from references/brand-system.md) ----------
@@ -58,7 +60,7 @@ function run(text, { font = F.body, size = 21, color = C.navy, bold = false, cap
   return new TextRun({ text, font, size, color, bold, allCaps: caps,
     ...(track ? { characterSpacing: track } : {}) });
 }
-function para(children, { before = 0, after = 8, line = 360, align, border, indent, keepNext, heading } = {}) {
+function para(children, { before = 0, after = 8, line = 360, align, border, indent, keepNext } = {}) {
   return new Paragraph({
     children: Array.isArray(children) ? children : [children],
     spacing: { before: TW(before), after: TW(after), line, lineRule: 'auto' },
@@ -66,7 +68,6 @@ function para(children, { before = 0, after = 8, line = 360, align, border, inde
     ...(keepNext ? { keepNext: true } : {}),
     ...(indent ? { indent } : {}),
     ...(border ? { border } : {}),
-    ...(heading ? { heading } : {}),
   });
 }
 const hairlineBottom = { bottom: { style: BorderStyle.SINGLE, size: 6, color: C.hair, space: 6 } };
@@ -76,12 +77,10 @@ function blockToElements(b, profile) {
   switch (b.type) {
     case 'h1':
       return [para(run(b.text, { font: F.display, bold: true, size: HP(18), color: C.ink }),
-        { before: SP(profile, 24), after: SP(profile, 8), line: 274, keepNext: true,
-          heading: HeadingLevel.HEADING_1 })];
+        { before: SP(profile, 24), after: SP(profile, 8), line: 274, keepNext: true })];
     case 'h2':
       return [para(run(b.text, { font: F.display, bold: true, size: HP(13), color: C.ink }),
-        { before: SP(profile, 16), after: 4, line: 288, keepNext: true,
-          heading: HeadingLevel.HEADING_2 })];
+        { before: SP(profile, 16), after: 4, line: 288, keepNext: true })];
     case 'lede':
       return [para(run(b.text, { font: F.body, size: HP(13), color: C.navy }),
         { before: 8, after: 16, line: 336 })];
@@ -169,65 +168,22 @@ function qformElements(b, profile) {
   ];
 }
 
-// Word-native table of contents generated from Heading 1 paragraphs.
+// contents / TOC-style list: section name + dot leader + right-aligned index
 function contentsElements(b) {
-  const title = para(run(b.title || 'Contents', { font: F.display, bold: true, size: HP(18), color: C.ink }),
-    { before: SP({ sp: 1 }, 16), after: 10, line: 274, keepNext: true });
-  const toc = new TableOfContents(b.title || 'Contents', {
-    hyperlink: true,
-    headingStyleRange: '1-1',
-    beginDirty: true,
-    cachedEntries: (b._tocEntries || []).map((entry, index) => ({
-      title: entry.title,
-      level: 1,
-      page: entry.page || index + 3,
-    })),
+  const els = [para(run(b.title || 'Contents', { font: F.display, bold: true, size: HP(18), color: C.ink }),
+    { before: SP({ sp: 1 }, 16), after: 10, line: 274, keepNext: true })];
+  (b.items || []).forEach((it, i) => {
+    els.push(new Paragraph({
+      tabStops: [{ type: TabStopType.RIGHT, position: 9360, leader: LeaderType.DOT }],
+      spacing: { after: TW(6), line: 300, lineRule: 'auto' },
+      children: [
+        run(it, { font: F.body, size: HP(10.5), color: C.ink }),
+        new TextRun({ children: [new Tab()] }),
+        run(String(i + 1).padStart(2, '0'), { font: F.body, size: HP(9.5), color: C.gray }),
+      ],
+    }));
   });
-  return [title, toc];
-}
-
-function deriveContentsItems(blocks) {
-  const headings = (blocks || [])
-    .filter(b => b.type === 'h1' && b.text)
-    .map(b => String(b.text).trim())
-    .filter(Boolean);
-  return headings.length ? headings : ['Document body'];
-}
-
-function contentsEntryTitle(entry) {
-  return typeof entry === 'string' ? entry : (entry.title || entry.text || entry.label || '');
-}
-
-function contentsEntryPage(entry) {
-  if (typeof entry === 'string') return undefined;
-  const page = Number(entry.page);
-  return Number.isFinite(page) && page > 0 ? page : undefined;
-}
-
-function prepareBlocks(blocks) {
-  const source = blocks || [];
-  const base = source.some(b => b.type === 'contents') ? source : [
-    { type: 'contents', title: 'Contents', items: deriveContentsItems(source) },
-    { type: 'pagebreak' },
-    ...source,
-  ];
-  const prepared = base.map(b => ({ ...b }));
-  const headings = prepared
-    .filter(block => block.type === 'h1' && block.text)
-    .map(block => ({ title: String(block.text).trim() }));
-  for (const block of prepared) {
-    if (block.type !== 'contents') continue;
-    const items = (block.entries && block.entries.length)
-      ? block.entries
-      : (block.items && block.items.length)
-        ? block.items
-        : headings.map(h => h.title);
-    block._tocEntries = items.map(item => {
-      const title = String(contentsEntryTitle(item)).trim();
-      return { title, page: contentsEntryPage(item) };
-    });
-  }
-  return prepared;
+  return els;
 }
 
 function calloutTable(text, profile) {
@@ -427,32 +383,149 @@ function numberingConfig() {
   };
 }
 
-function stylesConfig() {
-  return {
-    default: {
-      hyperlink: { run: { color: C.ink, underline: { type: UnderlineType.NONE } } },
-    },
-    paragraphStyles: [{
-      id: 'TOC1',
-      name: 'TOC 1',
-      basedOn: 'Normal',
-      next: 'Normal',
-      quickFormat: true,
-      paragraph: {
-        spacing: { after: TW(2), line: 320, lineRule: 'auto' },
-      },
-      run: { font: F.body, size: HP(14), color: C.ink },
+// ---------- auto Table of Contents ----------
+// heading paragraph: real Heading outline level + a HIDDEN `_Toc…` anchor (name starts with `_`, so it
+// never appears in Word/Google-Docs' Bookmark list) so the TOC entries are clickable — exactly how
+// Google Docs' own TOC works under the hood.
+function headingParagraph(b, profile, anchor) {
+  const level = b.type === 'h2' ? 2 : 1;
+  const size = level === 2 ? 13 : 18;
+  const spacing = level === 2
+    ? { before: TW(SP(profile, 16)), after: TW(4), line: 288 }
+    : { before: TW(SP(profile, 24)), after: TW(SP(profile, 8)), line: 274 };
+  return new Paragraph({
+    heading: level === 2 ? HeadingLevel.HEADING_2 : HeadingLevel.HEADING_1,
+    keepNext: true, spacing: { ...spacing, lineRule: 'auto' },
+    children: [new Bookmark({ id: anchor, children: [
+      run(b.text, { font: F.display, bold: true, size: HP(size), color: C.ink })] })] });
+}
+
+// sentinels the XML post-process swaps for real TOC field-chars (begin/instr/separate … end)
+const TOC_B = '__IGTOCB__', TOC_E = '__IGTOCE__';
+
+// the TOC page — "Contents" + dotted-leader entries with page numbers, each a link to its heading.
+// when native=true the first/last entries carry sentinels so the block becomes a real, updatable TOC field.
+function tocElements(headings, pageArr, profile, native) {
+  const els = [para(run('Contents', { font: F.display, bold: true, size: HP(18), color: C.ink }),
+    { before: 8, after: 10, line: 274, keepNext: true })];
+  const entries = headings.map((h, idx) => {
+    const indent = h.level === 2 ? { left: convertInchesToTwip(0.3) } : undefined;
+    const pageStr = pageArr && pageArr[idx] ? String(pageArr[idx]) : '';
+    // entries hyperlink to the heading's hidden `_Toc…` anchor → clickable in Word AND Google Docs
+    const kids = [
+      new InternalHyperlink({ anchor: h.bk, children: [
+        run(h.text, { font: F.body, size: HP(h.level === 2 ? 10 : 10.5), color: h.level === 2 ? C.gray : C.ink }) ] }),
+      new TextRun({ children: [new Tab()] }),
+      new InternalHyperlink({ anchor: h.bk, children: [
+        run(pageStr, { font: F.body, size: HP(9.5), color: C.gray }) ] }),
+    ];
+    if (native && idx === 0) kids.unshift(run(TOC_B, { size: 2, color: C.white }));
+    if (native && idx === headings.length - 1) kids.push(run(TOC_E, { size: 2, color: C.white }));
+    return new Paragraph({
+      tabStops: [{ type: TabStopType.RIGHT, position: 9360, leader: LeaderType.DOT }],
+      spacing: { after: TW(6), line: 300, lineRule: 'auto' }, ...(indent ? { indent } : {}),
+      children: kids,
+    });
+  });
+  els.push(...entries, new Paragraph({ children: [new PageBreak()] }));
+  return els;
+}
+
+// wrap the sentinel-marked TOC entries in a genuine Word TOC field (cached result = the entries we
+// already rendered), so it shows immediately AND is refreshable in Word/Google Docs. Edits document.xml
+// in-place via unzip/zip. Returns true on success; on any failure the file is left as static entries.
+function injectTocField(docxPath) {
+  try {
+    const d = fs.mkdtempSync(path.join(os.tmpdir(), 'igtocf_'));
+    fs.copyFileSync(docxPath, path.join(d, 'w.docx'));
+    execSync('unzip -o w.docx word/document.xml', { cwd: d, stdio: 'ignore' });
+    const xmlPath = path.join(d, 'word', 'document.xml');
+    let xml = fs.readFileSync(xmlPath, 'utf8');
+    const begin = '<w:r><w:fldChar w:fldCharType="begin"/></w:r>'
+      + '<w:r><w:instrText xml:space="preserve"> TOC \\o "1-2" \\h \\z \\u </w:instrText></w:r>'
+      + '<w:r><w:fldChar w:fldCharType="separate"/></w:r>';
+    const end = '<w:r><w:fldChar w:fldCharType="end"/></w:r>';
+    const runRe = t => new RegExp('<w:r\\b[^>]*>(?:(?!</w:r>)[\\s\\S])*?' + t + '(?:(?!</w:r>)[\\s\\S])*?</w:r>');
+    if (!runRe(TOC_B).test(xml) || !runRe(TOC_E).test(xml)) return false;
+    xml = xml.replace(runRe(TOC_B), begin).replace(runRe(TOC_E), end);
+    // unique w:id per bookmark (docx-js can emit duplicates); start/end are ordered & non-nested here
+    let counter = 0, lastId = 0;
+    xml = xml.replace(/<w:bookmark(Start|End)\b([^>]*?)\sw:id="[^"]*"([^>]*)>/g, (m, kind, pre, post) => {
+      const id = kind === 'Start' ? (lastId = ++counter) : lastId;
+      return `<w:bookmark${kind}${pre} w:id="${id}"${post}>`;
+    });
+    fs.writeFileSync(xmlPath, xml);
+    execSync('zip w.docx word/document.xml', { cwd: d, stdio: 'ignore' });
+    fs.copyFileSync(path.join(d, 'w.docx'), docxPath);
+    return true;
+  } catch (e) { return false; }
+}
+
+function makeDoc(children, footer) {
+  return new Document({
+    creator: 'Intelligaia Doc Generator', title: 'Intelligaia Document',
+    features: { updateFields: true },
+    numbering: numberingConfig(),
+    sections: [{
+      properties: { page: { size: { width: 12240, height: 15840 },
+        margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 } } },
+      footers: { default: footer },
+      children,
     }],
-    characterStyles: [{
-      id: 'IndexLink',
-      name: 'Index Link',
-      basedOn: 'DefaultParagraphFont',
-      run: { color: C.ink, underline: { type: UnderlineType.NONE } },
-    }],
-  };
+  });
+}
+
+// render children to per-page plain text (for locating headings) — returns array of page strings, or null on failure
+async function renderPageText(children, footer, tag) {
+  try {
+    const buf = await Packer.toBuffer(makeDoc(children, footer));
+    const base = path.join(os.tmpdir(), `igtoc_${tag}_${process.pid}`);
+    fs.writeFileSync(base + '.docx', buf);
+    const soffice = process.env.IG_SOFFICE || 'soffice';
+    execSync(`${soffice} --headless --convert-to pdf --outdir ${os.tmpdir()} ${base}.docx`, { stdio: 'ignore', timeout: 120000 });
+    execSync(`pdftotext -layout ${base}.pdf ${base}.txt`, { stdio: 'ignore', timeout: 60000 });
+    const pages = fs.readFileSync(base + '.txt', 'utf8').split('\f');
+    try { fs.unlinkSync(base + '.docx'); fs.unlinkSync(base + '.pdf'); fs.unlinkSync(base + '.txt'); } catch (e) {}
+    return pages;
+  } catch (e) { return null; }
+}
+function firstPageContaining(pages, text, fromPage) {
+  const needle = text.replace(/\s+/g, ' ').trim();
+  for (let i = (fromPage || 1) - 1; i < pages.length; i++) {
+    if (pages[i] && pages[i].replace(/\s+/g, ' ').includes(needle)) return i + 1;
+  }
+  return null;
 }
 
 // ---------- assemble ----------
+function makeFooter(meta, profile) {
+  return new Footer({ children: [new Paragraph({
+    border: { top: { style: BorderStyle.SINGLE, size: 4, color: C.hair, space: 6 } },
+    spacing: { before: 60 },
+    children: [
+      run(`Intelligaia · ${meta.title || ''} · `, { font: profile.metaFont, size: HP(8.5), color: C.gray }),
+      new TextRun({ children: [PageNumber.CURRENT], font: profile.metaFont, size: HP(8.5), color: C.gray }),
+    ] })] });
+}
+
+// fresh cover + body each call (fresh Bookmark instances → unique ids; safe to pack repeatedly)
+function buildCoverBody(spec, profile, meta, dir) {
+  const cover = coverElements(meta, dir, profile);
+  const body = [];
+  const headings = [];
+  let n = 0;
+  for (const b of spec.blocks || []) {
+    if (b.type === 'h1' || b.type === 'h2') {
+      const anchor = '_Toc' + String(++n).padStart(5, '0'); // hidden (`_`-prefixed) → not in Bookmark UI
+      headings.push({ text: b.text, level: b.type === 'h2' ? 2 : 1, bk: anchor });
+      body.push(headingParagraph(b, profile, anchor));
+    } else {
+      body.push(...blockToElements(b, profile));
+    }
+  }
+  return { cover, body, headings };
+}
+
 async function main() {
   const [, , specPath, outPath] = process.argv;
   if (!specPath || !outPath) { console.error('Usage: build_docx.js <spec.json> <out.docx>'); process.exit(1); }
@@ -462,40 +535,45 @@ async function main() {
   const meta = spec.meta || {};
   const notes = await preprocess(spec, dir);
 
-  const effectiveBlocks = prepareBlocks(spec.blocks);
-  const children = [...coverElements(meta, dir, profile)];
-  for (const b of effectiveBlocks) children.push(...blockToElements(b, profile));
+  let tocNote = 'none (fewer than 2 headings)';
+  let children;
+  const probe = buildCoverBody(spec, profile, meta, dir);
 
-  const footer = new Footer({ children: [new Paragraph({
-    border: { top: { style: BorderStyle.SINGLE, size: 4, color: C.hair, space: 6 } },
-    spacing: { before: 60 },
-    children: [
-      run(`Intelligaia · ${meta.title || ''} · `, { font: profile.metaFont, size: HP(8.5), color: C.gray }),
-      new TextRun({ children: [PageNumber.CURRENT], font: profile.metaFont, size: HP(8.5), color: C.gray }),
-    ] })] });
+  if (probe.headings.length >= 2) {
+    // two-pass page detection: inserting the TOC shifts every body page by exactly the TOC's page-count
+    const pass1 = await renderPageText([...probe.cover, ...probe.body], makeFooter(meta, profile), 'p1');
+    const b2 = buildCoverBody(spec, profile, meta, dir);
+    const passT = await renderPageText([...b2.cover, ...tocElements(b2.headings, null, profile, false), ...b2.body], makeFooter(meta, profile), 'pt');
+    let pageArr = null;
+    if (pass1 && passT) {
+      const tocPages = Math.max(1, passT.length - pass1.length);
+      pageArr = probe.headings.map(h => {
+        const p1 = firstPageContaining(pass1, h.text, 2); // skip cover (page 1)
+        return p1 ? p1 + tocPages : null;
+      });
+      tocNote = `page numbers computed (${pageArr.filter(Boolean).length}/${probe.headings.length} located)`;
+    } else {
+      tocNote = 'section list without page numbers (renderer unavailable at build)';
+    }
+    const fin = buildCoverBody(spec, profile, meta, dir);
+    children = [...fin.cover, ...tocElements(fin.headings, pageArr, profile, true), ...fin.body];
+  } else {
+    children = [...probe.cover, ...probe.body];
+  }
 
-  const doc = new Document({
-    creator: 'Intelligaia Doc Generator', title: meta.title || 'Intelligaia Document',
-    styles: stylesConfig(),
-    features: { updateFields: true },
-    numbering: numberingConfig(),
-    sections: [{
-      properties: { page: {
-        size: { width: 12240, height: 15840 },
-        margin: { top: 1440, right: 1440, bottom: 1440, left: 1440 },
-      } },
-      footers: { default: footer },
-      children,
-    }],
-  });
-
-  const buf = await Packer.toBuffer(doc);
+  const buf = await Packer.toBuffer(makeDoc(children, makeFooter(meta, profile)));
   fs.writeFileSync(outPath, buf);
+
+  // turn the cached TOC entries into a genuine, refreshable Word/Docs TOC field
+  if (probe.headings.length >= 2) {
+    const wrapped = injectTocField(outPath);
+    tocNote += wrapped ? ' · native updatable field (cached)' : ' · static (field wrap skipped)';
+  }
 
   // run summary
   const summary = {
     docType: spec.docType, treatment: profile.isTech ? 'technical' : 'standard', title: meta.title,
-    blocks: effectiveBlocks.length,
+    blocks: (spec.blocks || []).length, toc: tocNote,
     assetsUsed: notes.assets, gaps: notes.gaps,
     fontMode: 'named (Montserrat → Arial fallback); not embedded',
   };

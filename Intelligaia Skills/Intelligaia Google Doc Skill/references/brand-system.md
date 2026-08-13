@@ -103,6 +103,18 @@ to edge.
     render `[TK: …]` if still unknown — never fabricate a client or a purpose. `company` defaults to
     Intelligaia. In the **technical treatment**, the eyebrow, card labels, and meta line switch to
     monospace (the card and palette do not change).
+- **Table of Contents — automatic, page 2.** Any document with **≥2 headings** gets an auto-generated
+  `Contents` page immediately after the cover: "Contents" (Montserrat Bold 18pt ink) then one entry per
+  `h1`/`h2` (h2 indented, grey) in the Google-Docs **dotted style** — heading, dotted leader, page
+  number. It links off the **sections' Heading outline levels — no author bookmarks**, exactly like
+  Google Docs' Insert → Table of contents (the app generates its own hidden anchors when the field
+  updates). It is emitted as a **genuine, refreshable Word/Google-Docs Table of Contents field**
+  (`TOC \o "1-2" \h \z \u`) built from those heading styles, but with
+  the **computed page numbers cached inside the field** — so it displays correctly on first open in
+  every viewer (Word, Google Docs, LibreOffice, PDF/Drive previews) *and* stays updatable (Word: F9 /
+  right-click → Update Field; Google Docs: the refresh icon / "Update table of contents"). The numbers
+  are computed by a two-pass render at build; if the render tool is missing it degrades to the same
+  list without page numbers. Authors never add it — it's automatic (don't hand-build a contents list).
 - **Running footer** (every page after the cover): `assets/brand/logo.png` small at bottom-left
   (~1.1″) OR a Montserrat 8.5pt gray line `Intelligaia · <doc title> · <page>` at left; optionally
   `assets/brand/deep-tech-lockup.png` bottom-right (~1.2″). Keep content 0.35″ clear of the footer.

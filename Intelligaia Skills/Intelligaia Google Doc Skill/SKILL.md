@@ -1,5 +1,5 @@
 ---
-name: intelligaia-doc-gen
+name: intelligaia-google-doc-skill
 description: "Generate on-brand Intelligaia Word (.docx) documents — description docs, client proposals, architecture/diagram docs, and Q&A docs — by drafting the copy in Intelligaia's voice AND applying the corporate design system (Montserrat type, gold #FFD700 + navy + cream, spacing, logo, and approved illustration assets). Use when someone asks for an Intelligaia doc, a description document, a proposal, an architecture/technical write-up, or an FAQ/Q&A as a Word file, or asks to 'make this doc on brand'. NOT for slides (use intelligaia-deck-design), NOT for web/HTML pages, and NOT when the job is only to style already-approved content (use intelligaia-artifact-design)."
 ---
 
@@ -66,31 +66,21 @@ mark `[TK: …]`, which section skeleton to use, and — for proposals/architect
    which needs `client`, `project`, and `purpose` (plus `title` and `eyebrow`/doc type). **Ask for any
    that are missing** during scoping; if still unknown at build time they render as `[TK: …]` — never
    invent a client or a purpose. `company` defaults to Intelligaia.
-1. **Add a table of contents for every doc type.** After the cover and before the main body, every
-   document must include a `contents` block followed by a `pagebreak`. Populate it from the document's
-   top-level sections (`h1` blocks), preserving their order and wording. Use `entries`
-   (`[{ "title": "...", "page": 5 }]`) when cached page numbers are known; otherwise the renderer seeds
-   visible fallback numbers that Word can replace when the TOC is updated. The DOCX renderer creates a
-   heading-based Word TOC field with visible dot leaders and page numbers. This is **not** the same as
-   the native Google Docs menu action **Insert → Table of contents**.
-2. **For Google Docs-native deliverables, use the editor-native TOC.** First create/import the document
-   with real `h1`/Heading 1 sections. Then insert the Table of contents from Google Docs' Page elements
-   menu (or automate that exact UI action if an interactive browser/editor session is available). Do
-   **not** claim the local DOCX renderer, bookmarks, named ranges, or a Google Docs API `batchUpdate`
-   request created the native Google Docs TOC.
-3. **Draft into the spec.** Write the content as a `doc_spec` JSON (schema:
+1. **Draft into the spec.** Write the content as a `doc_spec` JSON (schema:
    `scripts/doc_spec.schema.json`). Never invent a fact — `[TK: …]` for gaps.
-4. **Build.** `node scripts/build_docx.js <spec.json> <out.docx>`. Profile + treatment come from the spec.
-   Requires the `docx` npm package (present wherever the bundled `docx` skill is installed; if
-   `require('docx')` fails, run `npm install docx` once).
-5. **QA (required).** Render and look at every page:
+2. **Build.** `node scripts/build_docx.js <spec.json> <out.docx>`. Profile + treatment come from the spec.
+   The cover and an automatic **Table of Contents** (page 2, from the doc's headings, with computed page
+   numbers) are added for you — never hand-build a contents list. Requires the `docx` npm package
+   (present wherever the bundled `docx` skill is installed; if `require('docx')` fails, run
+   `npm install docx` once); TOC page numbers also use LibreOffice + `pdftotext` at build time.
+3. **QA (required).** Render and look at every page:
    ```bash
    python /root/.claude/skills/synced/docx/scripts/office/soffice.py --headless --convert-to pdf out.docx
    pdftoppm -jpeg -r 110 out.pdf page && ls page-*.jpg   # then Read the images
    python scripts/validate.py out.docx                    # automated brand checks
    ```
    Fix and re-render until clean.
-6. **Deliver + report.** Return the .docx (and the spec if asked) plus a run summary: type, treatment,
+4. **Deliver + report.** Return the .docx (and the spec if asked) plus a run summary: type, treatment,
    page count, assets used (`id` + `path`), font mode, and every `[TK: …]` gap left open.
 
 ## Universal guardrails (full detail in references/guardrails.md)

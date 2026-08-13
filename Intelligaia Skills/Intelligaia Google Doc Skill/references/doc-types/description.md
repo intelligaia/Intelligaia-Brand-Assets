@@ -41,15 +41,12 @@ Sort what the user gave you into: **definition** (what the thing is), **mechanis
 1. **Cover** — the mandatory gold-forward cover (page 1): `eyebrow` `Description`, `title` = the thing's
    name, plus `client` / `project` / `purpose`. The one-sentence definition becomes the opening `lede`
    on page 2.
-2. **Table of contents** — a heading-based `contents` block listing the top-level sections in order,
-   then a `pagebreak`. In DOCX this renders as a Word TOC field. In Google Docs, insert the native
-   Table of contents from Page elements after the `h1` sections exist.
-3. **Overview** — what it is, 1–2 paragraphs.
-4. **How it works** — the mechanism in prose; a `numbered` list only if it's genuinely a sequence.
-5. **Key capabilities** — `h2` + a paragraph each; bullets only for a true list.
-6. **Who it's for** — audience and fit; a `kv` grid works well for fit criteria.
-7. *(optional)* **Where it fits** — context, adjacencies, integrations.
-8. **Close** — one paragraph, no hard CTA.
+2. **Overview** — what it is, 1–2 paragraphs.
+3. **How it works** — the mechanism in prose; a `numbered` list only if it's genuinely a sequence.
+4. **Key capabilities** — `h2` + a paragraph each; bullets only for a true list.
+5. **Who it's for** — audience and fit; a `kv` grid works well for fit criteria.
+6. *(optional)* **Where it fits** — context, adjacencies, integrations.
+7. **Close** — one paragraph, no hard CTA.
 
 ## 5. Draft (voice + density)
 
@@ -68,7 +65,7 @@ topic (see `../asset-selection.md`), and only if the user wants an illustration.
 ## 7. Build
 
 - `docType: "description"`, `meta.treatment` omitted (standard) unless told otherwise.
-- Blocks start with `contents` + `pagebreak`, then lean on `body`, `h1/h2`, occasional `callout` and `kv`.
+- Blocks lean on `body`, `h1/h2`, occasional `callout` and `kv`.
 - `node ../../scripts/build_docx.js <spec.json> <out.docx>` → QA render → deliver with summary.
 
 ## 8. Type-specific guardrail deltas

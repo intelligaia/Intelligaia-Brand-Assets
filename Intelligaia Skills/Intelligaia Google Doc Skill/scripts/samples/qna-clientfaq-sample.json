@@ -11,12 +11,6 @@
     "treatment": "standard"
   },
   "blocks": [
-    { "type": "contents", "title": "Contents", "items": [
-      "Getting started",
-      "How we work",
-      "Scope, timeline & commercials"
-    ]},
-    { "type": "pagebreak" },
     { "type": "h1", "text": "Getting started" },
     { "type": "qa",
       "question": "What does Intelligaia do?",

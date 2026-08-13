@@ -13,20 +13,6 @@
   },
   "blocks": [
     { "type": "body", "text": "Thank you for showing us your portal — it gave us a clear first picture of your services. The chatbot we have in mind goes beyond answering questions: it carries out tasks for your users and keeps your services available 24/7, well past working hours. The questions below help us understand your goals, your users, the systems the bot will work with, and the steps behind each task, so the proposal we bring back is grounded in how you really operate." },
-    { "type": "contents", "title": "Contents", "entries": [
-      { "title": "Project goals and success", "page": 5 },
-      { "title": "The platform today", "page": 6 },
-      { "title": "Chatbot scope and actions", "page": 6 },
-      { "title": "Tools and system access", "page": 7 },
-      { "title": "Action workflows", "page": 8 },
-      { "title": "Users and volume", "page": 10 },
-      { "title": "Languages", "page": 11 },
-      { "title": "Data, security and residency", "page": 11 },
-      { "title": "Technical and integration", "page": 12 },
-      { "title": "Compliance and rules", "page": 13 },
-      { "title": "Timeline, budget and access", "page": 13 },
-      { "title": "Anything else", "page": 14 }
-    ]},
     { "type": "pagebreak" },
 
     { "type": "h1", "text": "Project goals and success" },

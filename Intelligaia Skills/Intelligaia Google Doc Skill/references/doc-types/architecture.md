@@ -39,16 +39,13 @@ Bucket into: **context/boundaries**, **components**, **data flow**, **decisions/
 1. **Cover** — the mandatory gold-forward cover (page 1): `eyebrow` `Architecture`, `title` = system
    name, `client`, `project`, `purpose` = the system's job in one line. The system's shape opens on
    page 2.
-2. **Table of contents** — a heading-based `contents` block listing the technical sections in order,
-   then a `pagebreak`. In DOCX this renders as a Word TOC field. In Google Docs, insert the native
-   Table of contents from Page elements after the `h1` sections exist.
-3. **Context** — what it does and its boundaries, 1–2 paragraphs.
-4. **System diagram** — a `figure` (supplied image or captioned placeholder). Never faked.
-5. **Components** — a `table`: component · responsibility · tech (tech column reads as spec/mono).
-6. **Data flow** — a `numbered` sequence.
-7. **Key decisions / trade-offs** — `callout`s or a list, each with its reason; a `quote` block works
+2. **Context** — what it does and its boundaries, 1–2 paragraphs.
+3. **System diagram** — a `figure` (supplied image or captioned placeholder). Never faked.
+4. **Components** — a `table`: component · responsibility · tech (tech column reads as spec/mono).
+5. **Data flow** — a `numbered` sequence.
+6. **Key decisions / trade-offs** — `callout`s or a list, each with its reason; a `quote` block works
    for a decision record.
-8. **Non-functional notes** — scaling, security, observability — only what's supplied.
+7. **Non-functional notes** — scaling, security, observability — only what's supplied.
 
 ## 5. Draft (voice + density)
 
@@ -64,8 +61,7 @@ or the manifest. Component/flow tables are text, not images. No decorative illus
 
 ## 7. Build
 
-- `docType: "architecture"`; `meta.treatment` optional (technical suits many); start blocks with
-  `contents` + `pagebreak`.
+- `docType: "architecture"`; `meta.treatment` optional (technical suits many).
 - Use `table` for components (Tech column) and `numbered` for flows.
 - `node ../../scripts/build_docx.js <spec.json> <out.docx>` → QA render → deliver with summary + every
   `[TK: diagram / component / decision]`.

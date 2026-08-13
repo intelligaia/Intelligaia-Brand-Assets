@@ -32,9 +32,8 @@
         "properties": {
           "type": { "enum": ["h1","h2","lede","body","bullets","numbered","callout","kv","table","qa","qform","contents","figure","quote","divider","pagebreak"] },
           "text": { "type": "string", "description": "For h1/h2/lede/body/callout/quote. Body/bullets/table cells support **bold** for navy-bold emphasis." },
-          "items": { "type": "array", "items": { "type": "string" }, "description": "For bullets/numbered, and for contents when only section names are known." },
-          "entries": { "type": "array", "items": { "type": "object", "properties": { "title": { "type": "string" }, "page": { "type": "number" } } }, "description": "For DOCX contents when cached page numbers are known: [{title,page}]. Titles should match h1 section names in order." },
-          "title": { "type": "string", "description": "For contents (heading, default 'Contents'). Every doc type should include a visible heading-based Word TOC block after the cover, followed by pagebreak. Google Docs-native TOC must be inserted in Google Docs after headings exist." },
+          "items": { "type": "array", "items": { "type": "string" }, "description": "For bullets/numbered, and for contents (section names)." },
+          "title": { "type": "string", "description": "For contents (heading, default 'Contents')." },
           "rows": { "type": "array", "description": "kv: [[key,value],…]. table: [[cell,…],…]." },
           "muted": { "type": "boolean", "description": "For kv: render values as grey hint text (template/example asks)." },
           "headers": { "type": "array", "items": { "type": "string" }, "description": "For table." },

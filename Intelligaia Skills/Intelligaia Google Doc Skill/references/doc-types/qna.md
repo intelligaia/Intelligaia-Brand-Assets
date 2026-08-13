@@ -49,23 +49,19 @@ an answer — mark it clearly (the `muted` kv style does this).
 **Mode A — FAQ / answered Q&A**
 1. **Cover** — eyebrow `Q&A`; title = the topic; lede = a one-line scope ("Answers to the questions
    raised in <context>").
-2. **Table of contents** — a heading-based `contents` block listing the Q&A groups in order, then a
-   `pagebreak`. In DOCX this renders as a Word TOC field. In Google Docs, insert the native Table of
-   contents from Page elements after the `h1` sections exist. If there are no groups, use a single
-   contents item such as "Questions".
-3. *(optional)* Group with `h1` when there are themes ("Commercials", "Delivery", "Security").
-4. A run of **`qa`** blocks — each is `question` (Montserrat SemiBold) + `answer` (body). A hairline
+2. *(optional)* Group with `h1` when there are themes ("Commercials", "Delivery", "Security").
+3. A run of **`qa`** blocks — each is `question` (Montserrat SemiBold) + `answer` (body). A hairline
    `divider` renders automatically between items.
-5. No marketing close. It ends when the questions end.
+4. No marketing close. It ends when the questions end.
 
 **Mode B — Questionnaire / discovery**
 1. **Cover** — the mandatory gold-forward cover (page 1, automatic): set `meta.eyebrow`
    (`Discovery Questionnaire`), `title`, `client`, `project`, `purpose`, `date`, `docId`. Client +
    project fill the gold card; purpose is the one-line why. (No `subtitle`/`preparedLine`/`coverBreak` —
    those are retired; the cover is always its own page.)
-2. **Intro** (page 2) — one `body` paragraph framing why you're asking.
-3. **`contents`** block — the section list with page references. In Google Docs, this must become the
-   editor-native Table of contents after the headings are in place. Then a `pagebreak`.
+2. **Table of Contents** — automatic (page 2, from your `h1`/`h2` sections). Don't add a manual
+   contents block; the generator inserts the TOC for you.
+3. **Intro** — one `body` paragraph framing why you're asking.
 4. **Sections** — each an `h1`, followed by its numbered **`qform`** items (number + question + a blank
    response box). Keep the client's numbering (1.1, 1.2, …).
 5. **Workflow/table asks** — where you want the client to fill a structured template, use `kv` with
@@ -89,7 +85,7 @@ question asked for) — only with supplied numbers.
 ## 7. Build
 
 - `docType: "qna"`.
-  - **Mode A:** start with `contents` + `pagebreak`; blocks are mostly `qa`, optionally grouped by `h1`.
+  - **Mode A:** blocks are mostly `qa`, optionally grouped by `h1`.
   - **Mode B:** `meta.subtitle` / `meta.preparedLine` / `meta.coverBreak:false`; `body` intro;
     `contents`; `pagebreak`; then `h1` + `qform` per section; `kv` with `muted:true` for template asks.
 - `node ../../scripts/build_docx.js <spec.json> <out.docx>` → QA render → deliver with a summary that

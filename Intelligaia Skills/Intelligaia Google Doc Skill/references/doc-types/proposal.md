@@ -45,16 +45,13 @@ Bucket what's supplied into: **problem**, **approach**, **scope/deliverables**, 
 1. **Cover** — the mandatory gold-forward cover (page 1): `eyebrow` `Proposal`, `title` = engagement
    name, `client`, `project`, `purpose` = the outcome in one line, plus `date` / `docId` /
    `confidential`. Client + project fill the gold card.
-2. **Table of contents** — a heading-based `contents` block listing the proposal sections in order,
-   then a `pagebreak`. In DOCX this renders as a Word TOC field. In Google Docs, insert the native
-   Table of contents from Page elements after the `h1` sections exist.
-3. **The problem** — their challenge in their words, 2–4 sentences, no filler.
-4. **Our approach** — how Intelligaia solves it; short paragraphs or tight bullets.
-5. **Scope** — `kv` or `table`: workstreams / deliverables.
-6. **Timeline** — `table` or `numbered` phases.
-7. **Why Intelligaia** — 3 crisp, real proof points.
-8. **Investment** — pricing `table` **only if figures supplied**; else `[TK: pricing]`.
-9. **Next steps** — one short, concrete CTA.
+2. **The problem** — their challenge in their words, 2–4 sentences, no filler.
+3. **Our approach** — how Intelligaia solves it; short paragraphs or tight bullets.
+4. **Scope** — `kv` or `table`: workstreams / deliverables.
+5. **Timeline** — `table` or `numbered` phases.
+6. **Why Intelligaia** — 3 crisp, real proof points.
+7. **Investment** — pricing `table` **only if figures supplied**; else `[TK: pricing]`.
+8. **Next steps** — one short, concrete CTA.
 
 ## 5. Draft (voice + density)
 
@@ -73,8 +70,7 @@ tables, not images. Never a stock illustration for its own sake.
 
 ## 7. Build
 
-- `docType: "proposal"`; set `meta.treatment` per the client read in step 2; start blocks with
-  `contents` + `pagebreak`.
+- `docType: "proposal"`; set `meta.treatment` per the client read in step 2.
 - `node ../../scripts/build_docx.js <spec.json> <out.docx>` → QA render (check gold is one dominant
   element per page, mono labels render in technical mode) → deliver with summary incl. treatment + gaps.
 

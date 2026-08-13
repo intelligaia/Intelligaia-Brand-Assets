@@ -13,16 +13,6 @@
     "treatment": "technical"
   },
   "blocks": [
-    { "type": "contents", "title": "Contents", "items": [
-      "The problem",
-      "Our approach",
-      "Scope",
-      "Timeline",
-      "Why Intelligaia",
-      "Investment",
-      "Next steps"
-    ]},
-    { "type": "pagebreak" },
     { "type": "h1", "text": "The problem" },
     { "type": "body", "text": "New operators reach a working agent run slowly. The console exposes the full API surface up front, so the first session is spent decoding concepts — runs, tools, traces, evals — before any value appears. Your own funnel shows the drop-off between signup and first successful run. **The interface is organised around the platform's architecture, not the operator's task.**" },
     { "type": "h1", "text": "Our approach" },
