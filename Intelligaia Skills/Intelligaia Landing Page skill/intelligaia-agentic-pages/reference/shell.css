@@ -16,19 +16,17 @@
      the logo 400px inboard of the home page's at 3440. Never do that again.
      ═══════════════════════════════════════════════════════════════════════ */
   :root{
-    --gut:    clamp(20px, 4.4vw, 128px);
-    --page:   88vw;
-    --hdrpad: 3vw;
+    --gut:  clamp(20px, 4.4vw, 128px);
+    --page: 88vw;
   }
-  @media (min-width:1921px){ :root{ --hdrpad: clamp(2.5rem, 3.5vw, 7rem) } }
   /* 🔴 do NOT override --page on phones — 88vw already resolves to the home
      page's 6vw inset at 390 (min(343,350) → 343). */
-  @media (max-width:760px){ :root{ --hdrpad: 4vw } }
 
-  header{
-    padding-left:  var(--hdrpad) !important;
-    padding-right: var(--hdrpad) !important;
-  }
+  /* 🔴🔴 THE HEADER IS NOT IN THIS FILE. It is reference/header.css, copied
+     verbatim from the landing page — see RULE 1 in SKILL.md. An earlier version
+     of this file re-expressed the header padding as `--hdrpad` and carried only
+     `padding-inline`, which dropped `padding-block:.95rem` and
+     `#gnav a{font-size:1.02rem}` from the ≥1921 band. Never put the header here. */
 
   .wrap, .awrap, .bwrap, .csmeasure, .hvid, #sitefooter .ft-grid,
   main > section:first-of-type .pmeasure{

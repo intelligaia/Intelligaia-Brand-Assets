@@ -1,0 +1,47 @@
+<!-- ═══════════════════════════════════════════════════════════════════════════
+     THE GLOBAL HEADER — markup, verbatim from the L0 landing page.
+
+     🔴🔴 RULE 1: USE THIS AS IS. Copy the whole block. The only thing that
+     changes between pages is WHICH link carries aria-current="page" — and on
+     the landing page itself, `href="#"` on the brand and on Home.
+
+     Order is fixed: brand → nav → (hamburger, CTA). The hamburger lives inside
+     .hdr-right BEFORE the CTA so it collapses in the right order at ≤1180.
+     ═══════════════════════════════════════════════════════════════════════════ -->
+<header>
+  <a class="brand" href="index.html" aria-label="Intelligaia">
+    <img class="brand-logo" src="squad-assets/logo.svg" alt="Intelligaia">
+  </a>
+  <nav id="gnav" aria-label="Global">
+    <a href="index.html">Home</a>
+    <a href="technology.html">Technology</a>
+    <a href="services.html">Services</a>
+    <a href="work.html">Work</a>
+    <a href="blog.html">Blog</a>
+    <a href="careers.html">Careers</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+  <div class="hdr-right">
+    <button id="navBtn" type="button" aria-label="Open navigation" aria-expanded="false" aria-controls="navsheet">
+      <i></i><i></i><i></i>
+    </button>
+    <button class="gcta" id="gcta" type="button" aria-label="Start a conversation">
+      <span class="gcta-glow" aria-hidden="true"></span>
+      <span class="gcta-surface">
+        <span class="gwrap" id="gctaIcon"></span>
+        <span class="gtxt">Start a conversation</span>
+      </span>
+    </button>
+  </div>
+</header>
+
+<!-- 🔴 THE ACTIVE LINK. Exactly one <a> in #gnav carries aria-current="page".
+     It is what draws the gradient underline (#gnav a[aria-current="page"]::after
+     → transform:scaleX(1)). A page with none looks orphaned; a page with two
+     looks broken. On a deep page (portfolio/<slug>/, post/<slug>/) the active
+     link is its SECTION — Work or Blog — and every href needs ../ prefixes. -->
+
+<!-- 🔴 THE CTA IS A BUTTON, NOT A LINK. It opens the in-place discovery agent
+     where you click. Never point it at the home page with ?agent=1. Below 820px
+     it still opens the agent — the click handler is unconditional. -->

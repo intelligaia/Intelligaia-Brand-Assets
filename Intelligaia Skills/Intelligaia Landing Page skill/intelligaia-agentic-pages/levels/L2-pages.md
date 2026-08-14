@@ -1,3 +1,16 @@
+> 🔴 **RULING — 13 Aug 2026. Two levels are in play, not four.**
+> **L0 is the home page, and only the home page. Every other page is L1** — About Us, Work,
+> Services, Technology, Careers, Contact, Blog, the 15 case studies and the 11 articles.
+> **L2 and L3 are reserved: not defined, not in use.** The three-way split below is historical.
+> Where a table or a sentence in this skill says L2 or L3, read it as L1 until L2 and L3 are
+> defined. Do not label a new page L2 or L3.
+>
+> One property survives and is worth keeping when they are eventually defined: the case studies
+> and articles run with the **scroll pager off**, because long-form reading needs free scrolling.
+> That belongs to long-form reading, not to a level.
+
+> **HISTORICAL. These pages are L1. L2 is reserved and undefined.**
+
 # L2 — the section pages
 
 **Six files: `services.html · work.html · technology.html · careers.html · contact.html · blog.html`**
