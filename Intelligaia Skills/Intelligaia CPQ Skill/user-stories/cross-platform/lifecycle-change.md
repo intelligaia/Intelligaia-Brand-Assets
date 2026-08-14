@@ -7,9 +7,10 @@ Amendment, renewal, cancellation/non-renewal and other changes that start in one
 **Authoritative Current State → Pending State → Requested Delta → Effective Date → Commercial Decision → Approval/Acceptance → Processing → Resulting State → Billing/Service Consequence**
 
 ## Story Pattern
-**As a** supported seller/customer-success/operations role  
-**I want** to initiate and complete an eligible lifecycle change from the correct baseline  
-**So that** future commercial, subscription and billing state reflect the approved change.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Flow
 1. Current authoritative subscription/customer state is obtained.

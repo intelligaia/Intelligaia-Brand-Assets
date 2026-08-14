@@ -3,7 +3,7 @@
 ## Purpose
 Route normalized Cisco Commerce Workspace (CCW) story knowledge while preserving the difference between evidenced CCW behavior, requested future behavior, and platform-neutral CPQ patterns.
 
-Source/reference story evidence belongs in [`../../assets/user-stories/ccw/`](../../assets/user-stories/ccw/).
+Source/reference story evidence belongs in `../../assets/user-stories/ccw/`.
 
 ## Story Groups
 | Need | Module |

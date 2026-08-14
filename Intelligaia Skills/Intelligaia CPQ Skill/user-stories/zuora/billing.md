@@ -9,9 +9,10 @@ A quote or amendment may estimate/express commercial intent. Billing may indepen
 Do not state that CPQ-calculated values are final billing values unless evidenced.
 
 ## Story Pattern — Understand Billing Consequence
-**As a** supported role  
-**I want** visibility into the expected billing consequence of a commercial/lifecycle change  
-**So that** I can make or communicate the business decision with appropriate context.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 Define whether the source asks for estimate, preview, or authoritative result.
 

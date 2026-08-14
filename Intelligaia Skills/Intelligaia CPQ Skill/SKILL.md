@@ -1,7 +1,7 @@
 ---
 name: cpq-insight
 description: Evidence-grounded CPQ/Q2C analysis across processes, platforms, journeys, integrations, UX, requirements, and advisory opportunities.
-version: 6.3.0
+version: 6.10.0
 ---
 
 # CPQ Insight
@@ -211,3 +211,59 @@ For requirements, gap, dependency, impact, and acceptance analysis, start with [
 
 ## Source evidence
 Use [`assets/source-index.md`](assets/source-index.md) as the canonical provenance registry. Source/reference evidence belongs in `assets/`; derived reusable knowledge belongs in domain knowledge folders.
+
+
+## Dynamic Output Rule
+Reusable files are frameworks, patterns and evidence references—not fixed customer answers. Compose customer-specific stories, findings, journeys, acceptance criteria and recommendations from evidence at runtime.
+
+For User Stories, follow [`user-stories/dynamic-story-generation.md`](user-stories/dynamic-story-generation.md):
+**Evidence → Actor → Trigger → Need/Task → Decision/Action → Specific Business Outcome → State/Data → Acceptance → Exceptions → Traceability**.
+
+Do not reuse generic `As a`, `I want`, or `So that` prose as final story content. The business rationale must be specific to the evidenced actor and decision. If unsupported, mark it **Validation Needed** or **Hypothesis**.
+
+Apply the same principle across journeys, capabilities, platforms, integrations, UX, analysis and opportunity mapping: reusable structure may be static; customer facts, rationale, implementation and value must be evidence-derived.
+
+
+### Story Pattern Invariant
+Any section named `Story Pattern` is a routing/scenario archetype only. Its `As a`, `When`, `I want`, and `So that` body must be parameterized in reusable knowledge files and resolved dynamically at runtime. A static pattern title is acceptable; a static final story body is not.
+
+Do not interpret broadly useful prose such as `seller/partner`, `correct the transaction before progressing`, `avoid stale pricing`, or `customer commitment can progress` as safe defaults. Those are scenario hypotheses unless supported by the current evidence.
+
+
+## Package-Wide Semantic Specialization Rule
+Apply the dynamic-output rule to every layer, not only User Stories.
+
+Before using reusable content in a customer-specific answer, determine whether each actor, process step, business rationale, threshold, ownership statement, platform behavior, integration mechanic, acceptance outcome and quantified value is supported by evidence.
+
+Static taxonomy, methodology, analytical dimensions and explicitly labelled examples are allowed. They must not be transformed directly into customer facts.
+
+For every customer-specific statement use one of:
+- source-backed fact/finding with provenance;
+- derived interpretation with traceability;
+- Hypothesis;
+- Validation Needed.
+
+Never use the shortcut `pattern/example → customer fact`.
+
+
+## Comparative Evidence Rule
+Case studies, proposals, resource plans and executive concepts are bounded to their source context.
+
+Use comparative sources to create investigation patterns and hypotheses. Do not transfer another project's pain, implementation, architecture, staffing, metric or outcome into a target customer without independent target evidence.
+
+Required path:
+**reference evidence → investigation pattern → target evidence → target corroboration → recommendation candidate → target validation**
+
+For quantified outcomes, preserve measured/reported/estimate/target/qualitative/unknown status and never reuse a source metric as a target forecast without a target-specific value model.
+
+
+## Contradictory Evidence Rule
+When credible sources conflict, do not silently choose, merge or reconcile them. Preserve each claim with provenance and evidence state, identify the conflicting dimension, and mark the unresolved point **Contradiction / Validation Needed** until an authoritative source resolves it.
+
+A newer file date alone does not automatically make a source authoritative. Use document content, version/release context, source authority and scope.
+
+
+## Runtime Asset Routing
+Use [`assets/ASSET-MANIFEST.md`](assets/ASSET-MANIFEST.md) to locate original supplied references. Use normalized evidence modules for efficient reasoning and traceability; return to original reference assets when exact source context matters.
+
+Maintain: **original source → normalized evidence → reusable pattern → customer-specific runtime output**.

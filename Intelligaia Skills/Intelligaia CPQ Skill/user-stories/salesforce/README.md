@@ -3,7 +3,7 @@
 ## Purpose
 Route normalized Salesforce-related CPQ/Q2C stories while separating CRM/deal context from CPQ commercial execution and downstream lifecycle/billing outcomes.
 
-Source evidence belongs in [`../../assets/user-stories/salesforce/`](../../assets/user-stories/salesforce/).
+Source evidence belongs in `../../assets/user-stories/salesforce/`.
 
 ## Story Groups
 | Need | Module |

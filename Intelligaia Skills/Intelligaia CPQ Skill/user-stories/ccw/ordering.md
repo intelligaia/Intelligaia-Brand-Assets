@@ -4,9 +4,10 @@
 Normalize source stories covering quote-to-order handoff, order readiness, submission, status, completion, and downstream correlation.
 
 ## Story Pattern — Submit Eligible Quote
-**As a** supported seller/partner role  
-**I want** to submit the intended eligible commercial transaction for order processing  
-**So that** the customer commitment can progress without losing quote/version integrity.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 Validate actual readiness prerequisites from evidence.
 

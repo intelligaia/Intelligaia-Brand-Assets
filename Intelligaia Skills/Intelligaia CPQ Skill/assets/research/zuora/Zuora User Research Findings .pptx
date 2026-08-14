@@ -1,0 +1,273 @@
+Zuora CPQ User Interviews - Research Findings
+Nov 2023
+
+
+Study Goals
+To gauge the overall experience of AEs with Zuora CPQ, focusing on usability and customer Experience
+Identify key opportunity areas for better AE experience
+Optimized to streamline the sales process and improve efficiency
+
+
+
+Background Context
+Key Research Questions
+How do AEs interact with Zuora CPQ on a daily basis, and what are their primary use cases?
+What are the major challenges faced by AEs in using Zuora CPQ, and what solutions do they propose?
+How does Zuora CPQ impact the overall sales cycle, from quote generation to deal closure?
+      Interview Guide
+This study explores Account Executives’ interactions with Zuora CPQ, aiming to capture a comprehensive view, including technical aspects, user experience, adoption challenges, and the impact on sales effectiveness.
+
+Methods & Approach
+
+How we planned and scheduled the interviews
+Methods & Approach
+7 Account Executives from various sales areas at Zuora, providing diverse insights and experiences.
+Our Interview Guide
+
+Overview 
+Our most newsworthy takeaways
+SURPRISES! 
+Offline Tool Reliance: New to Sales representative's unexpected use of offline tools (Google Sheets, phone calculator).
+Visibility into Deal Approvals: Surprise in the Sales Strategy Team's lack of visibility into deal approvals.
+Limited Progress in Gaining Traction: Unexpected challenge mentioned by the New to Sales representative; exploration needed.
+WE WERE WRONG ABOUT...
+Sales Channels and Client Diversification: Discrepancy in challenges identified - event participation vs. gaining traction.
+Customer Base Understanding: Difference in perspectives - insufficient volume vs. concentrating on existing 25 customers.
+SFDC Data Trust: Contradiction in SFDC trust issues - mentioned as a pain point vs. reluctance to rely on Salesforce data.
+WE WERE RIGHT ABOUT... 
+Process Efficiency and Tools: Shared concern on challenges in process efficiency and tool utilization.
+Data Cleanup Challenges: Consensus on addressing data cleanup and maintenance issues in Salesforce.
+Quoting and Opportunity Management: Common emphasis on accuracy and efficient opportunity management.
+
+Key Insights
+
+Salesforce and Data Integrity Challenges
+Significantly impact decision-making and sales outcomes, necessitating focused efforts on data upkeep and effective tool integration for improved sales performance.
+Why?
+Inefficient Sales Processes: Reduced reliability of data leading to ineffective strategies.
+Outreach for Database Cleanup: Includes deleting irrelevant contacts due to email bounces.
+Phasing Out Outdated BUs: Transitioning from older business units.
+Ambiguity in Post-Acquisition Data Tracking: Challenges in accurately tracking data following acquisitions.
+Inconsistency in Zuora and SFDC Hierarchies: Difficulty in maintaining data parity.
+Lack of Contextual Info for AEs: Insufficient background information during initial meetings.
+Salesforce Data Trust Issues: Concerns over the reliability of data within Salesforce
+Key Insights
+Lydia DiGuido: Issues with database cleanup, outdated BUs, post-acquisition data tracking, maintaining Zuora and SFDC parity, inconsistent data in SFDC, accessibility issues.
+Heather Seeley: Challenges with contact data assignment, turnover affecting data quality, tracking new hires, adding new contacts.
+Tyler Villaroman: Salesforce data trust issues, data cleanup, compliance with usage limits.
+Brian Weckstein: Reduced data reliability, leading to ineffective strategies and processes.
+ 
+
+Strategic and Operational Challenges
+
+
+
+Leads to systemic inefficiencies and hinder sales performance, impacting the organization's ability to effectively strategize and meet market demands.
+Why?
+Limited Progress in Market Traction: Difficulty in gaining significant market foothold.
+Data-Driven Decision-Making Challenges: Lack of sufficient data for informed strategy development.
+Salesforce Contact Data Management: Issues with assigning and tracking data post-acquisition.
+Access to Information: Challenges in obtaining necessary data.
+Key Insights
+Heather Seeley: Limited traction, heavy workload in strategy planning.
+Tyler Villaroman: Compliance handling, renewal notification challenges, digital 'detective walls', collaboration with CSMs and Engineers.
+Brian Weckstein: Sales efficiency and data management issues.
+
+
+
+ 
+
+Opportunity Management and Cross-Product Compatibility
+
+Can lead to systemic inefficiencies and user frustration, as disjointed data and product integration issues complicate the sales process and hinder effective customer engagement.
+Why?
+Cumbersome Opportunity Management: Complexities arising from new process implementations.
+Cloning Opportunity Challenges: Issues with modifying cloned opportunities.
+Interchangeability Across Products: Difficulty in transferring opportunities between product lines.
+Manual Effort in Quoting: Necessity for manual intervention in quoting processes.
+Key Insights
+Lydia DiGuido: Difficulties with cloning opportunities, non-interchangeable opportunities across products.
+Brian Weckstein: Cumbersome opportunity management, transition in sales team structure, quoting process challenges.
+
+ 
+
+Quoting, Deal Desk Coordination, and Compliance
+
+
+
+Significantly bottleneck the sales process, leading to system inefficiencies and delayed sales cycles, ultimately impacting overall sales performance and customer satisfaction.
+Why?
+Complexity with Non-Standard Proposals: Challenges in handling unique proposal situations.
+Offline Work and Calculation Verification: Heavy reliance on offline tools for validation and calculation.
+Quoting Process Management: Complexities in handling different products in quotes.
+Visibility into Approval Status: Lack of clarity on the status of approvals and updates.
+High AE Workload: Significant burden on AEs for persona targeting, offers, and strategy planning.
+Key Insights
+Lydia DiGuido: Complexities with non-standard proposals, offline work with CPQ, dependency on deal desk.
+Tyler Villaroman: Managing quotes with different products, visibility into approval status, dependency on tools for opportunity management.
+Brian Weckstein: Reliance on deal desk for generating PDF quotes.
+
+
+ 
+
+Order-Quote Discrepancies
+
+Adds to confusion and delays in the sales process, impacting customer trust and potentially affecting the accuracy of sales forecasting and revenue recognition.
+Why?
+Discrepancy Management: Issues with reconciling order forms and quotes.
+Dependency on Clari for Opportunity Consolidation: Heavy reliance on external tools for tracking.
+Renewal Notification Dependency: Reliance on third-party tools for early renewal alerts.
+Key Insights
+ 
+Lydia DiGuido: Encounters issues with order-quote discrepancies, depends on Clari for opportunity management, and has difficulty finding provisioning data.
+Tyler Villaroman : Struggles with reviewing past order forms in Salesforce and determining historical pricing and discounts.
+Brian Weckstein : Faces limitations in self-service proposal generation, relying on the Deal Desk for PDF quotes even for standard approvals.
+
+
+Self-Service and Proposal Generation
+
+
+
+Delays sales and increases workload, impacting the efficiency of the sales cycle and limiting the sales team's ability to respond swiftly to customer needs.
+Why?
+Deal Closure:  impacts customer satisfaction and potentially affecting the closure of deals.
+Sales Delays: Relying on the Deal Desk for quotes slows down the sales cycle.
+Deal Desk Overload: Excessive requests hinder complex task handling.
+Key Insights
+Brian Weckstein: Limitation in self-service capabilities for proposal generation.
+
+
+
+ 
+
+Financial Modeling and Post-Order Processing
+
+
+Leads to inaccuracies and delays, affecting strategic decision-making and the efficiency of sales operations, potentially impacting revenue recognition and customer satisfaction.
+Why?
+Lack of Specialized Financial Modeling Tool: Contrast with environments like AWS.
+Provisioning Information Visibility: Limited insight into provisioning details.
+Manual Processes for Activision Insights: Need for manual effort to track usage against revenue
+Key Insights
+Lydia DiGuido: No tool for complex financial modeling, lack of visibility in provisioning info, manual checking on consumption vs. revenue, order-quote discrepancies.
+
+ 
+
+Event Participation and Client Outreach
+
+Results in diminished client engagement and lost opportunities for new business, directly undermining the efficacy of marketing efforts and hindering overall sales growth.
+Why?
+Decreased New Attendees: Concern about the lack of fresh, potential clients at Zuora's Marketing Events.
+Need for a ZBR: Requirement for a specific strategic tool or approach.
+Key Insights
+Lydia DiGuido: Lack of new attendees at marketing events.
+
+ 
+
+ Thanks
+
+Key Insights
+
+Add a key insight theme here
+You can add some supporting information here.
+
+Why?
+And any additional context about why this behavior might be showing up
+
+Key Insights
+
+Additional exploration or design work to consider as a result of this work
+
+Theme Area: How might we….?
+Theme Area: How might we….?
+Theme Area: How might we….?
+
+Theme Area: How might we….?
+Theme Area: How might we….?
+Theme Area: How might we….?
+Key Insights
+
+Add a key insight theme here
+You can add some supporting information here.
+
+Why?
+And any additional context about why this behavior might be showing up
+
+Key Insights
+
+
+You can add an example customer quote here
+“
+
+Other notable findings
+Key Insights
+You can add additional insights related to this study that may be important here
+And here
+
+
+
+
+If you want to get more prescriptive around recommendations, you can add information here
+High level Theme
+Recommendation
+Pod/ Team
+Theme 1
+Add your recommendation here
+Team name here
+Add your recommendation here
+Team name here
+Add your recommendation here
+Team name here
+Add your recommendation here
+Team name here
+Add your recommendation here
+Team name here
+Add your recommendation here
+Team name here
+Theme 2
+Add your recommendation here
+Team name here
+Add your recommendation here
+Team name here
+Add your recommendation here
+Team name here
+Key Insights
+
+Study Resources
+Add a link to your interview schedule
+Add a link to your interview guide
+Add a link for synthesis resources
+
+You can add more information about P demographics here
+
+This could include information like
+Specific ICP groups
+Years experience
+Roles
+Demographics information
+
+Overall Theme Frequency
+High level Theme
+Subtheme
+Frequency
+Experience outside UI
+I want visibility into research being done by my teams
+2
+I want to do my research more efficiently 
+2
+I want my recruitment to be more efficient
+3
+I want to enable others to do research
+1
+I want research to support my design
+2
+I don't want to reveal my research workflow to others
+1
+General Perception of UI
+I want UI to help me with my research
+1
+I want my research to make a good impression
+1
+I want UI to be more intuitive
+3
+You can use this table to demonstrate the frequency of themes that came up during your research

@@ -1,0 +1,200 @@
+﻿Zuora - Meeting 2
+
+
+Recap - Oppty management from Morgan 
+
+
+Today Quote Flow 
+
+
+Quotein Prefread Out (flucid File)
+
+
+
+
+
+
+
+
+Stage 2.0 Oppty will also creation of Quote 
+
+
+Today We need to create a new billing account in IQ 
+Billto contact, Admin contact and Billing ID 
+
+
+
+
+Different Currrency - Need new billing account 
+
+
+Standard Account - in SFDC 
+Billing account in Zuora Billing 
+
+
+One account can have multiple billing account 
+
+
+Main reason - it currency 
+Zuora Billing store Currency at the account level and that is the reason to create multiple billing account 
+
+
+
+
+Idea - User should not be worried about creating the billing account, System to create it. 
+
+
+If user is adding a new currency - system should automatically create a new billing id 
+
+
+There are entries in the system, where all the row with same data currency, payment method but have different billing account 
+
+
+Even Explained - Customer Expection are managed with
+
+
+Flexible Billing does address most of the this but not the payment method 
+
+
+Payment Term - is handle by flexible payment method 
+Edge case a customer has different Payment method 
+
+
+Sumit Propose - System should check the payment method and currency to create the billing account automations 
+
+
+
+
+Parent Account - Child Account 
+* Child Account 
+
+
+Look for the ways to do that. 
+
+
+Sumit - Quote, Billing Account and Sold To Account 
+
+
+Acquisitions are messy with the current implementation 
+
+
+
+
+Guided  flow for add product experience 
+
+
+Rules from IQ should be taken and implemented in Zuora CPQ 
+
+
+Today People are not able to find a product due to some or other reason 
+
+
+Every Product will be visible and quotable in CPQ 
+
+
+Today, AE reach out to deal desk to addd product only available in the order form. 
+
+
+Going forward, All Products will be available to the AE and not involved in the deals desk 
+
+
+Are there any products in the system, that AE can't configure? 
+
+
+
+
+Classic Subscribe is an example 
+
+
+
+
+
+
+Discount - Line level and header level 
+
+
+Discount rationale for threshold up to 40% 
+
+
+
+
+Customzie MSA is 95% case 
+
+
+MSA - Why do we need to MSA for each Quote.  
+MSA should be already be signed. 
+
+
+When We are sending a final Quote to Order, should check for the MSA is signed.and should not have the product level. 
+
+
+Only the service level should be there.,
+
+
+Need to check on Clari, IF we are moving the MSA to the account level 
+
+
+
+
+First Order - Online MSA
+2nd Order - Paper is MSA - 
+
+
+The same MSA will through out all the operations. 
+
+
+Counter Signature - The deal desk gets the counter signature in front he CEO 
+
+
+Why they are not pre-populated? This is Zuora Policy  
+
+
+Sometimes Provision requires and takes time
+
+
+We always sign the Order Perform.  Never happened the customer signed but not signed by Zuora 
+
+
+Generally, all the countersignatures are done within a day 
+
+
+Not a policy but a practice. 
+
+
+Accepted Status (New Status to be added)
+
+
+
+
+
+
+The proposal is only for the approved quote 
+
+
+Quoting Version 
+
+
+Approval Cycle 
+
+
+Why the Quote is not approved 
+Rejection reason is being captured 
+ 
+
+
+What changes will cause the quote status or rejection
+Build the Metrix 
+Spelling error does not impact the quote approval 
+
+
+Quote Validatity- CAn we extend the Quote validity ‘
+
+
+Standard Terms, 13 months? 
+
+
+
+
+
+
+There are lot of manual touch in the order form that require deal desk interactions

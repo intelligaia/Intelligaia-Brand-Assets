@@ -1,0 +1,65 @@
+﻿CPQ Changes- Meeting - 14-01-2015
+Meeting reocording link: https://drive.google.com/a/intelligaia.com/file/d/0B098V-5XXeOveTJQS1dDa196ajg/view?usp=sharing
+Notes of first 19 minutes recording:
+
+
+RK- page level actions are on on right & the mass actions are on the right
+Alvin- I think that is kind of weird
+RK- How can we put all the mass actions on right side with filters, etc.
+Alvin- the mass actions are currently coming on click of checkboxes, right
+RK- Yes, but there will still be some default actions without the checkbox. Like add options or some thing like that can come without a checkbox as well
+Alvin- I think the user is not gonna know there will be mass actions
+RK- So, should we think of moving all the buttons to the right side ?
+Alvin- I think either moving all the buttons to the right side or may be moving the Save & Cancel somewhere else. It about hierarchy. Right now the save and cancel, those are more the page level versus Upgrade, Downgrade, Renew are at the table level
+RK- Right
+Alvin- So, having them on the same line, at same area, looking like the same I think will cause confusion
+RK- I think we decided in some of the calls to increase the size of save button as compared to the mass action buttons
+Alvin- Yea it fine, it could be an option but it will just look weird in the same spaces
+RK- Can we think of centre aligning these mass action buttons, centre align to the table
+Alvin- U can, that all we do now in the mobile space
+RK- That might make these Expand all, manage columns, into two rows because they might just interfere with the button. So we will have to make them in two rows
+Alvin- Which ones?
+RK- Expand, manage, view all these links will go in two lines
+ Alvin- Oh, you mean centre on the same level as expand, I think that will not work for it
+RK- hmmm
+Alvin- Can you move……..What you guys have at the bottom bar anyway, do we have floating toolbar at the bottom, similar to what we do now
+Heena- In the bottom right now we are having the page level actions only
+RK- that is 
+Alvin-  If these are page level actions, why isn’t Reprice same up there as well? Why is save & cancel all those are on the left with Reprice
+RK- I don’t think save & cancel will look ok on the left side
+Alvin- What I am trying to say is those are page level actions, alright 
+RK- Yes, but I think Reprice takes you back into the steps not…
+Alvin- Reprice, refreshes the page
+RK- After you make the changes?
+Alvin- Yes, after you make changes Reprice becomes active
+RK- So, I think Reprice is also not at the right place. It should be  with the mass actions then or a page level action
+Alvin- Yes, so we do page level actions & I think we can have the bottom bar as a page level action and then move save and save whatever continue stuff down there. Let’s go to the right Heena. Alright, so the save, save & continue and cancel  right and also add more product & finalize right, if you think about all of that, it all confusing because finalize is almost like save & continue right
+RK- hmm.. actually, that all more products & finalize is coming from our footer bar which we never thought of redesigning so that just placed like that only
+Alvin-  I know, so I think this is where you have to expand further, because right now save, continue, cancel and that bottom bar all are kind of intertwine together. So, if we are gonna put mass actions in that space, lets remove that save, continue, cancel from the page and but it at the bottom bar and then figure out the navigation, how you move forward & backward through the steps in order to finalize the annual product. So, is there any need for save and save & continue. There is final need for save, there is final need for save & continue that when finalize comes in and cancel is really going back 
+RK- In past we decided that we might take off this footer bar. So, is there any plan to totally take it out from the UI or functionality or are we still going with this footer bar. If we are going with the footer bar then we have a lot of room to place these mass actions at the bottom. 
+Alvin- I think we either gonna need the footer bar or some type of header bar at this page, right, that will come for these for more page level actions because we have a lot of actions already that are happening on the page so we need a way to… 
+RK- Is there any sort of feedback from your side or the users that footer bar is not useful or usable 
+Alvin- Don’t you feel the line in part of footer bar is not visible that people don’t acknowledge 
+RK- Ok. Yes, Vipul also told that it on white so no body notices it. Its merges with the page 
+Alvin- Yea, the bar is like kind of light grey & buttons are slightly darker gray so no body even notices that there are buttons there. So, with the new design CSS changes we talked about, the buttons became prominent, which are fine. I think what we need to figure out really and this is more of an information architecture problem, right. So, its not a design problem this is about where actions are placed and what is the thought process behind where things occur 
+RK- Right
+Alvin- So, we need to thinking about ok we have this section reserve for mass actions, this one is reserve for page level actions, this is reserve for line level actions. We just need a way to figure out where all these buttons belong and then figure out what then are the right buttons. We have finalize what is the difference between finalize and save, save and continue. So, I think we need to make sure we understand those paradigms
+RK- So, my understanding with respect to, I will list down in 3 points. My feeling and my experience says that actions buttons should be on the right side of the page. Second is the page level actions should be at one point visible like fixed on the page because if we don’t fix them then we have to repeat them at two positions bottom & top of the page because our quotes are very big, thousands of line, 100’s of lines. And the third point is like you are saying this save and save & continue, cancel this definitely confuses the user but from the point of view of steps like if we have number of steps to complete this process than you can save & exit at one point of time in this process or you can save & continue to the next step that is why save and save & continue is there. This is my understanding but if there is a functional difference other than that or if there is no functional difference then we can merge these two buttons
+Alvin- I think so some of these needs to be merged together because they are sort of same. The part of our problem that the whole CPQ that just confusing. How does the user knows that there is a difference between save, save & continue, finalize, add more products, cancel. When you look at this what does cancel tell you?  Are you cancelling the whole cart or you are going back to where you came from. Alright. I mean if I see cancel & add more products together I don’t what the difference is going to be. I am assuming, if I cancel here, I am basically wiping out my whole cart. I mean I am gonna taken all the way back to quote. You know, all the work done will be removed.
+RK- Yes, that what cancel makes you feel that it will take you to the previous step. 
+Alvin- Is that the existing functionality now in our CPQ?
+RK- I have not clearly tested that clicking on cancel takes you back in process or not
+Alvin- That’s what we need to do. We need to verify & understand all the actions. We can’t just design it. Alright, you just can’t look at the page and transfer whatever you have. You have to understand what each of the functionalities are doing to make the best recommendations. You are just not doing your skinning exercise, which we are not doing. We are looking at redesigning the functionality of this page along with making it look nicer but what we are missing is that we don’t understand the functionality well enough to make recommendations. All we are doing is taking what’s there and moving things around without understanding what it really does. And that’s the part of pitfall where we allow things end up and why we have to re-do a lot of things because we don’t understand what the thing is doing, right. So, this is very similar to photoshop right. If we don’t understand all the tools. 
+Around 2 mins recording audio unavailable
+Alvin- I think it really depends, if you are in a form you can, I think when you are in an ecommerce cart you can’t really cancel the repricing or updating. Its basically updating the cart. When you are in other carts you may changes to the quantity there is an update button, right. When you hit update, it updates there is no way to cancel the update. If you want to cancel it, you got to redo what you did, right.
+RK- Yes, that’s true         
+Alvin- Either, it happens automatically which is nice if we could but the part our package doesn’t allow us because there is too much of cost to do that so we have that button there, right. So, the reprice allows for that. The save could be I don’t know may be we need to think through it. I think we really want users to save where they are at you know and that cause conflict in reprice. What happens say I change the whole bundle stuff and save it, I leave and come back and I say you know everything was good but now I need to reprice because everything is now messed up so there is a UI and I hit finalize or I hit save and continue then what happens. All those things and subflows & UIs needs to be followed up because that affects how the interactions or what we may want to put or make available on the screen based on the different use cases. So, we have to think through those different types of scenarios to understand ok what’s gonna happen if this happens or what’s gonna happen if I save this and leave. We have to thoroughly through 
+
+
+RK- Should I sync up with Vipul then for these things
+Alvin- No, well I think you have that application, right. You should play around with it and understand it and think through from your recommendations based on what you have played around with what can do best. The UI that we have around isn’t the best, right. So, we are gonna add simply what it does and basically put those functionality here then its skinning. It still seems as a skinning exercise. What I want us to do is understand the pitfalls in our current application, its weird when I save and come back and hit reprice or I hit finalize I get an error. So, maybe we might recommend that if we detect that if you have save something and have not reprice it we won’t offer you to finalize it. You need to reprice it before you finalize or may be best we serve you a message that you hit finalize and we say O you need to reprice because we know you made some changes. Those things we as a user experience needs to make recommendations on that what needs to get done. So, right now what we have is not optimal, is not a good user experience. We need to know what the functionality is, we have to know what the use cases, we have to know what users might do in certain situations and then we have to come back with what is our recommendation of the best way to present those different flows based upon what users are gonna do and these will be the best experiences possible for the users given then. We should start from the simple flow like I come here and make some changes and I wanna move on. Let’s figure out that one first. That’s the most common thing and then from there we can talk about the smaller edge cases like I make some changes and I save and then I leave and then I come back later, what do I get. I mean those are all minor cases they can happen but the more common case will be I come here, I add a bunch of products to my cart, I come to the cart and then make some adjustments and then I want to move on that the main flow, right. That the most people are going to do. So, who do we make sure that experience is the best experience possible. Making sure that we have least amount of confusion on the page. Right now if I come here and make a bunch of changes to my cart, I don’t know what to do next. Is that save or save or continue that I have to hit. Save & continue is same as finalize? Or should I save & continue and finalize              
+RK- No, that is definitely confusing because we never treated this add more products or finalize UI. I mean we never merged it into the new design, that why it has been hanging there
+
+
+ Alvin- So, I will suggest take a look at page level. I think we are fine with the mass level, we are fine with the line level, we are fine with the table level. Those are the three we defined, we haven’t define the page level, I think that’s the one next you need to solve to kind of complete the picture. 
+RK- Ok, give me one or two days I will come back with these ideas and suggestions

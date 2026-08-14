@@ -4,9 +4,10 @@
 Convert the exact governed customer commitment into the intended order without commercial/version drift or duplicate submission.
 
 ## Story Pattern
-**As a** supported seller/operations role  
-**I want** the accepted and eligible commercial transaction handed to order processing  
-**So that** the order reflects the intended customer commitment.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Flow
 1. Intended quote/version is identified.

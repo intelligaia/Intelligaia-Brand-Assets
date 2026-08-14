@@ -79,3 +79,13 @@ Not every story requires every artifact.
 
 ## Architecture Audit
 See [`USER-STORIES-AUDIT.md`](USER-STORIES-AUDIT.md) for the consistency, completeness, evidence-discipline and readiness assessment of the full User Stories layer.
+
+## Runtime Generation — Mandatory
+User-story files are scaffolds, taxonomies and reference evidence—not a fixed answer catalog.
+
+Before generating a customer-specific story, follow [`dynamic-story-generation.md`](dynamic-story-generation.md).
+
+Priority:
+**customer/source evidence → normalized findings → reusable CPQ/Q2C knowledge → reference patterns → dynamic story**
+
+Never use keyword matching alone to copy an existing reference story. Generic patterns may provide structure, but actor, need, business outcome, acceptance and exceptions must be specialized from evidence. Unsupported rationale is **Validation Needed**, not generic filler.

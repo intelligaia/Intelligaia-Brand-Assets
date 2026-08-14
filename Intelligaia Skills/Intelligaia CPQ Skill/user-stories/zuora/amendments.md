@@ -12,9 +12,10 @@ add → remove → quantity change → product/charge change → term/date chang
 Treat actual supported amendment types as evidence-dependent.
 
 ## Story Pattern — Modify Existing Subscription
-**As a** supported role  
-**I want** to request an eligible change to an existing subscription  
-**So that** the contracted/service state can reflect the approved business change.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Baseline
 Verify the change is calculated against the intended authoritative subscription state.

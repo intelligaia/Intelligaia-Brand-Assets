@@ -1,0 +1,6108 @@
+Opty to Order Transformation
+CPQ Assessment & Advisory - FINAL READOUT
+1
+
+Agenda
+#
+Topic
+Duration
+Owner
+1
+Recap,  Assessment Highlights - Executive Summary review
+15 mins
+Srini V
+2.
+Summary of findings on CPQx
+25 mins
+Abhijit K,  Nimesh P
+3.
+User Journey Maps
+40 mins
+Rajiv K
+4.
+Q&A
+30 mins
+All
+5.
+Next Steps
+10 mins
+Zuora Team
+2
+
+Opportunity to Order 
+Executive Summary
+3
+
+Opty to Order Assessment : Scope & Objectives
+Optimal Roadmap & Plan
+Future State:
+User Experience & Business Requirements
+Feasibility Assessment (People, Process & System)
+Business Process Best Practices
+Product & Platform Capabilities (Salesforce, CPQ, Billing, Revenue)
+Discovery of current business processes 
+(Sales, Quoting & Billing)
+Product Pricing and Packaging vision & plan
+
+
+EXECUTIVE SUMMARY
+4
+
+Opty to Order Assessment : Schedule
+6
+2
+ASSESS
+Day in the Life 
+Account Executive
+Renewals
+Deal Desk Team
+ASSESS
+Cross-Functional Team Workshops: Process Review and Future State Overview
+3
+ANALYZE
+Internal Strategy & Analysis Sessions
+4
+ANALYZE
+Product Functionality 
+6
+ADVISE
+Workshop Insights (Dec 11)
+Update Analysis Slides
+Stakeholder Engagement
+Future State Planning
+5
+ANALYZE
+Pricing & Packaging Vision & Plan
+CPQ Product Assessment
+8
+ALIGN
+AS-IS/TO-BE Process Overview 
+Industry Best Practices
+CPQx Gap Analysis
+Recommended CPQ UX for Sales/ Ops/Deal Desk
+Solution Roadmap
+7
+Week 1: 11/6
+1
+Week 3: 11/20
+Week 5: 12/4
+Week 2: 11/13
+Week 4: 11/27
+Week 6: 12/11
+ADVISE
+Final Readout - Roadmap and Next Steps
+Week 7: 1/8
+Week 8: 1/15
+EXECUTIVE SUMMARY
+5
+
+Opty to Order Assessment : Framework
+ASSESS
+.. & evaluate the AS-IS State
+ANALYZE
+.. & present findings
+ADVISE
+.. recommended approach
+ALIGN
+.. with stakeholders & roadmap
+
+Business Process
+Account Management 
+Opportunity Management
+NPI Process 
+Product Catalog, Pricing & Discounting
+Quote Management
+Quote Proposals / OF / Templates
+Quote to Order (capture order)
+Amendments & Churn
+Renewals
+AS-IS Process for Opportunity, Quote (New and Renewal), Order Management, Billing and Revenue
+Account/Customer Creation process
+Product, Attributes, Rules, Catalog, Bundles
+Pricelists, Pricing, Attribute based Pricing, Discounts
+Quoting Flows
+Approvals 
+Quote Proposal / Templates / Order Form / Docugen / e-Signature
+Information Architecture
+TO-BE Process (Industry Best Practices) for Opportunity to Quote, Quoting process, Configuration, Price, Approvals, Templates, Order, Billing Integration
+Detailed User Stories for Product Setup, Price Setup, Configurations, Pricing, Quoting, Approvals, Proposal Templates
+Pain Points for Account, Product, Price, Opportunity, Quote, Order
+Gap Analysis (process level) for Opportunity, Quoting new & renewal (CPQx),  Quote-to-Order process, Amendments 
+Detailed Solution Review - Using CPQx
+Work with Zuora Product team on CPQx roadmap
+Contract / Templates automation
+CPQ and Billing Integration
+Sample User Experience for TO-BE state Quoting (configure, price, quote)
+KPIs: Quote, Order Cycle time; Order Touch Rates
+Roadmap for Opportunity-Quote-Order Transformation
+Systems
+Salesforce
+IQ (Internal Quoting)
+GS Quote (CPQX)
+Zuora Billing 
+IQ
+Zuora Billing
+Zuora CPQx
+Zuora CPQx - Sample POC
+Order Forms /Contracts / CLM
+Billing Integration (Order)
+High level Logical Architecture for CPQ-O, with required integrations
+Data
+Customer/Account Master
+Product Master
+Bundles & Configurations
+Pricing & Discounting
+Quote & Order
+Product and Pricing
+Catalog
+New & Renewal Quotes (IQ) 
+Orders
+Product, Attributes, Configurations, Bundling
+Pricing, Pricelists, Waterfall
+Discounts & Promotions
+Opportunity & Quote Types
+Account Rationalization general approach
+Product/SKU Rationalization general approach
+Approval Matrix Rationalization templates
+People
+Roles & Responsibilities for Quote to Order 
+Roles & Responsibilities for Quote to Order (Recommended Personas)
+Roles & Responsibilities for Quote to Order (Personas)
+Change management for any impacted roles
+Lower focus for Assessment
+EXECUTIVE SUMMARY
+6
+
+Opty to Order Assessment : Business Functions
+Sales
+Sales
+Operations
+Theater Operations
+Deals Desk
+Marketing
+Finance
+Legal & Compliance
+Order Processing
+Renewals
+Product Operations
+Business 
+Units
+Build & Configuration
+Licensing
+Tax & 
+Customs
+Sales Compensation
+Channel Operations
+Pricing Operations
+Channel Finance
+EXECUTIVE SUMMARY
+Functions not applicable for Zuora
+Zuora Teams involved in Assessment
+Not in Scope of this engagement
+7
+
+7 Key Themes
+Lydia DiGuido
+Strategic
+Heather Seeley
+New Biz
+Tyler Villaroman
+Expand/Renewals
+Brian Weckstein
+New Biz, Strategic & Enterprise
+Marina Paw
+Renewals
+Cam Nagle
+DD East
+PJ Kalira
+DD West
+Lucia Nalon
+DD EMEA
+Salesforce and Data Integrity Challenges
+Issues with database cleanup, outdated BUs, post-acquisition data tracking, maintaining Zuora and SFDC parity, inconsistent data in SFDC, accessibility issues.
+Challenges with contact data assignment, turnover affecting data quality, tracking new hires, adding new contacts.
+Salesforce data trust issues, data cleanup, compliance with usage limits.
+Reduced data reliability, leading to ineffective strategies and processes.
+Manual updates needed for Salesforce data inaccuracies and subscription changes.
+
+Inadequate Integration and Data Sources - Data sources scattered across systems, including billing systems and Microsoft, affecting data accuracy.
+Identifying Gaps in Processes and Systems - Challenges in addressing gaps in processes and systems, especially concerning master data.
+
+Strategic and Operational Challenges
+Limited traction, heavy workload in strategy planning.
+Compliance handling, renewal notification challenges, digital 'detective walls', collaboration with CSMs and Engineers.
+Sales efficiency and data management issues.
+Excessive reliance on manual renewal processes, complexity in managing various renewal scenarios like flat renewals, uplifts, and partial turns.
+Frequent Changes and Lack of Centralized Information - Confusion due to frequent procedural changes.
+Lack of Visibility and Involvement from the Deals Desk - Concerns about the Deals Desk not being sufficiently involved in sales and compensation activities.
+Opportunity Management and Cross-Product Compatibility
+Difficulties with cloning opportunities, non-interchangeable opportunities across products.
+Cumbersome opportunity management, transition in sales team structure, quoting process challenges.
+Difficulty in managing multiple subscriptions and renewal opportunities under one account, particularly with add-ons or changes, lack of automation in updating opportunities
+Product Catalog Complexity - Difficulties with new or end-of-life products.
+ Manual Creation of Ramp Opportunities - The deal desk team manually creating ramp opportunities, Challenges in creating opportunities for forecasting and managing configurations
+Complexity in Opportunity Management - Difficulties in managing configurations and lead generation from marketing.
+Quoting, Deal Desk Coordination,-  and Compliance
+Complexities with non-standard proposals, offline work with CPQ, dependency on deal desk.
+Lack of Recent Quoting, Tends to bypass the quoting step, focus instead on delivering value.
+Managing quotes with different products, visibility into approval status, dependency on tools for opportunity management.
+Reliance on deal desk for generating PDF quotes.
+
+ Quote Expiration Issues, Manual creation of elements for renewals adds complexity, The renewal process is heavily manual, Increased workload, Managing add-ons and amendments requires creating new orders and bookings
+Manual Quote Creation and Management, Limited Visibility System Automation for Approvals - Manual approval processes causing inefficiencies, Difficulties with new or end-of-life products.
+Challenges in Pricing and Discounting - Difficulties with contractual discounts and bundling pricing.
+Manual Interventions in Quote Creation - Manual edits required during the conversion of opportunities to quotes, Inconsistencies in the automation of approval processes., Confusion caused by the multitude of products and pricing structures.
+Order-Quote Discrepancies
+Encounters issues with order-quote discrepancies, depends on Clari for opportunity management, and has difficulty finding provisioning data.
+Struggles with reviewing past order forms in Salesforce and determining historical pricing and discounts.
+Faces limitations in self-service proposal generation, relying on the Deal Desk for PDF quotes even for standard approvals.
+Misalignment and manual reconciliation efforts between renewal orders and quotes.
+Discrepancies Between Quoted Products and Billing System - Mismatches between quoted products and IQ system availability.
+Issues with Updating Billing Fields - Challenges in maintaining accurate billing information.
+Financial Modeling and Post-Order Processing
+No tool for complex financial modeling, manual checking on consumption vs. revenue, order-quote discrepancies.
+Limited Progress in Gaining Traction, Lack of data for informed decision-making
+Managing non-standard terms like opt-outs and price holds manually.
+Challenges in Approval Updates due to Sales Hierarchy Changes, Challenges in maintaining accurate billing information, Payment Terms and Discounting - Need for clarity in managing payment terms and discounts.
+ Issues with currency conversion affecting customer satisfaction.
+Renewal Process Optimization
+ Manual, time-consuming quote building and management, lacking auto-update and cloning features, with limited visibility into pricing and discounts.
+Challenges in the Renewal Process - Inefficiencies when dealing with large customers during renewals.
+Contract Renewal and Upsell/Downsell - Ambiguity around managing renewals and contract changes.
+MP
+CN
+LN
+PK
+Opty to Order Assessment : Interviews & Findings
+EXECUTIVE SUMMARY
+8
+
+Opty to Order Assessment - Pain Points & Big Rocks
+Pain Points/Challenges
+EXECUTIVE SUMMARY
+Total Issues by Proces, System or Data
+Salesforce Accounts & Opportunities
+Lack of support for multiple-product lines per opportunity in salesforce restricts detailed product-level forecasting capabilities for sales teams
+The absence of a synchronized master data system between Salesforce and Zuora leads to inconsistencies and forces account executives to manually search for contact information, affecting efficiency and accuracy
+Products, Pricing & Packaging
+SKU Proliferation (over 3.5K sku’s per currency), lack of sales guidance and lack of configuration experience has led to sales teams depending more on the deals desk for assistance
+Quoting, Contract, Renewal
+Manual Approval process  - more than 50% of the quotes goes to manual approval process resulting in higher deal cycle time
+Manual Renewal process - duplicate opportunities for Renewal resulting in manual edits with lack of standardization and automation
+Order-Billing & Rev
+The absence of a Contract Lifecycle Management (CLM) system leads to significant productivity challenges due to the manual creation and updating of proposal and order form documents
+The absence of a two-way synchronization between quoting and billing necessitates manual processes for subscription renewals
+9
+
+Capability Map : AS-IS State (BigRocks)
+Campaign Mgmt.
+Lead 
+Mgmt.
+Account Mgmt.
+Oppty. Mgmt.
+Quote
+Product Config.
+Price
+Approve
+Proposal /
+Quote Document
+Contract Mgmt. 
+Manage 
+Order 
+Fulfill 
+Revenue Mgmt.
+Billing & Invoicing
+Payments / Collections
+Case Mgmt.
+SLAs
+Knowledge 
+Mgmt.
+Interaction Channels
+Marketing Automation
+Accept Lead
+Create 
+Account 
+Create Opportunity
+Manage Quote 
+New Product
+ Introduction
+List Price Mgmt.
+Pricing-
+Based Approvals
+Document Templates
+Create Contract 
+Create Order 
+License 
+Activation 
+Process
+Contract Combination & Modification
+Invoice 
+Management
+ 
+PrePayments
+/Deposit Mgmt.
+ 
+Case Creation
+Standard SLAs Config
+Knowledge Base
+Web to Case
+(Automatic)
+Case Assignment/ Routing
+Advanced SLAs Config
+FAQs
+Email to Case
+(Automatic)
+Campaign Mgmt.
+Reject Lead
+Create                        Contacts
+Manage Opportunity 
+Capture 
+Quote Information 
+Product Mgmt. 
+Customer 
+Specific 
+Pricing
+Product-
+Based Approvals
+Manage Documents
+Red-Lining
+Order 
+Validation 
+ 
+Fulfill Order Integration
+Performance Obligation Identification
+Tax Calculation
+Customer Payments Mgmt.
+Case Escalation
+Service Entitle-
+ments
+Article Publishing 
+and Review
+Phone to Case
+(Manual)
+Lead Generation / Assessment
+Lead Conversion
+Manage Account
+/ Contact 
+ 
+Opportunity to Quote Sync
+Renewal Quotes
+Manage 
+Bundles 
+Config.-Based Pricing
+Terms-Based Approvals
+Terms and Conditions
+Manage
+Clause
+ Library 
+Create 
+Assets / Installed Base
+Prof. Serv. Fulfillment
+Transaction Price & Selling Price Determination
+Consolidated Billing
+Report 
+on AR
+ 
+Case Resolution
+ 
+Suggest Knowledge Articles
+Chat to Case 
+(Manual)
+Case Email Auto-Response
+ 
+Multilingual Knowledge
+Third Party Channel Routing
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Lead Routing / Assignment
+Manage Partner Accounts
+Opportunity Approvals
+Quote 
+Types 
+Product 
+Rules 
+Volume-Based Pricing
+Renewal Approvals
+E-Signature 
+Contract Approvals 
+Submit
+ Order 
+Delivery and Provisioning
+Revenue Recognition & Allocation Rules 
+Credit Card 
+Payment Processing
+Customer Disputes 
+Mgmt.
+Queue Management
+ 
+ 
+Social Customer Service
+Email Templates
+ 
+ 
+Live Agent Web Chat
+Lead Integration
+Territory Mgmt. 
+Credit 
+Mgmt.
+ 
+Create
+ Project
+ 
+Product Config.
+Terms-Based Pricing
+Manage Approvals
+Renewal 
+Quote Doc
+ 
+E-Signature 
+Renewal Order
+Entitlement Account Mgmt.
+Contract Cost Capitalize & Amortization
+Renewal Invoice
+Credit 
+Memos 
+Mgmt.
+Call Center
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CTI Integration
+Call Scripting
+ 
+ 
+Pipeline and Quota Mgmt.
+Close 
+Opportunity
+Costing for Quotations
+Guided 
+ Selling  
+Promotions
+ 
+Quote to Order 
+Contract Repository 
+Process Order
+Entitlement Delivery and Reporting
+Revenue Reporting & Disclosure Req.
+Consumption Metering
+Dunning 
+Mgmt.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Forecasting
+Renewal Opportunity
+ 
+Cross Sell / Up Sell
+Discretionary Discounts
+ 
+ 
+Non Standard Contract Mgmt.
+Change / Cancel Order
+Customer Onboarding
+Revenue Forecasting
+ 
+Collections
+ 
+ 
+ 
+ 
+ 
+Renewals Pricing
+ 
+ 
+ 
+Credit Mgmt.
+Customer Support
+ 
+ 
+Payment Receipts
+ 
+ 
+ 
+ 
+ 
+Multi-
+Currency
+ 
+ 
+ 
+EDI
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Commissions
+Customer Success
+ Billing and Invoicing
+Order to Fulfill
+CLM
+Opportunity & Quote
+Lead Gen
+Workshop Topics
+EXECUTIVE SUMMARY
+Not in Scope
+Not applicable for Zuora
+Low level impact
+Medium level impact
+High level impact
+No Impact
+10
+
+Opportunity to Order : AS-IS
+Sales
+Opportunity
+1. Create or
+Re-Open Quote (Header Details)
+Deals Desk
+Finance
+2. Add Products
+and Services
+3. Price & Manual Discounts
+4.  Submit Quote
+for Approval
+5. Review &   Approve Quote
+6. Draft OF / Special T&Cs
+7. e-Signature
+Quote Approvals (Auto / Manual)
+8. Submit to Zuora 
+Billing & Provisioning
+Out of scope for Assessment
+IQ
+EXECUTIVE SUMMARY
+11
+
+Opportunity to Order : TO-BE, Proposed for Zuora 
+Opportunity
+7. Submit Quote
+for Approval
+8. Approve Quote
+10. Proposal / Contract
+1. Create or
+Re-Open Quote (Header Details)
+2. Add Products
+and Services
+3. Configure
+Products
+6. Qualify
+(T&C's)
+5. Additional Discounts (Non-Standard)
+4. Price & Applicable Discounts 
+(Standard)
+11. e-Signature
+18. Place Order (submit to Zuora billing)
+12. Create Agreement
+13. Author
+15. Negotiate
+14. Gather
+Legal Approvals
+16. Contract
+9. Special
+ T&C's
+17. e-Signature
+Language Changes & Special Clauses
+Quote
+Contract (CLM)
+Quoting Process - HL3
+Sales
+Deals Desk
+Billing & Provisioning
+EXECUTIVE SUMMARY
+Approval Matrix
+Standard Discounts ?
+8. Approve
+Quote
+A
+A
+No
+Yes
+No
+Yes
+Out of Scope for Assessment
+New/Modified for To-Be Process
+The Process is not reviewed by business
+12
+
+Steps to Optimize Your Quote-to-Cash Process
+1
+Lead and Opportunity Management
+2
+Product Selection of Configuration
+3
+Pricing
+4
+Quote Creation
+5
+Contracting
+6
+Order Fulfillment
+Order Capture
+7
+Billing and Invoicing
+8
+Amendments and Renewals
+EXECUTIVE SUMMARY
+13
+
+Optimizing Quote to Cash process
+S.No
+EPIC
+Features
+Impact
+1
+Lead & Opportunity Management
+Opportunity Type (New Biz / Amend(Upsell/Downsell) / Renewal)                                                         
+Opportunity Products       
+Multiple Quotes per Opportunity          
+Primary Quote
+Quote to Opportunity Sync  
+Renewal Opportunity - Automate Add  On Updates
+Auto Closure
+Accurate  Forecasting 
+Streamline Opportunity Management 
+Automated 
+Seamless Integration
+Transform Quote to Cash Business Process (multi-line opportunities)
+Simplify , Automate & Efficient Business Process (SCALE)
+2
+Product Configuration
+Product Offerings - BASE + Add on/s
+Product Attributes 
+Guided Selling Config Rules
+Pre-configured Product Bundling
+Configurable Product Bundling 
+Go to Market 
+Accurate Configuration 
+Improved Deal Size 
+Build a Unified Commerce Platform which enables all Route to Market and all Product offerings
+Zuora on Zuora - Customer Zero for Zuora CPQ
+3
+Pricing 
+Attribute Based Pricing 
+Tiered Pricing 
+Price Ramps 
+Channel/Contractual Discount
+Deal Reg Discount  
+Promotions
+Price Waterfall 
+Pricing and Packaging 
+Profitability 
+Deal Guidance 
+Faster Approvals 
+Build a Unified Commerce Platform which enables all Route to Market and all Product offerings
+Simplify , Automate & Efficient Business Process (SCALE)
+Zuora on Zuora - Customer Zero for Zuora CPQ
+4
+Quoting 
+Budgetary Quote
+Clone Quote 
+Merge Quote 
+Quote Rules
+Quote Approval - Std - Sales Empowerment
+Quote Approval -Non Std - Deals Desk
+Quote Collaboration 
+Partner Quoting 
+Escalation and Delegation Rules 
+Efficiency 
+Improved Deal Cycle Time
+Sales Empowerment 
+Deal Governance 
+Simplify , Automate & Efficient Business Process (SCALE)
+EXECUTIVE SUMMARY
+14
+
+Optimizing Quote to Cash process
+S.No
+EPIC
+Features
+Impact
+5
+Contracting
+Quote Templates 
+Std Clause Library 
+Non Std Terms & Conditions 
+Esignature
+Dynamic Template Generation 
+Improved Productivity for Deal management 
+Streamlined Deal Governance 
+Seamless Process between Sales and Deal Mgmt 
+Simplify , Automate & Efficient Business Process (SCALE)
+6
+Order Fulfillment 
+
+
+Order Pre Validation 
+Quote to Order
+Auto Booking 
+Seamless Integration
+Lower Order Touch Rate 
+Auto Bookings  
+Faster Quote to Cash Cycle  
+Simplify , Automate & Efficient Business Process (SCALE)
+7
+Billing & Invoicing 
+
+
+Plans, pricing, & promotions
+Billing Cycle 
+Billing Frequency / Billing Term
+Multi-Currency 
+API Integrations 
+Improved Customer Experience 
+Faster Quote to Cash cycle 
+Simplify , Automate & Efficient Business Process (SCALE) 
+8
+Amendments & Renewals 
+
+
+Renewal Opportunity Management 
+Renewal Quote Automation 
+Full & Partial Renewal 
+Full & Partial Upgrades 
+Purchase History 
+Short Co-Term 
+Forward Co-Term
+Renewal Notification 
+Renewal Automation 
+Improved Customer Experience 
+Efficiency
+Simplify , Automate & Efficient Business Process (SCALE)
+EXECUTIVE SUMMARY
+15
+
+SaaS Standard Epics / User Stories
+User Stories
+Function
+Persona
+Story Name
+Story Summary
+Details
+Product Administration
+Product Admin/ CPQ Admin
+Create & Manage Products
+Ability to manage the lifecycle and all the attributes of the product as part of the Product Administration so that the sales reps/end users can find and Quote the Products as part of the Quotation Process
+View & Search for the Products
+Creation of New Products
+Add/Update the Product Attributes (like Name, Description, Code, Family, Category, Images etc..) on the Product record.
+Define custom product attributes
+Add/Update the start and end dates of the Product record
+Mark the product as Active/Inactive
+Product Administration
+Product Admin/ CPQ Admin
+Create & Manage Product Bundles
+Ability to create & manage the bundles and bundle structure as part of Product Administration so that the sales reps/end users can easily configure the solution to meet the customer needs as part of the Quotation Process
+View & Search for the Bundle Products
+Creation of New Bundle Product
+Define the Bundle Product Attributes that would impact the Bundle (Bundle Type , Configuration Experience..)
+Add/Remove the Options Products to the Bundle. Options can be other Products including bundles
+Setup the Groupings,Group level Attributes ( Group Type ) , Sequence for the options to display the Options products in Configuration Process
+Sharing of the Option Groupings across multiple Bundles
+Setting up of default options/mandatory Options/default quantities of the options with in a bundle
+Mark the bundle as Active/Inactive or specify the start and end dates for availability.
+Sample
+EXECUTIVE SUMMARY
+16
+
+Opty to Order Assessment : Overview & Key Recommendations
+Reviewed Opportunity to Order Business Processes, Systems and Data - analyzed pain-points, process gaps and provided recommendations and roadmap
+
+
+Reviewed CPQx Features & Functionalities - completed gap analysis with the requirements for Zuora CPQ implementation - provided recommendations and roadmap
+
+
+Reviewed future state GTM and provided recommendations with actionable insights and seller experience
+EXECUTIVE SUMMARY
+Opportunity & Forecasting
+Enabling Multi-Line Products on Opportunities
+Synchronize Opportunities withQuotes for Sales forecast
+Enable automated SubscriptionRenewal Opportunities
+Order, Billing & Rev
+Implementing Order Form Automationwith CLM 
+Aligning Quotes with Orders to Resolve Data Discrepancies in Zuora Billing
+Define Product attributes (using ABP) to address SKU proliferation
+Enable Sales guidance & Next-Gen Config Experience
+Unify Subscription & Servicing Quoting
+Optimize Approval Matrices to improve Deal Cycle Time
+New Quote
+Streamline Subscription Amendments to enable co-terms, upgrades, add-ons, terminations etc. 
+Automate Subscription Renewal processes
+Amendments & Renewals
+17
+
+EXECUTIVE SUMMARY
+                                                                                        Pricing & Packaging  
+Account & Contacts Rationalization
+Opty to Order Assessment : Process Impacts
+To Be Process
+Opportunity Management
+(Sales)
+Quote Management
+(Sales & Deals Desk)
+Renewal Quotes 
+(Renewal Specialist)
+Order Management
+(Billing Ops)
+A. Pipeline Management & Forecasting  
+New process for Pipeline Management as Opportunities will be tracked and managed for multiple products 
+Manage Opportunity Products and Systematic Sync with Quote for accurate Forecasting 
+Eliminate redundant data entry by avoiding Opportunity creation & Tracking for single/Individual products 
+Forecast by tracking opportunities for multiple products giving better visibility and insights on Customer purchases 
+B. Opportunity Management & Tracking 
+Simplify Sales Opportunities with GTM flows & categories, like 
+i) New Business 
+ii) Amend (Upsell, Cross-Sell, Downsell)
+iii) Renewal
+iv) Services
+Optimize Opportunity Management by eliminating and reducing number of attributes captured during opportunity creation; ensure opportunity process is integrated (bi-directional) with Quote, Order and Renewals.
+A. Quotation, Approvals, Templates & Proposals
+Unify Subscription and Service quoting with CPQ (the process is currently distributed with multiple systems)
+Improve ‘Ease of Doing’ business with Zuora and simple Sales Quoting by enabling Guided Selling and Attribute Based Pricing
+Empower Sales for quotes with Standard discounting and Terms & Conditions 
+Deals Desk Reviews only Complex Non Std Deals 
+Simplify /  Streamline and Optimize Non Std Approval criteria and thresholds 
+Process change for Non Std Terms and Conditions quotes by leveraging Contract Life Cycle Management 
+
+B. Quote to Order 
+Streamline Quote to Order process by capturing mandatory attributes upfront on Quote to reduce Order Manual validations (Billing Accounts and Contacts / Payment Terms etc)
+A. Renewal Opportunity & Quote 
+Increase Renewal efficiency by automating Renewal Opportunity and Quote creation, with business rules driven by customer preference, expiring subscriptions, evergreen subscriptions etc
+Enable Business Process to Identify Proactive (Systematic) Quotes 
+Improve visibility into Customer Purchases, Add ons and accurate ARR spend tracking by providing Customer Purchase History through seamless integration with Order Management
+Enable amendment flow for Quantity Expansion and Upgrades 
+Standardize Quote to Order process for New Business & Renewals 
+A. Order Validations and Processing  
+Reduce Order touch rate by enabling rules to validate Quotes before submission
+Automate the order validation processes with orchestration to eliminate manual touch, improve auto book orders and order cycle time
+
+18
+
+Opty to Order Assessment : CPQx OOB / Summary
+Epic
+# of Use Cases / User Stories
+Amendments & Renewals
+35
+Contracting (CLM)
+38
+Order Capture
+2
+Pricing
+30
+Product Configuration
+31
+Quoting
+51
+System
+8
+Grand Total
+195
+Supported in Zuora CPQx & External CLM*
+(with required process changes)
+* Requires required process changes and advanced Configuration for CPQ; CLM requirements and user stories specific to Zuora will be effectively met by leveraging a standard ‘External’ CLM solution available in the marketplace
+Total Use Cases for CPQx & CLM
+195
+Zuora CPQx Roadmap
+Not Supported in Zuora CPQx
+(need customization)
+EXECUTIVE SUMMARY
+Draft User stories authored only for CPQ and CLM processes (config-price-quote-contract-order) and Billing integration
+Opportunity Management, SKU Rationalization, Account Rationalization and Billing (ABP), Partner Quoting or Self-Service Commerce need to authored separately
+Draft User Stories will be reviewed with business stakeholders and updated during Grooming sessions; so, the count of these stories are subject to change during CPQ Implementation. 
+180 (~92%)
+3 (<1%)
+12 (~7%) 
+Use Case / User Story Doc
+19
+
+Opty to Order Assessment : Proposed Roadmap
+Get Ready
+Walk
+Run
+EXECUTIVE SUMMARY
+Data Foundation
+Opportunity & Forecasting
+Configure-Price- Quote
+Order-Amend- Renew
+Billing-Rev
+~195 total User Stories Scoped for CPQ & CLM
+SKU Rationalization
+1
+Opportunity Products (Sales Cloud Enhancement)
+2
+Opportunity-Quote (IQ) Sync
+2.1
+Product level
+Forecast
+2.2
+CPQx OOB Implementation (Licenses / Services)
+3
+Ramp/Tiered Pricing/ Manual Discount
+3.1
+Standard Approvals
+3.2
+Document Generation
+3.3
+Quote to Order
+3.4
+Manual Renewal
+Manual Opty Closure
+Order to Billing Integration
+4
+~112 User Stories Scoped for Get Ready (MVP) : Step 3
+Account Rationalization
+5
+Automate Opty Updates - Amendments
+6
+Automate Opty Closure
+6.1
+Leverage Attribute Based Pricing
+7
+Enhanced Config Experience
+7.1
+CLM Implementation
+7.2
+Renewal Automation
+8
+Renewal Integration
+9
+~72 User Stories Scoped for Walk : Step 7 (including CLM)
+Product Bundling
+10
+Advance Approvals
+Advance Pricing
+Partner Quoting
+11
+RTM Marketplace
+11.1
+Auto Booking
+12
+10.1
+10.2
+~11 User Stories Scoped : Step 10 (excludes Step 11)
+20
+
+Assumptions
+Product and Pricing Data is rationalized and is ready before Salesforce Opportunity Management changes and CPQ project is kicked off
+Business Process changes are reviewed and approved with the right stakeholders before CPQ Project is kicked off
+Customizations will be reviewed and approved by Zuora Leadership & Product Team
+Billing and Revenue team will analyze downstream impacts from CPQ Implementation
+CLM vendor is finalized to automate and integrate with CPQ proposal, templates and redlining process
+Need confirmation from Zuora CPQ Product team for 3 user stories that are in roadmap
+Use Case#1 - Availability of rules that enables guided configurations
+Use Case#2 - ABP functionality within CPQx (currently ABP is enabled only in Zuora Billing)
+Use Case#3 - Rule that will enable Guided Selling to the users
+
+Zuora stakeholders will review and approve user stories associated with Epics that need Customization;  this is a tentative list and these stories will be reviewed with business during Grooming sessions 
+Ability for the sales user to compare Zuora Products - feature is Compare Products 
+Ability for the sales user to create Quote revisions (this is different from creating multiple Quotes per opportunity)
+Ability for the sales user to perform bulk actions on Quote cart page
+Ability for the sales users to request additional users to edit quotes using Quote Collaboration
+Ability for the system to auto create Renewal Opportunities and Quote automatically based on subscription end date 
+
+EXECUTIVE SUMMARY
+21
+
+Opty to Order Assessment : Service Blueprint
+Zuora CPQx Screens from E2EUAT Sandbox Environment 
+Primary personas linked to the journey
+5  Key Journeys Mapped in the Service Blueprint
+22
+
+Opty to Order Assessment : Proposed UX Roadmap
+Key User Research Findings
+Proposed Design Solutions & Their Impact
+Next Steps and Recommendations
+
+
+
+
+“
+Prototype Design: Incorporating insights into a functional prototype
+
+
+User Testing Phase: Beta testing with selected user groups
+
+
+Product + Eng + UX Teams Collaboration: Assessing backend support for new features
+
+Design Improvement Plan   
+
+Improve Consistency and Standards
+
+Aesthetic & Minimalist Design
+
+Accessibility
+
+User Centered Design (New Capabilities)
+
+
+Improved user experience
+
+Reduced deal cycle time 
+
+Increased user satisfaction  
+
+
+
+HIGH
+Impact
+Lacks a Consistent Design
+AE Interviews
+Conducted
+8
+Design Workshop
+PHASED APPROACH
+Product Catalog Complexity
+
+Standard Quote Approval
+
+Manual Renewals
+MAJOR THEMES
+EXECUTIVE SUMMARY
+23
+
+Opportunity to Order 
+CPQx Analysis
+24
+
+Steps to Optimize Your Quote-to-Cash Process
+1
+Lead and Opportunity Management
+2
+Product Selection of Configuration
+3
+Pricing
+4
+Quote Creation
+5
+Contracting
+6
+Order Fulfillment
+Order Capture
+7
+Billing and Invoicing
+8
+Amendments and Renewals
+25
+
+Optimizing Quote to Cash process
+S.No
+EPIC
+Features
+Impact
+1
+Lead & Opportunity Management
+Opportunity Type (New Biz / Expansion / Renewal)                                                         
+Opportunity Products       
+Multiple Quotes per Opportunity          
+Primary Quote
+Quote to Opportunity Sync  
+Renewal Opportunity - Automate Add  On Updates
+Auto Closure
+Accurate  Forecasting 
+Streamline Opportunity Management 
+Automated 
+Seamless Integration
+Transform Quote to Cash Business Process (multi-line quote)
+Simplify , Automate & Efficient Business Process (SCALE)
+2
+Product Configuration
+Product Offerings - BASE + Add on  
+Product Attributes 
+Guided Selling Config Rules
+Config APIs 
+Pre-configured Product Bundling
+Configurable Product Bundling 
+Go to Market 
+Sku Proliferation
+Accurate Configuration 
+Improved Deal Size 
+Build a Unified Commerce Platform which enables all Route to Market and all Product offerings
+Zuora on Zuora - Customer Zero for Zuora CPQ
+3
+Pricing 
+Attribute Based Pricing 
+Tiered Pricing 
+Price Ramps 
+Channel/Contractual Discount
+Deal Reg Discount  
+Promotions
+Price Waterfall 
+Asset Based Pricing
+Pricing API
+Pricing and Packaging 
+Profitability 
+Deal Guidance 
+Faster Approvals 
+Build a Unified Commerce Platform which enables all Route to Market and all Product offerings
+Simplify , Automate & Efficient Business Process (SCALE)
+Zuora on Zuora - Customer Zero for Zuora CPQ
+4
+Quoting 
+Budgetary Quote
+Clone Quote 
+Merge Quote 
+Quote Rules
+Quote Approval - Std - Sales Empowerment
+Quote Approval -Non Std - Deals Desk
+Quote Collaboration 
+Partner Quoting 
+Escalation and Delegation Rules 
+Quote APIs
+Efficiency 
+Improved Deal Cycle Time
+Sales Empowerment 
+Deal Governance 
+Simplify , Automate & Efficient Business Process (SCALE)
+26
+
+Optimizing Quote to Cash process
+S.No
+EPIC
+Features
+Impact
+5
+Contracting
+Quote Templates 
+Std Clause Library 
+Non Std Terms & Conditions 
+Esignature
+Dynamic Template Generation 
+Improved Productivity for Deal management 
+Streamlined Deal Governance 
+Seamless Process between Sales and Deal Mgmt 
+Simplify , Automate & Efficient Business Process (SCALE)
+6
+Order Fulfillment 
+
+
+Order Pre Validation 
+Quote to Order
+Auto Booking 
+EDI Order Capture 
+Seamless Integration
+Lower Order Touch Rate 
+Auto Bookings  
+Faster Quote to Cash Cycle  
+Simplify , Automate & Efficient Business Process (SCALE)
+7
+Billing & Invoicing 
+
+
+Plans, pricing, & promotions
+Billing Cycle 
+Billing Frequency / Billing Term
+Multi-Currency 
+API Integrations 
+Improved Customer Experience 
+Faster Quote to Cash cycle 
+Simplify , Automate & Efficient Business Process (SCALE) 
+8
+Amendments & Renewals 
+
+
+Renewal Opportunity Management 
+Renewal Quote Automation 
+Full & Partial Renewal 
+Full & Partial Upgrades 
+Purchase History 
+Short Co-Term 
+Forward Co-Term
+Renewal Notification 
+Renewal Automation 
+Improved Customer Experience 
+Efficiency
+Simplify , Automate & Efficient Business Process (SCALE)
+27
+
+SaaS Standard Epics / User Stories
+User Stories
+Function
+Persona
+Story Name
+Story Summary
+Details
+Product Administration
+Product Admin/ CPQ Admin
+Create & Manage Products
+Ability to manage the lifecycle and all the attributes of the product as part of the Product Administration so that the sales reps/end users can find and Quote the Products as part of the Quotation Process
+View & Search for the Products
+Creation of New Products
+Add/Update the Product Attributes (like Name, Description, Code, Family, Category, Images etc..) on the Product record.
+Define custom product attributes
+Add/Update the start and end dates of the Product record
+Mark the product as Active/Inactive
+Product Administration
+Product Admin/ CPQ Admin
+Create & Manage Product Bundles
+Ability to create & manage the bundles and bundle structure as part of Product Administration so that the sales reps/end users can easily configure the solution to meet the customer needs as part of the Quotation Process
+View & Search for the Bundle Products
+Creation of New Bundle Product
+Define the Bundle Product Attributes that would impact the Bundle (Bundle Type , Configuration Experience..)
+Add/Remove the Options Products to the Bundle. Options can be other Products including bundles
+Setup the Groupings,Group level Attributes ( Group Type ) , Sequence for the options to display the Options products in Configuration Process
+Sharing of the Option Groupings across multiple Bundles
+Setting up of default options/mandatory Options/default quantities of the options with in a bundle
+Mark the bundle as Active/Inactive or specify the start and end dates for availability.
+Sample
+28
+
+Opty to Order Assessment : CPQx OOB / Summary
+Epic
+# of Stories
+Amendments & Renewals
+35
+Contracting (CLM)
+38
+Order Capture
+2
+Pricing
+30
+Product Configuration
+31
+Quoting
+51
+System
+8
+Grand Total
+195
+
+* User Stories will be updated during Grooming sessions with Business teams; so, this number is subject to change during CPQ Implementation. 
+** Need advanced Configuration for CPQ; CLM requirements and user stories specific to Zuora will be effectively met by leveraging a standard ‘External’ CLM solution available in the marketplace
+Total US related to CPQx & CLM
+195*
+Supported in Zuora CPQx & External CLM**
+180 (~92%)
+Zuora CPQx Roadmap
+3
+(<1%)
+Not Supported in Zuora CPQx - need customization
+12
+(~7%) 
+Draft User stories authored only for CPQ and CLM processes (config-price-quote-contract-order) and Billing integration
+Opportunity Management, SKU Rationalization, Account Rationalization and Billing (ABP), Partner Quoting or Self-Service Commerce need to authored separately
+195 User stories include 38 stories for CLM
+Get Ready : 112 Scoped (94 supported OOB, 16 Customizations, 2 in product roadmap)
+Walk Phase : 72 Scoped (26 supported OOB Zuora, 34 Supported OOB CLM, 11 Customizations, 1 in product roadmap)
+Run Phase : 11 Scoped, all are Customizations
+29
+
+Opty to Order Assessment : CPQx OOB / Summary
+Epic
+# of Use Cases / User Stories
+Amendments & Renewals
+35
+Contracting (CLM)
+38
+Order Capture
+2
+Pricing
+30
+Product Configuration
+31
+Quoting
+51
+System
+8
+Grand Total
+195
+Supported in Zuora CPQx & External CLM*
+(with required process changes)
+* Requires required process changes and advanced Configuration for CPQ; CLM requirements and user stories specific to Zuora will be effectively met by leveraging a standard ‘External’ CLM solution available in the marketplace
+Total Use Cases for CPQx & CLM
+195
+Zuora CPQx Roadmap
+Not Supported in Zuora CPQx
+(need customization)
+EXECUTIVE SUMMARY
+Draft User stories authored only for CPQ and CLM processes (config-price-quote-contract-order) and Billing integration
+Opportunity Management, SKU Rationalization, Account Rationalization and Billing (ABP), Partner Quoting or Self-Service Commerce need to authored separately
+Draft User Stories will be reviewed with business stakeholders and updated during Grooming sessions; so, the count of these stories are subject to change during CPQ Implementation. 
+180 (~92%)
+3 (<1%)
+12 (~7%) 
+Use Case / User Story Doc
+30
+
+CPQx Gap Analysis
+Gap
+Assessment
+Customization / Configuration
+Opportunity Products 
+Standard Salesforce Capability 
+Can be configured with Standard Salesforce Pricebook
+Configuration
+Quote to Opportunity Sync
+Opty Sync is Supported on Salesforce OOB Quote Object. Since Zuora CPQx is using Zuora Quote object this needs customization
+Customization
+Renewal Amendment Opportunity - Auto Update 
+Not Supported OOB. Needs Customization
+Customization
+Renewal Quote Automation
+Not Supported OOB. Needs Customization
+Customization
+Opportunity Closure Automation
+Not Supported OOB. Needs Customization
+Customization
+Configuration Experience - Base + Add ons 
+Enhanced Config Experience not supported OOB.Needs Customization
+Customization
+Attribute Based Pricing 
+Product roadmap for 2024. Limited availability not Supported in Revenue. Only Support attributes at Account and Subscription level thru API onlu not thru UI 
+Customization
+Document Generation - Language Clauses 
+Static and Dynamic Clauses to be added to Quote output Documents based on Quote conditions - Need Customization
+Customization
+Opportunity Type (42) and Opportunity Fields (76) Rationalization
+Business Needs to Rationalize the Opportunity Layout and Simplify the Opportunity types and Fields 
+Configuration
+31
+
+CPQx Gap Analysis
+Gap
+Assessment
+Customization vs Configuration
+Product Bundling 
+Not Supported OOB.Downstream impacts needs to be analyzed and assess across all the products . Need to understand Product roadmap
+Customization
+Quote Collaboration
+Salesforce Collaboration is enabled . However that is standard chatter collaboration. Quote collaboration needs detailed access control and visibility rules.Not Supported OOB. Needs Customization
+Customization
+CLM - Contract Lifecycle Management
+MSAs and Sells Contracts
+No OOB Capability/Tool  available.
+Customization
+Contract Consolidation 
+Use cases for consolidating customer Contracts is not supported OOB . Need customization .
+Customization
+Auto Booking
+Currently all Quotes goes through Zuora billing for manual Order Validation and Booking . Auto Booking for Quotes to Order is not Supported OOB
+Customization
+Partner Quoting - Self Service 
+Currently Partner Quoting Self Service is not supported OOB .
+Customization
+Marketplace Orders 
+Currently Marketplace Offers and Orders  are not automated and Supported OOB
+Customization
+Account and Contacts  Data Cleanup and Sync Between Zuora Billing and Salesforce 
+One time Data Cleanup and Sync between Zuora Billing and SFDC Master Data
+Data 
+32
+
+ZonZ CPQ Implementation & Roadmap
+MVP
+  
+  
+  
+  
+Enhancements
+NextGen
+KTLO
+CPQx
+Licenses & Services
+Account and Contacts Data Cleanup and Sync
+Opportunity Products
+Opportunity Type Rationalization
+Opportunity Fields Rationalization
+Opportunity-Quote Bidirectional Sync
+Ramp & Tiered Pricing
+Automate Approvals
+Document Generation - Static vs Dynamic
+Quote to Order 
+Manual Renewals
+IQ Legacy Quotes Only
+CPQx Enhancements
+Implement User Feedback from MVP 
+Attribute Based Pricing
+Enhanced Configuration Experience
+Automate Approvals
+Automate Renewal Quoting 
+Automate Amendment  Opportunity 
+Automate Opportunity Closure
+CPQX UX Enhancements
+IQ Readonly
+
+CLM Implementation
+NextGen CPQx
+
+Product Bundling (Fixed/Dynamic)
+Advanced Pricing(Promos/Channel)
+Partner Quoting
+Marketplace Transactions
+Automate Order Validations  
+Business Intelligence
+Art of Possible Ux
+IQ EOL
+
+
+Post Production Support 
+Run the Business 
+Data Governance & Maintenance
+Common Issues & Resolution
+*IQ Migration Strategy Needs to be Reviewed with Biz teams
+33
+
+CPQx - High Level Recommendations 
+MDM - Single Source of truth and Sync between Zuora Billing and Salesforce
+Enable Opportunity Products 
+Enable Opportunity Sync (Bi-Directional)
+Enable Enhanced Configuration Experience 
+Enable Attribute Based Pricing
+Enable Auto Approvals for Std Terms and Conditions 
+Enable Contract Life Management for MSA/Sales Contracts 
+Enable Renewal Quote Automation
+Enable Auto Update of Renewal Opportunity for Amendments
+Enable Opportunity Closure Automation
+Enable Dynamic Document Generation for Language and Clauses 
+Enable Quote to Order Automation and Auto Booking of Standard Orders 
+Enable Product Bundling 
+Enable NextGen UX
+Enable Partner Self Service and Marketplace Offers 
+EOL IQ
+34
+
+CPQx - Standard User Stories Assessment
+Persona
+#Of Stories
+Approver
+5
+Collaborator
+4
+CPQ (Template) Admin
+3
+CPQ Admin
+23
+Pricing Admin/CPQ Admin
+22
+Product Admin / CPQ Admin
+18
+Salesrep
+59
+Salesrep/Customer
+1
+Salesrep/Order Ops
+7
+Salesrep/Renewal Ops
+10
+System
+9
+Grand Total
+161
+CPQX Supported
+# of User Stories
+Advance Configuration
+16
+CPQX not Supported
+12
+CPQX Product Roadmap
+3
+CPQX Supported
+108
+Supported using Doc Gen
+4
+Zuora Billing Supported
+18
+Grand Total
+161
+35
+
+CPQx - Standard User Stories Assessment By Phases
+Epic
+# of User Stories
+Agreement Activation
+4
+Agreement Alerts and Notifications
+1
+Agreement Amendments
+4
+Agreement Approvals
+4
+Agreement Cancellation
+1
+Agreement Expire
+1
+Agreement Initiation
+9
+Agreement Signatures
+4
+Agreement Termination
+1
+Author and Negotiate
+4
+Document Generation
+3
+Reports and Dashboards
+2
+Grand Total
+38
+
+
+
+CLM Use Cases
+
+MSAs
+NDAs
+Sales Contracts 
+36
+
+Information Architecture
+Billing
+Opportunity
+Quote
+Contract
+Order
+Fulfillment
+Billing
+RevRec
+CRM
+Leads
+Account Management
+Contacts
+Territories
+CPQ
+Configure
+Price
+Quote
+Approval
+Renewals
+
+Contract Management
+Create
+eSignature
+Archive
+Order Management
+Entitlements
+Provisioning
+Subscriptions & Payments
+Invoice
+Payment Processing
+
+Zuora Revenue
+Revenue Recognition
+FinancialForce
+CPQ
+Revenue
+Items & Pricing
+Tax 
+Reporting
+License / Services / Bundles / Add Ons
+List Price / Discount Guidance / Renewal Uplifts  
+   Purchase History
+CRM Connector
+Zuora 360
+37
+
+Zuora CPQ Architecture
+The diagram below illustrates the componentization architecture in Zuora CPQ.
+Configurable UI Flow Components
+Select Billing Account
+Force.com Platform
+Order Preview
+Create Quote
+Select Products
+Quote Details
+Configurable Objects, Triggers, Validation Rules
+Pluggable UI Components
+Lookup
+Hosted Page
+Property
+List
+Notification
+Apex Components 
+Manage Rate Plans
+Z-Quote Config. Utilities
+Order Preview
+Send to Z-Billing
+Quote Wizard Utilities
+ZDK
+Zuora for Salesforce Quoting Wizard
+38
+
+Opportunity to Order 
+CPQ Future State UI/UX
+39
+
+Define Objectives and Scope
+01
+Understand the Users
+02
+03
+Evaluating 3 Key CPQx Journeys
+03
+03
+Heuristic, Accessibility & Compliance
+04
+Redesign, Monitor & Iterate
+05
+UX AUDIT ROADMAP
+40
+
+Identify Usability Issues
+Reduce Deal Cycle Time
+Improve User Satisfaction
+UX Audit Objectives and Scope
+OBJECTIVES
+SCOPE
+Specific Modules/Features to Focus On
+User Interfaces and Interactions
+Customizations and Configurations
+41
+
+READ THE FULL SUBWAY MAP
+PAIN POINTS MAPPED ON THE CPQ JOURNEY
+Understanding the Users
+Heuristic review of CPQx Out of the Box version on Sales Force
+42
+
+New Quote
+Professional Services Quote
+Amendment/Renewals Quote
+FEATURES AND FUNCTIONALITIES
+Evaluating 3 Key CPQx Journeys
+Heuristic review of CPQx Out of the Box version on Sales Force
+43
+
+User Control & Freedom
+Consistency & Standards
+Recognition rather than Recall
+Error Prevention
+LOW
+HIGH
+MEDIUM
+MEDIUM
+Users have control over navigation and can undo actions.
+Lacks a consistent design with varied & non-standardized UI.
+Interface mixes fields, causing errors and add-on mis-interpretations.
+Filter Interface Inconsistency for Product Selection 
+Priority of Read-only Fields Impacting User Task Efficiency 
+Users often struggle with recalling specific steps in complex processes.
+HEURISTIC SEVERITY
+Interface Usability
+44
+
+Flexibility & Efficiency of Use
+Aesthetic & Minimalist Design
+Error Recovery
+Help & Documentation
+MEDIUM
+HIGH
+LOW
+MEDIUM
+Users generally find Salesforce efficient but mention a learning curve for advanced features.
+Some users find the interface overwhelming and prefer a cleaner design.
+Users appreciate the availability of help materials but sometimes have difficulty finding specific information.
+Users find the error recovery process helpful
+Error UI Inconsistencies
+HEURISTIC SEVERITY
+Feedback & Errors
+45
+
+Consistency in Terminology
+Feedback & Comm.
+User Centered Design
+Accessibility
+MEDIUM
+MEDIUM
+HIGH
+HIGH
+In products with heavy customization, terminology can vary, causing confusion.
+Some users find the interface overwhelming and prefer a cleaner design.
+Room for improvement.
+User feedback may not always result in immediate changes.
+Menu Labels Grouping needs Improvement 
+HEURISTIC SEVERITY
+Adaptive Efficiency
+46
+
+Team Collaboration
+Configure Products
+Browse Catalog
+Create New Quote
+Select Opportunity
+Quote Approval
+Review and Submit
+Account Executive
+Discounts and Pricing
+AE’s Journey: 8 Steps in CPQ UX Revamp
+Key Enhancements
+
+Unified Catalog View:
+A Unified Catalog streamlining SKU management and accelerating product selection.
+
+Configure Products Experience:
+Customization Made Easy: Attribute-Based Pricing and Bundles for improved customer engagement and upselling.
+
+Quote Detail Page:
+Optimized Layout: Focus on Line Items, reducing scroll and adding discount guidance capability.
+ART
+of
+POSSIBLE
+
+Opportunity
+Quote
+Catalog
+Configure
+Pricing
+Submit
+Approval
+AE-Enhanced Opportunity View
+AE
+Order Package  
+Opportunity Closure   
+Streamline Opportunity Mgmt
+1. Opportunity Type - (New Biz / Expansion / Renewal)                                                         
+2. Opportunity Products       
+3. Multiple Quotes per Opportunity       
+Improved ForecastingMultiple quotes per opportunity for accurate opportunity assessment.     
+Streamlined Stage Progression Automates opportunity stage updates in sync with the quoting process for enhanced efficiency and tracking.
+ART
+of
+POSSIBLE
+48
+
+Opportunity
+Quote
+Catalog
+Configure
+Pricing
+Submit
+Approval
+Simplifying Success
+Smart Defaults Minimize User Input.
+Intuitive Slider for Swiftly Designating Primary Quotes.
+Shortest Path to Action 
+AE
+Order Package  
+Opportunity Closure   
+Route to MarketOptimize market strategy for targeted customer engagement.
+ART
+of
+POSSIBLE
+49
+
+Opportunity
+Quote
+Catalog
+Configure
+Pricing
+Submit
+Approval
+Unified Catalog Advantages for the AE
+Unified Catalog streamlining SKU management and accelerating product selection.
+Intuitive Typeahead Search in the Browse Catalog, Improves Efficiency and Accuracy in Product Handling.
+Precision Targeting with Custom Filters 
+Order Package  
+Opportunity Closure   
+AE
+ART
+of
+POSSIBLE
+50
+
+Configure UX 
+Opportunity
+Quote
+Catalog
+Configure
+Pricing
+Submit
+Approval
+FlexibilityAE’s can configure products or services based on attributes to accommodate a wide range of customer needs and preferences. 
+Dynamic Product SelectionTailor offerings with a wide array of base products and add-ons, integrated with real-time configuration validation for customer-specific needs.
+Dynamic PricingThe price can automatically adjust based on the selected attributes, allowing for more accurate and real-time pricing.
+Order Package  
+Opportunity Closure   
+AE
+ART
+of
+POSSIBLE
+51
+
+Quote UX
+Opportunity
+Quote
+Catalog
+Configure
+Pricing
+Submit
+Approval
+Discount Guidance Empowers AEs with historical data and trends, allowing for smarter discounting that's backed by analytics.- Attribute Based Pricing - Tiered Pricing - Price Ramps 
+Collaborative Quoting Leverage Expert Insights for Accurate, Competitive, and Rapid Quote Approvals.
+Optimized Layout Minimizes Scrolling for AE’s, Prioritizes Line Item Visibility. 
+AE's Struggle with Limited Visibility - Line Items Not Visible in Initial Browser Scroll
+Order Package  
+Opportunity Closure   
+Quote Terms (Non-Standard Terms)Enable the inclusion of non-standard terms in your quotes, ensuring all unique agreement details are captured for approval.
+AE
+ART
+of
+POSSIBLE
+52
+
+Approval Process Overview
+Opportunity
+Quote
+Catalog
+Configure
+Pricing
+Submit
+Approval
+Financial OverviewCondensed quote financial summary for strategic evaluation by Account Executives
+Approval StagesStages for streamlined approval process progression.
+Approval Visibility and Status TrackingStreamlined real-time approval tracking for Account Executives.
+Visibility of Non-Standard Terms Visibility for non-standard term approvals
+Order Package  
+Opportunity Closure   
+Streamlined Quote ApprovalEmpower sales team with standardized, transparent approval processes, ensuring efficient and clear decision-making for quote confirmations.
+AE
+ART
+of
+POSSIBLE
+53
+
+Streamlined Order Processing
+Opportunity
+Quote
+Catalog
+Configure
+Pricing
+Submit
+Approval
+Create Order PackageEfficiently create and manage Order packages with integrated PO numbers and a summarized view of quotes, streamlining the order processing and enhancing accuracy.
+Order Package  
+Opportunity Closure   
+AE
+ART
+of
+POSSIBLE
+54
+
+Unified Quote to Opportunity Process
+Opportunity
+Quote
+Catalog
+Configure
+Pricing
+Submit
+Approval
+Order Package  
+Opportunity Closure   
+AE
+Enhanced Sales EfficiencyLeverage automatic synchronization to accelerate the 'Closed Won' journey, reducing manual effort and improving customer relationship management
+ART
+of
+POSSIBLE
+55
+
+Opportunity to Order 
+Assessment & Advisory
+56
+
+Assessment & Advisory : Scope & Outcomes
+Review, Document AS-IS & TO-BE process flows and Pain Points
+Process, System and Data Transformation (future state GTM & monetization models)
+Organizational readiness (future state GTM & monetization models)
+Review Business Process Architecture (future state GTM & monetization models)
+Review Industry Best Practices; Identify Pain-points; review Recommendations - Big Rocks
+High Level Epic & Story Planning 
+Review Personas for Sales and Sales Operations; Review User Experience (UX) requirements
+Development Roadmap and Phases
+57
+
+Remarks from our executive sponsors 
+Speaker: Matt & Karthik
+
+Matt Dobson
+SVP & Chief Accounting Officer
+Karthik Chakkarapani
+SVP, Corporate Operations & CIO
+58
+
+Team Introduction - Zuora
+Corporate Ops
+Roles
+Karthik Chakkarapani
+Exec Sponsor
+Monica Augustine
+VP, Customer Experience
+Sakshi Agarwal
+IT Project Manager
+Josh Lawrence
+Sr. Director Applications
+Mark Gill
+Sr. Director Applications
+Sumit Bahukhandi
+IT Manager, Quote-to-Cash
+Shahab Rahmani
+Sr. IT Manager
+Morgan Steagall
+Sr. Business System Analyst
+Business Resources
+Roles
+Matt Dobson
+Exec Sponsor
+Mike Garitty
+Sr. Director, Pricing & Strategy
+Evan King
+Process Lead, Quote-to-Cash (Pricing & Packing)
+Jerome Cornet
+Sr Director, Sales Operations
+Denise Davidson
+Sr. Project Manager (Sales Operations)
+Abby Clark
+Head of Quote-to-Billing
+Rebecca Elliott
+Process Lead, Quote to Cash
+PJ Kalira
+Sr. Deal Desk Specialist
+Kaela Gentry
+Sr. Billing Operations Analyst
+Rachel Noel
+Director, Revenue Accounting
+Mallory Foster
+Manager, Revenue Operations
+Product Resources
+Roles
+Petra Ligthart
+Sr Director, Product Management
+John Byrnes
+Sr. Product Manager
+59
+
+Team Introduction - Forsys & others
+Resources
+Roles
+Srinivas Vemuri
+CPQ Business Architect
+Kiran Avaral
+Engagement Manager
+Abhijit K
+CPQ Solution Architect
+Nimesh Panchal
+CPQ, Billing & Revenue Architect
+Rajiv Kaul
+UX Director
+60
+
+O2O - Program Approach : Iterating Convergence
+Optimal Roadmap & Plan
+Future State:
+User Experience & Business Requirements
+Feasibility Assessment (People, Process & System)
+Business Process Best Practices
+Product & Platform Capabilities (Salesforce, CPQ, Billing, Revenue)
+Discovery of current business processes 
+(Sales, Quoting & Billing)
+Product Pricing and Packaging vision & plan
+
+
+61
+
+Opty to Order Assessment : Schedule
+6
+2
+ASSESS
+Day in the Life 
+Account Executive
+Renewals
+Deal Desk Team
+ASSESS
+Cross-Functional Team Workshops: Process Review and Future State Overview
+3
+ANALYZE
+Internal Strategy & Analysis Sessions
+4
+ANALYZE
+Product Functionality 
+6
+ADVISE
+Workshop Insights (Dec 11)
+Update Analysis Slides
+Stakeholder Engagement
+Future State Planning
+5
+ANALYZE
+Pricing & Packaging Vision & Plan
+CPQ Product Assessment
+8
+ALIGN
+AS-IS/TO-BE Process Overview 
+Industry Best Practices
+CPQx Gap Analysis
+Recommended CPQ UX for Sales/ Ops/Deal Desk
+Solution Roadmap
+7
+Week 1: 11/6
+1
+Week 3: 11/20
+Week 5: 12/4
+Week 2: 11/13
+Week 4: 11/27
+Week 6: 12/11
+ADVISE
+Final Readout - Roadmap and Next Steps
+Week 7: 1/8
+Week 8: 1/15
+62
+
+Weekly Schedule
+Week
+Planned Activities
+Status
+Key Outcomes
+Assess: Week 1- 11/6 to 11/10
+
+CPQx Experience Design Workshop
+Workshops planned between Sales Ops, Pricing & Packaging, Billing, Deals Desk, Revenue and IT teams to review current processes, best practices and brief to-be state
+
+High level user persona and Journey
+
+
+Complete
+Reviewed As-IS business process:- Accounts and Contacts - gaps between Zuora and Salesforce; Opportunity Management - identify current issues, impacts to Quote, Oder, Forecasting and territory management;  Quote Management - reviewed high level Product Catalog,; Pricing, Discounting , Approvals, T&Cs and Proposals;  Order Management - reviewed high level Order Management flows, Amendments/Change Orders;  Billing Management - Schedules, Amendments, Churns, Adjustments, Cancellations, Terminations, etc; Revenue Management - High level AS-IS process for Revenue Management ; impacts from upstream processes (Quoting, Ordering and Billing)
+Reviewed high level To-Be business process:- Identified Primary and Secondary user personals; Laid out high level over user journeys for Opportunity, Configure, Price and Quote processes; Consolidated Pain points across Opportunity, Quote, Order, Bill and Rev Rec are documented; 
+Laid out High Level user journeys
+Assess : Week 2 11/13 to 11/17
+Day In Life of : Account Executive, Solution Engineer and Deals Desk team
+
+
+Complete
+Document activities and pain points from Personas for using future state CPQ systems
+[Refer Slide 6 for interview details]
+Group and summarize Pain points identified in week#1
+Review CPQx / Prototype
+Analyze : Week 3 11/20 to 11/24
+THANKSGIVING WEEK - LIMITED ACTIVITY
+
+
+Complete
+Day In Life (DIL) meetings - Spill over meetings with Zuora from week #2, 
+Internal Huddle on Key learnings from DIL meetings; identify Big Rocks
+CPQx Prototype (work in progress - access received on 11/22)
+Analyze : Week 4
+11/27 to 12/01
+Meetings with Sales Ops, Deals Desk, Pricing / Packaging team on follow up on Key Pain Points and Big Rocks, Renewals
+Work with Product team to understand detailed features for CPQx, including its Release Roadmap
+
+
+Complete
+Reviewed Big Rocks and discussed Future State Solution Options with the Sales Ops and Renewals team
+Reviewed Pricing and packaging data (received 11/28): Build Attribute based configuration pricing scenarios 
+Documented high-level User Stories based on the initial assessment, will be refined in a few weeks.
+Walkthrough of Attribute-Based Pricing Model with Zuora Product Team.
+Layout User Journeys for differing Quote flows (UX)
+Analyze : Week 5 12/04 to 12/08
+Meetings with Sales Ops, Deals Desk, Pricing / Packaging team on follow up on Key Pain Points and Big Rocks
+Work with Product team to understand detailed features for CPQx, including its Release Roadmap
+
+
+Complete
+Reviewed and Finalized the decks for Workshops during Week of Dec 11th
+
+Document product gaps based on ideal Customer journey for Sales Ops, Renewals, and Deals Desk teams
+63
+
+Recap
+Week
+Planned Activities
+Status
+Key Outcomes
+Align : Week 6 12/11 to 12/15
+Onsite Workshop to review - Findings of As-Is, To-Be Experience at L1 level, To-Be Process at L1 Level, To-Be Feasibility at L1 level, To-Be architecture, Solution options, recommendations with impact
+
+
+Complete
+Align : Week 7 12/18 to 12/22
+Summarize the feedback and priorities identified from Workshops during Dec 11th
+Update Analysis slides
+Complete any interviews and meetings with Sales Ops, Deals Desk, Pricing / Packaging team on follow up on Key Pain Points and Big Rocks
+Continue to work on Future State CPQ journeys for Zuora Sales teams
+
+
+
+Complete
+AS-IS and TO-BE Flows
+Pain points, Challenges and Ideal State
+CPQ User Journeys and experience for Sales and Deals Desk
+Product Gaps from delivering the experience using Zuora CPQx
+Week 8
+12/25 to 12/29
+Technical Assessment of the CPQx product against the Epic stories
+
+
+Complete
+No Meeting with Zuora
+Internal Huddle for Forsys
+Week 9
+1/1 to 1/5
+Technical Assessment of the CPQx product against the Epic stories
+
+
+Complete
+No Meeting with Zuora
+Internal Huddle for Forsys
+Advise : Week 10 1/08 to 1/12
+Final ReadOut - Review Roadmap and Next steps to Zuora Ops
+
+
+Complete
+Make updates on key deliverables
+Align : Week 10 1/15 to 1/19
+Feedback / Review / Assessment Project Closure
+
+In Progress
+Review Documentation with Zuora Stakeholders
+Transition to Zuora
+Plan on roadmap and next steps
+64
+
+Process Framework
+Analyze and present findings
+
+
+ANALYZE
+Recommend an approach / Read Out
+
+
+ADVISE
+Assess & Evaluate the AS-IS State, User Experience
+ASSESS
+Alignment  with Stakeholders
+
+ALIGN
+The 4A’s of Forsys Assessment & Advisory Process 
+3 Weeks
+2 Weeks
+1 Week
+2 Weeks
+Nov 6th
+Jan 19th (target)
+We are here
+65
+
+Assessment & Advisory Framework : Zuora
+ASSESS
+.. & evaluate the AS-IS State
+ANALYZE
+.. & present findings
+ADVISE
+.. recommended approach
+ALIGN
+.. with stakeholders & roadmap
+
+Business Process
+Account Management 
+Opportunity Management
+NPI Process 
+Product Catalog, Pricing & Discounting
+Quote Management
+Quote Proposals / OF / Templates
+Quote to Order (capture order)
+Amendments & Churn
+Renewals
+AS-IS Process for Opportunity, Quote (New and Renewal), Order Management, Billing and Revenue
+Account/Customer Creation process
+Product, Attributes, Rules, Catalog, Bundles
+Pricelists, Pricing, Attribute based Pricing, Discounts
+Quoting Flows
+Approvals 
+Quote Proposal / Templates / Order Form / Docugen / e-Signature
+Information Architecture
+TO-BE Process (Industry Best Practices) for Opportunity to Quote, Quoting process, Configuration, Price, Approvals, Templates, Order, Billing Integration
+Detailed User Stories for Product Setup, Price Setup, Configurations, Pricing, Quoting, Approvals, Proposal Templates
+Pain Points for Account, Product, Price, Opportunity, Quote, Order
+Gap Analysis (process level) for Opportunity, Quoting new & renewal (CPQx),  Quote-to-Order process, Amendments 
+Detailed Solution Review - Using CPQx
+Work with Zuora Product team on CPQx roadmap
+Contract / Templates automation
+CPQ and Billing Integration
+Sample User Experience for TO-BE state Quoting (configure, price, quote)
+KPIs: Quote, Order Cycle time; Order Touch Rates
+Roadmap for Opportunity-Quote-Order Transformation
+Systems
+Salesforce
+IQ (Internal Quoting)
+GS Quote (CPQX)
+Zuora Billing 
+IQ
+Zuora Billing
+Zuora CPQx
+Zuora CPQx - Sample POC
+Order Forms /Contracts / CLM
+Billing Integration (Order)
+High level Logical Architecture for CPQ-O, with required integrations
+Data
+Customer/Account Master
+Product Master
+Bundles & Configurations
+Pricing & Discounting
+Quote & Order
+Product and Pricing
+Catalog
+New & Renewal Quotes (IQ) 
+Orders
+Product, Attributes, Configurations, Bundling
+Pricing, Pricelists, Waterfall
+Discounts & Promotions
+Opportunity & Quote Types
+Account Rationalization general approach
+Product/SKU Rationalization general approach
+Approval Matrix Rationalization templates
+People
+Roles & Responsibilities for Quote to Order 
+Roles & Responsibilities for Quote to Order (Recommended Personas)
+Roles & Responsibilities for Quote to Order (Personas)
+Change management for any impacted roles
+Pending
+66
+
+Business Functions
+Sales
+Sales
+Operations
+Theater Operations
+Deals Desk
+Marketing
+Finance
+Legal & Compliance
+Order Processing
+Renewals
+Product Operations
+Business 
+Units
+Build & Configuration
+Licensing
+Tax & 
+Customs
+Sales Compensation
+Channel Operations
+Pricing Operations
+Channel Finance
+Workshop Topics
+67
+
+7 Key Themes
+Lydia DiGuido
+Strategic
+Heather Seeley
+New Biz
+Tyler Villaroman
+Expand/Renewals
+Brian Weckstein
+New Biz, Strategic & Enterprise
+Marina Paw
+Renewals
+Cam Nagle
+DD East
+PJ Kalira
+DD West
+Lucia Nalon
+DD EMEA
+Salesforce and Data Integrity Challenges
+Issues with database cleanup, outdated BUs, post-acquisition data tracking, maintaining Zuora and SFDC parity, inconsistent data in SFDC, accessibility issues.
+Challenges with contact data assignment, turnover affecting data quality, tracking new hires, adding new contacts.
+Salesforce data trust issues, data cleanup, compliance with usage limits.
+Reduced data reliability, leading to ineffective strategies and processes.
+Manual updates needed for Salesforce data inaccuracies and subscription changes.
+
+Inadequate Integration and Data Sources - Data sources scattered across systems, including billing systems and Microsoft, affecting data accuracy.
+Identifying Gaps in Processes and Systems - Challenges in addressing gaps in processes and systems, especially concerning master data.
+
+Strategic and Operational Challenges
+Limited traction, heavy workload in strategy planning.
+Compliance handling, renewal notification challenges, digital 'detective walls', collaboration with CSMs and Engineers.
+Sales efficiency and data management issues.
+Excessive reliance on manual renewal processes, complexity in managing various renewal scenarios like flat renewals, uplifts, and partial turns.
+Frequent Changes and Lack of Centralized Information - Confusion due to frequent procedural changes.
+Lack of Visibility and Involvement from the Deals Desk - Concerns about the Deals Desk not being sufficiently involved in sales and compensation activities.
+Opportunity Management and Cross-Product Compatibility
+Difficulties with cloning opportunities, non-interchangeable opportunities across products.
+Cumbersome opportunity management, transition in sales team structure, quoting process challenges.
+Difficulty in managing multiple subscriptions and renewal opportunities under one account, particularly with add-ons or changes, lack of automation in updating opportunities
+Product Catalog Complexity - Difficulties with new or end-of-life products.
+ Manual Creation of Ramp Opportunities - The deal desk team manually creating ramp opportunities, Challenges in creating opportunities for forecasting and managing configurations
+Complexity in Opportunity Management - Difficulties in managing configurations and lead generation from marketing.
+Quoting, Deal Desk Coordination,-  and Compliance
+Complexities with non-standard proposals, offline work with CPQ, dependency on deal desk.
+Lack of Recent Quoting, Tends to bypass the quoting step, focus instead on delivering value.
+Managing quotes with different products, visibility into approval status, dependency on tools for opportunity management.
+Reliance on deal desk for generating PDF quotes.
+
+ Quote Expiration Issues, Manual creation of elements for renewals adds complexity, The renewal process is heavily manual, Increased workload, Managing add-ons and amendments requires creating new orders and bookings
+Manual Quote Creation and Management, Limited Visibility System Automation for Approvals - Manual approval processes causing inefficiencies, Difficulties with new or end-of-life products.
+Challenges in Pricing and Discounting - Difficulties with contractual discounts and bundling pricing.
+Manual Interventions in Quote Creation - Manual edits required during the conversion of opportunities to quotes, Inconsistencies in the automation of approval processes., Confusion caused by the multitude of products and pricing structures.
+Order-Quote Discrepancies
+Encounters issues with order-quote discrepancies, depends on Clari for opportunity management, and has difficulty finding provisioning data.
+Struggles with reviewing past order forms in Salesforce and determining historical pricing and discounts.
+Faces limitations in self-service proposal generation, relying on the Deal Desk for PDF quotes even for standard approvals.
+Misalignment and manual reconciliation efforts between renewal orders and quotes.
+Discrepancies Between Quoted Products and Billing System - Mismatches between quoted products and IQ system availability.
+Issues with Updating Billing Fields - Challenges in maintaining accurate billing information.
+Financial Modeling and Post-Order Processing
+No tool for complex financial modeling, manual checking on consumption vs. revenue, order-quote discrepancies.
+Limited Progress in Gaining Traction, Lack of data for informed decision-making
+Managing non-standard terms like opt-outs and price holds manually.
+Challenges in Approval Updates due to Sales Hierarchy Changes, Challenges in maintaining accurate billing information, Payment Terms and Discounting - Need for clarity in managing payment terms and discounts.
+ Issues with currency conversion affecting customer satisfaction.
+Renewal Process Optimization
+ Manual, time-consuming quote building and management, lacking auto-update and cloning features, with limited visibility into pricing and discounts.
+Challenges in the Renewal Process - Inefficiencies when dealing with large customers during renewals.
+Contract Renewal and Upsell/Downsell - Ambiguity around managing renewals and contract changes.
+MP
+CN
+LN
+PK
+Executive Summary : Interviews & Findings
+68
+
+Issue Summary (workshop)
+Pain Points/Challenges: 150+
+Improvements/Suggestions TO-BE: 20+
+Salesforce Accounts & Opportunities - lack of master data sync between Salesforce & Zuora resulting in discrepancies and AEs having to manually research for contact information 
+SKU Proliferation (due to lack of product attributes) - over 3.5 K Skus for each Currency - Overall 18K+ SKUs in the catalog
+Lack of Configuration experience for Sales - many SKUs creating dependency on Deals Desk to help Sales
+Manual Approval process  - more than 50% of the quotes goes to manual approval process
+Lack of CLM resulting in manual generation of Proposal / Order Form Document
+Lack of bi-directional sync between Quote and Billing resulting in missing information for Subscription renewals
+Manual Renewal process - duplicate opportunities for Renewal resulting in manual edits with lack of standardization and automation
+69
+
+Details (Workshop)
+Rank is based on criticality of the issue/requirement for opportunity to order process 
+Function
+Data
+Process
+System
+Grand Total
+Product
+7
+4
+14
+25
+Opportunity
+1
+5
+18
+24
+Approvals
+6
+14
+20
+Account / Contact
+13
+6
+1
+20
+Pricing
+2
+10
+12
+Quoting
+1
+1
+7
+9
+Renewals
+2
+6
+8
+Amendment
+8
+8
+Order
+4
+3
+7
+Sales Forecast
+5
+5
+Quote-Opty Sync
+4
+4
+Proposal / OF
+2
+2
+4
+Partner Quoting
+1
+3
+4
+Discounts
+1
+3
+4
+Revenue
+1
+2
+3
+Contract
+1
+2
+3
+Assets
+3
+3
+Sales Guidance
+2
+2
+Integration
+1
+1
+2
+Commerce / Self-Service / PLG / Marketplace
+1
+1
+2
+Services
+1
+1
+Offer
+1
+1
+Guided Selling
+1
+1
+Commissions
+1
+1
+Billing
+1
+1
+Administration
+1
+1
+Big Rocks
+70
+
+Capability Map : AS-IS State (BigRocks)
+Campaign Mgmt.
+Lead 
+Mgmt.
+Account Mgmt.
+Oppty. Mgmt.
+Quote
+Product Config.
+Price
+Approve
+Proposal /
+Quote Document
+Contract Mgmt. 
+Manage 
+Order 
+Fulfill 
+Revenue Mgmt.
+Billing & Invoicing
+Payments / Collections
+Case Mgmt.
+SLAs
+Knowledge 
+Mgmt.
+Interaction Channels
+Marketing Automation
+Accept Lead
+Create 
+Account 
+Create Opportunity
+Manage Quote 
+New Product
+ Introduction
+List Price Mgmt.
+Pricing-
+Based Approvals
+Document Templates
+Create Contract 
+Create Order 
+License 
+Activation 
+Process
+Contract Combination & Modification
+Invoice 
+Management
+ 
+PrePayments
+/Deposit Mgmt.
+ 
+Case Creation
+Standard SLAs Config
+Knowledge Base
+Web to Case
+(Automatic)
+Case Assignment/ Routing
+Advanced SLAs Config
+FAQs
+Email to Case
+(Automatic)
+Campaign Mgmt.
+Reject Lead
+Create                        Contacts
+Manage Opportunity 
+Capture 
+Quote Information 
+Product Mgmt. 
+Customer 
+Specific 
+Pricing
+Product-
+Based Approvals
+Manage Documents
+Red-Lining
+Order 
+Validation 
+ 
+Fulfill Order Integration
+Performance Obligation Identification
+Tax Calculation
+Customer Payments Mgmt.
+Case Escalation
+Service Entitle-
+ments
+Article Publishing 
+and Review
+Phone to Case
+(Manual)
+Lead Generation / Assessment
+Lead Conversion
+Manage Account
+/ Contact 
+ 
+Opportunity to Quote Sync
+Renewal Quotes
+Manage 
+Bundles 
+Config.-Based Pricing
+Terms-Based Approvals
+Terms and Conditions
+Manage
+Clause
+ Library 
+Create 
+Assets / Installed Base
+Prof. Serv. Fulfillment
+Transaction Price & Selling Price Determination
+Consolidated Billing
+Report 
+on AR
+ 
+Case Resolution
+ 
+Suggest Knowledge Articles
+Chat to Case 
+(Manual)
+Case Email Auto-Response
+ 
+Multilingual Knowledge
+Third Party Channel Routing
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Lead Routing / Assignment
+Manage Partner Accounts
+Opportunity Approvals
+Quote 
+Types 
+Product 
+Rules 
+Volume-Based Pricing
+Renewal Approvals
+E-Signature 
+Contract Approvals 
+Submit
+ Order 
+Delivery and Provisioning
+Revenue Recognition & Allocation Rules 
+Credit Card 
+Payment Processing
+Customer Disputes 
+Mgmt.
+Queue Management
+ 
+ 
+Social Customer Service
+Email Templates
+ 
+ 
+Live Agent Web Chat
+Lead Integration
+Territory Mgmt. 
+Credit 
+Mgmt.
+ 
+Create
+ Project
+ 
+Product Config.
+Terms-Based Pricing
+Manage Approvals
+Renewal 
+Quote Doc
+ 
+E-Signature 
+Renewal Order
+Entitlement Account Mgmt.
+Contract Cost Capitalize & Amortization
+Renewal Invoice
+Credit 
+Memos 
+Mgmt.
+Call Center
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CTI Integration
+Call Scripting
+ 
+ 
+Pipeline and Quota Mgmt.
+Close 
+Opportunity
+Costing for Quotations
+Guided 
+ Selling  
+Promotions
+ 
+Quote to Order 
+Contract Repository 
+Process Order
+Entitlement Delivery and Reporting
+Revenue Reporting & Disclosure Req.
+Consumption Metering
+Dunning 
+Mgmt.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Forecasting
+Renewal Opportunity
+ 
+Cross Sell / Up Sell
+Discretionary Discounts
+ 
+ 
+Non Standard Contract Mgmt.
+Change / Cancel Order
+Customer Onboarding
+Revenue Forecasting
+ 
+Collections
+ 
+ 
+ 
+ 
+ 
+Renewals Pricing
+ 
+ 
+ 
+Credit Mgmt.
+Customer Support
+ 
+ 
+Payment Receipts
+ 
+ 
+ 
+ 
+ 
+Multi-
+Currency
+ 
+ 
+ 
+EDI
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Commissions
+Customer Success
+ Billing and Invoicing
+Order to Fulfill
+CLM
+Opportunity & Quote
+Lead Gen
+Workshop Topics
+Not in Scope
+Not applicable for Zuora
+Low level impact
+Medium level impact
+High level impact
+No Impact
+71
+
+Zuora
+Partners / Distributors
+Direct 
+Go to Market
+99%
+Marketplace 
+Self Service
+72
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Approval
+Out of scope for Assessment
+73
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+Data
+Account and Contact data discrepancies between Salesforce & Zuora
+Account Rationalization; MDM; Data Sync b/w SFDC & Zuora
+System
+Lack of support for multiple product lines per Opportunity
+Duplicate Opportunities impacting productivity (renewal, gs, multiple - subscriptions, etc)
+Quote & Opportunity Out-of-Sync; Quotes attached to wrong Optys
+Lack of Automated renewal opportunity
+Product Level forecasting issues / lack of pipeline at SKU level
+Sales Cloud Opportunity Product enablement
+Streamline Renewal Opportunity creation process on Future State CPQ
+Future State CPQ - enable Opportunity Quote sync 
+Accounts, Opportunities, Forecast
+Out of scope for Assessment
+74
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+Process
+Lack of NPI process standardization; clarity between sellable / quotable SKUs
+Several old SKUs in the Catalog
+NPI Process standardization; enable EOL, EOS, EOSu should be defined and retire Old SKUs
+Data
+SKU Proliferation in the system causing longer sales training
+SKU Rationalization and Optimization; Future State CPQ - enable Attributes on Products
+System
+Product Catalog is in Billing module - which is designed to charge customers; not to support Selling/buying experience
+Lack of Sales Guidance (Margin) on Quote - Good/Bad deal
+Lack of Attributes support
+Lack of Support for non-standard terms (shorter than 12 months or longer than 36 months)
+Bundles not supported / Lack of configuration experience for Sales team (subscriptions/licenses, Services, Pooled Volume/shared .. )
+Future State CPQ 
+enable attribute based product setup and build rules engine; drive pricing based on rules and constraints; 
+enable dynamic bundles
+enable Sales Guidance to provide insights (like traffic light) based on margins and other revenue rules
+
+NPI, Product Catalog, Bundles
+Out of scope for Assessment
+75
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+Process
+Enhance list price management
+Create Price Waterfall - standardize price lists and list prices based on country, currency, market requirements
+System
+Inability to support OTD during Opt-Outs, Ramps - support price increase - etc
+Lack of price clarity for overage blocks; goal seeking, etc
+Future State CPQ 
+enable amendments from Assets;  enhance usage on tenets
+enable ramps to support yearly price ramps
+Pricing, Price Lists, Discounts
+Out of scope for Assessment
+76
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+Process
+
+Too many Quoting Flows; Multiple Quoting tools to support Subscription and Services Sales
+Rationalize and Optimize Quoting Flows; Future State CPQ should allow users to sell Subscriptions, Services together
+System
+
+Multi Quote functionality - setting primary quote and finalizing them - Auto push Quote to Opportunity
+Lack of Recommendation engine for upsell-xsell products
+Inability to View before and after pricing - Discounts view; Delta ACV
+Inability to auto-include products based on product selections (lack of rules)
+Inability to Clone Quotes on Expired Quotes; Quote and Opty out of Sync
+Inability to support Partner Quoting 
+Future State CPQ 
+enable Multiple Quote to Opportunity - enable workflows to set one of the quote to Primary and finalize it
+enable Recommendations for xSell and Upsells
+provide list price and net prices in the single view with standard and non-standard discounts
+enable attribute based product setup and build rules engine; drive pricing based on rules and constraints
+enable standard clone quote functionality
+enable partner quoting / deal registration; enable sales collaboration features
+Quoting, Partner Quoting, Cart, Quote actions
+Out of scope for Assessment
+77
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+Process
+Lack of Automated Approval process (50% manual); Renewals does not have approval process
+Future State CPQ - build standard approval workflow engine
+System & Data
+Lack of support for standard approval functionality i.e., re-notifications, approval preview, ability to attach support documents, re-approval, etc
+Future State CPQ - build standard approval workflow engine
+Approvals (new & renewals)
+Out of scope for Assessment
+78
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+System
+
+
+Lack of Contract/Agreement system causing manual work; aggregated values are manually taken care by Deals desk
+Order Form T&Cs are manually edits to include offer details
+Integrate with CLM that support standard clause library, templates, dynamic inclusion and e-signature process
+Proposal, Templates
+Out of scope for Assessment
+79
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+System
+Quote and Order out-of-sync
+Most of the orders are touched; takes over 6 hours for new business orders
+Future State CPQ
+validate quote before submission so there are touches on order
+build quote to order orchestration
+Order Form, Order Capture
+Out of scope for Assessment
+80
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+System
+
+Upgrades not supported
+Pooling Entitlement (usage) over the years - customers using it in initial years
+Amendment quote does not show previously sold products or purchase options
+Unable to support Standard functionality - terminate multi-year subscription - loading signed contracts to SFDC;
+Challenges in Co-terming during Usage Upsell; Add-ons do not co-term with existing subscriptions
+Future State CPQ
+enable Assets based amendments to support upgrades as well
+enable rules engine to enforce pooled usage
+enable co-terms, terminations, upgrades, add-ons, etc
+Amendments
+Out of scope for Assessment
+81
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+System
+
+No Automated Process; historical prices not cascaded to new renewal quote; discounts updated manually
+Future State CPQ - standardize asset based amendment processes to manage co-terms, terminations, upgrades, add-ons, etc
+Process / System
+Following key issues with GS
+ Duplicates
+ Billing spread
+ Billing fringe and Bill run
+ Reconciliation
+ Quoting process
+ Payment term
+Product Rationalization & Optimization; Future State CPQ to manage single catalog and ability to support subscriptions and services on same quote.
+Renewal Opportunities
+Out of scope for Assessment
+82
+
+Opportunity to Order 
+Industry Best Practices
+83
+
+CPQ - Common Challenges
+Inability to support standard business scenarios
+Poor sales experience in Configuring Products
+Lack of guidance for Sales on discounts to  win the deal
+Discount leakage and  lack of visibility to Sales & Finance
+Products and pricing data duplicated in multiple  environments with no clear “source of truth” & increased operations overhead
+Quote and Order out-of-sync
+Product / SKU & Price list proliferation
+Inadequate approval functionality with no visibility and audits
+BOM explosion between Quote, Order and Manufacturing
+Manual Orders (lack of quote-to- order integration)
+
+?
+84
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+85
+
+Opportunity to Revenue (Standard)
+Account
+Automated Renewal Opportunities
+Quote
+Assets/ Subscriptions
+Contracts T&C’s
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Approval
+Billing
+Usage
+Account Planning
+Pipeline & Forecasting
+Config, Price, Quote, Approval
+Contract
+Order / Bill / Invoice
+Rev Rec
+Out of scope for Assessment
+86
+
+Opportunity to Order (L2)
+Opportunity
+7. Submit Quote
+for Approval
+8. Approve
+Quote
+10. Proposal / Contract
+1. Create or
+Re-Open Quote (Header Details)
+2. Add Products
+and Services
+3. Configure
+Products
+6. Qualify
+(T&C's)
+5. Additional Discounts (Non-Standard)
+4. Price & Applicable Discounts
+(Standard)
+11. e-Signature
+18. Place Order
+12. Create Agreement
+13. Author
+15. Negotiate
+14. Gather
+Legal Approvals
+16. Contract
+9. Special
+ T&C's
+17. e-Signature
+Language Changes & Special Clauses
+Yes
+Sales Rep, Legal, Inside Sales, Bid Desk
+Quote
+Contract
+Quoting Process - HL3
+No
+Out of scope for Assessment
+87
+
+Renewals (Services, Subscriptions)
+Assets
+Renewal Opportunity
+Create Quote
+Add Products or Subscription
+Add Renewal Services/Subscription
+(upsell/cross-sell)
+Approvals
+Special Terms
+Pricing from existing or historical PL 
+Co-term
+Contract/Order
+A
+A
+A
+Expiring in X days
+Update
+
+Marketing creates campaign 
+Executive checks KPIs on executive dashboard to evaluate market potential
+Customer engages registers and views information 
+Interaction is captured  and scored marketing lead is created 
+Marketing approaches customer to remind them about the offer 
+Leading nurturing results in handing over lead to sales, sales potential is qualified 
+Converted opportunity scores high ard salesperson is assigned
+or
+Customer visits website, is guided to the right products and requests quote 
+Salesperson creates quote with prices, receives cross-sell/up-sell recommendations and suggested discounts 
+Quote Is presented to customer, negotiated with salesperson and terms finalized
+Customer accepts the quote and customer order is generated
+Product has been delivered, service is planned and provisioning is completed, subscription lifecycle starts 
+Customer Order incl. products, services and subscriptions is dispatched to provisioning and fulfillment systems, customer sees status
+Technician installs products, Customer uses service
+Subscription Billing charges for recurring and usage charges, customer receives invoice and tracks usage and spending 
+Customer views and pays bill for products, services and subscription 
+Revenue is booked and posted to Finance, business unit manager sees business results 
+Customer Journey
+Contact to Lead
+Lead to Opportunity
+Opportunity to Quote/Cart
+Quote to Order
+Order to Cash
+89
+
+Opportunity to Revenue 
+Opportunity
+Configure Price Quote
+Proposal created
+Proposal accepted
+Order processed
+Invoice created
+Cash collected and allocated
+Cross-selling and Up-selling
+Data points analyzed and reported
+Ready for next sale
+90
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+91
+
+Checklist
+Do we have the Product Admin identified?
+
+Product List   - Do we have the list of active Products & Product Families  identified along with the content(images, documents etc) needed?
+
+Product Models - Did we identify the details of the Product Models and the configuration experience that need to be supported ?
+
+Category Hierarchy - Do we have the catalog navigation experience defined?
+
+Future Product Models - Do we have the details of the Products/Product models to be made available in CPQ  over the next 6 months to 1 year?
+
+Product Rules - Did we identify the rules (visibility, constraint etc..) that need to be enabled in the system.
+
+
+Do we have the processes enabled for handling EOL/EOS products?
+
+Do we know the frequency and types of changes to be done on products on an ongoing basis?
+
+Do we have the pain points in current Product management identified?
+
+Do we have the source of truth for the Products identified and considered if any transformations are needed for integration?
+
+Did we consider the all the downstream impacts in Product Modeling ( Fulfillment, Billing etc..)
+
+
+92
+
+Standalone
+Solution Bundle
+Marketing Bundle
+Product
+Attribute-1
+Attribute-2
+Attribute-3 …
+Option-1 (Service)
+Option-2 (Hardware)
+Option-3 (Subscription) 
+Option-4
+Option 4a
+Option 4b
+Option-5 ...
+Product 
+Product
+Product 1 (independent of 2)
+Attribute-1 …
+Software
+Subscriptions
+Services/Subscriptions
+Option-1 …
+Product 2 (independent of 1)
+Attribute-2 …
+Software
+Subscriptions
+Services/Subscriptions
+Option-2 …
+Used for products which are sold independently 
+Products do have additional offerings
+Used for providing a solution to address customer problem
+Sold with additional offerings to create a solution to address specific use cases and industry needs
+Used for improving sales  with combination of products 
+Involves multiple product families
+Products & Configurations 
+Product A (rules impacting from B)
+Attribute-A …
+Software
+Subscriptions
+Services/Subscriptions
+Option-1 …
+Product B (rules impacting from A)
+Attribute-B …
+Software
+Subscriptions
+Services/Subscriptions
+Option-B …
+
+Attributes & Options
+Attributes
+Selection that impacts the features or pricing of a product.
+Improves the User experience to a great extent. 
+Captures information related to the Product being configured
+Helps in reducing the SKU proliferation
+Typically a field that holds the information related to the product being configured.
+Eg: Selecting the edition (Professional, Enterprise..) of Sales-Cloud would automatically provide the eligible features instead of each selecting each feature independently 
+Options
+Typically a product record that gets selected within the context of Bundle. This gets added as a separate line item
+Can have it’s own price and independent attributes
+Can be fulfilled independently
+Eg: Add-On Storage space from Salesforce can be an Option as the storage can be procured at a later stage independent from Sales-Cloud licenses
+94
+
+Building Offers
+Subscription Model primarily moves away from Individual Product based Pricing to a Offer based Pricing. The Offer may contain
+Hardware ( OnPrem/Cloud)
+Software
+Upgrades
+
+Bundles/Offers need to be created to cater the solution in its entirety rather than asking the customer/sales rep to pick from a set of products in a catalog.
+
+Predefined offers based on your best selling items.
+Technical Services
+Installation
+Managed Services
+95
+
+Products & Configurations - Guidelines
+Build Models using Product Structures (bundles) & Rules rather than sku based models - Balance usability vs maintenance
+Define the Category Hierarchy to navigate and find the products easily (No more than 3 levels)
+Enable Recommendations - for Upsells and Cross-sells & Replacements
+Leverage Out of the Box setup and avoid customizations in the Product Setup.
+Avoid offline Tools (ex: excel) & Processes (Email Approvals)
+Add Favorites based on Common Solutions/Market Segments for reusability
+Define Proper Product Name/Code/Description/ Image and other Product Metadata for a good user experience in the tool
+
+
+96
+
+Products & Configurations - Recommendations
+Categories/Families
+Products
+Pricelists
+Bundles
+Attributes/Options
+Rules
+Catalog & 
+Configuration Experience
+Manual Setup
+Configuration & Setup
+Base/ Standalone Products
+Transaction
+97
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+98
+
+Checklist
+Do we have the Pricing Admin identified?
+
+Price lists   - Do we have the list of active Price lists including any regional price lists/ currency based price lists that are required?
+
+Pricing Models  - Did we identify the different Pricing Models that need to be supported (OneTime, Recurring, Subscription, Usage, Tier, Range, Formula based etc?
+
+Pricing Programs - Did we identify the different Pricing programs 
+
+Standard Partner tier, New Customer Incentive etc. that need to be supported?
+
+Contract Price lists - Did we identify all the contract price lists and types of contract pricing scenarios that need to be supported?
+
+
+Do we have the details of the pricing in cases of renewal / change scenarios?
+
+Do we have the details of the Exception/Non Standard scenarios?
+
+Do we know the frequency and types of changes to be done on Pricing on an ongoing basis?
+
+Do we have the pain points to be addressed and  recommendations on the approach for the defining and managing the Pricing?
+
+Do we have the Source of Truth for Pricing identified?
+
+
+99
+
+Cost Basis
+Base Price
+Market
+Price (List Price)
+Markup & Regional/ Country/ Segment adjustments
+Program Discounts, Distributor Discounts, Customer Discounts, Promotions…
+Price Adjustments
+Qualifying Rules
+Stacking Rules
+Adjustment Visibility
+Manual Discounts
+Net Price
+Pricing Waterfall
+
+Per User Pricing
+Simple recurring pricing based Per user/license/unit
+Flat Rate Pricing
+One Package at One Price regardless of the number of users.
+Tier Pricing
+Based on Features/Edition
+Based on number of Users
+Based on term
+...
+Usage Based Pricing
+Pay as you go Model.
+with or without commitment.
+Usage Tiers based on Volume
+One Time
+One time Installation/Training Charges etc..
+Usually combined with other recurring pricing models
+Subscription Pricing Models
+Ramps/ Schedules
+Pricing/Discount Change across Term
+Pricing/Discount change across Volume
+Qty/Units increase across Term
+Annual Uplifts
+Manual Overrides
+Change in Unit Price by Manual discounts
+A typical subscription model leverages the below pricing models to build the offer. 
+Deal Structuring
+101
+
+Program
+Deal Registration (Partner)
+Partner Certifications
+Teaming Agreements
+Multi Year
+….
+Contractual
+Customer
+Distributor
+Partner
+Reseller
+Promotions
+New Product or Service
+Market Opportunity
+Inventory Clearance
+Discounts (Standard)
+
+Pricing & Discounting - Guidelines
+Define and Institute a policy for standard and non standard quotes/contracts. Changes in system will follow the changes in policy. 
+Define the source of truth for Pricing and Discounting
+Leverage OOB capabilities for Discounting and avoid customization
+Define standard and pre approved discounts and increase the percentage of standard quotes
+Avoid/discourage manual entry of pricing in the transaction without appropriate controls.
+Consider the Renewal & Change scenarios when structuring the deals with Ramps & Schedules
+
+
+
+Program
+Contractual
+Promotions
+Discounted Price
+Manual
+Net Price
+List Price
+Standard Discounts
+(Pre-Approved)
+Manual Discounts
+(Need Approval)
+List Price
+Pricing & Discounting - Recommendations
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+105
+
+Checklist
+Do we have all the actors in Quoting Process identified?
+
+Did we identify all the data elements that impact the Quoting Process?  
+
+Did we identify the pain points in the current quoting process?
+
+Did we identify the quote life cycle stages & statuses and transitions?
+
+Is the Team made aware of OOB capabilities for Quoting?
+
+Did we identify any major customizations that need to be done?
+
+Did we identify the information that needs to integrated to upstream/downstream systems?
+
+Did we identify the collaboration scenarios?
+
+Did we identify the renewal opportunity creation process?
+
+Did we rationalize the templates?
+
+Did we identify all the information that needs to synced to Order/Contract?
+106
+
+Quoting Basic Scenarios
+New
+Change
+Renewals
+Terminations
+New Sales
+Add/Remove Features
+Add/Remove Users/Licenses
+Upgrade to higher version
+Swap the product
+Annual Uplifts
+Manual Renewals
+Automated Renewals
+Co-Terminations
+Evergreen Subscriptions
+Terminate Licenses
+Terminate Contracts
+107
+
+Quoting Process- Guidelines
+Standardize the Quoting Process to support New, Add-On, Change, Renewals.
+Capture the Price impacting information on the quote header before the Pricing step.
+Enable visibility of customer assets at account level in salesforce.
+Consider & capture the information that needs to be synced to opportunity at different stages of quote life cycle (Eg: Opportunity Products for forecasting, NS Terms on Opportunity, setting the Opportunity stage/ status based on quote status)
+Rationalize and Generate Proposals to present the quote all the required terms and conditions
+Capture the deal/agreement cycle time to measure and optimize the process.
+Enable Auto Renewals for streamlining the renewal process.
+Enable Self Service for renewals ,changes, Invoices if applicable to streamline the process.
+
+Quote Life Cycle
+Create
+Proposal
+Approved
+DRAFT
+IN REVIEW
+APPROVED
+PRESENTED
+GENERATED
+Submit 
+for Approval
+Generate 
+Document
+Present 
+Proposal 
+to Customer
+Add Products 
+& Price
+DRAFT
+DRAFT
+APPROVAL
+REQUIRED
+PENDING APPROVAL
+APPROVED
+APPROVED
+APPROVED
+Customer 
+Accepts 
+Proposal
+ACCEPTED
+APPROVED
+Approval 
+Stage
+Approval  
+Status
+User/System Actions
+109
+
+Opportunity to Revenue (L1)
+Account
+Automated Renewal Opportunities
+Quote
+Assets/ Subscriptions
+Contracts T&C’s
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+ERP
+Approval
+Approval
+Billing/Revenue
+Usage
+Account Planning
+Pipeline & Forecasting
+Config, Price, Quote, Approval
+Contract
+Order / Bill / Invoice
+Rev Rec
+110
+
+Opportunity to Order (L2)
+Opportunity
+7. Submit Quote
+for Approval
+8. Approve
+Quote
+10. Proposal
+1. Create or
+Re-Open Quote (Header Details)
+2. Add Products
+and Services
+3. Configure
+Products
+6. Qualify
+(T&C's)
+5. Additional Discounts (Non-Standard)
+4. Price & Applicable Discounts
+(Standard)
+11. e-Signature
+18. Place Order
+12. Create Agreement
+13. Author
+15. Negotiate
+14. Gather
+Approvals
+16. Contract
+17. e-Signature
+9. Special
+ T&C's
+Language Changes & Special Clauses
+Yes
+Sales Rep, Legal, Inside Sales, Bid Desk
+Quote
+Contract
+Quoting Process - HL3
+No
+111
+
+Opportunity to Order (L3)
+1.1 Quote Name (Auto-Populated)
+1.2 Enter
+Quote Type
+Sales Rep, or Inside Sales Rep
+Sales Quoting
+1. Create Quote
+1.3 Enter
+Purchase Type
+1.4 Select Parties Involved
+1.5 Select/
+Enter Bill-To
+1.6 Select
+Price List
+1.10 Quote Expiration Date
+1.9 Select Terms
+& Conditions
+1.8 Enter Start & End Date or Duration
+of Subscription
+1.7 Select
+Buying Program
+1.2.1 New
+1.2.2 Renewal
+1.2.3 Addon
+1.2.4 Upgrade
+1.2.5 Buffer
+1.3.1 Direct
+1.3.2 Indirect
+Either derived or entered by user
+Distributor, Partner, Reseller & Influencer - Name, Address and Contact details 
+Carried over from Opty or selected by user
+Defaulted from Account profile or currency
+1.7.1 Channel
+1.7.2 OEM
+1.7.3 Embedded
+1.7.4 Solution Provider
+1.7.5 ISV
+1.7.6 Marketplace
+
+Cascoding to line level
+Will add Clauses to Proposal or Contract
+Select Standard and 
+Non-Standard Terms & Conditions Applicable on the Quote
+System Generated after Approval
+112
+
+Opportunity to Order (L3)
+Sales Rep, or Inside Sales Rep
+2. Add Products & Services 
+Sales Quoting
+Configuration Setup
+2.3 Upload
+2.1 Catalog
+& Search
+2.2 Guided
+Selling 
+2.0 Add Products
+& Services
+2.4 Assets
+2.5 Prerequisites & Recommendations
+2.6 Favorites
+3.0 Configure Products
+Select Product Category, Filters
+Select products from Excel (feature)
+Search for Products
+& Services up for Renewal
+1.1 Quote Name (Auto-Populated)
+Select product(s) from Recommendation or include Prerequisites 
+Select product(s) from Favorites
+Identify Renewal products based on Search
+Product Categories & Filters Setup
+Product Constraint
+Rules Setup
+Products Visibility Rules Setup
+Product Setup
+113
+
+Opportunity to Order (L3)
+2.0 Add Products& Services 
+Sales Rep, or Inside Sales Rep
+3 - Configuration Poducts
+Product Setup
+Configuration
+Rules Setup
+Sales Quoting
+Configuration Setup
+3.1 Select
+Attributes and Options 
+114
+
+Opportunity to Order (L3)
+Sales Rep, or Inside Sales Rep
+4 & 5. Pricing & Standard Discounts
+Sales Quoting
+Configuration Setup
+3.0 Configuration
+Discounts Guidance
+Setup
+Discounts Setup
+Price Rate Setup
+Price List Setup
+Configuration Rules Setup
+Product Setup
+4.1 User configured products and added to cart
+4.2 Pricing calculated net prices on each product/service added with
+applicable discounts
+4.3 Sales Rep reviews standard discounts 
+4.10 Qualification (T&C's)
+4.4 Additional Discounts
+4.5 Discount % - cascaded to lines
+4.6 Discount Amount cascaded to lines 
+4.7 Apply OTD (one time discount)
+4.9 Apply Tax (Manual)
+ 4.8 Review Discount Guidance & Approvals, adjust as required 
+Product Pricing and Discounting Setups are completed
+Yes
+No
+115
+
+Sales Rep, or Inside Sales Rep
+6 & 7. Qualify T&C's, SUbmit Quote for Approval
+Sales Quoting
+Configuration Setup
+5 Selected products & applied discounts
+All contract clauses are setup in CLM
+Configuration Rules Setup
+Product Setup
+6.1 Select all T&C's
+Opportunity to Order (L3)
+Price Lists Setup
+Price Rules Setup
+Discounts Setup 
+6.2 Enter justification for discounts 
+6.3 Select Non-Standard T&C's
+6.5 Submit Quotefor approval
+6.4 Review Quote
+Non-Price impacting T&C's can be altered after Quote Approval
+Price impacting T&C's will result in re-opening, reprice and re-approval of the quote
+116
+
+8.4 Quote routed to previous Approver
+Opportunity to Order (L3)
+Approvers (IWA)
+8. Approve Quote
+Sales Quoting
+Configuration Setup
+6.5 User Submitted Quote for approval
+Price Lists Setup
+Configuration Rules Setup
+Opportunity to Order (L3)
+Quote routed to sales Rep or Previous Approver
+All contract clauses are setup in CLM
+Price Rules Setup
+Product Setup
+Discounts Setup 
+IWA- Approval; Rules (Discounts & Terms) Setup
+8.1 Approver 
+Reviews Quote
+8.7 Add Approval Comments
+8.3 Enter Rejection Reason with additional comments
+8.8 Approve
+8.6 Review and Submit
+8.5 Quote routed to Sales Rep
+8.9 Next Approver
+8.10 Quote Completely Approved
+8.11 Mark Quote as Primary
+Quote Sync to Opportunity
+8.2 Approve?
+No
+Approves?
+9.0 Quote Rejected
+B
+Yes
+A
+Need More Information
+Yes
+Approved
+A
+No
+Rejected
+Final
+B
+117
+
+9.6 Discount
+Changes
+Opportunity to Order (L3)
+Sales Rep, Bid Desk
+9-11. Special T&C’s, Proposal & eSignature
+Sales Quoting
+Contract
+8.10 Quote
+Approved
+Opportunity to Order (L3)
+9.2 Generate Proposal & additional Documents
+9.8 Request Agreement
+9.3 Send Documents for eSignature
+9.9 eSignature
+9.7 Language Changes
+1.0 Reopen Quote
+9.9 eSignature
+9.4 Review Docts
+ready to
+Place Order
+Yes
+9.1 Special T&C’s
+Customer
+9.5 Need Changes
+No
+Yes
+Yes
+Standard Clauses
+No
+Special languages or Discounts
+118
+
+Opportunity to Order (L3)
+Customer
+12-17 Contract Agreement
+Transactional Quoting/Contracts
+Configuration Setup
+9.8 Request Agreement
+12.2 Request for Non-Std clauses
+& Update
+Approval Rules (Discounts & Terms) Setup
+Finance/Legal/Rev Rec
+Deals Desk
+Sales Rep/Inside Sales…
+All Contract Clauses are Setup in CLM
+12.3 Generate Document
+12.4 Submit for internal review
+1.0 Reopen
+Quote
+B
+12.10 Approved Contract
+12.12
+e-Signature
+12.8 Approvals
+12.9 Negotiation
+(Red Lining)
+12.12
+e-Signature
+12.11 Discount Change?
+Ready to
+Place Order
+B
+12.5 Checkout Agreement
+12.6 AddAdditional Clauses
+12.7 Submit
+for Approval
+Get Approved Flow
+Yes
+No
+Fully Approved
+119
+
+Opportunity to Order (L3)
+       Customer                               Sales Rep, Bid Desk (Procurement)
+12 Place Order
+Sales Quoting
+Order
+9. Select Approved Quote
+12.1 Create Order
+Quote Details are copied onto Configuration Order
+Review Order
+Details (Products & Discounts)
+Enter PO Details on header and lines 
+Enter Misc Details
+Rules based Credit Check
+Enter Ship to and Entitle to Details 
+Submit Order 
+Order Submitted in Configuration
+Build Integration from to ERP OM
+120
+
+Renewals (Services, Subscriptions)
+Assets
+Renewal Opportunity
+Create Quote
+Add Products or Subscription
+Add Renewal Services/Subscription
+(upsell/cross-sell)
+Approvals
+Special Terms
+Pricing from existing or historical PL 
+Co-term
+Contract/Order
+A
+A
+A
+Expiring in X days
+Update
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+122
+
+Opportunity to Revenue (L1) - ZUORA
+Account (SFDC-Zuora)
+Opportunity (SFDC)
+Quote (IQ)
+Bill (Zuora)
+Revenue (Zuora)
+Order (Zuora)
+Account
+Renewal Opportunities
+Quote (CPQ)
+Order
+   Opportunity
+Provision/
+Fulfill 
+Rev Rec
+Approval
+Billing
+Usage
+Amendments
+Issue Category
+Issue Summary
+Recommendation
+Data
+Account and Contact data discrepancies between Salesforce & Zuora
+Account Rationalization; MDM; Data Sync b/w SFDC & Zuora
+System
+Lack of support for multiple product lines per Opportunity
+Duplicate Opportunities impacting productivity (renewal, gs, multiple - subscriptions, etc)
+Quote & Opportunity Out-of-Sync; Quotes attached to wrong Optys
+Lack of Automated renewal opportunity
+Product Level forecasting issues / lack of pipeline at SKU level
+Sales Cloud Opportunity Product enablement
+Streamline Renewal Opportunity creation process on Future State CPQ
+Future State CPQ - enable Opportunity Quote sync 
+Accounts, Opportunities, Forecast
+Out of scope for Assessment
+123
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+124
+
+Checklist
+Did we capture all the criteria for triggering approvals?
+
+Did we identify the approval matrix for all the approval conditions?
+
+Did we identify the pain points in the current approval process ?  
+
+Did we complete the optimization of the Approval processes ?
+
+Did we identify the email templates that are needed for approval processes?
+Did we identify all the Re-Open scenarios?
+
+Did we identify all the information that needs to synced to Order/Contract?
+
+Did we identify the Quote Approvals vs Contract Approvals?
+
+Did we identify the Auto re-approval scenarios?
+
+Did we establish the SLAs for Approvals?
+
+
+125
+
+Approvals
+Empower 
+Your
+Sales Team
+Guidance Based Approvals
+Simple pricing guidance 
+Green-no approvals
+Preview of Approvals Needed
+Overall 
+Line item specific
+Parallel Approvals
+Business Justification
+Attach supporting documents 
+Specific justification for legal, finance, pricing
+Reduce Time 
+Needed to 
+Review Deals
+Mass Approvals with Granular Control
+Single click mass approval
+Reject some and approve others
+Parallel Approvals
+Email Approvals
+Avoid SPAM- consolidated notifications
+Email approval
+Group Approval Options
+Quorum: 2 out of 3 
+Majority  Approvals
+% of number of approvers
+Unanimous
+Intelligent Auto Re-Approval
+Discount reduced (40% to 30%)
+Payment terms improved (Net 75 to Net 45 )
+Optimize 
+Approval 
+Processes
+Guidance Based Approvals
+Simple pricing guidance 
+Green-no approvals
+Preview of Approvals Needed
+Overall 
+Line item specific
+Parallel Approvals
+Business Justification
+Attach supporting documents 
+Specific justification for legal, finance, pricing
+Eliminate
+Bottlenecks
+Out-of-Office Delegation
+Time bound out-of-office delegation
+Future Dated
+Auto Activation/ Deactivation
+Time-Based Auto 
+Escalation
+Reminder notifications
+Time Based Re-assignment in management chain
+Approve on Behalf of Others
+Audit trail for on-behalf approvals
+Deal review boards
+Executive Assistant approvals
+Approvers adding 
+Ad Hoc approvers
+Before an approval step
+After an approval step
+Parallel to an approval step
+126
+
+Approvals : Guidelines
+Optimize the Approval process and number of Approvers required for efficient deal cycle time
+Enable re-approval criteria
+Enable SLA’s for Approval decisions
+
+Enable notifications & Approvals via emails
+Enable ad-hoc approvals as required for Contracts
+
+
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+128
+
+Order Management/Order Capture
+New Sale
+Change 
+Renewal
+Termination
+Order
+Billing Schedules
+Order Lines
+Assets/ Subscriptions
+Billing Schedules
+Billing Schedules
+Fulfillment
+Billing Schedules
+Billing Schedules
+Usage Schedules
+129
+
+Order Management GuideLines
+Ensure the checks & processes required for order booking are enabled as part of  order capture process.
+Streamline information from the ordering process to allow applicable fulfillment details to flow downstream
+Ensure customers are not billed or invoiced until an order is fulfilled by establishing standardized workflow
+Auto-create and track orders on the CRM platform to improve operational visibility and reporting
+Ensure the capture of appropriate errors and re-processing mechanism for the orders.
+Enable any transformations required for the integration with downstream systems at the time of Order Capture.
+
+Checklist
+Do we have all the actors in Contract Process identified?
+
+Did we identify all the data elements that impact the contract Process?  
+
+Did we identify the user experience considerations?
+
+Did we identify the pain points in the current contract process?
+
+Did we identify the contract life cycle stages & statuses and transitions?
+
+Is the Team made aware of OOB capabilities for CLM?
+
+Did we identify any major customizations that need to be done?
+Did we identify the information that needs to integrated to upstream/downstream systems?
+
+Did we identify the Amend & Renewal scenarios?
+
+Do we have clause library defined?
+
+Did we identify and rationalize the templates?
+
+Did we identify all the information that needs to synced to Order/Quote?
+
+Did we identify the security considerations for Document Repository?
+
+Did we identify the Signature Considerations?
+
+
+131
+
+Lifecycle Actions
+AMEND
+TERMINATE
+Terminated
+EXPIRE
+Expired
+RENEW
+In Effect - Being Renewed
+In Effect - Being Amended
+RENEWED
+Request - In Amendment
+Request - In Renewal
+Create Agreement
+Author Document
+Send for Review
+Approval
+Send for Signature
+Activate
+Request
+In Authoring
+In Authoring
+In Approvals
+In Signatures
+In Effect
+Request
+Draft
+ Negotiate
+Approval
+Sign
+Finalize
+AMEND
+Opportunity -> Quote -> Contract
+Opportunity -> Quote -> Contract
+Contract Life Cycle
+132
+
+Contract GuideLines
+Migrate manual offline contract management processes to a centralized platform that accommodates and digitizes key CLM processes and data capture
+Consolidate similar contract templates to reduce maintenance efforts and inconsistencies
+Use a single, robust, repository to maintain and store all contract templates allowing users to easily store, browse, search, and access content on demand
+Standardize and automate legal approvals and leverage auto-approvals to limit approval volume and accelerate the negotiation processes
+Fully leverage the capabilities of e Signature tools (DocuSign/Adobe Sign) to initiate and complete the signature process 
+Ensure that finalized fully signed contracts are stored and easily accessible by all stakeholders in a centralized location
+133
+
+Billing
+Billing Schedules
+Assets/  Subscriptions
+Billing Schedules
+Billing Schedules
+Billing Schedules
+Billing Schedules
+Usage Schedules
+Invoice
+Invoice Line Items
+Usage Input
+Usage Rating
+Payment
+Tax
+134
+
+Billing Guidelines
+Generate Billing Schedules and initiate Invoice creation once an Order is fulfilled 
+Assets should be created, activated, and stored against a customer record upon order fulfillment
+Optimize the handoffs and collaboration between Operations and Billing - Enable Orders to seamlessly flow into Billing with minimal user intervention
+Structure the Sales Account hierarchy to accommodate how customers are billed – Look at how “Bill To’s”, “Ship To’s” should be leveraged to ensure the correct customers are billed and invoiced
+Leverage standard capabilities from currently used systems like Salesforce Feed Tracking and historical Billing reporting to track how billing has been modified over time
+Use automated notifications and reporting to alert key stakeholders (Sales, Ops, etc.) to important customer or billing related milestones in order to proactively serve the customer 
+Enable appropriate integrations with Tax and Payment systems to complete the automated payment process for credit card payments.
+
+
+135
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+136
+
+Steps to Optimize Your Quote-to-Cash Process
+1
+Lead and Opportunity Management
+2
+Product Selection of Configuration
+3
+Pricing
+4
+Quote Creation
+5
+Contracting
+6
+Order Fulfillment
+Order Capture
+7
+Billing and Invoicing
+8
+Amendments and Renewals
+137
+
+Optimizing Quote to Cash process
+S.No
+EPIC
+Features
+Impact
+1
+Lead & Opportunity Management
+Opportunity Type (New Biz / Expansion / Renewal)                                                         
+Opportunity Products       
+Multiple Quotes per Opportunity          
+Primary Quote
+Quote to Opportunity Sync  
+Renewal Opportunity - Automate Add  On Updates
+Auto Closure
+Accurate  Forecasting 
+Streamline Opportunity Management 
+Automated 
+Seamless Integration
+Transform Quote to Cash Business Process (multi-line quote)
+Simplify , Automate & Efficient Business Process (SCALE)
+2
+Product Configuration
+Product Offerings - BASE + Add on  
+Product Attributes 
+Guided Selling Config Rules
+Config APIs 
+Pre-configured Product Bundling
+Configurable Product Bundling 
+Go to Market 
+Sku Proliferation
+Accurate Configuration 
+Improved Deal Size 
+Build a Unified Commerce Platform which enables all Route to Market and all Product offerings
+Zuora on Zuora - Customer Zero for Zuora CPQ
+3
+Pricing 
+Attribute Based Pricing 
+Tiered Pricing 
+Price Ramps 
+Channel/Contractual Discount
+Deal Reg Discount  
+Promotions
+Price Waterfall 
+Asset Based Pricing
+Pricing API
+Pricing and Packaging 
+Profitability 
+Deal Guidance 
+Faster Approvals 
+Build a Unified Commerce Platform which enables all Route to Market and all Product offerings
+Simplify , Automate & Efficient Business Process (SCALE)
+Zuora on Zuora - Customer Zero for Zuora CPQ
+4
+Quoting 
+Budgetary Quote
+Clone Quote 
+Merge Quote 
+Quote Rules
+Quote Approval - Std - Sales Empowerment
+Quote Approval -Non Std - Deals Desk
+Quote Collaboration 
+Partner Quoting 
+Escalation and Delegation Rules 
+Quote APIs
+Efficiency 
+Improved Deal Cycle Time
+Sales Empowerment 
+Deal Governance 
+Simplify , Automate & Efficient Business Process (SCALE)
+Crawl Phase          Walk & Run Phase
+138
+
+Optimizing Quote to Cash process
+S.No
+EPIC
+Features
+Impact
+5
+Contracting
+Quote Templates 
+Std Clause Library 
+Non Std Terms & Conditions 
+Esignature
+Dynamic Template Generation 
+Improved Productivity for Deal management 
+Streamlined Deal Governance 
+Seamless Process between Sales and Deal Mgmt 
+Simplify , Automate & Efficient Business Process (SCALE)
+6
+Order Fulfillment 
+
+
+Order Pre Validation 
+Quote to Order
+Auto Booking 
+EDI Order Capture 
+Seamless Integration
+Lower Order Touch Rate 
+Auto Bookings  
+Faster Quote to Cash Cycle  
+Simplify , Automate & Efficient Business Process (SCALE)
+7
+Billing & Invoicing 
+
+
+Plans, pricing, & promotions
+Billing Cycle 
+Billing Frequency / Billing Term
+Multi-Currency 
+API Integrations 
+Improved Customer Experience 
+Faster Quote to Cash cycle 
+Simplify , Automate & Efficient Business Process (SCALE) 
+8
+Amendments & Renewals 
+
+
+Renewal Opportunity Management 
+Renewal Quote Automation 
+Full & Partial Renewal 
+Full & Partial Upgrades 
+Purchase History 
+Short Co-Term 
+Forward Co-Term
+Renewal Notification 
+Renewal Automation 
+Improved Customer Experience 
+Efficiency
+Simplify , Automate & Efficient Business Process (SCALE)
+Crawl Phase          Walk & Run Phase
+139
+
+Zuora CPQ Architecture
+The diagram below illustrates the componentization architecture in Zuora CPQ.
+Configurable UI Flow Components
+Select Billing Account
+Force.com Platform
+Order Preview
+Create Quote
+Select Products
+Quote Details
+Configurable Objects, Triggers, Validation Rules
+Pluggable UI Components
+Lookup
+Hosted Page
+Property
+List
+Notification
+Apex Components 
+Manage Rate Plans
+Z-Quote Config. Utilities
+Order Preview
+Send to Z-Billing
+Quote Wizard Utilities
+ZDK
+Zuora for Salesforce Quoting Wizard
+140
+
+Zuora CPQ  - Attribute Based Pricing 
+Attribute-based Pricing disabled
+Product
+Product Rate
+Plan
+Product Rate Plan Change
+Product Rate Plan Change Tier
+ProductId
+ProductRatePlanId
+ProductRate PlanChangeId
+Attribute-based Pricing enabled
+Product
+Product Rate
+Plan
+Product Rate Plan Change
+Product Rate Plan Change Tier
+ProductId
+ProductRatePlanId
+ProductRate PlanChangeId
+Product Rate Plan Definition
+Product Charge Definition
+ProductRate PlanChangeId
+ProductCharge DefinitionId
+
+
+ProductRatePlanId
+(optional)
+141
+
+Zuora CPQ  - Attribute Based Pricing 
+Product Rate Plan
+(Catalog Type)
+Product Rate Plan
+(Name)
+Product Rate
+Plan Charge (Charge)
+Product Rate
+Plan Charge (Name)
+Rate Plan Charge Definition
+Product Rate Plan
+Product Rate Plan
+Product Rate Plan
+Product Rate Plan Charge Tier (Price)
+Product Rate Plan
+(Catalog Type)
+Product Rate Plan
+(Name)
+Product Rate
+Plan Charge (Charge)
+Product Rate
+Plan Charge (Name)
+Rate Plan Charge Definition
+Product Rate Plan
+Product Rate Plan
+Product Rate Plan
+Product Rate Plan Charge Tier (Price)
+Product Rate Plan
+(Catalog Type)
+Product Rate Plan
+(Name)
+Product Rate
+Plan Charge (Charge)
+Product Rate
+Plan Charge (Name)
+Rate Plan Charge Definition
+Product Rate Plan
+Product Rate Plan
+Product Rate Plan
+Product Rate Plan Charge Tier (Price)
+142
+
+Zuora CPQ  - Opportunity Types  
+New Business
+Downsell
+Sponsorship
+Standard Services Environment
+DIY (Pilot)
+Upsell / Add-On
+Renewal Upsell
+Training/ Sandboxes
+Performance Environment
+Training
+Contracted Ramp
+Services - Add On Work Authorization
+Services - SOW: BU Upsell
+GSI prime
+Opt Out Renewal
+Services - New Business SOW
+Renewal + CPI / Uplift
+Full Churn
+Z-Insights (LA)
+Services - HIA
+Services - Add on CO
+Renewal Downsell
+Standard Production Data Copy Environment
+Services - Add On Feature
+Services - SOW: Recurring Services (TAM)
+Services - SOW:
+Flagship Product
+Flat Renewal
+New Partner/ Agreement
+Large Production Data Copy Environment
+ZaaS - Managed Services
+Renewal
+Services - Upsell SOW
+RBM Connect
+Training and Sandbox Pre-Approved Entitlement
+Services - SOW: Farming
+Auto-Renewal
+Partner Integration
+Large Services Environment
+Services - Change Orders
+PS Only Upsell / Add-On
+Renewal Save
+API Sandbox
+Opportunity Type
+Recommendation 
+Rationalize Opportunity Type from 42 to Less than 5
+01
+Rationalize Opportunity fields from 76 to Less than 20
+02
+Create Record types and layouts  for Licenses and Services Opportunity 
+03
+143
+
+User Stories, Epic & Backlog - Summary
+EPIC
+# OF STORIES
+Amendments & Renewals
+35
+Contracting
+38
+Order Capture
+2
+Pricing
+30
+Product Configuration
+31
+Quoting
+51
+System
+8
+Grand Total
+195
+* LEAD & OPPORTUNITY MANAGEMENT STORIES ARE NOT COVERED 
+144
+
+SaaS Standard Epics / User Stories
+Function
+Persona
+Story Name
+Story Summary
+Details
+Product Administration
+Product Admin/ CPQ Admin
+Create & Manage Products
+Ability to manage the lifecycle and all the attributes of the product as part of the Product Administration so that the sales reps/end users can find and Quote the Products as part of the Quotation Process
+View & Search for the Products
+Creation of New Products
+Add/Update the Product Attributes (like Name, Description, Code, Family, Category, Images etc..) on the Product record.
+Define custom product attributes
+Add/Update the start and end dates of the Product record
+Mark the product as Active/Inactive
+Product Administration
+Product Admin/ CPQ Admin
+Create & Manage Product Bundles
+Ability to create & manage the bundles and bundle structure as part of Product Administration so that the sales reps/end users can easily configure the solution to meet the customer needs as part of the Quotation Process
+View & Search for the Bundle Products
+Creation of New Bundle Product
+Define the Bundle Product Attributes that would impact the Bundle (Bundle Type , Configuration Experience..)
+Add/Remove the Options Products to the Bundle. Options can be other Products including bundles
+Setup the Groupings,Group level Attributes ( Group Type ) , Sequence for the options to display the Options products in Configuration Process
+Sharing of the Option Groupings across multiple Bundles
+Setting up of default options/mandatory Options/default quantities of the options with in a bundle
+Mark the bundle as Active/Inactive or specify the start and end dates for availability.
+Stories
+145
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+146
+
+Zuora
+Partners / Distributors
+Direct 
+Go to Market
+99%
+Marketplace 
+Self Service
+147
+
+Direct
+Sell through
+Build
+Services
+01
+02
+03
+04
+Sales/Marketing (high touch)
+Commerce/EDI/Social/Email/ Fax/Phone (low touch/no touch)
+Direct VAR/Tier-1
+Distribution
+System Integrator
+VAR/Tier-2
+Marketplace (CSP)
+Solution Provider
+ISV
+OEM 
+Embed 
+GTM - HiTech
+Whiteboard Activity
+L1/L2 Process
+148
+
+Discovery, Analysis & Recommendations
+Business Process Flow Review
+Product & 
+Configuration
+Pricing Models & Discounting
+Quote New & 
+Renewals
+Salesforce Accounts & Opportunities
+Workflow
+Approvals
+Contracts
+
+Billing & Revenue
+Management
+Order
+Management 
+CPQx Current Capabilities
+GTM
+Information Architecture
+Needs Update
+Srini
+149
+
+Information Architecture
+Billing
+Opportunity
+Quote
+Contract
+Order
+Fulfillment
+Billing
+RevRec
+CRM
+Leads
+Account Management
+Contacts
+Territories
+CPQ
+Configure
+Price
+Quote
+Approval
+Contract Management
+Create
+eSignature
+Archive
+Order Management
+Entitlements
+Provisioning
+Subscriptions & Payments
+Invoice
+Payment Processing
+Manage Renewals
+Zuora Revenue
+Revenue Recognition
+FinancialForce
+CPQ
+Revenue
+Items & Pricing
+Tax 
+Reporting
+License / Services / Bundles / Add Ons
+List Price / Discount Guidance / Renewal Uplifts  
+   Purchase History
+CRM Connector
+Zuroa 360
+150
+
+About Forsys
+151
+
+2015
+Established
+500+
+Global Workforce
+100+
+Global Customers
+Partnerships
+Salesforce, Conga, Oracle, NetSuite
+Industry Verticals
+Hi-Tech & Manufacturing, Healthcare & Lifesciences, Public Sector
+The Force Driving Your Revenue
+Forsys focuses exclusively on Lead-to-Revenue bringing our clients end-to-end consulting, services and technologies to help transform their Revenue lifecycle.
+
+
+Locations
+US / India / Colombia / Brazil / UK / Australia*
+* New location
+152
+
+Customer Relationship Management
+Quote To Cash
+CPQ  |  CLM  |  Order Management & Billing |  Revenue Recognition  |  B2B eCommerce
+100+ CPQ & Billing Implementations for Hi-Tech and Manufacturing companies
+20+ B2B Digital Commerce Implementations with Conga
+Ayara - Revenue Intelligence & Automated Revenue Management 
+Rise – eCommerce Store Builder on CPQ
+Supply Chain & Financial Management
+20+ years in implementing ERP Financials & SCM
+Co-Development Partner for SCM and Adv. Pricing
+Certified Cloud Implementation Partner 
+100+ Oracle Certified resources 
+75+ CRM Implementations over 6 years
+300+ Salesforce Certifications
+Salesforce Org Merge (M&A) - Accelerator
+Salesforce DataOps
+Market to Lead
+Lead to Opportunity
+Opportunity to Quote
+Quote to Order
+Order to Book
+Contracts
+Shipment/ License
+Book to Invoice
+Invoice to Cash
+Rev Rec
+$
+Transforming Revenue Operations
+153
+
+                           Integrations
+                    Data Migrations
+              Testing as a Service
+Service Offerings
+Sales Cloud
+Service Cloud
+Revenue Cloud
+Experience Cloud
+Force.com
+Conga CPQ & Billing
+Digital Commerce
+Conga CLM
+Conga Sign
+Conga Composer
+Enterprise Resource Planning
+Supply Chain Management
+Fusion Analytics Warehouse
+PaaS
+Financial Management
+Planning & Budgeting
+Professional Services Automation
+SCM
+Assessment & Advisory
+Value Stream Analysis 
+Readiness Assessment
+Roadmap and ROI
+
+Implementation Services
+Salesforce | Conga | Oracle | NetSuite
+
+Managed Services & Upgrades
+Maintenance & Minor Enhancements
+Upgrades
+Dev Ops
+
+Data Integration & Migration Services
+Data Integration across Systems         (using Mulesoft or OIC or FloData)
+Data Migration of Master,          Transactional & Analytical Data          across Systems
+
+Testing as a Service(TaaS)
+Business Apps Assurance
+Test Automation Accelerators
+Data Reconciliation Testing
+                       Data Analytics
+154
+
+Select Customers by Industry segment
+Hi-Tech/ Manufacturing
+Software
+Public Sector
+Life Sciences/Mfg
+Business Services
+Others
+SW: after Conga Nasdaq and robbinhood, 
+155
+
+California - HQ
+691 S Milpitas Blvd, STE #203 Milpitas, CA 95035
+Tel: (408) 409.2567, Fax: (877) 410.0710
+Email: info@forsysinc.com
+India
+Sai Ganesh Towers, 3rd & 5th Floor, 100 Feet Rd
+Madhapur Hyderabad, Telangana 500081
+Tel: +91-40-46300010
+Texas
+505 E. Palm Valley Blvd., Round Rock, TX 78664
+Tel: (408) 409.2567, Fax: (877) 410.0710
+Email: info@forsysinc.com
+THANK YOU
+156
+
+CPQx - High Level Recommendations 
+MDM - Single Source of truth and Sync between Zuora Billing and Salesforce
+Enable Opportunity Products 
+Enable Opportunity Sync (Bi-Directional)
+Enable Enhanced Configuration Experience 
+Enable Attribute Based Pricing
+Enable Auto Approvals for Std Terms and Conditions 
+Enable Contract Life Management for MSA/Sales Contracts 
+Enable Renewal Quote Automation
+Enable Auto Update of Renewal Opportunity for Amendments
+Enable Opportunity Closure Automation
+Enable Dynamic Document Generation for Language and Clauses 
+Enable Quote to Order Automation and Auto Booking of Standard Orders 
+Enable Product Bundling 
+Enable NextGen UX
+Enable Partner Self Service and Marketplace Offers 
+EOL IQ 
+157
+
+CPQx - Standard User Stories Assessment
+Persona
+# OF STORIES
+Approver
+5
+Collaborator
+4
+CPQ (Template) Admin
+3
+CPQ Admin
+23
+Pricing Admin/CPQ Admin
+22
+Product Admin / CPQ Admin
+18
+Salesrep
+59
+Salesrep/Customer
+1
+Salesrep/Order Ops
+7
+Salesrep/Renewal Ops
+10
+System
+9
+Grand Total
+161
+CPQX Supported
+CPQX Supported
+Advance Configuration
+1
+CPQX not Supported
+38
+CPQX Product Roadmap
+3
+CPQX Supported
+99
+Supported using Doc Gen
+4
+Zuora Billing Supported
+16
+Grand Total
+161
+158
+
+CPQx - Standard User Stories Assessment By Phases
+Epic
+# of User Stories
+Agreement Activation
+4
+Agreement Alerts and Notifications
+1
+Agreement Amendments
+4
+Agreement Approvals
+4
+Agreement Cancellation
+1
+Agreement Expire
+1
+Agreement Initiation
+9
+Agreement Signatures
+4
+Agreement Termination
+1
+Author and Negotiate
+4
+Document Generation
+3
+Reports and Dashboards
+2
+Grand Total
+38
+Phases
+# of User Stories
+NextGen
+11
+Enhancement
+38
+MVP
+112
+Grand Total
+38
+159
+
+UX AUDIT ROADMAP
+Define Objectives and Scope
+01
+Understand the Users
+02
+03
+Evaluating 3 Key CPQx Journeys
+03
+03
+Heuristic, Accessibility & Compliance
+04
+Redesign, Monitor & Iterate
+05
+160
+
+Identify Usability Issues
+Reduce Deal Cycle Time
+Improve User Satisfaction
+OBJECTIVES
+SCOPE
+Specific Modules/Features
+to Focus On
+User Interfaces and Interactions
+Customizations and Configurations
+UX Audit Objectives and Scope
+161
+
+Zuora CPQ  - Attribute Based Pricing 
+162
+
+Zuora CPQ  - Attribute Based Pricing 
+163
+
+Zuora CPQ  - Opportunity Types  
+Opportunity Type
+New Business
+Upsell / Add-On
+Contracted Ramp
+Services - New Business SOW
+Services - Add on CO
+Services - SOW: Flagship Product
+Renewal
+Services - SOW: Farming
+Services - Change Orders
+Downsell
+Renewal Upsell
+Services - Add On Work Authorization
+Renewal + CPI / Uplift
+Renewal Downsell
+Flat Renewal
+Services - Upsell SOW
+Auto-Renewal
+PS Only Upsell / Add-On
+Sponsorship
+Training/ Sandboxes
+Services - SOW: BU Upsell
+Full Churn
+Standard Production Data Copy Environment
+New Partner/ Agreement
+RBM Connect
+Partner Integration
+Renewal Save
+Standard Services Environment
+Performance Environment
+GSI prime
+Z-Insights (LA)
+Services - Add On Feature
+Large Production Data Copy Environment
+Training and Sandbox Pre-Approved Entitlement
+Large Services Environment
+API Sandbox
+DIY (Pilot)
+Training
+Opt Out Renewal
+Services - HIA
+Services - SOW: Recurring Services (TAM)
+ZaaS - Managed Services
+Recommendation :
+
+Rationalize Opportunity Type from 42 to Less than 5
+Rationalize Opportunity fields from 76 to Less than 20
+Create Record types and layouts  for Licenses and Services Opportunity 
+164
+
+SaaS Standard Epics / User Stories
+Stories
+Function
+Persona
+Story Name
+Story Summary
+Details
+Product Administration
+Product Admin/CPQ Admin
+Create & Manage Products
+Ability to manage the lifecycle and all the attributes of the product as part of the Product Administration so that the sales reps/end users can find and Quote the Products as part of the Quotation Process
+View & Search for the Products
+Creation of New Products
+Add/Update the Product Attributes ( like Name, Description, Code, Family, Category, Images etc..) on the Product record.
+Define custom product attributes
+Add/Update the start and end dates of the Product record
+Mark the product as Active/Inactive
+Product Administration
+Product Admin/CPQ Admin
+Create & Manage Product Bundles
+Ability to create & manage the bundles and bundle structure as part of Product Administration so that the sales reps/end users can easily configure the solution to meet the customer needs as part of the Quotation Process
+View & Search for the Bundle Products
+Creation of New Bundle Product
+Define the Bundle Product Attributes that would impact the Bundle (Bundle Type , Configuration Experience..)
+Add/Remove the Options Products to the Bundle. Options can be other Products including bundles
+Setup the Groupings,Group level Attributes ( Group Type ) , Sequence for the options to display the Options products in Configuration Process
+Sharing of the Option Groupings across multiple Bundles
+Setting up of default options/mandatory Options/default quantities of the options with in a bundle
+Mark the bundle as Active/Inactive or specify the start and end dates for availability.
+165
+
+SaaS Standard Epics / User Stories
+Stories
+Function
+Persona
+Story Name
+Story Summary
+Details
+Product Administration
+Product Admin/CPQ Admin
+Create & Manage Products
+Ability to manage the lifecycle and all the attributes of the product as part of the Product Administration so that the sales reps/end users can find and Quote the Products as part of the Quotation Process
+View & Search for the Products
+Creation of New Products
+Add/Update the Product Attributes ( like Name, Description, Code, Family, Category, Images etc..) on the Product record.
+Define custom product attributes
+Add/Update the start and end dates of the Product record
+Mark the product as Active/Inactive
+Product Administration
+Product Admin/CPQ Admin
+Create & Manage Product Bundles
+Ability to create & manage the bundles and bundle structure as part of Product Administration so that the sales reps/end users can easily configure the solution to meet the customer needs as part of the Quotation Process
+View & Search for the Bundle Products
+Creation of New Bundle Product
+Define the Bundle Product Attributes that would impact the Bundle (Bundle Type , Configuration Experience..)
+Add/Remove the Options Products to the Bundle. Options can be other Products including bundles
+Setup the Groupings,Group level Attributes ( Group Type ) , Sequence for the options to display the Options products in Configuration Process
+Sharing of the Option Groupings across multiple Bundles
+Setting up of default options/mandatory Options/default quantities of the options with in a bundle
+Mark the bundle as Active/Inactive or specify the start and end dates for availability.
+166
+
+Opty to Order Assessment : Proposed UX Roadmap
+Key User Research Findings
+Proposed Design Solutions & Their Impact
+Next Steps and Recommendations
+
+
+
+
+“
+Prototype Design: Incorporating insights into a functional prototype
+
+
+User Testing Phase: Beta testing with selected user groups
+
+
+Product + Eng + UX Teams Collaboration: Assessing backend support for new features
+
+Design Improvement Plan   
+
+Improve Consistency and Standards
+
+Aesthetic & Minimalist Design
+
+Accessibility
+
+User Centered Design (New Capabilities)
+
+
+Improved user experience
+
+Reduced deal cycle time 
+
+Increased user satisfaction  
+
+
+
+HIGH
+Impact
+Lacks a Consistent Design
+AE Interviews
+Conducted
+8
+Design Workshop
+PHASED APPROACH
+Product Catalog Complexity
+
+Standard Quote Approval
+
+Manual Renewals
+MAJOR THEMES
+EXECUTIVE SUMMARY
+167
+
+Opty to Order Assessment : Process Impacts
+EXECUTIVE SUMMARY
+EPIC
+Current Process
+To Be Process
+OpportunityManagement
+(Sales)
+Single Product Opportunity
+Multiple Product Opportunity
+No Quote to Opportunity Product Sync
+Systematic Quote to Opportunity Product Sync
+No Auto Update on Amendment Opportunity 
+Amendment Opportunity Auto Updated with Latest amendments 
+Manual Opportunity Closure
+Automatic Opportunity Closure
+
+
+
+
+Quote Management
+(Sales & Deals Desk)
+IQ Quoting for Licenses 
+CPQx for Services 
+CPQx Quoting for License and Services 
+Manual Approvals for all quotes 
+All quotes are Deals Desk Driven
+Systematic Approvals for Std Quotes 
+Optimized Approval criteria for Non Std quotes 
+Sales Empowerment through Systematic Thresholds and Validations 
+Deals Desk Reviews only Complex Non Std Deals 
+Attribute Based Pricing Disabled 
+Attribute Based Pricing Enabled 
+Order form for Quote proposal and contracting 
+CPQx for Quote proposal 
+CLM for Contracting 
+Renewal Quotes
+(Deals Desk)
+Manual
+Automated 
+Order Management
+(Billing Ops)
+Manual Validation for Account , Products , Payments and Non Std terms 
+Automated and Systematic Validations 
+168
+
+EXECUTIVE SUMMARY
+                                                                                        Pricing & Packaging  
+Account & Contacts Rationalization
+Opty to Order Assessment : Process Impacts
+To Be Process
+Opportunity Management
+(Sales )
+Quote Management
+(Sales & Deals Desk)
+Renewal Quotes 
+(Renewal Specialist)
+Order Management
+(Billing Ops)
+A. Pipeline Management & Forecasting  
+New process for Pipeline Management as Opportunities will be tracked and managed for multiple products 
+Manage Opportunity Products and Systematic Sync with Quote for accurate Forecasting 
+Eliminate redundant data entry by avoiding Opportunity creation & Tracking for single/Individual products 
+Forecast by tracking opportunities for multiple products giving better visibility and insights on Customer purchases 
+B. Opportunity Management & Tracking 
+Optimize and Reduce Opportunity Types and focus on key categories : 
+i) New Business 
+ii) Up Sell 
+iii) Cross Sell
+iv) Renewal
+ v) Migration 
+
+Rationalize Opportunity attributes by eliminating and reducing # of attributes captured  and simplifying Opportunity tracking 
+Integrate Opportunity management process with Order Management for seamless reconciliation and closure of Upsell and Renewal Opportunity
+A. Quotation Management & Approvals
+Unified Seamless Quoting Process for Licenses and Services leveraging CPQx 
+Enable Guided Selling and Attribute Based Pricing 
+Empower Sales for quotes with Standard discounting and Terms & Conditions 
+Deals Desk Reviews only Complex Non Std Deals 
+Simplify /  Streamline and Optimize Non Std Approval criteria and thresholds 
+Process change for Non Std Terms and Conditions quotes by leveraging Contract Life Cycle Management 
+
+B. Quote to Order 
+Streamline Quote to Order process by capturing mandatory attributes upfront on Quote to reduce Order Manual validations (Billing Accounts and Contacts / Payment Terms etc)
+A. Renewal Opportunity & Quote Management
+Business rules to Integrate and Orchestrate Order Management process with CPQx to generate Renewal Quotes by customer preference, expiring subscriptions, evergreen subscriptions etc
+Business Process to Identify Proactive (Systematic) Quotes and Reactive (Manual) Quotes 
+Customer Purchase History for Accounts through seamless integration with Order Management to get better visibility into Customer Purchases, Add ons and accurate ARR spend tracking 
+Amendment flow for UpSell , Cross Sell ,downsell , Qty Expansion and Upgrades 
+Standardize Quote to Order process for New Business & Renewals 
+A. Order Validations and Processing  
+Process change to reduce  Quote to Order Validation 
+Revisit all Manual Process for Validation with Gsheet and update based on systematic validations enabled 
+Low touch Auto Booking 
+
+169
+
+Opty to Order Assessment : Process Impacts
+EXECUTIVE SUMMARY
+EPIC
+Current Process
+To Be Process
+
+
+
+
+
+Opportunity Management
+               (Sales)
+Single Product Opportunity
+Multiple Product Opportunity
+No Quote to Opportunity Product Sync
+Systematic Quote to Opportunity Product Sync
+No Auto Update on Amendment Opportunity 
+Amendment Opportunity Auto Updated with Latest amendments 
+Manual Opportunity Closure
+Automatic Opportunity Closure
+
+
+
+
+Quote Management
+(Sales & Deals Desk)
+IQ Quoting for Licenses 
+CPQx for Services 
+CPQx Quoting for License and Services 
+Manual Approvals for all quotes 
+All quotes are Deals Desk Driven
+Systematic Approvals for Std Quotes 
+Optimized Approval criteria for Non Std quotes 
+Sales Empowerment through Systematic Thresholds and Validations 
+Deals Desk Reviews only Complex Non Std Deals 
+Attribute Based Pricing Disabled 
+Attribute Based Pricing Enabled 
+Order form for Quote proposal and contracting 
+CPQx for Quote proposal 
+CLM for Contracting 
+ Renewal Quotes
+   (Deals Desk)
+Manual
+Automated 
+Order Management
+(Billing Ops)
+Manual Validation for Account , Products , Payments and Non Std terms 
+Automated and Systematic Validations 
+@Niharika - can you please enhance  this ?
+170
+
+To Be Process
+Opty to Order Assessment : Process Impacts
+EXECUTIVE SUMMARY
+Opportunity Management
+(Sales & Deals Desk)
+Quote Management
+(Sales & Deals Desk)
+Renewal Quotes 
+(Renewal Specialist)
+Order Management
+(Billing Ops)
+Pipeline Management & Forecasting  
+New process for Pipeline Management as Opportunities will be tracked and managed for multiple products 
+Manage Opportunity Products and Systematic Sync with Quote for accurate Forecasting 
+Eliminate redundant data entry by avoiding Opportunity creation & Tracking for single/Individual products 
+Forecast by tracking opportunities for multiple products giving better visibility and insights on Customer purchases 
+Opportunity Management & Tracking 
+Optimize and Reduce Opportunity Types and focus on key categories : 
+                      i) New Business 
+                     ii) Up Sell 
+                     iii) Cross Sell
+                     iv) Renewal
+                     v) Migration 
+Rationalize Opportunity attributes by eliminating and reducing # of attributes captured  and simplifying Opportunity tracking
+Integrate Opportunity management process with Order Management for seamless reconciliation and closure of Upsell and Renewal Opportunity
+Quotation Management & Approvals
+Unified Seamless Quoting Process for Licenses and Services leveraging CPQx 
+Enable Guided Selling and Attribute Based Pricing 
+Empower Sales for quotes with Standard discounting and Terms & Conditions 
+Deals Desk Reviews only Complex Non Std Deals 
+Simplify /  Streamline and Optimize Non Std Approval criteria and thresholds 
+Process change for Non Std Terms and Conditions quotes by leveraging Contract Life Cycle Management 
+Quote to Order 
+Streamline Quote to Order process by capturing mandatory attributes upfront on Quote to reduce Order Manual validations (Billing Accounts and Contacts / Payment Terms etc)
+Renewal Opportunity & Quote Management
+
+Business rules to Integrate and Orchestrate Order Management process with CPQx to generate Renewal Quotes by customer preference, expiring subscriptions, evergreen subscriptions etc
+Business Process to Identify Proactive (Systematic) Quotes and Reactive (Manual) Quotes 
+Customer Purchase History for Accounts through seamless integration with Order Management to get better visibility into Customer Purchases, Add ons and accurate ARR spend tracking 
+Amendment flow for Qty Expansion and Upgrades 
+Standardize Quote to Order process for New Business & Renewals 
+Order Validations and Processing 
+ 
+Process change to reduce  Quote to Order Validation 
+Revisit all Manual Process for Validation with Gsheet and update based on systematic validations enabled 
+Low touch Auto Booking 
+
+                                                                                        Pricing & Packaging  
+Account & Contacts Rationalization
+171
+
+Opty to Order Assessment : Process Impacts
+Opportunity Management
+(Sales)
+Single Product Opportunity
+Multiple Product Opportunity
+No Quote to Opportunity Product Sync
+Systematic Quote to Opportunity Product Sync
+No Auto Update on Amendment Opportunity 
+Amendment Opportunity Auto Updated with Latest amendments 
+Manual Opportunity Closure
+Automatic Opportunity Closure
+Quote Management
+(Sales & Deals Desk)
+IQ Quoting for Licenses 
+CPQx for Services 
+CPQx Quoting for License and Services 
+Manual Approvals for all quotes 
+All quotes are Deals Desk Driven
+Systematic Approvals for Std Quotes 
+Optimized Approval criteria for Non Std quotes 
+Sales Empowerment through Systematic Thresholds and Validations 
+Deals Desk Reviews only Complex Non Std Deals 
+Attribute Based Pricing Disabled 
+Attribute Based Pricing Enabled 
+Order form for Quote proposal and contracting 
+CPQx for Quote proposal 
+CLM for Contracting 
+Renewal Quotes (Deals Desk)
+Manual
+Automated 
+Order Management
+(Billing Ops)
+Manual Validation for Account , Products , Payments and Non Std terms 
+Automated and Systematic Validations 
+EPIC
+Current Process
+To Be Process
+EXECUTIVE SUMMARY
+New (after the feedback from IT)
+172
+
+Capability Map : AS-IS State (BigRocks)
+Campaign Mgmt.
+Lead 
+Mgmt.
+Account Mgmt.
+Oppty. Mgmt.
+Quote
+Product Config.
+Price
+Approve
+Proposal /
+Quote Document
+Contract Mgmt. 
+Manage 
+Order 
+Fulfill 
+Revenue Mgmt.
+Billing & Invoicing
+Payments / Collections
+Case Mgmt.
+SLAs
+Knowledge 
+Mgmt.
+Interaction Channels
+Marketing Automation
+Accept Lead
+Create 
+Account 
+Create Opportunity
+Manage Quote 
+New Product
+ Introduction
+List Price Mgmt.
+Pricing-
+Based Approvals
+Document Templates
+Create Contract 
+Create Order 
+License 
+Activation 
+Process
+Contract Combination & Modification
+Invoice 
+Management
+ 
+PrePayments
+/Deposit Mgmt.
+ 
+Case Creation
+Standard SLAs Config
+Knowledge Base
+Web to Case
+(Automatic)
+Case Assignment/ Routing
+Advanced SLAs Config
+FAQs
+Email to Case
+(Automatic)
+Campaign Mgmt.
+Reject Lead
+Create                        Contacts
+Manage Opportunity 
+Capture 
+Quote Information 
+Product Mgmt. 
+Customer 
+Specific 
+Pricing
+Product-
+Based Approvals
+Manage Documents
+Red-Lining
+Order 
+Validation 
+ 
+Fulfill Order Integration
+Performance Obligation Identification
+Tax Calculation
+Customer Payments Mgmt.
+Case Escalation
+Service Entitle-
+ments
+Article Publishing 
+and Review
+Phone to Case
+(Manual)
+Lead Generation / Assessment
+Lead Conversion
+Manage Account
+/ Contact 
+ 
+Opportunity to Quote Sync
+Renewal Quotes
+Manage 
+Bundles 
+Config.-Based Pricing
+Terms-Based Approvals
+Terms and Conditions
+Manage
+Clause
+ Library 
+Create 
+Assets / Installed Base
+Prof. Serv. Fulfillment
+Transaction Price & Selling Price Determination
+Consolidated Billing
+Report 
+on AR
+ 
+Case Resolution
+ 
+Suggest Knowledge Articles
+Chat to Case 
+(Manual)
+Case Email Auto-Response
+ 
+Multilingual Knowledge
+Third Party Channel Routing
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Lead Routing / Assignment
+Manage Partner Accounts
+Opportunity Approvals
+Quote 
+Types 
+Product 
+Rules 
+Volume-Based Pricing
+Renewal Approvals
+E-Signature 
+Contract Approvals 
+Submit
+ Order 
+Delivery and Provisioning
+Revenue Recognition & Allocation Rules 
+Credit Card 
+Payment Processing
+Customer Disputes 
+Mgmt.
+Queue Management
+ 
+ 
+Social Customer Service
+Email Templates
+ 
+ 
+Live Agent Web Chat
+Lead Integration
+Territory Mgmt. 
+Credit 
+Mgmt.
+ 
+Create
+ Project
+ 
+Product Config.
+Terms-Based Pricing
+Manage Approvals
+Renewal 
+Quote Doc
+ 
+E-Signature 
+Renewal Order
+Entitlement Account Mgmt.
+Contract Cost Capitalize & Amortization
+Renewal Invoice
+Credit 
+Memos 
+Mgmt.
+Call Center
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CTI Integration
+Call Scripting
+ 
+ 
+Pipeline and Quota Mgmt.
+Close 
+Opportunity
+Costing for Quotations
+Guided 
+ Selling  
+Promotions
+ 
+Quote to Order 
+Contract Repository 
+Process Order
+Entitlement Delivery and Reporting
+Revenue Reporting & Disclosure Req.
+Consumption Metering
+Dunning 
+Mgmt.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Forecasting
+Renewal Opportunity
+ 
+Cross Sell / Up Sell
+Discretionary Discounts
+ 
+ 
+Non Standard Contract Mgmt.
+Change / Cancel Order
+Customer Onboarding
+Revenue Forecasting
+ 
+Collections
+ 
+ 
+ 
+ 
+ 
+Renewals Pricing
+ 
+ 
+ 
+Credit Mgmt.
+Customer Support
+ 
+ 
+Payment Receipts
+ 
+ 
+ 
+ 
+ 
+Multi-
+Currency
+ 
+ 
+ 
+EDI
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Commissions
+Customer Success
+ Billing and Invoicing
+Order to Fulfill
+CLM
+Opportunity & Quote
+Lead Gen
+Workshop Topics
+Not in Scope
+Not applicable for Zuora
+Low level impact
+Medium level impact
+High level impact
+No Impact
+EXECUTIVE SUMMARY
+173
+
+Capability Map : AS-IS State (BigRocks)
+Campaign Mgmt.
+Lead 
+Mgmt.
+Account Mgmt.
+Oppty. Mgmt.
+Quote
+Product Config.
+Price
+Approve
+Proposal /
+Quote Document
+Contract Mgmt. 
+Manage 
+Order 
+Fulfill 
+Revenue Mgmt.
+Billing & Invoicing
+Payments / Collections
+Case Mgmt.
+SLAs
+Knowledge 
+Mgmt.
+Interaction Channels
+Marketing Automation
+Accept Lead
+Create 
+Account 
+Create Opportunity
+Manage Quote 
+New Product
+ Introduction
+List Price Mgmt.
+Pricing-
+Based Approvals
+Document Templates
+Create Contract 
+Create Order 
+License 
+Activation 
+Process
+Contract Combination & Modification
+Invoice 
+Management
+ 
+PrePayments
+/Deposit Mgmt.
+ 
+Case Creation
+Standard SLAs Config
+Knowledge Base
+Web to Case
+(Automatic)
+Case Assignment/ Routing
+Advanced SLAs Config
+FAQs
+Email to Case
+(Automatic)
+Campaign Mgmt.
+Reject Lead
+Create                        Contacts
+Manage Opportunity 
+Capture 
+Quote Information 
+Product Mgmt. 
+Customer 
+Specific 
+Pricing
+Product-
+Based Approvals
+Manage Documents
+Red-Lining
+Order 
+Validation 
+ 
+Fulfill Order Integration
+Performance Obligation Identification
+Tax Calculation
+Customer Payments Mgmt.
+Case Escalation
+Service Entitle-
+ments
+Article Publishing 
+and Review
+Phone to Case
+(Manual)
+Lead Generation / Assessment
+Lead Conversion
+Manage Account
+/ Contact 
+ 
+Opportunity to Quote Sync
+Renewal Quotes
+Manage 
+Bundles 
+Config.-Based Pricing
+Terms-Based Approvals
+Terms and Conditions
+Manage
+Clause
+ Library 
+Create 
+Assets / Installed Base
+Prof. Serv. Fulfillment
+Transaction Price & Selling Price Determination
+Consolidated Billing
+Report 
+on AR
+ 
+Case Resolution
+ 
+Suggest Knowledge Articles
+Chat to Case 
+(Manual)
+Case Email Auto-Response
+ 
+Multilingual Knowledge
+Third Party Channel Routing
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Lead Routing / Assignment
+Manage Partner Accounts
+Opportunity Approvals
+Quote 
+Types 
+Product 
+Rules 
+Volume-Based Pricing
+Renewal Approvals
+E-Signature 
+Contract Approvals 
+Submit
+ Order 
+Delivery and Provisioning
+Revenue Recognition & Allocation Rules 
+Credit Card 
+Payment Processing
+Customer Disputes 
+Mgmt.
+Queue Management
+ 
+ 
+Social Customer Service
+Email Templates
+ 
+ 
+Live Agent Web Chat
+Lead Integration
+Territory Mgmt. 
+Credit 
+Mgmt.
+ 
+Create
+ Project
+ 
+Product Config.
+Terms-Based Pricing
+Manage Approvals
+Renewal 
+Quote Doc
+ 
+E-Signature 
+Renewal Order
+Entitlement Account Mgmt.
+Contract Cost Capitalize & Amortization
+Renewal Invoice
+Credit 
+Memos 
+Mgmt.
+Call Center
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+CTI Integration
+Call Scripting
+ 
+ 
+Pipeline and Quota Mgmt.
+Close 
+Opportunity
+Costing for Quotations
+Guided 
+ Selling  
+Promotions
+ 
+Quote to Order 
+Contract Repository 
+Process Order
+Entitlement Delivery and Reporting
+Revenue Reporting & Disclosure Req.
+Consumption Metering
+Dunning 
+Mgmt.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Forecasting
+Renewal Opportunity
+ 
+Cross Sell / Up Sell
+Discretionary Discounts
+ 
+ 
+Non Standard Contract Mgmt.
+Change / Cancel Order
+Customer Onboarding
+Revenue Forecasting
+ 
+Collections
+ 
+ 
+ 
+ 
+ 
+Renewals Pricing
+ 
+ 
+ 
+Credit Mgmt.
+Customer Support
+ 
+ 
+Payment Receipts
+ 
+ 
+ 
+ 
+ 
+Multi-
+Currency
+ 
+ 
+ 
+EDI
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+Commissions
+Customer Success
+ Billing and Invoicing
+Order to Fulfill
+CLM
+Opportunity & Quote
+Lead Gen
+Workshop Topics
+Not in Scope
+Not applicable for Zuora
+Low level impact
+Medium level impact
+High level impact
+No Impact
+174

@@ -1,0 +1,1288 @@
+Transitioning to a new era of Digital Commerce
+CommerceX
+Modern, Simple and Intelligent
+By Sunil Chandra on 06 Sep 2020
+1
+
+Paul Rand
+Design is the silent ambassador of your brand.
+“
+
+Landscape of issues, fragmentation
+Summary in metrics form, highlights
+Next Gen UX Strategy and Approach
+Proposal and Approach
+Our North Star (consistent design language, UCD approach, governance, 
+Our Pitch / Flow
+3
+
+Let’s look at problems prevailing in the current UX landscape
+
+Summary of 
+Findings
+(most severe are listed here)
+Inconsistency across the platform
+
+Multiple Applications for single task
+
+Poor Layout and Navigation System
+
+Lengthy, Poor Form Structure and Experience
+
+Error handling doesn’t provide enough information on how to resolve the errors
+
+Fragmented Search Experience throughout the Application
+
+Multiple Color variations, specifically Cisco Blue.
+
+Design overwhelming and Cluttered/Outdated  visual design
+
+
+Updated Pain points
+
+
+Multiple applications for single task
+
+Inconsistency across the platform
+
+Error handling doesn’t provide enough information on how to resolve the errors
+
+Poor Layout and Navigation System 
+
+Fragmented Search Experience throughout the application
+
+Lengthy and Poor Form Structure & Experience
+
+Design overwhelming and and cluttered/Outdated  visual design
+
+
+Multiple Applications for Singular Task.
+
+Inconsistent Applications & Lack of Aesthetics.
+
+Error handling doesn’t provide enough information about the task being performed.
+
+Redundant attributes shown on different applications, result in crowded UI.
+
+Fragmented and inconsistent search across all the applications.
+
+Multiple color variations, specifically Cisco Blue.
+
+Inconsistent modal interface in available features.
+
+
+Multiple Applications for single task
+
+
+Work In Progress
+
+
+Inconsistency across the platform 
+7
+
+Error handling doesn’t provide enough info about the task
+8
+
+Fragmented search experience
+9
+
+Multiple color variations, specifically Cisco Blue.
+10
+
+© 2020  Cisco and/or its affiliates. All rights reserved.   Cisco Confidential
+Problem Statement
+For Cisco to become a data driven business, we need to change the way we capture, store, use, share and consume data.
+11
+
+Key Insights
+30%
+of our forms are less usable compared to usability index
+Need to Consolidate Insights
+12
+
+Key Insights
+30%
+customers report difficulty in using lengthy and unoptimised forms.
+30% of our forms are less usable as compared to the Usability Index.
+
+30% of customers report difficulty in using lengthy and unoptimised forms.
+
+27% of users struggle due to the fragmented applications across CCW.
+
+35 % increase in cost to market due to fragmented global navigation.
+
+38% of users stop engaging with the website when they find its content as unattractive or poorly structured
+
+
+13
+
+Key Insights
+20%
+increase in churn rate due to fragmented global navigation
+14
+
+Key Insights
+35%
+increase in cost to market due to fragmented global navigation.
+15
+
+Key Insights
+27%
+of users struggle due to the fragmented applications across CCW.
+
+
+16
+
+Key Insights
+18%
+reduction in the total revenue due to segregated applications across CCW
+17
+
+Key Insights
+38%
+of users stop engaging with the website when they find content to be unattractive or poorly structured
+18
+
+Key Insights
+50%
+of users left the website because of bad User Experience across the application
+19
+
+© 2020  Cisco and/or its affiliates. All rights reserved.   Cisco Confidential
+Problem Statement
+For Cisco to become a data driven business, we need to change the way we capture, store, use, share and consume data.
+20
+
+© 2020  Cisco and/or its affiliates. All rights reserved.   Cisco Confidential
+CCW Online Presence
+Reference
+21
+
+© 2020  Cisco and/or its affiliates. All rights reserved.   Cisco Confidential
+Reference
+22
+
+Goals/Objectives 
+
+30-40%
+Key Objectives
+Improve Customer Satisfaction
+Reduce Support Cases / Case Avoidance 
+Consistency
+Commerce platform has evolved with a lot of new capabilities. Effort is to optimize and bring pervasive UX across the ecosystem. 
+25%
+Improve Time to Capability by
+Reduce Task Time
+5-10%
+Reduce Cost to Serve by
+3.4 to 4
+One Design System for all Platforms
+© 2020  Cisco and/or its affiliates. All rights reserved.   Cisco Confidential
+24
+
+Touchpoints
+Why do we need to transform?
+Our customers and their needs are changing
+Evolving customer base
+Market disruption coming from competitors/cloud players
+Everything we do needs to help support selling our products
+Enhanced focus on the business
+Need to automate core operations in order to focus on transformation
+More Agility
+Our operations need to be best in class when it comes to cyber security
+Higher need for security
+Effects of industry challengers
+Reasons for transforming
+Benefits: 
+“It's a strategic tool. It's also a collective empathy tool.”
+Notes view: 25
+
+Next Gen UX Strategy and Approach
+
+Current State
+Assessment Framework
+Target State Outcomes
+Orchestrate, Accelerate, Integrate
+Respond, deliver projects, incremental functionality
+IT Operating Model
+Where do we aspire to be?
+IT Operating Model
+Journey to IT future state
+
+Less Learning Curves  
+Micro Frontend Framework
+Heavy Reuse
+Faster Adoption
+Speed to Market
+Heavy Standardisation for Enterprises
+Modernisation
+Standardisation
+Silos
+No Governance
+No Standardisation
+Qualitative User Research
+CX Process 
+Design System 
+UI/Application Component
+Product Design
+Micro Frontend 
+Enterprise Apps
+Platform for Cisco Apps
+Inconsistent
+Reduced Cost to Serve
+Multiple UI frameworks
+Poor Navigation
+
+Talking points: 
+We have taken time to understand our current state architecture: Its limitations and where we need to change:
+Proliferation of >4k applications across IT driven by reacting to ad hoc business requirements, building point solutions vs. reusing standard services, and continual integration of acquisitions
+Majority of applications are 3rd party but highly customized but there is heavy customization due to complex business requirements, making upgrades complex, less frequent, time-consuming and costly
+Extensive on-premises portfolio: Large fraction of the portfolio is not on cloud (>80% apps); with a few pockets of cloud-native applications
+Limited horizontal integration and data threading App. proliferation and point-to-point integrations limits the ability to view data consistently & accurately
+Limited flexibility to support new business models across the value chain (inflexible back-office, rigid compensation models, fragmented reporting etc.)
+
+In order to drive to our target, we will use a rigorous prioritization of work to ensure it is critical for the business, employs industry best practices, and adheres to our future state IT principles (for example cloud first, portability, vendor agnosticism, No Ops, Self Service, among others)
+
+When we look at our target state – we have high aspirations, we want to drive the transformation across our ecosystem of customers, partners , suppliers, and a few new characteristics are paramount:
+Manage a world-class Hybrid multi-cloud environment
+Shift toward 3rd-party infra and standard SaaS deployments
+Build to differentiate: Buy commodities, but customize where it differentiates us
+Design best-in-class employee digital experience & tools
+Innovate: esp. with AI, data & analytics, APIs everywhere (especially important to drive transformation across customers, partners and suppliers)
+Operate in an Agile + NoOps environment
+Strive for data fidelity
+
+To achieve all of these goals, we will transform our operating model: We will engage in new ways of working with the business where we will be more orchestrators than enablers of incremental functionality, we will establish new governance structures (strategy/architecture/portfolio), we will drive our run/change versus transformation functions in differentiated ways,  we will build strategic partnerships.
+
+
+
+
+Notes view: 27
+
+© 2020  Cisco and/or its affiliates. All rights reserved.   Cisco Confidential
+Data Strategic Pillars
+Reference
+28
+
+Design to Development Approach
+Reference
+
+Talking points: 
+We have taken time to understand our current state architecture: Its limitations and where we need to change:
+Proliferation of >4k applications across IT driven by reacting to ad hoc business requirements, building point solutions vs. reusing standard services, and continual integration of acquisitions
+Majority of applications are 3rd party but highly customized but there is heavy customization due to complex business requirements, making upgrades complex, less frequent, time-consuming and costly
+Extensive on-premises portfolio: Large fraction of the portfolio is not on cloud (>80% apps); with a few pockets of cloud-native applications
+Limited horizontal integration and data threading App. proliferation and point-to-point integrations limits the ability to view data consistently & accurately
+Limited flexibility to support new business models across the value chain (inflexible back-office, rigid compensation models, fragmented reporting etc.)
+
+In order to drive to our target, we will use a rigorous prioritization of work to ensure it is critical for the business, employs industry best practices, and adheres to our future state IT principles (for example cloud first, portability, vendor agnosticism, No Ops, Self Service, among others)
+
+When we look at our target state – we have high aspirations, we want to drive the transformation across our ecosystem of customers, partners , suppliers, and a few new characteristics are paramount:
+Manage a world-class Hybrid multi-cloud environment
+Shift toward 3rd-party infra and standard SaaS deployments
+Build to differentiate: Buy commodities, but customize where it differentiates us
+Design best-in-class employee digital experience & tools
+Innovate: esp. with AI, data & analytics, APIs everywhere (especially important to drive transformation across customers, partners and suppliers)
+Operate in an Agile + NoOps environment
+Strive for data fidelity
+
+To achieve all of these goals, we will transform our operating model: We will engage in new ways of working with the business where we will be more orchestrators than enablers of incremental functionality, we will establish new governance structures (strategy/architecture/portfolio), we will drive our run/change versus transformation functions in differentiated ways,  we will build strategic partnerships.
+
+
+
+
+Notes view: 29
+
+Good Products require good development
+
+Talking points: 
+We have taken time to understand our current state architecture: Its limitations and where we need to change:
+Proliferation of >4k applications across IT driven by reacting to ad hoc business requirements, building point solutions vs. reusing standard services, and continual integration of acquisitions
+Majority of applications are 3rd party but highly customized but there is heavy customization due to complex business requirements, making upgrades complex, less frequent, time-consuming and costly
+Extensive on-premises portfolio: Large fraction of the portfolio is not on cloud (>80% apps); with a few pockets of cloud-native applications
+Limited horizontal integration and data threading App. proliferation and point-to-point integrations limits the ability to view data consistently & accurately
+Limited flexibility to support new business models across the value chain (inflexible back-office, rigid compensation models, fragmented reporting etc.)
+
+In order to drive to our target, we will use a rigorous prioritization of work to ensure it is critical for the business, employs industry best practices, and adheres to our future state IT principles (for example cloud first, portability, vendor agnosticism, No Ops, Self Service, among others)
+
+When we look at our target state – we have high aspirations, we want to drive the transformation across our ecosystem of customers, partners , suppliers, and a few new characteristics are paramount:
+Manage a world-class Hybrid multi-cloud environment
+Shift toward 3rd-party infra and standard SaaS deployments
+Build to differentiate: Buy commodities, but customize where it differentiates us
+Design best-in-class employee digital experience & tools
+Innovate: esp. with AI, data & analytics, APIs everywhere (especially important to drive transformation across customers, partners and suppliers)
+Operate in an Agile + NoOps environment
+Strive for data fidelity
+
+To achieve all of these goals, we will transform our operating model: We will engage in new ways of working with the business where we will be more orchestrators than enablers of incremental functionality, we will establish new governance structures (strategy/architecture/portfolio), we will drive our run/change versus transformation functions in differentiated ways,  we will build strategic partnerships.
+
+
+
+
+Notes view: 30
+
+Three Methodologies
+Design Thinking
+
+“Explore the problem”
+
+Design Thinking is a creative method that materializes an empathetic solution by focusing on the core needs of the customer they are building products for.
+ Three complimentary working methods used together for maximum impact 
+Lean UX
+
+“Build the right things”
+
+Lean UX is an experimental method of designing that tests all business model assumptions up front to remove unnecessary risks.
+Agile Framework
+
+“Build the things right”
+
+Agile Thinking is a flexible working method that adapts to variables in an unpredictable environment. Agile methodology values response to change over following a set plan.
+
+Talking points: 
+We have taken time to understand our current state architecture: Its limitations and where we need to change:
+Proliferation of >4k applications across IT driven by reacting to ad hoc business requirements, building point solutions vs. reusing standard services, and continual integration of acquisitions
+Majority of applications are 3rd party but highly customized but there is heavy customization due to complex business requirements, making upgrades complex, less frequent, time-consuming and costly
+Extensive on-premises portfolio: Large fraction of the portfolio is not on cloud (>80% apps); with a few pockets of cloud-native applications
+Limited horizontal integration and data threading App. proliferation and point-to-point integrations limits the ability to view data consistently & accurately
+Limited flexibility to support new business models across the value chain (inflexible back-office, rigid compensation models, fragmented reporting etc.)
+
+In order to drive to our target, we will use a rigorous prioritization of work to ensure it is critical for the business, employs industry best practices, and adheres to our future state IT principles (for example cloud first, portability, vendor agnosticism, No Ops, Self Service, among others)
+
+When we look at our target state – we have high aspirations, we want to drive the transformation across our ecosystem of customers, partners , suppliers, and a few new characteristics are paramount:
+Manage a world-class Hybrid multi-cloud environment
+Shift toward 3rd-party infra and standard SaaS deployments
+Build to differentiate: Buy commodities, but customize where it differentiates us
+Design best-in-class employee digital experience & tools
+Innovate: esp. with AI, data & analytics, APIs everywhere (especially important to drive transformation across customers, partners and suppliers)
+Operate in an Agile + NoOps environment
+Strive for data fidelity
+
+To achieve all of these goals, we will transform our operating model: We will engage in new ways of working with the business where we will be more orchestrators than enablers of incremental functionality, we will establish new governance structures (strategy/architecture/portfolio), we will drive our run/change versus transformation functions in differentiated ways,  we will build strategic partnerships.
+
+
+
+
+Notes view: 31
+
+Beta Roadmap
+MVP Strategy
+Interface Audit
+Unified Design Language
+UI Components
+App Components
+Enterprise Application
+Design System
+Governance
+Product Design
+Micro Frontend
+Plaltform
+
+Talking points: 
+We have taken time to understand our current state architecture: Its limitations and where we need to change:
+Proliferation of >4k applications across IT driven by reacting to ad hoc business requirements, building point solutions vs. reusing standard services, and continual integration of acquisitions
+Majority of applications are 3rd party but highly customized but there is heavy customization due to complex business requirements, making upgrades complex, less frequent, time-consuming and costly
+Extensive on-premises portfolio: Large fraction of the portfolio is not on cloud (>80% apps); with a few pockets of cloud-native applications
+Limited horizontal integration and data threading App. proliferation and point-to-point integrations limits the ability to view data consistently & accurately
+Limited flexibility to support new business models across the value chain (inflexible back-office, rigid compensation models, fragmented reporting etc.)
+
+In order to drive to our target, we will use a rigorous prioritization of work to ensure it is critical for the business, employs industry best practices, and adheres to our future state IT principles (for example cloud first, portability, vendor agnosticism, No Ops, Self Service, among others)
+
+When we look at our target state – we have high aspirations, we want to drive the transformation across our ecosystem of customers, partners , suppliers, and a few new characteristics are paramount:
+Manage a world-class Hybrid multi-cloud environment
+Shift toward 3rd-party infra and standard SaaS deployments
+Build to differentiate: Buy commodities, but customize where it differentiates us
+Design best-in-class employee digital experience & tools
+Innovate: esp. with AI, data & analytics, APIs everywhere (especially important to drive transformation across customers, partners and suppliers)
+Operate in an Agile + NoOps environment
+Strive for data fidelity
+
+To achieve all of these goals, we will transform our operating model: We will engage in new ways of working with the business where we will be more orchestrators than enablers of incremental functionality, we will establish new governance structures (strategy/architecture/portfolio), we will drive our run/change versus transformation functions in differentiated ways,  we will build strategic partnerships.
+
+
+
+
+Notes view: 32
+
+Deep dive into UX improvements across Cisco Commerce Workspace
+Product Journey
+
+34
+
+UserResearch
+Customer Journey Map
+Persona Creation
+Requirements Gathering
+CX Mapping
+Understanding users and segmenting by various demographic and psychographic data 
+Thorough research on the needs of users and stakeholders with surveys, Use Cases & Scenarios
+A visual story of users' interactions with the brand and how is their experience throughout their journey
+User Research
+35
+
+Process
+Conduct Discovery workshops
+Define business objectives and expected experience outcomes
+Persona Development
+Innovation strategies and Roadmap
+User Story prioritization
+
+
+
+Just talking to a small number of customers allows us to discover the majority of the design needs they have.
+Creating an initial model
+Conducting initial idea approval:
+Preparing to begin your journey:
+CX Mapping
+
+Qualitative User Research
+36
+
+Document everything that is required
+Creating an initial model
+Conducting initial idea approval:
+Preparing to begin your journey:
+CX Mapping
+
+Why Document?
+Audits
+Data-driven decision making
+Reusable recipe
+Marketing
+Why Document?
+37
+
+Service Blueprint
+Information Architecture
+Service Blueprint
+Service Blueprint
+Information Architecture
+
+Identification and definition of site content and functionality with a nomenclature that define the relationships between a site's content/functionality.
+Sketching
+Distinctive form of drawing which designers use to propose, explore, refine and communicate their ideas.
+CXResearch
+Wireframing
+Visual guide that represents the skeletal framework of a website acting as a jumping-off point for the product design process. 
+Service Blueprint
+Visualizes the relationships between different service components people, props and processes  that are directly tied to touchpoints in a specific customer journey.
+
+
+CX Mapping
+
+CX Research
+38
+
+Build on UX Blueprint
+
+Why Service Blueprint 
+Benefits: 
+Gives an organization a comprehensive understanding of its service and the underlying resources and processes.
+Discover Weaknesses
+Blueprinting exposes the big picture and offers a map of dependencies, thus allowing a business to discover a weak leak at its roots.
+
+Scalability and flexibility
+Service blueprints accommodate as much or as little detail as needed showing high-level overviews or intricate steps.
+Cross-functionality and knowledge transferability
+Service blueprints clarify interactions and reduce silos as complex processes can easily lose sight of the bigger picture and how each actions affects other elements.
+Competition
+It allows you to compare what you want your service to look like with what it looks like now, or you can compare your company’s services with a competitor’s.
+Simple development and deployment
+The higher-throughput means you can serve more customers from an application given the same hardware, further reducing the need to invest in servers and hosting infrastructure.
+“It's a strategic tool. It's also a collective empathy tool.”
+Strategic benefits
+
+Benefits: 
+Strategic benefits
+Stages
+Sub-stages
+Customer
+Expectations
+Activities & Touch Points
+Mapping Emotions
+KPI’s and KEI’s
+Pain Points
+Involvement across the Organization
+See Full Version
+
+Simplified Search Experience
+Modal Window
+Form Design & Structure
+Left Panel Inspiration
+Table representation
+
+
+
+Industry Standards for Forms that we included in our design
+No single, designated source of truth
+No governance on different apps
+Poor implementation and maintenance
+Errors are common and repetitive 
+Lack of Industry standardization
+Redundancies across the application stack
+Design guidance is left to interpretation
+Discrepancies in design language
+Lack of data threading and process integration
+Single-column web form layout
+Predictive search for fields
+Top-left aligned labels for readability & completion
+Smart defaults
+Grouping of fields
+Help/Guiding text for the fields
+Mention Mandatory and Optional fields
+Call to actions should be contrasted
+Visual cues and icons to make form fields more intuitive
+
+
+Inspiration for Forms
+Jira Software
+References:
+
+https://intelligaia.atlassian.net/secure/BrowseProjects.jspa
+
+https://intelligaia.atlassian.net/secure/BrowseProjects.jspa
+
+https://calendar.google.com/calendar/u/0/r/eventedit?tab=mc
+
+
+
+
+Definition of Goals, Methods, Scope for the Test
+Recognize need to Create Proposal
+Gather requirements
+Meet with client to understand the end customer requirement
+Researching for solutions that best fits the customer requirements
+Touchpoints
+Interaction of customer with the business, from initial contact through resolution.
+
+Interaction can be through a website, an app or any form of communication which affects user experience.
+
+Create Estimate/Proposal
+Create Proposal
+Add products or services
+Price Estimation
+Clone, export and sharing the proposal
+Quote Initiation
+Create Quote
+Assign and Manage Information and people associated to Initiate the Quote
+Learn, Try & Buy the Test
+Search for a particular product
+Filter Products
+Researching for solutions that best fits the customer requirements
+Touchpoints
+
+Why Design System
+Design System is need of the hour
+Problems we can solve:
+Design System closes the gap between the designers and UI engineers who work on multiple products. Designer and Developer communication is important to improve project workflow, as it helps save time and money.
+
+It can also improve consistency across platforms, build more-intuitive products, and allow designers and engineers to focus on addressing bigger problems.
+  
+Design Quality
+Deep focus on UI specifications robs time from designing highly valuable & engaging experiences.
+Velocity
+Considerable time is spent on recreating the basics for every feature and function.
+
+Consistency
+Lack of standards and consistency  has led to the accumulation of “Design Debt”.
+Less User learning and Faster Adoption
+It involves faster adoption and less user learning as reusable components makes it easy for the designers to incorporate while designing.
+Heavy Reuse
+Collection of reusable components, guided by clear standards, can be assembled together to build any number of applications.
+
+People, processes, and shared assets that work together
+The Design System Anatomy
+
+Composable apps
+Functional blocks of application when decoupled from the complete applications
+
+Micro Frontend app decomposed into individual, semi-independent “microapps” working loosely together
+Micro Frontend
+App Components
+Reusable libraries added to the applications for development purpose
+Design System Elements
+
+
+Explore More
+
+UI Library
+Advanced interactive UI components; requires specific front end technology; backend agnostic
+46
+
+Creating an initial model
+Conducting initial idea approval:
+Preparing to begin your journey:
+Creating an Inventory
+Qualitative User Research
+Create the Patterns Inventory
+Create the Colors Inventory
+Create the Typography Inventory
+Traverse the code files and list all the color variables and/or all the colors used in CSS files
+Take note of the number of places where a particular color appears
+Take screenshots of design patterns or collect design patterns from design projects, to form an inventory of all the different versions of patterns
+Check the frontend code and/or talk to developers about the architectural approach used across the codebase
+Walk through the UI and check all the text styles through a browser console
+Take notes of any inconsistencies of text styles in one project
+47
+
+Creating an initial model
+Conducting initial idea approval:
+Preparing to begin your journey:
+Creating an Inventory (cont.)
+Qualitative User Research
+Create the Typography Inventory (cont.)
+Create the Icons Inventory
+Create the Space Inventory
+Identify all the icon libraries used across the product 
+Mark inconsistencies across the icons 
+Check if there are different ways of implementing icons across the product portfolio
+Form a typographic scale by ordering text styles in the order of the informational importance (from h1 to small text).
+List and document grid systems used across the product portfolio (if there are any)
+48
+
+Creating an initial model
+Conducting initial idea approval:
+Preparing to begin your journey:
+Establishing Rules & Principles
+Qualitative User Research
+(Key decisions that were discussed before the kick-off)
+Decide whether we’re building the system from scratch or treating one of the products as the foundation of the system
+Decide whether we’re going to build using existing technologies or introduce a new technology
+Decide how we’re going to distribute the system
+Decide what are the KPIs of the system
+Formulate your design principles
+Communicate key decisions, rules and principles to the entire company
+49
+
+A living product with a roadmap & backlog, serving an ecosystem
+Maintaining the Design System
+
+www.intelligaia.com
+It was difficult to discover one naming convention that was appropriate across all components. Taking the time to set this convention was an integral part of the process in order to develop a common language. 
+Speaking a Common Language
+We strived to create the least amount of components that are robust enough to be applied to a large amount of use cases. We foresee this system growing infinitely and have an auditing process in place to maintain the quality of the system, overall. 
+Avoid Duplicates by Auditing
+Safeguard Content with Version Control
+Keeping comprehensive documentation is necessary when implementing a new system. Our current documentation exists in the form of a Figma file link that allows users to browse components with visuals and links from live production code.
+Documentation Every Step of the Way
+Version History allows us to view, restore or duplicate an older version of our file at any time. Versions are automatically saved when there have been no changes to the file for 30 minutes.
+
+Boost the Process
+Design System
+Base Component
+Smallest unit of the design 
+Composite Component
+Made of multiple Base Components
+Application Component
+Made of multiple Composite Components
+Foundation
+Color Theory
+Typography
+Grid System
+Iconography
+Pattern Library
+Templates
+Components
+Guiding Principles
+Design Rules
+Implementation
+Guidelines
+Accessibility
+Guidelines
+
+Explore More
+
+52
+
+Boost the Process
+
+UI Components
+53
+
+Boost the Process
+
+Application Components
+54
+
+Boost the Process
+
+Product Design
+
+56
+
+Boost the Process
+
+Usability Testing
+Repeats for each Project Phase
+Conducting and Taking the Minutes
+Definition of Target Group & Questionnaire
+Timetable and Recruiting of Test Probands
+Definition of Goals, Methods, Scope for 
+the Test
+Adaptation of Prototype. Next Phase
+Evaluation, Findings, Prioritization
+
+Boost the Process
+
+Governance Management
+Roles
+Admin    Editor    Viewer
+Sharing Settings
+Anyone in organization    People invited    Public
+Design system roles
+Admin
+Editor
+Viewer
+Design system sharing settings
+Anyone in organization
+People invited
+Public
+58
+
+Assemble key patterns of Commerce UX Practice
+
+Assemble and Deploy
+Micro Frontend
+Quotes
+
+Assemble and Deploy
+
+Config
+Micro Frontend
+
+Assemble and Deploy
+Profile & Preferences
+Micro Frontend
+
+UI Paradigm
+UI Component Library
+
+UI Paradigm
+UI Kit
+Global Product Design System
+
+UI Paradigm
+Micro Frontend App 1
+Application
+Micro Frontend App 2
+Micro Frontend App 3
+Micro Frontend App 4
+API Gateway
+Cloud (Kubernetes, Docker, etc.)
+Connected Approach to Modern App Architecture
+
+
+Scenarios in Micro Frontend
+Ajax &
+Server Side
+Server Side
+Composition
+Client Side
+Composition
+Communication
+Patterns
+Client Side
+Routing
+- Server Side Routing
+- Ajax
+- Server Side Integration
+- Integration Time out & Fallbacks 
+- Podium
+- Client Side composition 
+- Style Isolation & Shadow DOM
+- Parent Child Communication
+- Child-Parent Communication
+- Fragment-Fragment Communication
+- Flat
+- Two-Tired- Single SPA
+
+Assemble and Deploy
+Quote
+
+Assemble and Deploy
+Profile & Preferences
+
+Assemble and Deploy
+
+Config
+
+Assemble and Deploy
+
+Solution Bundle
+
+Introduction
+Growth
+Maturity
+Decline
+Sales
+Phase 1
+This is placeholder text
+Phase 1
+This is placeholder text
+Phase 1
+This is placeholder text
+Phase 3
+This is placeholder text
+Phase 2
+This is placeholder text
+Phase 2
+This is placeholder text
+Phase 3
+This is placeholder text
+Phase 3
+This is placeholder text
+Phase 2
+This is placeholder text
+Phase 4
+This is placeholder text
+Phase 4
+This is placeholder text
+Phase 4
+This is placeholder text
+Item 1
+Item 1
+Item 1
+Current UX Landscape
+
+Time
+Learning curve involved for users
+How soon can users start loving it?
+Current User Experience (UX) Landscape
+Ability
+First Time
+Years/Decades
+
+Struggling, Frustrating
+
+Expert
+How soon can users stop using it?
+Some user will keep pushing
+Number of Features
+Focus is more on application’s own business benefits vs the UX
+Happy User Peak
+User Happiness
+I need help
+I rule
+Cool
+Glad to see they have added it
+Nice, But I wish I could do more
+It should be here, but...
+I can even do this...
+
+Composable UI
+
+Chasm Animated
+Phase
+This is placeholder text
+Phase
+This is placeholder text
+Phase
+This is placeholder text
+Phase
+This is placeholder text
+Phase
+This is placeholder text
+Phase
+This is placeholder text
+
+Strategy for bringing Transformation
+Pervasive and Consistent Experience
+Evolve our product experiences in a unified way across the platform.
+Empathy
+Understand who our users are and how they work to create delightful experiences.
+Engineering Excellence
+Drive Reusability, Consistency, Increase Development Velocity.
+Inspiration through UX
+Informed & evolved product vision that allows to reduce the quantity of components while creating signature elements.
+73
+
+Persona Specific
+Process Simplification
+Device Optimization
+Curated Content
+Analytics & Tracking
+Product Journey
+74
+
+
+By Sunil Chandra
+Date: September 7, 2020
+Driving Enterprise UX Alignment & Strategy
+Pervasive UX
+ Delivering Capabilities that Produce Breakthroughs through an Intelligent Connected User Experience that “Surprises & Delights”
+
+Key Insights
+30%
+of our forms are less usable compared to usability index.
+30% of our forms are less usable as compared to the Usability Index.
+
+30% of customers report difficulty in using lengthy and unoptimised forms.
+
+27% of users struggle due to the fragmented applications across CCW.
+
+35 % increase in cost to market due to fragmented global navigation.
+
+38% of users stop engaging with the website when they find its content as unattractive or poorly structured
+
+
+of customers report difficulty in using lengthy and unoptimised forms.
+30%
+of users struggle due to the fragmented applications across CCW.
+27%
+35%
+increase in cost to market due to fragmented global navigation.
+of users stop engaging with the website when they find its content as unattractive or poorly structured.
+38%
+Repeats for each Project Phase
+Conducting and Taking the Minutes
+Definition of Target Group & Questionnaire
+Timetable and Recruiting of Test Probands
+Definition of Goals, Methods, Scope for 
+the Test
+Adaptation of Prototype. Next Phase
+Evaluation, Findings, Prioritization
+77
+
+Inconsistent modal interface (In progress)
+
+78
+
+Logan Moore
+American workers today
+1in3
+79
+
+Modular and Interconnected
+Platforms
+
+
+NextGen UX Strategy
+A micro frontend architecture that allows any framework, leveraging web components
+
+Standardised framework for consistent, repeatable and simplified UX.
+
+Segmented approach for improving overall UX landscape
+Streamline Business Process
+Consumer Like
+Hide Complexity
+Leverage & Reuse current UX Efforts
+Comparison of SalesForce, SAP and Lightweight Commerce Solution 
+Modernization of the Configuration 
+Headless Commerce UI
+
+Drive transformation of critical end to end platforms for customer and partner experience
+80
+
+Performance Metrics of To-Be State 
+© 2020  Cisco and/or its affiliates. All rights reserved.   Cisco Confidential
+New Quote
+No. of Clicks
+TPI
+Current Experience
+New Experience
+9-12
+6 mins
+2-5
+2 mins
+
+Building BOM
+6-10
+7 mins
+2-6
+4 mins
+
+Configuring BOM
+10-1
+9 mins
+5-10
+5 mins
+
+Review Quote
+7-10
+10 mins
+4-8
+6 mins
+
+No. of Clicks
+TPI
+81
+
+Right Workforce Strategy(IP/Blue/Red, Geo, New hires: University & Experienced )
+Accelerate New Skills
+(Retrain, Acquire and Partner)
+New Operating Model and dedicated mind share
+Orchestrate, Accelerate, Integrate
+Talent oversubscribed on Business Transformation
+Backfill & Shift
+Retrain & Upskill
+Infuse New
+IT Transformation
+People & Skills
+
+
+
+
+- Several iterations are required while designing which is very time consuming
+
+- Increased technical overhead and less collaboration between designers and developers
+
+- Lots of discrepancies and challenges while delivering a product/brand
+
+- Affirmation of a modular and evolutionary view of the digital product
+
+- Poor implementation and maintenance of design
+
+- Difficulty in collaborating with team because of  no guidelines
+
+- Mismanagement and less productivity while designing
+
+- Less optimized time and cost of design comes to be manifolds at the end
+- Not suitable for different products
+- Often used for short term projects
+- A system that is built with less modularity at its core, often called more of an integrated system, focuses more on a unique scenario and outcome.
+Before
+
+After
+
+A single, detailed source for guidelines
+All applications with governance system
+Cross-platform updates in real time
+Effective reduction of common errors
+Consistent lifecycle view across platforms 
+Busting Silos and Streamlining Processes
+Lower learning curves
+Unified Design Language
+Unified navigation system combining platforms
+No single, designated source of truth
+No governance on different apps
+Poor implementation and maintenance
+Errors are common and repetitive 
+Lack of Industry standardization
+Redundancies across the application stack
+Design guidance is left to interpretation
+Discrepancies in design language
+Lack of data threading and process integration resulting in inconsistency and duplication
+VS
+
+No single, designated source of truth
+No governance on different apps
+Poor implementation and maintenance
+Errors are common and repetitive 
+Lack of Industry standardization
+Redundancies across the application stack
+Design guidance is left to interpretation
+Discrepancies in design language
+Lack of data threading and process integration resulting in inconsistency and duplication
+A single, detailed source for guidelines
+All applications with governance system
+Cross-platform updates in real time
+Effective reduction of common errors
+Consistent lifecycle view across platforms 
+Busting Silos and Streamlining Processes
+Lower learning curves
+Unified Design Language
+Unified navigation system combining platforms
+Before
+
+After
+
+- As building products becomes faster, designers gain time they can invest in other areas.
+
+- Reduced design and development debt/Reduces technical overhead
+
+- Contributes to strong, memorable brands
+
+- Affirmation of a modular and evolutionary view of the digital product
+
+- Agility in component creation, implementation, and maintenance
+
+- Construction of transversal guidelines between teams in a collaborative way
+
+- Strengthening coherence between the different components
+
+- Optimization of time and cost of design and development
+
+
+
+- Promotes consistency (A consistent design is intuitive, predictable and easy to understand.)
+    - Visual Consistency
+    - Functional Consistency
+    - Internal Consistency
+    - External Consistency 
+- increases the potential for people working on a project to think of more innovative things to add to the project.
+- A more modular system fits larger scale systems that could welcome an abundance of reusable components without the need for higher degrees of integrated components.
+
+- Several iterations are required while designing which is very time consuming
+
+- Increased technical overhead and less collaboration between designers and developers
+
+- Lots of discrepancies and challenges while delivering a product/brand
+
+- Affirmation of a modular and evolutionary view of the digital product
+
+- Poor implementation and maintenance of design
+
+- Difficulty in collaborating with team because of  no guidelines
+
+- Mismanagement and less productivity while designing
+
+- Less optimized time and cost of design comes to be manifolds at the end
+- Not suitable for different products
+- Often used for short term projects
+- A system that is built with less modularity at its core, often called more of an integrated system, focuses more on a unique scenario and outcome.
+
+4 Ways of delivering value
+
+A component-based toolkit accessible in one place allows for a more chunked-out Agile process, speeding up releases without compromising quality.
+Design System Governance
+Design System Governance is one of the important ingredients of design system. It is necessary to have a process/flow chart to control the governance of the Design System.
+Increased Product Value
+Decomposable components build upon each other, which creates a more consistent look, feel, and behavior to the product. As consistency increases, so too does user efficiency.
+Increased Collaboration and Knowledge Sharing
+Because the shared design system includes approved assets and conventions, designers and developers are more autonomous without closing off into silos.
+Faster time to market with less money wasted
+A component-based toolkit accessible in one place allows for a more chunked-out Agile process, speeding up releases without compromising quality.
+85
+
+www.intelligaia.com
+1
+2
+3
+4
+5
+6
+7
+8
+Create Urgency
+Create a Coalition
+Develop Vision& Strategy
+Communicate the Vision
+Empower Action
+Get Quick Wins
+Leverage Wins to Drive Change
+Embed in Culture
+Creating a Climate for Change
+Engaging & Enabling the 
+Whole Organization 
+Implementing and Sustaining Change
+Focus on Change Management
+(Kotter’s 8 Step Change Model)
+It is an easy step by step model which provides a clear description and guidance on the entire process of change and is relatively easy for being implemented.
+Emphasis is on the involvement and acceptability of the employees for the success in the overall process.
+Major emphasis is on preparing and building acceptability for change instead of the actual change process.
+
+Simplified Search Experience
+Modal Window
+Form Design & Structure
+Left Panel Inspiration
+Table representation
+
+
+
+Jira Software
+No single, designated source of truth
+No governance on different apps
+Poor implementation and maintenance
+Errors are common and repetitive 
+Lack of Industry standardization
+Redundancies across the application stack
+Design guidance is left to interpretation
+Discrepancies in design language
+Lack of data threading and process integration
+Single-column web form layout
+Predictive search for fields
+Top-left aligned labels for readability & completion
+Smart defaults
+Configuration of fields
+Divide fields into semantic groups
+Help/Guiding text for the fields
+Mention Mandatory and Optional fields
+Make sure call to actions are highly contrasted
+
+
+Best Practices
+
+Jira Software
+References:
+
+https://intelligaia.atlassian.net/secure/BrowseProjects.jspa
+
+https://intelligaia.atlassian.net/secure/BrowseProjects.jspa
+
+https://calendar.google.com/calendar/u/0/r/eventedit?tab=mc
+
+
+
+
+No single, designated source of truth
+No governance on different apps
+Poor implementation and maintenance
+Errors are common and repetitive 
+Lack of Industry standardization
+Redundancies across the application stack
+Design guidance is left to interpretation
+Discrepancies in design language
+Lack of data threading and process integration
+Best Practices
+
+Google Calendar
+References:
+
+https://calendar.google.com/calendar/u/0/r/month
+
+
+Google Calendar
+Use visual cues and icons to make form fields more intuitive
+Switching between basic & advance information to be displayed
+Remove non-essential fields
+Reduce number of clicks required to complete the form
+Know when to use radio buttons, checkboxes, and dropdowns
+Use placeholders correctly
+Help/Guiding text for the fields
+Make sure call to actions are highly contrasted
+
+
+
+Simplified Search Experience
+Modal Window
+Form Design & Structure
+Left Panel Inspiration
+Table representation
+
+
+
+No single, designated source of truth
+No governance on different apps
+Poor implementation and maintenance
+Errors are common and repetitive 
+Lack of Industry standardization
+Redundancies across the application stack
+Design guidance is left to interpretation
+Discrepancies in design language
+Lack of data threading and process integration
+Best Practices
+
+Google Account
+Google Account
+Input fields should be sized accordingly
+Make sure call to actions are highly contrasted
+Align the sections
+Write clear labels
+Prominence must be given to primary and secondary buttons depending on their significance
+Define Placeholder text
+Instruction/Guiding text which can help user to fill out form quickly
+Smart Default
+
+References:
+
+https://accounts.google.com/signup/v2/webcreateaccount?hl=en&flowName=GlifWebSignIn&flowEntry=SignUp
+
+
+
+
+
+© 2020  Cisco and/or its affiliates. All rights reserved.   Cisco Confidential
+Program level Participation
+CommerceX
+Reference
+90

@@ -4,17 +4,19 @@
 Normalize source stories concerning quote creation, editing, copying/reuse, revision, versioning, proposal generation, validity, and customer acceptance.
 
 ## Story Pattern — Create Quote
-**As a** supported seller/partner role  
-**I want** to create a quote in the appropriate customer/deal context  
-**So that** I can build a governed commercial proposal.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 Validate from evidence:
 customer/deal context → transaction type → quote identity → initial state → required data.
 
 ## Story Pattern — Revise Quote
-**As a** supported role  
-**I want** to revise an existing quote  
-**So that** I can respond to a changed commercial requirement while preserving quote/version integrity.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 Check:
 editable state → version behavior → pricing recalculation → approval impact → customer artifact → superseded/current version.

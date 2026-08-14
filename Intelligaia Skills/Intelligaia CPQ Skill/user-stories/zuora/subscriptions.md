@@ -16,9 +16,10 @@ pending amendment → future-dated change → cancellation → renewal → order
 A new transaction should not silently ignore relevant pending state.
 
 ## Story Pattern — View Current Subscription
-**As a** supported role  
-**I want** to understand the authoritative current subscription state  
-**So that** I can make an appropriate lifecycle change.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 Validate what “current” means in the source context.
 

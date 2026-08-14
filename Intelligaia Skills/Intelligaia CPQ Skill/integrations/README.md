@@ -32,3 +32,7 @@ Use L2/L3 here for business handoffs and integration controls. Put supported imp
 ## Cross-Cutting Integrity
 Across all integrations preserve where applicable:
 business identity → source/version → approval/acceptance → effective dates → target identity → idempotency → current/pending state → error/recovery → reconciliation.
+
+
+## Evidence-Dependent Runtime Rule
+Integration dimensions are reusable. Actual source/target, APIs, middleware, sync direction, retries, authority and failure behavior require evidence.

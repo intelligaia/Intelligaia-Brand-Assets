@@ -4,9 +4,10 @@
 Translate the approved/accepted order intent into authoritative lifecycle and billing state while preserving identity and commercial semantics.
 
 ## Story Pattern
-**As a** supported operations/business role  
-**I want** an eligible order processed into the intended subscription/lifecycle state  
-**So that** service and billing reflect the approved customer commitment.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Flow
 1. Eligible order/result is identified.

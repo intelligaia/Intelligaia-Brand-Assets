@@ -67,3 +67,7 @@ Before finalizing analysis:
 - impacts not overstated;
 - acceptance observable;
 - risks and criteria traceable.
+
+
+## Evidence-Dependent Runtime Rule
+Analysis frameworks are methods. Findings, gaps, dependencies, impacts, severity and causality require evidence or an explicit Hypothesis/Validation Needed state.

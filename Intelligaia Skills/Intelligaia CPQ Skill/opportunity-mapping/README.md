@@ -28,3 +28,7 @@ A service opportunity may be recommended when the evidence supports the underlyi
 
 ## Value Guardrail
 Use qualitative outcomes unless a quantified baseline, target, or measured result is supported by evidence.
+
+
+## Evidence-Dependent Runtime Rule
+Service patterns are reusable. Do not infer customer pain, readiness, scope, value or quantified benefit from the service catalog.

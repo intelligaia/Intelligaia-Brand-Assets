@@ -8,9 +8,10 @@ Where evidenced distinguish:
 seller → partner → distributor → end customer → sold-to → bill-to/payer → service recipient.
 
 ## Story Pattern
-**As a** supported channel participant  
-**I want** the transaction to preserve the correct partner and customer relationships across systems  
-**So that** commercial access and downstream outcomes apply to the intended parties.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Flow
 1. Actor and partner/customer relationship are established.

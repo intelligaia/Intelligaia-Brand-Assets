@@ -42,3 +42,16 @@ Preserve conflicting sources, record the conflict, identify scope/version/date d
 - `SRC-CISCO-COMMERSEX-001` — CommerceX Executive Presentation — strategic/design/modernization evidence; roadmap and delivered capability must remain distinct.
 
 Normalized evidence: `cisco-commerce-evidence/`.
+
+## Detailed User-Story Spreadsheet Sources
+- `SRC-US-ZUORA-001` — Zuora CPQ User Stories - DRAFT.xlsx — draft backlog; row-level register under `user-story-spreadsheets/`.
+- `SRC-US-INTELLIGAIA-001` — Intelligaia CPQ- Feature / Epic / User Story .xlsx — feature/epic/story backlog with priority, phase and status metadata.
+- `SRC-US-CART-001` — CPQ Cart UI (New Data).xlsx.xlsx — cart/UI reference dataset; not automatically a requirement source.
+
+## Comparative Case-Study / Proposal Sources
+- `SRC-COMP-HP-001` — HP Ezmeral Case Study — bounded comparative case evidence.
+- `SRC-COMP-SYNNEX-001` — Synnex Case Study — bounded comparative case evidence.
+- `SRC-COMP-HITACHI-001` — Hitachi ABB Ecommerce UX — bounded UX/ecommerce reference evidence.
+- `SRC-COMP-ZUORA-PROP-001` — Forsys Assessment & Advisory Proposal — Zuora — proposed service/scope evidence.
+- `SRC-COMP-APTTUS-001` — Apttus Resource Plan — proposed delivery/resource evidence.
+- `SRC-COMP-COMMERSEX-001` — CommerceX Executive Presentation — strategy/concept evidence.

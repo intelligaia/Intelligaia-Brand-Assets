@@ -6,9 +6,10 @@ Use:
 **Current Subscription → Current Term → Renewal Boundary → Pending Lifecycle Changes → Renewal Intent → Carry-Forward / Change → Pricing → Approval/Acceptance → Next-Term State → Billing/Service Consequence**
 
 ## Story Pattern — Prepare Renewal
-**As a** supported role  
-**I want** to prepare the next-term commercial transaction from the correct subscription state  
-**So that** the renewal reflects the intended customer relationship and commercial terms.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Current State
 Validate:

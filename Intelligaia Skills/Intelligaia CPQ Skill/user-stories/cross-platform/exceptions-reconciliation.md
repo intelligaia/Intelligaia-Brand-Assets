@@ -7,9 +7,10 @@ Make uncertain outcomes, partial success, stale state, duplicates and cross-syst
 **Attempt → Acknowledgement → Processing State → Known/Unknown Outcome → Recovery Decision → Reconciliation → Final Verified State**
 
 ## Story Pattern — Recover Uncertain Transaction
-**As a** supported user/operations role  
-**I want** to determine the true end-to-end state of a failed or uncertain transaction  
-**So that** recovery does not duplicate or corrupt commercial/lifecycle state.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Scenarios
 ### Validation Failure

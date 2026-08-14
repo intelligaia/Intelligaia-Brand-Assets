@@ -19,9 +19,10 @@ immediate → future date → end of current term.
 Actual allowed timing requires evidence.
 
 ## Story Pattern — Cancel Subscription
-**As a** supported role  
-**I want** to request an eligible cancellation  
-**So that** the future contractual/service state reflects the approved termination.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Pending Transactions
 Check interaction with:

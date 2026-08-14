@@ -1,0 +1,382 @@
+﻿]CPQ Tools & Renewal Process
+
+
+Popular CPQ Tools in the Market
+Salesforce CPQ
+Salesforce CPQ provides a seamless quoting experience fully integrated with the Salesforce platform, offering:
+- Guided selling: Helps sales reps through a series of questions to recommend the right products and services, ensuring accurate quotes.
+
+
+- Contract management: Streamlines the process of creating, renewing, and amending contracts directly within Salesforce, reducing manual work and improving efficiency.
+
+
+- Subscription Renewals: Automates the renewal process for subscription-based products, ensuring timely renewals and reducing customer churn.
+
+
+- Many More Features: Includes discount management, approvals, advanced product configuration, and pricing capabilities to improve the sales process.
+
+
+
+
+Zuora CPQ
+Zuora CPQ is used for subscription businesses, offering:
+- Subscription renewals: Automates the process of renewing subscriptions, ensuring accurate and timely renewals to minimize churn.
+
+
+- Amendment and contract management: Allows for easy amendments to existing subscriptions and streamlines the process of managing contracts.
+
+
+- Price uplift: Automates price increases on subscription renewals, ensuring customers are charged the appropriate updated rates.
+
+
+Conga CPQ
+Conga CPQ simplifies complex quoting with:
+- Product Configuration: Enables accurate configuration of complex products to meet specific customer requirements.
+- Pricing Flexibility: Supports multiple pricing models, including volume-based, subscription-based, and usage-based pricing.
+- Guided Selling: Guides sales representatives through product selection to ensure accurate and optimized quotes.
+Oracle CPQ
+Oracle CPQ provides a comprehensive solution with:
+- Approval Workflows: Enables customizable approval workflows, ensuring compliance with company policies while accelerating the quote approval process.
+- Contract Renewals: Automates the renewal process for contracts, ensuring customers receive timely renewals with accurate pricing.
+- Advanced Configuration Capabilities: Allows for detailed configuration of products and services, supporting complex pricing and bundling scenarios.
+
+
+SAP CPQ
+SAP CPQ offers a strong enterprise solution with:
+- Flexible Pricing Models: Supports various pricing models such as tiered, volume-based, and usage-based pricing to meet diverse customer needs.
+- Subscription Management: Manages the complete lifecycle of subscription-based products, including renewals and amendments, to provide a consistent customer experience.
+
+
+Standard Renewal terms & scenarios in CPQ
+Renewals are crucial in subscription-based businesses. Here are typical renewal scenarios:
+- Auto-Renewal: Automatic renewal of contracts with predetermined terms.
+- Manual Renewal: Renewal initiated by the sales team or customer.
+- Upsell and Cross-sell Opportunities: Adding or upgrading products during renewal.
+- Contract Amendments and Changes: Changing terms and conditions.
+- Multi-year Renewals: Extended contracts with multi-year terms.
+
+
+
+
+
+
+Best Practices for Renewals
+Standard Practices
+- Automated Renewal Notifications: Trigger alerts for customers and sales teams.
+- Proactive Customer Engagement: Engage customers before the renewal period (via email notifications).
+- Flexible Pricing and Discounting: Offer customized discounts.
+- Renewal Forecasting and Analytics: Analyze trends to forecast renewal success using Salesforce Forecasting & by using reports & dashboards for visual representation.
+
+
+Process Followed to Generate Renewal Quote / Amendment Quote
+Renewal Quote
+Account < Opportunity Created < Multiple Quote (One will be the Primary Quote) < Order Generated from Primary Quote < Contract Generated < Renewal Opportunity < Renewal Quote Generated
+
+
+Amendment Quote
+Account < Opportunity Created < Multiple Quote (One will be the Primary Quote) < Order Generated from Primary Quote < Contract Generated < Amendment Opportunity < Amendment Quote Generated
+
+
+Please note that Amendment opportunity and quote will be generated from the ongoing contract / subscription (may get upsell / downsell).
+
+
+Renewal Opportunity Scenarios
+Scenario 1: Automated Renewal with Upsell Opportunity
+In this scenario, the customer receives an automated renewal quote that includes an upsell opportunity for a premium product. This is how the process works step-by-step:
+1. System Triggers an Automated Renewal Quote (90 Days Before Contract Expiry):
+Ninety days before the customer’s contract expires, the system automatically generates a renewal quote. This quote includes the customer’s current products, as well as additional premium products as potential upsell options. The system considers the customer's purchase history, product usage patterns, and other relevant data to suggest appropriate upsell options.
+  
+
+   2. Quote Includes Current Products and Additional Premium Products as Upsell Options:
+The renewal quote contains all the products and services currently under the customer's subscription or contract. In addition, the quote includes new premium products that the system has identified as suitable upsell options. For instance:
+      * If the customer currently has a basic support package, the quote includes an upgraded support tier.
+      * If the customer is using a standard product package, the quote offers an enhanced version with additional features.
+      3. Customer Receives Email Notification with the Renewal Quote:
+Once the quote is generated, the system automatically sends an email notification to the customer. This email contains:
+         * A summary of their current subscription.
+         * A clear breakdown of the renewal quote, including any new products and their respective prices.
+         * A link to a customer portal or quote page where they can review, modify, and approve the renewal quote.
+         4. Customer Approves and Signs the Renewal Quote:
+The customer logs into the portal to review the quote. They can:
+            * Accept the quote as it is, including the upsell options.
+            * Modify the quote by removing or adding products/services.
+  
+
+  
+
+            * Request assistance from a sales representative if they have questions.
+
+
+            5. Once the customer is satisfied with the quote, they digitally sign it to confirm their approval.
+            6. Contract is Renewed with Upsell Products Included:
+After the customer signs the quote, the system automatically processes the renewal. The updated contract now includes the upsell products, and the billing system reflects the new pricing. An order confirmation is sent to the customer, and the sales team is notified of the successful upsell.
+Benefits of This Scenario:
+               * Efficiency: Automation reduces manual workload for the sales team.
+               * Upsell Opportunities: Offering relevant premium products can increase revenue.
+               * Customer Experience: Timely and personalized communication enhances customer satisfaction.
+
+
+Scenario 2: Manual Renewal with Multi-Year Contract
+In this scenario, the sales team manually negotiates a multi-year contract renewal with pricing incentives. Here’s a detailed step-by-step process:
+               1. Sales Team Identifies Upcoming Contract Expirations:
+The sales team regularly monitors contract expiration dates using Salesforce reports or automated alerts. They identify customers whose contracts will expire soon and are potential candidates for multi-year renewals. The focus is on customers with high lifetime value, consistent subscription renewals, or strong product adoption.
+  
+
+  
+
+                  2. Sales Representative Contacts the Customer to Discuss Multi-Year Renewal Options:
+A dedicated sales representative reaches out to the identified customer via phone or email. The representative:
+                     * Expresses appreciation for their continued business.
+                     * Informs them about the upcoming contract expiration.
+                     * Presents the benefits of opting for a multi-year renewal, such as securing current pricing, receiving additional incentives, and avoiding annual increases.
+                     3. Negotiations Lead to an Agreement on Pricing Incentives:
+During the negotiation phase, the sales representative and the customer discuss and agree on:
+                        * Contract length (e.g., 2, 3, or 5 years).
+                        * Pricing incentives like discounts for multi-year commitments, tiered pricing, or bundled packages.
+                        * Additional terms such as enhanced support, exclusive features, or volume-based pricing.
+                        4. The goal is to offer an attractive deal that meets both the customer's needs and the company's revenue goals.
+                        5. Sales Team Manually Generates the Renewal Quote:
+Prior generating a manual renewal quote, an opportunity needs to be generated that will be linked to the account. The sales representative manually generates the renewal quote from renewal opportunity (this can be done by adding a button using  the standard Salesforce practice). The quote includes:
+                           * The agreed contract term and start/end dates.
+                           * All current products/services and any new ones requested.
+                           * Detailed pricing information, highlighting the applied incentives and discounts.
+                           6. The quote is then sent to the customer for review via email or through a customer portal.
+                           7. Customer Reviews, Approves, and Signs the Multi-Year Renewal Quote:
+The customer carefully reviews the renewal quote to ensure it reflects the agreed terms. If needed, they can discuss adjustments with the sales representative. Once satisfied, the customer digitally signs the quote to confirm approval.
+                           8. Contract is Renewed for Multiple Years:
+After receiving the signed quote, the sales team updates the system to reflect the new contract term. The contract is officially renewed for multiple years with the agreed pricing incentives. The billing system is updated accordingly, and the customer receives a confirmation email.
+Benefits of This Scenario:
+                              * Customer Loyalty: Multi-year contracts enhance customer retention and strengthen loyalty.
+                              * Revenue Assurance: Secures predictable revenue for multiple years.
+                              * Cost Savings: Pricing incentives encourage customers to commit to longer terms.
+
+
+Scenario 3: Contract Amendment for Customer Expansion
+In this scenario, a customer requests an upgrade or expansion of their current contract, leading to a contract amendment. Here’s a detailed step-by-step process:
+                              1. Customer Reaches Out to Sales Representative for Additional Licenses/Products:
+The customer identifies a need for additional licenses, products, or features and contacts their assigned sales representative directly or via the customer support channel. They request a quote for the expanded requirements, such as:
+                                 * Additional user licenses to accommodate new team members.
+                                 * Upgrades to higher-tier products for more features or better performance.
+                                 * New modules to complement their existing setup.
+                                 2. Sales Representative Discusses Expansion Requirements and Pricing:
+The sales representative engages in a detailed conversation with the customer to understand their specific expansion requirements. Key discussion points include:
+                                    * Identifying the number of new licenses/products required.
+                                    * Assessing which product upgrades or new modules align best with the customer’s needs.
+                                    * Presenting suitable pricing options, including possible discounts for larger purchases or bundled packages.
+                                    3. Sales Team Generates a Quote Amendment from the Contract / Subscription Including the Expanded Products:
+After understanding the customer's needs, the sales team manually generates a quote amendment that includes:
+                                       * The customer’s current products/services.
+                                       * Additional licenses/products required for expansion.
+                                       * Upgrades or new modules based on the discussion.
+                                       * Adjusted pricing details, showing the new total cost, discounts, and incentives.
+  
+
+  
+
+                                       4. The quote amendment is then sent to the customer via email or through a customer portal for review.
+                                       5. Customer Reviews and Approves the Amendment:
+The customer reviews the quote amendment carefully to ensure that it meets their expansion requirements and pricing expectations. If needed, they can discuss adjustments with the sales representative. Once satisfied, the customer digitally signs the amendment to confirm approval.
+                                       6. Contract is Updated to Include the New Products:
+Once the amendment is signed, the sales team updates the system to reflect the new contract terms. The expanded contract now includes the newly added products, licenses, or upgrades. The billing system is updated accordingly to reflect the new pricing, and the customer receives a confirmation email.
+Benefits of This Scenario:
+                                          * Customer Expansion: Enables customers to scale their usage according to their growing needs.
+                                          * Revenue Growth: Increases contract value by upselling or cross-selling additional products.
+                                          * Enhanced Relationship: Strengthens customer relationships by quickly addressing expansion needs.
+
+
+
+
+Scenario 4: Renewal with Price Increase Notification
+In this scenario, the customer is notified via email notifications about a price increase for the next renewal period. Here's a detailed step-by-step process:
+                                          1. Sales Team Identifies Contracts Eligible for Renewal:
+The sales team uses CRM reports or automated alerts to identify contracts nearing their renewal period. They focus on customers with upcoming expiration dates who may be affected by the price increase. The team assesses:
+                                             * Current contract terms and conditions.
+                                             * Historical renewal rates and pricing details.
+                                             * Potential upsell or cross-sell opportunities.
+  
+
+                                             2. System Generates Automated Renewal Quotes from the Renewal Opportunity with New Pricing:
+The CPQ system automatically generates renewal quotes with updated pricing. This pricing reflects:
+                                                * Annual price increases per contract terms (e.g., inflation adjustments).
+                                                * Changes in pricing models or tiers.
+                                                * Additional costs for added features or expanded usage.
+                                                3. The renewal quotes include a clear breakdown of current products/services and their updated prices.
+                                                4. Customer Receives Email Notification About the Price Increase:
+The system sends an automated email to the customer notifying them about the upcoming price increase. The email includes:
+                                                   * A summary of their current contract and renewal period.
+                                                   * The updated renewal quote showing the new pricing.
+                                                   * An explanation for the price increase (e.g., feature enhancements, market adjustments).
+                                                   * A link to the customer portal where they can review and approve the renewal quote.
+                                                   5. Sales Representative Discusses the New Pricing with the Customer:
+To ensure transparency and address any concerns, a sales representative contacts the customer to:
+                                                      * Explain the reasons behind the price increase.
+                                                      * Highlight the value of new features or improvements that justify the increase.
+                                                      * Discuss any additional discounts, incentives, or adjustments available for loyal customers.
+                                                      * Offer assistance with upselling to a higher product tier or bundle.
+                                                      6. Customer Approves and Signs the Renewal Quote:
+The customer logs into the portal to review the renewal quote and the new pricing. They can:
+                                                         * Accept the renewal quote with the updated pricing.
+                                                         * Request further clarification or negotiate adjustments with the sales representative.
+                                                         * Upgrade or downgrade their product package.
+                                                         7. Once satisfied, the customer digitally signs the renewal quote to confirm approval.
+                                                         8. Contract is Renewed with the Updated Pricing:
+After the signed quote is received, the CPQ system processes the renewal. The updated contract now reflects the new pricing, and the billing system is updated accordingly. A confirmation email is sent to the customer, and the sales team is notified of the successful renewal.
+Benefits of This Scenario:
+                                                            * Transparent Communication: Notifying customers of price increases builds trust and reduces churn.
+                                                            * Revenue Optimization: Updating pricing ensures customers are charged appropriately for product value.
+                                                            * Cross-Sell Opportunities: Engaging customers can uncover opportunities for upselling or cross-selling.
+
+
+Scenario 5: Cross-Sell Opportunity During Renewal
+In this scenario, the sales team offers a complementary product during renewal. Here's a step-by-step process:
+                                                            1. System Triggers an Automated Renewal Quote (60 Days Before Contract Expiry) (As per the standard Salesforce CPQ practice there is a checkbox on contract named renewal forecast and renewal quoted, which helps us to trigger the automatic renewal opportunity and quote. Apart from this we can add a button as well for the same process, however, it is dependent upon the business process or need):
+Sixty days before the contract's expiration, the CPQ system generates an automated renewal quote based on the customer's current subscription. The renewal quote includes:
+                                                               * All the products/services currently under the customer's subscription.
+                                                               * Relevant pricing details.
+                                                               * Renewal terms and conditions.
+                                                               2. Sales Representative Reviews the Renewal Quote and Identifies Cross-Sell Opportunities:
+A sales representative reviews the automated renewal quote to identify potential cross-sell opportunities. This analysis includes:
+                                                                  * Examining the customer's purchase history and usage patterns.
+                                                                  * Reviewing customer needs and feedback to recommend suitable complementary products/services.
+                                                                  * Considering bundled packages that align with the customer's existing products.
+                                                                  3. Quote is Updated to Include Complementary Products:
+The sales representative manually updates the renewal quote to include complementary products, such as:
+                                                                     * Additional features that enhance the customer's current subscription.
+                                                                     * New products/services that improve the overall solution.
+                                                                     * Bundled packages that offer better value.
+                                                                     4. The quote clearly shows the original products, new complementary products, and any pricing adjustments or discounts applied.
+                                                                     5. Customer Receives an Email Notification with the Updated Renewal Quote:
+An email notification is automatically sent to the customer, including:
+                                                                        * A summary of their current subscription.
+                                                                        * The updated renewal quote with complementary products highlighted.
+                                                                        * A personalized message explaining the benefits of the cross-sell products and any pricing incentives.
+                                                                        * A link to the customer portal where they can review and approve the quote.
+                                                                        6. Customer Approves and Signs the Renewal Quote with the Cross-Sell Products Included:
+The customer logs into the customer portal to review the updated renewal quote. They can:
+                                                                           * Accept the renewal quote with the complementary products included.
+                                                                           * Modify the quote by adding or removing products/services.
+                                                                           * Request assistance from the sales representative for any clarifications.
+                                                                           7. Once satisfied, the customer digitally signs the renewal quote to confirm approval.
+                                                                           8. Contract is Renewed with the Cross-Sell Products:
+After receiving the signed quote, the CPQ system processes the renewal. The updated contract now reflects the inclusion of the cross-sell products. The billing system is updated to reflect the new pricing, and the customer receives a confirmation email. The sales team is also notified of the successful cross-sell.
+Benefits of This Scenario:
+                                                                              * Revenue Growth: Offering complementary products increases average contract value.
+                                                                              * Customer Satisfaction: Provides a more comprehensive solution, improving customer satisfaction and loyalty.
+                                                                              * Efficient Process: Automated renewal quotes reduce manual workload for the sales team.
+
+
+
+
+Illustrative Images for Comparison
+Salesforce CPQ Flow
+The following diagram illustrates the standard flow of Salesforce CPQ (SteelBrick).
+  
+
+Key Components:
+                                                                              1. Account/Opportunity: A standard Salesforce object for managing customer information and sales opportunities.
+                                                                              2. Create Quote: Generates a quote based on the opportunity.
+                                                                              3. Approve: The approval process before creating documents.
+                                                                              4. Add/Edit Products: Adding and editing products in the quote.
+                                                                              5. Configure Options: Setting up product options (Bundle or Standalone Products)
+                                                                              6. Price/Discount: Adjusting prices and approving discounts.
+                                                                              7. Generate Doc: Generates the proposal or quote document.
+                                                                              8. eSignature: Integration with an external e-signature system.
+                                                                              9. Closed Won: Marks the opportunity as closed won.
+                                                                              10. Order: Creates an order after closing the deal.
+                                                                              11. Amend Contract/Renew: Managing contract amendments and renewals.
+Zuora CPQ Flow
+The following diagram illustrates the flow of Zuora CPQ.
+  
+
+
+Key Components:
+                                                                              1. Subscription Opportunity: Opportunity for a subscription.
+                                                                              2. Quote Generation
+                                                                              1. New/Renewal Subscription Quote: Creating quotes for new or renewal subscriptions.
+                                                                              2. Amendment Quote: Creating quotes for subscription changes.
+                                                                              3. Upsell Quote: Creating quotes for upsell opportunities.
+                                                                              3. Approvals: The approval process for quotes.
+                                                                              4. Sync to Zuora Billing: Syncing quotes with Zuora for billing.
+                                                                              5. Billing Generation: Creating invoices, processing payments, and managing billing.
+                                                                              6. Subscription Billing: Managing various billing requirements.
+                                                                              7. Reports and Analytics: Providing insights into quotes and billing.
+                                                                              8. Subscription Management: Complete management of the subscription lifecycle.
+
+
+How to Handle Flat Renewals, Upsell Renewals, and Downsell Renewals in Zuora CPQ vs. Salesforce CPQ
+Zuora CPQ
+                                                                              1. Flat Renewals:
+                                                                              * How to Handle:
+                                                                              * Generate Automated Quotes: Use Zuora's automated renewal feature to create renewal quotes from renewal opportunity based on existing subscription terms.
+                                                                              * Notify Customers: Send renewal quotes to customers via email or customer portal.
+                                                                              * Renew Subscription Terms: Ensure that subscription terms are renewed without changes.
+                                                                              2. Upsell Renewals:
+                                                                              * How to Handle:
+                                                                              * Create Subscription Amendments: Allow customers to add new products or upgrade existing subscriptions using subscription amendments.
+                                                                              * Generate Renewal Quotes from Renewal Opportunity: Sales teams should create renewal quotes that include upsell prompts for premium products.
+                                                                              * Notify Customers: Send quotes to customers for approval via email or customer portal.
+                                                                              * Update Subscription Terms: Update subscription terms upon customer approval.
+                                                                              3. Downsell Renewals:
+                                                                              * How to Handle:
+                                                                              * Create Subscription Amendments: Allow customers to remove products or downgrade subscriptions using subscription amendments.
+                                                                              * Generate Renewal Quotes from Renewal Opportunity:  Sales teams should create renewal quotes that reflect reduced subscription terms.
+                                                                              * Notify Customers: Send quotes to customers for approval via email or customer portal.
+                                                                              * Update Subscription Terms: Update subscription terms after customer approval.
+Salesforce CPQ
+                                                                              1. Flat Renewals:
+                                                                              * How to Handle:
+                                                                              * Generate Automated Quotes: Use Salesforce CPQ's automated renewal feature to generate renewal quotes based on existing contract terms.
+                                                                              * Notify Customers: Send quotes to customers via email or customer portal.
+                                                                              * Renew Contract Terms: Ensure that contract terms are renewed without changes.
+                                                                              2. Upsell Renewals:
+                                                                              * How to Handle:
+                                                                              * Create Contract Amendments: Allow customers to add new products or upgrade existing subscriptions using contract amendments.
+                                                                              * Generate Renewal Quotes: Sales teams should generate renewal quotes with upsell options for premium products.
+                                                                              * Notify Customers: Send quotes to customers via email or customer portal.
+                                                                              * Update Contract Terms: Update contract terms upon customer approval.
+                                                                              3. Downsell Renewals:
+                                                                              * How to Handle:
+                                                                              * Create Contract Amendments: Allow customers to remove products or downgrade subscriptions using contract amendments.
+                                                                              * Generate Renewal Quotes: Sales teams should create renewal quotes reflecting reduced contract terms.
+                                                                              * Notify Customers: Send quotes to customers via email or customer portal.
+                                                                              * Update Contract Terms: Update contract terms after customer approval.
+Additional Recommendations for Custom Functionalities
+Here are additional recommendations to enhance the Zuora CPQ process through custom functionalities:
+
+1. Renewal Opportunity Naming Convention:
+                                                                              * Description: Automatically append "RNWL" to the name of renewal opportunities to identify them quickly without checking the type field.
+                                                                              * Feasibility: This is feasible through automation rules and triggers in Salesforce.
+2. Subscription Start Date Validation:
+                                                                              * Description: Ensure the subscription start date aligns with the effective date by using a validation rule.
+                                                                              * Feasibility: Easily implementable through custom validation rules in Salesforce.
+3. Quote Sync Status Notifications:
+                                                                              * Description: Notify the relevant teams when a quote syncs successfully or fails, by sending alerts via Chatter or email.
+                                                                              * Feasibility: Achievable through custom email alerts or Chatter notifications.
+4. Automated Renewal Quote Generation:
+                                                                              * Description: Automatically generate renewal quotes for contracts nearing expiration, reducing manual effort.
+                                                                              * Feasibility: Possible with scheduled Apex jobs, scheduled flows.
+5. Product Bundling Recommendations:
+                                                                              * Description: Suggest how we can configure product bundles based on historical data.
+                                                                              * Feasibility: We can configure the bundles based on their business process as we have multiple ways to configure bundles. 
+6. Enhanced Approval Workflows:
+                                                                              * Description: Implement multi-tier approval workflows based on the size or type of subscription.
+                                                                              * Feasibility: Achievable through Salesforce approval processes or custom logic.
+7. Renewal Forecast Dashboard:
+                                                                              * Description: Create a dashboard that visually represents upcoming renewals and potential churn.
+                                                                              * Feasibility: Implementable through Salesforce reports/dashboards combined with Zuora analytics.
+8. Quote Creation from an Opportunity
+                                                                              * Description: When creating a quote from an opportunity, specific fields can be pre-filled based on customizations that are important for future billing purposes.
+                                                                              * Feasibility: Achievable through point n click tools in Salesforce.
+9. Order Creation from a Quote
+                                                                              * Description: When creating an order, relevant fields from the quote should be pre-filled. This process continues until the contract is signed.
+                                                                              * Feasibility: Possible through point n click tools in Salesforce.
+10. Making Record Types Uneditable
+                                                                              * Description: Once an order is activated or the Opportunity is Closed Won, record types can be made non editable. Additionally, the record detail pages of preceding objects can be set to non-editable, ensuring data integrity by preventing unauthorized changes.
+                                                                              * Feasibility: Achievable through custom validation rules or field-level security.
+11. Approval Emails for Discount Approvals
+                                                                              * Description: Send approval emails when a discount exceeds a certain threshold, triggering notifications to managers for approval.
+                                                                              * Feasibility: Achievable through custom email alerts and Salesforce approval processes. 
+                                                                              * We can also create some custom formula fields which can help to generate reports and it will help in revenue recognition. 
+12. Quote Status Messages
+                                                                              * Description: Display messages based on the status of the quote, making it easier for the sales representative to understand the current status without checking multiple fields.
+                                                                              * Feasibility: Feasible through custom notifications or page messages.

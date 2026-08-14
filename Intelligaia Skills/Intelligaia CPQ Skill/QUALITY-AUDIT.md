@@ -1,12 +1,14 @@
 # Quality Audit
 
-## v6.3 Gate
+## v6.7 Gate
+- Markdown files reviewed in semantic audit: **323**
+- Layer README runtime-rule updates: **4**
 - Markdown files over 500 lines: **0**
 - Broken relative Markdown links: **0**
-- Cisco case-study scoping: **Established**
-- Duplicate-source handling: **Established**
-- Design vs implementation: **Separated**
-- Measured vs claimed outcomes: **Separated**
+- User Story reusable bodies: **Fully parameterized from v6.6**
+- Package-wide semantic specialization rule: **Established**
+- Literal source evidence preserved: **Yes**
+- Blind literal replacement: **Not used**
 
-## Next Quality Focus
-Spreadsheet story provenance, row-level traceability, duplicate requirements, solution-prescriptive stories and evidence-state classification.
+## Next
+Comparative case-study/proposal enrichment, then evidence-density/contradiction/final audit.

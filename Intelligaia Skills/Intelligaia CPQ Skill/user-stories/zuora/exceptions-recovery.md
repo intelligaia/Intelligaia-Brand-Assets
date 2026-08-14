@@ -33,9 +33,10 @@ requested/approved change → resulting subscription state → billing/service c
 Mismatch should be visible and recoverable according to operational design.
 
 ## Story Pattern — Recover Lifecycle Transaction
-**As a** supported operations/user role  
-**I want** to determine the true state of a failed or uncertain lifecycle transaction and recover safely  
-**So that** subscription and billing state remain consistent.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 ## Cross-Layer Links
 - `../../integrations/integration-errors.md`

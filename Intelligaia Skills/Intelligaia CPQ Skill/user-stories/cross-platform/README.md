@@ -3,7 +3,7 @@
 ## Purpose
 Represent business outcomes that cross CRM, CPQ/commerce, approval, order, subscription/lifecycle, billing or service boundaries.
 
-Source evidence belongs in [`../../assets/user-stories/cross-platform/`](../../assets/user-stories/cross-platform/).
+Source evidence belongs in `../../assets/user-stories/cross-platform/`.
 
 ## Modules
 | Outcome | Module |

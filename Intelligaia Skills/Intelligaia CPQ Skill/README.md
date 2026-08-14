@@ -255,3 +255,24 @@ Completed Zuora research/advisory evidence enrichment architecture. Separated re
 
 ## v6.3
 Completed the Cisco Commerce evidence wave. Added case-study scoping, duplicate-PDF handling, design-vs-implementation rules, CommerceX roadmap-vs-delivered safeguards, measured-vs-claimed outcome classification, traceability and validation questions. Next: detailed user-story spreadsheet enrichment.
+
+## v6.4
+Completed detailed user-story spreadsheet enrichment. Added row-level evidence registers for 140 Zuora draft stories and 384 Intelligaia actor/task/goal story records, preserved acceptance criteria/status metadata, detected duplicate groups, and classified the CPQ Cart UI workbook as design/reference evidence rather than automatically treating it as requirements. Next: comparative case-study/proposal enrichment.
+
+## v6.5
+Corrected runtime-generation architecture. Added a mandatory dynamic User Story engine, parameterized generic actor/business-outcome language, and established that `So that` must be generated from the specific actor, decision and evidenced consequence. Extended the anti-hardcoding rule across journeys, capabilities, platforms, integrations, UX, analysis, acceptance criteria and opportunity mapping.
+
+## v6.6
+Deep-audited every reusable `Story Pattern` body. Converted 17 pattern blocks across 15 files to parameterized actor/trigger/need/outcome scaffolds. Pattern names remain static for retrieval; final story content must be generated from evidence.
+
+## v6.7
+Completed a package-wide semantic hardcoding audit across 323 Markdown files. Extended evidence-dependent runtime rules beyond User Stories to the other reusable knowledge layers and added a package-wide specialization invariant. Source evidence and explicitly labelled examples remain literal where appropriate; reusable content cannot be promoted directly into customer facts.
+
+## v6.8
+Completed comparative case-study/proposal enrichment. Case studies and proposals are now bounded to source context and used as investigation patterns rather than transferable customer facts. Added a transferability ladder, target-corroboration requirement, proposal/resource-plan guardrails and quantified-outcome provenance rules. Next: final evidence-density/contradiction/quality audit and production packaging cleanup.
+
+## v6.9
+Completed the final evidence-density and contradiction audit. Added explicit conflicting-evidence handling and finalized production packaging boundaries. The production release excludes development-only audit/checkpoint reports while retaining their runtime rules in `SKILL.md` and applicable modules.
+
+## v6.10
+Corrected runtime asset packaging and mapped 16 available original supplied references into purpose-based asset folders. Removed empty screenshot/platform placeholders and added an asset manifest.

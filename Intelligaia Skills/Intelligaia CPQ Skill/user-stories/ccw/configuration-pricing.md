@@ -18,16 +18,18 @@ pricing context → authoritative inputs → currency → quantity → term/date
 A valid configuration may be a prerequisite for pricing, but treat this as an evidenced rule for the specific context rather than a universal CCW fact.
 
 ## Story Pattern — Correct Invalid Configuration
-**As a** seller/partner  
-**I want** actionable configuration validation  
-**So that** I can correct the transaction before progressing.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 Acceptance should focus on prevention and correction, not assumed UI design.
 
 ## Story Pattern — Reprice Changed Quote
-**As a** supported role  
-**I want** commercial values to reflect relevant quote changes  
-**So that** the proposal does not rely on stale pricing.
+**As a** `[actor/role evidenced for this scenario]`
+**When** `[business trigger/context, if evidenced and useful]`
+**I want** `[specific need/action/capability derived from evidence]`
+**So that** `[specific business outcome derived from the actor, decision/action, and desired consequence; otherwise Validation Needed]`
 
 Validate which changes actually drive recalculation.
 

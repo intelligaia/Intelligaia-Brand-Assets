@@ -45,3 +45,7 @@ Use consistently:
 ## Traceability
 Preserve:
 **Evidence → Finding → Root Cause → Opportunity → Requirement → Acceptance Criteria → Success Evidence**
+
+
+## Evidence-Dependent Runtime Rule
+UX principles and research dimensions are reusable. Actors, pain points, task frequency, workflow friction and recommended design require source/research evidence.

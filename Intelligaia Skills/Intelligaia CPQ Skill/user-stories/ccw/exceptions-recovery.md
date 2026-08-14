@@ -36,7 +36,7 @@ Where relevant capture:
 business transaction identifier → status visibility → correlation → error context → recovery ownership/domain → audit.
 
 ## Recovery Story Pattern
-**As a** supported user/operations role  
+**As a** `[evidenced actor/role]`/operations role  
 **I want** to understand and safely recover a failed or uncertain transaction  
 **So that** I can complete the intended outcome without corrupting or duplicating commercial state.
 

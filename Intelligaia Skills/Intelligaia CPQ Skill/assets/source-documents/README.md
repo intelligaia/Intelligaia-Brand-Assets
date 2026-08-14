@@ -1,3 +1,7 @@
-# Source Documents
+# Proposal and Planning Source Assets
 
-Other retained source artifacts that materially support CPQ/Q2C knowledge.
+Original supplied proposal and resource-planning references.
+
+## Included runtime assets
+- `Apttus Resource Plan.xlsx`
+- `Copy of Forsys Assessment & Advisory Proposal - Zuora.pptx`
