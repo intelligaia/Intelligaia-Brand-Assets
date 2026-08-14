@@ -1,26 +1,36 @@
-# Gap Analysis
+# CPQ Gap Analysis
 
-## Canonical chain
-Current State → Evidence → Pain Point → Business Impact → Root Cause → Gap Type → Required Capability → Dependency → Recommendation → Phase → KPI.
+## Purpose
+Identify and characterize gaps between a required or desired CPQ/Q2C outcome and the evidenced current state without turning missing evidence into a confirmed deficiency.
 
-## Gap types
-Process | System | Data | People/Governance | Integration | UX | Control/Approval.
+## Gap Model
+**Required / Desired Outcome → Current Evidence → Difference → Gap Type → Consequence → Root-Cause Hypothesis → Dependency → Recommendation / Validation**
 
-## Required fields
-| Field | Meaning |
+## Core Principles
+1. Define the target outcome before declaring a gap.
+2. Separate missing evidence from missing capability.
+3. Distinguish business, process, data, integration, platform and UX gaps.
+4. Trace gaps to affected journeys and commercial/lifecycle integrity.
+5. Separate current-state fact from root-cause hypothesis.
+6. Do not equate a feature difference with a business gap.
+7. Preserve severity, frequency and impact as unknown unless evidenced.
+8. Link recommendations to dependencies and validation.
+
+## Detail Modules
+| Topic | Module |
 |---|---|
-| Evidence | What was observed/reported |
-| Source | Where evidence came from |
-| Evidence date | When applicable |
-| Confidence | High/Medium/Low |
-| Status | Confirmed/Inferred/Unknown/Historical |
-| Pain point | User/process problem |
-| Root cause | Why it occurs |
-| Impact | Business/user consequence |
-| Required capability | Future-state need |
-| Dependency | Prerequisites |
-| Recommendation | Proposed action |
-| Phase | Sequence |
-| KPI | Measure of improvement |
+| Gap identification and classification | [`gap-identification.md`](gap-identification.md) |
+| Current vs target comparison | [`gap-comparison.md`](gap-comparison.md) |
+| Root cause, consequence and dependency | [`gap-root-cause-impact.md`](gap-root-cause-impact.md) |
+| Prioritization and closure | [`gap-prioritization.md`](gap-prioritization.md) |
+| Gap record template | [`gap-template.md`](gap-template.md) |
 
-Never convert a historical platform gap into a current limitation without validation.
+## Related Modules
+- [Story Analysis](story-analysis-framework.md)
+- [Dependency Analysis](dependency-analysis.md)
+- [Impact Analysis](impact-analysis.md)
+- [Acceptance Criteria](acceptance-criteria.md)
+- [Usability Issues](../ux/usability-issues.md)
+
+## Evidence Guardrail
+If current behavior is not evidenced, record **Unknown / Validation Needed** rather than asserting a gap.
