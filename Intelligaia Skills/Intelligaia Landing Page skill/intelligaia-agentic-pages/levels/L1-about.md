@@ -1,3 +1,16 @@
+> 🔴 **RULING — 13 Aug 2026. Two levels are in play, not four.**
+> **L0 is the home page, and only the home page. Every other page is L1** — About Us, Work,
+> Services, Technology, Careers, Contact, Blog, the 15 case studies and the 11 articles.
+> **L2 and L3 are reserved: not defined, not in use.** The three-way split below is historical.
+> Where a table or a sentence in this skill says L2 or L3, read it as L1 until L2 and L3 are
+> defined. Do not label a new page L2 or L3.
+>
+> One property survives and is worth keeping when they are eventually defined: the case studies
+> and articles run with the **scroll pager off**, because long-form reading needs free scrolling.
+> That belongs to long-form reading, not to a level.
+
+> **About Us is an L1 page. So is every other sub-page.**
+
 # L1 — About
 
 **One file: `Agentic-Home/about.html`**
@@ -5,6 +18,19 @@
 L1 is a **document**. It waits for the reader, it sits on the shell, and it is carried by photographs. There is exactly one L1 page: About. It is the worked example for every level below it, and the proof that a 21-section reel becomes a 9-section document without changing how the site looks.
 
 ---
+
+## 🔴🔴 THE THUMB RULE — L1 opens in Oswald, not Geist Pixel
+
+| | headline | description |
+|---|---|---|
+| **L0** | Geist Pixel 400 | Oswald |
+| **L1 (and L2, L3)** | **Oswald 400** — `clamp(2.4rem,5.3vw,5.6rem)` → 34 · 76 · 120 · 151 | **Geist 400, smaller** — `clamp(1.04rem,1.24vw,1.3rem)/1.64`, `max-width:66ch` |
+
+**Geist Pixel below L0 is numerals only** — the `#anum` stat trio, a stat band figure, a list marker. Never a headline.
+
+The Pixel headline is what tells a visitor they are on the front door. It stops meaning that the moment a second page uses it. Equally, the landing page never opens in Oswald.
+
+Animation is the same on every page below L0: H1 `data-rv="words"` (stagger 0.115) → lede `data-rv="copy"` (stagger 0.03, `data-delay="0.45"`) → everything else `rise`. One trigger at `top 68%`.
 
 ## The nine sections
 

@@ -9,6 +9,40 @@ Build pages that sit on a near-black canvas and read as one continuous argument 
 
 Every page in this system is **one self-contained HTML file** — inline `<style>`, inline `<script>`, GSAP + ScrollTrigger + Lenis from CDN, assets beside it in a folder. There is no build step and no framework.
 
+## 🔴🔴 RULE 1 — USE THE GLOBAL HEADER AS IS
+
+Before anything else on this page: **the header is a locked component, not a thing you build.**
+
+`reference/header.html` + `reference/header.css` are extracted verbatim from the L0 landing page. Paste both into the page. Do not re-derive them, do not abstract them behind a variable, do not simplify them, and **do not copy only the part the page seems to need.**
+
+**How it is defined — one component, four responsive states:**
+
+| | brand logo | nav | CTA | header height | side padding |
+|---|---|---|---|---|---|
+| **≥1921** big-monitor band | `clamp(48px,2.8vw,70px)` | `1.02rem` | surface `1.04rem`, icon `clamp(28px,1.6vw,40px)` | 111 → 128 | `clamp(2.5rem,3.5vw,7rem)`, block `.95rem` |
+| **1181–1920** default | `38px` | `clamp(.78rem,.87vw,.95rem)` uppercase, `ls .07em` | 43px tall | 69 | `3vw`, block `.82rem` |
+| **≤1180** | `38px` | **hidden** — `#navBtn` appears, `#navsheet` takes over | 43px | 69 | `3vw` |
+| **≤640 / ≤400** | `30px` | sheet | ≤400 drops the label, icon only | 63 | `4vw` |
+
+Fixed order, never rearranged: **brand → `#gnav` → `.hdr-right` (hamburger, then CTA)**. The hamburger sits *before* the CTA inside `.hdr-right` so the row collapses in the right order at 1180.
+
+Other locked facts: `position:fixed`, `rgba(11,13,20,.38)` + `blur(18px) saturate(150%)`, `box-shadow:0 10px 30px rgba(0,0,0,.22)`, no bottom border. Nav rest colour `rgba(244,246,255,.62)`; hover and active go `#fff` and wipe a 1.5px gradient underline via `::after{transform:scaleX(0)→(1)}`.
+
+🔴 **Exactly one `<a>` in `#gnav` carries `aria-current="page"`.** It is what draws the underline. None looks orphaned; two looks broken. On a `portfolio/<slug>/` or `post/<slug>/` page the active link is its **section** — Work or Blog — and every `href` needs `../` prefixes.
+
+🔴 **The CTA is a `<button>`, not a link.** It opens the in-place discovery agent where you click. Never point it at the home page with `?agent=1`.
+
+### Why this is Rule 1
+
+An earlier pass re-expressed the header padding as a `--hdrpad` variable and carried across only `padding-inline`. It silently dropped two rules from the ≥1921 block — `padding-block:.95rem` and `#gnav a{font-size:1.02rem}` — so above 1921 **every sub-page had a header 6–7px shorter than the landing page's, with nav links a step smaller:**
+
+| | 2560 | 3440 |
+|---|---|---|
+| header height, home → sub | 111 → **105** | 128 → **121** |
+| nav link size, home → sub | 21.78 → **20.28** | 27.54 → **25.65** |
+
+Nobody copies a component wrong on purpose. They copy the part they were looking at. **So: the whole block, or none of it.**
+
 ## What is in this folder
 
 ```
@@ -20,6 +54,7 @@ intelligaia-agentic-pages/
     L2-pages.md           services · work · technology · careers · contact · blog
     L3-detail-pages.md    portfolio/<slug>/ · post/<slug>/
   reference/            ← the code. Copy VERBATIM; not starting points to adapt.
+    header.html · header.css     🔴 RULE 1 — the locked global header
     shell.css · hdrh.js · motion.js · pager.js · archetypes.html
 ```
 
@@ -27,13 +62,26 @@ intelligaia-agentic-pages/
 
 | File | What it is | Where it goes |
 |---|---|---|
-| `reference/shell.css` | The header, the page column, the hero line, the H1 scale, `#bg`, `.lede` | **LAST rule in `<head>`** — see the source-order trap below |
+| `reference/header.html` | 🔴 **RULE 1** — the global header markup, verbatim | first thing inside `<body>` |
+| `reference/header.css` | 🔴 **RULE 1** — the global header's four responsive states, verbatim | in `<head>`, before the shell |
+| `reference/shell.css` | The page column, the hero line, the H1 scale, `#bg`, `.lede` — **not the header** | **LAST rule in `<head>`** |
 | `reference/hdrh.js` | Measures the header into `--hdrh`; the hero line and any sticky rail read it | just before `</body>` |
 | `reference/motion.js` | The `data-rv` reveal engine + the word-by-word body-copy upgrade | inside the page's main `<script>`, after Lenis is created |
 | `reference/pager.js` | One section per wheel gesture, with free zones — **L0/L1/L2 only, never L3** | just before `</body>` |
 | `reference/archetypes.html` | Markup for 8 section archetypes, lifted from shipped pages | copy the block, swap the words |
 
 ## The levels, in one table
+
+> 🔴 **RULING — 13 Aug 2026. Two levels are in play, not four.**
+> **L0 is the home page, and only the home page. Every other page is L1** — About Us, Work,
+> Services, Technology, Careers, Contact, Blog, the 15 case studies and the 11 articles.
+> **L2 and L3 are reserved: not defined, not in use.** The three-way split below is historical.
+> Where a table or a sentence in this skill says L2 or L3, read it as L1 until L2 and L3 are
+> defined. Do not label a new page L2 or L3.
+>
+> One property survives and is worth keeping when they are eventually defined: the case studies
+> and articles run with the **scroll pager off**, because long-form reading needs free scrolling.
+> That belongs to long-form reading, not to a level.
 
 | | **L0** | **L1** | **L2** | **L3** |
 |---|---|---|---|---|
@@ -44,20 +92,19 @@ intelligaia-agentic-pages/
 
 🔴 **L0 is the reference for the shell** — its header padding, content proportion and hero rhythm are what every level below copies. Never change L0 to make a sub-page match.
 
+🔴 **The four L0 rules are locked and live in `levels/L0-landing-page.md`:** L0-1 the Geist Pixel hero and its line-by-line reveal · L0-2 auto-scroll plus snap, with L0's own slower glide constants · L0-3 the next section in Oswald, word by word at stagger 0.247 · L0-4 the chapter break — one card, 22px radius, gradient hairline, and one family of background artwork across all three chapters. Read them before touching the landing page.
+
 ## 🔴🔴 THE SHELL — the home page is the reference, on every page
 
 **Three things are one thing, and the home page defines all three.** Every page in the system — L1, L2, L3 — must land on the same numbers as `intelligaia-agentic-home-waves-intro-v11.html` at every width. If a new page moves the header, the shell is wrong, not the page.
 
 ```css
 :root{
-  --gut:    clamp(20px, 4.4vw, 128px);
-  --page:   88vw;              /* home's proportion — exact at every width */
-  --hdrpad: 3vw;               /* the header rides the SCREEN */
+  --gut:  clamp(20px, 4.4vw, 128px);
+  --page: 88vw;                /* home's proportion — exact at every width */
 }
-@media (min-width:1921px){ :root{ --hdrpad: clamp(2.5rem, 3.5vw, 7rem) } }
-@media (max-width:760px) { :root{ --hdrpad: 4vw } }
 
-header{ padding-inline: var(--hdrpad) }
+/* 🔴 the header is NOT here — it is reference/header.css, verbatim. See RULE 1. */
 .wrap, .awrap, .bwrap, .csmeasure, .hvid, #sitefooter .ft-grid,
 main > section:first-of-type .pmeasure{
   width: min(var(--page), calc(100% - var(--gut) * 2));
@@ -70,7 +117,7 @@ main > section:first-of-type{
 }
 ```
 
-🔴🔴 **THE HEADER IS NOT ON THE CONTENT RAIL.** This is the single most expensive mistake in the system and it has been made once already. On the home page the header hugs the screen at `3vw` while the content sits inboard at `6vw` — they are *deliberately different*. An earlier pass bound the header to `--railpad` (`max(gutter, (100vw − colmax)/2)`), which **centres a column**, so above 1920 the header padding exploded and the logo walked inboard of where the home page puts it:
+🔴🔴 **THE HEADER IS NOT ON THE CONTENT RAIL.** This is the single most expensive mistake in the system and it has been made once already. The header hugs the screen at `3vw` (see RULE 1) while the content sits inboard at `6vw` — they are *deliberately different*, and the header's value belongs to the header component, not to this shell. An earlier pass bound the header to `--railpad` (`max(gutter, (100vw − colmax)/2)`), which **centres a column**, so above 1920 the header padding exploded and the logo walked inboard of where the home page puts it:
 
 | logo x | 1440 | 1920 | 2560 | 3440 |
 |---|---|---|---|---|
@@ -178,6 +225,17 @@ The label look — 10 px, `.2em` tracking, uppercase — is carried by **trackin
 
 🔴 **Geist Pixel ships ONE weight (400).** Never set a weight on a numeral rule that leads with it — the browser fake-bolds the pixel face.
 
+### 🔴🔴 THE THUMB RULE — what a page opens in
+
+| | opens in | description in |
+|---|---|---|
+| **L0** the landing page | **Geist Pixel 400** — `clamp(2.76rem,6vw,6.45rem)`, the only Pixel headline on the site | Oswald, word by word (`#about`) |
+| **L1 · L2 · L3** everything else | **Oswald 400** — `clamp(2.4rem,5.3vw,5.6rem)` | **Geist 400**, smaller — `clamp(1.04rem,1.24vw,1.3rem)/1.64`, `max-width:66ch` |
+
+**Below L0, Geist Pixel is numerals only.** Never open a sub-page in Pixel; never open the landing page in Oswald. The Pixel headline is what tells you you are on the front door, and it stops meaning that the moment a second page uses it.
+
+Sub-page headline weights are **Oswald Regular (400)**, or Medium (500) where a page needs more presence. Never 200 or 300 — those shipped once, across seven different sizes, and no two pages opened the same way.
+
 🔴🔴 **OSWALD IS DISPLAY ONLY.** Geist carries every description and everything smaller. This rule has been broken three times — most recently `.lede` shipped as Oswald 300 on all seven sub-pages, a display face doing body work, and the user caught it. If a block of text is meant to be *read* rather than *seen*, it is Geist.
 
 Fraunces is a footer accent and nothing else. Geist 500 uppercase is for labels, never sentences.
@@ -235,6 +293,17 @@ Dedupe anchors at **90px**. At 24px a section's top and bottom both survived and
 ## Levels — what a page is allowed to spend
 
 **The per-level budgets live in `levels/`.** Read the file for the level you are building before anything else; it is the shortest path to not building the wrong page. The summary:
+
+> 🔴 **RULING — 13 Aug 2026. Two levels are in play, not four.**
+> **L0 is the home page, and only the home page. Every other page is L1** — About Us, Work,
+> Services, Technology, Careers, Contact, Blog, the 15 case studies and the 11 articles.
+> **L2 and L3 are reserved: not defined, not in use.** The three-way split below is historical.
+> Where a table or a sentence in this skill says L2 or L3, read it as L1 until L2 and L3 are
+> defined. Do not label a new page L2 or L3.
+>
+> One property survives and is worth keeping when they are eventually defined: the case studies
+> and articles run with the **scroll pager off**, because long-form reading needs free scrolling.
+> That belongs to long-form reading, not to a level.
 
 | | **L0** | **L1** | **L2** | **L3** |
 |---|---|---|---|---|
