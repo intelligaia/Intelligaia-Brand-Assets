@@ -1,37 +1,23 @@
 # CPQ Insight — Next Phase Assessment
 
-## Structurally Deepened
-- `SKILL.md` router
-- Foundations
-- Capabilities
-- Journeys
-- Integrations
-- UX principles
-- Seller experience
-- Partner experience
-- Usability analysis
-- Design opportunities
+## Source-Evidence Enrichment
+### Wave 1 — Complete
+Process/current-state evidence.
 
-## Next Major Layer
-The next recommended phase is **Analysis Frameworks**.
+### Wave 2 — Complete
+Zuora research/advisory evidence.
 
-Existing `analysis/` files should now be deepened and aligned to the richer foundations, capabilities, journeys, integrations and UX layers.
+### Wave 3 — Complete
+Cisco Commerce evidence architecture:
+- case-study evidence scoped to its project/context;
+- duplicate Cisco case-study PDFs treated as one lineage;
+- designs separated from implementation;
+- CommerceX strategy/roadmap separated from delivered capability;
+- measured/reported/target/estimated outcomes distinguished;
+- platform-specific claims guarded from universalization;
+- traceability and validation questions added.
 
-### Planned Analysis Sequence
-1. `analysis/story-analysis-framework.md`
-2. `analysis/gap-analysis.md`
-3. `analysis/dependency-analysis.md`
-4. `analysis/impact-analysis.md`
-5. `analysis/acceptance-criteria.md`
-6. Analysis-layer consistency/completeness audit
-
-## After Analysis
-Recommended sequence:
-1. User-story library and templates
-2. Platform-layer completeness/evidence audit
-3. Intelligaia opportunity/service mapping
-4. Full-package cross-layer audit
-5. Source-evidence enrichment from supplied CPQ project artifacts
-
-## Evidence Enrichment
-The package architecture can be structurally complete while customer/platform-specific L4 detail remains intentionally unknown. Source artifacts should be used to enrich actual workflows, rules, mappings, pain points, user stories and implementation behavior without inventing missing facts.
+## Remaining Major Steps — 3
+1. Detailed user-story spreadsheet enrichment.
+2. Comparative case-study/proposal enrichment.
+3. Evidence-density, contradiction and final quality audit.
