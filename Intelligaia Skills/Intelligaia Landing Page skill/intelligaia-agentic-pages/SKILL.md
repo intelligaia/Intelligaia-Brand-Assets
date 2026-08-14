@@ -49,10 +49,11 @@ Nobody copies a component wrong on purpose. They copy the part they were looking
 intelligaia-agentic-pages/
   SKILL.md              ← the system: shell, colour, type, motion, cards, traps
   levels/               ← WHICH page you are building, and what it may spend
+    LEVELS.md             🔴 READ FIRST — the current ruling: L0 = home, L1 = everything else
     L0-landing-page.md    the reel — 21 sections, 3 arcs, the apparatus
     L1-about.md           the worked descent — 21 sections became 9
-    L2-pages.md           services · work · technology · careers · contact · blog
-    L3-detail-pages.md    portfolio/<slug>/ · post/<slug>/
+    L2-pages.md           ⚠️ HISTORICAL — these pages are L1. Craft notes still good.
+    L3-detail-pages.md    ⚠️ HISTORICAL — these pages are L1. Craft notes still good.
   reference/            ← the code. Copy VERBATIM; not starting points to adapt.
     header.html · header.css     🔴 RULE 1 — the locked global header
     shell.css · hdrh.js · motion.js · pager.js · archetypes.html
@@ -83,12 +84,15 @@ intelligaia-agentic-pages/
 > and articles run with the **scroll pager off**, because long-form reading needs free scrolling.
 > That belongs to long-form reading, not to a level.
 
-| | **L0** | **L1** | **L2** | **L3** |
-|---|---|---|---|---|
-| what | the landing page | About | services · work · technology · careers · contact · blog | portfolio/ · post/ |
-| file | `intelligaia-agentic-home-waves-intro-v11.html` | `about.html` | six files | 26 files |
-| it is | a **reel** | a **document** | a **document** | an **article** |
-| detail | `levels/L0-landing-page.md` | `levels/L1-about.md` | `levels/L2-pages.md` | `levels/L3-detail-pages.md` |
+| | **L0** | **L1** | **L2 · L3** |
+|---|---|---|---|
+| what | the home page, and only the home page | **every other page** — About Us · Work · Services · Technology · Careers · Contact · Blog · the case studies · the articles | **reserved — not defined, not in use** |
+| file | `intelligaia-agentic-home-waves-intro-v11.html` | 33 files | — |
+| it is | a **reel** | a **document** | — |
+| detail | `levels/L0-landing-page.md` | `levels/L1-about.md` — the method applies to every L1 page, not only About Us | — |
+
+Ruling of 13 Aug 2026. `levels/L2-pages.md` and `levels/L3-detail-pages.md` are kept as historical
+notes: their craft guidance is still good, their level labels are not. See `levels/LEVELS.md`.
 
 🔴 **L0 is the reference for the shell** — its header padding, content proportion and hero rhythm are what every level below copies. Never change L0 to make a sub-page match.
 
@@ -305,20 +309,26 @@ Dedupe anchors at **90px**. At 24px a section's top and bottom both survived and
 > and articles run with the **scroll pager off**, because long-form reading needs free scrolling.
 > That belongs to long-form reading, not to a level.
 
-| | **L0** | **L1** | **L2** | **L3** |
-|---|---|---|---|---|
-| sections | 18–22 | 8–10 | 5–8 | 6–10 |
-| narrative | 3 arcs | 1 arc | 1 arc | 1 arc |
-| pinned / sticky | ≤6 | ≤2 | ≤1 | 0 |
-| free zones | ≤2 | ≤2 | ≤1 | 0 |
-| interactive | ≤4 | 0 | 0 | 0 |
-| canvas | 1 | 0 | 0 | 0 |
-| auto-advance | yes | no | no | no |
-| pager | on + auto-driver | on, plain | on, plain | **off** |
-| glide | `780 / 1.25–2.9s` | `900 / 0.85–2.4s` | `900 / 0.85–2.4s` | — |
-| words / section | ≤25 | ≤70 | ≤90 | free |
-| bespoke JS sections | expected | ≤2 | 0 | 0 |
-| layout | full-bleed staged | the shell | the shell | shell + `.pmeasure` |
+| | **L0** — the home page | **L1** — every other page |
+|---|---|---|
+| sections | 18–22 | 5–10 |
+| narrative | 3 arcs | 1 arc |
+| pinned / sticky | ≤6 | ≤2 |
+| free zones | ≤2 | ≤2 |
+| interactive | ≤4 | 0 |
+| canvas | 1 | 0 |
+| auto-advance | yes | no |
+| pager | on + auto-driver | on, plain — **off for long-form** |
+| glide | `780 / 1.25–2.9s` | `900 / 0.85–2.4s` |
+| words / section | ≤25 | ≤70, up to ≤90 on a section page |
+| bespoke JS sections | expected | ≤2 |
+| layout | full-bleed staged | the shell (+ `.pmeasure` on articles) |
+| hero typeface | Geist Pixel 400 | Oswald 400 |
+
+🔴 **Pager off for long-form.** Case studies and articles turn the scroll pager off — someone
+working through 2,000 words needs to scroll freely, and one-section-per-gesture fights them.
+Apply it by page length, not by label. This is the first distinction to formalise if L2 and L3
+are ever defined.
 
 ### 🔴🔴 The three laws of descent
 

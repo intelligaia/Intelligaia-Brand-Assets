@@ -16,6 +16,12 @@ standalone light-theme portfolio HTML (`ux-case-study`).
    pager, the card treatment, photography, and the traps that have actually shipped.
 3. **`reference/`** — the code. Copy it verbatim. It is not a starting point.
 
+## Read this first
+
+**`levels/LEVELS.md`** carries the current ruling (13 Aug 2026): **L0 is the home page and only
+the home page; every other page is L1.** L2 and L3 are reserved and not in use. `L2-pages.md` and
+`L3-detail-pages.md` are kept as historical notes — good craft guidance, superseded labels.
+
 ## The one idea
 
 The landing page and every other page are the same design language at different **energy
