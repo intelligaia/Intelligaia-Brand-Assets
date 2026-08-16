@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CX Roadmap</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@3.19.0/dist/tabler-icons.min.css" />
+<style>
+  :root {
+    --green: #CDE545;
+    --cyan: #06B7DB;
+    --bg-hero: #000000;
+    --bg-page: #18181B;
+    --content1: rgba(255,255,255,0.92);
+    --content2: rgba(255,255,255,0.62);
+    --content3: rgba(255,255,255,0.38);
+    --card-bg: rgba(255,255,255,0.04);
+    --card-border: rgba(255,255,255,0.08);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg-page); }
+  body {
+    color: var(--content1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+  }
+  button { font-family: inherit; }
+
+  /* Hero */
+  .hero {
+    background: var(--bg-hero);
+    height: 500px;
+    padding: 24px 80px 96px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    position: relative;
+  }
+  .color-bar {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 3px; background: var(--cyan); z-index: 2;
+  }
+  .intelligaia {
+    position: absolute; top: 24px; right: 80px; text-align: right; z-index: 3;
+  }
+  .intelligaia .mark {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 22px; font-weight: 400;
+    line-height: 1; letter-spacing: -0.01em;
+    color: var(--content1);
+  }
+  .intelligaia .tagline {
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 10px; color: rgba(255,255,255,0.55);
+    margin-top: 2px; letter-spacing: 0.01em;
+  }
+  .hero-left {
+    display: flex; flex-direction: column; justify-content: center; gap: 20px;
+  }
+  .client-logo {
+    width: 120px; height: 56px;
+    border: 1px dashed rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.02);
+    border-radius: 8px;
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(255,255,255,0.4);
+    font-size: 10px; letter-spacing: 0.05em;
+  }
+  .hero-heading {
+    font-size: 44px; font-weight: 500;
+    line-height: 1.15; letter-spacing: -0.02em;
+    color: var(--content1);
+  }
+  .hero-desc {
+    font-size: 13px; color: var(--content2);
+    line-height: 1.5; max-width: 420px;
+  }
+  .hero-right {
+    display: flex; align-items: center; justify-content: center;
+  }
+  .brand-mark {
+    width: 280px; height: 280px;
+    border: 1px dashed rgba(255,255,255,0.2);
+    border-radius: 16px;
+    background: rgba(255,255,255,0.02);
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 8px; color: rgba(255,255,255,0.4);
+  }
+  .brand-mark i { font-size: 36px; opacity: 0.6; }
+  .brand-mark span { font-size: 11px; letter-spacing: 0.05em; }
+  .scroll-cue {
+    position: absolute; left: 0; right: 0; bottom: 32px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+  }
+  .scroll-cue .label { font-size: 22px; font-weight: 500; color: var(--content1); }
+  .scroll-cue i { font-size: 18px; color: var(--cyan); }
+
+  /* Sections wrap */
+  .sections-wrap {
+    background: var(--bg-page);
+    padding: 0 80px 32px;
+  }
+  #cx-sections { position: relative; }
+
+  /* Section */
+  .cx-sec { position: relative; z-index: 1; padding: 24px 0; }
+  .sec-head { display: flex; align-items: flex-start; gap: 16px; }
+  .cx-badge {
+    width: 28px; height: 28px;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0; position: relative; z-index: 2;
+    box-shadow: 0 0 0 4px var(--bg-page);
+    margin-top: 2px;
+  }
+  .cx-badge i { font-size: 14px; }
+  .sec-title-block { flex: 1; min-width: 0; }
+  .sec-title { font-size: 20px; font-weight: 500; line-height: 1.3; }
+  .sec-desc { font-size: 13px; color: var(--content2); margin-top: 3px; line-height: 1.5; }
+  .refs-row {
+    display: flex; align-items: center; gap: 6px; margin-top: 10px; flex-wrap: wrap;
+  }
+  .refs-label {
+    font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.35); margin-right: 2px;
+  }
+  .refs-add {
+    display: inline-flex; align-items: center; gap: 4px;
+    height: 22px; padding: 0 10px;
+    border-radius: 999px; border: 1px dashed rgba(255,255,255,0.15);
+    background: transparent; color: rgba(255,255,255,0.35);
+    font-size: 11px; cursor: pointer;
+  }
+  .refs-add i { font-size: 11px; }
+
+  .cx-toggle { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .cx-toggle-label {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4);
+  }
+  .cx-toggle-group {
+    display: flex; gap: 2px; padding: 2px;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 8px; background: rgba(255,255,255,0.02);
+  }
+  .cx-layout-btn {
+    width: 26px; height: 26px; border: none;
+    background: transparent; color: rgba(255,255,255,0.4);
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 6px; cursor: pointer;
+    transition: background 0.15s ease, color 0.15s ease;
+    padding: 0;
+  }
+  .cx-layout-btn i { font-size: 13px; }
+  .cx-layout-btn:hover:not([data-active="true"]) {
+    color: rgba(255,255,255,0.85);
+    background: rgba(255,255,255,0.04);
+  }
+
+  .cx-content {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 24px;
+    margin-top: 16px;
+    margin-left: 44px;
+  }
+
+  /* Empty state */
+  .empty-state {
+    background: rgba(255,255,255,0.03);
+    border: 1px dashed rgba(255,255,255,0.1);
+    border-radius: 10px;
+    padding: 36px 24px;
+    display: flex; flex-direction: column; align-items: center; gap: 10px;
+  }
+  .empty-state .icon { font-size: 22px; }
+  .empty-state .label { font-size: 12px; color: rgba(255,255,255,0.3); }
+  .empty-state .sub { font-size: 11px; color: rgba(255,255,255,0.2); text-align: center; }
+
+  /* Layout: icon cards */
+  .grid-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .grid-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 16px;
+  }
+  .grid-card .icon-tile {
+    width: 28px; height: 28px; border-radius: 6px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 12px;
+  }
+  .grid-card .icon-tile i { font-size: 14px; }
+  .grid-card .title { font-size: 13px; font-weight: 500; color: var(--content1); margin-bottom: 6px; }
+  .grid-card .desc { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.5; }
+
+  /* Layout: numbered list */
+  .list-row {
+    display: grid; grid-template-columns: 220px 1fr; gap: 24px;
+    padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .list-row:last-child { border-bottom: none; }
+  .list-row .lbl {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em;
+    color: rgba(255,255,255,0.4); margin-bottom: 4px;
+  }
+  .list-row .title { font-size: 14px; font-weight: 500; color: var(--content1); line-height: 1.35; }
+  .list-row .desc { font-size: 12px; color: var(--content2); line-height: 1.55; margin-bottom: 8px; }
+  .list-row .tag {
+    display: inline-block; padding: 2px 8px; border-radius: 4px;
+    font-size: 10px; font-weight: 500; margin-right: 4px;
+  }
+
+  /* Layout: phase cards */
+  .phase-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .phase-card {
+    background: rgba(255,255,255,0.02);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 10px; padding: 16px;
+  }
+  .phase-card .head {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 10px;
+  }
+  .phase-card .lbl {
+    font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500;
+  }
+  .phase-card .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .phase-card .title { font-size: 14px; font-weight: 500; color: var(--content1); margin-bottom: 6px; }
+  .phase-card .desc { font-size: 11px; color: rgba(255,255,255,0.55); line-height: 1.55; margin-bottom: 14px; }
+  .phase-card .cta {
+    display: flex; justify-content: space-between; align-items: center;
+    font-family: "SF Mono", Menlo, monospace; font-size: 11px;
+  }
+  .phase-card .cta i { font-size: 12px; }
+
+  /* Phase divider */
+  .phase-divider {
+    position: relative; z-index: 1;
+    display: flex; align-items: center; gap: 16px;
+    padding: 32px 0 32px 44px;
+  }
+  .phase-divider .line { flex: 1; height: 1px; background: rgba(6,183,219,0.25); }
+  .phase-divider .pill {
+    padding: 6px 20px; border-radius: 999px;
+    border: 1px solid var(--cyan); color: var(--cyan);
+    background: rgba(6,183,219,0.1);
+    font-size: 11px; font-weight: 500;
+    letter-spacing: 0.05em; text-transform: uppercase;
+  }
+
+  /* Footer */
+  .site-footer {
+    display: flex; justify-content: space-between; align-items: center;
+    padding: 24px 0 0; margin-top: 40px;
+    border-top: 1px solid var(--card-border);
+    font-size: 11px; color: var(--content3);
+  }
+  .site-footer .right { display: flex; align-items: center; gap: 8px; }
+  .site-footer .dot {
+    width: 18px; height: 18px; border-radius: 50%;
+    background: var(--cyan); color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; font-weight: 500;
+  }
+</style>
+</head>
+<body>
+  <div class="color-bar"></div>
+  <div class="hero">
+    <div class="intelligaia">
+      <div class="mark">intelligaia</div>
+      <div class="tagline">humanizing AI for enterprises</div>
+    </div>
+    <div class="hero-left">
+      <div class="client-logo">CLIENT LOGO</div>
+      <div class="hero-heading">[Add hero heading]</div>
+      <div class="hero-desc">[Add a short description — same 13px content2 style used across sections.]</div>
+    </div>
+    <div class="hero-right">
+      <div class="brand-mark">
+        <i class="ti ti-photo" aria-hidden="true"></i>
+        <span>Brand mark / hero visual</span>
+      </div>
+    </div>
+    <div class="scroll-cue">
+      <div class="label">CX Roadmap</div>
+      <i class="ti ti-chevrons-down" aria-hidden="true"></i>
+    </div>
+  </div>
+
+  <div class="sections-wrap">
+    <div id="cx-sections"></div>
+    <footer class="site-footer">
+      <div>© 2026 [Client name] · Confidential · Not for distribution</div>
+      <div class="right">
+        <span>Prepared by</span>
+        <div class="dot">i</div>
+        <span>Intelligaia</span>
+      </div>
+    </footer>
+  </div>
+
+<script>
+(function(){
+  const GREEN = '#CDE545', GREEN_RGBA = '205,229,69';
+  const CYAN = '#06B7DB', CYAN_RGBA = '6,183,219';
+
+  const LAYOUTS = [
+    {id:'empty', icon:'ti-layout-grid',    label:'Empty'},
+    {id:'cards', icon:'ti-layout-cards',   label:'Icon cards'},
+    {id:'list',  icon:'ti-layout-list',    label:'Numbered list'},
+    {id:'phase', icon:'ti-layout-columns', label:'Phase cards'}
+  ];
+
+  const sections = [
+    {n:1, color:GREEN, title:'Discovery Workshop', desc:'Research and alignment with stakeholders before design decisions.', icon:'ti-users'},
+    {n:2, color:GREEN, title:'Business Objectives', desc:'Goals, success metrics, and constraints that shape the CX strategy.', icon:'ti-target'},
+    {n:3, color:GREEN, title:'Brainstorming Session', desc:'Ideation methods, themes, and aligned concepts.', icon:'ti-bulb'},
+    {divider:true},
+    {n:4, color:CYAN, title:'Competitive Analysis', desc:'Benchmarking of competitors and category leaders.', icon:'ti-chart-bar'},
+    {n:5, color:CYAN, title:'Persona', desc:'User archetypes with goals, frustrations, and behaviours.', icon:'ti-user'},
+    {n:6, color:CYAN, title:'IA and User Story Mapping', desc:'Information architecture, navigation, and user stories.', icon:'ti-sitemap'},
+    {n:7, color:CYAN, title:'Customer Journey Mapping', desc:'Stages, emotions, and pain points across the experience.', icon:'ti-route'},
+    {n:8, color:CYAN, title:'Service Blueprint', desc:'Frontstage actions, backstage processes, and the gaps.', icon:'ti-stack-2'},
+    {n:9, color:CYAN, title:'Low Fidelity Wireframes', desc:'Structural sketches for key screens and flows.', icon:'ti-layout'},
+    {n:10, color:CYAN, title:'Design System', desc:'Tokens, components, and patterns that scale.', icon:'ti-components'},
+    {n:11, color:CYAN, title:'High Fidelity Mockups', desc:'Production-ready visuals with full styling.', icon:'ti-device-desktop'}
+  ];
+
+  const SAMPLE_ITEMS = [
+    {icon:'ti-crosshair',   title:'Item 01', desc:'Provide description for this item in the intake.', tags:['Tag A','Tag B']},
+    {icon:'ti-camera',      title:'Item 02', desc:'Provide description for this item in the intake.', tags:['Tag C','Tag D']},
+    {icon:'ti-map-pin',     title:'Item 03', desc:'Provide description for this item in the intake.', tags:['Tag E']},
+    {icon:'ti-bolt',        title:'Item 04', desc:'Provide description for this item in the intake.', tags:['Tag F','Tag G']},
+    {icon:'ti-circle-check',title:'Item 05', desc:'Provide description for this item in the intake.', tags:['Tag H']},
+    {icon:'ti-calendar',    title:'Item 06', desc:'Provide description for this item in the intake.', tags:['Tag I','Tag J']}
+  ];
+
+  function renderEmpty(s){
+    const rgba = s.color === GREEN ? GREEN_RGBA : CYAN_RGBA;
+    return `
+      <div class="empty-state">
+        <i class="ti ${s.icon} icon" aria-hidden="true" style="color:rgba(${rgba},0.45);"></i>
+        <div class="label">This section is empty</div>
+        <div class="sub">Provide content in the intake to populate this section.</div>
+      </div>`;
+  }
+
+  function renderIconCards(s){
+    const accent = s.color;
+    const rgba = s.color === GREEN ? GREEN_RGBA : CYAN_RGBA;
+    const cards = SAMPLE_ITEMS.map(it => `
+      <div class="grid-card">
+        <div class="icon-tile" style="background:rgba(${rgba},0.15);">
+          <i class="ti ${it.icon}" aria-hidden="true" style="color:${accent};"></i>
+        </div>
+        <div class="title">${it.title}</div>
+        <div class="desc">${it.desc}</div>
+      </div>`).join('');
+    return `<div class="grid-cards">${cards}</div>`;
+  }
+
+  function renderNumberedList(s){
+    const accent = s.color;
+    const rgba = s.color === GREEN ? GREEN_RGBA : CYAN_RGBA;
+    const rows = SAMPLE_ITEMS.slice(0,4).map((it, i) => {
+      const n = String(i+1).padStart(2,'0');
+      const tags = it.tags.map(t => `<span class="tag" style="background:rgba(${rgba},0.15);color:${accent};">${t}</span>`).join('');
+      return `
+        <div class="list-row">
+          <div>
+            <div class="lbl">OBJ ${n}</div>
+            <div class="title">${it.title}</div>
+          </div>
+          <div>
+            <div class="desc">${it.desc}</div>
+            <div>${tags}</div>
+          </div>
+        </div>`;
+    }).join('');
+    return rows;
+  }
+
+  function renderPhaseCards(s){
+    const accent = s.color;
+    const statusColors = [accent, accent, '#f59e0b', 'rgba(255,255,255,0.25)', 'rgba(255,255,255,0.25)', 'rgba(255,255,255,0.25)'];
+    const cards = SAMPLE_ITEMS.map((it, i) => {
+      const n = String(i+1);
+      return `
+        <div class="phase-card">
+          <div class="head">
+            <div class="lbl" style="color:${accent};">Phase ${n}</div>
+            <div class="dot" style="background:${statusColors[i]};"></div>
+          </div>
+          <div class="title">${it.title}</div>
+          <div class="desc">${it.desc}</div>
+          <div class="cta" style="color:${accent};">
+            <span>/item-${n}</span>
+            <i class="ti ti-arrow-right" aria-hidden="true"></i>
+          </div>
+        </div>`;
+    }).join('');
+    return `<div class="phase-cards">${cards}</div>`;
+  }
+
+  const RENDERERS = { empty:renderEmpty, cards:renderIconCards, list:renderNumberedList, phase:renderPhaseCards };
+
+  function toggleHTML(sectionColor){
+    const btns = LAYOUTS.map((L, i) => {
+      const active = i === 0;
+      const bg = active ? sectionColor : 'transparent';
+      const iconColor = active ? (sectionColor === GREEN ? '#18181b' : '#fff') : 'rgba(255,255,255,0.4)';
+      return `<button type="button" class="cx-layout-btn" data-layout="${L.id}" data-active="${active}" aria-label="${L.label}" title="${L.label}" style="background:${bg};color:${iconColor};"><i class="ti ${L.icon}" aria-hidden="true"></i></button>`;
+    }).join('');
+    return `
+      <div class="cx-toggle" data-accent="${sectionColor}">
+        <span class="cx-toggle-label">Layout</span>
+        <div class="cx-toggle-group">${btns}</div>
+      </div>`;
+  }
+
+  function chipsHTML(){
+    const addChip = `<button type="button" class="refs-add"><i class="ti ti-plus" aria-hidden="true"></i>Add link</button>`;
+    return `
+      <div class="refs-row">
+        <span class="refs-label">Refs</span>
+        ${addChip}${addChip}
+      </div>`;
+  }
+
+  const root = document.getElementById('cx-sections');
+  const html = sections.map((s) => {
+    if(s.divider){
+      return `<div class="phase-divider"><div class="line"></div><div class="pill">CX Strategy</div><div class="line"></div></div>`;
+    }
+    const iconColor = s.color === GREEN ? '#18181b' : '#fff';
+    return `
+    <section class="cx-sec" data-color="${s.color}" data-icon="${s.icon}">
+      <div class="sec-head">
+        <div class="cx-badge" style="background:${s.color};"><i class="ti ${s.icon}" aria-hidden="true" style="color:${iconColor};"></i></div>
+        <div class="sec-title-block">
+          <div class="sec-title">${s.title}</div>
+          <div class="sec-desc">${s.desc}</div>
+          ${chipsHTML()}
+        </div>
+        ${toggleHTML(s.color)}
+      </div>
+      <div class="cx-content">${renderEmpty(s)}</div>
+    </section>`;
+  }).join('');
+  root.innerHTML = html;
+
+  root.querySelectorAll('.cx-sec').forEach(sec => {
+    const accent = sec.dataset.color;
+    const iconColorActive = accent === GREEN ? '#18181b' : '#fff';
+    const sData = { color: accent, icon: sec.dataset.icon };
+    const contentEl = sec.querySelector('.cx-content');
+    const group = sec.querySelector('.cx-toggle');
+    group.querySelectorAll('.cx-layout-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        group.querySelectorAll('.cx-layout-btn').forEach(b => {
+          b.dataset.active = 'false';
+          b.style.background = 'transparent';
+          b.style.color = 'rgba(255,255,255,0.4)';
+        });
+        btn.dataset.active = 'true';
+        btn.style.background = accent;
+        btn.style.color = iconColorActive;
+        const renderer = RENDERERS[btn.dataset.layout] || renderEmpty;
+        contentEl.innerHTML = renderer(sData);
+      });
+    });
+  });
+
+  requestAnimationFrame(function(){
+    const secs = root.querySelectorAll('.cx-sec');
+    if(secs.length < 2) return;
+    const rootRect = root.getBoundingClientRect();
+    function badgeCenterY(sec){
+      const b = sec.querySelector('.cx-badge').getBoundingClientRect();
+      return b.top - rootRect.top + b.height/2;
+    }
+    const firstY = badgeCenterY(secs[0]);
+    const lastY = badgeCenterY(secs[secs.length-1]);
+    const totalH = lastY - firstY;
+    let lastGreenY = firstY, firstCyanY = lastY;
+    for(let i = 0; i < secs.length; i++){
+      if(secs[i].dataset.color === GREEN) lastGreenY = badgeCenterY(secs[i]);
+    }
+    for(let i = 0; i < secs.length; i++){
+      if(secs[i].dataset.color === CYAN){ firstCyanY = badgeCenterY(secs[i]); break; }
+    }
+    const greenStopPct = ((lastGreenY - firstY) / totalH) * 100;
+    const cyanStartPct = ((firstCyanY - firstY) / totalH) * 100;
+    const line = document.createElement('div');
+    line.style.cssText = `position:absolute;left:13px;top:${firstY}px;height:${totalH}px;width:2px;opacity:0.7;z-index:0;background:linear-gradient(to bottom, ${GREEN} 0%, ${GREEN} ${greenStopPct}%, ${CYAN} ${cyanStartPct}%, ${CYAN} 100%);`;
+    root.appendChild(line);
+  });
+})();
+</script>
+</body>
+</html>
