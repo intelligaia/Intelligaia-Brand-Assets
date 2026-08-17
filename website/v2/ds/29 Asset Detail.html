@@ -1,0 +1,776 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title id="page-title">Intelligaia · Asset</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+<style>
+
+:root {
+  --bg: #04050A;
+  --bg-2: #0A0C14;
+  --bg-3: #131522;
+  --ink: #F4F6FF;
+  --ink-soft: #EEF1FB;
+  --ink-muted: rgba(244,246,255,0.62);
+  --hair: rgba(255,255,255,0.08);
+  --hair-2: rgba(255,255,255,0.16);
+  --yellow: #FFC800;
+  --yellow-glow: rgba(255,200,0,0.15);
+  --blue: #4A8BF5;
+  --purple: #8A5AF0;
+  --green: #6EE071;
+  --red: #FF7A75;
+  --footer-bg: #0A0C14;
+}
+
+/* ==== GLOBAL HEADER — pixel-matched to intelligaia.com (Wix) ==== */
+.g-header { position: sticky; top: 0; z-index: 50; background: var(--bg-2); width: 100%; height: 114px; }
+.g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; gap: 0; }
+.g-logo { display: flex; align-items: center; text-decoration: none; flex-shrink: 0; }
+.g-logo img { height: 51px; width: auto; display: block; }
+.g-logo .word, .g-logo .tag { display: none; }
+.g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
+.g-nav a { font-family: 'Geist', 'Helvetica Neue', Arial, sans-serif; font-weight: 500; font-size: 16px; line-height: 1; color: #000000; text-decoration: none; white-space: nowrap; transition: opacity 0.15s ease; }
+.g-nav a:hover { opacity: 0.6; }
+.g-cta { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-family: 'Geist', sans-serif; font-weight: 500; font-size: 16px; line-height: 1; color: #000000; background: var(--bg-2); border: 1px solid #000000; border-radius: 200px; height: 52px; padding: 0 32px; text-decoration: none; white-space: nowrap; flex-shrink: 0; transition: background 0.15s ease, color 0.15s ease; }
+.g-cta:hover { background: #000000; color: #FFFFFF; }
+.g-cta svg { width: 14px; height: 14px; }
+.g-hamburger { display: none; width: 44px; height: 44px; border: 1px solid #000000; border-radius: 8px; background: var(--bg-2); align-items: center; justify-content: center; cursor: pointer; flex-shrink: 0; padding: 0; }
+.g-hamburger svg { width: 20px; height: 20px; color: #000000; }
+.g-mobile-drawer { display: none; position: fixed; inset: 114px 0 0 0; background: var(--bg-2); z-index: 49; padding: 32px 40px; flex-direction: column; gap: 24px; overflow-y: auto; }
+.g-mobile-drawer.open { display: flex; }
+.g-mobile-drawer a { font-family: 'Geist', sans-serif; font-weight: 500; font-size: 20px; color: #000000; text-decoration: none; padding: 8px 0; border-bottom: 1px solid #EAEAEA; }
+.g-mobile-drawer .g-cta { align-self: flex-start; margin-top: 12px; }
+@media (max-width: 1000px) {
+  .g-header { height: 88px; }
+  .g-header-inner { padding: 0 24px; gap: 24px; }
+  .g-logo img { height: 40px; }
+  .g-nav, .g-cta { display: none; }
+  .g-hamburger { display: inline-flex; margin-left: auto; }
+  .g-mobile-drawer { top: 88px; }
+}
+/* ==== end canonical global header ==== */
+
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { font-family: 'Geist', 'Inter', system-ui, sans-serif; font-weight: 400; font-size: 15.5px; line-height: 1.6; color: var(--ink); background: var(--bg); -webkit-font-smoothing: antialiased; }
+h1, h2, h3, h4, h5, h6 { font-family: 'Oswald', 'Helvetica Neue', Arial, sans-serif; font-weight: 400; margin: 0; }
+h2, h3 { font-weight: 400; }
+a { color: inherit; text-decoration: none; }
+
+.ds-crumb-bar { background: var(--bg-2); border-bottom: 1px solid var(--hair); }
+.ds-crumb-inner { max-width: 1440px; margin: 0 auto; padding: 10px 56px; display: flex; align-items: center; gap: 10px; font-size: 12.5px; }
+.ds-crumb-inner a { color: var(--ink); opacity: 0.7; display: inline-flex; align-items: center; gap: 6px; }
+.ds-crumb-inner a:hover { opacity: 1; }
+.ds-crumb-inner .sep { opacity: 0.35; }
+.ds-crumb-inner .cur { font-weight: 500; }
+
+.g-footer { background: var(--footer-bg); padding: 80px 0 56px; border-top: 1px solid var(--hair); margin-top: 40px; }
+.g-footer-inner { max-width: 1440px; margin: 0 auto; padding: 0 56px; display: grid; grid-template-columns: 1.1fr 0.9fr 1.3fr 1.3fr; gap: 48px; }
+.ig-col-brand .ig-logo-foot { display: inline-flex; flex-direction: column; margin-bottom: 32px; }
+.ig-col-brand .ig-logo-foot .word { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 30px; letter-spacing: -0.024em; line-height: 1; }
+.ig-col-brand .ig-logo-foot .tag { font-size: 10.5px; margin-top: 4px; }
+.ig-social { display: flex; gap: 12px; margin-top: 220px; }
+.ig-sic { width: 36px; height: 36px; display: inline-flex; align-items: center; justify-content: center; }
+.ig-sic svg { width: 22px; height: 22px; }
+.ig-col-nav ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; font-size: 22px; font-family: 'Geist', sans-serif; }
+.ig-col-offices h5 { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 500; margin: 0 0 14px; }
+.ig-col-offices p { font-size: 14.5px; line-height: 1.6; margin: 0 0 24px; }
+.ig-col-offices p a { text-decoration: underline; text-underline-offset: 3px; }
+.goodness { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 56px; line-height: 1.05; margin: 0 0 36px; }
+.ig-contact-pill { display: inline-flex; align-items: center; gap: 10px; padding: 14px 32px; border: 1px solid var(--ink); border-radius: 999px; font-size: 15px; }
+.ig-contact-pill:hover { background: var(--ink); color: var(--footer-bg); }
+@media (max-width: 1080px) { .g-footer-inner { grid-template-columns: 1fr 1fr; gap: 40px; } .ig-social { margin-top: 24px; } }
+@media (max-width: 640px) { .g-footer-inner { grid-template-columns: 1fr; padding: 0 24px; } .goodness { font-size: 40px; } }
+
+.asset-page { max-width: 1400px; margin: 0 auto; padding: 32px 56px 40px; }
+.asset-top { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-bottom: 24px; flex-wrap: wrap; }
+.asset-top .l { display: flex; flex-direction: column; gap: 6px; }
+.asset-top .cat-tag { display: inline-flex; align-items: center; gap: 6px; font-family: 'Geist', sans-serif; font-size: 11px; padding: 4px 12px; border-radius: 999px; background: var(--bg-2); border: 1px solid var(--hair); width: fit-content; letter-spacing: 0.04em; }
+.asset-top h1 { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 36px; margin: 0; letter-spacing: -0.018em; }
+.asset-top .desc { font-size: 14.5px; opacity: 0.75; max-width: 60ch; margin: 4px 0 0; }
+.asset-top .actions { display: flex; gap: 10px; align-items: center; }
+.asset-top .action { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; border-radius: 999px; font-size: 13.5px; font-family: 'Geist', sans-serif; font-weight: 500; border: 1px solid var(--ink); cursor: pointer; text-decoration: none; }
+.asset-top .action.primary { background: var(--ink); color: var(--yellow); }
+.asset-top .action.primary:hover { background: transparent; color: var(--ink); }
+.asset-top .action.ghost { background: var(--bg); color: var(--ink); }
+.asset-top .action.ghost:hover { background: var(--ink); color: var(--yellow); }
+.asset-top .action svg { width: 14px; height: 14px; }
+
+/* BIG STAGE with side arrows */
+.stage-wrap { position: relative; margin-bottom: 24px; }
+.asset-stage { background: var(--bg-2); border: 1px solid var(--hair); border-radius: 20px; padding: 48px; display: flex; align-items: center; justify-content: center; min-height: 70vh; }
+.asset-stage img { max-width: 100%; max-height: 70vh; object-fit: contain; }
+.side-arrow { position: absolute; top: 50%; transform: translateY(-50%); width: 56px; height: 56px; border-radius: 999px; background: var(--bg); border: 1px solid var(--hair); display: flex; align-items: center; justify-content: center; cursor: pointer; transition: all 0.15s ease; z-index: 5; color: var(--ink); text-decoration: none; box-shadow: 0 4px 14px rgba(18,18,18,0.06); }
+.side-arrow:hover { background: var(--ink); color: var(--yellow); border-color: var(--ink); box-shadow: 0 6px 20px rgba(18,18,18,0.16); }
+.side-arrow.disabled { opacity: 0.3; pointer-events: none; }
+.side-arrow.left { left: -28px; }
+.side-arrow.right { right: -28px; }
+.side-arrow svg { width: 22px; height: 22px; }
+@media (max-width: 900px) { .side-arrow { width: 44px; height: 44px; } .side-arrow.left { left: 8px; } .side-arrow.right { right: 8px; } }
+
+.asset-info { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 24px; padding: 22px 26px; background: var(--bg); border: 1px solid var(--hair); border-radius: 12px; margin-bottom: 40px; }
+.asset-info .cell h5 { font-family: 'Oswald', sans-serif; font-size: 11px; opacity: 0.55; letter-spacing: 0.04em; margin: 0 0 4px; font-weight: 500; }
+.asset-info .cell p { font-size: 13.5px; margin: 0; word-break: break-word; }
+
+/* NEXT CATEGORY navigation at bottom */
+.cat-nav { display: flex; justify-content: space-between; align-items: stretch; gap: 14px; margin-top: 40px; border-top: 1px solid var(--hair); padding-top: 32px; }
+.cn-card { flex: 1; display: flex; align-items: center; gap: 18px; padding: 22px 26px; border: 1px solid var(--hair); border-radius: 14px; text-decoration: none; color: var(--ink); background: var(--bg); transition: all 0.15s ease; min-width: 0; }
+.cn-card:hover { border-color: var(--ink); background: var(--bg-2); }
+.cn-card .icon { width: 44px; height: 44px; flex-shrink: 0; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 999px; display: flex; align-items: center; justify-content: center; color: var(--ink); }
+.cn-card .icon svg { width: 20px; height: 20px; }
+.cn-card:hover .icon { background: var(--ink); color: var(--yellow); border-color: var(--ink); }
+.cn-card .txt { flex: 1; min-width: 0; }
+.cn-card .txt .lbl { font-family: 'Geist', sans-serif; font-size: 11px; opacity: 0.55; letter-spacing: 0.04em; margin: 0 0 4px; }
+.cn-card .txt .nm { font-family: 'Oswald', sans-serif; font-size: 22px; font-weight: 500; margin: 0; letter-spacing: -0.012em; }
+.cn-card .txt .sub { font-size: 12px; opacity: 0.55; margin: 2px 0 0; }
+.cn-card.next { text-align: right; flex-direction: row-reverse; }
+@media (max-width: 760px) { .asset-page { padding: 24px 20px 30px; } .asset-top h1 { font-size: 26px; } .asset-stage { padding: 24px; min-height: 50vh; } .cat-nav { flex-direction: column; } .cn-card.next { text-align: left; flex-direction: row; } }
+
+
+
+
+/* ── LIGHT MODE ADJUSTMENTS ── */
+.spec-block, .prompt-block{ background:#0A0C14; border-color:rgba(18,18,18,.14); }
+.spec-block pre, .prompt-block pre{ color:#E8E8E8; }
+.cut-typo{ background:#0A0A0A; }
+.cut-typo .aa{ color:#F4EFDF; }
+.cut-typo .meta{ color:#F4EFDF; }
+.ix-thumb.thumb-aa{ color:var(--ink-soft); }
+.tile-preview.ph{ background:repeating-linear-gradient(45deg,#F6F3EA 0 12px,#EDE9DD 12px 24px); border-color:rgba(18,18,18,.18); }
+.ex-preview.placeholder{ background:repeating-linear-gradient(45deg,#F6F3EA 0 12px,#EDE9DD 12px 24px); }
+.hub-preview.ph{ background:linear-gradient(180deg,#F6F3EA 0%,#EAE6DA 100%); }
+.show-viz{ background:var(--bg-3); }
+.fnd-mini{ background:var(--bg-2); }
+.anatomy-canvas{ background:var(--bg-2); }
+.tp-big{ background:var(--bg-2); }
+.col-viz{ box-shadow:0 20px 50px -18px rgba(0,0,0,.22); }
+.cutout{ box-shadow:0 22px 44px -18px rgba(0,0,0,.26),0 8px 18px -8px rgba(0,0,0,.16),inset 0 0 0 1px rgba(0,0,0,.05); }
+.dual-col.tech .lbl{ color:#2F6FD0; }
+.rule-card.do h4{ color:#2E9E4F; } .rule-card.dont h4{ color:#D64541; }
+.rule-card.do li::before{ color:#2E9E4F; } .rule-card.dont li::before{ color:#D64541; }
+.dodont-col.do h4{ color:#2E9E4F; } .dodont-col.dont h4{ color:#D64541; }
+.dodont-col.do li::before{ color:#2E9E4F; } .dodont-col.dont li::before{ color:#D64541; }
+.instr-card .dodont .d.do span:first-child{ color:#2E9E4F; }
+.instr-card .dodont .d.dont span:first-child{ color:#D64541; }
+
+/* ── DARK LIBRARY ADJUSTMENTS ── */
+body{ background:var(--bg); color:var(--ink); }
+.g-logo img{ filter:invert(1) brightness(1.1); }
+.g-header{ background:rgba(4,5,10,0.78) !important; border-bottom:1px solid rgba(255,255,255,0.07) !important; }
+.g-nav a{ color:rgba(244,246,255,0.82); }
+.pill-bar{ background:rgba(4,5,10,0.94) !important; border-color:var(--hair) !important; }
+.pill{ background:var(--bg-2); color:var(--ink); border-color:var(--hair-2); }
+.pill:hover{ border-color:var(--yellow); color:var(--yellow); }
+.pill.active{ background:var(--yellow); color:#04050A; border-color:var(--yellow); }
+.pill.active .count{ color:#04050A; opacity:.75; }
+.chr-hero h1{ color:var(--ink-soft); font-weight:400 !important; }
+.chr-hero p, .chr-hero .lede{ color:var(--ink-muted); }
+.stage-cell,.asset-cell,.grid-cell,.a-card,.card{ background:var(--bg-2); border-color:var(--hair); }
+.stage-cell:hover,.asset-cell:hover,.a-card:hover,.card:hover{ border-color:var(--yellow); background:var(--bg-3); }
+.stage-cell img,.asset-cell img,.a-card img{ background:transparent; }
+.lb-pill{ background:var(--yellow); color:#04050A; }
+.dl-btn,.btn-dl{ background:var(--yellow); color:#04050A; border-color:var(--yellow); }
+.dl-btn:hover,.btn-dl:hover{ background:transparent; color:var(--yellow); }
+.lightbox,.lb-backdrop{ background:rgba(4,5,10,0.94); }
+.lb-panel,.lb-inner{ background:var(--bg-2); border-color:var(--hair-2); }
+.dark-footer{ background:var(--bg-2); border-top:1px solid var(--hair); }
+.df-logo img{ filter:invert(1) brightness(1.1); }
+section, .page{ background:transparent; }
+.sec-hd,.stage-hd{ border-color:var(--hair); }
+h1,h2,h3,h4,h5,h6{ color:var(--ink-soft); }
+.hero h1,.cover-title,.chr-hero h1{ font-weight:400 !important; }
+
+/* ── DISPLAY HEADINGS — Oswald Regular, locked ── */
+.hero-h1,.hero h1,.chr-hero h1,.cover-title,h1.big,.big-title,
+.show-card h2,.pr-body h2,.col-body h2,.tp-side h2,.trio-card h3,
+section h1,section h2{ font-weight:400 !important; }
+
+
+/* ── SCROLL — single owner, no fighting ── */
+html{ scroll-behavior:auto; }
+html.lenis, html.lenis body{ height:auto; }
+.lenis.lenis-smooth{ scroll-behavior:auto !important; }
+.lenis.lenis-smooth [data-lenis-prevent]{ overscroll-behavior:contain; }
+.lenis.lenis-stopped{ overflow:hidden; }
+body{ overscroll-behavior-y:none; }
+.section{ scroll-margin-top:110px; }
+[id]{ scroll-margin-top:110px; }
+
+/* header spans the full viewport; its contents align to the shell */
+.g-header{ width:100%; left:0; right:0; }
+.g-header-inner{
+  max-width:none !important;
+  width:100%;
+  padding:0 var(--pad-x) !important;
+  margin:0 !important;
+}
+
+/* every section shares the same shell + left edge */
+.section,
+.pill-bar-inner,
+.dark-footer-inner,
+.g-footer-inner,
+.page,
+.wrap{
+  max-width:var(--shell) !important;
+  margin-left:auto; margin-right:auto;
+  padding-left:var(--pad-x) !important;
+  padding-right:var(--pad-x) !important;
+}
+.pill-bar{ width:100%; }
+
+/* wide screens: let grids breathe rather than stretching a single column */
+@media (min-width:1920px){
+  .cat-grid{ grid-template-columns:repeat(5,1fr); }
+  .trio{ gap:20px; }
+  .show-card{ gap:56px; padding:34px 40px; }
+  .tile-grid{ grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); }
+  .what-grid{ gap:20px; }
+}
+@media (min-width:2400px){
+  .cat-grid{ grid-template-columns:repeat(6,1fr); }
+  .hero-grid{ gap:64px; }
+  .show-card h2{ font-size:clamp(30px,1.7vw,44px) !important; }
+  .show-desc{ font-size:15px; max-width:52ch; }
+  .big-lede{ max-width:72ch; }
+}
+@media (min-width:2800px){
+  .hero-h1{ font-size:clamp(72px,4.4vw,124px); }
+  .hero-h2{ font-size:clamp(24px,1.35vw,32px); max-width:46ch; }
+}
+
+/* hero keeps the same left edge as everything else */
+.section.hero{ align-items:stretch; }
+.hero-left{ max-width:none; }
+@media (min-width:1600px){ .hero-grid{ grid-template-columns:minmax(0,0.9fr) minmax(0,1.1fr); } }
+
+/* ══════════ WORD-BY-WORD HEADING REVEAL ══════════
+   Applied by JS to every display heading. Words rise and fade in
+   sequence when their heading scrolls into view. */
+.w-split{ display:inline-block; overflow:hidden; vertical-align:top; }
+.w-split > span{
+  display:inline-block;
+  opacity:0;
+  transform:translateY(0.9em);
+  transition:opacity .62s cubic-bezier(.22,.9,.3,1), transform .62s cubic-bezier(.22,.9,.3,1);
+  will-change:opacity, transform;
+}
+.w-on .w-split > span{ opacity:1; transform:translateY(0); }
+@media (prefers-reduced-motion:reduce){
+  .w-split > span{ opacity:1 !important; transform:none !important; transition:none !important; }
+}
+
+/* ══════════ GLOBAL SCALE — readable at 2.5K–3K ══════════ */
+:root{
+  --pad-x:40px; --shell:1440px;
+  --nav-fs:15px; --logo-h:38px; --sys-fs:18px; --hdr-h:92px;
+  --h1:clamp(48px,6vw,92px); --h2:clamp(30px,3.2vw,46px);
+  --lede:17px; --body:15px; --meta:12.5px;
+}
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
+  --h1:clamp(80px,4.6vw,130px); --h2:clamp(44px,2.5vw,64px); } }
+@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
+  --h1:clamp(96px,4.4vw,150px); --h2:clamp(52px,2.4vw,74px); } }
+
+.g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
+.g-header-inner{ max-width:none !important; width:100%; height:100%;
+  padding:0 var(--pad-x) !important; margin:0 !important;
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:30px; }
+.g-logo{ display:flex; align-items:center; gap:18px; flex-shrink:0; }
+.g-logo img{ height:var(--logo-h) !important; width:auto; }
+.g-sep{ width:1px; height:calc(var(--logo-h) * .58); background:var(--hair-2); flex:none; }
+.g-sys{ font-family:'Oswald',sans-serif; font-weight:400; font-size:var(--sys-fs) !important; letter-spacing:-.005em; white-space:nowrap; }
+.g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.7vw,38px); }
+.g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
+  white-space:nowrap; opacity:.86; transition:color .15s, opacity .15s; }
+.g-nav a:hover{ color:#FFC800; opacity:1; }
+.g-cta{ justify-self:end; font-size:var(--nav-fs) !important;
+  height:calc(var(--hdr-h) * .46); padding:0 clamp(22px,1.5vw,34px); }
+@media (max-width:1400px){ .g-nav{ display:none; } }
+@media (max-width:1000px){ .g-cta{ display:none; } }
+
+/* body scale follows the same steps */
+body{ font-size:var(--body); }
+.hero-h1{ font-size:var(--h1) !important; }
+.hero-h2{ font-size:calc(var(--lede) * 1.28) !important; max-width:44ch; }
+.big-title{ font-size:var(--h2) !important; }
+.big-lede,.theory{ font-size:var(--lede) !important; }
+.section{ padding-top:clamp(44px,3.4vw,78px); padding-bottom:clamp(44px,3.4vw,78px); }
+.section.hero{ padding-top:calc(var(--hdr-h) + clamp(40px,3vw,80px)); }
+.section,.pill-bar-inner,.dark-footer-inner,.g-footer-inner,.page,.wrap{
+  max-width:var(--shell) !important; margin-left:auto; margin-right:auto;
+  padding-left:var(--pad-x) !important; padding-right:var(--pad-x) !important; }
+[id]{ scroll-margin-top:calc(var(--hdr-h) + 22px); }
+.crumbs{ font-size:var(--meta) !important; }
+.eyebrow{ font-size:var(--meta) !important; }
+.show-card h2{ font-size:calc(var(--h2) * .74) !important; }
+.show-desc{ font-size:var(--body) !important; }
+.trio-card h3{ font-size:calc(var(--h2) * .62) !important; }
+.part span,.dg-field .v{ font-size:calc(var(--body) * .93) !important; }
+.dg-body h3{ font-size:calc(var(--h2) * .52) !important; }
+
+/* ══════════ SECTION BASELINE ══════════
+   .section originally carried min-height:100vh with flex centring, which
+   turned every short section into a blank screen. Only the home hero keeps it. */
+.section{ min-height:auto !important; display:block !important; }
+.section.hero{ display:flex !important; flex-direction:column; justify-content:center; }
+body:not(.home) .section.hero{ min-height:auto !important; }
+
+/* ══════════ LABEL SCALE — small text was unreadable ══════════ */
+:root{ --label:13px; }
+@media (min-width:1920px){ :root{ --label:14.5px; } }
+@media (min-width:2400px){ :root{ --label:16px; } }
+@media (min-width:2800px){ :root{ --label:17.5px; } }
+.eyebrow,.crumbs,.vw-mode,.vw-count,.vw-cap a,.vw-thumb .tn,
+.brief .bk,.brief .bf .k,.brief .chips span,.brief .dl a,
+.guide .g span,.ai-rules h4,.ai-rules li,.part span,
+.dg-kick,.dg-field .k,.dg-field .v,.dg-reads span,.dg-foot a,
+.tile-meta p,.tile-meta .n,.ba-stats span,.ba-m span.d,
+.pn-tile .lbl,.show-eyebrow,.show-kids span,.show-open,
+.trio-card .tc-lbl,.trio-open,.ix-sub,.fmt-b .fm,
+.pill,.cat-name,.ad-rail a,.ad-rail .rt,.spec-block .lbl,
+.vw-cap .t,.out-item .oi-name{ font-size:var(--label) !important; }
+.brief .bf .v,.philo-pts span,.pr-dd li{ font-size:var(--body) !important; }
+.vw-cap .t{ font-size:calc(var(--label) * 1.25) !important; }
+.dg-body h3,.tile-meta h3{ font-size:calc(var(--h2) * .5) !important; }
+
+
+/* source strip — where the asset lives */
+.src-row{ display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:12px; margin-top:16px; }
+.src{ display:flex; align-items:center; gap:13px; padding:14px 17px; background:var(--bg-2);
+  border:1px solid var(--hair); border-radius:11px; transition:.18s; }
+.src:hover{ border-color:var(--yellow); }
+.src svg{ flex:none; }
+.src .t{ font-family:'Geist',sans-serif; font-size:var(--label); color:var(--ink); display:block; }
+.src .p{ font-family:'Geist',monospace; font-size:calc(var(--label) * .84); color:var(--ink-muted);
+  display:block; margin-top:3px; word-break:break-all; }
+.src .soon{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
+  padding:3px 9px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted); white-space:nowrap; }
+
+/* ══════════ ASSET DETAIL ══════════ */
+.section.ad-top,.section.ad-make,.section.ad-meth{ min-height:auto !important; display:block !important; }
+.ad-top{ padding-top:calc(var(--hdr-h) + clamp(24px,1.9vw,44px)) !important;
+  padding-bottom:clamp(24px,1.9vw,40px) !important; }
+.ad-back{ display:inline-flex; align-items:center; gap:8px; font-family:'Geist',sans-serif;
+  font-size:var(--label); color:var(--ink-muted); margin-bottom:20px; }
+.ad-back:hover{ color:var(--yellow); }
+.ad-grid{ display:grid; grid-template-columns:minmax(0,1fr) 380px; gap:clamp(26px,2.4vw,52px); align-items:start; }
+@media (min-width:2000px){ .ad-grid{ grid-template-columns:minmax(0,1fr) 440px; } }
+@media (max-width:1100px){ .ad-grid{ grid-template-columns:1fr; } }
+.ad-stage{ position:relative; background:#fff; border:1px solid var(--hair-2); border-radius:16px;
+  display:flex; align-items:center; justify-content:center; padding:clamp(30px,3vw,60px); min-height:470px; }
+@media (min-width:2000px){ .ad-stage{ min-height:620px; } }
+.ad-stage img{ max-width:100%; max-height:62vh; object-fit:contain; }
+.ad-nav{ position:absolute; top:50%; transform:translateY(-50%); width:46px; height:46px; border-radius:50%;
+  background:rgba(4,5,10,.7); color:#fff; border:1px solid rgba(255,255,255,.2); cursor:pointer;
+  font-size:20px; backdrop-filter:blur(8px); transition:.18s; }
+.ad-nav:hover{ background:#FFC800; color:#04050A; border-color:#FFC800; }
+.ad-nav.p{ left:15px; } .ad-nav.n{ right:15px; }
+.ad-side h1{ font-family:'Oswald',sans-serif; font-weight:400 !important;
+  font-size:calc(var(--h2) * .92); line-height:1.08; color:var(--ink-soft); margin:0 0 6px; }
+.ad-side .cat{ font-family:'Geist',sans-serif; font-size:var(--label); color:var(--yellow);
+  letter-spacing:.1em; text-transform:uppercase; margin-bottom:20px; display:block; }
+.ad-meta{ border-top:1px solid var(--hair); padding:12px 0; display:flex; justify-content:space-between; gap:12px; }
+.ad-meta .k{ font-family:'Geist',sans-serif; font-size:var(--label); color:var(--ink-muted); }
+.ad-meta .v{ font-family:'Geist',sans-serif; font-size:var(--label); color:var(--ink); text-align:right; }
+.ad-dl{ margin-top:18px; display:flex; flex-direction:column; gap:9px; }
+.ad-dl a{ display:flex; align-items:center; justify-content:space-between; padding:13px 18px;
+  border-radius:10px; font-family:'Geist',sans-serif; font-size:var(--label); }
+.ad-dl a.p{ background:var(--yellow); color:#04050A; }
+.ad-dl a.s{ border:1px solid var(--hair-2); color:var(--ink); }
+.ad-dl a.s:hover{ border-color:var(--yellow); color:var(--yellow); }
+.ad-make,.ad-meth{ padding-top:clamp(32px,2.5vw,54px) !important;
+  padding-bottom:clamp(32px,2.5vw,54px) !important; border-top:1px solid var(--hair); }
+.ad-make h2,.ad-meth h2{ font-family:'Oswald',sans-serif; font-weight:400 !important;
+  font-size:var(--h2); color:var(--ink-soft); margin:0 0 12px; }
+.ad-make .lead,.ad-meth .lead{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.62;
+  color:var(--ink-muted); max-width:76ch; margin:0 0 clamp(20px,1.7vw,32px); }
+.mk-row{ display:grid; gap:clamp(14px,1.2vw,20px); }
+.mk-row.n1{ grid-template-columns:1fr; max-width:460px; }
+.mk-row.n2{ grid-template-columns:repeat(2,1fr); }
+.mk-row.n3{ grid-template-columns:repeat(3,1fr); }
+.mk-row.n4{ grid-template-columns:repeat(4,1fr); }
+@media (max-width:900px){ .mk-row{ grid-template-columns:1fr !important; } }
+.mk{ background:var(--bg-2); border:1px solid var(--hair-2); border-radius:14px; overflow:hidden; }
+.mk .v{ aspect-ratio:1/1; background:#fff; display:flex; align-items:center; justify-content:center;
+  padding:clamp(18px,1.6vw,32px); border-bottom:1px solid var(--hair); }
+.mk .v img{ max-width:100%; max-height:100%; object-fit:contain; }
+.mk .b{ padding:clamp(16px,1.3vw,22px); }
+.mk .b b{ display:block; font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:calc(var(--h2) * .40); color:var(--ink-soft); margin-bottom:7px; }
+.mk .b span{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.58; color:var(--ink-muted); }
+.th-grid{ display:grid; grid-template-columns:repeat(4,1fr); gap:clamp(13px,1.1vw,18px); }
+@media (max-width:1000px){ .th-grid{ grid-template-columns:repeat(2,1fr); } }
+.th{ padding:clamp(20px,1.6vw,28px); background:var(--bg-2); border:1px solid var(--hair);
+  border-radius:12px; border-left:2px solid var(--yellow); }
+.th b{ display:block; font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:calc(var(--h2) * .38); color:var(--ink-soft); margin-bottom:8px; }
+.th span{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.58; color:var(--ink-muted); }
+.prim{ display:flex; gap:13px; flex-wrap:wrap; margin-bottom:22px; }
+.prim div{ display:flex; align-items:center; gap:10px; padding:11px 18px; background:var(--bg-2);
+  border:1px solid var(--hair-2); border-radius:999px;
+  font-family:'Geist',sans-serif; font-size:var(--label); color:var(--ink); }
+
+/* ══════════ HEADER ══════════ */
+.g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
+.g-header-inner{ max-width:none !important; width:100%; height:100%;
+  padding:0 var(--pad-x) !important; margin:0 !important;
+  display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:30px; }
+.g-logo{ display:flex; align-items:center; gap:clamp(14px,1.1vw,22px); flex-shrink:0; text-decoration:none; }
+.g-logo img{ height:var(--logo-h) !important; width:auto; display:block; }
+.g-sep{ width:1px; height:calc(var(--logo-h) * .62); background:var(--hair-2); flex:none; }
+/* brand wordmark — spectrum, its own typeface */
+.g-sys{ font-family:'Syne',var(--font-display),sans-serif; font-weight:700;
+  font-size:calc(var(--sys-fs) * 1.06); letter-spacing:-.012em; white-space:nowrap; line-height:1;
+  background:linear-gradient(96deg,#FFC800 0%,#FF8A3D 22%,#F0506E 44%,#8A5AF0 68%,#4A8BF5 88%,#26D0C4 100%);
+  -webkit-background-clip:text; background-clip:text;
+  -webkit-text-fill-color:transparent; color:transparent;
+  background-size:180% 100%; transition:background-position .5s ease; }
+.g-logo:hover .g-sys{ background-position:100% 0; }
+.g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.8vw,40px); }
+.g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
+  white-space:nowrap; opacity:.86; transition:color .15s, opacity .15s; position:relative; }
+.g-nav a:hover{ color:#FFC800; opacity:1; }
+.g-nav a.on{ color:var(--yellow) !important; opacity:1 !important; }
+.g-nav a.on::after{ content:''; position:absolute; left:0; right:0; bottom:-10px;
+  height:2px; background:var(--yellow); border-radius:2px; }
+/* contact — was collapsing; explicit box */
+.g-cta{ justify-self:end; display:inline-flex !important; align-items:center; justify-content:center;
+  height:auto !important; min-height:0;
+  padding:clamp(11px,.75vw,15px) clamp(20px,1.5vw,30px) !important;
+  font-family:'Geist',sans-serif; font-size:var(--nav-fs) !important; font-weight:400;
+  line-height:1; white-space:nowrap; border-radius:999px;
+  background:var(--yellow); color:#04050A !important; border:1px solid var(--yellow);
+  transition:background .18s, color .18s; }
+.g-cta:hover{ background:transparent; color:var(--yellow) !important; }
+@media (max-width:1400px){ .g-nav{ display:none; } }
+@media (max-width:700px){ .g-cta{ display:none !important; } }
+
+/* view toggle — icons, not words */
+.av-modes,.vw-modes{ display:flex; gap:3px; padding:4px; background:var(--bg-2);
+  border:1px solid var(--hair); border-radius:10px; }
+.av-mode,.vw-mode{ width:38px; height:34px; padding:0 !important; border-radius:7px !important;
+  border:0; background:transparent; color:var(--ink-muted); cursor:pointer;
+  display:flex; align-items:center; justify-content:center; transition:.16s; font-size:0 !important; }
+.av-mode svg,.vw-mode svg{ width:17px; height:17px; }
+.av-mode.on,.vw-mode.on{ background:var(--yellow); color:#04050A; }
+.av-mode:hover:not(.on),.vw-mode:hover:not(.on){ color:var(--ink); background:var(--bg-3); }
+
+/* ══════════ RESOURCES — same three links on every asset page ══════════ */
+.res{ display:grid; grid-template-columns:repeat(3,1fr); gap:clamp(12px,1vw,18px);
+  margin-top:clamp(20px,1.7vw,30px); }
+@media (max-width:900px){ .res{ grid-template-columns:1fr; } }
+.res a{ display:flex; align-items:center; gap:14px; padding:clamp(16px,1.3vw,22px);
+  background:var(--bg-2); border:1px solid var(--hair-2); border-radius:12px; transition:.18s; }
+.res a:hover{ border-color:var(--yellow); background:var(--bg-3); }
+.res .ico{ width:36px; height:36px; border-radius:9px; background:var(--bg-3);
+  display:flex; align-items:center; justify-content:center; flex:none; }
+.res .tx{ min-width:0; }
+.res .tx b{ display:block; font-family:'Geist',sans-serif; font-weight:400;
+  font-size:var(--label); color:var(--ink); }
+.res .tx span{ display:block; font-family:'Geist',monospace;
+  font-size:calc(var(--label) * .84); color:var(--ink-muted); margin-top:3px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.res .st{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
+  padding:3px 10px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted);
+  white-space:nowrap; flex:none; }
+
+/* ══════════ PAGE HEADER SPACING ══════════
+   The hero was sitting tight under the fixed header and hard against the
+   content below it. Real clearance at both ends, on every page type. */
+.av-hero,.cl-hero,.cg-hero,.lib-hero,.fx-hero,.wp-hero{
+  padding-top:calc(var(--hdr-h) + clamp(72px,5vw,132px)) !important;
+  padding-bottom:clamp(56px,4vw,98px) !important; }
+.av-hero h1,.cl-hero h1,.cg-hero h1,.lib-hero h1,.fx-hero h1,.ad-top h1{
+  margin-bottom:clamp(18px,1.4vw,28px) !important; }
+.av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p,.cg-hero #cgDesc{
+  max-width:none !important; margin:0 !important; }
+/* one line where there is room, two where there is not */
+@media (min-width:1500px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p{
+    white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+}
+@media (max-width:1499px){
+  .av-hero p,.cl-hero p,.cg-hero p,.lib-hero p,.fx-hero p{
+    white-space:normal; max-width:74ch !important; }
+}
+/* and air before the first content block */
+.av-body,.cl-body,.cg-body,.lib-body{ padding-top:clamp(18px,1.5vw,32px) !important; }
+.av-bar{ margin-bottom:clamp(20px,1.6vw,30px) !important; }
+.section.hero{ padding-top:calc(var(--hdr-h) + clamp(56px,4vw,104px)) !important; }
+
+/* ══════════ ASSET DETAIL — titled header ══════════
+   The page opened on a bare back-link under a tall header, so the whole
+   top of the screen read as blank. It gets a real title now, and the
+   stage starts right below it instead of floating. */
+.ad-top{ padding-top:calc(var(--hdr-h) + clamp(30px,2.2vw,52px)) !important;
+  padding-bottom:clamp(40px,3vw,68px) !important; }
+.ad-head{ margin-bottom:clamp(26px,2vw,42px); }
+.ad-head .ad-back{ display:inline-block; margin-bottom:clamp(16px,1.2vw,26px); }
+.ad-head .cat{ display:block; font-family:'Geist',sans-serif; font-size:var(--label);
+  letter-spacing:.14em; text-transform:uppercase; color:#FFC800; margin-bottom:10px; }
+.ad-head h1{ font-family:'Oswald',sans-serif; font-weight:400 !important;
+  font-size:var(--h1); line-height:1.04; letter-spacing:-.018em;
+  color:var(--ink-soft); margin:0; }
+.ad-side-k{ display:block; font-family:'Geist',sans-serif; font-size:var(--label);
+  letter-spacing:.14em; text-transform:uppercase; color:var(--ink-muted);
+  padding-bottom:14px; margin-bottom:4px; border-bottom:1px solid var(--hair-2); }
+
+/* ══════════ TWO DOORS ══════════
+   The door is derived from the page, never from session state, so a link
+   pasted into Slack lands in the right door with the right nav. */
+.g-door{ font-family:'Geist',sans-serif; font-weight:400; font-size:calc(var(--nav-fs) * .92);
+  color:var(--ink-muted); white-space:nowrap; letter-spacing:.01em; }
+.g-door::before{ content:''; display:inline-block; width:1px; height:.95em;
+  background:var(--hair-2); margin:0 .72em -.1em 0; vertical-align:middle; }
+.g-logo:hover .g-door{ color:var(--ink-soft); }
+@media (max-width:1180px){ .g-door{ display:none; } }
+</style>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
+<script>window.IG_ASSETS = [{"slug": "character-female-character-03-front-face", "name": "Aisha · Front face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1930 px", "bytes": "76 KB", "path": "illustrations/characters-female/Female Character 03 — Front face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-03-side-face", "name": "Aisha · Side face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1930 px", "bytes": "56 KB", "path": "illustrations/characters-female/Female Character 03 — Side face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Side%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Side%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-male-character-01-front-face", "name": "Arjun · Front face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "2000×2000 px", "bytes": "189 KB", "path": "illustrations/characters-male/Male Character 01 — Front face — Final.png", "folder": "illustrations/characters-male", "stages": [{"src": "../../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-male-character-01-side-face", "name": "Arjun · Side face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "2000×2000 px", "bytes": "180 KB", "path": "illustrations/characters-male/Male Character 01 — Side face — Final.png", "folder": "illustrations/characters-male", "stages": [{"src": "../../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-male-character-02-front-face", "name": "David · Front face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1848×1947 px", "bytes": "281 KB", "path": "illustrations/characters-male/Male Character 02 — Front face — Final.png", "folder": "illustrations/characters-male", "stages": [{"src": "../../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-male-character-02-side-face", "name": "David · Side face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "189 KB", "path": "illustrations/characters-male/Male Character 02 — Side face — Final.png", "folder": "illustrations/characters-male", "stages": [{"src": "../../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-male-character-04-front-face", "name": "Kenji · Front face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1852×1930 px", "bytes": "58 KB", "path": "illustrations/characters-male/Male Character 04 — Front face — Final.png", "folder": "illustrations/characters-male", "stages": [{"src": "../../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-male-character-04-side-face", "name": "Kenji · Side face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1852×1930 px", "bytes": "50 KB", "path": "illustrations/characters-male/Male Character 04 — Side face — Final.png", "folder": "illustrations/characters-male", "stages": [{"src": "../../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-male/Male%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-02-front-face", "name": "Maya · Front face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "54 KB", "path": "illustrations/characters-female/Female Character 02 — Front face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-02-side-face", "name": "Maya · Side face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "48 KB", "path": "illustrations/characters-female/Female Character 02 — Side face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2002%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-05-front-face", "name": "Nia · Front face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1852×1930 px", "bytes": "58 KB", "path": "illustrations/characters-female/Female Character 05 — Front face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-05-side-face", "name": "Nia · Side face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1852×1930 px", "bytes": "55 KB", "path": "illustrations/characters-female/Female Character 05 — Side face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Side%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Side%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2005%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-01-front-face", "name": "Priya · Front face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "2000×1930 px", "bytes": "122 KB", "path": "illustrations/characters-female/Female Character 01 — Front face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-01-side-face", "name": "Priya · Side face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "2000×2000 px", "bytes": "111 KB", "path": "illustrations/characters-female/Female Character 01 — Side face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2001%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-04-front-face", "name": "Sofia · Front face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1852×1930 px", "bytes": "59 KB", "path": "illustrations/characters-female/Female Character 04 — Front face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "character-female-character-04-side-face", "name": "Sofia · Side face", "cat": "character", "catLabel": "Characters", "hero": "../../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1852×1930 px", "bytes": "70 KB", "path": "illustrations/characters-female/Female Character 04 — Side face — Final.png", "folder": "illustrations/characters-female", "stages": [{"src": "../../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/characters-female/Female%20Character%2004%20%E2%80%94%20Side%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "device-apple-vision-pro", "name": "Apple Vision Pro", "cat": "device", "catLabel": "Devices", "hero": "../../assets/illustrations/devices/Apple%20Vision%20Pro%20%E2%80%94%20Filled.png", "fmt": "PNG", "dim": "1852×1850 px", "bytes": "46 KB", "path": "illustrations/devices/Apple Vision Pro — Filled.png", "folder": "illustrations/devices", "stages": [{"src": "../../assets/illustrations/devices/Apple%20Vision%20Pro%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/devices/Apple%20Vision%20Pro%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/devices/Apple%20Vision%20Pro%20%E2%80%94%20Filled.png", "label": "Fill", "copy": "Flat brand colour on the committed silhouette. No gradients, no tints outside the palette."}]}, {"slug": "device-headphones-01", "name": "Headphones 01", "cat": "device", "catLabel": "Devices", "hero": "../../assets/illustrations/devices/Headphones%2001%20%E2%80%94%20Filled.png", "fmt": "PNG", "dim": "1852×1850 px", "bytes": "35 KB", "path": "illustrations/devices/Headphones 01 — Filled.png", "folder": "illustrations/devices", "stages": [{"src": "../../assets/illustrations/devices/Headphones%2001%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/devices/Headphones%2001%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/devices/Headphones%2001%20%E2%80%94%20Filled.png", "label": "Fill", "copy": "Flat brand colour on the committed silhouette. No gradients, no tints outside the palette."}]}, {"slug": "device-headphones-02", "name": "Headphones 02", "cat": "device", "catLabel": "Devices", "hero": "../../assets/illustrations/devices/Headphones%2002%20%E2%80%94%20Filled.png", "fmt": "PNG", "dim": "1852×1850 px", "bytes": "35 KB", "path": "illustrations/devices/Headphones 02 — Filled.png", "folder": "illustrations/devices", "stages": [{"src": "../../assets/illustrations/devices/Headphones%2002%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/devices/Headphones%2002%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/devices/Headphones%2002%20%E2%80%94%20Filled.png", "label": "Fill", "copy": "Flat brand colour on the committed silhouette. No gradients, no tints outside the palette."}]}, {"slug": "device-macbook-front-face", "name": "MacBook · Front face", "cat": "device", "catLabel": "Devices", "hero": "../../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1848×1947 px", "bytes": "20 KB", "path": "illustrations/devices/MacBook — Front face — Final.png", "folder": "illustrations/devices", "stages": [{"src": "../../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "device-meta-glasses-01-front-face", "name": "Meta Glasses 01 · Front face", "cat": "device", "catLabel": "Devices", "hero": "../../assets/illustrations/devices/Meta%20Glasses%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1848×1947 px", "bytes": "38 KB", "path": "illustrations/devices/Meta Glasses 01 — Front face — Final.png", "folder": "illustrations/devices", "stages": [{"src": "../../assets/illustrations/devices/Meta%20Glasses%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/devices/Meta%20Glasses%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/devices/Meta%20Glasses%2001%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "device-meta-glasses-02", "name": "Meta Glasses 02", "cat": "device", "catLabel": "Devices", "hero": "../../assets/illustrations/devices/Meta%20Glasses%2002%20%E2%80%94%20Filled.png", "fmt": "PNG", "dim": "1852×1850 px", "bytes": "36 KB", "path": "illustrations/devices/Meta Glasses 02 — Filled.png", "folder": "illustrations/devices", "stages": [{"src": "../../assets/illustrations/devices/Meta%20Glasses%2002%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/devices/Meta%20Glasses%2002%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/devices/Meta%20Glasses%2002%20%E2%80%94%20Filled.png", "label": "Fill", "copy": "Flat brand colour on the committed silhouette. No gradients, no tints outside the palette."}]}, {"slug": "device-meta-glasses-03", "name": "Meta Glasses 03", "cat": "device", "catLabel": "Devices", "hero": "../../assets/illustrations/devices/Meta%20Glasses%2003%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1848×1947 px", "bytes": "30 KB", "path": "illustrations/devices/Meta Glasses 03 — Final.png", "folder": "illustrations/devices", "stages": [{"src": "../../assets/illustrations/devices/Meta%20Glasses%2003%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/devices/Meta%20Glasses%2003%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/devices/Meta%20Glasses%2003%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "object-binoculars", "name": "Binoculars", "cat": "object", "catLabel": "Objects", "hero": "../../assets/illustrations/objects/Binoculars%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "39 KB", "path": "illustrations/objects/Binoculars — Final.png", "folder": "illustrations/objects", "stages": [{"src": "../../assets/illustrations/objects/Binoculars%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/objects/Binoculars%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/objects/Binoculars%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "object-lighthouse", "name": "Lighthouse", "cat": "object", "catLabel": "Objects", "hero": "../../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "41 KB", "path": "illustrations/objects/Lighthouse — Final.png", "folder": "illustrations/objects", "stages": [{"src": "../../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/objects/Lighthouse%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "object-magnifying-glass", "name": "Magnifying Glass", "cat": "object", "catLabel": "Objects", "hero": "../../assets/illustrations/objects/Magnifying%20Glass%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "30 KB", "path": "illustrations/objects/Magnifying Glass — Final.png", "folder": "illustrations/objects", "stages": [{"src": "../../assets/illustrations/objects/Magnifying%20Glass%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/objects/Magnifying%20Glass%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "object-ship-01", "name": "Ship 01", "cat": "object", "catLabel": "Objects", "hero": "../../assets/illustrations/objects/Ship%2001%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "25 KB", "path": "illustrations/objects/Ship 01 — Final.png", "folder": "illustrations/objects", "stages": [{"src": "../../assets/illustrations/objects/Ship%2001%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/objects/Ship%2001%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "object-ship-02", "name": "Ship 02", "cat": "object", "catLabel": "Objects", "hero": "../../assets/illustrations/objects/Ship%2002%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "31 KB", "path": "illustrations/objects/Ship 02 — Final.png", "folder": "illustrations/objects", "stages": [{"src": "../../assets/illustrations/objects/Ship%2002%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/objects/Ship%2002%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "nature-cloud", "name": "Cloud", "cat": "nature", "catLabel": "Nature", "hero": "../../assets/illustrations/nature/Cloud%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "134 KB", "path": "illustrations/nature/Cloud — Final.png", "folder": "illustrations/nature", "stages": [{"src": "../../assets/illustrations/nature/Cloud%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/nature/Cloud%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/nature/Cloud%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "nature-plants", "name": "Plants", "cat": "nature", "catLabel": "Nature", "hero": "../../assets/illustrations/nature/Plants%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "225 KB", "path": "illustrations/nature/Plants — Final.png", "folder": "illustrations/nature", "stages": [{"src": "../../assets/illustrations/nature/Plants%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/nature/Plants%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/nature/Plants%20%E2%80%94%20Filled.png", "label": "Fill", "copy": "Flat brand colour on the committed silhouette. No gradients, no tints outside the palette."}, {"src": "../../assets/illustrations/nature/Plants%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "nature-trees", "name": "Trees", "cat": "nature", "catLabel": "Nature", "hero": "../../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png", "fmt": "PNG", "dim": "1850×1850 px", "bytes": "299 KB", "path": "illustrations/nature/Trees — Final.png", "folder": "illustrations/nature", "stages": [{"src": "../../assets/illustrations/nature/Trees%20%E2%80%94%20Deconstructed.png", "label": "Geometry", "copy": "Circles, semicircles, rectangles and semi-rectangles layered on the 50×50 grid. Pure primitives — the shapes that resolve into the silhouette."}, {"src": "../../assets/illustrations/nature/Trees%20%E2%80%94%20Outlined.png", "label": "Outline", "copy": "The primitives merge into a single wireframe. Proportion is verified and the composition committed."}, {"src": "../../assets/illustrations/nature/Trees%20%E2%80%94%20Final.png", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-account-circle-01", "name": "Account-Circle-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Account-Circle-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "394 KB", "path": "icons/UI/Account-Circle-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Account-Circle-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-account-circle-02", "name": "Account-Circle-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Account-Circle-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "393 KB", "path": "icons/UI/Account-Circle-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Account-Circle-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-account-circle-03", "name": "Account-Circle-03", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Account-Circle-03.svg", "fmt": "SVG", "dim": "Vector", "bytes": "443 KB", "path": "icons/UI/Account-Circle-03.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Account-Circle-03.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-account-circle-04", "name": "Account-Circle-04", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Account-Circle-04.svg", "fmt": "SVG", "dim": "Vector", "bytes": "342 KB", "path": "icons/UI/Account-Circle-04.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Account-Circle-04.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-alert-warning", "name": "Alert-Warning", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/System/Alert-Warning.svg", "fmt": "SVG", "dim": "Vector", "bytes": "202 KB", "path": "icons/System/Alert-Warning.svg", "folder": "icons/System", "stages": [{"src": "../../assets/icons/System/Alert-Warning.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-bot-face", "name": "Bot-Face", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/AI/Bot-Face.svg", "fmt": "SVG", "dim": "Vector", "bytes": "7 KB", "path": "icons/AI/Bot-Face.svg", "folder": "icons/AI", "stages": [{"src": "../../assets/icons/AI/Bot-Face.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-business-persona", "name": "Business-Persona", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/People/Business-Persona.svg", "fmt": "SVG", "dim": "Vector", "bytes": "361 KB", "path": "icons/People/Business-Persona.svg", "folder": "icons/People", "stages": [{"src": "../../assets/icons/People/Business-Persona.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-calendar-01", "name": "Calendar-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Calendar-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "399 KB", "path": "icons/UI/Calendar-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Calendar-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-calendar-02", "name": "Calendar-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Calendar-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "442 KB", "path": "icons/UI/Calendar-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Calendar-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-concentric-arcs", "name": "Concentric-Arcs", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/Abstract/Concentric-Arcs.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1636 KB", "path": "icons/Abstract/Concentric-Arcs.svg", "folder": "icons/Abstract", "stages": [{"src": "../../assets/icons/Abstract/Concentric-Arcs.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-data-insights", "name": "Data-Insights", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/Analytics/Data-Insights.svg", "fmt": "SVG", "dim": "Vector", "bytes": "12 KB", "path": "icons/Analytics/Data-Insights.svg", "folder": "icons/Analytics", "stages": [{"src": "../../assets/icons/Analytics/Data-Insights.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-error-01", "name": "Error-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Error-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "310 KB", "path": "icons/UI/Error-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Error-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-error-02", "name": "Error-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Error-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "325 KB", "path": "icons/UI/Error-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Error-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-error-03", "name": "Error-03", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Error-03.svg", "fmt": "SVG", "dim": "Vector", "bytes": "362 KB", "path": "icons/UI/Error-03.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Error-03.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-event-01", "name": "Event-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Event-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "382 KB", "path": "icons/UI/Event-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Event-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-event-02", "name": "Event-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Event-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "405 KB", "path": "icons/UI/Event-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Event-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-four-point-star", "name": "Four-Point-Star", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/Abstract/Four-Point-Star.svg", "fmt": "SVG", "dim": "Vector", "bytes": "2 KB", "path": "icons/Abstract/Four-Point-Star.svg", "folder": "icons/Abstract", "stages": [{"src": "../../assets/icons/Abstract/Four-Point-Star.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-help-01", "name": "Help-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Help-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "379 KB", "path": "icons/UI/Help-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Help-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-help-02", "name": "Help-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Help-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "453 KB", "path": "icons/UI/Help-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Help-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-language-earth-01", "name": "Language-Earth-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Language-Earth-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "291 KB", "path": "icons/UI/Language-Earth-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Language-Earth-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-language-earth-02", "name": "Language-Earth-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Language-Earth-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "306 KB", "path": "icons/UI/Language-Earth-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Language-Earth-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-language-earth-03", "name": "Language-Earth-03", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Language-Earth-03.svg", "fmt": "SVG", "dim": "Vector", "bytes": "350 KB", "path": "icons/UI/Language-Earth-03.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Language-Earth-03.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-language-earth-04", "name": "Language-Earth-04", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Language-Earth-04.svg", "fmt": "SVG", "dim": "Vector", "bytes": "375 KB", "path": "icons/UI/Language-Earth-04.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Language-Earth-04.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-list-to-cards", "name": "List-To-Cards", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/Data/List-To-Cards.svg", "fmt": "SVG", "dim": "Vector", "bytes": "10 KB", "path": "icons/Data/List-To-Cards.svg", "folder": "icons/Data", "stages": [{"src": "../../assets/icons/Data/List-To-Cards.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-lock-01", "name": "Lock-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Lock-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "322 KB", "path": "icons/UI/Lock-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Lock-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-machine-vision", "name": "Machine-Vision", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/AI/Machine-Vision.svg", "fmt": "SVG", "dim": "Vector", "bytes": "8 KB", "path": "icons/AI/Machine-Vision.svg", "folder": "icons/AI", "stages": [{"src": "../../assets/icons/AI/Machine-Vision.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-peer-connection", "name": "Peer-Connection", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/People/Peer-Connection.svg", "fmt": "SVG", "dim": "Vector", "bytes": "36 KB", "path": "icons/People/Peer-Connection.svg", "folder": "icons/People", "stages": [{"src": "../../assets/icons/People/Peer-Connection.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-predictive-forecast", "name": "Predictive-Forecast", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/Analytics/Predictive-Forecast.svg", "fmt": "SVG", "dim": "Vector", "bytes": "272 KB", "path": "icons/Analytics/Predictive-Forecast.svg", "folder": "icons/Analytics", "stages": [{"src": "../../assets/icons/Analytics/Predictive-Forecast.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-process-automation", "name": "Process-Automation", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/System/Process-Automation.svg", "fmt": "SVG", "dim": "Vector", "bytes": "214 KB", "path": "icons/System/Process-Automation.svg", "folder": "icons/System", "stages": [{"src": "../../assets/icons/System/Process-Automation.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-schedule-01", "name": "Schedule-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Schedule-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "594 KB", "path": "icons/UI/Schedule-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Schedule-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-schedule-02", "name": "Schedule-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Schedule-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "484 KB", "path": "icons/UI/Schedule-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Schedule-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-schedule-03", "name": "Schedule-03", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Schedule-03.svg", "fmt": "SVG", "dim": "Vector", "bytes": "478 KB", "path": "icons/UI/Schedule-03.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Schedule-03.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-target-goal", "name": "Target-Goal", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/Strategy/Target-Goal.svg", "fmt": "SVG", "dim": "Vector", "bytes": "227 KB", "path": "icons/Strategy/Target-Goal.svg", "folder": "icons/Strategy", "stages": [{"src": "../../assets/icons/Strategy/Target-Goal.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-user-avatar", "name": "User-Avatar", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/People/User-Avatar.svg", "fmt": "SVG", "dim": "Vector", "bytes": "146 KB", "path": "icons/People/User-Avatar.svg", "folder": "icons/People", "stages": [{"src": "../../assets/icons/People/User-Avatar.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-verified-01", "name": "Verified-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Verified-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "268 KB", "path": "icons/UI/Verified-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Verified-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-verified-02", "name": "Verified-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Verified-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "301 KB", "path": "icons/UI/Verified-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Verified-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-verified-03", "name": "Verified-03", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Verified-03.svg", "fmt": "SVG", "dim": "Vector", "bytes": "347 KB", "path": "icons/UI/Verified-03.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Verified-03.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-warning-01", "name": "Warning-01", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Warning-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "279 KB", "path": "icons/UI/Warning-01.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Warning-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-warning-02", "name": "Warning-02", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Warning-02.svg", "fmt": "SVG", "dim": "Vector", "bytes": "256 KB", "path": "icons/UI/Warning-02.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Warning-02.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-warning-03", "name": "Warning-03", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/UI/Warning-03.svg", "fmt": "SVG", "dim": "Vector", "bytes": "195 KB", "path": "icons/UI/Warning-03.svg", "folder": "icons/UI", "stages": [{"src": "../../assets/icons/UI/Warning-03.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "icon-website-search", "name": "Website-Search", "cat": "icon", "catLabel": "Icons", "hero": "../../assets/icons/Interface/Website-Search.svg", "fmt": "SVG", "dim": "Vector", "bytes": "8 KB", "path": "icons/Interface/Website-Search.svg", "folder": "icons/Interface", "stages": [{"src": "../../assets/icons/Interface/Website-Search.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-a", "name": "Letter A", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DA.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=A.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DA.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-b", "name": "Letter B", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DB.svg", "fmt": "SVG", "dim": "Vector", "bytes": "2 KB", "path": "letters/Alphabet=B.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DB.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-c", "name": "Letter C", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DC.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=C.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DC.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-d", "name": "Letter D", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DD.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=D.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DD.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-e", "name": "Letter E", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DE.svg", "fmt": "SVG", "dim": "Vector", "bytes": "3 KB", "path": "letters/Alphabet=E.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DE.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-f", "name": "Letter F", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DF.svg", "fmt": "SVG", "dim": "Vector", "bytes": "3 KB", "path": "letters/Alphabet=F.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DF.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-g", "name": "Letter G", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DG.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=G.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DG.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-h", "name": "Letter H", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DH.svg", "fmt": "SVG", "dim": "Vector", "bytes": "2 KB", "path": "letters/Alphabet=H.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DH.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-i", "name": "Letter I", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DI.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=I.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DI.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-j", "name": "Letter J", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DJ.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=J.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DJ.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-k", "name": "Letter K", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DK.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=K.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DK.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-l", "name": "Letter L", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DL.svg", "fmt": "SVG", "dim": "Vector", "bytes": "3 KB", "path": "letters/Alphabet=L.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DL.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-m", "name": "Letter M", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DM.svg", "fmt": "SVG", "dim": "Vector", "bytes": "7 KB", "path": "letters/Alphabet=M.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DM.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-n", "name": "Letter N", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DN.svg", "fmt": "SVG", "dim": "Vector", "bytes": "4 KB", "path": "letters/Alphabet=N.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DN.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-o", "name": "Letter O", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DO.svg", "fmt": "SVG", "dim": "Vector", "bytes": "4 KB", "path": "letters/Alphabet=O.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DO.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-p", "name": "Letter P", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DP.svg", "fmt": "SVG", "dim": "Vector", "bytes": "2 KB", "path": "letters/Alphabet=P.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DP.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-q", "name": "Letter Q", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DQ.svg", "fmt": "SVG", "dim": "Vector", "bytes": "2 KB", "path": "letters/Alphabet=Q.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DQ.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-r", "name": "Letter R", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DR.svg", "fmt": "SVG", "dim": "Vector", "bytes": "4 KB", "path": "letters/Alphabet=R.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DR.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-s", "name": "Letter S", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DS.svg", "fmt": "SVG", "dim": "Vector", "bytes": "2 KB", "path": "letters/Alphabet=S.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DS.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-t", "name": "Letter T", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DT.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=T.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DT.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-u", "name": "Letter U", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DU.svg", "fmt": "SVG", "dim": "Vector", "bytes": "3 KB", "path": "letters/Alphabet=U.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DU.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-v", "name": "Letter V", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DV.svg", "fmt": "SVG", "dim": "Vector", "bytes": "2 KB", "path": "letters/Alphabet=V.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DV.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-w", "name": "Letter W", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DW.svg", "fmt": "SVG", "dim": "Vector", "bytes": "4 KB", "path": "letters/Alphabet=W.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DW.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-x", "name": "Letter X", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DX.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=X.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DX.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-y", "name": "Letter Y", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DY.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "letters/Alphabet=Y.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DY.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "letter-alphabet-z", "name": "Letter Z", "cat": "letter", "catLabel": "Letters", "hero": "../../assets/letters/Alphabet%3DZ.svg", "fmt": "SVG", "dim": "Vector", "bytes": "4 KB", "path": "letters/Alphabet=Z.svg", "folder": "letters", "stages": [{"src": "../../assets/letters/Alphabet%3DZ.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-accordion-wide", "name": "Accordion-Wide", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Folded-Ribbon/Accordion-Wide.svg", "fmt": "SVG", "dim": "Vector", "bytes": "14 KB", "path": "waves/Folded-Ribbon/Accordion-Wide.svg", "folder": "waves/Folded-Ribbon", "stages": [{"src": "../../assets/waves/Folded-Ribbon/Accordion-Wide.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-arch-rise", "name": "Arch-Rise", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Ramp-Ribbon/Arch-Rise.svg", "fmt": "SVG", "dim": "Vector", "bytes": "5 KB", "path": "waves/Ramp-Ribbon/Arch-Rise.svg", "folder": "waves/Ramp-Ribbon", "stages": [{"src": "../../assets/waves/Ramp-Ribbon/Arch-Rise.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-cloud-bump", "name": "Cloud-Bump", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Soft-Crest/Cloud-Bump.svg", "fmt": "SVG", "dim": "Vector", "bytes": "3 KB", "path": "waves/Soft-Crest/Cloud-Bump.svg", "folder": "waves/Soft-Crest", "stages": [{"src": "../../assets/waves/Soft-Crest/Cloud-Bump.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-duo-weave", "name": "Duo-Weave", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Crossing-Strand/Duo-Weave.svg", "fmt": "SVG", "dim": "Vector", "bytes": "1 KB", "path": "waves/Crossing-Strand/Duo-Weave.svg", "folder": "waves/Crossing-Strand", "stages": [{"src": "../../assets/waves/Crossing-Strand/Duo-Weave.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-horizontal-01", "name": "Horizontal-01", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Braided-Ribbon/Horizontal-01.svg", "fmt": "SVG", "dim": "Vector", "bytes": "31 KB", "path": "waves/Braided-Ribbon/Horizontal-01.svg", "folder": "waves/Braided-Ribbon", "stages": [{"src": "../../assets/waves/Braided-Ribbon/Horizontal-01.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-layered-flow", "name": "Layered-Flow", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Multicolour-Ribbon/Layered-Flow.svg", "fmt": "SVG", "dim": "Vector", "bytes": "18 KB", "path": "waves/Multicolour-Ribbon/Layered-Flow.svg", "folder": "waves/Multicolour-Ribbon", "stages": [{"src": "../../assets/waves/Multicolour-Ribbon/Layered-Flow.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-tunnel-arch", "name": "Tunnel-Arch", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Looped-Ribbon/Tunnel-Arch.svg", "fmt": "SVG", "dim": "Vector", "bytes": "12 KB", "path": "waves/Looped-Ribbon/Tunnel-Arch.svg", "folder": "waves/Looped-Ribbon", "stages": [{"src": "../../assets/waves/Looped-Ribbon/Tunnel-Arch.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-vertical-fold", "name": "Vertical-Fold", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Zigzag-Ribbon/Vertical-Fold.svg", "fmt": "SVG", "dim": "Vector", "bytes": "7 KB", "path": "waves/Zigzag-Ribbon/Vertical-Fold.svg", "folder": "waves/Zigzag-Ribbon", "stages": [{"src": "../../assets/waves/Zigzag-Ribbon/Vertical-Fold.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}, {"slug": "wave-vertical-twist", "name": "Vertical-Twist", "cat": "wave", "catLabel": "Waves", "hero": "../../assets/waves/Braided-Ribbon/Vertical-Twist.svg", "fmt": "SVG", "dim": "Vector", "bytes": "31 KB", "path": "waves/Braided-Ribbon/Vertical-Twist.svg", "folder": "waves/Braided-Ribbon", "stages": [{"src": "../../assets/waves/Braided-Ribbon/Vertical-Twist.svg", "label": "Final", "copy": "The delivered asset. Shading and detail resolved. This is the only stage that ships."}]}];</script>
+<script></script>
+</head>
+<body>
+<header class="g-header">
+  <div class="g-header-inner">
+    <a href="../00%20Home.html" class="g-logo" aria-label="Intelligaia Branding">
+      <img src="../../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
+      <span class="g-sep"></span>
+      <span class="g-sys">Branding</span>
+      <span class="g-door">Design system</span>
+    </a>
+    <nav class="g-nav">
+      <a href="00%20Start.html">Start here</a>
+      <a href="10%20Foundations.html">Foundations</a>
+      <a href="20%20Asset%20Library.html">Asset library</a>
+      <a href="30%20Construction.html">Construction</a>
+      <a href="40%20Tokens.html">Tokens & handoff</a>
+    </nav>
+    <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>
+  </div>
+</header>
+<main id="adRoot">
+
+<section class="section ad-top">
+  <div class="ad-head">
+    <a href="20%20Asset%20Library.html" class="ad-back">← All categories</a>
+    <span class="cat" id="adCatTop"></span>
+    <h1 id="adNameTop"></h1>
+  </div>
+  <div class="ad-grid">
+    <div class="ad-stage">
+      <button class="ad-nav p">&#8249;</button><img id="adImg" alt=""/><button class="ad-nav n">&#8250;</button>
+    </div>
+    <aside class="ad-side">
+      <span class="ad-side-k">Asset specification</span>
+      <div class="ad-meta"><span class="k">Dimensions</span><span class="v" id="adDim"></span></div>
+      <div class="ad-meta"><span class="k">Format</span><span class="v" id="adFmt"></span></div>
+      <div class="ad-meta"><span class="k">File size</span><span class="v" id="adSize"></span></div>
+      <div class="ad-meta"><span class="k">Build stages</span><span class="v" id="adStages"></span></div>
+      <div class="ad-meta"><span class="k">In category</span><span class="v" id="adPos"></span></div>
+      <div class="ad-dl">
+        <a class="p" id="adDl" href="#" download>Download final<span>↓</span></a>
+        <a class="s" id="adCatLink" href="21%20Category.html">Back to category<span>→</span></a>
+      </div>
+      <div class="src-row" style="grid-template-columns:1fr;">
+        <a class="src" href="https://www.figma.com/design/REPLACE_WITH_FILE_KEY/Intelligaia-Brand-Assets" target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><circle cx="15" cy="12" r="3.2" stroke="#FFC800" stroke-width="1.7"/><path d="M12 4h3.2a3.2 3.2 0 0 1 0 6.4H12zM12 4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 10.4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 16.8H8.8a3.2 3.2 0 1 0 3.2 3.2z" stroke="#FFC800" stroke-width="1.7" stroke-linejoin="round"/></svg><span><span class="t">Figma source</span><span class="p">Intelligaia Brand Assets</span></span>
+          <span class="soon">Link pending</span>
+        </a>
+        <a class="src" id="adGit" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/website/assets" target="_blank" rel="noopener">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none"><path d="M5 3v12a3 3 0 0 0 3 3h8M8 6a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM19 12a3 3 0 1 0 0-6 3 3 0 0 0 0 6zM8 24a3 3 0 1 0 0-6 3 3 0 0 0 0 6z" stroke="#FFC800" stroke-width="1.7" stroke-linecap="round" transform="translate(0,2) scale(0.9)"/></svg><span><span class="t">Git repository</span><span class="p" id="adPath"></span></span>
+        </a>
+      </div>
+    </aside>
+  </div>
+</section>
+
+<section class="section ad-make">
+  <h2>How it is made.</h2>
+  <p class="lead">The illustration is not drawn freehand. It is assembled from primitives on a 50&times;50 dot grid, then resolved. Only the last stage ships — the others are process, not style.</p>
+  <div class="mk-row" id="mkRow"></div>
+</section>
+
+<section class="section ad-meth">
+  <h2>The method.</h2>
+  <p class="lead">Rather than drawing the subject, we place a grid, lay geometric primitives on it, then intersect and merge them until the silhouette appears. That constraint is what makes an Intelligaia illustration recognisable.</p>
+  <div class="prim">
+    <div><svg width="18" height="18" viewBox="0 0 18 18"><circle cx="9" cy="9" r="8" fill="none" stroke="#FFC800" stroke-width="1.6"/></svg>Circle</div>
+    <div><svg width="18" height="18" viewBox="0 0 18 18"><path d="M1 9a8 8 0 0 1 16 0z" fill="none" stroke="#FFC800" stroke-width="1.6"/></svg>Semicircle</div>
+    <div><svg width="18" height="18" viewBox="0 0 18 18"><rect x="1" y="3" width="16" height="12" fill="none" stroke="#FFC800" stroke-width="1.6"/></svg>Rectangle</div>
+    <div><svg width="18" height="18" viewBox="0 0 18 18"><path d="M1 3h10a6 6 0 0 1 0 12H1z" fill="none" stroke="#FFC800" stroke-width="1.6"/></svg>Semi-rectangle</div>
+  </div>
+  <div class="th-grid">
+    <div class="th"><b>Grid first</b><span>Every illustration starts on the 50&times;50 dot grid. Snap is always on — if an anchor misses an intersection, delete it and try again.</span></div>
+    <div class="th"><b>Four primitives</b><span>Standard angles only — 0°, 15°, 30°, 45°, 60°, 75°, 90°. Curves are quarter, half or full circles.</span></div>
+    <div class="th"><b>Intersect, don't draw</b><span>The silhouette emerges where primitives overlap and merge. Remove what does not earn its place.</span></div>
+    <div class="th"><b>Only the final ships</b><span>Geometry and outline are the blueprint. If a viewer sees the wireframe, they are looking at process.</span></div>
+  </div>
+</section>
+
+<section class="section res-sec" style="min-height:auto;display:block;padding-top:clamp(30px,2.4vw,50px);padding-bottom:clamp(40px,3vw,64px);border-top:1px solid var(--hair);">
+  <h2 style="font-family:'Oswald',sans-serif;font-weight:400;font-size:calc(var(--h2) * .68);color:var(--ink-soft);margin:0 0 6px;">Resources.</h2>
+  <p style="font-family:'Geist',sans-serif;font-size:var(--body);color:var(--ink-muted);margin:0;">Design source, repository location and the agent skill that produces this artifact.</p>
+  <div class="res">
+    <a href="https://www.figma.com/design/REPLACE_WITH_FILE_KEY/Intelligaia-Brand-Assets" target="_blank" rel="noopener">
+      <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><circle cx="15" cy="12" r="3.2" stroke="#FFC800" stroke-width="1.7"/><path d="M12 4h3.2a3.2 3.2 0 0 1 0 6.4H12zM12 4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 10.4H8.8a3.2 3.2 0 0 0 0 6.4H12zM12 16.8H8.8a3.2 3.2 0 1 0 3.2 3.2z" stroke="#FFC800" stroke-width="1.7" stroke-linejoin="round"/></svg></span>
+      <span class="tx"><b>Figma source</b><span>Intelligaia Brand Assets</span></span>
+      <span class="st">Link pending</span>
+    </a>
+    <a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/website/assets/illustrations" target="_blank" rel="noopener">
+      <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M6 3v13a3 3 0 0 0 3 3h7" stroke="#FFC800" stroke-width="1.7" stroke-linecap="round"/><circle cx="6" cy="4.5" r="2.2" stroke="#FFC800" stroke-width="1.7"/><circle cx="18" cy="10" r="2.2" stroke="#FFC800" stroke-width="1.7"/><circle cx="6" cy="19.5" r="2.2" stroke="#FFC800" stroke-width="1.7"/><path d="M16 10H9" stroke="#FFC800" stroke-width="1.7" stroke-linecap="round"/></svg></span>
+      <span class="tx"><b>Git repository</b><span>website/assets/illustrations</span></span>
+    </a>
+    <a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/skills" target="_blank" rel="noopener">
+      <span class="ico"><svg width="19" height="19" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.6 6.1 6.6.6-5 4.3 1.5 6.5L12 16l-5.7 3.5 1.5-6.5-5-4.3 6.6-.6z" stroke="#FFC800" stroke-width="1.6" stroke-linejoin="round"/></svg></span>
+      <span class="tx"><b>Illustration skill</b><span>intelligaia-illustration</span></span>
+      <span class="st">Coming soon</span>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer class="dark-footer">
+  <div class="dark-footer-inner">
+    <div>
+      <div class="df-logo"><img src="../../assets/brand/intelligaia-logo.png" alt="Intelligaia" /></div>
+      <p class="df-tag">humanizing AI for enterprises</p>
+    </div>
+    <div class="df-cols">
+      <div><h5>System</h5><ul>
+        <li><a href="../00%20Home.html">Home</a></li>
+        <li><a href="10%20Foundations.html">Foundations</a></li>
+        <li><a href="20%20Asset%20Library.html">Illustration library</a></li>
+      </ul></div>
+      <div><h5>Foundations</h5><ul>
+        <li><a href="10%20Foundations.html#principles">Principles</a></li>
+        <li><a href="10%20Foundations.html#colour">Colour</a></li>
+        <li><a href="10%20Foundations.html#type">Typography</a></li>
+      </ul></div>
+      <div><h5>Intelligaia</h5><ul>
+        <li><a href="https://www.intelligaia.com">intelligaia.com</a></li>
+        <li></li>
+        <li><a href="https://www.intelligaia.com/contact">Contact</a></li>
+      </ul></div>
+    </div>
+    <div class="df-tail">
+      <span>© 2026 Intelligaia</span>
+    </div>
+  </div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+
+
+
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+
+// ── Word-by-word reveal on every display heading ──
+(function wordReveal(){
+  var SEL = '.hero-h1, .big-title, .show-card h2, .trio-card h3, .chr-hero h1, ' +
+            '.pr-body h2, .col-body h2, .tp-side h2, .cover-title, h1.big';
+  var heads = document.querySelectorAll(SEL);
+  if (!heads.length) return;
+
+  heads.forEach(function(h){
+    if (h.dataset.wsplit) return;
+    h.dataset.wsplit = '1';
+    var html = h.innerHTML;
+    // split on <br> so explicit line breaks survive
+    var lines = html.split(/<br\s*\/?>/i);
+    h.innerHTML = lines.map(function(line){
+      var tmp = document.createElement('div');
+      tmp.innerHTML = line;
+      var text = tmp.textContent.trim();
+      if (!text) return '';
+      return text.split(/\s+/).map(function(w){
+        var safe = w.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+        return '<span class="w-split"><span>' + safe + '</span></span>';
+      }).join(' ');
+    }).filter(Boolean).join('<br>');
+
+    // stagger each word
+    var i = 0;
+    h.querySelectorAll('.w-split > span').forEach(function(sp){
+      sp.style.transitionDelay = (0.06 + i * 0.055).toFixed(3) + 's';
+      i++;
+    });
+  });
+
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if (!e.isIntersecting) return;
+      e.target.classList.add('w-on');
+      io.unobserve(e.target);
+    });
+  }, { threshold: 0.25, rootMargin: '0px 0px -6% 0px' });
+  heads.forEach(function(h){ io.observe(h); });
+
+  // safety net
+  setTimeout(function(){
+    heads.forEach(function(h){
+      var r = h.getBoundingClientRect();
+      if (r.top < window.innerHeight * 1.4) h.classList.add('w-on');
+    });
+  }, 1400);
+})();
+
+});
+</script>
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+(function detail(){
+  if(!document.getElementById('adRoot')||!window.IG_ASSETS) return;
+  var ALL=window.IG_ASSETS;
+  var slug=new URLSearchParams(location.search).get('a');
+  var cur=ALL.filter(function(x){return x.slug===slug;})[0]||ALL[0];
+  var SET=ALL.filter(function(x){return x.cat===cur.cat;});
+  var i=0; for(var k=0;k<SET.length;k++){ if(SET[k].slug===cur.slug){i=k;break;} }
+  var GT='https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/website/assets';
+  function render(){
+    var a=SET[i];
+    try{ history.replaceState(null,'','?a='+a.slug); }catch(e){}
+    document.getElementById('adImg').src=a.hero;
+    document.getElementById('adImg').alt=a.name;
+    document.getElementById('adNameTop').textContent=a.name;
+    document.getElementById('adCatTop').textContent=a.catLabel||'';
+    document.title='Intelligaia · '+a.name+' · Branding';
+    document.getElementById('adDim').textContent=a.dim;
+    document.getElementById('adFmt').textContent=a.fmt;
+    document.getElementById('adSize').textContent=a.bytes;
+    document.getElementById('adStages').textContent=a.stages.length;
+    document.getElementById('adPos').textContent=(i+1)+' of '+SET.length;
+    document.getElementById('adDl').href=a.hero;
+    document.getElementById('adCatLink').href='21%20Category.html?c='+a.cat;
+    document.getElementById('adPath').textContent='website/assets/'+a.path;
+    document.getElementById('adGit').href=GT+'/'+a.folder;
+    var w=document.getElementById('mkRow');
+    w.className='mk-row n'+a.stages.length;
+    w.innerHTML=a.stages.map(function(s){
+      return '<div class="mk"><div class="v"><img src="'+s.src+'" alt="'+s.label+'" loading="lazy"/></div>'+
+             '<div class="b"><b>'+s.label+'</b><span>'+s.copy+'</span></div></div>';
+    }).join('');
+  }
+  function step(n){ i=(i+n+SET.length)%SET.length; render(); }
+  var p=document.querySelector('.ad-nav.p'), nx=document.querySelector('.ad-nav.n');
+  if(p) p.onclick=function(){step(-1);};
+  if(nx) nx.onclick=function(){step(1);};
+  document.addEventListener('keydown',function(e){
+    if(e.key==='ArrowLeft')step(-1); if(e.key==='ArrowRight')step(1);
+  });
+  render();
+})();
+});
+</script>
+</body>
+</html>

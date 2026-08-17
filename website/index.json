@@ -1,15 +1,16 @@
 {
   "$schema": "https://intelligaia.github.io/schemas/repo-index-v1.json",
   "name": "Intelligaia Brand Assets",
-  "version": "1.8.0",
-  "generated": "2026-08-12",
+  "version": "2.0.0-rc",
+  "generated": "2026-08-17",
   "description": "Single source of truth for Intelligaia's visual and editorial language. Human-readable system plus machine-readable specs.",
   "repository": "https://github.com/intelligaia/Intelligaia-Brand-Assets",
   "entry_points": {
     "humans": {
       "system": "website/START HERE.html",
       "dark": "website/dark/00 Home.html",
-      "light": "website/light/00 Home.html"
+      "light": "website/light/00 Home.html",
+      "portal_v2": "website/v2/00 Home.html"
     },
     "agents": {
       "this_file": "index.json",
@@ -300,5 +301,120 @@
     "figma": "assets/tokens/figma.json",
     "git": "website/assets/",
     "skills": "skills/ (pending)"
+  },
+  "doors": {
+    "_note": "v2 — one landing page, two doors. The door is derived from the page, not from session state.",
+    "landing": {
+      "path": "website/v2/00 Home.html",
+      "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/00%20Home.html"
+    },
+    "design_system": {
+      "audience": [
+        "designers",
+        "engineers",
+        "agents"
+      ],
+      "pages": [
+        {
+          "number": "00",
+          "title": "Start",
+          "path": "website/v2/ds/00 Start.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/ds/00%20Start.html"
+        },
+        {
+          "number": "10",
+          "title": "Foundations",
+          "path": "website/v2/ds/10 Foundations.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/ds/10%20Foundations.html"
+        },
+        {
+          "number": "20",
+          "title": "Asset library",
+          "path": "website/v2/ds/20 Asset Library.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/ds/20%20Asset%20Library.html"
+        },
+        {
+          "number": "21",
+          "title": "Category",
+          "path": "website/v2/ds/21 Category.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/ds/21%20Category.html"
+        },
+        {
+          "number": "29",
+          "title": "Asset detail",
+          "path": "website/v2/ds/29 Asset Detail.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/ds/29%20Asset%20Detail.html"
+        },
+        {
+          "number": "30",
+          "title": "Construction",
+          "path": "website/v2/ds/30 Construction.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/ds/30%20Construction.html"
+        },
+        {
+          "number": "40",
+          "title": "Tokens & handoff",
+          "path": "website/v2/ds/40 Tokens.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/ds/40%20Tokens.html"
+        }
+      ]
+    },
+    "marketing": {
+      "audience": [
+        "founder-seller",
+        "bid and proposals",
+        "marketing and content"
+      ],
+      "pages": [
+        {
+          "number": "00",
+          "title": "Start",
+          "path": "website/v2/mk/00 Start.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/mk/00%20Start.html"
+        },
+        {
+          "number": "10",
+          "title": "Service catalog",
+          "path": "website/v2/mk/10 Service Catalog.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/mk/10%20Service%20Catalog.html"
+        },
+        {
+          "number": "20",
+          "title": "Case studies",
+          "path": "website/v2/mk/20 Case Studies.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/mk/20%20Case%20Studies.html"
+        },
+        {
+          "number": "30",
+          "title": "Whitepapers",
+          "path": "website/v2/mk/30 Whitepapers.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/mk/30%20Whitepapers.html"
+        },
+        {
+          "number": "40",
+          "title": "Landing pages",
+          "path": "website/v2/mk/40 Landing Pages.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/mk/40%20Landing%20Pages.html"
+        },
+        {
+          "number": "50",
+          "title": "Diagrams",
+          "path": "website/v2/mk/50 Diagrams.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/mk/50%20Diagrams.html"
+        },
+        {
+          "number": "60",
+          "title": "Social",
+          "path": "website/v2/mk/60 Social.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/mk/60%20Social.html"
+        },
+        {
+          "number": "70",
+          "title": "Skills",
+          "path": "website/v2/mk/70 Skills.html",
+          "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/mk/70%20Skills.html"
+        }
+      ]
+    }
   }
 }
