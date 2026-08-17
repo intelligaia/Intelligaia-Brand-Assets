@@ -59,7 +59,7 @@ body::before { content: ''; position: fixed; inset: 0; pointer-events: none; z-i
 .btn-o:hover { border-color: var(--yellow); color: var(--yellow); }
 
 /* GLOBAL HEADER */
-.g-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(4,5,10,0.72); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; height: 88px; }
+.g-header { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background: rgba(4,5,10,0.72); backdrop-filter: saturate(180%) blur(14px); -webkit-backdrop-filter: saturate(180%) blur(14px); border-bottom: 1px solid rgba(255,255,255,0.06); width: 100%; height: 75px; }
 .g-header-inner { height: 100%; padding: 0 40px; display: flex; align-items: center; }
 .g-logo img { height: 35px; filter: invert(1) brightness(1.1); }
 .g-nav { display: flex; align-items: center; justify-content: center; gap: 32px; flex: 1; margin: 0; padding: 0 170px 0 0; list-style: none; }
@@ -426,15 +426,15 @@ body{ overscroll-behavior-y:none; }
 /* ══════════ GLOBAL SCALE — readable at 2.5K–3K ══════════ */
 :root{
   --pad-x:40px; --shell:1440px;
-  --nav-fs:15px; --logo-h:38px; --sys-fs:18px; --hdr-h:92px;
+  --nav-fs:15px; --logo-h:38px; --sys-fs:18px; --hdr-h:78px;
   --h1:clamp(48px,6vw,92px); --h2:clamp(30px,3.2vw,46px);
   --lede:17px; --body:15px; --meta:12.5px;
 }
-@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:19px; --hdr-h:98px;  --lede:18px; --body:15.5px; } }
-@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:21px; --hdr-h:106px; --lede:19px; --body:16px;   --meta:13.5px; } }
-@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:24px; --hdr-h:120px; --lede:21px; --body:17.5px; --meta:15px;
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:19px; --hdr-h:83px;  --lede:18px; --body:15.5px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:21px; --hdr-h:90px; --lede:19px; --body:16px;   --meta:13.5px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:24px; --hdr-h:102px; --lede:21px; --body:17.5px; --meta:15px;
   --h1:clamp(80px,4.6vw,130px); --h2:clamp(44px,2.5vw,64px); } }
-@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:27px; --hdr-h:132px; --lede:23px; --body:19px;   --meta:16px;
+@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:27px; --hdr-h:112px; --lede:23px; --body:19px;   --meta:16px;
   --h1:clamp(96px,4.4vw,150px); --h2:clamp(52px,2.4vw,74px); } }
 
 .g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
@@ -450,7 +450,7 @@ body{ overscroll-behavior-y:none; }
   white-space:nowrap; opacity:.86; transition:color .15s, opacity .15s; }
 .g-nav a:hover{ color:#FFC800; opacity:1; }
 .g-cta{ justify-self:end; font-size:var(--nav-fs) !important;
-  height:calc(var(--hdr-h) * .46); padding:0 clamp(22px,1.5vw,34px); }
+  height:calc(var(--hdr-h) * .54); padding:0 clamp(22px,1.5vw,34px); }
 @media (max-width:1400px){ .g-nav{ display:none; } }
 @media (max-width:1000px){ .g-cta{ display:none; } }
 
@@ -732,18 +732,26 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   padding:clamp(20px,1.6vw,32px) 0 70px; }
 .rail::-webkit-scrollbar{ width:8px; }
 .rail::-webkit-scrollbar-thumb{ background:var(--hair-2); border-radius:4px; }
-.rail-grp{ padding:0 clamp(14px,1vw,22px); display:block; }
-.rail a{ display:block; font-family:'Geist',sans-serif; font-weight:400;
-  font-size:var(--nav-fs); line-height:1.34; color:var(--ink-muted);
-  padding:9px 14px; border-radius:9px; transition:color .15s, background .15s; }
-.rail a:hover{ color:var(--ink-soft); background:var(--bg-2); }
-.rail a.on{ color:#04050A; background:var(--yellow); }
-.rail .sub{ margin:2px 0 10px 15px; padding-left:12px; border-left:1px solid var(--hair); }
-.rail .sub a{ font-size:calc(var(--nav-fs) * .93); padding:7px 12px; }
-.rail .sub a.on{ background:transparent; color:var(--yellow); }
-.rail hr{ border:0; height:1px; background:var(--hair);
-  margin:16px clamp(14px,1vw,22px); }
-.rail .switch{ color:var(--yellow); }
+.rail-grp{ padding:0 clamp(12px,.9vw,18px); display:block; }
+.rail-lbl{ display:block; font-family:'Geist',sans-serif; font-size:var(--label);
+  letter-spacing:.15em; text-transform:uppercase; color:rgba(244,246,255,.34);
+  padding:0 16px; margin:clamp(20px,1.6vw,30px) 0 8px; }
+.rail-grp > a:first-child + .rail-lbl{ margin-top:clamp(16px,1.2vw,24px); }
+.rail a{ position:relative; display:block; font-family:'Geist',sans-serif;
+  font-weight:400; font-size:var(--nav-fs); line-height:1.35; color:var(--ink-muted);
+  padding:9px 14px 9px 16px; border-radius:8px;
+  transition:color .15s, background .15s; }
+.rail a:hover{ color:var(--ink-soft); background:rgba(255,255,255,.05); }
+/* active reads as a marker, not a highlighter */
+.rail a.on{ color:var(--ink-soft); background:rgba(255,255,255,.07); font-weight:500; }
+.rail a.on::before{ content:''; position:absolute; left:0; top:50%;
+  transform:translateY(-50%); width:3px; height:1.15em; border-radius:0 3px 3px 0;
+  background:var(--yellow); }
+.rail .sub{ margin:2px 0 6px 16px; padding-left:12px; border-left:1px solid var(--hair); }
+.rail .sub a{ font-size:calc(var(--nav-fs) * .93); padding:7px 12px; color:rgba(244,246,255,.52); }
+.rail .sub a:hover{ color:var(--ink-soft); }
+.rail .sub a.on{ background:transparent; color:var(--yellow); font-weight:400; }
+.rail .sub a.on::before{ display:none; }
 
 body.rail-on main, body.rail-on .dark-footer{ margin-left:var(--rail-w); }
 body.rail-on .section{ max-width:1900px !important;
@@ -787,12 +795,15 @@ body.rail-on .section{ max-width:1900px !important;
 <aside class="rail" id="rail" aria-label="Collateral navigation">
   <nav class="rail-grp">
     <a href="00%20Start.html">Overview</a>
+    <span class="rail-lbl">Documents</span>
     <a href="10%20Service%20Catalog.html">Service catalog</a>
     <a href="20%20Case%20Studies.html" class="on">Case studies</a>
     <a href="30%20Whitepapers.html">Whitepapers</a>
+    <span class="rail-lbl">Digital</span>
     <a href="40%20Landing%20Pages.html">Landing pages</a>
     <a href="50%20Diagrams.html">Diagrams</a>
     <a href="60%20Social.html">Social</a>
+    <span class="rail-lbl">Automate</span>
     <a href="70%20Skills.html">Skills</a>
   </nav>
 </aside>
