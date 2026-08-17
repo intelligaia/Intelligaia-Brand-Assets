@@ -10,7 +10,7 @@ Compatible with the `AGENTS.md` convention used by Claude Code, Cursor, Codex, A
 
 The single source of truth for how Intelligaia work looks and reads. Two audiences, one source:
 
-- **Humans** browse the HTML portal (`website/light/` and `website/dark/`)
+- **Humans** browse the HTML portal — `website/v2/` (current), with `website/dark/` and `website/light/` kept as the previous version
 - **Agents** parse `website/index.json`, `website/assets/manifest.json`, and the `page-spec` JSON block embedded at the bottom of every playbook page
 
 Nothing is documented in one place and defined in another.
@@ -25,15 +25,19 @@ The repository is organised as **modules** — self-contained brand deliverables
 ├── AGENTS.md                      this file (also CLAUDE.md) — governs the whole repo
 ├── README.md                      human-readable overview
 ├── .github/workflows/             CI — GitHub Actions (Pages build, etc.)
-├── docs/                          setup notes
+├── docs/                          status, design log, plan, setup notes
 │
 ├── website/                       ── MODULE · the brand portal — served by GitHub Pages
 │   ├── index.html                 redirect → START HERE.html
 │   ├── START HERE.html            human entry point
 │   ├── index.json                 machine-readable repository map
-│   ├── assets/                    shared by both themes — 279 files
-│   ├── light/                     21 pages
-│   └── dark/                      12 pages
+│   ├── assets/                    shared by every tree — 279 files
+│   ├── v2/                        CURRENT · two sections, dark only — 16 pages
+│   │   ├── 00 Home.html           landing page, top nav, no rail
+│   │   ├── ds/                    Design system — 7 pages
+│   │   └── mk/                    Collateral — 8 pages
+│   ├── light/                     PREVIOUS · flat navigation — 11 pages
+│   └── dark/                      PREVIOUS · flat navigation — 11 pages
 │
 ├── Intelligaia Skills/            ── Intelligaia Claude skills (grouped)
 │   ├── Intelligaia Slide Deck Skill/     on-brand decks — SKILL.md, .skill, examples/, assets
@@ -54,6 +58,57 @@ deck skill documents its own system in its `SKILL.md` / `README.md`.
 
 ---
 
+## The portal has two sections
+
+`website/v2/` is the current portal. One landing page, two named sections, one
+shared asset library. A section is **wayfinding, not a copy** — both read the
+same `manifest.json` and the same tokens, and nothing is duplicated between them.
+
+| Section | Path | Holds | Written for |
+|---|---|---|---|
+| **Design system** | `v2/ds/` | Foundations · Asset library · Construction · Tokens & handoff | Someone building something who needs the rule rather than a reference |
+| **Collateral** | `v2/mk/` | Service catalog · Case studies · Whitepapers · Landing pages · Diagrams · Social · Skills | Something going in front of a client that has to look like us |
+
+### Navigation contract
+
+Four rules. Break any of them and the portal stops telling people where they are.
+
+1. **The header is identical on every page** — logo, Branding, Design system,
+   Collateral, Contact us. Entering a section moves the highlight and nothing
+   else. Never add or remove header items per page.
+2. **The section is derived from the page, never from session state.** Each page
+   declares its own section and renders that rail, so a shared link opens with
+   the right navigation already applied.
+3. **Section navigation lives in the left rail**, and only the active branch
+   expands. The landing page has no rail.
+4. **The navigation always reports position** — between pages via the rail, and
+   within a page via a scroll spy that moves the marker as the reader scrolls.
+
+### Adding a section to a page
+
+In-page anchors are **derived from the page itself**. Any `<section class="section
+v2-sec">` whose first child is a `<span class="eyebrow">` becomes an anchor: it
+receives an `id` slugified from the eyebrow text and appears in the rail beneath
+its parent, and the scroll spy picks it up.
+
+So: give a new section an eyebrow and it self-registers. There is no list to
+maintain. Do not hand-write rail entries for in-page anchors.
+
+### Naming
+
+Use **Collateral**, never "Marketing kit" or "marketing collateral". Do not label
+sections by audience ("for designers and engineers") — express who it is for as
+the moment they would reach for it.
+
+### Previous version
+
+`dark/` and `light/` hold the earlier flat navigation and are kept working while
+v2 is reviewed. They are read-only for the purposes of v2 work: nothing in `v2/`
+writes back to them, and a change to one is not automatically a change to the
+other. Retirement date to be agreed — see `docs/STATUS.md`.
+
+---
+
 ## Machine entry points
 
 | File | Purpose |
@@ -63,6 +118,8 @@ deck skill documents its own system in its `SKILL.md` / `README.md`.
 | `website/assets/tokens/design-tokens.json` | W3C design tokens — colour, type, dimension |
 | `website/assets/tokens/figma.json` | Where the Figma source lives and how sync works |
 | `website/assets/AGENTS.md` | Asset-selection contract and failure modes |
+| `docs/STATUS.md` | Current state, goal framework, what is pending and when |
+| `docs/DESIGN-LOG.md` | Every change request, the call made, and what shipped |
 
 Each playbook page also carries an inline block:
 
@@ -92,7 +149,9 @@ https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/<p
 ## Workflows this repo serves
 
 **Producing an artifact** (landing page, case study, whitepaper, social post, service catalog)
-1. Read the relevant playbook page in `website/dark/` or `website/light/`
+1. Read the relevant page in `website/v2/mk/` (collateral) or `website/v2/ds/`
+   (design system). Fall back to `dark/` or `light/` only for pages v2 does not
+   yet carry
 2. Extract its `page-spec` JSON
 3. Pull required assets from `website/assets/manifest.json`
 4. Pull tokens from `website/assets/tokens/design-tokens.json`
@@ -149,6 +208,9 @@ These are non-negotiable for **web and digital** artifacts. Presentations follow
 | Brief requests a bolder font | Refuse on web — 500 is the ceiling. In a deck, Montserrat Bold/ExtraBold/Black are correct. |
 | Figma and repo disagree | Figma wins. Flag the drift for regeneration. |
 | Brief spans web *and* deck | Use each system on its own surface. Do not average them. Flag for the unification work. |
+| Asked to add a header item to one page | Refuse. The header is identical everywhere; only the highlight moves. Put it in the rail. |
+| Asked to hand-write a rail sub-item for an in-page anchor | Refuse. Give the section an eyebrow and it self-registers. |
+| Asked to duplicate an asset or page into the other section | Refuse. A section is wayfinding; link across instead. |
 
 ---
 

@@ -7,6 +7,9 @@ served portal. GitHub Pages does not publish this folder.
 
 | File | What it is |
 |---|---|
+| [`STATUS.md`](STATUS.md) | **Start here.** Where the portal is, the goal framework behind it, what is done, what is pending and when it lands. |
+| [`DESIGN-LOG.md`](DESIGN-LOG.md) | Every change request against the portal, grouped by what it was about, with the decision and the outcome. Includes the defects register. |
+| [`PORTAL-PLAN.md`](PORTAL-PLAN.md) | The structural rationale — audiences, jobs to be done, and the calls made when the portal was split into two sections. |
 | [`GPT setup - Configure tab.md`](GPT%20setup%20-%20Configure%20tab.md) | Copy-paste fields for building the **Intelligaia Illustration Asset Generator** as a custom GPT (or Gemini Gem): name, description, full system prompt, conversation starters, capability toggles, testing checklist. |
 | [`GPT setup - Knowledge file.md`](GPT%20setup%20-%20Knowledge%20file.md) | The knowledge base uploaded to that GPT — the illustration rulebook: locked palette tokens, style treatments, 10 framework sections, filename convention, output protocol. |
 

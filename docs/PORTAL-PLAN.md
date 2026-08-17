@@ -1,6 +1,11 @@
-# Brand portal — one repo, two doors
+# Brand portal — structural plan
 
-Working plan against Rajiv's note. Target: both doors live **Wednesday 19 August**.
+> **This is the plan, written 17 August. For what actually shipped and what is
+> still pending, read [`STATUS.md`](STATUS.md).** Terminology has moved on since
+> this was written — "Marketing kit" is now **Collateral**, and the internal
+> "two doors" framing is not used in any user-facing copy.
+
+Working plan against Rajiv's note. Target: both sections live **Wednesday 19 August**.
 
 ---
 
