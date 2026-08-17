@@ -1,213 +1,238 @@
 > **Generated page — do not edit here.**
 > Source: [`docs/DESIGN-LOG.md`](https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/docs/DESIGN-LOG.md). Edit there and run `python3 docs/sync-wiki.py`.
 
-# Design log
+# Design log — where we are
 
-Every change request against the brand portal, grouped by what it was actually
-about rather than the order it arrived in. Each entry is the ask, the call that
-was made, and what shipped.
+The standing reference for the brand portal: the brief it answers, the goal it
+serves, the structure underneath, and the jobs it has to finish for real people.
 
-Last entry: **17 August 2026**.
+Day-to-day progress lives in [`STATUS.md`](Status). This document changes only
+when the thinking changes.
 
----
-
-## Phase one · Scale and legibility
-
-The portal was designed at 1440 and fell apart on the monitors people actually
-use.
-
-**Content sat in a narrow column on 2K–3K displays.** Introduced a responsive
-scale driven by custom properties — `--pad-x`, `--shell`, `--nav-fs`, `--logo-h`,
-`--hdr-h`, `--h1`, `--h2`, `--lede`, `--body`, `--meta` — stepping at 1600, 1920,
-2400 and 2800. Header stretches end to end; content starts from one consistent
-left edge.
-
-**Navigation and body text were too small at 2.5K–3K.** Every nav and type value
-moved onto the scale rather than being fixed. Later trimmed again: the header was
-still too tall, so every step came down 15%.
-
-**Headings were rendering in Oswald Bold.** Corrected repeatedly — the library
-pages carried a second `.hero h1` rule that the earlier fixes had missed. Web
-surfaces have no weight above 500; that is now locked with an override.
-
-**Hero heading had double word spacing.** Each word span carried a right margin
-*and* the newline between spans rendered as a space. Fixed by writing headings as
-plain text and splitting them at runtime.
-
-**Word-by-word reveal existed only on the hero.** Rebuilt as a generic runtime
-splitter covering every heading class in the system, not one.
+Last revised **17 August 2026**.
 
 ---
 
-## Phase two · Information architecture
+## 1. The brief
 
-**Detail pages were empty section shells.** `.section { min-height: 100vh }` was
-turning every short section into a full blank viewport. Removed globally; the
-home hero keeps full height through a `body.home` hook.
+Rajiv's note, in his framing:
 
-**Foundations was split across too many pages.** Merged Principles, Colour and
-Typography into one complete Foundations page with no onward pages. Breadcrumb
-and chapter labels removed.
+> One repo is the right architecture, and the audiences are different. Keep the
+> single repo and deploy, but split the site into two routes — a **marketing**
+> route (collateral, proposal kits — Rajiv, Arjun, Sandeep) and a **design
+> system** route (tokens, components, guidelines — design team and engineers).
+> Each gets its own home, its own navigation, and a "how to start using this"
+> page. The marketing route will be adding more skills — a **proposal builder**
+> and a **personalised presentation builder** — so structure it to grow with
+> them. Done means both live by **Wednesday 19 August**.
 
-**Whitepapers were merged into Case studies, then separated again.** The merge
-was wrong: they are different formats with different readers. Case studies now
-carries client work only; Whitepapers is its own page. `agentvine-case-study.html`
-moved from `assets/whitepapers/` to `assets/case-studies/`, where it belonged.
+Three things in that note are load-bearing, and they are not the obvious ones.
 
-**Whitepapers, case studies and landing pages became asset categories** rather
-than examples parked in a folder.
+**The navigation was the actual complaint.** One row mixed both audiences, so
+nobody's first click was obvious. The split is a fix for wayfinding, not for
+content ownership.
 
----
+**"How to start using this" is the deliverable.** Onboarding per audience, not a
+menu. That is the difference between a portal people browse and one they use on a
+Tuesday.
 
-## Phase three · Content discipline
-
-**Detail pages carried too much theory.** The order was inverted: lead with the
-finished output, then deconstruct it, then give guidelines for producing one with
-AI. Theory kept, but minimal.
-
-**Numbering was everywhere.** All `01 / 02 / 03` prefixes removed from headings
-and cards, and the rule now holds across the system — step rows use words
-(*Read, Take, Check*), never numbers.
-
-**Uppercase attributions and eyebrow labels were doing decorative work.** Removed.
-Uppercase survives only below 13px.
-
-**Philosophy copy was set in Oswald.** Display type is for headings; description
-text is Geist. Three supporting points moved under the description rather than
-beside it, and the three principles became parallel cards with legible do/don't
-rather than one stacked column with fine print.
-
-**v2 pages were explaining the structure instead of being it.** Copy cut roughly
-in half — 370 words to 160–210 per page. Internal framing language ("two doors",
-"one brand, two ways in") removed from anything user-facing.
+**"Grow with them" is a structural instruction.** The two builders do not exist
+yet. The marketing route needed a place for them on day one, or adding them later
+would mean re-architecting.
 
 ---
 
-## Phase four · Asset library
+## 2. The goal
 
-**"Brand Assets" was a menu that required a click before any asset was visible.**
-Rebuilt so the page *is* the library.
+> **Close the gap between "I need an on-brand thing" and "I have it" — without a
+> designer in the loop for the first draft.**
 
-**Construction stages were being shown as if they were versions.** Outline and
-geometry are working stages, not alternatives to the final. The library now shows
-finals only; the making moved to the asset detail page, shown against the
-finished illustration, with a carousel across the category.
+That is the whole portal in one line. Everything below is in service of it.
 
-**Category cards needed real previews.** Three thumbnails per category, no
-zig-zag layout, actual icon/letter/wave previews rather than empty frames.
-Characters and devices show one per row.
+There is a second-order goal, and it is the reason the machine-readable layer
+earns its keep:
 
-**Character names were requested repeatedly and never appeared.** Root cause
-below in the defects register. Priya, Maya, Aisha, Sofia, Nia, Arjun, David and
-Kenji now resolve on every page.
+> **The brand has to be self-enforcing.**
 
-**Figma and Git links** given a consistent, visible position on every asset type,
-currently stubbed as *Link pending*.
+Headcount is growing and a rising share of our output is generated rather than
+drawn. A style guide only humans can read drifts within two quarters. One that
+agents can parse holds, because the rules are enforced at the point of
+production rather than at review.
 
 ---
 
-## Phase five · Navigation and identity
+## 3. What sits under the goal
 
-**Wordmark.** Stylised text beside the logo with a separator, in a different
-family (Syne) with a spectrum gradient. Later renamed from *Brand Assets* to
-**Branding**, and the logo stepped down at every breakpoint so it sits with the
-nav instead of dominating it.
+### Two sections, one source
 
-**Nav label** shortened from *Brand assets* to **Assets**.
+| Section | Path | Holds | Goal | Fails when |
+|---|---|---|---|---|
+| **Design system** | `v2/ds/` | Foundations · Asset library · Construction · Tokens & handoff | Nobody re-decides a decision already made | Someone types a hex by hand, or draws an illustration that already exists |
+| **Collateral** | `v2/mk/` | Service catalog · Case studies · Whitepapers · Landing pages · Diagrams · Social · Skills | A credible first draft leaves without a design request | A one-off deck gets improvised because nobody could find the format |
 
-**Contact us button** was collapsing — it inherited a height calculation from
-`--hdr-h` that zeroed it. Rebuilt with explicit padding and line height.
+A section is **wayfinding, not a copy**. Both read the same `manifest.json` and
+the same tokens. Nothing is duplicated between them.
 
-**Service catalog** gained DNA annotations transcribed from the project files,
-a golden-ratio grid toggle, and an icon toggle replacing the carousel/list text
-control.
+### The four decisions that shaped the build
 
----
+**One landing page, not a splash screen.** The home page keeps its full weight —
+hero, two section cards, real assets. Choosing a section is a section *of* the
+landing page, not a gate in front of it.
 
-## Phase six · Two-section portal
+**The section is derived from the page, never from session state.** Every page
+declares which section it belongs to and renders that navigation. A link pasted
+into Slack opens in the right place with the right rail. No cookie to lose, no
+query parameter to strip.
 
-Triggered by Rajiv's note: one repository, two ways in, each with its own home,
-navigation and starting page, and room for the skills that are coming.
+**The header never changes.** Logo, Branding, Design system, Collateral, Contact
+us — identical everywhere. Entering a section moves the highlight and nothing
+else. Section navigation lives in a left rail beneath it.
 
-**Built in an isolated `website/v2/` tree** so the existing site keeps working.
-`dark/` and `light/` are untouched; both trees share `assets/` and neither writes
-to the other.
+**Nothing is duplicated.** One asset library, one token set, one set of rules.
 
-**Landing page keeps its full weight.** Choosing a section is a section of the
-page, not a gate in front of it.
+### The navigation contract
 
-**Section is derived from the page, never from session state.** A shared link
-opens with the right navigation already applied — no cookie, no query parameter
-to strip.
+Four rules. Break any and the portal stops telling people where they are.
 
-**Navigation moved from the top bar into a left rail**, following Atlassian: the
-rail lists one section, and only the active branch expands. Group labels —
-*Reference / Handoff*, *Documents / Digital / Automate* — give it rhythm.
+1. **The header is identical on every page.** Never add or remove items per page.
+2. **The section is derived from the page**, so a shared link opens correctly.
+3. **Section navigation lives in the left rail**, and only the active branch expands. The landing page has no rail.
+4. **The navigation always reports position** — between pages via the rail, within a page via a scroll spy.
 
-**The header does not change between landing and section.** An earlier pass had
-the top nav disappearing into the rail and a section chip appearing beside the
-wordmark; both were removed. One header, one moving highlight.
+In-page anchors are derived from the page itself: give a section an `.eyebrow`
+and it self-registers in the rail and the spy. There is no list to maintain.
 
-**Active state stopped being a yellow slab.** It reads as a soft raised
-background with a 3px yellow marker at the left edge. Sub-items go yellow in text
-only.
+### Naming
 
-**The rail follows the scroll.** Clicking a sub-item jumped correctly but the
-rail then stopped reporting position. A scroll spy now moves the marker as you
-read, and the URL hash follows via `replaceState`.
+**Collateral**, never "Marketing kit" — the old name did not cover landing pages,
+diagrams or skills, and would have needed renaming at the next artifact type.
 
-**Anchors are derived from each page's own sections** — any section carrying an
-eyebrow becomes an anchor and appears under its parent. This is what let the
-scroll spy become a rule instead of a special case: Construction, Tokens &
-handoff, Skills and both overviews gained sub-navigation without a hand-kept
-list, and new sections will too.
+**No audience labels.** Who a section is for is expressed as the moment you would
+reach for it, not as a badge. A BD person building a one-pager should not feel
+locked out of the design system.
 
-**Both overviews were pure type** on a portal introducing an illustration
-library. They now lead with real assets, and every card carries a library
-thumbnail — Foundations shows the swatches, Asset library shows three categories,
-Construction shows its three stages side by side.
+### Content discipline
 
-**"For agents" was removed from the landing page.** It did not explain itself.
-The four machine-readable files are listed on Tokens & handoff, where an engineer
-or an agent would look.
-
-**Marketing kit became Collateral**, and audience labels were dropped in favour
-of naming the moment you would reach for a section.
+- Lead with the **artifact**, then deconstruct, then guide. Theory stays minimal.
+- **No numeric prefixes** on headings or cards, anywhere. Step rows use words.
+- Only the **final stage ships**. Geometry and outline are documentation of method.
+- If no asset fits, **report the gap** — never generate one.
 
 ---
 
-## Standing rules that came out of this
+## 4. The jobs-to-be-done framework
 
-1. Web surfaces have **no type weight above 500**. Presentations are a separate
-   system and stay Montserrat.
-2. **No numeric prefixes** on headings or cards, anywhere.
+Seven users. Each has a job, a page that finishes it, and a signal that tells us
+it worked. The signal column is the part usually missing — without it, "the
+portal is live" becomes the only measure available.
+
+### Collateral
+
+| Job to be done | Who | Served by | Signal it worked |
+|---|---|---|---|
+| "A prospect asked what we do — I need a credible leave-behind now, not a design request" | Rajiv | Service catalog · Case studies | Sent same day, no design ticket raised |
+| "An RFP landed — assemble a proposal that looks like us without inventing layout" | Arjun, Sandeep | Case studies · Whitepapers → **proposal builder** | Structure reused, not reinvented |
+| "Publishing today — it has to look like us without a designer in the loop" | Cheena | Social · Landing pages · Diagrams | Post ships without a designer touching it |
+
+### Design system
+
+| Job to be done | Who | Served by | Signal it worked |
+|---|---|---|---|
+| "Starting a screen or an illustration — give me the rule, not a reference" | Design team | Foundations · Asset library · Construction | Token taken from the file, not eyedropped from screen |
+| "Implementing — I need the value and the URL, not a picture of them" | Engineering | Tokens & handoff | Imports `design-tokens.json` rather than copying hexes |
+| "Producing an Intelligaia artifact on request" | Claude, Cursor, Hermes | `index.json` · `manifest.json` · `AGENTS.md` | Reports which assets it used; reports gaps instead of inventing |
+
+### Cross-cutting
+
+| Job to be done | Who | Served by | Signal it worked |
+|---|---|---|---|
+| "Where do I even start" | New joiners, contractors | The two overview pages | Finds their first artifact unaided |
+
+### The three measures worth counting
+
+1. **Gaps reported vs one-offs improvised.** The library only stays a library if
+   a missing asset becomes a request. This is the health metric — everything else
+   is downstream of it.
+2. **Collateral produced without a design request.** The direct read on the goal.
+3. **Skill usage, once the builders land.** If a builder is not used weekly by the
+   people it was built for, the shelf is wrong, not the skill.
+
+### How the framework fails
+
+Worth naming so it can be watched for:
+
+- **The library becomes a graveyard** — people take assets but never report gaps, so it slowly stops matching what anyone needs.
+- **The sections drift apart** — someone duplicates rather than links, and there are two versions of the truth.
+- **The wiki or docs go stale** while the code moves, so people stop trusting any of it. Already happened once; the wiki is generated now for exactly this reason.
+- **The skills ship but nobody knows** — a builder exists and the people it was built for never learn it is there.
+
+---
+
+## 5. Standing rules
+
+1. Web surfaces have **no type weight above 500**. Presentations are a separate system and stay Montserrat.
+2. **No numeric prefixes** on headings or cards.
 3. Detail pages **lead with the artifact**, then deconstruct, then guide.
-4. Only the **final stage ships**. Geometry and outline are documentation.
-5. If no asset fits, **report the gap** — never generate one.
-6. **The navigation always reports where you are**, both between pages and within
-   one.
-7. A section is **wayfinding, not a copy**. Nothing is duplicated between them.
-8. Build steps must be **idempotent** — see the stacked-rail defect below.
+4. Only the **final stage ships**.
+5. If no asset fits, **report the gap**.
+6. **The navigation always reports where you are**, between pages and within one.
+7. A section is **wayfinding, not a copy**.
+8. Build steps must be **idempotent**.
+9. Anything published in two places must be **generated**, not copied by hand.
 
 ---
 
-## Defects register
+## 6. How it got here
 
-Recorded because the causes were non-obvious and two of them had been wrong for
-some time.
+Grouped by what each round was actually about.
+
+**Scale and legibility.** The portal was designed at 1440 and fell apart on the
+monitors people use. A responsive scale on custom properties now steps at 1600,
+1920, 2400 and 2800. Headings corrected to Oswald 400/500 — the library pages
+carried a second rule earlier fixes had missed. Word-by-word reveal rebuilt as a
+generic splitter covering every heading class, not just the hero.
+
+**Information architecture.** Empty section shells traced to
+`.section { min-height: 100vh }`. Foundations merged into one complete page.
+Whitepapers merged into case studies, then correctly separated again.
+
+**Content discipline.** Detail pages inverted to lead with output. All numbering
+removed. Philosophy copy moved from Oswald to Geist. Principles became parallel
+cards. v2 copy cut roughly in half.
+
+**Asset library.** "Brand Assets" stopped being a menu and became the library.
+Construction stages stopped masquerading as versions. Category cards got real
+previews. Character names finally resolved — see the defects register.
+
+**Navigation and identity.** Wordmark became Branding, in Syne with a spectrum
+gradient. Contact button rebuilt. Service catalog gained DNA annotations and the
+golden-ratio grid.
+
+**The two-section portal.** Built in an isolated `v2/` tree. Navigation moved to
+a left rail. Header made constant. Scroll spy added and generalised through
+derived anchors.
+
+---
+
+## 7. Defects register
+
+Recorded because the causes were non-obvious and several had been wrong for some
+time.
 
 | Defect | Cause | Fix |
 |---|---|---|
-| Character names never appeared | Two `window.IG_ASSETS` assignments; the stale one was later in the file and won every time | Removed the stale block. It also lacked `cat`, `bytes` and `path`, which is why File size was blank and "In category" counted 107 instead of 16 |
-| Home page blank | A nested Lenis IIFE broke the whole inline script, so no reveal classes were applied and everything stayed at `opacity: 0` | Rebuilt every inline script; added a 1.2s safety net that force-reveals anything still hidden |
-| Detail pages blank | JS injected into a `<script src>` tag — the replace matched the first closing tag, which was the CDN tag in `<head>`. Browsers ignore inline content in a script tag with `src` | Rescued the orphaned code into its own block, hoisted data into `<head>`, wrapped in `DOMContentLoaded`. Verification switched from `node --check` to jsdom rendering, because syntax checking cannot catch unreachable code |
-| Catalog pages appeared to change size | All the same A4 ratio but exported at 1×, 2× and 3×; `object-fit: contain` in a `min-height` container rendered them differently | Fixed-ratio A4 stage sized from viewport height |
-| Hero tight under the header | The spacing rule missed `.fx-hero` and `.ad-top`, so Foundations and Asset detail never received it | Rule extended; clearance raised to 72–132px top |
-| Scroll spy silently dead on Foundations | Running the rail step without regenerating stacked a second rail, duplicating the sub-items | `apply_rail` refuses to decorate a page twice |
-| Broken preview image | `grid-50x50.svg` was 87KB of 2,500 circles; the browser fell back to alt text | Rebuilt at 400 dots, 24KB |
-| Every published asset URL 404'd | 664 stale occurrences of the pre-rename repository name across 9 files | Rewritten to `Intelligaia-Brand-Assets` |
+| Character names never appeared | Two `window.IG_ASSETS` assignments; the stale one was later in the file and won every time | Removed it. It also lacked `cat`, `bytes` and `path`, which is why File size was blank and "In category" counted 107 instead of 16 |
+| Home page blank | A nested Lenis IIFE broke the whole inline script, so no reveal classes applied and everything stayed at `opacity: 0` | Rebuilt every inline script; added a 1.2s net that force-reveals anything still hidden |
+| Detail pages blank | JS injected into a `<script src>` tag — the replace matched the CDN tag in `<head>`, and browsers ignore inline content there | Rescued the code, hoisted data into `<head>`, wrapped in `DOMContentLoaded`. Verification moved from `node --check` to jsdom, because syntax checking cannot catch unreachable code |
+| Catalog pages appeared to change size | Same A4 ratio exported at 1×, 2× and 3×; `object-fit: contain` in a `min-height` container | Fixed-ratio A4 stage sized from viewport height |
+| Hero tight under the header | The spacing rule missed `.fx-hero` and `.ad-top` | Rule extended, clearance raised |
+| Scroll spy silently dead | Running the rail step without regenerating stacked a second rail, duplicating sub-items | Build step made idempotent |
+| Broken preview image | `grid-50x50.svg` was 87KB of 2,500 circles | Rebuilt at 400 dots, 24KB |
+| Every published asset URL 404'd | 664 stale occurrences of the pre-rename repo name across 9 files | Rewritten |
+| GitHub Wiki stuck at 14 August | The wiki is a separate repository; pushing this one never touched it | Generated from `docs/` by `sync-wiki.py` |
 | `var(--ink-faint)` | Used but never defined in `:root` | Replaced with `--ink-muted` |
 
 ---
 
-*Current state and timeline: [`STATUS.md`](Status).*
+*Current state and what is next: [`STATUS.md`](Status). Structural rationale
+as first written: [`PORTAL-PLAN.md`](https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/docs/PORTAL-PLAN.md).*
