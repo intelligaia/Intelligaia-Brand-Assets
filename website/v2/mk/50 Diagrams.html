@@ -735,31 +735,82 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   background:var(--hair-2); margin:0 .72em -.1em 0; vertical-align:middle; }
 .g-logo:hover .g-door{ color:var(--ink-soft); }
 @media (max-width:1180px){ .g-door{ display:none; } }
+
+/* ══════════ LEFT RAIL ══════════
+   Section navigation lives beside the content, not above it. The active
+   branch is the only one expanded, so the rail stays short. */
+:root{ --rail-w:clamp(238px,16.5vw,326px); }
+.rail{ position:fixed; top:var(--hdr-h); left:0; bottom:0; width:var(--rail-w);
+  border-right:1px solid var(--hair); background:var(--bg); z-index:45;
+  overflow-y:auto; overscroll-behavior:contain;
+  padding:clamp(20px,1.6vw,32px) 0 70px; }
+.rail::-webkit-scrollbar{ width:8px; }
+.rail::-webkit-scrollbar-thumb{ background:var(--hair-2); border-radius:4px; }
+.rail-grp{ padding:0 clamp(14px,1vw,22px); display:block; }
+.rail a{ display:block; font-family:'Geist',sans-serif; font-weight:400;
+  font-size:var(--nav-fs); line-height:1.34; color:var(--ink-muted);
+  padding:9px 14px; border-radius:9px; transition:color .15s, background .15s; }
+.rail a:hover{ color:var(--ink-soft); background:var(--bg-2); }
+.rail a.on{ color:#04050A; background:var(--yellow); }
+.rail .sub{ margin:2px 0 10px 15px; padding-left:12px; border-left:1px solid var(--hair); }
+.rail .sub a{ font-size:calc(var(--nav-fs) * .93); padding:7px 12px; }
+.rail .sub a.on{ background:transparent; color:var(--yellow); }
+.rail hr{ border:0; height:1px; background:var(--hair);
+  margin:16px clamp(14px,1vw,22px); }
+.rail .switch{ color:var(--yellow); }
+
+body.rail-on main, body.rail-on .dark-footer{ margin-left:var(--rail-w); }
+body.rail-on .section{ max-width:1900px !important;
+  margin-left:0 !important; margin-right:0 !important;
+  padding-left:clamp(26px,2.4vw,62px) !important;
+  padding-right:clamp(26px,2.4vw,62px) !important; }
+
+/* the top bar keeps only identity and contact — navigation is in the rail */
+.rail-btn{ display:none; background:none; border:1px solid var(--hair-2);
+  border-radius:9px; color:var(--ink-soft); cursor:pointer;
+  padding:9px 13px; margin-right:14px; line-height:0; }
+.rail-btn svg{ display:block; }
+body.rail-on .g-header-inner{ display:flex !important; align-items:center;
+  justify-content:space-between; gap:20px; }
+
+@media (max-width:1100px){
+  .rail{ transform:translateX(-100%); transition:transform .22s ease;
+    box-shadow:24px 0 60px -30px rgba(0,0,0,.9); }
+  body.rail-open .rail{ transform:none; }
+  body.rail-on main, body.rail-on .dark-footer{ margin-left:0; }
+  .rail-btn{ display:inline-flex; }
+}
 </style>
 <script>window.IG_ITEMS = [{"src": "../../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.png", "dl": "../../assets/diagrams/Role%20based%20AI%20Deconstruction%20Process%20Graphic%20w%20icons.pdf", "dlLabel": "PDF", "title": "Role-based AI deconstruction", "kind": "Matrix 2×2", "doc": false, "fields": [["Purpose", "Find which workflows are worth handing to an agent."], ["How it works", "Plot every task against friction and frequency; the high-high quadrant is the agent goldmine. A five-point readiness check gates anything before it moves into SAFE."], ["Use when", "Opening an engagement, or triaging automation requests."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../../assets/diagrams/Production%20Analyst.png", "dl": "../../assets/diagrams/Production%20Analyst.pdf", "dlLabel": "PDF", "title": "Deconstructing a role for AI", "kind": "Hub-spoke → checklist", "doc": false, "fields": [["Purpose", "Show the readiness framework applied to one real job."], ["How it works", "Break a role into its five recurring tasks, run the set through the readiness test, land on a verdict. Makes the abstract framework concrete on a client's own domain."], ["Use when", "A client asks what the framework looks like against their team."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../../assets/diagrams/SAFE%20Workflow%20Evaluation.png", "dl": "../../assets/diagrams/SAFE%20Workflow%20Evaluation.pdf", "dlLabel": "PDF", "title": "SAFE workflow evaluation", "kind": "Swimlane flow", "doc": false, "fields": [["Purpose", "Design where the human sits in an AI-run workflow."], ["How it works", "Two lanes — human above, agent below. The four SAFE letters attach to the transitions: scope wraps the frame, authority governs delegation, feedback governs escalation, evaluation loops it back."], ["Use when", "Specifying an agent workflow before anyone writes code."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.png", "dl": "../../assets/diagrams/SAFE%20Framework%20-%20How%20We%20Use%20It.pdf", "dlLabel": "PDF", "title": "The SAFE framework", "kind": "Four-pillar + process strip", "doc": false, "fields": [["Purpose", "Explain the whole framework on one page."], ["How it works", "Four pillars, each with its governing question, three rules and a worked example. Beneath them, how the engineering team runs it, the five metrics tracked, and what it achieved."], ["Use when", "Onboarding a team, or the framework slide in a pitch."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.png", "dl": "../../assets/diagrams/Turning%20Software-Development%20Knowledge%20Into%20AI%20Context.pdf", "dlLabel": "PDF", "title": "SDLC knowledge into AI context", "kind": "2×2 narrative", "doc": false, "fields": [["Purpose", "Argue that the fix is context, not new tooling."], ["How it works", "What teams already had, why direct prompting still failed, the structured inputs that closed the gap, and the same flow running in practice. The through-line is that nothing new had to be invented."], ["Use when", "Countering the idea that AI adoption means replacing the process."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../../assets/diagrams/AI-Generated%20Code.png", "dl": "../../assets/diagrams/AI-Generated%20Code.pdf", "dlLabel": "PDF", "title": "AI-generated code: system impact", "kind": "Three-band process", "doc": false, "fields": [["Purpose", "Make the risk of AI-written pull requests visible before merge."], ["How it works", "Band one names the visibility gap, expected against actual. Band two walks the agent from mapping connected systems to an impact report. Band three keeps the human holding the decision."], ["Use when", "Explaining AI-assisted engineering governance to a review board."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}, {"src": "../../assets/diagrams/Next%20Steps.png", "dl": "../../assets/diagrams/Next%20Steps.pdf", "dlLabel": "PDF", "title": "Next steps: deconstruction to automation", "kind": "Numbered journey + loop", "doc": false, "fields": [["Purpose", "Show the client where the engagement goes after the first win."], ["How it works", "Five stages, each with its outcome, wired through a continuous feedback loop. Underneath, the three automation levels — no touch, low touch, high touch — chosen by confidence against risk."], ["Use when", "Closing discovery, or scoping a follow-on engagement."], ["Format", "1:1 canvas · PNG for screen, vector PDF for print"]]}];</script>
 </head>
-<body>
+<body class="rail-on">
 <header class="g-header">
   <div class="g-header-inner">
+    <button class="rail-btn" id="railBtn" aria-label="Toggle navigation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     <a href="../00%20Home.html" class="g-logo" aria-label="Intelligaia Branding">
       <img src="../../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
       <span class="g-sep"></span>
       <span class="g-sys">Branding</span>
       <span class="g-door">Marketing</span>
     </a>
-    <nav class="g-nav">
-      <a href="00%20Start.html">Overview</a>
-      <a href="10%20Service%20Catalog.html">Service catalog</a>
-      <a href="20%20Case%20Studies.html">Case studies</a>
-      <a href="30%20Whitepapers.html">Whitepapers</a>
-      <a href="40%20Landing%20Pages.html">Landing pages</a>
-      <a href="50%20Diagrams.html" class="on">Diagrams</a>
-      <a href="60%20Social.html">Social</a>
-      <a href="70%20Skills.html">Skills</a>
-    </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>
   </div>
 </header>
+
+<aside class="rail" id="rail" aria-label="Marketing kit navigation">
+  <nav class="rail-grp">
+    <a href="00%20Start.html">Overview</a>
+    <a href="10%20Service%20Catalog.html">Service catalog</a>
+    <a href="20%20Case%20Studies.html">Case studies</a>
+    <a href="30%20Whitepapers.html">Whitepapers</a>
+    <a href="40%20Landing%20Pages.html">Landing pages</a>
+    <a href="50%20Diagrams.html" class="on">Diagrams</a>
+    <a href="60%20Social.html">Social</a>
+    <a href="70%20Skills.html">Skills</a>
+  </nav>
+  <hr />
+  <nav class="rail-grp"><a class="switch" href="../ds/00%20Start.html">Design system →</a></nav>
+</aside>
 <main id="av">
 
 <section class="section av-hero">
@@ -1042,6 +1093,24 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 
 });
+</script>
+
+<script>
+(function(){
+  function ready(fn){ document.readyState!=='loading'?fn():document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var b=document.getElementById('railBtn');
+    if(b) b.addEventListener('click',function(){ document.body.classList.toggle('rail-open'); });
+    /* category pages resolve their own sub-item from the query string */
+    var c=new URLSearchParams(location.search).get('c');
+    if(c){
+      var link=document.querySelector('.rail .sub a[href*="c='+c+'"]');
+      if(link){ link.classList.add('on');
+        var p=document.querySelector('.rail a[href*="Asset%20Library"]');
+        if(p) p.classList.remove('on'); }
+    }
+  });
+})();
 </script>
 </body>
 </html>

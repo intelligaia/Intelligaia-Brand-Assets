@@ -715,31 +715,82 @@ body:not(.home) .section.hero{ min-height:auto !important; }
   background:var(--hair-2); margin:0 .72em -.1em 0; vertical-align:middle; }
 .g-logo:hover .g-door{ color:var(--ink-soft); }
 @media (max-width:1180px){ .g-door{ display:none; } }
+
+/* ══════════ LEFT RAIL ══════════
+   Section navigation lives beside the content, not above it. The active
+   branch is the only one expanded, so the rail stays short. */
+:root{ --rail-w:clamp(238px,16.5vw,326px); }
+.rail{ position:fixed; top:var(--hdr-h); left:0; bottom:0; width:var(--rail-w);
+  border-right:1px solid var(--hair); background:var(--bg); z-index:45;
+  overflow-y:auto; overscroll-behavior:contain;
+  padding:clamp(20px,1.6vw,32px) 0 70px; }
+.rail::-webkit-scrollbar{ width:8px; }
+.rail::-webkit-scrollbar-thumb{ background:var(--hair-2); border-radius:4px; }
+.rail-grp{ padding:0 clamp(14px,1vw,22px); display:block; }
+.rail a{ display:block; font-family:'Geist',sans-serif; font-weight:400;
+  font-size:var(--nav-fs); line-height:1.34; color:var(--ink-muted);
+  padding:9px 14px; border-radius:9px; transition:color .15s, background .15s; }
+.rail a:hover{ color:var(--ink-soft); background:var(--bg-2); }
+.rail a.on{ color:#04050A; background:var(--yellow); }
+.rail .sub{ margin:2px 0 10px 15px; padding-left:12px; border-left:1px solid var(--hair); }
+.rail .sub a{ font-size:calc(var(--nav-fs) * .93); padding:7px 12px; }
+.rail .sub a.on{ background:transparent; color:var(--yellow); }
+.rail hr{ border:0; height:1px; background:var(--hair);
+  margin:16px clamp(14px,1vw,22px); }
+.rail .switch{ color:var(--yellow); }
+
+body.rail-on main, body.rail-on .dark-footer{ margin-left:var(--rail-w); }
+body.rail-on .section{ max-width:1900px !important;
+  margin-left:0 !important; margin-right:0 !important;
+  padding-left:clamp(26px,2.4vw,62px) !important;
+  padding-right:clamp(26px,2.4vw,62px) !important; }
+
+/* the top bar keeps only identity and contact — navigation is in the rail */
+.rail-btn{ display:none; background:none; border:1px solid var(--hair-2);
+  border-radius:9px; color:var(--ink-soft); cursor:pointer;
+  padding:9px 13px; margin-right:14px; line-height:0; }
+.rail-btn svg{ display:block; }
+body.rail-on .g-header-inner{ display:flex !important; align-items:center;
+  justify-content:space-between; gap:20px; }
+
+@media (max-width:1100px){
+  .rail{ transform:translateX(-100%); transition:transform .22s ease;
+    box-shadow:24px 0 60px -30px rgba(0,0,0,.9); }
+  body.rail-open .rail{ transform:none; }
+  body.rail-on main, body.rail-on .dark-footer{ margin-left:0; }
+  .rail-btn{ display:inline-flex; }
+}
 </style>
 <script>window.IG_ITEMS = [{"src": "../../assets/marketing/sections/approved_section_workshops-mvp_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "Workshops — MVP", "kind": "Post", "doc": false, "fields": [["Notes", "Square feed post. Single idea, headline under twelve words, illustration anchored to a corner."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../../assets/marketing/sections/approved_section_ux-design-branding_3d-render_v01.png", "dl": "", "dlLabel": "", "title": "Branding", "kind": "Post", "doc": false, "fields": [["Notes", "3D render works at thumbnail size because the silhouette stays simple."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../../assets/marketing/sections/approved_section_workshops-journey-map_vector-flat_v01.png", "dl": "", "dlLabel": "", "title": "Journey map", "kind": "Post", "doc": false, "fields": [["Notes", "Vector-flat reads more clearly when the post carries a process idea."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../../assets/marketing/sections/approved_section_user-research-processes_vector-flat_v01.png", "dl": "", "dlLabel": "", "title": "Research process", "kind": "Post", "doc": false, "fields": [["Notes", "Method-led post. The illustration does the explaining, the caption carries detail."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../../assets/marketing/sections/approved_section_ux-design-audit_tech-ai_v01.png", "dl": "", "dlLabel": "", "title": "Design audit", "kind": "Post", "doc": false, "fields": [["Notes", "Tech-AI treatment for anything touching automation or tooling."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}, {"src": "../../assets/marketing/sections/approved_section_workshops-partner-cta_isometric-gradient_v01.png", "dl": "", "dlLabel": "", "title": "Partner CTA", "kind": "Post", "doc": false, "fields": [["Notes", "Closing post in a campaign. Carries the ask."], ["Ratios", "Square 1080², portrait 1080×1350, story 1080×1920"], ["Ceiling", "Twelve words on the canvas. Nuance goes in the caption."]]}];</script>
 </head>
-<body>
+<body class="rail-on">
 <header class="g-header">
   <div class="g-header-inner">
+    <button class="rail-btn" id="railBtn" aria-label="Toggle navigation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
     <a href="../00%20Home.html" class="g-logo" aria-label="Intelligaia Branding">
       <img src="../../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
       <span class="g-sep"></span>
       <span class="g-sys">Branding</span>
       <span class="g-door">Marketing</span>
     </a>
-    <nav class="g-nav">
-      <a href="00%20Start.html">Overview</a>
-      <a href="10%20Service%20Catalog.html">Service catalog</a>
-      <a href="20%20Case%20Studies.html">Case studies</a>
-      <a href="30%20Whitepapers.html">Whitepapers</a>
-      <a href="40%20Landing%20Pages.html">Landing pages</a>
-      <a href="50%20Diagrams.html">Diagrams</a>
-      <a href="60%20Social.html" class="on">Social</a>
-      <a href="70%20Skills.html">Skills</a>
-    </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>
   </div>
 </header>
+
+<aside class="rail" id="rail" aria-label="Marketing kit navigation">
+  <nav class="rail-grp">
+    <a href="00%20Start.html">Overview</a>
+    <a href="10%20Service%20Catalog.html">Service catalog</a>
+    <a href="20%20Case%20Studies.html">Case studies</a>
+    <a href="30%20Whitepapers.html">Whitepapers</a>
+    <a href="40%20Landing%20Pages.html">Landing pages</a>
+    <a href="50%20Diagrams.html">Diagrams</a>
+    <a href="60%20Social.html" class="on">Social</a>
+    <a href="70%20Skills.html">Skills</a>
+  </nav>
+  <hr />
+  <nav class="rail-grp"><a class="switch" href="../ds/00%20Start.html">Design system →</a></nav>
+</aside>
 <main id="av">
 
 <section class="section av-hero">
@@ -1005,6 +1056,24 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 
 });
+</script>
+
+<script>
+(function(){
+  function ready(fn){ document.readyState!=='loading'?fn():document.addEventListener('DOMContentLoaded',fn); }
+  ready(function(){
+    var b=document.getElementById('railBtn');
+    if(b) b.addEventListener('click',function(){ document.body.classList.toggle('rail-open'); });
+    /* category pages resolve their own sub-item from the query string */
+    var c=new URLSearchParams(location.search).get('c');
+    if(c){
+      var link=document.querySelector('.rail .sub a[href*="c='+c+'"]');
+      if(link){ link.classList.add('on');
+        var p=document.querySelector('.rail a[href*="Asset%20Library"]');
+        if(p) p.classList.remove('on'); }
+    }
+  });
+})();
 </script>
 </body>
 </html>
