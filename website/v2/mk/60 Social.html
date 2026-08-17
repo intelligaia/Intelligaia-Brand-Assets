@@ -745,13 +745,11 @@ body.rail-on .section{ max-width:1900px !important;
   padding-left:clamp(26px,2.4vw,62px) !important;
   padding-right:clamp(26px,2.4vw,62px) !important; }
 
-/* the top bar keeps only identity and contact — navigation is in the rail */
+/* the header is identical to the landing page — the rail sits beneath it */
 .rail-btn{ display:none; background:none; border:1px solid var(--hair-2);
   border-radius:9px; color:var(--ink-soft); cursor:pointer;
   padding:9px 13px; margin-right:14px; line-height:0; }
 .rail-btn svg{ display:block; }
-body.rail-on .g-header-inner{ display:flex !important; align-items:center;
-  justify-content:space-between; gap:20px; }
 
 @media (max-width:1100px){
   .rail{ transform:translateX(-100%); transition:transform .22s ease;
@@ -771,13 +769,16 @@ body.rail-on .g-header-inner{ display:flex !important; align-items:center;
       <img src="../../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
       <span class="g-sep"></span>
       <span class="g-sys">Branding</span>
-      <span class="g-door">Marketing</span>
     </a>
+    <nav class="g-nav">
+      <a href="../ds/00%20Start.html">Design system</a>
+      <a href="../mk/00%20Start.html" class="on">Collateral</a>
+    </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>
   </div>
 </header>
 
-<aside class="rail" id="rail" aria-label="Marketing kit navigation">
+<aside class="rail" id="rail" aria-label="Collateral navigation">
   <nav class="rail-grp">
     <a href="00%20Start.html">Overview</a>
     <a href="10%20Service%20Catalog.html">Service catalog</a>
@@ -788,8 +789,6 @@ body.rail-on .g-header-inner{ display:flex !important; align-items:center;
     <a href="60%20Social.html" class="on">Social</a>
     <a href="70%20Skills.html">Skills</a>
   </nav>
-  <hr />
-  <nav class="rail-grp"><a class="switch" href="../ds/00%20Start.html">Design system →</a></nav>
 </aside>
 <main id="av">
 
