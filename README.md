@@ -2,9 +2,27 @@
 
 The single source of truth for how Intelligaia work looks and reads — written for humans, structured for agents.
 
-**[Open the portal →](website/START%20HERE.html)**
+**[Open the portal →](https://intelligaia.github.io/Intelligaia-Brand-Assets/)** · [START HERE.html](website/START%20HERE.html) · [Status](docs/STATUS.md) · [Design log](docs/DESIGN-LOG.md) · [Agent contract](AGENTS.md)
 
-**Live site:** https://intelligaia.github.io/Intelligaia-Brand-Assets/
+---
+
+## Where the portal is right now
+
+**17 August 2026** — the portal has been restructured from one flat navigation
+into **two sections with their own left-hand navigation**, built in `website/v2/`.
+Dark theme only; light follows. Under review **Wednesday 19 August**.
+
+| | |
+|---|---|
+| **Live** | The site root now lands on `website/v2/00 Home.html` |
+| **Design system** | `v2/ds/` — Foundations · Asset library · Construction · Tokens & handoff |
+| **Collateral** | `v2/mk/` — Service catalog · Case studies · Whitepapers · Landing pages · Diagrams · Social · Skills |
+| **Previous** | `dark/` and `light/` keep the flat navigation, untouched and still reachable |
+
+Read **[`docs/STATUS.md`](docs/STATUS.md)** for the goal framework behind the split,
+what is done, what is pending and when it lands. Every change request and its
+outcome — including the defects register — is in
+**[`docs/DESIGN-LOG.md`](docs/DESIGN-LOG.md)**.
 
 ---
 
@@ -15,8 +33,8 @@ The repo is organised as self-contained **modules** — each a brand deliverable
 | Module | What it is | Start at |
 |---|---|---|
 | **Website** — brand portal | The living brand guide and asset library, served on GitHub Pages | [`website/`](website/) → [`START HERE.html`](website/START%20HERE.html) |
-| **Intelligaia Skills** — Claude skills | Grouped Intelligaia skills: Slide Deck (on-brand decks), Landing Page (agentic pages), CPQ (Quote-to-Cash knowledge); Google Doc planned | [`Intelligaia Skills/`](Intelligaia%20Skills/) |
-| **Nucleux Base Components** — UI component skill | Nucleux React component-library skill (`SKILL.md` + `.skill`) | [`Nucleux Base Components/`](Nucleux%20Base%20Components/) |
+| **Intelligaia Skills** — Claude skills | Grouped Intelligaia skills: Slide Deck (on-brand decks), Landing Page (agentic pages), CPQ (Quote-to-Cash knowledge), Nucleux Base Components (React component library via Figma); Google Doc planned | [`Intelligaia Skills/`](Intelligaia%20Skills/) |
+
 | **Readout Tracker** — status templates | A 10-slide project readout & status deck plus a `pptxgenjs` generator, built on the deck design system | [`Readout Tracker Project Status/`](Readout%20Tracker%20Project%20Status/) → `build-readout-templates.js` |
 
 Setup notes that support the assets but aren't shipped live are in [`docs/`](docs/). Repo-wide rules for AI agents live in [`AGENTS.md`](AGENTS.md).
@@ -27,9 +45,9 @@ Setup notes that support the assets but aren't shipped live are in [`docs/`](doc
 
 | | Humans | Agents |
 |---|---|---|
-| **Read** | The HTML portal in `website/light/` and `website/dark/` | `website/index.json` and `website/assets/manifest.json` |
+| **Read** | The HTML portal in `website/v2/` | `website/index.json` and `website/assets/manifest.json` |
 | **Get** | Prose, examples, annotated anatomy | Typed JSON specs, token files, asset URLs |
-| **Start at** | `website/START HERE.html` | `AGENTS.md` |
+| **Start at** | `website/START HERE.html` | `AGENTS.md`, then `docs/STATUS.md` |
 
 Every playbook page carries an inline `<script type="application/json" id="page-spec">` block. The prose a designer reads and the spec an agent parses come from the same page, so they cannot drift.
 
@@ -43,14 +61,14 @@ This repo is organised as **modules** — self-contained brand deliverables that
 ├── AGENTS.md              instructions for AI agents (also CLAUDE.md)
 ├── README.md              this file
 ├── .github/workflows/     CI — GitHub Actions (Pages build)
-├── docs/                  setup notes
+├── docs/                  status, design log, plan, setup notes
 │
 ├── website/               MODULE · the portal — served by GitHub Pages
-│   ├── index.html         redirect → START HERE.html
+│   ├── index.html         redirect → v2/00 Home.html
 │   ├── START HERE.html    human entry point
 │   ├── index.json         machine-readable repository map
 │   │
-│   ├── assets/            shared by both themes — 279 files
+│   ├── assets/            shared by every tree — 279 files
 │   │   ├── manifest.json      every asset, indexed
 │   │   ├── AGENTS.md          asset-selection contract
 │   │   ├── tokens/            design tokens in six formats
@@ -58,16 +76,20 @@ This repo is organised as **modules** — self-contained brand deliverables that
 │   │   ├── marketing/         banners · sections · people · lettering
 │   │   ├── icons/ waves/ letters/ brand/ diagrams/ service-catalog/
 │   │
-│   ├── light/             21 pages
-│   └── dark/              12 pages
+│   ├── v2/                CURRENT · two sections, dark only — 16 pages
+│   │   ├── 00 Home.html       landing page, top nav, no rail
+│   │   ├── ds/                Design system — 7 pages
+│   │   └── mk/                Collateral — 8 pages
+│   ├── light/             PREVIOUS · flat navigation — 11 pages
+│   └── dark/              PREVIOUS · flat navigation — 11 pages
 │
 ├── Intelligaia Skills/             Intelligaia Claude skills (grouped)
 │   ├── Intelligaia Slide Deck Skill/    on-brand decks — README, .skill, examples/, assets
 │   ├── Intelligaia Landing Page skill/  agentic landing pages — SKILL.md, .skill, levels, reference
 │   ├── Intelligaia CPQ Skill/           CPQ / Quote-to-Cash knowledge skill (SKILL.md + modules)
-│   └── Intelligaia Google Doc Skill/    planned — see issue #1 (placeholder)
-│
-├── Nucleux Base Components/        MODULE · Nucleux UI component skill (SKILL.md + .skill)
+│   ├── Intelligaia Google Doc Skill/    planned — see issue #1 (placeholder)
+│   └── Nucleux Base Components …/       Nucleux React component library, via Figma
+
 │
 └── Readout Tracker Project Status/ MODULE · project readout & status templates
     ├── Intelligaia Readout & Status Templates.pptx   10-slide template deck
@@ -78,27 +100,43 @@ Within the portal, both themes read from the same `website/assets/` folder. Noth
 
 ---
 
-## The sections
+## The two sections
 
-**Reference — what the brand is made of**
+One landing page, two named sections, one shared asset library. A section is
+**wayfinding, not a copy** — both read the same manifest and the same tokens.
 
-| | |
-|---|---|
-| `10` Foundations | Three principles, four colours, two type families |
-| `20` Brand assets | Illustrations, icons, waves, letterforms |
-| `30` Diagrams | Process graphics, flow charts, matrices, journey maps |
-| `40` Service catalog | Six reusable document page types |
-
-**Produce — what you ship with it**
+**Design system** — `v2/ds/` · for someone building something who needs the rule rather than a reference
 
 | | |
 |---|---|
-| `50` Landing pages | Yellow banner hero, five-section rhythm |
-| `60` Case studies | The five-beat arc |
-| `70` Whitepapers | Dual-track design + engineering |
-| `80` Social media | Square, portrait, story |
+| Foundations | Three principles, four colours, two type families |
+| Asset library | Illustrations, devices, objects, nature, icons, letterforms, waves |
+| Construction | Grid first, four primitives, three stages — only the final ships |
+| Tokens & handoff | The files to import and the raw asset URL pattern |
 
-Each Produce page ends with an agent-runnable prompt and a JSON spec.
+**Collateral** — `v2/mk/` · for something going in front of a client that has to look like us
+
+| | |
+|---|---|
+| Service catalog | The capability document, page by page, with the job each page does |
+| Case studies | Published client work and the arc each one follows |
+| Whitepapers | Long-form papers and the template they are built on |
+| Landing pages | Page patterns and the sections to mix from |
+| Diagrams | Process graphics, flow charts, journey maps |
+| Social | Post formats and the assets that fill them |
+| Skills | Agents that assemble the above — two in build |
+
+### Navigation contract
+
+Four rules. Break any and the portal stops telling people where they are.
+
+1. **The header is identical on every page.** Entering a section moves the highlight and nothing else.
+2. **The section is derived from the page, never from session state** — a shared link opens with the right navigation applied.
+3. **Section navigation lives in the left rail**, and only the active branch expands.
+4. **The navigation always reports position** — between pages via the rail, within a page via a scroll spy.
+
+In-page anchors are derived from the page itself: give a section an `.eyebrow`
+and it self-registers in the rail. There is no list to maintain.
 
 ---
 
@@ -142,6 +180,8 @@ const heroes = m.assets.filter(a => a.category === "marketing-banner");
 - **Case** — running case in headings; uppercase only below 13px.
 - **Illustrations** — from `website/assets/` only. Never generated on the fly.
 - **Layout** — 1440px max width, 48px gutter.
+- **Numbering** — no `01 / 02 / 03` prefixes on headings or cards.
+- **Naming** — the second section is **Collateral**, never "Marketing kit". Do not label sections by audience.
 
 ---
 
