@@ -9,7 +9,7 @@ for humans, structured for agents.
 > demand. It is a reading surface, not a source of truth — if something here
 > disagrees with the repository, the repository is right.
 >
-> Last synced: **17 August 2026**
+> Last synced: **18 August 2026**
 
 ---
 
@@ -26,7 +26,7 @@ light follows.
 | **Collateral** | `v2/mk/` — Service catalog · Case studies · Whitepapers · Landing pages · Diagrams · Social · Skills |
 | **Previous** | `dark/` and `light/` keep the flat navigation, untouched and still reachable |
 
-**[Full status, goal framework and timeline →](Status)**
+**[Daily updates →](Status)** · **[The framework behind it →](Design-log)**
 
 ---
 

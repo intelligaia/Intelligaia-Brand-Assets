@@ -6,8 +6,8 @@
 The standing reference for the brand portal: the brief it answers, the goal it
 serves, the structure underneath, and the jobs it has to finish for real people.
 
-Day-to-day progress lives in [`STATUS.md`](Status). This document changes only
-when the thinking changes.
+Daily updates live in [`STATUS.md`](Status). This document changes only when
+the thinking changes.
 
 Last revised **17 August 2026**.
 
@@ -234,5 +234,5 @@ time.
 
 ---
 
-*Current state and what is next: [`STATUS.md`](Status). Structural rationale
-as first written: [`PORTAL-PLAN.md`](https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/docs/PORTAL-PLAN.md).*
+*Daily updates: [`STATUS.md`](Status). Structural rationale as first written:
+[`PORTAL-PLAN.md`](https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/docs/PORTAL-PLAN.md).*

@@ -19,9 +19,8 @@ Dark theme only; light follows. Under review **Wednesday 19 August**.
 | **Collateral** | `v2/mk/` — Service catalog · Case studies · Whitepapers · Landing pages · Diagrams · Social · Skills |
 | **Previous** | `dark/` and `light/` keep the flat navigation, untouched and still reachable |
 
-Read **[`docs/STATUS.md`](docs/STATUS.md)** for the goal framework behind the split,
-what is done, what is pending and when it lands. Every change request and its
-outcome — including the defects register — is in
+**[`docs/STATUS.md`](docs/STATUS.md)** carries the daily updates. The framework
+behind the split — the brief, the goal and the jobs it has to serve — is in
 **[`docs/DESIGN-LOG.md`](docs/DESIGN-LOG.md)**.
 
 ---

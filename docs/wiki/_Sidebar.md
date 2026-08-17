@@ -3,7 +3,7 @@
 **[Home](Home)**
 
 **Portal**
-- [Status](Status)
+- [Daily updates](Status)
 - [Design log](Design-log)
 - [Navigation contract](Navigation-contract)
 

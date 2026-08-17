@@ -76,7 +76,7 @@ SIDEBAR = """### Intelligaia Brand Assets
 **[Home](Home)**
 
 **Portal**
-- [Status](Status)
+- [Daily updates](Status)
 - [Design log](Design-log)
 - [Navigation contract](Navigation-contract)
 
@@ -120,7 +120,7 @@ light follows.
 | **Collateral** | `v2/mk/` — Service catalog · Case studies · Whitepapers · Landing pages · Diagrams · Social · Skills |
 | **Previous** | `dark/` and `light/` keep the flat navigation, untouched and still reachable |
 
-**[Full status, goal framework and timeline →](Status)**
+**[Daily updates →](Status)** · **[The framework behind it →](Design-log)**
 
 ---
 

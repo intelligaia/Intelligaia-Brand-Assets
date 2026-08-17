@@ -7,7 +7,7 @@ served portal. GitHub Pages does not publish this folder.
 
 | File | What it is |
 |---|---|
-| [`STATUS.md`](STATUS.md) | **Start here.** Where the portal is, the goal framework behind it, what is done, what is pending and when it lands. |
+| [`STATUS.md`](STATUS.md) | Daily updates — what was covered, what is next, what is missing. |
 | [`DESIGN-LOG.md`](DESIGN-LOG.md) | Every change request against the portal, grouped by what it was about, with the decision and the outcome. Includes the defects register. |
 | [`PORTAL-PLAN.md`](PORTAL-PLAN.md) | The structural rationale — audiences, jobs to be done, and the calls made when the portal was split into two sections. |
 | [`sync-wiki.py`](sync-wiki.py) | Generates the GitHub Wiki from the documents above. The wiki is a **separate repository** and does not update when this one is pushed. |
