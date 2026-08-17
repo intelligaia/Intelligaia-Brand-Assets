@@ -28,7 +28,7 @@ The repository is organised as **modules** — self-contained brand deliverables
 ├── docs/                          status, design log, plan, setup notes
 │
 ├── website/                       ── MODULE · the brand portal — served by GitHub Pages
-│   ├── index.html                 redirect → START HERE.html
+│   ├── index.html                 redirect → v2/00 Home.html
 │   ├── START HERE.html            human entry point
 │   ├── index.json                 machine-readable repository map
 │   ├── assets/                    shared by every tree — 279 files
