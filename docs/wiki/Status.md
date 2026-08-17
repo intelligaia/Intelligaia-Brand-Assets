@@ -1,3 +1,6 @@
+> **Generated page — do not edit here.**
+> Source: [`docs/STATUS.md`](https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/docs/STATUS.md). Edit there and run `python3 docs/sync-wiki.py`.
+
 # Brand portal — status
 
 **Monday 17 August 2026** · target review **Wednesday 19 August** · dark theme only
@@ -200,5 +203,5 @@ repository, the repository is right and the wiki needs a sync.
 
 ---
 
-*Full change history: [`DESIGN-LOG.md`](DESIGN-LOG.md). Structural rationale:
-[`PORTAL-PLAN.md`](PORTAL-PLAN.md).*
+*Full change history: [`DESIGN-LOG.md`](Design-log). Structural rationale:
+[`PORTAL-PLAN.md`](https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/docs/PORTAL-PLAN.md).*
