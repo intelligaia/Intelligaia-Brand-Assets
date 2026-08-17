@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Intelligaia · Construction method · Design system</title>
+<title>Intelligaia · Construction method</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
@@ -813,7 +813,7 @@ body.home .section.hero{ min-height:100vh !important; }
 .av-bar{ margin-bottom:clamp(20px,1.6vw,30px) !important; }
 .section.hero{ padding-top:calc(var(--hdr-h) + clamp(56px,4vw,104px)) !important; }
 
-/* ══════════ V2 — two doors ══════════ */
+/* ══════════ V2 ══════════ */
 .g-door{ font-family:'Geist',sans-serif; font-weight:400; font-size:calc(var(--nav-fs) * .92);
   color:var(--ink-muted); white-space:nowrap; }
 .g-door::before{ content:''; display:inline-block; width:1px; height:.95em;
@@ -857,7 +857,7 @@ a.crd:hover{ border-color:rgba(255,200,0,.42); background:var(--bg-3); transform
 .crd .who{ font-family:'Geist',sans-serif; font-size:var(--meta); color:var(--ink-muted);
   margin-top:14px; padding-top:14px; border-top:1px solid var(--hair); display:block; }
 
-/* door cards on the landing page */
+/* section cards on the landing page */
 .door{ display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(24px,2.4vw,60px);
   align-items:center; border:1px solid var(--hair-2); border-radius:20px; background:var(--bg-2);
   padding:clamp(28px,2.4vw,52px); transition:border-color .2s, background .2s; }
@@ -918,7 +918,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
       <span class="g-door">Design system</span>
     </a>
     <nav class="g-nav">
-      <a href="00%20Start.html">Start here</a>
+      <a href="00%20Start.html">Overview</a>
       <a href="10%20Foundations.html">Foundations</a>
       <a href="20%20Asset%20Library.html">Asset library</a>
       <a href="30%20Construction.html" class="on">Construction</a>
@@ -930,46 +930,41 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 <main>
 
 <section class="section v2-hero">
-  <span class="eyebrow">Design system</span>
   <h1>Construction method.</h1>
-  <p>Intelligaia illustrations are not drawn freehand. They are assembled from four primitives on a fixed grid, and the finished asset is the only stage that ships. This is what keeps 279 assets looking like one hand made them.</p>
+  <p>Illustrations are assembled from four primitives on a fixed grid. This is what keeps 279 assets looking like one hand made them.</p>
 </section>
 
 <section class="section v2-sec">
-  <span class="eyebrow">The method</span>
-  <h2 class="v2-h2">Assemble, do not draw.</h2>
-  <p class="v2-lede">Freehand drawing produces a style that lives in one person. Assembly from primitives produces a style that can be handed to anyone — or to an agent — and still come back recognisable.</p>
+  <span class="eyebrow">How it is built</span>
   <div class="steps">
-    <div class="step"><span class="w">Grid</span><p><b>Everything starts on the 50×50 grid.</b> Proportion is decided by the grid before any shape is placed, which is why characters from different weeks still share a silhouette.</p></div>
-    <div class="step"><span class="w">Primitives</span><p><b>Four shapes only.</b> Circle, semicircle, rectangle, and the semi-rectangle — a rectangle with one rounded side. No fifth shape has been needed yet.</p></div>
-    <div class="step"><span class="w">Intersect</span><p><b>Form comes from overlap, not outline.</b> Shapes are layered and intersected until the silhouette appears. You are looking for the figure inside the geometry rather than tracing one onto it.</p></div>
-    <div class="step"><span class="w">Ship</span><p><b>Only the final stage leaves the building.</b> Geometry and outline are working stages. They are documented so the method survives, not so they can be used as assets.</p></div>
+    <div class="step"><span class="w">Grid</span><p><b>Everything starts on the 50×50 grid.</b> Proportion is decided before any shape is placed.</p></div>
+    <div class="step"><span class="w">Primitives</span><p><b>Four shapes only.</b> Circle, semicircle, rectangle, and the semi-rectangle — a rectangle with one rounded side.</p></div>
+    <div class="step"><span class="w">Intersect</span><p><b>Form comes from overlap, not outline.</b> Shapes are layered until the silhouette appears.</p></div>
+    <div class="step"><span class="w">Ship</span><p><b>Only the final stage leaves the building.</b> Geometry and outline are working stages.</p></div>
   </div>
 </section>
 
 <section class="section v2-sec">
   <span class="eyebrow">The four primitives</span>
-  <h2 class="v2-h2">Nothing else is permitted.</h2>
   <div class="grid4">
-    <div class="crd"><span class="lbl">One</span><h3>Circle</h3><p>Heads, eyes, lenses, joints. The primitive that carries most of the warmth in a figure.</p></div>
-    <div class="crd"><span class="lbl">Two</span><h3>Semicircle</h3><p>Hair, shoulders, arches, the top of a device. Direction comes from which half is kept.</p></div>
-    <div class="crd"><span class="lbl">Three</span><h3>Rectangle</h3><p>Torsos, screens, slabs, structure. The stabiliser that keeps a composition from floating.</p></div>
-    <div class="crd"><span class="lbl">Four</span><h3>Semi-rectangle</h3><p>A rectangle with one rounded side. Limbs, cuffs, tabs — where a hard edge would read as cold.</p></div>
+    <div class="crd"><h3>Circle</h3><p>Heads, eyes, lenses, joints. Carries most of the warmth in a figure.</p></div>
+    <div class="crd"><h3>Semicircle</h3><p>Hair, shoulders, arches. Direction comes from which half is kept.</p></div>
+    <div class="crd"><h3>Rectangle</h3><p>Torsos, screens, structure. Keeps a composition from floating.</p></div>
+    <div class="crd"><h3>Semi-rectangle</h3><p>One rounded side. Limbs and cuffs, where a hard edge would read as cold.</p></div>
   </div>
 </section>
 
 <section class="section v2-sec">
   <span class="eyebrow">Three stages</span>
-  <h2 class="v2-h2">What each stage is for.</h2>
   <div class="grid3">
-    <div class="crd"><span class="lbl">Working</span><h3>Geometry</h3><p>Primitives layered on the grid, still visibly separate shapes. This is where proportion is argued about, and the cheapest place to be wrong.</p></div>
-    <div class="crd"><span class="lbl">Working</span><h3>Outline</h3><p>The primitives merge into a single wireframe. Proportion is verified and the composition committed. Colour has not entered yet.</p></div>
-    <div class="crd"><span class="lbl">Ships</span><h3>Final</h3><p>Shading and detail resolved. The delivered asset, and the only one in the manifest as a download.</p></div>
+    <div class="crd"><span class="lbl">Working</span><h3>Geometry</h3><p>Primitives layered on the grid, still visibly separate. The cheapest place to be wrong about proportion.</p></div>
+    <div class="crd"><span class="lbl">Working</span><h3>Outline</h3><p>The primitives merge into one wireframe. Proportion verified, composition committed.</p></div>
+    <div class="crd"><span class="lbl">Ships</span><h3>Final</h3><p>Shading and detail resolved. The delivered asset, and the only download in the manifest.</p></div>
   </div>
 </section>
 
 <section class="section v2-sec">
-  <div class="note"><p><b>Where to see it.</b> Every asset detail page carries its own three stages side by side. Open any character in the <a href="20%20Asset%20Library.html" style="color:var(--yellow)">asset library</a> and the construction is shown against the finished illustration.</p></div>
+  <div class="note"><p><b>Where to see it.</b> Open any character in the <a href="20%20Asset%20Library.html" style="color:var(--yellow)">asset library</a> — each detail page shows its three stages against the finished illustration.</p></div>
 </section>
 
 </main>

@@ -302,8 +302,8 @@
     "git": "website/assets/",
     "skills": "skills/ (pending)"
   },
-  "doors": {
-    "_note": "v2 — one landing page, two doors. The door is derived from the page, not from session state.",
+  "sections": {
+    "_note": "Each page declares its section, so a shared link opens with the right navigation.",
     "landing": {
       "path": "website/v2/00 Home.html",
       "url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/v2/00%20Home.html"

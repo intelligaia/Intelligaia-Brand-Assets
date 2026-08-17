@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Intelligaia · Start · Design system</title>
+<title>Intelligaia · Design system</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
@@ -813,7 +813,7 @@ body.home .section.hero{ min-height:100vh !important; }
 .av-bar{ margin-bottom:clamp(20px,1.6vw,30px) !important; }
 .section.hero{ padding-top:calc(var(--hdr-h) + clamp(56px,4vw,104px)) !important; }
 
-/* ══════════ V2 — two doors ══════════ */
+/* ══════════ V2 ══════════ */
 .g-door{ font-family:'Geist',sans-serif; font-weight:400; font-size:calc(var(--nav-fs) * .92);
   color:var(--ink-muted); white-space:nowrap; }
 .g-door::before{ content:''; display:inline-block; width:1px; height:.95em;
@@ -857,7 +857,7 @@ a.crd:hover{ border-color:rgba(255,200,0,.42); background:var(--bg-3); transform
 .crd .who{ font-family:'Geist',sans-serif; font-size:var(--meta); color:var(--ink-muted);
   margin-top:14px; padding-top:14px; border-top:1px solid var(--hair); display:block; }
 
-/* door cards on the landing page */
+/* section cards on the landing page */
 .door{ display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(24px,2.4vw,60px);
   align-items:center; border:1px solid var(--hair-2); border-radius:20px; background:var(--bg-2);
   padding:clamp(28px,2.4vw,52px); transition:border-color .2s, background .2s; }
@@ -918,7 +918,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
       <span class="g-door">Design system</span>
     </a>
     <nav class="g-nav">
-      <a href="00%20Start.html" class="on">Start here</a>
+      <a href="00%20Start.html" class="on">Overview</a>
       <a href="10%20Foundations.html">Foundations</a>
       <a href="20%20Asset%20Library.html">Asset library</a>
       <a href="30%20Construction.html">Construction</a>
@@ -930,44 +930,31 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 <main>
 
 <section class="section v2-hero">
-  <span class="eyebrow">Design system</span>
-  <h1>Start here.</h1>
-  <p>Four references, one rule each. Read the principles once, then come back for the token, the asset or the construction rule you need — this door is built to be returned to, not read through.</p>
+  <h1>Design system.</h1>
+  <p>Principles, colour, type and the illustration library — with the token files to build from.</p>
 </section>
 
 <section class="section v2-sec">
-  <span class="eyebrow">Who this is for</span>
-  <h2 class="v2-h2">Three readers, one source.</h2>
-  <div class="grid3">
-    <div class="crd"><span class="lbl">Design</span><h3>Designers</h3><p>You are starting a screen or an illustration and do not want to re-decide colour, type or proportion. Take the token and the primitive; spend your judgement on the problem.</p><span class="who">Foundations · Asset library · Construction</span></div>
-    <div class="crd"><span class="lbl">Engineering</span><h3>Engineers</h3><p>You need the token <em>value</em> and the asset <em>URL</em> in a form you can import — not a picture of it. Everything here has a machine-readable twin.</p><span class="who">Tokens &amp; handoff</span></div>
-    <div class="crd"><span class="lbl">Automation</span><h3>AI agents</h3><p>You have been asked to produce an Intelligaia artifact. Parse the spec, pull from the manifest, check the guardrails, and report which assets you used.</p><span class="who">index.json · manifest.json · AGENTS.md</span></div>
-  </div>
-</section>
-
-<section class="section v2-sec">
-  <span class="eyebrow">What is in here</span>
-  <h2 class="v2-h2">Four references.</h2>
+  <span class="eyebrow">What is inside</span>
   <div class="grid4">
-    <a class="crd" href="10%20Foundations.html"><span class="lbl">Core</span><h3>Foundations</h3><p>Philosophy, the three principles, the four colours and the two families — with do and don't for each.</p><span class="go">Open foundations →</span></a>
-    <a class="crd" href="20%20Asset%20Library.html"><span class="lbl">Assets</span><h3>Asset library</h3><p>Every illustration by category, at full size, with dimensions, file size and download.</p><span class="go">Open the library →</span></a>
-    <a class="crd" href="30%20Construction.html"><span class="lbl">Method</span><h3>Construction</h3><p>How an Intelligaia illustration is built — grid first, four primitives, intersect rather than draw.</p><span class="go">Open the method →</span></a>
-    <a class="crd" href="40%20Tokens.html"><span class="lbl">Handoff</span><h3>Tokens &amp; handoff</h3><p>The files to import, the raw asset URL pattern, and the constraints that must survive implementation.</p><span class="go">Open handoff →</span></a>
+    <a class="crd" href="10%20Foundations.html"><span class="lbl">Core</span><h3>Foundations</h3><p>The three principles, four colours and two families, with do and don't for each.</p><span class="go">Open →</span></a>
+    <a class="crd" href="20%20Asset%20Library.html"><span class="lbl">Assets</span><h3>Asset library</h3><p>Every illustration by category, at full size, with dimensions and download.</p><span class="go">Open →</span></a>
+    <a class="crd" href="30%20Construction.html"><span class="lbl">Method</span><h3>Construction</h3><p>How an Intelligaia illustration is built — grid first, four primitives.</p><span class="go">Open →</span></a>
+    <a class="crd" href="40%20Tokens.html"><span class="lbl">Handoff</span><h3>Tokens &amp; handoff</h3><p>The files to import and the asset URL pattern.</p><span class="go">Open →</span></a>
   </div>
 </section>
 
 <section class="section v2-sec">
-  <span class="eyebrow">Your first five minutes</span>
-  <h2 class="v2-h2">If you do nothing else.</h2>
+  <span class="eyebrow">Before you start</span>
   <div class="steps">
-    <div class="step"><span class="w">Read</span><p><b>The three principles, once.</b> They are short, and every do/don't in this door resolves back to them. Skipping them is why brand reviews turn into taste arguments.</p></div>
-    <div class="step"><span class="w">Take</span><p><b>The token, not the hex.</b> Copy from the token file rather than a swatch on screen. Hexes typed by hand are the single most common source of drift.</p></div>
-    <div class="step"><span class="w">Check</span><p><b>Your work against the constraints.</b> Four colours, two families, nothing above weight 500 on web, running case in headings. If you break one, say so deliberately.</p></div>
+    <div class="step"><span class="w">Read</span><p><b>The three principles, once.</b> Every do and don't here resolves back to them.</p></div>
+    <div class="step"><span class="w">Take</span><p><b>The token, not the hex.</b> Hexes typed by hand are the most common source of drift.</p></div>
+    <div class="step"><span class="w">Check</span><p><b>Your work against the constraints.</b> Four colours, two families, nothing above weight 500 on web.</p></div>
   </div>
 </section>
 
 <section class="section v2-sec">
-  <div class="note"><p><b>If no asset fits, report the gap — do not generate one.</b> Synthesising an illustration to fill a hole is how a library stops being a library. Tell the design team what was missing; it gets built and added to the manifest.</p></div>
+  <div class="note"><p><b>If no asset fits, report the gap — do not generate one.</b> Tell the design team what was missing; it gets built and added to the manifest.</p></div>
 </section>
 
 </main>

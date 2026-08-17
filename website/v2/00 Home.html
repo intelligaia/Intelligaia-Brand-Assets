@@ -813,7 +813,7 @@ body.home .section.hero{ min-height:100vh !important; }
 .av-bar{ margin-bottom:clamp(20px,1.6vw,30px) !important; }
 .section.hero{ padding-top:calc(var(--hdr-h) + clamp(56px,4vw,104px)) !important; }
 
-/* ══════════ V2 — two doors ══════════ */
+/* ══════════ V2 ══════════ */
 .g-door{ font-family:'Geist',sans-serif; font-weight:400; font-size:calc(var(--nav-fs) * .92);
   color:var(--ink-muted); white-space:nowrap; }
 .g-door::before{ content:''; display:inline-block; width:1px; height:.95em;
@@ -857,7 +857,7 @@ a.crd:hover{ border-color:rgba(255,200,0,.42); background:var(--bg-3); transform
 .crd .who{ font-family:'Geist',sans-serif; font-size:var(--meta); color:var(--ink-muted);
   margin-top:14px; padding-top:14px; border-top:1px solid var(--hair); display:block; }
 
-/* door cards on the landing page */
+/* section cards on the landing page */
 .door{ display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(24px,2.4vw,60px);
   align-items:center; border:1px solid var(--hair-2); border-radius:20px; background:var(--bg-2);
   padding:clamp(28px,2.4vw,52px); transition:border-color .2s, background .2s; }
@@ -930,7 +930,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
   <div class="hero-grid">
     <div class="hero-left">
       <h1 class="hero-h1">Design that<br>earns trust.</h1>
-      <p class="hero-h2 reveal" data-delay="5">Everything Intelligaia makes, and the rules that make it ours. One source — two ways in.</p>
+      <p class="hero-h2 reveal" data-delay="5">Everything Intelligaia makes, and the rules that make it ours.</p>
       <div class="btn-row reveal" data-delay="6">
         <a href="ds/00%20Start.html" class="btn-p">Design system →</a>
         <a href="mk/00%20Start.html" class="btn-o">Marketing kit →</a>
@@ -992,20 +992,14 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
   </div>
 </section>
 
-<section class="section v2-sec" id="doors">
-  <span class="eyebrow reveal">Two doors</span>
-  <h2 class="v2-h2 reveal" data-delay="1">One brand. Two ways in.</h2>
-  <p class="v2-lede reveal" data-delay="2">Same repository, same tokens, same asset library. What changes is the route — so you are never reading someone else's half of the system to find your own.</p>
-</section>
-
-<section class="section v2-sec" style="padding-top:0 !important;">
+<section class="section v2-sec" id="pick">
   <a href="ds/00%20Start.html" class="door reveal">
     <div>
-      <span class="lbl">For designers and engineers</span>
+      <span class="lbl">Designers and engineers</span>
       <h2>Design system.</h2>
-      <p>The atoms every artifact obeys — principles, colour, type, the illustration library and the geometry it is built from. Plus the token and manifest files an engineer or an agent consumes directly.</p>
-      <div class="chips"><span>Foundations</span><span>Asset library</span><span>Construction method</span><span>Tokens &amp; handoff</span></div>
-      <span class="go">Start with the design system →</span>
+      <p>Principles, colour, type and the illustration library — with the token files to build from.</p>
+      <div class="chips"><span>Foundations</span><span>Asset library</span><span>Construction</span><span>Tokens &amp; handoff</span></div>
+      <span class="go">Open the design system →</span>
     </div>
     <div class="door-viz">
       <img src="../assets/Website%20banner%20assets/Swatches.png" alt="Brand colour swatches" style="max-height:170px;" />
@@ -1017,11 +1011,11 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 <section class="section v2-sec" style="padding-top:0 !important;">
   <a href="mk/00%20Start.html" class="door reveal">
     <div>
-      <span class="lbl">For marketing and business development</span>
+      <span class="lbl">Marketing and business development</span>
       <h2>Marketing kit.</h2>
-      <p>The collateral that goes in front of a client — service catalog, case studies, whitepapers, landing pages, diagrams and social. Plus the skills that will assemble them for you.</p>
+      <p>The collateral that goes in front of a client, and the format each piece follows.</p>
       <div class="chips"><span>Service catalog</span><span>Case studies</span><span>Whitepapers</span><span>Landing pages</span><span>Diagrams</span><span>Social</span><span>Skills</span></div>
-      <span class="go">Start with the marketing kit →</span>
+      <span class="go">Open the marketing kit →</span>
     </div>
     <div class="door-viz">
       <img src="../assets/Website%20banner%20assets/Capability%20Statement.png" alt="Intelligaia capability statement cover" style="max-height:250px;" />
@@ -1029,38 +1023,15 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
   </a>
 </section>
 
-<section class="section v2-sec">
-  <span class="eyebrow reveal">One source</span>
-  <h2 class="v2-h2 reveal" data-delay="1">The doors are wayfinding. Nothing is duplicated.</h2>
-  <p class="v2-lede reveal" data-delay="2">A proposal deck uses the same illustrations and the same yellow as a product screen. Splitting the route does not split the truth.</p>
-  <div class="grid3 reveal" data-delay="3">
-    <div class="crd">
-      <span class="lbl">Assets</span>
-      <h3>One library</h3>
-      <p>279 assets — characters, devices, objects, nature, icons, isometric letters and waves. Both doors read the same manifest.</p>
-    </div>
-    <div class="crd">
-      <span class="lbl">Tokens</span>
-      <h3>One token set</h3>
-      <p>Colour, type and dimension in W3C format, generated from Figma. Never hand-edited, so the site and the product cannot drift apart.</p>
-    </div>
-    <div class="crd">
-      <span class="lbl">Rules</span>
-      <h3>One set of rules</h3>
-      <p>Four colours, two families, no weight above 500 on web. The constraints are short enough to remember and strict enough to matter.</p>
-    </div>
-  </div>
-</section>
-
 <section class="section v2-sec" id="agents">
   <span class="eyebrow reveal">For agents</span>
   <h2 class="v2-h2 reveal" data-delay="1">Written for humans. Structured for agents.</h2>
-  <p class="v2-lede reveal" data-delay="2">Every rule, asset and template lives here once — as prose a designer reads, and as JSON an agent parses. As more of our output is generated rather than drawn, a style guide only humans can read would drift within two quarters. This one holds.</p>
+  <p class="v2-lede reveal" data-delay="2">Every rule and asset lives here once — as prose a designer reads, and as JSON an agent parses.</p>
   <div class="grid4 reveal" data-delay="3">
-    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/index.json"><span class="lbl">Map</span><h3>index.json</h3><p>Every page, its door, its type and its spec URL.</p><span class="go">Open →</span></a>
-    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/manifest.json"><span class="lbl">Assets</span><h3>manifest.json</h3><p>279 assets with dimensions, tags and public URLs.</p><span class="go">Open →</span></a>
-    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/tokens/design-tokens.json"><span class="lbl">Tokens</span><h3>design-tokens.json</h3><p>W3C colour, type and dimension tokens.</p><span class="go">Open →</span></a>
-    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/AGENTS.md"><span class="lbl">Contract</span><h3>AGENTS.md</h3><p>How an agent should behave here, and how to fail loudly.</p><span class="go">Open →</span></a>
+    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/index.json"><span class="lbl">Map</span><h3>index.json</h3><p>Every page and its spec.</p><span class="go">Open →</span></a>
+    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/manifest.json"><span class="lbl">Assets</span><h3>manifest.json</h3><p>279 assets with dimensions and URLs.</p><span class="go">Open →</span></a>
+    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/tokens/design-tokens.json"><span class="lbl">Tokens</span><h3>design-tokens.json</h3><p>Colour, type and dimension.</p><span class="go">Open →</span></a>
+    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/AGENTS.md"><span class="lbl">Contract</span><h3>AGENTS.md</h3><p>How to behave here, and how to fail loudly.</p><span class="go">Open →</span></a>
   </div>
 </section>
 

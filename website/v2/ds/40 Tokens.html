@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Intelligaia · Tokens & handoff · Design system</title>
+<title>Intelligaia · Tokens & handoff</title>
 <link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
@@ -813,7 +813,7 @@ body.home .section.hero{ min-height:100vh !important; }
 .av-bar{ margin-bottom:clamp(20px,1.6vw,30px) !important; }
 .section.hero{ padding-top:calc(var(--hdr-h) + clamp(56px,4vw,104px)) !important; }
 
-/* ══════════ V2 — two doors ══════════ */
+/* ══════════ V2 ══════════ */
 .g-door{ font-family:'Geist',sans-serif; font-weight:400; font-size:calc(var(--nav-fs) * .92);
   color:var(--ink-muted); white-space:nowrap; }
 .g-door::before{ content:''; display:inline-block; width:1px; height:.95em;
@@ -857,7 +857,7 @@ a.crd:hover{ border-color:rgba(255,200,0,.42); background:var(--bg-3); transform
 .crd .who{ font-family:'Geist',sans-serif; font-size:var(--meta); color:var(--ink-muted);
   margin-top:14px; padding-top:14px; border-top:1px solid var(--hair); display:block; }
 
-/* door cards on the landing page */
+/* section cards on the landing page */
 .door{ display:grid; grid-template-columns:1.15fr .85fr; gap:clamp(24px,2.4vw,60px);
   align-items:center; border:1px solid var(--hair-2); border-radius:20px; background:var(--bg-2);
   padding:clamp(28px,2.4vw,52px); transition:border-color .2s, background .2s; }
@@ -918,7 +918,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
       <span class="g-door">Design system</span>
     </a>
     <nav class="g-nav">
-      <a href="00%20Start.html">Start here</a>
+      <a href="00%20Start.html">Overview</a>
       <a href="10%20Foundations.html">Foundations</a>
       <a href="20%20Asset%20Library.html">Asset library</a>
       <a href="30%20Construction.html">Construction</a>
@@ -930,45 +930,39 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 <main>
 
 <section class="section v2-hero">
-  <span class="eyebrow">Design system</span>
   <h1>Tokens &amp; handoff.</h1>
-  <p>The machine-readable half of this system. Everything a designer reads as prose in Foundations exists here as a file an engineer imports or an agent parses — so the guidance and the implementation cannot disagree.</p>
+  <p>Everything Foundations says as prose exists here as a file you can import — so the guidance and the implementation cannot disagree.</p>
 </section>
 
 <section class="section v2-sec">
-  <span class="eyebrow">What to consume</span>
-  <h2 class="v2-h2">Five files.</h2>
-  <p class="v2-lede">Read these rather than the rendered page. The page is a view of them.</p>
+  <span class="eyebrow">What to import</span>
   <table class="ftab">
-    <tr><th>File</th><th>What it holds</th><th>Who reads it</th></tr>
-    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/tokens/design-tokens.json"><code>design-tokens.json</code></a></td><td>Colour, type and dimension in W3C token format. Generated from Figma — never hand-edited.</td><td>Engineers, agents</td></tr>
-    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/tokens/figma.json"><code>figma.json</code></a></td><td>Where the Figma source lives and how the sync runs.</td><td>Designers</td></tr>
-    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/manifest.json"><code>manifest.json</code></a></td><td>279 assets with dimensions, tags, construction stage and public URL.</td><td>Everyone</td></tr>
-    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/index.json"><code>index.json</code></a></td><td>Every page, its door, its type and its spec URL.</td><td>Agents</td></tr>
-    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/AGENTS.md"><code>AGENTS.md</code></a></td><td>The behavioural contract — workflows, hard constraints and failure modes.</td><td>Agents</td></tr>
+    <tr><th>File</th><th>What it holds</th></tr>
+    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/tokens/design-tokens.json"><code>design-tokens.json</code></a></td><td>Colour, type and dimension in W3C format. Generated from Figma — never hand-edited.</td></tr>
+    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/tokens/figma.json"><code>figma.json</code></a></td><td>Where the Figma source lives and how the sync runs.</td></tr>
+    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/assets/manifest.json"><code>manifest.json</code></a></td><td>279 assets with dimensions, tags, stage and public URL.</td></tr>
+    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/website/index.json"><code>index.json</code></a></td><td>Every page, its type and its spec URL.</td></tr>
+    <tr><td><a href="https://github.com/intelligaia/Intelligaia-Brand-Assets/blob/main/AGENTS.md"><code>AGENTS.md</code></a></td><td>The behavioural contract — workflows, constraints and failure modes.</td></tr>
   </table>
 </section>
 
 <section class="section v2-sec">
-  <span class="eyebrow">Raw assets</span>
-  <h2 class="v2-h2">Consuming an asset by URL.</h2>
-  <p class="v2-lede">The <code>assets</code> branch carries the asset tree at root with nothing else, so any file can be hot-linked without cloning the repository.</p>
-  <div class="note"><p><code>https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/&lt;path&gt;</code><br><br>Take <b>&lt;path&gt;</b> from the <code>path</code> field in <code>manifest.json</code>. Do not construct it by hand from a filename — spacing and em dashes in asset names are load-bearing and easy to get wrong.</p></div>
+  <span class="eyebrow">Asset URLs</span>
+  <div class="note"><p><code>https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/&lt;path&gt;</code><br><br>Take <b>&lt;path&gt;</b> from the <code>path</code> field in <code>manifest.json</code>. Do not build it by hand — spacing and em dashes in asset names are load-bearing.</p></div>
 </section>
 
 <section class="section v2-sec">
   <span class="eyebrow">Constraints</span>
-  <h2 class="v2-h2">What must survive implementation.</h2>
   <div class="grid2">
-    <div class="crd"><span class="lbl">Colour</span><h3>Four, flat</h3><p>#FFC800, #04050A, #4A8BF5, #8A5AF0, plus theme neutrals. Flat fills only. No gradient on the yellow. One accent — blue or purple, not both — per viewport.</p></div>
-    <div class="crd"><span class="lbl">Type</span><h3>Two families, 500 ceiling</h3><p>Oswald 400/500 for headings, Geist for everything else. No weight above 500 exists on web. Running case in headings; uppercase only below 13px.</p></div>
-    <div class="crd"><span class="lbl">Layout</span><h3>1440 / 48</h3><p>1440px max width, 48px gutter. No numeric prefixes on headings or cards.</p></div>
-    <div class="crd"><span class="lbl">Assets</span><h3>Library only</h3><p>Illustrations come from the manifest. Never generate one. If nothing fits, report the gap.</p></div>
+    <div class="crd"><h3>Colour</h3><p>#FFC800, #04050A, #4A8BF5, #8A5AF0, plus neutrals. Flat fills. No gradient on the yellow. One accent per viewport.</p></div>
+    <div class="crd"><h3>Type</h3><p>Oswald 400/500 for headings, Geist for everything else. No weight above 500 on web. Running case in headings.</p></div>
+    <div class="crd"><h3>Layout</h3><p>1440px max width, 48px gutter. No numeric prefixes on headings or cards.</p></div>
+    <div class="crd"><h3>Assets</h3><p>Illustrations come from the manifest. Never generate one. If nothing fits, report the gap.</p></div>
   </div>
 </section>
 
 <section class="section v2-sec">
-  <div class="note"><p><b>Two type systems exist on purpose.</b> Web and product use Oswald and Geist with #FFC800. Presentations use Montserrat with #FFD700, inherited from the corporate deck. Do not merge them inside one artifact — use each on its own surface. Unification is planned but has not landed.</p></div>
+  <div class="note"><p><b>Two type systems exist on purpose.</b> Web and product use Oswald and Geist with #FFC800. Presentations use Montserrat with #FFD700. Do not merge them inside one artifact.</p></div>
 </section>
 
 </main>
