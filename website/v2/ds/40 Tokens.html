@@ -1011,6 +1011,11 @@ body.rail-on .section{ max-width:1900px !important;
     <a href="30%20Construction.html">Construction</a>
     <span class="rail-lbl">Handoff</span>
     <a href="40%20Tokens.html" class="on">Tokens &amp; handoff</a>
+    <div class="sub">
+      <a href="40%20Tokens.html#what-to-import">What to import</a>
+      <a href="40%20Tokens.html#asset-urls">Asset URLs</a>
+      <a href="40%20Tokens.html#constraints">Constraints</a>
+    </div>
   </nav>
 </aside>
 <main>
@@ -1020,7 +1025,7 @@ body.rail-on .section{ max-width:1900px !important;
   <p>Everything Foundations says as prose exists here as a file you can import — so the guidance and the implementation cannot disagree.</p>
 </section>
 
-<section class="section v2-sec">
+<section class="section v2-sec" id="what-to-import">
   <span class="eyebrow">What to import</span>
   <table class="ftab">
     <tr><th>File</th><th>What it holds</th></tr>
@@ -1032,12 +1037,12 @@ body.rail-on .section{ max-width:1900px !important;
   </table>
 </section>
 
-<section class="section v2-sec">
+<section class="section v2-sec" id="asset-urls">
   <span class="eyebrow">Asset URLs</span>
   <div class="note"><p><code>https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/&lt;path&gt;</code><br><br>Take <b>&lt;path&gt;</b> from the <code>path</code> field in <code>manifest.json</code>. Do not build it by hand — spacing and em dashes in asset names are load-bearing.</p></div>
 </section>
 
-<section class="section v2-sec">
+<section class="section v2-sec" id="constraints">
   <span class="eyebrow">Constraints</span>
   <div class="grid2">
     <div class="crd"><h3>Colour</h3><p>#FFC800, #04050A, #4A8BF5, #8A5AF0, plus neutrals. Flat fills. No gradient on the yellow. One accent per viewport.</p></div>
@@ -1224,6 +1229,7 @@ document.addEventListener('DOMContentLoaded', function(){
   ready(function(){
     var b=document.getElementById('railBtn');
     if(b) b.addEventListener('click',function(){ document.body.classList.toggle('rail-open'); });
+
     /* category pages resolve their own sub-item from the query string */
     var c=new URLSearchParams(location.search).get('c');
     if(c){
@@ -1232,6 +1238,55 @@ document.addEventListener('DOMContentLoaded', function(){
         var p=document.querySelector('.rail a[href*="Asset%20Library"]');
         if(p) p.classList.remove('on'); }
     }
+
+    /* ── Scroll spy ──────────────────────────────────────────────────
+       The rail reports where you are, not just where you last clicked.
+       Applies to every page that has in-page sections; pages without
+       anchors simply opt out. */
+    var rail=document.getElementById('rail');
+    var items=[];
+    [].forEach.call(document.querySelectorAll('.rail .sub a[href*="#"]'), function(a){
+      var id=a.getAttribute('href').split('#')[1];
+      var el=id && document.getElementById(id);
+      if(el) items.push({a:a, el:el});
+    });
+    if(!items.length) return;
+
+    var cur=null, queued=false;
+
+    function readLine(){
+      var v=getComputedStyle(document.documentElement).getPropertyValue('--hdr-h');
+      return (parseFloat(v)||90)+32;      /* just below the fixed header */
+    }
+    function pick(){
+      var y=readLine(), found=items[0];
+      for(var i=0;i<items.length;i++){
+        if(items[i].el.getBoundingClientRect().top<=y) found=items[i];
+      }
+      /* the last section can be too short to ever reach the line */
+      var doc=document.documentElement;
+      if(doc.scrollHeight>window.innerHeight+4 &&
+         window.innerHeight+window.pageYOffset>=(doc.scrollHeight-4)) found=items[items.length-1];
+      return found;
+    }
+    function sync(){
+      queued=false;
+      var f=pick();
+      if(f===cur) return;
+      cur=f;
+      for(var i=0;i<items.length;i++) items[i].a.classList.toggle('on', items[i]===f);
+      /* keep the marker visible when the rail itself scrolls */
+      if(rail && rail.scrollHeight>rail.clientHeight+2){
+        var r=f.a.getBoundingClientRect(), rr=rail.getBoundingClientRect();
+        if(r.top<rr.top+10 || r.bottom>rr.bottom-10) f.a.scrollIntoView({block:'nearest'});
+      }
+      /* shareable URL — replace, never push, so Back still leaves the page */
+      try{ history.replaceState(null,'','#'+f.el.id); }catch(e){}
+    }
+    function onScroll(){ if(!queued){ queued=true; requestAnimationFrame(sync); } }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    sync();
   });
 })();
 </script>

@@ -1009,6 +1009,11 @@ body.rail-on .section{ max-width:1900px !important;
     <a href="10%20Foundations.html">Foundations</a>
     <a href="20%20Asset%20Library.html">Asset library</a>
     <a href="30%20Construction.html" class="on">Construction</a>
+    <div class="sub">
+      <a href="30%20Construction.html#how-it-is-built">How it is built</a>
+      <a href="30%20Construction.html#the-four-primitives">The four primitives</a>
+      <a href="30%20Construction.html#three-stages">Three stages</a>
+    </div>
     <span class="rail-lbl">Handoff</span>
     <a href="40%20Tokens.html">Tokens &amp; handoff</a>
   </nav>
@@ -1020,7 +1025,7 @@ body.rail-on .section{ max-width:1900px !important;
   <p>Illustrations are assembled from four primitives on a fixed grid. This is what keeps 279 assets looking like one hand made them.</p>
 </section>
 
-<section class="section v2-sec">
+<section class="section v2-sec" id="how-it-is-built">
   <span class="eyebrow">How it is built</span>
   <div class="steps">
     <div class="step"><span class="w">Grid</span><p><b>Everything starts on the 50×50 grid.</b> Proportion is decided before any shape is placed.</p></div>
@@ -1030,7 +1035,7 @@ body.rail-on .section{ max-width:1900px !important;
   </div>
 </section>
 
-<section class="section v2-sec">
+<section class="section v2-sec" id="the-four-primitives">
   <span class="eyebrow">The four primitives</span>
   <div class="grid4">
     <div class="crd"><h3>Circle</h3><p>Heads, eyes, lenses, joints. Carries most of the warmth in a figure.</p></div>
@@ -1040,7 +1045,7 @@ body.rail-on .section{ max-width:1900px !important;
   </div>
 </section>
 
-<section class="section v2-sec">
+<section class="section v2-sec" id="three-stages">
   <span class="eyebrow">Three stages</span>
   <div class="grid3">
     <div class="crd"><span class="lbl">Working</span><h3>Geometry</h3><p>Primitives layered on the grid, still visibly separate. The cheapest place to be wrong about proportion.</p></div>
@@ -1226,6 +1231,7 @@ document.addEventListener('DOMContentLoaded', function(){
   ready(function(){
     var b=document.getElementById('railBtn');
     if(b) b.addEventListener('click',function(){ document.body.classList.toggle('rail-open'); });
+
     /* category pages resolve their own sub-item from the query string */
     var c=new URLSearchParams(location.search).get('c');
     if(c){
@@ -1234,6 +1240,55 @@ document.addEventListener('DOMContentLoaded', function(){
         var p=document.querySelector('.rail a[href*="Asset%20Library"]');
         if(p) p.classList.remove('on'); }
     }
+
+    /* ── Scroll spy ──────────────────────────────────────────────────
+       The rail reports where you are, not just where you last clicked.
+       Applies to every page that has in-page sections; pages without
+       anchors simply opt out. */
+    var rail=document.getElementById('rail');
+    var items=[];
+    [].forEach.call(document.querySelectorAll('.rail .sub a[href*="#"]'), function(a){
+      var id=a.getAttribute('href').split('#')[1];
+      var el=id && document.getElementById(id);
+      if(el) items.push({a:a, el:el});
+    });
+    if(!items.length) return;
+
+    var cur=null, queued=false;
+
+    function readLine(){
+      var v=getComputedStyle(document.documentElement).getPropertyValue('--hdr-h');
+      return (parseFloat(v)||90)+32;      /* just below the fixed header */
+    }
+    function pick(){
+      var y=readLine(), found=items[0];
+      for(var i=0;i<items.length;i++){
+        if(items[i].el.getBoundingClientRect().top<=y) found=items[i];
+      }
+      /* the last section can be too short to ever reach the line */
+      var doc=document.documentElement;
+      if(doc.scrollHeight>window.innerHeight+4 &&
+         window.innerHeight+window.pageYOffset>=(doc.scrollHeight-4)) found=items[items.length-1];
+      return found;
+    }
+    function sync(){
+      queued=false;
+      var f=pick();
+      if(f===cur) return;
+      cur=f;
+      for(var i=0;i<items.length;i++) items[i].a.classList.toggle('on', items[i]===f);
+      /* keep the marker visible when the rail itself scrolls */
+      if(rail && rail.scrollHeight>rail.clientHeight+2){
+        var r=f.a.getBoundingClientRect(), rr=rail.getBoundingClientRect();
+        if(r.top<rr.top+10 || r.bottom>rr.bottom-10) f.a.scrollIntoView({block:'nearest'});
+      }
+      /* shareable URL — replace, never push, so Back still leaves the page */
+      try{ history.replaceState(null,'','#'+f.el.id); }catch(e){}
+    }
+    function onScroll(){ if(!queued){ queued=true; requestAnimationFrame(sync); } }
+    window.addEventListener('scroll', onScroll, {passive:true});
+    window.addEventListener('resize', onScroll);
+    sync();
   });
 })();
 </script>
