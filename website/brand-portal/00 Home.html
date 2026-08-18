@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Intelligaia · Design system</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+<title>Intelligaia · Branding</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 
@@ -55,7 +55,7 @@ body::before {
 .section.hero { padding-top: 120px; padding-bottom: 40px; align-items: stretch; justify-content: center; min-height: 100vh; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.2fr); gap: 40px; align-items: center; width: 100%; }
 .hero-left { max-width: 560px; }
-.eyebrow { font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;  color: var(--ink-muted); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; }
+.eyebrow { font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500; letter-spacing:.005em;   color: var(--ink-muted); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; }
 .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--yellow); }
 
 /* HERO H1 — Oswald Medium, 2 lines, smaller, word-by-word reveal */
@@ -113,7 +113,7 @@ body::before {
 /* photo-style card: image wrapped in cream mount */
 .cut-photo { padding: 10px 10px 42px; background: #F4EFDF; }
 .cut-photo img { display: block; width: 100%; height: 100%; object-fit: cover; background: #EDE8D8; }
-.cut-photo .cap-strip { text-transform: uppercase; position: absolute; left: 12px; right: 12px; bottom: 10px; font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 10px; color: #333; opacity: 0.55; display: flex; justify-content: space-between; letter-spacing: 0.02em; }
+.cut-photo .cap-strip {  position: absolute; left: 12px; right: 12px; bottom: 10px; font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 10px; color: #333; opacity: 0.55; display: flex; justify-content: space-between; letter-spacing:.005em; }
 
 /* ═══ CUTOUT ART — the five supplied PNG cutouts ═══════════════════════════
    Torn edges, tape and paper shadow are baked into the artwork, so these get
@@ -195,7 +195,7 @@ body::before {
 .df-logo img { height: 32px; filter: invert(1) brightness(1.1); }
 .df-tag { font-family: 'Geist', sans-serif; font-size: 12px; color: var(--ink-muted); margin: 12px 0 0; }
 .df-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.df-cols h5 { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;  color: var(--ink-muted); margin: 0 0 14px; }
+.df-cols h5 { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 13px; letter-spacing:.005em;   color: var(--ink-muted); margin: 0 0 14px; }
 .df-cols ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .df-cols a { font-family: 'Geist', sans-serif; font-size: 14px; color: var(--ink); opacity: 0.75; transition: opacity 0.15s; }
 .df-cols a:hover { opacity: 1; color: var(--yellow); }
@@ -236,7 +236,7 @@ body::before {
 .fnd-tile-lbl { font-family: 'Geist', sans-serif; font-size: 12px; letter-spacing: 0.14em;  color: var(--ink-muted); margin-bottom: 20px; }
 .fnd-p-list { display: flex; flex-direction: column; gap: 12px; flex: 1; }
 .fnd-p-list > div { display: flex; align-items: baseline; gap: 12px; }
-.fnd-p-n { font-family: 'Geist', sans-serif; font-size: 12px; color: var(--yellow); }
+.fnd-p-n { font-family: 'Geist', sans-serif; font-size: 12px; color:var(--ink-muted); }
 .fnd-p-list span:last-child { font-family: 'Geist', sans-serif; font-weight: 400; font-size: 20px; color: var(--ink-soft); }
 .fnd-c-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; flex: 1; }
 .fnd-c-grid span { border-radius: 10px; }
@@ -269,10 +269,10 @@ body::before {
 .ix-row:hover .ix-arrow { color: var(--yellow); transform: translateX(6px); }
 .ix-row:hover .ix-title { color: var(--yellow); }
 
-.ix-num { font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 12px; color: var(--yellow); letter-spacing: 0.14em; }
+.ix-num { font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 12px; color:var(--ink-muted); letter-spacing: 0.14em; }
 .ix-title-wrap { display: flex; flex-direction: column; gap: 4px; }
 .ix-title { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.05; letter-spacing: -0.01em; color: var(--ink-soft); margin: 0; transition: color 0.2s ease; }
-.ix-sub { font-family: 'Geist', sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;  color: var(--ink-muted); }
+.ix-sub { font-family: 'Geist', sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing:.005em;   color: var(--ink-muted); }
 
 .ix-thumbs { display: flex; gap: 10px; overflow: hidden; align-items: center; justify-content: flex-end; }
 .ix-thumb {
@@ -302,7 +302,7 @@ body::before {
 .ix-thumb.thumb-aa { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 44px; color: var(--ink-soft); letter-spacing: -0.03em; line-height: 1; }
 .ix-thumb.thumb-nums { display: flex; flex-direction: column; align-items: flex-start; padding: 12px; gap: 6px; }
 .ix-thumb.thumb-nums span { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--ink-muted); display: flex; align-items: center; gap: 6px; }
-.ix-thumb.thumb-nums span::before { content: ''; width: 12px; height: 1px; background: var(--yellow); }
+.ix-thumb.thumb-nums span::before { content: ''; width: 12px; height: 1px; background:var(--hair-2); }
 .ix-thumb.thumb-yellow-banner { background: var(--yellow); display: flex; align-items: flex-end; padding: 8px; }
 .ix-thumb.thumb-yellow-banner::before { content: ''; width: 60%; height: 8px; background: #04050A; }
 
@@ -337,22 +337,22 @@ body::before {
 .chapter-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--yellow);
+  background:var(--hair-2);
   transform: scaleX(0); transform-origin: left;
   transition: transform 0.35s cubic-bezier(0.22, 0.9, 0.3, 1);
 }
 .chapter-card:hover::before { transform: scaleX(1); }
 
 .chapter-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
-.chapter-num { font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 12px; color: var(--yellow); letter-spacing: 0.14em; }
-.chapter-tag { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;  color: var(--ink-muted); }
+.chapter-num { font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 12px; color:var(--ink-muted); letter-spacing: 0.14em; }
+.chapter-tag { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 500; letter-spacing:.005em;   color: var(--ink-muted); }
 
 .chapter-title { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(28px, 3vw, 42px); line-height: 1.05; letter-spacing: -0.01em; color: var(--ink-soft); margin: 0 0 12px; }
 .chapter-lede { font-family: 'Geist', sans-serif; font-size: 15px; line-height: 1.55; color: var(--ink-muted); margin: 0 0 22px; max-width: 44ch; }
 
 .chapter-contents { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 8px; }
 .chapter-contents li { display: flex; align-items: center; gap: 10px; font-family: 'Geist', sans-serif; font-size: 13.5px; color: var(--ink); opacity: 0.85; }
-.chapter-contents li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--yellow); flex: none; }
+.chapter-contents li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background:var(--hair-2); flex: none; }
 .chapter-contents li .soon { font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); padding: 2px 6px; border: 1px solid var(--hair-2); border-radius: 4px; margin-left: 6px;  letter-spacing: 0.08em; }
 
 .chapter-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--hair); }
@@ -366,7 +366,7 @@ body::before {
 @media (max-width: 700px) { .system-purpose { grid-template-columns: 1fr; } }
 .pp-chip { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 999px; font-family: 'Geist', sans-serif; font-size: 12.5px; color: var(--ink-muted); }
 .pp-chip strong { font-weight: 500; color: var(--ink); }
-.pp-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); flex: none; }
+.pp-chip .dot { width: 6px; height: 6px; border-radius: 50%; background:var(--hair-2); flex: none; }
 
 
 
@@ -374,8 +374,8 @@ body::before {
 .pb-group { margin-top: 40px; }
 .pb-group + .pb-group { margin-top: 64px; }
 .pb-group-hd { display:flex; align-items:baseline; gap:14px; padding-bottom:14px; }
-.pb-kind { font-family: 'Geist', sans-serif; font-size:10.5px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#04050A; background:var(--ink-muted); padding:4px 12px; border-radius:999px; }
-.pb-kind.produce { background:var(--yellow); }
+.pb-kind { font-family: 'Geist', sans-serif; font-size:10.5px; font-weight:500; letter-spacing:.005em;  color:#04050A; background:var(--ink-muted); padding:4px 12px; border-radius:999px; }
+.pb-kind.produce { background:var(--bg-3); }
 .pb-group-note { font-family: 'Geist', sans-serif; font-weight:400; font-size:15px; color:var(--ink-muted); }
 .system-index { border-top:1px solid var(--hair); margin-top:0; }
 
@@ -419,7 +419,7 @@ body::before {
 .show-card:hover::before{ box-shadow:inset 0 0 0 1px var(--yellow); }
 @media (max-width:960px){ .show-card{ grid-template-columns:1fr; gap:34px; padding:36px 30px; } }
 
-.show-eyebrow{ font-family:'Geist',sans-serif; font-size:11.5px; font-weight:400; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-muted); display:inline-flex; align-items:center; gap:10px; margin-bottom:18px; }
+.show-eyebrow{ font-family:'Geist',sans-serif; font-size:11.5px; font-weight:400; letter-spacing:.005em;  color:var(--ink-muted); display:inline-flex; align-items:center; gap:10px; margin-bottom:18px; }
 .show-eyebrow::before{ content:''; width:26px; height:1px; background:var(--yellow); }
 .show-card h2{ font-family:'Oswald',sans-serif; font-weight: 400; font-size:clamp(34px,4.2vw,58px); line-height:1.04; letter-spacing:-.015em; color:var(--ink-soft); margin:0 0 16px; }
 .show-desc{ font-family:'Geist',sans-serif; font-weight:400; font-size:15.5px; line-height:1.62; color:var(--ink-muted); margin:0 0 26px; max-width:50ch; }
@@ -444,7 +444,7 @@ body::before {
 .fv-aa{ font-family:'Oswald',sans-serif; font-weight:500; font-size:66px; line-height:1; color:var(--ink-soft); letter-spacing:-.03em; text-align:center; }
 .fv-pr{ display:flex; flex-direction:column; gap:6px; }
 .fv-pr i{ font-style:normal; font-family:'Geist',sans-serif; font-size:12px; color:var(--ink-muted); display:flex; align-items:center; gap:8px; }
-.fv-pr i::before{ content:''; width:14px; height:1px; background:var(--yellow); flex:none; }
+.fv-pr i::before{ content:''; width:14px; height:1px; background:var(--hair-2); flex:none; }
 
 /* mock visuals */
 .mv{ width:74%; border-radius:10px; box-shadow:0 20px 50px -16px rgba(0,0,0,.55); overflow:hidden; }
@@ -491,11 +491,11 @@ body::before {
 /* foundations viz — three inner cards */
 .fnd-three{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; width:100%; padding:16px; }
 .fnd-mini{ background:var(--bg-2); border:1px solid var(--hair); border-radius:10px; padding:14px 12px; display:flex; flex-direction:column; gap:9px; min-height:0; }
-.fnd-mini .t{ font-family:'Geist',sans-serif; font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-muted); }
+.fnd-mini .t{ font-family:'Geist',sans-serif; font-size:10px; letter-spacing:.005em;  color:var(--ink-muted); }
 .fnd-mini .body{ flex:1; display:flex; align-items:center; justify-content:center; }
 .fnd-mini .pr{ display:flex; flex-direction:column; gap:6px; width:100%; }
 .fnd-mini .pr i{ font-style:normal; font-family:'Geist',sans-serif; font-size:10.5px; color:var(--ink); opacity:.85; display:flex; align-items:center; gap:6px; line-height:1.25; }
-.fnd-mini .pr i::before{ content:''; width:9px; height:1px; background:var(--yellow); flex:none; }
+.fnd-mini .pr i::before{ content:''; width:9px; height:1px; background:var(--hair-2); flex:none; }
 .fnd-mini .aa{ font-family:'Oswald',sans-serif; font-weight:500; font-size:42px; line-height:1; color:var(--ink-soft); letter-spacing:-.03em; }
 .fnd-mini .aa small{ display:block; font-family:'Geist',sans-serif; font-size:9.5px; font-weight:400; color:var(--ink-muted); letter-spacing:.06em; margin-top:5px; text-align:center; }
 .fnd-mini .sw{ display:grid; grid-template-columns:1fr 1fr; gap:6px; width:100%; }
@@ -571,7 +571,7 @@ body::before {
 }
 .trio-card.seen{ opacity:1; transform:none; }
 .trio-card.seen:hover{ border-color:var(--yellow); background:var(--bg-3); transform:translateY(-4px); }
-.trio-card .tc-lbl{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-muted); }
+.trio-card .tc-lbl{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.005em;  color:var(--ink-muted); }
 .trio-card h3{ font-family:'Oswald',sans-serif; font-weight:400; font-size:26px; line-height:1.05; letter-spacing:-.01em; color:var(--ink-soft); margin:0; }
 .trio-card p{ font-family:'Geist',sans-serif; font-size:13px; line-height:1.55; color:var(--ink-muted); margin:0; flex:1; }
 .trio-viz{ height:104px; border-radius:9px; background:var(--bg-3); border:1px solid var(--hair); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:14px; }
@@ -580,7 +580,7 @@ body::before {
 .trio-card:hover .trio-open::after{ transform:translateX(4px); }
 .tv-pr{ display:flex; flex-direction:column; gap:7px; width:100%; }
 .tv-pr i{ font-style:normal; font-family:'Geist',sans-serif; font-size:11.5px; color:var(--ink); opacity:.9; display:flex; align-items:center; gap:7px; }
-.tv-pr i::before{ content:''; width:12px; height:1px; background:var(--yellow); flex:none; }
+.tv-pr i::before{ content:''; width:12px; height:1px; background:var(--hair-2); flex:none; }
 .tv-aa{ font-family:'Oswald',sans-serif; font-weight:400; font-size:52px; line-height:1; color:var(--ink-soft); letter-spacing:-.03em; }
 .tv-aa small{ display:block; font-family:'Geist',sans-serif; font-size:10px; color:var(--ink-muted); letter-spacing:.07em; margin-top:5px; text-align:center; }
 .tv-sw{ display:grid; grid-template-columns:repeat(4,1fr); gap:7px; width:100%; }
@@ -669,15 +669,15 @@ body{ overscroll-behavior-y:none; }
 /* ══════════ GLOBAL SCALE — readable at 2.5K–3K ══════════ */
 :root{
   --pad-x:40px; --shell:1440px;
-  --nav-fs:15px; --logo-h:38px; --sys-fs:18px; --hdr-h:78px;
+  --nav-fs:15px; --logo-h:38px; --sys-fs:15px; --hdr-h:62px;
   --h1:clamp(48px,6vw,92px); --h2:clamp(30px,3.2vw,46px);
   --lede:17px; --body:15px; --meta:12.5px;
 }
-@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:19px; --hdr-h:83px;  --lede:18px; --body:15.5px; } }
-@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:21px; --hdr-h:90px; --lede:19px; --body:16px;   --meta:13.5px; } }
-@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:24px; --hdr-h:102px; --lede:21px; --body:17.5px; --meta:15px;
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:16px; --hdr-h:66px;  --lede:18px; --body:15.5px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:17px; --hdr-h:70px; --lede:19px; --body:16px;   --meta:13.5px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:19px; --hdr-h:76px; --lede:21px; --body:17.5px; --meta:15px;
   --h1:clamp(80px,4.6vw,130px); --h2:clamp(44px,2.5vw,64px); } }
-@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:27px; --hdr-h:112px; --lede:23px; --body:19px;   --meta:16px;
+@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:21px; --hdr-h:82px; --lede:23px; --body:19px;   --meta:16px;
   --h1:clamp(96px,4.4vw,150px); --h2:clamp(52px,2.4vw,74px); } }
 
 .g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
@@ -687,6 +687,10 @@ body{ overscroll-behavior-y:none; }
 .g-logo{ display:flex; align-items:center; gap:18px; flex-shrink:0; }
 .g-logo img{ height:var(--logo-h) !important; width:auto; }
 .g-sep{ width:1px; height:calc(var(--logo-h) * .58); background:var(--hair-2); flex:none; }
+
+.g-logo:hover .g-sys{ color:#fff; }
+.g-header-inner{ gap:clamp(18px,1.6vw,34px) !important; }
+.g-sep{ height:calc(var(--logo-h) * .66) !important; opacity:.8; }
 .g-sys{ font-family:'Oswald',sans-serif; font-weight:400; font-size:var(--sys-fs) !important; letter-spacing:-.005em; white-space:nowrap; }
 .g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.7vw,38px); }
 .g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
@@ -753,13 +757,10 @@ body.home .section.hero{ min-height:100vh !important; }
 .g-logo img{ height:var(--logo-h) !important; width:auto; display:block; }
 .g-sep{ width:1px; height:calc(var(--logo-h) * .62); background:var(--hair-2); flex:none; }
 /* brand wordmark — spectrum, its own typeface */
-.g-sys{ font-family:'Syne',var(--font-display),sans-serif; font-weight:700;
-  font-size:calc(var(--sys-fs) * 1.06); letter-spacing:-.012em; white-space:nowrap; line-height:1;
-  background:linear-gradient(96deg,#FFC800 0%,#FF8A3D 22%,#F0506E 44%,#8A5AF0 68%,#4A8BF5 88%,#26D0C4 100%);
-  -webkit-background-clip:text; background-clip:text;
-  -webkit-text-fill-color:transparent; color:transparent;
-  background-size:180% 100%; transition:background-position .5s ease; }
-.g-logo:hover .g-sys{ background-position:100% 0; }
+.g-sys{ font-family:'Oswald','Helvetica Neue',Arial,sans-serif; font-weight:400;
+  font-size:var(--sys-fs); letter-spacing:.004em; white-space:nowrap; line-height:1;
+  color:var(--ink-soft); transition:color .22s ease; }
+
 .g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.8vw,40px); }
 .g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
   white-space:nowrap; opacity:.86; transition:color .15s, opacity .15s; position:relative; }
@@ -846,8 +847,7 @@ body.home .section.hero{ min-height:100vh !important; }
 .crd{ display:block; border:1px solid var(--hair-2); border-radius:16px; background:var(--bg-2);
   padding:clamp(22px,1.7vw,32px); transition:border-color .18s, background .18s, transform .18s; }
 a.crd:hover{ border-color:rgba(255,200,0,.42); background:var(--bg-3); transform:translateY(-2px); }
-.crd .lbl{ font-family:'Geist',sans-serif; font-size:var(--label); letter-spacing:.14em;
-  text-transform:uppercase; color:var(--yellow); display:block; margin-bottom:12px; }
+.crd .lbl{ font-family:'Geist',sans-serif; font-size:var(--label); letter-spacing:.005em;  color:var(--ink-muted); display:block; margin-bottom:12px; }
 .crd h3{ font-family:'Oswald',sans-serif; font-weight:400 !important;
   font-size:calc(var(--lede) * 1.34); line-height:1.16; color:var(--ink-soft); margin:0 0 10px; }
 .crd p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.6;
@@ -862,8 +862,7 @@ a.crd:hover{ border-color:rgba(255,200,0,.42); background:var(--bg-3); transform
   align-items:center; border:1px solid var(--hair-2); border-radius:20px; background:var(--bg-2);
   padding:clamp(28px,2.4vw,52px); transition:border-color .2s, background .2s; }
 a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
-.door .lbl{ font-family:'Geist',sans-serif; font-size:var(--label); letter-spacing:.14em;
-  text-transform:uppercase; color:var(--yellow); display:block; margin-bottom:14px; }
+.door .lbl{ font-family:'Geist',sans-serif; font-size:var(--label); letter-spacing:.005em;  color:var(--ink-muted); display:block; margin-bottom:14px; }
 .door h2{ font-family:'Oswald',sans-serif; font-weight:400 !important; font-size:var(--h2);
   line-height:1.06; letter-spacing:-.014em; color:var(--ink-soft); margin:0 0 14px; }
 .door p{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.6;
@@ -882,7 +881,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 .step{ display:grid; grid-template-columns:minmax(120px,.18fr) 1fr; gap:clamp(18px,1.6vw,40px);
   padding:clamp(20px,1.6vw,30px) 0; border-bottom:1px solid var(--hair); align-items:start; }
 .step .w{ font-family:'Oswald',sans-serif; font-weight:400; font-size:calc(var(--lede) * 1.1);
-  color:var(--yellow); }
+  color:var(--ink-muted); }
 .step p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.62;
   color:var(--ink-muted); margin:0; }
 .step p b{ font-weight:400; color:var(--ink-soft); }
@@ -890,8 +889,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 
 /* file / token table */
 .ftab{ width:100%; border-collapse:collapse; font-family:'Geist',sans-serif; }
-.ftab th{ text-align:left; font-weight:400; font-size:var(--label); letter-spacing:.13em;
-  text-transform:uppercase; color:var(--ink-muted); padding:0 18px 14px 0;
+.ftab th{ text-align:left; font-weight:400; font-size:var(--label); letter-spacing:.005em;  color:var(--ink-muted); padding:0 18px 14px 0;
   border-bottom:1px solid var(--hair-2); }
 .ftab td{ font-size:var(--body); color:var(--ink-muted); padding:16px 18px 16px 0;
   border-bottom:1px solid var(--hair); vertical-align:top; line-height:1.55; }
@@ -901,7 +899,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 .soon{ display:inline-block; font-family:'Geist',sans-serif; font-size:var(--meta);
   color:var(--ink-muted); border:1px solid var(--hair-2); border-radius:999px;
   padding:4px 12px; margin-left:10px; vertical-align:middle; }
-.note{ border-left:2px solid var(--yellow); padding:clamp(16px,1.2vw,22px) clamp(18px,1.4vw,26px);
+.note{ border-left:2px solid var(--hair-2); padding:clamp(16px,1.2vw,22px) clamp(18px,1.4vw,26px);
   background:var(--bg-2); border-radius:0 12px 12px 0; }
 .note p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.62;
   color:var(--ink-muted); margin:0; }
@@ -933,132 +931,225 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
   .hero-viz{ order:-1; margin-bottom:26px; }
 }
 
-/* ══════════ LEFT RAIL ══════════
-   Section navigation lives beside the content, not above it. The active
-   branch is the only one expanded, so the rail stays short. */
-:root{ --rail-w:clamp(238px,16.5vw,326px); }
-.rail{ position:fixed; top:var(--hdr-h); left:0; bottom:0; width:var(--rail-w);
-  border-right:1px solid var(--hair); background:var(--bg); z-index:45;
-  overflow-y:auto; overscroll-behavior:contain;
-  padding:clamp(20px,1.6vw,32px) 0 70px; }
-.rail::-webkit-scrollbar{ width:8px; }
-.rail::-webkit-scrollbar-thumb{ background:var(--hair-2); border-radius:4px; }
-.rail-grp{ padding:0 clamp(12px,.9vw,18px); display:block; }
-.rail-lbl{ display:block; font-family:'Geist',sans-serif; font-size:var(--label);
-  letter-spacing:.15em; text-transform:uppercase; color:rgba(244,246,255,.34);
-  padding:0 16px; margin:clamp(20px,1.6vw,30px) 0 8px; }
-.rail-grp > a:first-child + .rail-lbl{ margin-top:clamp(16px,1.2vw,24px); }
-.rail a{ position:relative; display:block; font-family:'Geist',sans-serif;
-  font-weight:400; font-size:var(--nav-fs); line-height:1.35; color:var(--ink-muted);
-  padding:9px 14px 9px 16px; border-radius:8px;
-  transition:color .15s, background .15s; }
-.rail a:hover{ color:var(--ink-soft); background:rgba(255,255,255,.05); }
-/* active reads as a marker, not a highlighter */
-.rail a.on{ color:var(--ink-soft); background:rgba(255,255,255,.07); font-weight:500; }
-.rail a.on::before{ content:''; position:absolute; left:0; top:50%;
-  transform:translateY(-50%); width:3px; height:1.15em; border-radius:0 3px 3px 0;
-  background:var(--yellow); }
-.rail .sub{ margin:2px 0 6px 16px; padding-left:12px; border-left:1px solid var(--hair); }
-.rail .sub a{ font-size:calc(var(--nav-fs) * .93); padding:7px 12px; color:rgba(244,246,255,.52); }
-.rail .sub a:hover{ color:var(--ink-soft); }
-.rail .sub a.on{ background:transparent; color:var(--yellow); font-weight:400; }
-.rail .sub a.on::before{ display:none; }
+/* ══════════ SOURCE / PROVENANCE ══════════ */
+.res{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(12px,1vw,18px);
+  margin-top:clamp(20px,1.7vw,30px); }
+@media (max-width:1100px){ .res{ grid-template-columns:1fr; } }
 
-body.rail-on main, body.rail-on .dark-footer{ margin-left:var(--rail-w); }
-body.rail-on .section{ max-width:1900px !important;
-  margin-left:0 !important; margin-right:0 !important;
-  padding-left:clamp(26px,2.4vw,62px) !important;
-  padding-right:clamp(26px,2.4vw,62px) !important; }
+.res a,.res .off{ display:flex; align-items:center; gap:14px; padding:clamp(16px,1.3vw,22px);
+  background:var(--bg-2); border:1px solid var(--hair-2); border-radius:12px; transition:.18s; }
+.res .off{ opacity:.62; }
+.res a:hover{ border-color:var(--yellow); background:var(--bg-3); }
+.res .ico{ width:36px; height:36px; border-radius:9px; background:var(--bg-3);
+  display:flex; align-items:center; justify-content:center; flex:none; color:var(--ink-muted);
+  transition:color .18s; }
+.res a:hover .ico{ color:var(--yellow); }
+.res .tx{ min-width:0; }
+.res .tx b{ display:block; font-family:'Geist',sans-serif; font-weight:400;
+  font-size:var(--label); color:var(--ink); }
+.res .tx span{ display:block; font-family:'Geist',monospace;
+  font-size:calc(var(--label) * .84); color:var(--ink-muted); margin-top:3px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.res .st{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
+  padding:3px 10px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted);
+  white-space:nowrap; flex:none; }
+.prov{ display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  font-family:'Geist',monospace; font-size:calc(var(--meta) * .95);
+  color:rgba(244,246,255,.42); padding:18px 0 0; margin-top:22px;
+  border-top:1px solid var(--hair); }
+.prov a{ color:rgba(244,246,255,.7); border-bottom:1px solid var(--hair-2); }
+.prov a:hover{ color:var(--yellow); border-color:var(--yellow); }
+.prov i{ font-style:normal; }
+.prov em{ font-style:normal; opacity:.5; }
 
-/* the header is identical to the landing page — the rail sits beneath it */
-.rail-btn{ display:none; background:none; border:1px solid var(--hair-2);
-  border-radius:9px; color:var(--ink-soft); cursor:pointer;
-  padding:9px 13px; margin-right:14px; line-height:0; }
-.rail-btn svg{ display:block; }
-
-@media (max-width:1100px){
-  .rail{ transform:translateX(-100%); transition:transform .22s ease;
-    box-shadow:24px 0 60px -30px rgba(0,0,0,.9); }
-  body.rail-open .rail{ transform:none; }
-  body.rail-on main, body.rail-on .dark-footer{ margin-left:0; }
-  .rail-btn{ display:inline-flex; }
-}
+/* ══════════ UPSTREAM BAND — Figma → Git → this site ══════════ */
+.up{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(14px,1.2vw,26px); margin-top:clamp(20px,1.7vw,34px); }
+@media (max-width:960px){ .up{ grid-template-columns:1fr; } }
+.up .u{ position:relative; border:1px solid var(--hair-2); border-radius:16px;
+  background:var(--bg-2); padding:clamp(22px,1.7vw,32px); }
+.up .u::after{ content:''; position:absolute; top:50%; right:calc(-1 * clamp(14px,1.2vw,26px));
+  width:clamp(14px,1.2vw,26px); height:1px; background:var(--hair-2); }
+.up .u:last-child::after{ display:none; }
+@media (max-width:960px){ .up .u::after{ display:none; } }
+.up .st{ font-family:'Geist',monospace; font-size:calc(var(--meta) * .92);
+  color:rgba(244,246,255,.34); display:block; margin-bottom:14px; }
+.up h3{ font-family:'Oswald',sans-serif; font-weight:400; margin:0 0 10px;
+  font-size:calc(var(--lede) * 1.28); line-height:1.14; color:var(--ink-soft); }
+.up p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.6;
+  color:var(--ink-muted); margin:0 0 16px; }
+.up ul{ list-style:none; margin:0; padding:0; }
+.up li{ font-family:'Geist',monospace; font-size:calc(var(--meta) * .96);
+  color:var(--ink-muted); padding:5px 0 5px 16px; position:relative; }
+.up li::before{ content:''; position:absolute; left:0; top:.82em;
+  width:6px; height:1px; background:var(--hair-2); }
+.up a.go{ display:inline-block; margin-top:14px; font-family:'Geist',sans-serif;
+  font-size:var(--meta); color:var(--yellow); }
 </style>
+<script src="source.js"></script>
 </head>
-<body class="rail-on">
+<body class="home">
 <header class="g-header">
   <div class="g-header-inner">
-    <button class="rail-btn" id="railBtn" aria-label="Toggle navigation"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></button>
-    <a href="../00%20Home.html" class="g-logo" aria-label="Intelligaia Branding">
-      <img src="../../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
+    <a href="00%20Home.html" class="g-logo" aria-label="Intelligaia Branding">
+      <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" style="filter:invert(1) brightness(1.1)" />
       <span class="g-sep"></span>
       <span class="g-sys">Branding</span>
     </a>
     <nav class="g-nav">
-      <a href="../ds/00%20Start.html" class="on">Design system</a>
-      <a href="../mk/00%20Start.html">Collateral</a>
+      <a href="ds/00%20Start.html">Design system</a>
+      <a href="mk/00%20Start.html">Collateral</a>
+      <a href="mk/70%20Skills.html">Skills</a>
     </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>
   </div>
 </header>
-
-<aside class="rail" id="rail" aria-label="Design system navigation">
-  <nav class="rail-grp">
-    <a href="00%20Start.html" class="on">Overview</a>
-    <div class="sub">
-      <a href="00%20Start.html#what-is-inside">What is inside</a>
-      <a href="00%20Start.html#before-you-start">Before you start</a>
-    </div>
-    <span class="rail-lbl">Reference</span>
-    <a href="10%20Foundations.html">Foundations</a>
-    <a href="20%20Asset%20Library.html">Asset library</a>
-    <a href="30%20Construction.html">Construction</a>
-    <span class="rail-lbl">Handoff</span>
-    <a href="40%20Tokens.html">Tokens &amp; handoff</a>
-  </nav>
-</aside>
 <main>
 
-<section class="section v2-hero viz">
-  <div class="hero-copy">
-    <h1>Design system.</h1>
-    <p>Principles, colour, type and the illustration library, with the token files behind them.</p>
+<section class="section hero" id="hero">
+  <div class="hero-grid">
+    <div class="hero-left">
+      <h1 class="hero-h1">Design that<br>earns trust.</h1>
+      <p class="hero-h2 reveal" data-delay="5">Everything Intelligaia makes, and the rules that make it ours.</p>
+      <div class="btn-row reveal" data-delay="6">
+        <a href="ds/00%20Start.html" class="btn-p">Design system →</a>
+        <a href="mk/00%20Start.html" class="btn-o">Collateral →</a>
+      </div>
+    </div>
+<div class="hero-collage" id="heroCollage">
+
+      <!-- SVG paper-edge filter (invisible defs) -->
+      <svg class="paper-defs" aria-hidden="true">
+        <defs>
+          <filter id="paperEdge" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.024" numOctaves="3" seed="7" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="3" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+          <filter id="paperEdgeSticky" x="-5%" y="-5%" width="110%" height="110%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="3" result="noise"/>
+            <feDisplacementMap in="SourceGraphic" in2="noise" scale="4" xChannelSelector="R" yChannelSelector="G"/>
+          </filter>
+        </defs>
+      </svg>
+
+      <!-- Story diagonal · foundations → assets → construction → shipped artifact -->
+
+      <!-- 1 · FOUNDATION — colour -->
+      <div class="cutout cut-art cut-swatches" data-delay="1" style="--sx:-330px; --sy:-230px; --sr:-26deg;">
+        <img src="../assets/Website%20banner%20assets/Swatches.png" alt="Brand colour swatches — #FFC800, #4A8BF5, #8A5AF0, #0A0A0A" />
+      </div>
+
+      <!-- 2 · FOUNDATION — type -->
+      <div class="cutout cut-art cut-typespec" data-delay="2" style="--sx:-390px; --sy:70px; --sr:20deg;">
+        <img src="../assets/Website%20banner%20assets/Typo.png" alt="Type specimen — Oswald 400–500" />
+      </div>
+
+      <!-- 3 · BRAND ASSETS — characters -->
+      <div class="cutout cut-art cut-characters" data-delay="3" style="--sx:-40px; --sy:310px; --sr:-14deg;">
+        <img src="../assets/Website%20banner%20assets/Characters.png" alt="Intelligaia character illustrations on torn yellow paper" />
+      </div>
+
+      <!-- 4 · CONSTRUCTION — blueprint to finished -->
+      <div class="cutout cut-art cut-lighthouse" data-delay="4" style="--sx:410px; --sy:-240px; --sr:24deg;">
+        <img src="../assets/Website%20banner%20assets/Lighthouse.png" alt="Lighthouse illustration across three construction stages, wireframe to finished" />
+      </div>
+
+      <!-- 5 · OUTPUT — the artifact that ships -->
+      <div class="cutout cut-art cut-capability" data-delay="5" style="--sx:390px; --sy:250px; --sr:18deg;">
+        <img src="../assets/Website%20banner%20assets/Capability%20Statement.png" alt="Intelligaia capability statement cover" />
+      </div>
+
+      <!-- KEPT — torn sticky note, bottom-left -->
+      <div class="cutout cut-note" data-delay="6" style="--sx:-380px; --sy:240px; --sr:-22deg;">
+        <div class="cap">Principle</div>
+        <p class="quote">Design is a tool, <span class="hl">not a taste.</span></p>
+        <div class="sig">— Intelligaia playbook</div>
+      </div>
+
+    </div>
   </div>
-  <div class="hero-viz">
-    <img src="../../assets/Website%20banner%20assets/Characters.png" alt="Intelligaia character illustrations" />
-    <img src="../../assets/Website%20banner%20assets/Lighthouse.png" alt="Lighthouse illustration across its construction stages" />
+
   </div>
 </section>
 
-<section class="section v2-sec" id="what-is-inside">
-  <span class="eyebrow">What is inside</span>
-  <div class="grid4">
-    <a class="crd" href="10%20Foundations.html">
-      <div class="crd-viz pad"><img src="../../assets/Website%20banner%20assets/Swatches.png" alt="The four brand colours" /></div>
-      <span class="lbl">Core</span><h3>Foundations</h3><p>The three principles, four colours and two families, with do and don't for each.</p><span class="go">Open →</span></a>
-    <a class="crd" href="20%20Asset%20Library.html">
-      <div class="crd-viz row pad"><img src="../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Character illustration" /><img src="../../assets/illustrations/devices/MacBook%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Device illustration" /><img src="../../assets/illustrations/nature/Plants%20%E2%80%94%20Final.png" alt="Nature illustration" /></div>
-      <span class="lbl">Assets</span><h3>Asset library</h3><p>Every illustration by category, at full size, with dimensions and download.</p><span class="go">Open →</span></a>
-    <a class="crd" href="30%20Construction.html">
-      <div class="crd-viz row pad"><img src="../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Deconstructed.png" alt="Geometry stage" /><img src="../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Outlined.png" alt="Outline stage" /><img src="../../assets/illustrations/characters-female/Female%20Character%2003%20%E2%80%94%20Front%20face%20%E2%80%94%20Final.png" alt="Final stage" /></div>
-      <span class="lbl">Method</span><h3>Construction</h3><p>How an Intelligaia illustration is built — grid first, four primitives.</p><span class="go">Open →</span></a>
-    <a class="crd" href="40%20Tokens.html">
-      <div class="crd-viz pad"><img src="../../assets/Website%20banner%20assets/Typo.png" alt="Type specimen — Oswald and Geist" /></div>
-      <span class="lbl">Handoff</span><h3>Tokens &amp; handoff</h3><p>The files to import and the asset URL pattern.</p><span class="go">Open →</span></a>
+<section class="section v2-sec" id="pick">
+  <a href="ds/00%20Start.html" class="door reveal">
+    <div>
+      <h2>Design system.</h2>
+      <p>Principles, colour, type and the illustration library, with the token files behind them. Open this when you are building something and need the rule rather than a reference.</p>
+      <div class="chips"><span>Foundations</span><span>Asset library</span><span>Construction</span><span>Tokens &amp; handoff</span></div>
+      <span class="go">Open the design system →</span>
+    </div>
+    <div class="door-viz">
+      <img src="../assets/Website%20banner%20assets/Swatches.png" alt="Brand colour swatches" style="max-height:170px;" />
+      <img src="../assets/Website%20banner%20assets/Typo.png" alt="Type specimen — Oswald and Geist" style="max-height:200px;" />
+    </div>
+  </a>
+</section>
+
+<section class="section v2-sec" style="padding-top:0 !important;">
+  <a href="mk/00%20Start.html" class="door reveal">
+    <div>
+      <h2>Collateral.</h2>
+      <p>Catalogs, case studies, whitepapers, pages and posts. Open this when something has to go in front of a client this week and still look like us.</p>
+      <div class="chips"><span>Service catalog</span><span>Case studies</span><span>Whitepapers</span><span>Landing pages</span><span>Diagrams</span><span>Social</span></div>
+      <span class="go">Open collateral →</span>
+    </div>
+    <div class="door-viz">
+      <img src="../assets/Website%20banner%20assets/Capability%20Statement.png" alt="Intelligaia capability statement cover" style="max-height:250px;" />
+    </div>
+  </a>
+</section>
+
+
+<section class="section v2-sec" style="padding-top:0 !important;">
+  <a href="mk/70%20Skills.html" class="door reveal">
+    <div>
+      <h2>Skills.</h2>
+      <p>The agent layer underneath both halves. Twenty-four skills that hold the brand rules and produce the artifact — so a whitepaper, a deck or a landing page arrives on-system without a design request.</p>
+      <div class="chips"><span>Collateral</span><span>Web pages</span><span>Design practice</span><span>Domain</span><span>Operations</span></div>
+      <span class="go">Open the skill library →</span>
+    </div>
+    <div class="door-viz">
+      <img src="../assets/Website%20banner%20assets/Lighthouse.png" alt="Intelligaia lighthouse illustration" style="max-height:250px;" />
+    </div>
+  </a>
+</section>
+
+<section class="section v2-sec" id="upstream">
+  <span class="eyebrow">How it is put together</span>
+  <h2 style="font-family:'Oswald',sans-serif;font-weight:400;font-size:calc(var(--h2) * .78);line-height:1.08;letter-spacing:-.012em;color:var(--ink-soft);margin:0 0 12px;">Two upstreams. One repository. No third place.</h2>
+  <p style="font-family:'Geist',sans-serif;font-size:var(--lede);line-height:1.6;color:var(--ink-muted);margin:0;max-width:76ch;">Nothing here is authored in a browser or kept in someone's downloads folder. Components and tokens are drawn in Figma, everything built lands in Git, and this site is a read-only view of that repository.</p>
+  <div class="up">
+    <div class="u">
+      <span class="st">Upstream · design</span>
+      <h3>Figma</h3>
+      <p>The single design source. Variables become tokens, components become the library, illustration masters live here before they are exported.</p>
+      <ul><li>colour + type variables</li><li>component library</li><li>illustration masters</li><li>page templates</li></ul>
+      <a class="go" data-figma-link href="#">Open the Figma file →</a>
+    </div>
+    <div class="u">
+      <span class="st">Upstream · build</span>
+      <h3>Git</h3>
+      <p>Every built file has a path. Assets, generated tokens, the agent skills and these pages are versioned together on <code>main</code>.</p>
+      <ul><li>website/assets/ — 323 files</li><li>website/assets/tokens/ — generated</li><li>Intelligaia Skills/ — the agent layer</li><li>website/brand-portal/ — this site</li></ul>
+      <a class="go" href="https://github.com/intelligaia/Intelligaia-Brand-Assets" target="_blank" rel="noopener">Open the repository →</a>
+    </div>
+    <div class="u">
+      <span class="st">Downstream</span>
+      <h3>This site</h3>
+      <p>A browsable index over the repo. Every asset card links back to its folder; every page names the Figma frame it came from.</p>
+      <ul><li>reference — what the brand is made of</li><li>collateral — what you ship</li><li>skills — how it gets produced</li><li>published via GitHub Pages</li></ul>
+      <a class="go" href="https://intelligaia.github.io/Intelligaia-Brand-Assets/" target="_blank" rel="noopener">Published build →</a>
+    </div>
   </div>
 </section>
 
-<section class="section v2-sec" id="before-you-start">
-  <span class="eyebrow">Before you start</span>
-  <div class="steps">
-    <div class="step"><span class="w">Read</span><p><b>The three principles, once.</b> Every do and don't here resolves back to them.</p></div>
-    <div class="step"><span class="w">Take</span><p><b>The token, not the hex.</b> Hexes typed by hand are the most common source of drift.</p></div>
-    <div class="step"><span class="w">Check</span><p><b>Your work against the constraints.</b> Four colours, two families, nothing above weight 500 on web.</p></div>
-  </div>
-</section>
-
-<section class="section v2-sec">
-  <div class="note"><p><b>If no asset fits, report the gap — do not generate one.</b> Tell the design team what was missing; it gets built and added to the manifest.</p></div>
+<section class="section res-sec" style="min-height:auto;display:block;padding-top:clamp(30px,2.4vw,50px);padding-bottom:clamp(40px,3vw,64px);border-top:1px solid var(--hair);">
+  <h2 style="font-family:'Oswald',sans-serif;font-weight:400;font-size:calc(var(--h2) * .68);color:var(--ink-soft);margin:0 0 6px;">Where this comes from.</h2>
+  <p style="font-family:'Geist',sans-serif;font-size:var(--body);color:var(--ink-muted);margin:0;">Design source in Figma, built files in the repo, and the agent skill that produces this artifact.</p>
+  <div class="res" data-source data-path="website/brand-portal" data-figma="Cover"></div>
+  <div class="prov" data-provenance="website/brand-portal"></div>
 </section>
 
 </main>
@@ -1066,7 +1157,7 @@ body.rail-on .section{ max-width:1900px !important;
   <div class="dark-footer-inner">
     <div>
       <div class="df-logo">
-        <img src="../../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
+        <img src="../assets/brand/intelligaia-logo.png" alt="Intelligaia" />
       </div>
       <p class="df-tag">humanizing AI for enterprises</p>
     </div>
@@ -1074,17 +1165,17 @@ body.rail-on .section{ max-width:1900px !important;
       <div>
         <h5>System</h5>
         <ul>
-          <li><a href="../00%20Home.html">Home</a></li>
-          <li><a href="../00%20Home.html#playbooks">Playbooks</a></li>
-          <li><a href="10%20Foundations.html#colour">Colour</a></li>
-          <li><a href="10%20Foundations.html#type">Typography</a></li>
+          <li><a href="00%20Home.html">Home</a></li>
+          <li><a href="00%20Home.html">Playbooks</a></li>
+          <li><a href="ds/10%20Foundations.html">Colour</a></li>
+          <li><a href="ds/10%20Foundations.html">Typography</a></li>
         </ul>
       </div>
       <div>
         <h5>Illustration</h5>
         <ul>
-          <li><a href="20%20Asset%20Library.html">System</a></li>
-          <li><a href="20%20Asset%20Library.html">Library</a></li>
+          <li><a href="ds/20%20Asset%20Library.html">System</a></li>
+          <li><a href="ds/20%20Asset%20Library.html">Library</a></li>
         </ul>
       </div>
       <div>
@@ -1226,74 +1317,6 @@ document.addEventListener('DOMContentLoaded', function(){
 })();
 
 });
-</script>
-
-<script>
-(function(){
-  function ready(fn){ document.readyState!=='loading'?fn():document.addEventListener('DOMContentLoaded',fn); }
-  ready(function(){
-    var b=document.getElementById('railBtn');
-    if(b) b.addEventListener('click',function(){ document.body.classList.toggle('rail-open'); });
-
-    /* category pages resolve their own sub-item from the query string */
-    var c=new URLSearchParams(location.search).get('c');
-    if(c){
-      var link=document.querySelector('.rail .sub a[href*="c='+c+'"]');
-      if(link){ link.classList.add('on');
-        var p=document.querySelector('.rail a[href*="Asset%20Library"]');
-        if(p) p.classList.remove('on'); }
-    }
-
-    /* ── Scroll spy ──────────────────────────────────────────────────
-       The rail reports where you are, not just where you last clicked.
-       Applies to every page that has in-page sections; pages without
-       anchors simply opt out. */
-    var rail=document.getElementById('rail');
-    var items=[];
-    [].forEach.call(document.querySelectorAll('.rail .sub a[href*="#"]'), function(a){
-      var id=a.getAttribute('href').split('#')[1];
-      var el=id && document.getElementById(id);
-      if(el) items.push({a:a, el:el});
-    });
-    if(!items.length) return;
-
-    var cur=null, queued=false;
-
-    function readLine(){
-      var v=getComputedStyle(document.documentElement).getPropertyValue('--hdr-h');
-      return (parseFloat(v)||90)+32;      /* just below the fixed header */
-    }
-    function pick(){
-      var y=readLine(), found=items[0];
-      for(var i=0;i<items.length;i++){
-        if(items[i].el.getBoundingClientRect().top<=y) found=items[i];
-      }
-      /* the last section can be too short to ever reach the line */
-      var doc=document.documentElement;
-      if(doc.scrollHeight>window.innerHeight+4 &&
-         window.innerHeight+window.pageYOffset>=(doc.scrollHeight-4)) found=items[items.length-1];
-      return found;
-    }
-    function sync(){
-      queued=false;
-      var f=pick();
-      if(f===cur) return;
-      cur=f;
-      for(var i=0;i<items.length;i++) items[i].a.classList.toggle('on', items[i]===f);
-      /* keep the marker visible when the rail itself scrolls */
-      if(rail && rail.scrollHeight>rail.clientHeight+2){
-        var r=f.a.getBoundingClientRect(), rr=rail.getBoundingClientRect();
-        if(r.top<rr.top+10 || r.bottom>rr.bottom-10) f.a.scrollIntoView({block:'nearest'});
-      }
-      /* shareable URL — replace, never push, so Back still leaves the page */
-      try{ history.replaceState(null,'','#'+f.el.id); }catch(e){}
-    }
-    function onScroll(){ if(!queued){ queued=true; requestAnimationFrame(sync); } }
-    window.addEventListener('scroll', onScroll, {passive:true});
-    window.addEventListener('resize', onScroll);
-    sync();
-  });
-})();
 </script>
 </body>
 </html>

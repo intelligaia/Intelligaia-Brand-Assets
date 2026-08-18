@@ -10,7 +10,7 @@ Compatible with the `AGENTS.md` convention used by Claude Code, Cursor, Codex, A
 
 The single source of truth for how Intelligaia work looks and reads. Two audiences, one source:
 
-- **Humans** browse the HTML portal — `website/v2/` (current), with `website/dark/` and `website/light/` kept as the previous version
+- **Humans** browse the HTML portal — `website/brand-portal/` (current), with `website/_archive-v1/dark/` and `website/_archive-v1/light/` kept as the previous version
 - **Agents** parse `website/index.json`, `website/assets/manifest.json`, and the `page-spec` JSON block embedded at the bottom of every playbook page
 
 Nothing is documented in one place and defined in another.
@@ -77,7 +77,7 @@ deck skill documents its own system in its `SKILL.md` / `README.md`.
 
 ## The portal has two sections
 
-`website/v2/` is the current portal. One landing page, two named sections, one
+`website/brand-portal/` is the current portal. One landing page, two named sections, one
 shared asset library. A section is **wayfinding, not a copy** — both read the
 same `manifest.json` and the same tokens, and nothing is duplicated between them.
 
@@ -166,7 +166,7 @@ https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/<p
 ## Workflows this repo serves
 
 **Producing an artifact** (landing page, case study, whitepaper, social post, service catalog)
-1. Read the relevant page in `website/v2/mk/` (collateral) or `website/v2/ds/`
+1. Read the relevant page in `website/brand-portal/mk/` (collateral) or `website/brand-portal/ds/`
    (design system). Fall back to `dark/` or `light/` only for pages v2 does not
    yet carry
 2. Extract its `page-spec` JSON
@@ -235,4 +235,4 @@ These are non-negotiable for **web and digital** artifacts. Presentations follow
 
 Changes to tokens must start in Figma, then regenerate `design-tokens.json` and its derived formats. Never hand-edit `tokens.css` or `_tokens.scss` — they are generated.
 
-New assets follow the four-stage construction process documented in `website/light/21 Construction.html`, then get added to `manifest.json`.
+New assets follow the four-stage construction process documented in `website/_archive-v1/light/21 Construction.html`, then get added to `manifest.json`.

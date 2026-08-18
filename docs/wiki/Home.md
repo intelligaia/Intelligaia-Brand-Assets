@@ -16,12 +16,12 @@ for humans, structured for agents.
 ## Where the portal is right now
 
 The portal has been restructured from one flat navigation into **two sections
-with their own left-hand navigation**, built in `website/v2/`. Dark theme only;
+with their own left-hand navigation**, built in `website/brand-portal/`. Dark theme only;
 light follows.
 
 | | |
 |---|---|
-| **Live** | The site root lands on `website/v2/00 Home.html` |
+| **Live** | The site root lands on `website/brand-portal/00 Home.html` |
 | **Design system** | `v2/ds/` — Foundations · Asset library · Construction · Tokens & handoff |
 | **Collateral** | `v2/mk/` — Service catalog · Case studies · Whitepapers · Landing pages · Diagrams · Social · Skills |
 | **Previous** | `dark/` and `light/` keep the flat navigation, untouched and still reachable |

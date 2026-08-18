@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Intelligaia Brand Portal</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --bg:#04050A; --bg-2:#0A0C14; --bg-3:#131522;
+  --ink:#F4F6FF; --ink-soft:#EEF1FB; --ink-muted:rgba(244,246,255,.65);
+  --hair:rgba(255,255,255,.08); --hair-2:rgba(255,255,255,.14);
+  --yellow:#FFC800;
+  --pad-x:clamp(26px,4vw,88px); --shell:1440px;
+}
+@media (min-width:1920px){ :root{ --shell:1780px; } }
+@media (min-width:2400px){ :root{ --shell:2100px; } }
+*{ box-sizing:border-box; }
+html,body{ margin:0; padding:0; }
+body{ background:var(--bg); color:var(--ink);
+  font-family:'Geist',system-ui,sans-serif; font-size:16px; line-height:1.6;
+  -webkit-font-smoothing:antialiased; }
+body::before{ content:''; position:fixed; inset:0; pointer-events:none; z-index:0;
+  background:radial-gradient(circle at 18% 16%, rgba(74,139,245,.07) 0%, transparent 48%),
+             radial-gradient(circle at 82% 68%, rgba(138,90,240,.06) 0%, transparent 44%); }
+a{ color:inherit; text-decoration:none; }
+.wrap{ position:relative; z-index:1; max-width:var(--shell); margin:0 auto; padding:0 var(--pad-x); }
+
+header{ padding:clamp(34px,3.4vw,64px) 0 0; }
+.brand{ display:flex; align-items:center; gap:clamp(14px,1.2vw,22px); }
+.brand img{ height:38px; width:auto; filter:invert(1) brightness(1.1); }
+@media (min-width:1920px){ .brand img{ height:44px; } }
+.sep{ width:1px; height:25px; background:var(--hair-2); opacity:.8; }
+.sys{ font-family:'Oswald',sans-serif; font-weight:400; font-size:15px;
+  letter-spacing:.004em; color:var(--ink-soft); }
+@media (min-width:1920px){ .sys{ font-size:17px; } }
+
+h1{ font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:clamp(42px,5vw,86px); line-height:1.03; letter-spacing:-.016em;
+  color:var(--ink-soft); margin:clamp(40px,4vw,76px) 0 20px; max-width:16ch; }
+.lede{ font-size:clamp(16px,1.15vw,21px); color:var(--ink-muted); max-width:74ch; margin:0 0 34px; }
+
+.enter{ display:inline-flex; align-items:center; gap:12px;
+  padding:16px 32px; border-radius:999px; background:var(--yellow); color:#04050A;
+  font-size:16px; border:1px solid var(--yellow); transition:background .18s, color .18s; }
+.enter:hover{ background:transparent; color:var(--yellow); }
+
+section{ padding:clamp(40px,3.6vw,76px) 0; border-top:1px solid var(--hair); margin-top:clamp(44px,4vw,84px); }
+section + section{ margin-top:0; }
+.eyebrow{ display:inline-flex; align-items:center; gap:12px; font-size:13px;
+  color:var(--ink-muted); margin-bottom:14px; }
+.eyebrow::before{ content:''; width:30px; height:1px; background:var(--yellow); }
+h2{ font-family:'Oswald',sans-serif; font-weight:400; font-size:clamp(26px,2.5vw,44px);
+  line-height:1.08; letter-spacing:-.012em; color:var(--ink-soft); margin:0 0 8px; }
+.sub{ color:var(--ink-muted); margin:0 0 26px; max-width:72ch; font-size:15px; }
+
+.grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr));
+  gap:clamp(12px,1.1vw,20px); }
+.card{ display:block; border:1px solid var(--hair-2); border-radius:14px; background:var(--bg-2);
+  padding:clamp(18px,1.5vw,26px); transition:border-color .18s, background .18s, transform .18s; }
+.card:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); transform:translateY(-2px); }
+.card b{ display:block; font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:clamp(17px,1.35vw,23px); line-height:1.16; color:var(--ink-soft); margin-bottom:7px; }
+.card span{ display:block; color:var(--ink-muted); font-size:14px; line-height:1.55; }
+.card .path{ display:block; margin-top:13px; padding-top:11px; border-top:1px solid var(--hair);
+  font-family:'Geist Mono',ui-monospace,monospace; font-size:11.5px;
+  color:rgba(244,246,255,.42); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.card.lead{ grid-column:1 / -1; background:linear-gradient(180deg,var(--bg-2),var(--bg-3)); }
+
+.rows{ border-top:1px solid var(--hair); }
+.row{ display:grid; grid-template-columns:minmax(190px,.24fr) 1fr;
+  gap:clamp(14px,1.4vw,34px); padding:15px 0; border-bottom:1px solid var(--hair); align-items:baseline; }
+@media (max-width:760px){ .row{ grid-template-columns:1fr; gap:4px; } }
+.row .k{ font-family:'Geist Mono',ui-monospace,monospace; font-size:12.5px; color:var(--ink); }
+.row .v{ color:var(--ink-muted); font-size:14.5px; }
+.row .v em{ font-style:normal; color:var(--ink-soft); }
+
+footer{ padding:clamp(34px,3vw,60px) 0 clamp(50px,4vw,90px); border-top:1px solid var(--hair);
+  margin-top:clamp(30px,2.6vw,54px); color:rgba(244,246,255,.42); font-size:13px; }
+footer a{ color:rgba(244,246,255,.7); border-bottom:1px solid var(--hair-2); }
+footer a:hover{ color:var(--yellow); border-color:var(--yellow); }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <a class="brand" href="website/brand-portal/00%20Home.html">
+    <img src="website/assets/brand/intelligaia-logo.png" alt="Intelligaia" />
+    <span class="sep"></span>
+    <span class="sys">Branding</span>
+  </a>
+</header>
+
+<h1>Brand portal.</h1>
+<p class="lede">This is the front door. Everything the brand is made of, everything we ship, and the agent skills that produce it — one browsable view over this repository. Open the home page below, or jump straight to a section.</p>
+<a class="enter" href="website/brand-portal/00%20Home.html">Open the portal <span>→</span></a>
+
+<section>
+  <span class="eyebrow">Start here</span>
+  <h2>The two halves.</h2>
+  <p class="sub">Reference on the left — what the brand is made of. Collateral on the right — what you actually send to a client.</p>
+  <div class="grid">
+    <a class="card lead" href="website/brand-portal/00%20Home.html">
+      <b>Home</b><span>The landing page for the whole system. Start here if you are new.</span>
+      <span class="path">website/brand-portal/00 Home.html</span></a>
+    <a class="card" href="website/brand-portal/ds/00%20Start.html">
+      <b>Design system</b><span>Foundations, the illustration library, construction rules and tokens.</span>
+      <span class="path">website/brand-portal/ds/00 Start.html</span></a>
+    <a class="card" href="website/brand-portal/mk/00%20Start.html">
+      <b>Collateral</b><span>Catalogs, case studies, whitepapers, landing pages, diagrams, social — and the skills.</span>
+      <span class="path">website/brand-portal/mk/00 Start.html</span></a>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Design system</span>
+  <h2>Reference.</h2>
+  <p class="sub">What the brand is made of, and the rules that hold it together.</p>
+  <div class="grid">
+    <a class="card" href="website/brand-portal/ds/10%20Foundations.html"><b>Foundations</b><span>Principles, colour, typography, spacing.</span><span class="path">ds/10 Foundations.html</span></a>
+    <a class="card" href="website/brand-portal/ds/20%20Asset%20Library.html"><b>Illustration library</b><span>Characters, devices, objects, nature, icons, letters, waves.</span><span class="path">ds/20 Asset Library.html</span></a>
+    <a class="card" href="website/brand-portal/ds/21%20Category.html"><b>Category</b><span>One category at a time, with every asset in it.</span><span class="path">ds/21 Category.html</span></a>
+    <a class="card" href="website/brand-portal/ds/29%20Asset%20Detail.html"><b>Asset detail</b><span>Big preview, build stages, the method behind the drawing.</span><span class="path">ds/29 Asset Detail.html</span></a>
+    <a class="card" href="website/brand-portal/ds/30%20Construction.html"><b>Construction</b><span>The 50×50 grid, four primitives, intersect-don't-draw.</span><span class="path">ds/30 Construction.html</span></a>
+    <a class="card" href="website/brand-portal/ds/40%20Tokens.html"><b>Tokens and handoff</b><span>Generated tokens and what engineering consumes.</span><span class="path">ds/40 Tokens.html</span></a>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Collateral</span>
+  <h2>What you ship.</h2>
+  <p class="sub">Every artifact type, previewed as the thing it actually is — and the skill that produces it.</p>
+  <div class="grid">
+    <a class="card lead" href="website/brand-portal/mk/70%20Skills.html"><b>Skills</b><span>The agent layer. Twenty-four skills across collateral, web pages, design practice, domain knowledge and operations — with the five-step pipeline every artifact runs through.</span><span class="path">mk/70 Skills.html</span></a>
+    <a class="card" href="website/brand-portal/mk/10%20Service%20Catalog.html"><b>Service catalog</b><span>Seven template pages with page jobs and the golden-ratio grid.</span><span class="path">mk/10 Service Catalog.html</span></a>
+    <a class="card" href="website/brand-portal/mk/20%20Case%20Studies.html"><b>Case studies</b><span>Four published, in two formats — full narrative and single-screen poster.</span><span class="path">mk/20 Case Studies.html</span></a>
+    <a class="card" href="website/brand-portal/mk/30%20Whitepapers.html"><b>Whitepapers</b><span>Two published papers, previewed in full.</span><span class="path">mk/30 Whitepapers.html</span></a>
+    <a class="card" href="website/brand-portal/mk/40%20Landing%20Pages.html"><b>Landing pages</b><span>Eight page compositions built from the approved hero library.</span><span class="path">mk/40 Landing Pages.html</span></a>
+    <a class="card" href="website/brand-portal/mk/50%20Diagrams.html"><b>Diagrams</b><span>Seven square-canvas process diagrams, PNG and vector PDF.</span><span class="path">mk/50 Diagrams.html</span></a>
+    <a class="card" href="website/brand-portal/mk/60%20Social.html"><b>Social</b><span>Six composed posts across the three ratios.</span><span class="path">mk/60 Social.html</span></a>
+  </div>
+</section>
+
+<section>
+  <span class="eyebrow">Where things live</span>
+  <h2>The map.</h2>
+  <p class="sub">One live portal, one asset tree, one skill folder. Nothing else is current.</p>
+  <div class="rows">
+    <div class="row"><span class="k">website/brand-portal/</span><span class="v"><em>The live site.</em> Renamed from <code>v2</code>. Sixteen pages plus <code>source.js</code>, which holds the Figma and Git links for every page in one place.</span></div>
+    <div class="row"><span class="k">website/assets/</span><span class="v">Every built asset — illustrations, diagrams, whitepapers, case studies, marketing art, tokens, and the generated <code>previews/</code> the portal renders.</span></div>
+    <div class="row"><span class="k">Intelligaia Skills/</span><span class="v">Eight skills versioned in this repository. The other sixteen live in <code>intelligaia/Claude-Skills</code>.</span></div>
+    <div class="row"><span class="k">website/_archive-v1/</span><span class="v">The superseded light and dark portal, and the old start page. Kept for reference — <em>not current, do not edit.</em></span></div>
+    <div class="row"><span class="k">website/index.html</span><span class="v">Redirects to the portal, so a GitHub Pages build lands in the right place.</span></div>
+    <div class="row"><span class="k">_to_delete/</span><span class="v">Files staged for removal. Safe to empty.</span></div>
+  </div>
+</section>
+
+<footer>
+  <p style="margin:0 0 8px">Derived from Figma and Git — <a href="https://github.com/intelligaia/Intelligaia-Brand-Assets" target="_blank" rel="noopener">intelligaia/Intelligaia-Brand-Assets</a>. The Figma file URL goes in one place: <code>website/brand-portal/source.js</code>.</p>
+  <p style="margin:0">© 2026 Intelligaia — humanizing AI for enterprises</p>
+</footer>
+
+</div>
+</body>
+</html>

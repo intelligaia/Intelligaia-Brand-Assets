@@ -4,7 +4,7 @@
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Intelligaia · Skills</title>
-<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&family=Syne:wght@700;800&display=swap" rel="stylesheet" />
+<link rel="preconnect" href="https://fonts.googleapis.com" /><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin /><link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&family=Geist:wght@400;500&family=Oswald:wght@400;500&display=swap" rel="stylesheet" />
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.14/dist/lenis.min.js"></script>
 <style>
 
@@ -55,7 +55,7 @@ body::before {
 .section.hero { padding-top: 120px; padding-bottom: 40px; align-items: stretch; justify-content: center; min-height: 100vh; overflow: hidden; }
 .hero-grid { display: grid; grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.2fr); gap: 40px; align-items: center; width: 100%; }
 .hero-left { max-width: 560px; }
-.eyebrow { font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;  color: var(--ink-muted); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; }
+.eyebrow { font-family: 'Geist', sans-serif; font-size: 13px; font-weight: 500; letter-spacing:.005em;   color: var(--ink-muted); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; }
 .eyebrow::before { content: ''; width: 32px; height: 1px; background: var(--yellow); }
 
 /* HERO H1 — Oswald Medium, 2 lines, smaller, word-by-word reveal */
@@ -113,7 +113,7 @@ body::before {
 /* photo-style card: image wrapped in cream mount */
 .cut-photo { padding: 10px 10px 42px; background: #F4EFDF; }
 .cut-photo img { display: block; width: 100%; height: 100%; object-fit: cover; background: #EDE8D8; }
-.cut-photo .cap-strip { text-transform: uppercase; position: absolute; left: 12px; right: 12px; bottom: 10px; font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 10px; color: #333; opacity: 0.55; display: flex; justify-content: space-between; letter-spacing: 0.02em; }
+.cut-photo .cap-strip {  position: absolute; left: 12px; right: 12px; bottom: 10px; font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 10px; color: #333; opacity: 0.55; display: flex; justify-content: space-between; letter-spacing:.005em; }
 
 /* ═══ CUTOUT ART — the five supplied PNG cutouts ═══════════════════════════
    Torn edges, tape and paper shadow are baked into the artwork, so these get
@@ -195,7 +195,7 @@ body::before {
 .df-logo img { height: 32px; filter: invert(1) brightness(1.1); }
 .df-tag { font-family: 'Geist', sans-serif; font-size: 12px; color: var(--ink-muted); margin: 12px 0 0; }
 .df-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; }
-.df-cols h5 { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase;  color: var(--ink-muted); margin: 0 0 14px; }
+.df-cols h5 { font-family: 'Oswald', sans-serif; font-weight: 400; font-size: 13px; letter-spacing:.005em;   color: var(--ink-muted); margin: 0 0 14px; }
 .df-cols ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
 .df-cols a { font-family: 'Geist', sans-serif; font-size: 14px; color: var(--ink); opacity: 0.75; transition: opacity 0.15s; }
 .df-cols a:hover { opacity: 1; color: var(--yellow); }
@@ -236,7 +236,7 @@ body::before {
 .fnd-tile-lbl { font-family: 'Geist', sans-serif; font-size: 12px; letter-spacing: 0.14em;  color: var(--ink-muted); margin-bottom: 20px; }
 .fnd-p-list { display: flex; flex-direction: column; gap: 12px; flex: 1; }
 .fnd-p-list > div { display: flex; align-items: baseline; gap: 12px; }
-.fnd-p-n { font-family: 'Geist', sans-serif; font-size: 12px; color: var(--yellow); }
+.fnd-p-n { font-family: 'Geist', sans-serif; font-size: 12px; color:var(--ink-muted); }
 .fnd-p-list span:last-child { font-family: 'Geist', sans-serif; font-weight: 400; font-size: 20px; color: var(--ink-soft); }
 .fnd-c-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; flex: 1; }
 .fnd-c-grid span { border-radius: 10px; }
@@ -269,10 +269,10 @@ body::before {
 .ix-row:hover .ix-arrow { color: var(--yellow); transform: translateX(6px); }
 .ix-row:hover .ix-title { color: var(--yellow); }
 
-.ix-num { font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 12px; color: var(--yellow); letter-spacing: 0.14em; }
+.ix-num { font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 12px; color:var(--ink-muted); letter-spacing: 0.14em; }
 .ix-title-wrap { display: flex; flex-direction: column; gap: 4px; }
 .ix-title { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(26px, 2.6vw, 36px); line-height: 1.05; letter-spacing: -0.01em; color: var(--ink-soft); margin: 0; transition: color 0.2s ease; }
-.ix-sub { font-family: 'Geist', sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing: 0.14em; text-transform: uppercase;  color: var(--ink-muted); }
+.ix-sub { font-family: 'Geist', sans-serif; font-size: 11.5px; font-weight: 500; letter-spacing:.005em;   color: var(--ink-muted); }
 
 .ix-thumbs { display: flex; gap: 10px; overflow: hidden; align-items: center; justify-content: flex-end; }
 .ix-thumb {
@@ -302,7 +302,7 @@ body::before {
 .ix-thumb.thumb-aa { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: 44px; color: var(--ink-soft); letter-spacing: -0.03em; line-height: 1; }
 .ix-thumb.thumb-nums { display: flex; flex-direction: column; align-items: flex-start; padding: 12px; gap: 6px; }
 .ix-thumb.thumb-nums span { font-family: 'Geist Mono', monospace; font-size: 11px; color: var(--ink-muted); display: flex; align-items: center; gap: 6px; }
-.ix-thumb.thumb-nums span::before { content: ''; width: 12px; height: 1px; background: var(--yellow); }
+.ix-thumb.thumb-nums span::before { content: ''; width: 12px; height: 1px; background:var(--hair-2); }
 .ix-thumb.thumb-yellow-banner { background: var(--yellow); display: flex; align-items: flex-end; padding: 8px; }
 .ix-thumb.thumb-yellow-banner::before { content: ''; width: 60%; height: 8px; background: #04050A; }
 
@@ -337,22 +337,22 @@ body::before {
 .chapter-card::before {
   content: '';
   position: absolute; top: 0; left: 0; right: 0; height: 3px;
-  background: var(--yellow);
+  background:var(--hair-2);
   transform: scaleX(0); transform-origin: left;
   transition: transform 0.35s cubic-bezier(0.22, 0.9, 0.3, 1);
 }
 .chapter-card:hover::before { transform: scaleX(1); }
 
 .chapter-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
-.chapter-num { font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 12px; color: var(--yellow); letter-spacing: 0.14em; }
-.chapter-tag { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase;  color: var(--ink-muted); }
+.chapter-num { font-family: 'Geist Mono', 'ui-monospace', monospace; font-size: 12px; color:var(--ink-muted); letter-spacing: 0.14em; }
+.chapter-tag { font-family: 'Geist', sans-serif; font-size: 11px; font-weight: 500; letter-spacing:.005em;   color: var(--ink-muted); }
 
 .chapter-title { font-family: 'Oswald', sans-serif; font-weight: 500; font-size: clamp(28px, 3vw, 42px); line-height: 1.05; letter-spacing: -0.01em; color: var(--ink-soft); margin: 0 0 12px; }
 .chapter-lede { font-family: 'Geist', sans-serif; font-size: 15px; line-height: 1.55; color: var(--ink-muted); margin: 0 0 22px; max-width: 44ch; }
 
 .chapter-contents { list-style: none; padding: 0; margin: 0 0 24px; display: flex; flex-direction: column; gap: 8px; }
 .chapter-contents li { display: flex; align-items: center; gap: 10px; font-family: 'Geist', sans-serif; font-size: 13.5px; color: var(--ink); opacity: 0.85; }
-.chapter-contents li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background: var(--yellow); flex: none; }
+.chapter-contents li::before { content: ''; width: 4px; height: 4px; border-radius: 50%; background:var(--hair-2); flex: none; }
 .chapter-contents li .soon { font-family: 'Geist Mono', monospace; font-size: 10px; color: var(--ink-muted); padding: 2px 6px; border: 1px solid var(--hair-2); border-radius: 4px; margin-left: 6px;  letter-spacing: 0.08em; }
 
 .chapter-foot { margin-top: auto; display: flex; align-items: center; justify-content: space-between; padding-top: 18px; border-top: 1px solid var(--hair); }
@@ -366,7 +366,7 @@ body::before {
 @media (max-width: 700px) { .system-purpose { grid-template-columns: 1fr; } }
 .pp-chip { display: flex; align-items: center; gap: 10px; padding: 10px 14px; background: var(--bg-2); border: 1px solid var(--hair); border-radius: 999px; font-family: 'Geist', sans-serif; font-size: 12.5px; color: var(--ink-muted); }
 .pp-chip strong { font-weight: 500; color: var(--ink); }
-.pp-chip .dot { width: 6px; height: 6px; border-radius: 50%; background: var(--yellow); flex: none; }
+.pp-chip .dot { width: 6px; height: 6px; border-radius: 50%; background:var(--hair-2); flex: none; }
 
 
 
@@ -374,8 +374,8 @@ body::before {
 .pb-group { margin-top: 40px; }
 .pb-group + .pb-group { margin-top: 64px; }
 .pb-group-hd { display:flex; align-items:baseline; gap:14px; padding-bottom:14px; }
-.pb-kind { font-family: 'Geist', sans-serif; font-size:10.5px; font-weight:500; letter-spacing:0.18em; text-transform:uppercase; color:#04050A; background:var(--ink-muted); padding:4px 12px; border-radius:999px; }
-.pb-kind.produce { background:var(--yellow); }
+.pb-kind { font-family: 'Geist', sans-serif; font-size:10.5px; font-weight:500; letter-spacing:.005em;  color:#04050A; background:var(--ink-muted); padding:4px 12px; border-radius:999px; }
+.pb-kind.produce { background:var(--bg-3); }
 .pb-group-note { font-family: 'Geist', sans-serif; font-weight:400; font-size:15px; color:var(--ink-muted); }
 .system-index { border-top:1px solid var(--hair); margin-top:0; }
 
@@ -419,7 +419,7 @@ body::before {
 .show-card:hover::before{ box-shadow:inset 0 0 0 1px var(--yellow); }
 @media (max-width:960px){ .show-card{ grid-template-columns:1fr; gap:34px; padding:36px 30px; } }
 
-.show-eyebrow{ font-family:'Geist',sans-serif; font-size:11.5px; font-weight:400; letter-spacing:.16em; text-transform:uppercase; color:var(--ink-muted); display:inline-flex; align-items:center; gap:10px; margin-bottom:18px; }
+.show-eyebrow{ font-family:'Geist',sans-serif; font-size:11.5px; font-weight:400; letter-spacing:.005em;  color:var(--ink-muted); display:inline-flex; align-items:center; gap:10px; margin-bottom:18px; }
 .show-eyebrow::before{ content:''; width:26px; height:1px; background:var(--yellow); }
 .show-card h2{ font-family:'Oswald',sans-serif; font-weight: 400; font-size:clamp(34px,4.2vw,58px); line-height:1.04; letter-spacing:-.015em; color:var(--ink-soft); margin:0 0 16px; }
 .show-desc{ font-family:'Geist',sans-serif; font-weight:400; font-size:15.5px; line-height:1.62; color:var(--ink-muted); margin:0 0 26px; max-width:50ch; }
@@ -444,7 +444,7 @@ body::before {
 .fv-aa{ font-family:'Oswald',sans-serif; font-weight:500; font-size:66px; line-height:1; color:var(--ink-soft); letter-spacing:-.03em; text-align:center; }
 .fv-pr{ display:flex; flex-direction:column; gap:6px; }
 .fv-pr i{ font-style:normal; font-family:'Geist',sans-serif; font-size:12px; color:var(--ink-muted); display:flex; align-items:center; gap:8px; }
-.fv-pr i::before{ content:''; width:14px; height:1px; background:var(--yellow); flex:none; }
+.fv-pr i::before{ content:''; width:14px; height:1px; background:var(--hair-2); flex:none; }
 
 /* mock visuals */
 .mv{ width:74%; border-radius:10px; box-shadow:0 20px 50px -16px rgba(0,0,0,.55); overflow:hidden; }
@@ -491,11 +491,11 @@ body::before {
 /* foundations viz — three inner cards */
 .fnd-three{ display:grid; grid-template-columns:repeat(3,1fr); gap:10px; width:100%; padding:16px; }
 .fnd-mini{ background:var(--bg-2); border:1px solid var(--hair); border-radius:10px; padding:14px 12px; display:flex; flex-direction:column; gap:9px; min-height:0; }
-.fnd-mini .t{ font-family:'Geist',sans-serif; font-size:10px; letter-spacing:.13em; text-transform:uppercase; color:var(--ink-muted); }
+.fnd-mini .t{ font-family:'Geist',sans-serif; font-size:10px; letter-spacing:.005em;  color:var(--ink-muted); }
 .fnd-mini .body{ flex:1; display:flex; align-items:center; justify-content:center; }
 .fnd-mini .pr{ display:flex; flex-direction:column; gap:6px; width:100%; }
 .fnd-mini .pr i{ font-style:normal; font-family:'Geist',sans-serif; font-size:10.5px; color:var(--ink); opacity:.85; display:flex; align-items:center; gap:6px; line-height:1.25; }
-.fnd-mini .pr i::before{ content:''; width:9px; height:1px; background:var(--yellow); flex:none; }
+.fnd-mini .pr i::before{ content:''; width:9px; height:1px; background:var(--hair-2); flex:none; }
 .fnd-mini .aa{ font-family:'Oswald',sans-serif; font-weight:500; font-size:42px; line-height:1; color:var(--ink-soft); letter-spacing:-.03em; }
 .fnd-mini .aa small{ display:block; font-family:'Geist',sans-serif; font-size:9.5px; font-weight:400; color:var(--ink-muted); letter-spacing:.06em; margin-top:5px; text-align:center; }
 .fnd-mini .sw{ display:grid; grid-template-columns:1fr 1fr; gap:6px; width:100%; }
@@ -571,7 +571,7 @@ body::before {
 }
 .trio-card.seen{ opacity:1; transform:none; }
 .trio-card.seen:hover{ border-color:var(--yellow); background:var(--bg-3); transform:translateY(-4px); }
-.trio-card .tc-lbl{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.15em; text-transform:uppercase; color:var(--ink-muted); }
+.trio-card .tc-lbl{ font-family:'Geist',sans-serif; font-size:10.5px; letter-spacing:.005em;  color:var(--ink-muted); }
 .trio-card h3{ font-family:'Oswald',sans-serif; font-weight:400; font-size:26px; line-height:1.05; letter-spacing:-.01em; color:var(--ink-soft); margin:0; }
 .trio-card p{ font-family:'Geist',sans-serif; font-size:13px; line-height:1.55; color:var(--ink-muted); margin:0; flex:1; }
 .trio-viz{ height:104px; border-radius:9px; background:var(--bg-3); border:1px solid var(--hair); display:flex; align-items:center; justify-content:center; overflow:hidden; padding:14px; }
@@ -580,7 +580,7 @@ body::before {
 .trio-card:hover .trio-open::after{ transform:translateX(4px); }
 .tv-pr{ display:flex; flex-direction:column; gap:7px; width:100%; }
 .tv-pr i{ font-style:normal; font-family:'Geist',sans-serif; font-size:11.5px; color:var(--ink); opacity:.9; display:flex; align-items:center; gap:7px; }
-.tv-pr i::before{ content:''; width:12px; height:1px; background:var(--yellow); flex:none; }
+.tv-pr i::before{ content:''; width:12px; height:1px; background:var(--hair-2); flex:none; }
 .tv-aa{ font-family:'Oswald',sans-serif; font-weight:400; font-size:52px; line-height:1; color:var(--ink-soft); letter-spacing:-.03em; }
 .tv-aa small{ display:block; font-family:'Geist',sans-serif; font-size:10px; color:var(--ink-muted); letter-spacing:.07em; margin-top:5px; text-align:center; }
 .tv-sw{ display:grid; grid-template-columns:repeat(4,1fr); gap:7px; width:100%; }
@@ -669,15 +669,15 @@ body{ overscroll-behavior-y:none; }
 /* ══════════ GLOBAL SCALE — readable at 2.5K–3K ══════════ */
 :root{
   --pad-x:40px; --shell:1440px;
-  --nav-fs:15px; --logo-h:38px; --sys-fs:18px; --hdr-h:78px;
+  --nav-fs:15px; --logo-h:38px; --sys-fs:15px; --hdr-h:62px;
   --h1:clamp(48px,6vw,92px); --h2:clamp(30px,3.2vw,46px);
   --lede:17px; --body:15px; --meta:12.5px;
 }
-@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:19px; --hdr-h:83px;  --lede:18px; --body:15.5px; } }
-@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:21px; --hdr-h:90px; --lede:19px; --body:16px;   --meta:13.5px; } }
-@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:24px; --hdr-h:102px; --lede:21px; --body:17.5px; --meta:15px;
+@media (min-width:1600px){ :root{ --pad-x:64px;  --shell:1560px; --nav-fs:16px;   --logo-h:41px; --sys-fs:16px; --hdr-h:66px;  --lede:18px; --body:15.5px; } }
+@media (min-width:1920px){ :root{ --pad-x:88px;  --shell:1780px; --nav-fs:17px;   --logo-h:44px; --sys-fs:17px; --hdr-h:70px; --lede:19px; --body:16px;   --meta:13.5px; } }
+@media (min-width:2400px){ :root{ --pad-x:120px; --shell:2100px; --nav-fs:19px;   --logo-h:50px; --sys-fs:19px; --hdr-h:76px; --lede:21px; --body:17.5px; --meta:15px;
   --h1:clamp(80px,4.6vw,130px); --h2:clamp(44px,2.5vw,64px); } }
-@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:27px; --hdr-h:112px; --lede:23px; --body:19px;   --meta:16px;
+@media (min-width:2800px){ :root{ --pad-x:150px; --shell:2440px; --nav-fs:21px;   --logo-h:56px; --sys-fs:21px; --hdr-h:82px; --lede:23px; --body:19px;   --meta:16px;
   --h1:clamp(96px,4.4vw,150px); --h2:clamp(52px,2.4vw,74px); } }
 
 .g-header{ height:var(--hdr-h) !important; width:100%; left:0; right:0; }
@@ -687,6 +687,10 @@ body{ overscroll-behavior-y:none; }
 .g-logo{ display:flex; align-items:center; gap:18px; flex-shrink:0; }
 .g-logo img{ height:var(--logo-h) !important; width:auto; }
 .g-sep{ width:1px; height:calc(var(--logo-h) * .58); background:var(--hair-2); flex:none; }
+
+.g-logo:hover .g-sys{ color:#fff; }
+.g-header-inner{ gap:clamp(18px,1.6vw,34px) !important; }
+.g-sep{ height:calc(var(--logo-h) * .66) !important; opacity:.8; }
 .g-sys{ font-family:'Oswald',sans-serif; font-weight:400; font-size:var(--sys-fs) !important; letter-spacing:-.005em; white-space:nowrap; }
 .g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.7vw,38px); }
 .g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
@@ -753,13 +757,10 @@ body.home .section.hero{ min-height:100vh !important; }
 .g-logo img{ height:var(--logo-h) !important; width:auto; display:block; }
 .g-sep{ width:1px; height:calc(var(--logo-h) * .62); background:var(--hair-2); flex:none; }
 /* brand wordmark — spectrum, its own typeface */
-.g-sys{ font-family:'Syne',var(--font-display),sans-serif; font-weight:700;
-  font-size:calc(var(--sys-fs) * 1.06); letter-spacing:-.012em; white-space:nowrap; line-height:1;
-  background:linear-gradient(96deg,#FFC800 0%,#FF8A3D 22%,#F0506E 44%,#8A5AF0 68%,#4A8BF5 88%,#26D0C4 100%);
-  -webkit-background-clip:text; background-clip:text;
-  -webkit-text-fill-color:transparent; color:transparent;
-  background-size:180% 100%; transition:background-position .5s ease; }
-.g-logo:hover .g-sys{ background-position:100% 0; }
+.g-sys{ font-family:'Oswald','Helvetica Neue',Arial,sans-serif; font-weight:400;
+  font-size:var(--sys-fs); letter-spacing:.004em; white-space:nowrap; line-height:1;
+  color:var(--ink-soft); transition:color .22s ease; }
+
 .g-nav{ display:flex; align-items:center; justify-content:center; gap:clamp(18px,1.8vw,40px); }
 .g-nav a{ font-family:'Geist',sans-serif; font-weight:400; font-size:var(--nav-fs) !important;
   white-space:nowrap; opacity:.86; transition:color .15s, opacity .15s; position:relative; }
@@ -846,8 +847,7 @@ body.home .section.hero{ min-height:100vh !important; }
 .crd{ display:block; border:1px solid var(--hair-2); border-radius:16px; background:var(--bg-2);
   padding:clamp(22px,1.7vw,32px); transition:border-color .18s, background .18s, transform .18s; }
 a.crd:hover{ border-color:rgba(255,200,0,.42); background:var(--bg-3); transform:translateY(-2px); }
-.crd .lbl{ font-family:'Geist',sans-serif; font-size:var(--label); letter-spacing:.14em;
-  text-transform:uppercase; color:var(--yellow); display:block; margin-bottom:12px; }
+.crd .lbl{ font-family:'Geist',sans-serif; font-size:var(--label); letter-spacing:.005em;  color:var(--ink-muted); display:block; margin-bottom:12px; }
 .crd h3{ font-family:'Oswald',sans-serif; font-weight:400 !important;
   font-size:calc(var(--lede) * 1.34); line-height:1.16; color:var(--ink-soft); margin:0 0 10px; }
 .crd p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.6;
@@ -862,8 +862,7 @@ a.crd:hover{ border-color:rgba(255,200,0,.42); background:var(--bg-3); transform
   align-items:center; border:1px solid var(--hair-2); border-radius:20px; background:var(--bg-2);
   padding:clamp(28px,2.4vw,52px); transition:border-color .2s, background .2s; }
 a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
-.door .lbl{ font-family:'Geist',sans-serif; font-size:var(--label); letter-spacing:.14em;
-  text-transform:uppercase; color:var(--yellow); display:block; margin-bottom:14px; }
+.door .lbl{ font-family:'Geist',sans-serif; font-size:var(--label); letter-spacing:.005em;  color:var(--ink-muted); display:block; margin-bottom:14px; }
 .door h2{ font-family:'Oswald',sans-serif; font-weight:400 !important; font-size:var(--h2);
   line-height:1.06; letter-spacing:-.014em; color:var(--ink-soft); margin:0 0 14px; }
 .door p{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.6;
@@ -882,7 +881,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 .step{ display:grid; grid-template-columns:minmax(120px,.18fr) 1fr; gap:clamp(18px,1.6vw,40px);
   padding:clamp(20px,1.6vw,30px) 0; border-bottom:1px solid var(--hair); align-items:start; }
 .step .w{ font-family:'Oswald',sans-serif; font-weight:400; font-size:calc(var(--lede) * 1.1);
-  color:var(--yellow); }
+  color:var(--ink-muted); }
 .step p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.62;
   color:var(--ink-muted); margin:0; }
 .step p b{ font-weight:400; color:var(--ink-soft); }
@@ -890,8 +889,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 
 /* file / token table */
 .ftab{ width:100%; border-collapse:collapse; font-family:'Geist',sans-serif; }
-.ftab th{ text-align:left; font-weight:400; font-size:var(--label); letter-spacing:.13em;
-  text-transform:uppercase; color:var(--ink-muted); padding:0 18px 14px 0;
+.ftab th{ text-align:left; font-weight:400; font-size:var(--label); letter-spacing:.005em;  color:var(--ink-muted); padding:0 18px 14px 0;
   border-bottom:1px solid var(--hair-2); }
 .ftab td{ font-size:var(--body); color:var(--ink-muted); padding:16px 18px 16px 0;
   border-bottom:1px solid var(--hair); vertical-align:top; line-height:1.55; }
@@ -901,7 +899,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 .soon{ display:inline-block; font-family:'Geist',sans-serif; font-size:var(--meta);
   color:var(--ink-muted); border:1px solid var(--hair-2); border-radius:999px;
   padding:4px 12px; margin-left:10px; vertical-align:middle; }
-.note{ border-left:2px solid var(--yellow); padding:clamp(16px,1.2vw,22px) clamp(18px,1.4vw,26px);
+.note{ border-left:2px solid var(--hair-2); padding:clamp(16px,1.2vw,22px) clamp(18px,1.4vw,26px);
   background:var(--bg-2); border-radius:0 12px 12px 0; }
 .note p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.62;
   color:var(--ink-muted); margin:0; }
@@ -945,7 +943,7 @@ a.door:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); }
 .rail::-webkit-scrollbar-thumb{ background:var(--hair-2); border-radius:4px; }
 .rail-grp{ padding:0 clamp(12px,.9vw,18px); display:block; }
 .rail-lbl{ display:block; font-family:'Geist',sans-serif; font-size:var(--label);
-  letter-spacing:.15em; text-transform:uppercase; color:rgba(244,246,255,.34);
+  letter-spacing:.005em;  color:rgba(244,246,255,.34);
   padding:0 16px; margin:clamp(20px,1.6vw,30px) 0 8px; }
 .rail-grp > a:first-child + .rail-lbl{ margin-top:clamp(16px,1.2vw,24px); }
 .rail a{ position:relative; display:block; font-family:'Geist',sans-serif;
@@ -983,7 +981,120 @@ body.rail-on .section{ max-width:1900px !important;
   body.rail-on main, body.rail-on .dark-footer{ margin-left:0; }
   .rail-btn{ display:inline-flex; }
 }
+
+/* ══════════ SKILLS — the agent layer ══════════ */
+.sk-pipe{ display:grid; grid-template-columns:repeat(5,minmax(0,1fr));
+  gap:clamp(10px,.9vw,18px); margin-top:clamp(18px,1.5vw,30px); }
+@media (max-width:1180px){ .sk-pipe{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:640px){ .sk-pipe{ grid-template-columns:1fr; } }
+.sk-node{ position:relative; border:1px solid var(--hair-2); border-radius:14px;
+  background:var(--bg-2); padding:clamp(18px,1.4vw,26px); }
+.sk-node .st{ font-family:'Geist',monospace; font-size:calc(var(--meta) * .92);
+  color:rgba(244,246,255,.34); display:block; margin-bottom:12px; }
+.sk-node h4{ font-family:'Oswald',sans-serif; font-weight:400; margin:0 0 8px;
+  font-size:calc(var(--lede) * 1.06); line-height:1.16; color:var(--ink-soft); }
+.sk-node p{ font-family:'Geist',sans-serif; font-size:var(--meta); line-height:1.55;
+  color:var(--ink-muted); margin:0; }
+.sk-node.agent{ background:var(--bg-3); border-color:rgba(255,255,255,.20); }
+.sk-node::after{ content:''; position:absolute; top:50%; right:calc(-1 * clamp(10px,.9vw,18px));
+  width:clamp(10px,.9vw,18px); height:1px; background:var(--hair-2); }
+.sk-node:last-child::after{ display:none; }
+@media (max-width:1180px){ .sk-node::after{ display:none; } }
+
+.sk-who{ margin-top:clamp(18px,1.5vw,30px); border-top:1px solid var(--hair); }
+.sk-who .r{ display:grid; grid-template-columns:minmax(150px,.2fr) minmax(0,.34fr) 1fr;
+  gap:clamp(14px,1.3vw,32px); padding:clamp(16px,1.3vw,24px) 0;
+  border-bottom:1px solid var(--hair); align-items:baseline; }
+@media (max-width:900px){ .sk-who .r{ grid-template-columns:1fr; gap:6px; } }
+.sk-who .team{ font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:calc(var(--lede) * 1.02); color:var(--ink-soft); }
+.sk-who .uses{ font-family:'Geist',monospace; font-size:var(--meta); color:var(--ink); }
+.sk-who .out{ font-family:'Geist',sans-serif; font-size:var(--body);
+  line-height:1.6; color:var(--ink-muted); }
+
+.sk-lib{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:clamp(14px,1.1vw,22px); margin-top:clamp(18px,1.5vw,30px); }
+@media (max-width:1180px){ .sk-lib{ grid-template-columns:repeat(2,minmax(0,1fr)); } }
+@media (max-width:700px){ .sk-lib{ grid-template-columns:1fr; } }
+.sk-c{ display:block; border:1px solid var(--hair-2); border-radius:14px; background:var(--bg-2);
+  padding:clamp(20px,1.5vw,28px); transition:border-color .18s, background .18s, transform .18s; }
+a.sk-c:hover{ border-color:rgba(255,200,0,.45); background:var(--bg-3); transform:translateY(-2px); }
+.sk-c .cmd{ font-family:'Geist',monospace; font-size:calc(var(--meta) * .95);
+  color:var(--ink); background:var(--bg-3); border:1px solid var(--hair);
+  border-radius:6px; padding:4px 9px; display:inline-block; margin-bottom:14px; }
+a.sk-c:hover .cmd{ border-color:var(--hair-2); }
+.sk-c h4{ font-family:'Oswald',sans-serif; font-weight:400; margin:0 0 8px;
+  font-size:calc(var(--lede) * 1.18); line-height:1.14; color:var(--ink-soft); }
+.sk-c p{ font-family:'Geist',sans-serif; font-size:var(--body); line-height:1.6;
+  color:var(--ink-muted); margin:0; }
+.sk-c .meta{ display:flex; flex-wrap:wrap; gap:8px; margin-top:16px;
+  padding-top:14px; border-top:1px solid var(--hair); }
+.sk-c .meta span{ font-family:'Geist',sans-serif; font-size:calc(var(--meta) * .95);
+  color:var(--ink-muted); border:1px solid var(--hair-2); border-radius:999px; padding:4px 11px; }
+.sk-c .go{ display:inline-block; margin-top:16px; font-family:'Geist',sans-serif;
+  font-size:var(--meta); color:var(--yellow); }
+.sk-c.wip{ opacity:.72; }
+
+.v2-sec h2{ font-family:'Oswald',sans-serif; font-weight:400; font-size:calc(var(--h2) * .78);
+  line-height:1.08; letter-spacing:-.012em; color:var(--ink-soft); margin:0 0 12px; }
+.v2-sec .lede-p{ font-family:'Geist',sans-serif; font-size:var(--lede); line-height:1.6;
+  color:var(--ink-muted); margin:0; max-width:74ch; }
+.sk-node code{ font-family:'Geist',monospace; font-size:.92em; color:var(--ink);
+  background:var(--bg-3); padding:2px 6px; border-radius:4px; }
+
+/* ══════════ SOURCE / PROVENANCE ══════════ */
+.res{ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:clamp(12px,1vw,18px);
+  margin-top:clamp(20px,1.7vw,30px); }
+@media (max-width:1100px){ .res{ grid-template-columns:1fr; } }
+
+.res a,.res .off{ display:flex; align-items:center; gap:14px; padding:clamp(16px,1.3vw,22px);
+  background:var(--bg-2); border:1px solid var(--hair-2); border-radius:12px; transition:.18s; }
+.res .off{ opacity:.62; }
+.res a:hover{ border-color:var(--yellow); background:var(--bg-3); }
+.res .ico{ width:36px; height:36px; border-radius:9px; background:var(--bg-3);
+  display:flex; align-items:center; justify-content:center; flex:none; color:var(--ink-muted);
+  transition:color .18s; }
+.res a:hover .ico{ color:var(--yellow); }
+.res .tx{ min-width:0; }
+.res .tx b{ display:block; font-family:'Geist',sans-serif; font-weight:400;
+  font-size:var(--label); color:var(--ink); }
+.res .tx span{ display:block; font-family:'Geist',monospace;
+  font-size:calc(var(--label) * .84); color:var(--ink-muted); margin-top:3px;
+  overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+.res .st{ margin-left:auto; font-family:'Geist',sans-serif; font-size:calc(var(--label) * .8);
+  padding:3px 10px; border-radius:999px; background:var(--bg-3); color:var(--ink-muted);
+  white-space:nowrap; flex:none; }
+.prov{ display:flex; flex-wrap:wrap; align-items:center; gap:10px;
+  font-family:'Geist',monospace; font-size:calc(var(--meta) * .95);
+  color:rgba(244,246,255,.42); padding:18px 0 0; margin-top:22px;
+  border-top:1px solid var(--hair); }
+.prov a{ color:rgba(244,246,255,.7); border-bottom:1px solid var(--hair-2); }
+.prov a:hover{ color:var(--yellow); border-color:var(--yellow); }
+.prov i{ font-style:normal; }
+.prov em{ font-style:normal; opacity:.5; }
+
+/* ── skill library ── */
+.sk-count{ display:flex; flex-wrap:wrap; gap:clamp(26px,3vw,62px);
+  margin-top:clamp(22px,1.9vw,36px); padding-top:clamp(20px,1.6vw,30px);
+  border-top:1px solid var(--hair); }
+.sk-count b{ display:block; font-family:'Oswald',sans-serif; font-weight:400;
+  font-size:calc(var(--h2) * .52); line-height:1; color:var(--ink-soft); }
+.sk-count span{ display:block; margin-top:6px; font-family:'Geist',sans-serif;
+  font-size:var(--meta); color:var(--ink-muted); }
+.sk-grp{ padding-top:clamp(30px,2.4vw,52px) !important;
+  padding-bottom:clamp(30px,2.4vw,52px) !important; border-top:1px solid var(--hair); }
+.sk-c .cmd{ font-family:'Geist',monospace; font-size:calc(var(--meta) * .95);
+  color:var(--ink); background:var(--bg-3); border:1px solid var(--hair);
+  border-radius:6px; padding:4px 9px; display:inline-block; margin-bottom:14px; }
+.sk-c .meta span.out{ font-family:'Geist',monospace; }
+.sk-c .meta span.feeds{ border-style:dashed; color:var(--ink); }
+
+/* the skill layer sits above the artifact list, not under it */
+.rail a.rail-top{ margin-top:4px; }
+.rail a.rail-top::after{ content:''; display:block; position:absolute;
+  left:16px; right:14px; bottom:-7px; height:1px; background:var(--hair); }
 </style>
+<script src="../source.js"></script>
 </head>
 <body class="rail-on">
 <header class="g-header">
@@ -996,7 +1107,8 @@ body.rail-on .section{ max-width:1900px !important;
     </a>
     <nav class="g-nav">
       <a href="../ds/00%20Start.html">Design system</a>
-      <a href="../mk/00%20Start.html" class="on">Collateral</a>
+      <a href="../mk/00%20Start.html">Collateral</a>
+      <a href="../mk/70%20Skills.html" class="on">Skills</a>
     </nav>
     <a href="https://www.intelligaia.com/contact" class="g-cta">Contact us</a>
   </div>
@@ -1005,6 +1117,7 @@ body.rail-on .section{ max-width:1900px !important;
 <aside class="rail" id="rail" aria-label="Collateral navigation">
   <nav class="rail-grp">
     <a href="00%20Start.html">Overview</a>
+    <a href="70%20Skills.html" class="rail-top on">Skills</a>
     <span class="rail-lbl">Documents</span>
     <a href="10%20Service%20Catalog.html">Service catalog</a>
     <a href="20%20Case%20Studies.html">Case studies</a>
@@ -1013,49 +1126,109 @@ body.rail-on .section{ max-width:1900px !important;
     <a href="40%20Landing%20Pages.html">Landing pages</a>
     <a href="50%20Diagrams.html">Diagrams</a>
     <a href="60%20Social.html">Social</a>
-    <span class="rail-lbl">Automate</span>
-    <a href="70%20Skills.html" class="on">Skills</a>
     <div class="sub">
+      <a href="70%20Skills.html#how">How it runs</a>
+      <a href="70%20Skills.html#teams">Who runs what</a>
+      <a href="70%20Skills.html#available-now">The library</a>
       <a href="70%20Skills.html#in-build">In build</a>
-      <a href="70%20Skills.html#available-now">Available now</a>
     </div>
   </nav>
 </aside>
 <main>
 
 <section class="section v2-hero">
+  <span class="eyebrow">The skill library</span>
   <h1>Skills.</h1>
-  <p>A skill produces a finished Intelligaia artifact — on brand, in the right format, without a design request.</p>
+  <p>Every artifact on this site is produced by an agent running a skill. The skill holds the brand — the type scale, the palette, the layouts, the approved illustrations, the rules about what is banned. The team holds the brief. Nobody rebuilds a template from memory, and nobody guesses at a hex value.</p>
+  <div class="sk-count">
+    <div><b>24</b><span>skills in the library</span></div>
+    <div><b>8</b><span>versioned in this repository</span></div>
+    <div><b>6</b><span>collateral types produced</span></div>
+  </div>
+</section>
+
+<section class="section v2-sec" id="how">
+  <span class="eyebrow">How it runs</span>
+  <h2>A brief goes in. A finished artifact comes out.</h2>
+  <p class="lede-p">The same five steps run for every artifact type on this site. Only the skill in the middle changes.</p>
+  <div class="sk-pipe">
+    <div class="sk-node"><span class="st">01</span><h4>Brief</h4><p>A person names the client, the audience and the outcome. Two or three sentences is usually enough.</p></div>
+    <div class="sk-node"><span class="st">02</span><h4>Skill</h4><p>The skill loads the rules for that artifact — sections, type scale, layouts, what is banned.</p></div>
+    <div class="sk-node agent"><span class="st">03</span><h4>Agent</h4><p>The agent pulls approved assets from this repo and the tokens from Figma, then writes the artifact.</p></div>
+    <div class="sk-node"><span class="st">04</span><h4>Review</h4><p>A human checks the claims and the numbers. The agent never publishes an unapproved metric.</p></div>
+    <div class="sk-node"><span class="st">05</span><h4>Repo</h4><p>The result lands back in <code>website/assets/</code> and shows up on the page you are reading.</p></div>
+  </div>
+</section>
+
+<section class="section v2-sec" id="teams">
+  <span class="eyebrow">Who runs what</span>
+  <h2>One library, five teams.</h2>
+  <p class="lede-p">A skill is not owned by design. It is written once and run by whoever needs the output.</p>
+  <div class="sk-who">
+    <div class="r"><span class="team">Sales</span><span class="uses">google-intelligaia-doc · cpq-insight · intelligaia-deck-design</span><span class="out">Leaves a meeting with a proposal and the two case studies that match the account, already branded.</span></div>
+    <div class="r"><span class="team">Marketing</span><span class="uses">intelligaia-landing-pages · intelligaia-graphics-skill · whitepaper-skill</span><span class="out">Ships a campaign — hero banner, three post ratios and the long-form piece — without a design ticket.</span></div>
+    <div class="r"><span class="team">Design</span><span class="uses">design-system-docs · handoff-spec-writer · nucleux-base-component-via-figma</span><span class="out">Spends the time on the hard screens, not on rebuilding the same deck for the fourth time.</span></div>
+    <div class="r"><span class="team">Delivery</span><span class="uses">whitepaper-skill · cx-roadmap · ai-problem-framing</span><span class="out">Turns what actually shipped into a dual-track write-up while the detail is still fresh.</span></div>
+    <div class="r"><span class="team">Leadership</span><span class="uses">intelligaia-deck-design · intelligaia-document-design</span><span class="out">Gets a readout in the house format, built from the same assets as everything else.</span></div>
+  </div>
+</section>
+
+<section class="section v2-sec sk-grp" id="collateral-on-this-site">
+  <span class="eyebrow">Collateral on this site</span>
+  <h2>Collateral on this site.</h2>
+  <p class="lede-p">These are the skills behind the pages in this section. Run one and the artifact lands in the repo folder the page reads from.</p>
+  <div class="sk-lib"><a class="sk-c" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20Whitepaper%20Skill" target="_blank" rel="noopener"><span class="cmd">whitepaper-skill</span><h4>Whitepaper</h4><p>The AI-EAM 2026 format — fourteen locked sections, warm paper, Trirong over Raleway, jumper rail, agent hex diagram. Three profiles: case study, dual-track for a split VP and architect committee, or a short client brief.</p><div class="meta"><span>Delivery</span><span>Marketing</span><span class="out">.html</span><span class="feeds">feeds Whitepapers</span></div><span class="go">In this repo →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">ux-case-study</span><h4>Case study</h4><p>Portfolio case studies in the light Intelligaia format. Produces both readings shown on the case studies page — the full narrative and the single-screen poster.</p><div class="meta"><span>Marketing</span><span>Delivery</span><span class="out">.html</span><span class="feeds">feeds Case studies</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">intelligaia-landing-pages</span><h4>Landing page</h4><p>Homepage and landing-page concepts for intelligaia.com. Two locked templates — v8 dark particle hero, v9 white nav with the contained yellow banner — plus the section catalogue below the fold.</p><div class="meta"><span>Marketing</span><span>Design</span><span class="out">.html</span><span class="feeds">feeds Landing pages</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">intelligaia-graphics-skill</span><h4>Illustration and social art</h4><p>Image-gen prompts in the Intelligaia visual language, with variants, a negative prompt and reference frames. This is where the art on the social and landing-page assets comes from.</p><div class="meta"><span>Marketing</span><span>Design</span><span class="out">prompts</span><span class="feeds">feeds Social</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20Slide%20Deck%20Skill" target="_blank" rel="noopener"><span class="cmd">intelligaia-deck-design</span><h4>Slide deck</h4><p>Decks in the corporate system — gold-yellow organic shapes, navy Montserrat titles, white canvases. Never generic corporate blue, never boxy.</p><div class="meta"><span>Leadership</span><span>Sales</span><span class="out">.pptx</span></div><span class="go">In this repo →</span></a><a class="sk-c" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20Google%20Doc%20Skill" target="_blank" rel="noopener"><span class="cmd">google-intelligaia-doc</span><h4>Google Doc</h4><p>Description docs, client proposals, architecture write-ups and Q&amp;A, drafted in Intelligaia’s voice and delivered as a native Google Doc in Drive rather than a file to re-upload.</p><div class="meta"><span>Sales</span><span>Delivery</span><span class="out">gdoc</span></div><span class="go">In this repo →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">intelligaia-document-design</span><h4>Document design system</h4><p>The router beneath the document skills: three locked base templates in light or dark, the type scale, the global footer, the component library and the asset catalogue.</p><div class="meta"><span>Design</span><span class="out">system</span></div><span class="go">Skills library →</span></a></div>
+</section>
+
+<section class="section v2-sec sk-grp" id="web-and-product-pages">
+  <span class="eyebrow">Web and product pages</span>
+  <h2>Web and product pages.</h2>
+  <p class="lede-p">Everything that ships as a page rather than a document.</p>
+  <div class="sk-lib"><a class="sk-c" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20Landing%20Page%20skill" target="_blank" rel="noopener"><span class="cmd">intelligaia-agentic-pages</span><h4>Agentic pages (v11)</h4><p>Builds and repairs the dark agentic site — the L0 landing page, about, work, services, technology, careers, contact, and the portfolio case studies. Black canvas, one shared rail, scroll-driven reveals, a level system that fixes each page’s budget before it is built.</p><div class="meta"><span>Design</span><span>Marketing</span><span class="out">.html</span></div><span class="go">In this repo →</span></a><a class="sk-c" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Nucleux%20Base%20Components%20skill-via%20figma" target="_blank" rel="noopener"><span class="cmd">nucleux-base-component-via-figma</span><h4>Nucleux components — design</h4><p>Renders a non-AI Nucleux surface as a self-contained HTML preview, styled from tokens measured off the Figma library rather than estimated. Output is a preview to look at, not production code.</p><div class="meta"><span>Design</span><span class="out">.html</span></div><span class="go">In this repo →</span></a><a class="sk-c" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/nucleux-base-components%20skill-via-npm" target="_blank" rel="noopener"><span class="cmd">nucleux-base-components-via-npm</span><h4>Nucleux components — build</h4><p>The same kit from the other side: real React against the @nucleux/* packages. Buttons, form controls, navigation, surfaces, overlays, feedback and data display.</p><div class="meta"><span>Engineering</span><span class="out">React</span></div><span class="go">In this repo →</span></a></div>
+</section>
+
+<section class="section v2-sec sk-grp" id="design-practice">
+  <span class="eyebrow">Design practice</span>
+  <h2>Design practice.</h2>
+  <p class="lede-p">The skills a designer runs during an engagement rather than at the end of one.</p>
+  <div class="sk-lib"><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">ai-problem-framing</span><h4>AI problem framing</h4><p>The Agentic AI Discovery Workshop, or the lighter five-lens canvas. Maps user story against agent story, the TAO blocks, happy and alternate flows, and an MVP slice.</p><div class="meta"><span>Design</span><span>Delivery</span><span class="out">.docx + CSV</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">design-brief-creator</span><h4>Design brief</h4><p>Turns a client conversation into a structured brief with scope, constraints and success measures.</p><div class="meta"><span>Design</span><span>Sales</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">research-synthesis</span><h4>Research synthesis</h4><p>Raw interviews, survey responses and field notes into themes, insights and how-might-we questions, with every insight traced back to the quote that produced it.</p><div class="meta"><span>Design</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">task-analysis</span><h4>Task analysis</h4><p>Hierarchical and cognitive task analysis — what users actually do, decomposed, with the hierarchy as a table you can hand to a team.</p><div class="meta"><span>Design</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">handoff-spec-writer</span><h4>Developer handoff</h4><p>Annotations and redlines for screens, flows and components. Pulls detail from Figma when the MCP is connected.</p><div class="meta"><span>Design</span><span>Engineering</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">design-system-docs</span><h4>Design system docs</h4><p>Component, pattern and token documentation — anatomy, states, when to use it, when not to. Standalone or importable into a wiki.</p><div class="meta"><span>Design</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">enterprise-design-direction</span><h4>Enterprise design direction</h4><p>The north-star document for a complex enterprise product: visual language, interaction philosophy, information hierarchy.</p><div class="meta"><span>Design</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">enterprise-interface-spec</span><h4>Enterprise interface spec</h4><p>Screen-level specification for data-heavy dashboards, workflows and admin panels.</p><div class="meta"><span>Design</span><span>Engineering</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">enterprise-ux-patterns</span><h4>Enterprise UX patterns</h4><p>Reusable standards for the recurring problems — tables, filters, bulk actions, empty states, progressive disclosure, loading.</p><div class="meta"><span>Design</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">agentic-product-competitive-analysis</span><h4>Competitive analysis</h4><p>Benchmarks an agentic product — design system, SDK, component library or agent platform — against the landscape, with a scored comparison matrix.</p><div class="meta"><span>Product</span><span>Design</span><span class="out">.docx</span></div><span class="go">Skills library →</span></a></div>
+</section>
+
+<section class="section v2-sec sk-grp" id="domain-and-client">
+  <span class="eyebrow">Domain and client</span>
+  <h2>Domain and client.</h2>
+  <p class="lede-p">Skills that carry knowledge of a subject or an account, so the artifact argues from the right vocabulary.</p>
+  <div class="sk-lib"><a class="sk-c" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20CPQ%20Skill" target="_blank" rel="noopener"><span class="cmd">cpq-insight</span><h4>CPQ insight</h4><p>Quote-to-cash across processes, platforms, journeys and integrations — flows, gaps, roadmaps and evidence-backed advisory openings.</p><div class="meta"><span>Sales</span><span>Delivery</span><span class="out">domain</span></div><span class="go">In this repo →</span></a><a class="sk-c" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20CX%20Roadmap%20Skill" target="_blank" rel="noopener"><span class="cmd">cx-roadmap</span><h4>CX roadmap</h4><p>Runs an intake conversation, then renders a fully branded roadmap. Sections with no information are left empty and flagged rather than invented.</p><div class="meta"><span>Delivery</span><span>Design</span><span class="out">.html + .pptx</span></div><span class="go">In this repo →</span></a><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">cisco-presentation</span><h4>Cisco deck</h4><p>Decks cloned from the Cisco template kit in light or dark. Staged workflow — the source is deconstructed first, and two or three visual versions are proposed before anything is generated.</p><div class="meta"><span>Sales</span><span>Delivery</span><span class="out">.pptx</span></div><span class="go">Skills library →</span></a></div>
+</section>
+
+<section class="section v2-sec sk-grp" id="operations">
+  <span class="eyebrow">Operations</span>
+  <h2>Operations.</h2>
+  <p class="lede-p">How the library maintains itself.</p>
+  <div class="sk-lib"><a class="sk-c" href="https://github.com/intelligaia/Claude-Skills" target="_blank" rel="noopener"><span class="cmd">commit-skills-to-git</span><h4>Version the skills</h4><p>Detects new or changed skills, refreshes each README, bumps a semantic version based on what actually changed, and pushes to the shared repository so the whole organisation stays on one version.</p><div class="meta"><span>Design</span><span>Engineering</span><span class="out">git</span></div><span class="go">Skills library →</span></a></div>
 </section>
 
 <section class="section v2-sec" id="in-build">
   <span class="eyebrow">In build</span>
-  <div class="grid2">
-    <div class="crd">
-      <h3>Proposal builder <span class="soon">In build</span></h3>
-      <p>Give it the client, the scope and the services in play. It returns a proposal with our structure already applied, drawing on published case studies rather than inventing them.</p>
-      <span class="who">Arjun · Sandeep · Rajiv</span>
-    </div>
-    <div class="crd">
-      <h3>Presentation builder <span class="soon">In build</span></h3>
-      <p>Give it an audience and a story. It returns a deck built from approved layouts, with the right case studies and illustrations for that industry.</p>
-      <span class="who">Rajiv · Cheena · Arjun</span>
-    </div>
-  </div>
-</section>
-
-<section class="section v2-sec" id="available-now">
-  <span class="eyebrow">Available now</span>
-  <div class="grid4">
-    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20Slide%20Deck%20Skill"><h3>Slide deck</h3><p>On-brand decks — Montserrat, #FFD700, approved layouts.</p><span class="go">Open →</span></a>
-    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20Landing%20Page%20skill"><h3>Landing page</h3><p>Landing pages with the level system and shared rail.</p><span class="go">Open →</span></a>
-    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills/Intelligaia%20CPQ%20Skill"><h3>CPQ</h3><p>Quote-to-cash knowledge for CPQ and billing work.</p><span class="go">Open →</span></a>
-    <a class="crd" href="https://github.com/intelligaia/Intelligaia-Brand-Assets/tree/main/Intelligaia%20Skills"><h3>Google Doc <span class="soon">Planned</span></h3><p>Brand-correct documents in Google Docs.</p><span class="go">Open →</span></a>
+  <h2>Next in the queue.</h2>
+  <div class="sk-lib">
+    <div class="sk-c wip"><span class="cmd">proposal</span><h4>Proposal builder <span class="soon">In build</span></h4>
+      <p>Client, scope and services in. A proposal out, with our structure applied and real published case studies attached rather than invented ones.</p>
+      <div class="meta"><span>Sales</span><span class="out">.docx</span></div></div>
+    <div class="sk-c wip"><span class="cmd">service-catalog</span><h4>Service catalog <span class="soon">In build</span></h4>
+      <p>Assembles a catalog from the approved page templates, picking the capability pages that match the account.</p>
+      <div class="meta"><span>Sales</span><span class="out">.pdf</span><span class="feeds">feeds Service catalog</span></div></div>
+    <div class="sk-c wip"><span class="cmd">social</span><h4>Social set <span class="soon">In build</span></h4>
+      <p>One idea, three ratios, correct canvas rules and a twelve-word ceiling enforced before anything renders.</p>
+      <div class="meta"><span>Marketing</span><span class="out">.png</span><span class="feeds">feeds Social</span></div></div>
+    <div class="sk-c wip"><span class="cmd">diagram</span><h4>Diagram <span class="soon">In build</span></h4>
+      <p>Square-canvas process diagrams on the house rules — one accent, three-word node labels, seven nodes maximum, no legend.</p>
+      <div class="meta"><span>Delivery</span><span class="out">.png + .pdf</span><span class="feeds">feeds Diagrams</span></div></div>
   </div>
 </section>
 
 <section class="section v2-sec">
-  <div class="note"><p><b>Want one that does not exist yet?</b> If you are rebuilding the same document more than twice a month, it is a candidate.</p></div>
+  <div class="note"><p><b>Want one that does not exist yet?</b> If you are rebuilding the same document more than twice a month, it is a candidate. Skills are written against this repo, so a new one inherits the type scale, the palette and the asset library on day one — and <code>commit-skills-to-git</code> versions it for everybody the moment it works.</p></div>
 </section>
 
 </main>

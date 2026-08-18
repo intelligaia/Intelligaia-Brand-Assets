@@ -9,12 +9,12 @@ The single source of truth for how Intelligaia work looks and reads — written 
 ## Where the portal is right now
 
 **17 August 2026** — the portal has been restructured from one flat navigation
-into **two sections with their own left-hand navigation**, built in `website/v2/`.
+into **two sections with their own left-hand navigation**, built in `website/brand-portal/`.
 Dark theme only; light follows. Under review **Wednesday 19 August**.
 
 | | |
 |---|---|
-| **Live** | The site root now lands on `website/v2/00 Home.html` |
+| **Live** | The site root now lands on `website/brand-portal/00 Home.html` |
 | **Design system** | `v2/ds/` — Foundations · Asset library · Construction · Tokens & handoff |
 | **Collateral** | `v2/mk/` — Service catalog · Case studies · Whitepapers · Landing pages · Diagrams · Social · Skills |
 | **Previous** | `dark/` and `light/` keep the flat navigation, untouched and still reachable |
@@ -44,7 +44,7 @@ Setup notes that support the assets but aren't shipped live are in [`docs/`](doc
 
 | | Humans | Agents |
 |---|---|---|
-| **Read** | The HTML portal in `website/v2/` | `website/index.json` and `website/assets/manifest.json` |
+| **Read** | The HTML portal in `website/brand-portal/` | `website/index.json` and `website/assets/manifest.json` |
 | **Get** | Prose, examples, annotated anatomy | Typed JSON specs, token files, asset URLs |
 | **Start at** | `website/START HERE.html` | `AGENTS.md`, then `docs/STATUS.md` |
 
