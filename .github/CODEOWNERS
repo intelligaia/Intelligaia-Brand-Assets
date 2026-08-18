@@ -2,7 +2,9 @@
 #
 # When "Require review from Code Owners" is enabled in branch protection,
 # any pull request that changes a matching path must be approved by the
-# listed owner before it can be merged.
+# listed owner before it can be merged. Combined with "Require a pull request"
+# and "Restrict who can push to matching branches", this FREEZES these paths:
+# no direct pushes, and every change needs @NeerajDevGit's review.
 #
 # NOTE ON SPACES: GitHub CODEOWNERS treats a space as the delimiter between
 # the path pattern and its owners, and provides no way to escape a literal
@@ -10,7 +12,15 @@
 # (which matches any run of non-slash characters). e.g. `Intelligaia*Skills`
 # matches the "Intelligaia Skills" directory.
 
-# CPQ Insight skill — owned exclusively by Neeraj (no third-party edits).
-# Only this folder is code-owned; the other skill modules are intentionally
-# left open for the team.
-Intelligaia*Skills/Intelligaia*CPQ*Skill/**        @NeerajDevGit
+# ── FROZEN — MIGRATED TO intelligaia/Intelligaia-Skills ──────────────────────
+# These skills now live in the Intelligaia-Skills repo. Do NOT edit them here;
+# make changes in the new repo. Locked to @NeerajDevGit to prevent drift while
+# the old copies await deletion.
+Intelligaia*Skills/Intelligaia*CPQ*Skill/**            @NeerajDevGit
+Intelligaia*Skills/Intelligaia*Slide*Deck*Skill/**     @NeerajDevGit
+Intelligaia*Skills/Intelligaia*Whitepaper*Skill/**     @NeerajDevGit
+Intelligaia*Skills/Intelligaia*Google*Doc*Skill/**     @NeerajDevGit
+Intelligaia*Skills/Intelligaia*Landing*Page*skill/**   @NeerajDevGit
+Intelligaia*Skills/Intelligaia*CX*Roadmap*Skill/**     @NeerajDevGit
+
+# Nucleux skills are NOT frozen yet (migration deferred) — left open for the team.

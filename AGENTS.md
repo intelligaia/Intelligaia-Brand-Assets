@@ -55,6 +55,24 @@ Modules are independent: each owns its own assets, palette and rules. The brand
 portal's hard constraints below apply to portal artifacts; a module such as the
 deck skill documents its own system in its `SKILL.md` / `README.md`.
 
+> ## ⛔ FROZEN — skills migrated to `intelligaia/Intelligaia-Skills`
+>
+> These skill folders under `Intelligaia Skills/` have **moved** to the
+> **[Intelligaia-Skills](https://github.com/intelligaia/Intelligaia-Skills)**
+> repo and are **frozen here**. Do **not** edit them in this repo — make all
+> changes in Intelligaia-Skills. The copies here remain only until we verify the
+> migration and delete them.
+>
+> - `Intelligaia CPQ Skill/` → `industry-expertise/intelligaia-cpq/`
+> - `Intelligaia Slide Deck Skill/` → `functional-skills/content-creation/intelligaia-slide-decks/`
+> - `Intelligaia Whitepaper Skill/` → `functional-skills/content-creation/intelligaia-whitepapers/`
+> - `Intelligaia Google Doc Skill/` → `functional-skills/content-creation/intelligaia-google-documents/`
+> - `Intelligaia Landing Page skill/` → `functional-skills/content-creation/intelligaia-agentic-pages/`
+> - `Intelligaia CX Roadmap Skill/` → `functional-skills/content-creation/intelligaia-cx-roadmap/`
+>
+> **Not yet frozen:** the two Nucleux skills (migration deferred). `.github/CODEOWNERS`
+> locks the frozen paths to review; enable branch protection to enforce.
+
 ---
 
 ## The portal has two sections
