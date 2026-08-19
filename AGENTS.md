@@ -69,9 +69,11 @@ deck skill documents its own system in its `SKILL.md` / `README.md`.
 > - `Intelligaia Google Doc Skill/` → `functional-skills/content-creation/intelligaia-google-documents/`
 > - `Intelligaia Landing Page skill/` → `functional-skills/content-creation/intelligaia-agentic-pages/`
 > - `Intelligaia CX Roadmap Skill/` → `functional-skills/content-creation/intelligaia-cx-roadmap/`
+> - `Nucleux Base Components skill-via figma/` → `functional-skills/design-system/nucleux/nucleux-base-component-via-figma/`
+> - `nucleux-base-components skill-via-npm/` → `functional-skills/design-system/nucleux/nucleux-base-components-via-npm/`
 >
-> **Not yet frozen:** the two Nucleux skills (migration deferred). `.github/CODEOWNERS`
-> locks the frozen paths to review; enable branch protection to enforce.
+> **All migrated skills are now frozen here.** `.github/CODEOWNERS` locks these paths
+> to review; enable branch protection to enforce.
 
 ---
 
