@@ -47,7 +47,7 @@
   .brand-mark i { font-size: 36px; opacity: 0.6; }
   .brand-mark span { font-size: 11px; letter-spacing: 0.05em; }
   .scroll-cue { position: relative; left: auto; right: auto; bottom: auto; display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 100px; grid-column: 1 / -1; }
-  .scroll-cue .ba-toggle-wrap { margin-top: 60px; }
+  .scroll-cue .ba-toggle-wrap { margin-top: 40px; }
   .scroll-cue .label { font-size: 22px; font-weight: 500; color: var(--content1); }
   .scroll-cue .scroll-cue-desc { font-size: 12px; color: var(--content2); line-height: 1.5; max-width: 620px; text-align: center; margin-top: 2px; }
   .scroll-cue i { font-size: 18px; color: var(--cyan); }
@@ -148,7 +148,7 @@
   /* Per-technique cards — 3 per row filling container, aspect-ratio image slot */
   .tech-cards { display: grid; grid-template-columns: repeat(auto-fill, 231px); gap: 24px 20px; justify-content: start; }
   .tech-card { display: flex; flex-direction: column; gap: 10px; width: 100%; padding: 0; background: transparent; border: none; }
-  .tech-card .img-slot { width: 100%; height: 130px; background: #f5f5f5; border: none; border-radius: 8px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: rgba(0,0,0,0.20); flex-shrink: 0; }
+  .tech-card .img-slot { width: 100%; height: 130px; background: transparent; border: none; border-radius: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; color: rgba(0,0,0,0.20); flex-shrink: 0; }
   .tech-card .img-slot i { font-size: 20px; opacity: 0.45; }
   .tech-card .img-slot .img-lbl { font-size: 9px; letter-spacing: 0.06em; text-transform: uppercase; }
   .tech-card .info { display: flex; flex-direction: column; gap: 6px; }
@@ -292,7 +292,7 @@
   body.state-before .t-before { display: block; }
   body.state-before .t-before-missing { display: block; }
   body.state-before .t-out { opacity: 0.28; }
-  body.state-before .tech-card .img-slot { background: #f5f5f5; border: none; }
+  body.state-before .tech-card .img-slot { background: transparent; border: none; }
   body.state-before .tech-card .img-slot i { color: var(--red); opacity: 0.5; }
   body.state-before .tech-card .img-slot .img-lbl { color: var(--red); opacity: 0.6; }
 
@@ -467,7 +467,7 @@
   /* Tech bridge (each section's technique cards) */
   body.dark-mode .tech-bridge { background: transparent; border: none; }
   body.dark-mode .tech-bridge .tb-lbl, body.dark-mode .tech-bridge .tb-count { color: var(--content3); }
-  body.dark-mode .tech-card .img-slot { background: rgba(255,255,255,0.06); border: none; color: rgba(255,255,255,0.25); }
+  body.dark-mode .tech-card .img-slot { background: transparent; border: none; color: rgba(255,255,255,0.25); }
   body.dark-mode .tech-card .t-name { color: var(--content1); }
   body.dark-mode .tech-card .t-out  { color: var(--content2); }
 
@@ -477,7 +477,7 @@
   body.dark-mode .ba-toggle-label { color: rgba(255,255,255,0.4); }
   body.dark-mode .t-before { background: rgba(240,107,107,0.10); border-left-color: #F06B6B; color: #FFB8B8; }
   body.dark-mode .t-before-missing { color: rgba(255,255,255,0.28); border-color: rgba(255,255,255,0.10); }
-  body.dark-mode.state-before .tech-card .img-slot { background: rgba(255,255,255,0.06); border: none; }
+  body.dark-mode.state-before .tech-card .img-slot { background: transparent; border: none; }
   body.dark-mode.state-before .tech-card .img-slot i,
   body.dark-mode.state-before .tech-card .img-slot .img-lbl { color: #F06B6B; }
 
@@ -1052,69 +1052,30 @@
     });
   }
 
-  // ═════════ TIMELINE LINE — drawn behind badges, recomputed on load + resize
-  // so it stays aligned after icons/fonts finish loading and after any reflow.
-  // Terminates at the top edge of the last badge (badge center − badge radius)
-  // so the badge sits cleanly at the end of the line instead of the line
-  // overshooting into adjacent content.
-  const line = document.createElement('div');
-  line.style.cssText = 'position:absolute;left:13px;width:2px;opacity:0.7;z-index:0;pointer-events:none;';
-  root.appendChild(line);
-  function drawTimeline(){
+  requestAnimationFrame(function(){
     const secs = root.querySelectorAll('.cx-sec');
-    if(secs.length < 2){ line.style.display = 'none'; return; }
-    line.style.display = 'block';
+    if(secs.length < 2) return;
     const rootRect = root.getBoundingClientRect();
-    function badgeRect(sec){
-      const b = sec.querySelector('.cx-badge');
-      if(!b) return null;
-      const r = b.getBoundingClientRect();
-      return { top: r.top - rootRect.top, height: r.height, center: r.top - rootRect.top + r.height/2 };
+    function badgeCenterY(sec){
+      const b = sec.querySelector('.cx-badge').getBoundingClientRect();
+      return b.top - rootRect.top + b.height/2;
     }
-    const firstRect = badgeRect(secs[0]);
-    const lastRect = badgeRect(secs[secs.length-1]);
-    if(!firstRect || !lastRect){ line.style.display = 'none'; return; }
-    const firstY = firstRect.center;
-    // Stop the line at the TOP of the last badge (center - radius) so it
-    // meets the badge without pushing past it into cards below.
-    const lastY = lastRect.center - lastRect.height/2;
-    const totalH = Math.max(0, lastY - firstY);
+    const firstY = badgeCenterY(secs[0]);
+    const lastY = badgeCenterY(secs[secs.length-1]);
+    const totalH = lastY - firstY;
     let lastGreenY = firstY, firstCyanY = lastY;
     for(let i = 0; i < secs.length; i++){
-      if(secs[i].dataset.color === GREEN){
-        const r = badgeRect(secs[i]); if(r) lastGreenY = r.center;
-      }
+      if(secs[i].dataset.color === GREEN) lastGreenY = badgeCenterY(secs[i]);
     }
     for(let i = 0; i < secs.length; i++){
-      if(secs[i].dataset.color === CYAN){
-        const r = badgeRect(secs[i]); if(r){ firstCyanY = r.center; break; }
-      }
+      if(secs[i].dataset.color === CYAN){ firstCyanY = badgeCenterY(secs[i]); break; }
     }
-    const greenStopPct = totalH > 0 ? ((lastGreenY - firstY) / totalH) * 100 : 0;
-    const cyanStartPct = totalH > 0 ? ((firstCyanY - firstY) / totalH) * 100 : 100;
-    line.style.top = firstY + 'px';
-    line.style.height = totalH + 'px';
-    line.style.background = `linear-gradient(to bottom, ${GREEN} 0%, ${GREEN} ${greenStopPct}%, ${CYAN} ${cyanStartPct}%, ${CYAN} 100%)`;
-  }
-  // First pass immediately (icons may still be loading).
-  requestAnimationFrame(drawTimeline);
-  // Second pass after all fonts/icons are loaded — this is the one that
-  // catches the layout shift that made the line misalign.
-  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(drawTimeline); }
-  window.addEventListener('load', drawTimeline);
-  // Keep aligned on resize / breakpoint changes.
-  let rAF = 0;
-  window.addEventListener('resize', () => {
-    if(rAF) cancelAnimationFrame(rAF);
-    rAF = requestAnimationFrame(drawTimeline);
+    const greenStopPct = ((lastGreenY - firstY) / totalH) * 100;
+    const cyanStartPct = ((firstCyanY - firstY) / totalH) * 100;
+    const line = document.createElement('div');
+    line.style.cssText = `position:absolute;left:13px;top:${firstY}px;height:${totalH}px;width:2px;opacity:0.7;z-index:0;background:linear-gradient(to bottom, ${GREEN} 0%, ${GREEN} ${greenStopPct}%, ${CYAN} ${cyanStartPct}%, ${CYAN} 100%);`;
+    root.appendChild(line);
   });
-  if(typeof ResizeObserver !== 'undefined'){
-    const ro = new ResizeObserver(() => {
-      if(rAF) cancelAnimationFrame(rAF);
-      rAF = requestAnimationFrame(drawTimeline);
-    });
-    ro.observe(root);
-  }
 })();
 </script>
 </body>

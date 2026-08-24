@@ -1052,69 +1052,30 @@
     });
   }
 
-  // ═════════ TIMELINE LINE — drawn behind badges, recomputed on load + resize
-  // so it stays aligned after icons/fonts finish loading and after any reflow.
-  // Terminates at the top edge of the last badge (badge center − badge radius)
-  // so the badge sits cleanly at the end of the line instead of the line
-  // overshooting into adjacent content.
-  const line = document.createElement('div');
-  line.style.cssText = 'position:absolute;left:13px;width:2px;opacity:0.7;z-index:0;pointer-events:none;';
-  root.appendChild(line);
-  function drawTimeline(){
+  requestAnimationFrame(function(){
     const secs = root.querySelectorAll('.cx-sec');
-    if(secs.length < 2){ line.style.display = 'none'; return; }
-    line.style.display = 'block';
+    if(secs.length < 2) return;
     const rootRect = root.getBoundingClientRect();
-    function badgeRect(sec){
-      const b = sec.querySelector('.cx-badge');
-      if(!b) return null;
-      const r = b.getBoundingClientRect();
-      return { top: r.top - rootRect.top, height: r.height, center: r.top - rootRect.top + r.height/2 };
+    function badgeCenterY(sec){
+      const b = sec.querySelector('.cx-badge').getBoundingClientRect();
+      return b.top - rootRect.top + b.height/2;
     }
-    const firstRect = badgeRect(secs[0]);
-    const lastRect = badgeRect(secs[secs.length-1]);
-    if(!firstRect || !lastRect){ line.style.display = 'none'; return; }
-    const firstY = firstRect.center;
-    // Stop the line at the TOP of the last badge (center - radius) so it
-    // meets the badge without pushing past it into cards below.
-    const lastY = lastRect.center - lastRect.height/2;
-    const totalH = Math.max(0, lastY - firstY);
+    const firstY = badgeCenterY(secs[0]);
+    const lastY = badgeCenterY(secs[secs.length-1]);
+    const totalH = lastY - firstY;
     let lastGreenY = firstY, firstCyanY = lastY;
     for(let i = 0; i < secs.length; i++){
-      if(secs[i].dataset.color === GREEN){
-        const r = badgeRect(secs[i]); if(r) lastGreenY = r.center;
-      }
+      if(secs[i].dataset.color === GREEN) lastGreenY = badgeCenterY(secs[i]);
     }
     for(let i = 0; i < secs.length; i++){
-      if(secs[i].dataset.color === CYAN){
-        const r = badgeRect(secs[i]); if(r){ firstCyanY = r.center; break; }
-      }
+      if(secs[i].dataset.color === CYAN){ firstCyanY = badgeCenterY(secs[i]); break; }
     }
-    const greenStopPct = totalH > 0 ? ((lastGreenY - firstY) / totalH) * 100 : 0;
-    const cyanStartPct = totalH > 0 ? ((firstCyanY - firstY) / totalH) * 100 : 100;
-    line.style.top = firstY + 'px';
-    line.style.height = totalH + 'px';
-    line.style.background = `linear-gradient(to bottom, ${GREEN} 0%, ${GREEN} ${greenStopPct}%, ${CYAN} ${cyanStartPct}%, ${CYAN} 100%)`;
-  }
-  // First pass immediately (icons may still be loading).
-  requestAnimationFrame(drawTimeline);
-  // Second pass after all fonts/icons are loaded — this is the one that
-  // catches the layout shift that made the line misalign.
-  if(document.fonts && document.fonts.ready){ document.fonts.ready.then(drawTimeline); }
-  window.addEventListener('load', drawTimeline);
-  // Keep aligned on resize / breakpoint changes.
-  let rAF = 0;
-  window.addEventListener('resize', () => {
-    if(rAF) cancelAnimationFrame(rAF);
-    rAF = requestAnimationFrame(drawTimeline);
+    const greenStopPct = ((lastGreenY - firstY) / totalH) * 100;
+    const cyanStartPct = ((firstCyanY - firstY) / totalH) * 100;
+    const line = document.createElement('div');
+    line.style.cssText = `position:absolute;left:13px;top:${firstY}px;height:${totalH}px;width:2px;opacity:0.7;z-index:0;background:linear-gradient(to bottom, ${GREEN} 0%, ${GREEN} ${greenStopPct}%, ${CYAN} ${cyanStartPct}%, ${CYAN} 100%);`;
+    root.appendChild(line);
   });
-  if(typeof ResizeObserver !== 'undefined'){
-    const ro = new ResizeObserver(() => {
-      if(rAF) cancelAnimationFrame(rAF);
-      rAF = requestAnimationFrame(drawTimeline);
-    });
-    ro.observe(root);
-  }
 })();
 </script>
 </body>

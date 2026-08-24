@@ -338,7 +338,84 @@ The "typical layout" column is guidance — always follow what the user's conten
 
 ---
 
-## Reference files (all inside the skill — no external dependency)
+## Layout rules
+
+### R6 — Section backgrounds are edge-to-edge
+
+Any section that has a background colour or tint (5D Bridge banner, Problem bridge, Sections wrap, Impact band) MUST render its background edge-to-edge — spanning the full viewport width. The inner content within those sections is constrained to the breakpoint body width and centered using an inner container (`max-width` matching the responsive grid body width for the active breakpoint). The background never clips to the content width.
+
+Implementation pattern:
+- Section element: `padding: <vertical> 0` (no horizontal padding on the section itself — background spans full width)
+- Inner container (`<div class="cx-container">`): `max-width: <body-width>; margin-left: auto; margin-right: auto; padding: 0 var(--page-margin);`
+
+### R7 — Font structure (typography scale)
+
+The template uses a single font stack with a fixed typographic scale. Do not change font families, sizes, weights, or line-heights.
+
+| Token | Element | Font-size | Weight | Line-height | Letter-spacing | Color |
+|-------|--------|-----------|--------|------------|----------------|-------|
+| H1 (hero heading) | `.hero-heading` | 44px | 500 | 1.15 | −0.02em | `--content1` |
+| H2 (section title) | `.sec-title` | 20px | 500 | 1.3 | — | `--content1` |
+| H3 (5D bridge title) | `.fivedd-title` | 24px | 600 | 1.25 | −0.01em | `--content1` |
+| H4 (problem title) | `.problem-title` | 24px | 600 | 1.15 | −0.01em | `--content1` |
+| Body (hero desc) | `.hero-desc` | 13px | 400 | 1.5 | — | `--content2` |
+| Body (section desc) | `.sec-desc` | 13px | 400 | 1.5 | — | `--content2` |
+| Body (5D bridge sub) | `.fivedd-sub` | 13px | 400 | 1.6 | — | `--content2` |
+| Body (problem core) | `.problem-core p` | 12px | 400 | 1.55 | — | `--content2` |
+| Tech name | `.t-name` | 12.5px | 600 | 1.3 | — | `--content1` |
+| Tech outcome | `.t-out` | 11px | 400 | 1.45 | — | `--content2` |
+| Scroll-cue label | `.scroll-cue .label` | 22px | 500 | — | — | `--content1` |
+| Scroll-cue desc | `.scroll-cue-desc` | 12px | 400 | 1.5 | — | `--content2` |
+| Phase tag | `.phase-tag` | 10px | 500 | — | 0.06em | uppercase |
+| 5D eyebrow | `.fivedd-eyebrow` | 10px | 500 | — | 0.15em | `--cyan` |
+| Problem eyebrow | `.problem-eyebrow` | 10px | 600 | — | 0.15em | `--red` |
+| Refs label | `.refs-label` | 9px | — | — | 0.1em | `--content3` |
+| Footer | `.site-footer` | 11px | 400 | — | — | `--content3` |
+
+**Font stack (fixed, never change):**
+```
+-apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif
+```
+**Monospace stack (phase tags, metrics):**
+```
+"SF Mono", Menlo, monospace
+```
+
+### R8 — Responsive grid (breakpoint system)
+
+The template uses a 5-breakpoint responsive grid system. Body width and horizontal margins change per breakpoint. All content is centered.
+
+| Breakpoint | Screen size | Body max-width | Margin (`--page-margin`) | Layout columns |
+|------------|-------------|----------------|--------------------------|----------------|
+| Default | 1440+ (desktop) | 1040px | scaling (40px) | 12 |
+| `max-width: 1439px` | 1240–1439 (laptop) | scaling | 200px | 12 |
+| `max-width: 1239px` | 905–1239 (small laptop) | 840px | scaling (40px) | 12 |
+| `max-width: 904px` | 600–904 (tablet) | scaling | 32px | 8 |
+| `max-width: 599px` | 0–599 (phone) | scaling | 16px | 4 |
+
+Implementation:
+- `--page-margin` CSS variable on `:root` controls horizontal padding for all content containers. Changes per breakpoint.
+- `.cx-container` class wraps inner content of edge-to-edge background sections — it applies `max-width` + `margin: auto` + `padding: 0 var(--page-margin)`.
+- `.hero` and `.site-header` carry their own `max-width` matching the breakpoint body width.
+- On phone (0–599px): hero stacks to 1 column, 5D phases stack to 1 column, tech-cards stack to 1 column.
+- On tablet (600–904px): 5D phases go 2 columns, tech-cards go 2 columns.
+- On small laptop and above: 5D phases 5 columns, tech-cards 3 columns.
+
+### R9 — Tech-card styling (clean cards, grey image fill)
+
+Technique cards have no borders or boxes on the card itself or the outer wrapper. The image placeholder has a subtle light grey fill. This applies to both light and dark themes, and in both As-is and To-be states.
+
+- `.tech-bridge` (outer wrapper): `background: transparent; border: none; padding: 0;` — no shared container background
+- `.tech-card` (individual card): `background: transparent; border: none;` — no card background
+- `.tech-card .img-slot` (image placeholder): `background: #f5f5f5; border: none; border-radius: 8px;` — subtle light grey fill with rounded corners, no border. In dark mode: `background: rgba(255,255,255,0.06);`
+- Dark mode overrides: wrapper and card stay transparent; img-slot uses `rgba(255,255,255,0.06)`
+- Before-state (As-is) overrides: same grey fill, no red background or border on the img-slot
+
+### R10 — Tech-card aspect ratio
+
+Tech-cards use a fixed 16:9 aspect ratio. Height stays at 130px; width is fixed at 231px (130 × 16/9). The grid uses `repeat(auto-fill, 231px)` so cards pack at their natural width and wrap naturally — they never stretch to fill the row.
+
+---
 
 - `<skill-dir>/references/Kickstartguide.docx` — **the Kickstart Guide** (canonical intake). Contains Q1–Q9, per-sub-technique Content + Links fields ordered by the 5D template, R1–R5, and the two-path handoff. This is the file the skill delivers to the user on first request. Read it at intake time so any user edits are picked up.
 - `<skill-dir>/references/DS_variables.json` — design tokens.
