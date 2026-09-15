@@ -1,8 +1,13 @@
-# Intelligaia Illustration Assets
+# Intelligaia Illustration Library
 
-Shared, versioned asset library for Intelligaia. One source, consumed by designers, engineers, marketing, and AI agents.
+Curated, versioned illustration assets for Intelligaia. One source, consumed by
+designers, engineers, marketing, and AI agents — and the basis for skill training.
 
-**279 assets · 15 categories · v1.0.0**
+**174 assets · 9 categories · v2.0**
+
+> This folder holds **assets only**. Templates, wave patterns, website banner
+> assets, older graphics and HTML documents live outside it — see
+> [Where everything else went](#where-everything-else-went).
 
 ---
 
@@ -14,49 +19,50 @@ Every asset has a stable URL. Nothing needs to be cloned.
 https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/<path>
 ```
 
-Example:
-
-```
-.../assets/marketing/banners/approved_banner_homepage-hero_isometric-gradient_v01.png
-.../assets/illustrations/devices/MacBook — Front face — Final.png
-```
-
-Machine-readable index of everything:
-
-```
-.../assets/manifest.json
-```
+Machine-readable index of everything: `manifest.json`
 
 ---
 
 ## What's in here
 
-| Folder | Contains |
-|---|---|
-| `illustrations/characters-female` | Female character illustrations, three-stage construction |
-| `illustrations/characters-male` | Male character illustrations, three-stage construction |
-| `illustrations/character-elements` | Modular character parts — heads, torsos, limbs |
-| `illustrations/devices` | Laptops, phones, headsets, hardware |
-| `illustrations/nature` | Trees, plants, clouds, landscape elements |
-| `illustrations/objects` | Props — lighthouse, ship, binoculars, magnifier |
-| `marketing/banners` | Full-width hero illustrations for landing pages |
-| `marketing/sections` | In-page section illustrations for services and workshops |
-| `marketing/people` | Approved human character concepts for collateral |
-| `marketing/lettering` | Illustrated alphabet and lettering compositions |
-| `icons` | UI icon set |
-| `waves` | Abstract wave and flow shapes |
-| `letters` | Individual illustrated letterforms |
-| `brand` | Logos, wordmarks, grid references |
-| `diagrams` | Process and system diagram graphics |
-| `service-catalog` | Service catalogue collateral pages |
-| `tokens` | Colour and typography tokens as JSON |
-| `data` | Legacy catalogue JSON |
+| Folder | Contains | Files |
+|---|---|---|
+| `case-studies/<project>/` | Case study graphics, one folder per project | — |
+| `diagrams/` | Process and system diagrams (PDF + PNG pairs) | 14 |
+| `icons/` | UI and concept icon sets, SVG | 41 |
+| `illustrations/characters-female/` | Female characters, three-stage construction | 30 |
+| `illustrations/characters-male/` | Male characters, three-stage construction | 18 |
+| `illustrations/devices/` | Laptops, headsets, glasses, hardware | 21 |
+| `illustrations/nature/` | Clouds, plants, trees | 10 |
+| `illustrations/objects/` | Lighthouse, ships, binoculars, magnifier | 12 |
+| `letters/` | Isometric gradient letterforms A–Z, SVG | 26 |
+| `logo/` | Intelligaia logo and wordmark | 2 |
+
+---
+
+## Where everything else went
+
+Everything below is still in the repo, one level up in `website/` — just not
+part of the asset library.
+
+| Now at | Was | Why it moved |
+|---|---|---|
+| `_older-graphics/banners/` | `assets/marketing/banners` | Superseded banner artwork |
+| `_older-graphics/people/` | `assets/marketing/people` | Older human character concepts |
+| `_older-graphics/sections/` | `assets/marketing/sections` | Older section graphics |
+| `_older-graphics/lettering-raster/` | `assets/marketing/lettering` | Raster alphabet, superseded by `letters/` |
+| `_templates/service-catalog/` | `assets/service-catalog` | Templates, not assets |
+| `_waves/` | `assets/waves` | Separate wave-pattern system |
+| `_website-banner-assets/` | `assets/Website banner assets` | Separate website banner set |
+| `_documents/` | `assets/case-studies`, `whitepapers`, `landing-pages` | HTML write-ups, not graphics |
+| `tokens/` | `assets/tokens` | Design-system foundation, not an illustration |
+| `_meta/` | `assets/data` | Derived catalogue JSON |
 
 ---
 
 ## Construction stages
 
-Many illustrations ship in four stages. The suffix in the filename tells you which.
+Many illustrations ship in stages. The filename suffix tells you which.
 
 | Stage | Meaning |
 |---|---|
@@ -65,18 +71,18 @@ Many illustrations ship in four stages. The suffix in the filename tells you whi
 | **Filled** | Flat brand-colour fill applied |
 | **Final** | Production-ready with shading and detail |
 
-Use **Final** unless you're documenting the method.
+Use **Final** unless you are documenting the method.
 
 ---
 
 ## Design tokens
 
-```
-tokens/colours.json      Four brand colours, dark + light theme scales, usage rules
-tokens/typography.json   Oswald / Geist / Raleway, the seven-step scale, rules
-```
+Tokens now live at `../tokens/` (repo path `website/tokens/`).
 
-The four brand colours:
+```
+tokens/colours.json      Four brand colours, dark + light scales, usage rules
+tokens/typography.json   Oswald / Geist / Raleway, the seven-step scale
+```
 
 | Colour | Hex | Role |
 |---|---|---|
@@ -85,31 +91,28 @@ The four brand colours:
 | Trust Blue | `#4A8BF5` | Data, information states, links |
 | Insight Purple | `#8A5AF0` | AI, agents, moments of insight |
 
-Type: **Oswald** Medium 500 for headings, Regular 400 for descriptions. **Geist** 400 for interface body. Nothing else, no weights above 500.
+Type: **Oswald** 500 headings, 400 descriptions. **Geist** 400 body.
+**Raleway** 400/500 labels. Nothing above weight 500.
 
 ---
 
 ## Rules
 
-**Do**
+**Do** — pull by URL rather than copying · use `Final` stage in production ·
+keep flat `#FFC800`, no gradients on hero yellow · one accent (blue *or* purple)
+per viewport.
 
-- Pull assets by URL rather than copying them into your project
-- Use `Final` stage assets in production work
-- Keep the flat yellow `#FFC800` — no gradients on hero banners
-- One accent colour (blue *or* purple) per viewport
-
-**Don't**
-
-- Recolour, stretch, or crop illustrations
-- Regenerate assets with AI when an approved one exists
-- Add a third display typeface
-- Use `Deconstructed` or `Outlined` stages as finished artwork
+**Don't** — recolour, stretch or crop illustrations · regenerate with AI when an
+approved asset exists · add a third display typeface · ship `Deconstructed` or
+`Outlined` as finished artwork.
 
 ---
 
 ## Contributing
 
-New assets go through the construction process documented in the design system, then land here via PR to the `assets` branch. Run the manifest generator after adding files so `manifest.json` stays accurate.
+New assets follow the construction process in the design system, then land here
+via PR to the `assets` branch. Re-run the manifest generator after adding files
+so `manifest.json` stays accurate.
 
 ---
 
