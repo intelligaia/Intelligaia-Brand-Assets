@@ -1,0 +1,1128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>CX Roadmap</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tabler-icons/3.19.0/tabler-icons.min.css" />
+<style>
+  :root {
+    --green: #CDE545;
+    --cyan: #0070D2;
+    --secondary: #00509E;
+    --bg-hero: #F4F5F6;
+    --bg-page: #FFFFFF;
+    --content1: rgba(0,0,0,0.92);
+    --content2: rgba(0,0,0,0.62);
+    --content3: rgba(0,0,0,0.38);
+    --card-bg: rgba(0,0,0,0.025);
+    --card-border: rgba(0,0,0,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: var(--bg-page); }
+  body {
+    color: var(--content1);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+  }
+  button { font-family: inherit; }
+
+  /* ═════════ UNIVERSAL BUTTON STYLE ══════════════════════════════════
+     Rule: Regular state = white fill + black border. Hover = black fill + white text.
+     Applies to ALL buttons and link pills in the design. */
+  .cx-layout-btn, .phase-card .cta {
+    transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+
+  /* Inner content container — constrains content to breakpoint body width,
+     centered. Backgrounds (5D bridge, problem bridge, sections-wrap) go
+     edge-to-edge; their inner content sits inside this container. */
+  .cx-container { max-width: 1040px; margin-left: auto; margin-right: auto; }
+
+  /* ═════════ MAIN HEADER ══════════════════════════════════════════════
+     Named "Main Header": brand name + description on the left, brand mark /
+     hero visual on the right. Tinted (--bg-hero) so it reads as a distinct
+     band between the Top Bar above and the Body below. Its content is capped
+     at 1040px, but the tint runs full-width — see the band rule below. */
+  .hero { background: var(--bg-hero); min-height: auto; padding: 20px var(--page-margin) 0; margin-bottom: 0; max-width: 1040px; margin-left: auto; margin-right: auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; position: relative; }
+  /* The hero content is capped at 1040px, but its tinted background should run
+     the full width of the window so it reads as a horizontal band separating
+     the top nav from the body — not a floating grey panel. The box-shadow
+     spreads the same colour past the element's edges; clip-path trims it to
+     the element's own top/bottom so it bleeds sideways only (and never causes
+     a horizontal scrollbar). */
+  .hero { box-shadow: 0 0 0 100vmax var(--bg-hero); clip-path: inset(0 -100vmax); }
+  .color-bar { display: none; }
+  .intelligaia { }
+  .intelligaia-logo { height: 40px; width: auto; display: block; }
+  .intelligaia-logo-footer { height: 20px; }
+
+  /* ─── Theme-adaptive logos ─────────────────────────────────────────────
+     Applies to BOTH logos: the client Brand logo on the left (.brand-logo-img,
+     in the Top Bar and footer) and the Intelligaia lockup on the right
+     (.intelligaia-logo). build.py inspects each file and stamps
+     data-logo-tone on it:
+       dark  — monochrome and dark: invert to white on a dark background.
+       light — monochrome and pale: darken to black on a light background.
+       multi — more than one hue, a gradient, or a raster we can't inspect.
+               NEVER recoloured (a filter would destroy it); it gets a
+               backing plate so it stays legible on either theme instead.
+     Rules key off the attribute alone so the two logos can never drift. */
+  [data-logo-tone="light"] { filter: brightness(0); }
+  body.dark-mode [data-logo-tone="light"] { filter: none; }
+
+  [data-logo-tone="dark"] { filter: none; }
+  body.dark-mode [data-logo-tone="dark"] { filter: brightness(0) invert(1); }
+
+  [data-logo-tone="multi"] {
+    filter: none;
+    background: #FFFFFF;
+    padding: 6px 10px;
+    border-radius: 8px;
+    box-sizing: content-box;
+  }
+  body.dark-mode [data-logo-tone="multi"] { background: #E8E8E8; }
+
+  /* The tinted Main Header band counts as a light background, so a light
+     monochrome logo still needs darkening there. */
+  .hero[data-bg="dark"] [data-logo-tone="dark"] { filter: brightness(0) invert(1); }
+
+  /* Client Brand logo image — replaces the dashed BRAND LOGO placeholder
+     when brand.logo is supplied. Sized to match the placeholder's footprint
+     without distorting the artwork. */
+  .brand-logo-img { height: 32px; width: auto; max-width: 160px; object-fit: contain; display: block; }
+  .site-footer .brand-logo-img { height: 20px; }
+
+  .hero-left { display: flex; flex-direction: column; justify-content: center; gap: 20px; padding-top: 0; }
+  .brand-logo { width: 96px; height: 50px; border: 1px dashed rgba(0,0,0,0.2); background: rgba(0,0,0,0.02); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: rgba(0,0,0,0.4); font-size: 10px; letter-spacing: 0.05em; }
+  .hero-heading { font-size: 44px; font-weight: 500; line-height: 1.15; letter-spacing: -0.02em; color: var(--content1); }
+  .hero-desc { font-size: 13px; color: var(--content2); line-height: 1.5; max-width: 420px; }
+  .hero-right { display: flex; align-items: center; justify-content: center; padding-top: 0; }
+  .brand-mark { width: 100%; max-width: 420px; height: 280px; border: 1px dashed rgba(0,0,0,0.2); border-radius: 16px; background: rgba(0,0,0,0.02); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; color: rgba(0,0,0,0.4); }
+  .brand-mark i { font-size: 36px; opacity: 0.6; }
+  .brand-mark span { font-size: 11px; letter-spacing: 0.05em; }
+  .scroll-cue { position: relative; left: auto; right: auto; bottom: auto; display: flex; flex-direction: column; align-items: center; gap: 8px; margin-top: 40px; margin-bottom: 40px; grid-column: 1 / -1; }
+  .scroll-cue .label { font-size: 22px; font-weight: 500; color: var(--content1); }
+  .scroll-cue .scroll-cue-desc { font-size: 12px; color: var(--content2); line-height: 1.5; max-width: 620px; text-align: center; margin-top: 2px; }
+  .scroll-cue i { font-size: 18px; color: var(--cyan); }
+
+  /* ═════════ BODY ═════════════════════════════════════════════════════
+     Named "Body": the full run of roadmap sections (High Fidelity Mockups,
+     Low Fidelity Wireframes, Discovery Workshop … Deliver). The 40px top
+     padding separates it from the Main Header's tinted band above. */
+  .sections-wrap { background: var(--bg-page); padding: 40px 0 0; }
+  .sections-wrap .cx-container { padding: 0 var(--page-margin) 32px; }
+  #cx-sections, #cx-sections-2 { position: relative; }
+
+  .cx-sec { position: relative; z-index: 1; padding: 12px 0; }
+  .sec-head { display: flex; align-items: flex-start; gap: 16px; }
+  .cx-badge { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; position: relative; z-index: 2; box-shadow: 0 0 0 4px var(--bg-page); margin-top: 2px; }
+  .cx-badge i { font-size: 14px; }
+  .sec-title-block { flex: 1; min-width: 0; }
+  .sec-title { font-size: 20px; font-weight: 500; line-height: 1.3; }
+  .sec-desc { font-size: 13px; color: var(--content2); margin-top: 3px; line-height: 1.5; }
+  .refs-row { display: flex; align-items: center; gap: 6px; margin-top: 10px; flex-wrap: wrap; }
+  .refs-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(0,0,0,0.35); margin-right: 2px; }
+
+  .cx-toggle { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+  .cx-toggle-label { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(0,0,0,0.4); }
+  .cx-toggle-group { display: flex; gap: 2px; padding: 2px; border: 1px solid rgba(0,0,0,0.08); border-radius: 8px; background: rgba(0,0,0,0.02); }
+  .cx-layout-btn { width: 26px; height: 26px; border: none; background: transparent; color: rgba(0,0,0,0.4); display: flex; align-items: center; justify-content: center; border-radius: 6px; cursor: pointer; transition: background 0.15s ease, color 0.15s ease; padding: 0; }
+  .cx-layout-btn i { font-size: 13px; }
+  .cx-layout-btn:hover:not([data-active="true"]) { color: rgba(0,0,0,0.85); background: rgba(0,0,0,0.04); }
+
+  .cx-content { background: transparent; border: none; padding: 0; margin-top: 16px; margin-left: 44px; }
+
+  .empty-state { background: rgba(0,0,0,0.03); border: 1px dashed rgba(0,0,0,0.1); border-radius: 10px; padding: 36px 24px; display: flex; flex-direction: column; align-items: center; gap: 10px; }
+  .empty-state .icon { font-size: 22px; }
+  .empty-state .label { font-size: 12px; color: rgba(0,0,0,0.3); }
+  .empty-state .sub { font-size: 11px; color: rgba(0,0,0,0.2); text-align: center; }
+
+  .grid-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .grid-card { background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 16px; margin-bottom: 30px; }
+  .grid-card .icon-tile { width: 28px; height: 28px; border-radius: 6px; display: flex; align-items: center; justify-content: center; margin-bottom: 12px; }
+  .grid-card .icon-tile i { font-size: 14px; }
+  .grid-card .title { font-size: 13px; font-weight: 500; color: var(--content1); margin-bottom: 6px; }
+  .grid-card .desc { font-size: 11px; color: rgba(0,0,0,0.55); line-height: 1.5; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+
+  .list-row { display: grid; grid-template-columns: 220px 1fr; gap: 24px; padding: 16px 0; border-bottom: 1px solid rgba(0,0,0,0.06); }
+  .list-row:last-child { border-bottom: none; }
+  .list-row .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; color: rgba(0,0,0,0.4); margin-bottom: 4px; }
+  .list-row .title { font-size: 14px; font-weight: 500; color: var(--content1); line-height: 1.35; }
+  .list-row .desc { font-size: 12px; color: var(--content2); line-height: 1.55; margin-bottom: 8px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .list-row .tag { display: inline-block; padding: 2px 8px; border-radius: 4px; font-size: 10px; font-weight: 500; margin-right: 4px; }
+
+  .phase-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+  .phase-card { background: rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.08); border-radius: 10px; padding: 16px; }
+  .phase-card .head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 10px; }
+  .phase-card .lbl { font-size: 10px; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 500; }
+  .phase-card .dot { width: 8px; height: 8px; border-radius: 50%; }
+  .phase-card .title { font-size: 14px; font-weight: 500; color: var(--content1); margin-bottom: 6px; }
+  .phase-card .desc { font-size: 11px; color: rgba(0,0,0,0.55); line-height: 1.55; margin-bottom: 14px; display: -webkit-box; -webkit-box-orient: vertical; -webkit-line-clamp: 2; overflow: hidden; }
+  .phase-card .cta { display: flex; justify-content: space-between; align-items: center; font-family: "SF Mono", Menlo, monospace; font-size: 11px; }
+  .phase-card .cta i { font-size: 12px; }
+
+  .phase-divider { position: relative; z-index: 1; display: flex; align-items: center; gap: 16px; padding: 32px 0 32px 44px; }
+  .phase-divider .line { flex: 1; height: 1px; background: rgba(0,112,210,0.25); }
+  .phase-divider .pill { padding: 6px 20px; border-radius: 999px; border: 1px solid var(--cyan); color: var(--cyan); background: rgba(0,112,210,0.1); font-size: 11px; font-weight: 500; letter-spacing: 0.05em; text-transform: uppercase; }
+
+  .site-footer { display: flex; justify-content: space-between; align-items: center; padding: 24px 0 0; margin-top: 40px; border-top: 1px solid var(--card-border); font-size: 11px; color: var(--content3); }
+  .footer-brand { display: flex; align-items: center; gap: 14px; }
+  .site-footer .right { display: flex; align-items: center; gap: 8px; }
+  .site-footer .dot { width: 18px; height: 18px; border-radius: 50%; background: var(--cyan); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 9px; font-weight: 500; }
+
+  /* ─── Section D-phase tag (inline with title) ──────────────────────── */
+  .phase-tag { display: inline-flex; align-items: center; gap: 4px; height: 20px; padding: 0 8px; border-radius: 999px; font-size: 10px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase; margin-left: 10px; vertical-align: middle; font-family: "SF Mono", Menlo, monospace; }
+  .phase-tag.green { background: rgba(205,229,69,0.10); color: var(--green); border: 1px solid rgba(205,229,69,0.30); }
+  .phase-tag.cyan { background: rgba(0,112,210,0.10); color: var(--cyan); border: 1px solid rgba(0,112,210,0.30); }
+
+  /* ─── 5D Techniques bridge block (inside each section content card) ──── */
+  .tech-bridge { background: transparent; border: none; border-radius: 0; padding: 0; }
+  .tech-bridge.green { border-left: none; }
+  .tech-bridge.cyan { border-left: none; }
+  .tech-bridge .tb-head { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; padding-left: 2px; }
+  .tech-bridge .tb-lbl { font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--content3); font-weight: 500; }
+  .tech-bridge .tb-count { font-size: 10px; color: var(--content3); font-family: "SF Mono", Menlo, monospace; }
+
+  /* Per-technique cards: visual (colors, sizing, truncation) is owned by
+     references/card-template.md — build.py injects its <style> block here
+     verbatim. Edit that .md file and rebuild to change the look; nothing
+     below this comment should be hand-edited. */
+  /* {{CARD_TEMPLATE_CSS}} */
+
+  /* Interaction is opt-in, driven purely by whether a link exists.
+     A card WITHOUT a link renders as <div class="card">: completely inert —
+     no hover lift, no shadow change, no pointer cursor, no underline. It is
+     a static placeholder and must not suggest it does anything.
+     A card WITH a link renders as <a class="card">: it gets the full
+     interactive treatment below. Styling at rest is identical either way. */
+  .card { transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease; cursor: default; }
+
+  /* Clickable card — entire card acts as the link. Inherits every .card rule
+     above; these neutralize default anchor behavior, restore the flex column
+     that `display:flex` on an inline element would otherwise lose, and add
+     the hover/focus affordances that ONLY a linked card should have. */
+  a.card { text-decoration: none; color: inherit; cursor: pointer; display: flex; flex-direction: column; }
+  a.card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); border-color: rgba(0,0,0,0.15); }
+  a.card:hover .card__title { text-decoration: underline; text-decoration-color: rgba(0,0,0,0.2); text-underline-offset: 2px; }
+  a.card:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; border-radius: 12px; }
+
+  /* ═════════ Concept tabs (top of page) ═════════════════════════════ */
+  .concept-tabs {
+    display: flex; align-items: center; gap: 6px;
+    padding: 12px var(--page-margin);
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    background: var(--bg-page);
+    position: sticky; top: 0; z-index: 20;
+  }
+  .concept-tab {
+    appearance: none; border: 1px solid rgba(0,0,0,0.12);
+    background: transparent; color: var(--content2);
+    padding: 8px 16px; border-radius: 999px;
+    font-size: 12px; font-weight: 500; letter-spacing: 0.02em;
+    cursor: pointer; transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+  }
+  .concept-tab:hover { background: rgba(0,0,0,0.04); color: var(--content1); }
+  .concept-tab[data-active="true"] {
+    background: var(--content1); color: var(--bg-page); border-color: var(--content1);
+  }
+  .concept-tab:focus-visible { outline: 2px solid var(--cyan); outline-offset: 2px; }
+  body.dark-mode .concept-tabs { border-bottom-color: rgba(255,255,255,0.10); }
+  body.dark-mode .concept-tab { border-color: rgba(255,255,255,0.18); color: rgba(255,255,255,0.55); }
+  body.dark-mode .concept-tab:hover { background: rgba(255,255,255,0.06); color: #fff; }
+  body.dark-mode .concept-tab[data-active="true"] { background: #fff; color: #18181B; border-color: #fff; }
+
+  /* Concept views — one visible at a time */
+  .concept-view[hidden] { display: none !important; }
+  .concept-empty {
+    min-height: 60vh;
+    display: flex; flex-direction: column; align-items: center; justify-content: center;
+    gap: 12px; padding: 96px var(--page-margin);
+    color: var(--content2); text-align: center;
+  }
+  .concept-empty .empty-icon {
+    width: 64px; height: 64px; border-radius: 16px;
+    background: rgba(0,0,0,0.05);
+    display: flex; align-items: center; justify-content: center;
+    color: rgba(0,0,0,0.35); font-size: 28px;
+  }
+  .concept-empty .empty-title { font-size: 16px; font-weight: 600; color: var(--content1); }
+  .concept-empty .empty-sub { font-size: 13px; color: var(--content2); max-width: 420px; }
+  body.dark-mode .concept-empty .empty-icon { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.35); }
+
+  /* Palette override: section dots (badges) use #A855F7. Cards are deliberately
+     NOT tinted here — a linked card must look identical to an unlinked one. */
+  .cx-badge { background: #A855F7 !important; }
+  .cx-badge i { color: #fff !important; }
+
+  /* ═════════ RESPONSIVE BREAKPOINT SYSTEM ═════════════════════════════
+     Based on Material Design responsive grid:
+     ┌──────────────┬────────┬───────────┬────────┐
+     │ Screen size  │ Margin │ Body      │ Cols   │
+     ├──────────────┼────────┼───────────┼────────┤
+     │ 0–599 (phone)│ 16px   │ scaling   │ 4      │
+     │ 600–904      │ 32px   │ scaling   │ 8      │
+     │ 905–1239     │ scaling│ 840px     │ 12     │
+     │ 1240–1439    │ 200px  │ scaling   │ 12     │
+     │ 1440+        │ scaling│ 1040px   │ 12     │
+     └──────────────┴────────┴───────────┴────────┘
+     Body max-width is set on <body>. Per-breakpoint padding (margin)
+     is applied to .hero, .sections-wrap,
+     and .site-header via the --page-margin CSS variable. */
+
+  :root { --page-margin: 40px; }
+
+  /* ── 1440+ (desktop): body=1040px, margin=scaling ── default (above) */
+
+  /* ── 1240–1439 (laptop): margin=200px, body=scaling ── */
+  @media (max-width: 1439px) {
+    :root { --page-margin: 200px; }
+    .cx-container, .hero { max-width: none; }
+  }
+
+  /* ── 905–1239 (small laptop): body=840px, margin=scaling ── */
+  @media (max-width: 1239px) {
+    :root { --page-margin: 40px; }
+    .cx-container, .hero { max-width: 840px; }
+  }
+
+  /* ── 600–904 (tablet): margin=32px, body=scaling, 8 cols ── */
+  @media (max-width: 904px) {
+    :root { --page-margin: 32px; }
+    .cx-container, .hero { max-width: none; }
+    .hero { padding: 80px var(--page-margin) 0; }
+    .sections-wrap .cx-container { padding: 0 var(--page-margin) 32px; }
+    .site-header { padding: 20px 40px; }
+  }
+
+  /* ── 0–599 (phone): margin=16px, body=scaling, 4 cols ── */
+  @media (max-width: 599px) {
+    :root { --page-margin: 16px; }
+    .cx-container, .hero { max-width: none; }
+    .hero {
+      grid-template-columns: 1fr;
+      padding: 40px var(--page-margin) 40px;
+    }
+    .hero-left { padding-top: 40px; gap: 16px; }
+    .hero-left h1, .hero-heading { font-size: 34px; }
+    .hero-right { padding-top: 0; }
+    .brand-mark { width: 100%; max-width: 100%; height: 280px; }
+    .scroll-cue {
+      margin-top: 30px;
+      padding: 0 8px;
+    }
+    .sections-wrap .cx-container { padding: 0 var(--page-margin) 32px; }
+    .site-header { padding: 16px 40px; }
+    .workshop-cols, .ws-row { grid-template-columns: 90px 1fr; gap: 10px; }
+    .workshop-cols > div:nth-child(n+3), .ws-row > div:nth-child(n+3) { display: none; }
+  }
+
+  /* ═════════ WORKSHOP TABLE (Discovery Workshop layout) ══════════════
+     Compact, light-grey chrome (no saturated blue). Sample data acts as
+     guidance so authors see what belongs in each column. */
+  .workshop { border: 1px solid var(--card-border); border-radius: 10px; overflow: hidden; background: transparent; }
+  .workshop-cols { display: grid; grid-template-columns: 150px 180px 1fr 200px 120px; gap: 14px; padding: 12px 22px; background: rgba(0,0,0,0.04); font-size: 10px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--content2); }
+  .workshop-body { background: transparent; }
+  .ws-day { background: rgba(0,0,0,0.025); padding: 7px 22px; font-size: 11px; font-weight: 700; color: var(--content1); letter-spacing: 0.02em; }
+  .ws-lunch-row { display: grid; grid-template-columns: 150px 1fr; gap: 14px; background: rgba(0,0,0,0.025); padding: 10px 22px; border-top: 1px solid var(--card-border); font-size: 12px; }
+  .ws-lunch-row .ws-cell.timebox { color: var(--content2); }
+  .ws-lunch-row .ws-lunch-text { color: var(--content2); text-align: center; font-style: italic; }
+  .ws-row { display: grid; grid-template-columns: 150px 180px 1fr 200px 120px; gap: 14px; padding: 12px 22px; border-top: 1px solid var(--card-border); font-size: 12.5px; align-items: flex-start; }
+  .ws-cell { color: var(--content2); line-height: 1.45; min-height: 16px; white-space: pre-line; }
+  .ws-cell.ws-activity { color: var(--content1); font-weight: 500; }
+  .ws-cell:empty::before { content: "—"; color: rgba(0,0,0,0.20); }
+
+  body.dark-mode .workshop { border-color: var(--card-border); }
+  body.dark-mode .workshop-cols { background: rgba(255,255,255,0.05); color: var(--content2); }
+  body.dark-mode .ws-day { background: rgba(255,255,255,0.04); color: var(--content1); }
+  body.dark-mode .ws-lunch-row { background: rgba(255,255,255,0.04); border-top-color: var(--card-border); }
+  body.dark-mode .ws-lunch-row .ws-lunch-text, body.dark-mode .ws-lunch-row .ws-cell.timebox { color: var(--content2); }
+  body.dark-mode .ws-row { border-top-color: var(--card-border); }
+  body.dark-mode .ws-cell { color: var(--content2); }
+  body.dark-mode .ws-cell.ws-activity { color: var(--content1); }
+  body.dark-mode .ws-cell:empty::before { color: rgba(255,255,255,0.25); }
+
+  /* Workshop table responsive handled in breakpoint system above */
+
+  /* ═════════ BEFORE / AFTER COMPARISON LENS ══════════════════════════ */
+  /* A master toggle at the top-right drives the state of the whole doc.
+     Every section respects it — hero, technique cards, and impact band. */
+
+  :root {
+    --red: #C93A3A;
+    --red-bg: rgba(201,58,58,0.06);
+    --red-border: rgba(201,58,58,0.22);
+    --amber: #B8791F;
+  }
+
+  /* ═════════ PROBLEM SECTION ════════════════════════════════════════ */
+  .problem-bridge { display: none; background: rgba(0,0,0,0.03); padding: 100px 0; }
+  .problem-bridge .cx-container { padding: 0 var(--page-margin); }
+  body.dark-mode .problem-bridge { background: rgba(255,255,255,0.03); }
+  .problem-top { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.15fr); gap: 32px; align-items: end; margin-bottom: 52px; }
+  .problem-head { max-width: 520px; }
+  .problem-eyebrow { font-size: 10px; text-transform: uppercase; letter-spacing: 0.15em; color: var(--red); font-weight: 600; margin-bottom: 8px; }
+  .problem-title { font-size: 24px; font-weight: 600; letter-spacing: -0.01em; color: var(--content1); line-height: 1.15; }
+  .problem-core { background: transparent; border: none; border-radius: 0; padding: 0; }
+  .problem-core-label { font-size: 9px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--content2); font-weight: 600; margin-bottom: 4px; }
+  .problem-core p { font-size: 12px; color: var(--content2); line-height: 1.55; }
+  .problem-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr); gap: 56px; align-items: start; }
+  .problem-col-head, .fix-comparison-title { font-size: 18px; font-weight: 700; color: var(--content1); letter-spacing: -0.01em; margin-bottom: 20px; text-transform: none; }
+  .challenges-list { background: transparent; border: none; }
+  .challenge { display: flex; gap: 14px; align-items: baseline; padding: 4px 0; }
+  .challenge-num { font-family: "SF Mono", Menlo, monospace; font-size: 10px; color: var(--content3); font-weight: 600; letter-spacing: 0.08em; min-width: 18px; flex-shrink: 0; }
+  .challenge-title { font-size: 13px; font-weight: 500; color: var(--content1); line-height: 1.4; }
+  .fix-comparison { min-width: 0; }
+  .fix-table { background: transparent; border-top: 1px solid rgba(0,0,0,0.18); }
+  .fix-row { display: grid; grid-template-columns: 1fr 1fr; padding: 12px 4px; border-bottom: 1px solid rgba(0,0,0,0.08); align-items: baseline; column-gap: 32px; background: transparent; }
+  .fix-row.header { padding: 14px 4px 12px; }
+  .fix-header-cell { font-size: 13px; font-weight: 600; color: var(--content1); }
+  .fix-without, .fix-with { font-size: 13px; color: var(--content1); font-weight: 400; line-height: 1.45; }
+  body.dark-mode .problem-core { background: transparent; border: none; }
+  body.dark-mode .problem-core-label { color: var(--content2); }
+  body.dark-mode .problem-eyebrow { color: #F06B6B; }
+  body.dark-mode .challenges-list { background: transparent; border: none; }
+  body.dark-mode .challenge-num { color: var(--content3); }
+  body.dark-mode .fix-table { background: transparent; border-top-color: rgba(255,255,255,0.22); }
+  body.dark-mode .fix-row { background: transparent; border-bottom-color: rgba(255,255,255,0.08); }
+  body.dark-mode .fix-header-cell, body.dark-mode .fix-without, body.dark-mode .fix-with { color: var(--content1); }
+
+  /* ═════════ SCROLL TO TOP BUTTON ═══════════════════════════════════ */
+  .scroll-to-top {
+    position: fixed; bottom: 32px; right: 32px; z-index: 200;
+    width: 44px; height: 44px; border-radius: 50%;
+    background: #000; color: #fff; border: none;
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; opacity: 0; visibility: hidden;
+    transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.15s ease;
+    box-shadow: 0 4px 12px rgba(168,85,247,0.3);
+  }
+  .scroll-to-top.visible { opacity: 1; visibility: visible; }
+  .scroll-to-top:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(168,85,247,0.4); }
+  .scroll-to-top i { font-size: 20px; }
+  body.dark-mode .scroll-to-top { background: #A855F7; color: #fff; }
+
+  /* Smooth transitions everywhere the state touches */
+  .hero-desc, .t-out {
+    transition: opacity 0.25s ease, color 0.25s ease, background 0.25s ease, border-color 0.25s ease;
+  }
+
+  /* ═════════ TOP BAR ══════════════════════════════════════════════════
+     Named "Top Bar": brand logo + "UX/UI Roadmap" on the left, theme toggle
+     + Intelligaia lockup on the right. Sticks to the top of the viewport.
+     It must ALWAYS span the full window width — it is never width-capped at
+     any breakpoint, or the Main Header's tinted band shows around it. */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: var(--bg-page);
+    max-width: none !important;
+    padding: 20px 40px;
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 32px;
+  }
+  .site-header-left  { display: flex; align-items: center; gap: 14px; }
+  .site-header-brand { font-size: 14px; font-weight: 600; color: var(--content1); white-space: nowrap; }
+  .site-header-divider { width: 1px; height: 16px; background: var(--content3); flex-shrink: 0; }
+  .site-header-roadmap { font-size: 14px; font-weight: 400; color: var(--content2); white-space: nowrap; }
+  .site-header-right { display: flex; align-items: center; gap: 14px; }
+  body.dark-mode .site-header { background: var(--bg-page); }
+
+  /* ═════════ BEFORE-ONLY HERO SIMPLIFICATION ══════════════════════════
+     In Before mode, hide the After-state headline + description + callout
+     and show ONLY the brand name (the logo image stays as-is). */
+  /* Hero brand block is identical in both toggle states — no state-specific rules. */
+
+  /* ═════════ THEME TOGGLE (dark / light) ══════════════════════════════ */
+  .theme-toggle {
+    width: 32px; height: 32px; border-radius: 50%;
+    border: none; background: transparent; color: var(--content2);
+    display: flex; align-items: center; justify-content: center;
+    cursor: pointer; padding: 0;
+    transition: color 0.25s ease, background 0.15s ease, transform 0.15s ease;
+  }
+  .theme-toggle:hover { color: var(--content1); background: rgba(0,0,0,0.05); }
+  .theme-toggle:active { transform: scale(0.94); }
+  .theme-toggle svg { display: block; width: 20px; height: 20px; }
+  .theme-toggle .icon-sun  { display: none; }
+  .theme-toggle .icon-moon { display: block; }
+
+  /* ═════════ DARK MODE ═════════════════════════════════════════════════ */
+  body.dark-mode {
+    --bg-hero: #141416;
+    --bg-page: #0A0A0B;
+    --content1: rgba(255,255,255,0.92);
+    --content2: rgba(255,255,255,0.62);
+    --content3: rgba(255,255,255,0.38);
+    --card-bg: rgba(255,255,255,0.03);
+    --card-border: rgba(255,255,255,0.10);
+    background: #0A0A0B;
+  }
+  body.dark-mode { color: var(--content1); }
+
+  /* Theme toggle in dark mode → bare sun-dim icon on transparent bg */
+  body.dark-mode .theme-toggle { background: transparent; color: var(--content2); border: none; }
+  body.dark-mode .theme-toggle:hover { background: rgba(255,255,255,0.06); color: var(--content1); }
+  body.dark-mode .theme-toggle .icon-moon { display: none; }
+  body.dark-mode .theme-toggle .icon-sun  { display: block; }
+
+  /* Brand logo in dark mode is handled by the data-logo-tone rules above,
+     which adapt per-tone instead of inverting every logo unconditionally. */
+
+  /* Hero surfaces */
+  body.dark-mode .brand-logo   { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.4); }
+  body.dark-mode .brand-mark   { border-color: rgba(255,255,255,0.18); background: rgba(255,255,255,0.03); color: rgba(255,255,255,0.4); }
+  body.dark-mode .hero-heading { color: var(--content1); }
+  body.dark-mode .hero-desc    { color: var(--content2); }
+  body.dark-mode .scroll-cue .label { color: var(--content1); }
+  body.dark-mode .scroll-cue .scroll-cue-desc { color: var(--content2); }
+
+  /* Section chrome */
+  body.dark-mode .cx-badge { box-shadow: 0 0 0 4px var(--bg-page); }
+  body.dark-mode .sec-title { color: var(--content1); }
+  body.dark-mode .sec-desc  { color: var(--content2); }
+  body.dark-mode .refs-label, body.dark-mode .cx-toggle-label { color: rgba(255,255,255,0.4); }
+  body.dark-mode .cx-toggle-group { border-color: rgba(255,255,255,0.10); background: rgba(255,255,255,0.03); }
+  body.dark-mode .cx-layout-btn { color: rgba(255,255,255,0.45); }
+  body.dark-mode .cx-layout-btn:hover:not([data-active="true"]) { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.9); }
+
+  /* Cards and lists */
+  body.dark-mode .empty-state { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.10); }
+  body.dark-mode .grid-card, body.dark-mode .phase-card { background: rgba(255,255,255,0.03); border-color: rgba(255,255,255,0.08); }
+  body.dark-mode .grid-card .title, body.dark-mode .phase-card .title, body.dark-mode .list-row .title { color: var(--content1); }
+  body.dark-mode .grid-card .desc,  body.dark-mode .phase-card .desc,  body.dark-mode .list-row .desc  { color: rgba(255,255,255,0.55); }
+  body.dark-mode .list-row { border-bottom-color: rgba(255,255,255,0.08); }
+  body.dark-mode .list-row .lbl { color: rgba(255,255,255,0.45); }
+
+  /* Tech bridge (each section's technique cards) */
+  body.dark-mode .tech-bridge { background: transparent; border: none; }
+  body.dark-mode .tech-bridge .tb-lbl, body.dark-mode .tech-bridge .tb-count { color: var(--content3); }
+
+  /* Footer */
+  body.dark-mode .site-footer { color: var(--content3); border-top-color: var(--card-border); }
+  body.dark-mode .site-footer .dot { background: var(--cyan); color: #fff; }
+
+  /* Smooth theme swap */
+  body, .brand-logo, .brand-mark, .grid-card, .phase-card,
+  .tech-bridge,
+  .empty-state, .cx-toggle-group {
+    transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
+  }
+</style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-header-left">
+      <div class="brand-logo">BRAND LOGO</div>
+      <span class="site-header-divider"></span>
+      <span class="site-header-roadmap">UX/UI Roadmap</span>
+    </div>
+    <div class="site-header-right">
+      <button type="button" class="theme-toggle" aria-label="Toggle dark mode" title="Toggle dark / light">
+        <svg class="icon-moon" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1 -9 -9z"/>
+        </svg>
+        <svg class="icon-sun" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="4"/>
+          <path d="M12 4h.01"/>
+          <path d="M20 12h.01"/>
+          <path d="M12 20h.01"/>
+          <path d="M4 12h.01"/>
+          <path d="M17.657 6.343h.01"/>
+          <path d="M17.657 17.657h.01"/>
+          <path d="M6.343 17.657h.01"/>
+          <path d="M6.343 6.343h.01"/>
+        </svg>
+      </button>
+      <div class="intelligaia">
+        <a href="https://www.intelligaia.com" target="_blank" rel="noopener noreferrer" title="Intelligaia">
+        <img src="{{LOGO_DATAURI}}" alt="Intelligaia — humanizing AI for enterprises" class="intelligaia-logo" data-logo-tone="{{LOGO_TONE}}">
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <div id="concept-2" class="concept-view" role="tabpanel" aria-labelledby="Concept 2">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="hero-heading">Brand Name</div>
+      <div class="hero-desc">Provide description for this section in the intake.</div>
+    </div>
+    <div class="hero-right">
+      <div class="brand-mark">
+        <i class="ti ti-photo" aria-hidden="true"></i>
+        <span>Brand mark / hero visual</span>
+      </div>
+    </div>
+    <div class="scroll-cue">
+      <div class="label">CX Roadmap</div>
+      <div class="scroll-cue-desc">Provide description for this section in the intake.</div>
+      <svg class="scroll-cue-arrow" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0070D2" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 7l5 5l5 -5" /><path d="M7 13l5 5l5 -5" /></svg>
+    </div>
+  </div>
+
+  <div class="sections-wrap">
+    <div class="cx-container">
+    <div id="cx-sections-2"></div>
+    <footer class="site-footer">
+      <div class="footer-brand">
+        <div class="brand-logo">BRAND LOGO</div>
+        <div>© 2026 Brand Name · Confidential · Not for distribution</div>
+      </div>
+      <div class="right">
+        <span>Prepared by</span>
+        <a href="https://www.intelligaia.com" target="_blank" rel="noopener noreferrer" title="Intelligaia">
+        <img src="{{LOGO_DATAURI}}" class="intelligaia-logo intelligaia-logo-footer" alt="Intelligaia" data-logo-tone="{{LOGO_TONE}}">
+        </a>
+      </div>
+    </footer>
+    </div>
+  </div>
+  </div><!-- end concept-2 -->
+
+<script>
+(function(){
+  const GREEN = '#A855F7', GREEN_RGBA = '168,85,247';
+  const CYAN = '#A855F7', CYAN_RGBA = '168,85,247';
+
+  const LAYOUTS = [
+    {id:'empty', icon:'ti-layout-grid',    label:'Empty'},
+    {id:'cards', icon:'ti-layout-cards',   label:'Icon cards'},
+    {id:'list',  icon:'ti-layout-list',    label:'Numbered list'},
+    {id:'phase', icon:'ti-layout-columns', label:'Phase cards'}
+  ];
+
+  // Sections are now ordered by 5D workflow: D1 Discover → D2 Define → D3 Design.
+  // D1 + D2 use GREEN badges (pre-design work); D3 uses CYAN (design output).
+  const sections = {{SECTIONS_ARRAY}};
+
+  // Map a section's badge color to the phase-tag / tech-bridge accent color
+  function phaseAccent(s){ return s.color === GREEN ? 'green' : 'cyan'; }
+
+  function renderWorkshop(s){
+    const w = s.workshop || {};
+    const rows = (w.rows || []).map(r => {
+      if (r.day)   return `<div class="ws-day">${r.day}</div>`;
+      if (r.lunch) return `<div class="ws-lunch-row">
+        <div class="ws-cell timebox">${r.timebox || ''}</div>
+        <div class="ws-lunch-text">Lunch</div>
+      </div>`;
+      return `<div class="ws-row">
+        <div class="ws-cell">${r.timebox     || ''}</div>
+        <div class="ws-cell ws-activity">${r.activity  || ''}</div>
+        <div class="ws-cell">${r.objective   || ''}</div>
+        <div class="ws-cell">${r.framework   || ''}</div>
+        <div class="ws-cell">${r.facilitator || ''}</div>
+      </div>`;
+    }).join('');
+    return `
+      <div class="workshop">
+        <div class="workshop-cols">
+          <div>Timebox</div><div>Activity</div><div>Objective</div><div>Framework</div><div>Facilitator</div>
+        </div>
+        <div class="workshop-body">${rows}</div>
+      </div>`;
+  }
+
+  // Known thumbnail filenames on disk (kept in sync with assets/thumbnail/).
+  // Section titles are matched to a filename by a normalized key (lowercase, alnum only).
+  window.__cxThumbFiles = [
+    'thumb_Analysis.png',
+    'thumb_Brainstorming Session.png',
+    'thumb_Business Objectives.png',
+    'thumb_Customer Journey Mapping.png',
+    'thumb_Deliver.png',
+    'thumb_Design System.png',
+    'thumb_Develop.png',
+    'thumb_Discovery Workshop.png',
+    'thumb_High Fidelity Mockups (Prototype).png',
+    'thumb_Information Architecture.png',
+    'thumb_Low fidelity Wireframe.png',
+    'thumb_Persona.png',
+    'thumb_Persona_Male.png',
+    'thumb_Persona_Female.png',
+    'thumb_Service Blueprint.png',
+    'thumb_User Story Mapping.png'
+  ];
+  window.__cxThumbData = {{THUMB_DATA_OBJECT}};
+  window.__cxNormKey = function(s){ return String(s||'').toLowerCase().replace(/[^a-z0-9]/g,''); };
+  window.__cxThumbMap = (function(){
+    var m = {};
+    Object.keys(window.__cxThumbData).forEach(function(f){
+      var base = f.replace(/^thumb_/,'').replace(/\.png$/,'');
+      m[window.__cxNormKey(base)] = window.__cxThumbData[f];
+    });
+    return m;
+  })();
+  window.__cxFindThumb = function(title){
+    var k = window.__cxNormKey(title);
+    if(window.__cxThumbMap[k]) return window.__cxThumbMap[k];
+    // Loose contains match (e.g., "Low Fidelity Wireframes" ↔ "Low fidelity Wireframe")
+    for(var key in window.__cxThumbMap){
+      if(k.indexOf(key) === 0 || key.indexOf(k) === 0) return window.__cxThumbMap[key];
+    }
+    return null;
+  };
+  // Fallback: if a card thumbnail 404s, swap the <img> for the dashed placeholder.
+  window.__cxThumbFallback = function(img){
+    try{
+      var slot = img.parentNode;
+      if(!slot) return;
+      img.onerror = null;
+      slot.setAttribute('style','');
+      slot.innerHTML = '<i class="ti ti-photo" aria-hidden="true"></i><span class="img-lbl">Image / asset</span>';
+    }catch(e){}
+  };
+
+  function renderTechBridge(s){
+    if (s.workshop) return renderWorkshop(s);
+    // Persona section (n:2) with a personas array uses the multi-person renderer.
+    if (s.personas && s.personas.length > 0) return renderPersonas(s);
+
+    function cardTitleFor(x, i){ return x.t; }
+
+    // One technique = exactly ONE card. If the technique has a link, the card
+    // itself is the click target — no pills inside it, no extra link cards
+    // beside it. Linked and unlinked cards are visually identical; the link
+    // only changes the wrapper element (<a> vs <div>), never the styling.
+    function buildCard(x, i){
+      const cardTitle = cardTitleFor(x, i);
+      // Whether a link exists decides the wrapper element (<a> vs <div>) and
+      // therefore whether the card has any hover/click behaviour at all.
+      const href = resolveHref(x);
+      const src = x.image || window.__cxFindThumb(s.title) || window.__cxFindThumb('Persona');
+      const inner = `
+        <div class="card__thumb${x.image ? ' card__thumb--img' : (href ? '' : ' card__thumb--muted')}"><img src="${src}" alt="${cardTitle}"></div>
+        <p class="card__title">${cardTitle}</p>
+        <p class="card__desc" title="${String(x.o).replace(/"/g, '&quot;')}">${x.o}</p>`;
+
+      if (href) {
+        return `<a class="card" href="${href}" target="_blank" rel="noopener noreferrer" title="${href}">${inner}</a>`;
+      }
+      return `<div class="card">${inner}</div>`;
+    }
+
+    // Picks the single URL this card points to. Empty/missing URLs and
+    // placeholders like '#' are dropped so we never render a dead link.
+    function resolveHref(x){
+      const clean = u => { u = (u || '').trim(); return (u && u !== '#') ? u : null; };
+      const direct = clean(x.link);
+      if (direct) return direct;
+      const first = (x.links || []).map(l => clean(l && l.url)).find(Boolean);
+      return first || null;
+    }
+
+    // Variant A (no named groups) vs Variant B (techniques tagged with x.group):
+    // group techniques in order of first appearance. One technique always
+    // yields exactly one card. A group also tracks whether any of its
+    // techniques actually carries a link — an unlinked group is still just
+    // placeholder scaffolding, so its heading stays hidden (see below).
+    const groups = []; // [{label, cards:[...], hasLink:bool}]
+    let ungroupedCards = [];
+    s.techniques.forEach((x, i) => {
+      const card = buildCard(x, i);
+      if (x.group) {
+        let g = groups.find(g => g.label === x.group);
+        if (!g) { g = {label: x.group, cards: [], hasLink: false}; groups.push(g); }
+        g.cards.push(card);
+        if (resolveHref(x)) g.hasLink = true;
+      } else {
+        ungroupedCards.push(card);
+      }
+    });
+
+    let bodyHTML;
+    if (groups.length === 0) {
+      // Variant A — single card, or a row of cards if there's more than one,
+      // with no sub-section heading.
+      bodyHTML = ungroupedCards.length > 1 ? `<div class="card-row">${ungroupedCards.join('')}</div>` : ungroupedCards.join('');
+    } else {
+      // Variant B — one .subsection per group (ungrouped cards, if any,
+      // render first as a plain row with no heading).
+      // The heading + divider appear ONLY once at least one technique in that
+      // group has a link. Until then the group's cards render as a plain row,
+      // so an untouched template shows no stray "PERSONA"-style labels.
+      let html = '';
+      if (ungroupedCards.length > 0) {
+        html += ungroupedCards.length > 1 ? `<div class="card-row">${ungroupedCards.join('')}</div>` : ungroupedCards.join('');
+      }
+      html += groups.map(g => {
+        const row = `<div class="card-row">${g.cards.join('')}</div>`;
+        if (!g.hasLink) return row;
+        return `
+        <div class="subsection">
+          <p class="subsection-heading">${g.label}</p>
+          <hr class="subsection-divider">
+          ${row}
+        </div>`;
+      }).join('');
+      bodyHTML = html;
+    }
+
+    return `<div class="tech-bridge ${phaseAccent(s)}">${bodyHTML}</div>`;
+  }
+
+  // Persona renderer — one card per person, using the SAME tech-card structure
+  // as every other section (image slot on top, name, designation, refs row).
+  // Supports {name, designation, image?, link?, links?}. Falls back to technique
+  // cards when the personas array is absent or empty.
+  function renderPersonas(s){
+    const cards = s.personas.map((p, i) => {
+      const name = p.name || 'Unnamed';
+      const desg = p.designation || 'Provide designation in the intake.';
+      // Persona avatar: p.image → random Male/Female thumb → section-default
+      // thumbnail (R26 lookup c). Random is decided once per card via
+      // p.gender ('male'/'female') if the intake sets it; otherwise it's
+      // picked pseudo-randomly per card so a persona grid shows a mix
+      // rather than one repeated face.
+      const genderKey = p.gender === 'male' ? 'thumb_Persona_Male.png'
+                       : p.gender === 'female' ? 'thumb_Persona_Female.png'
+                       : (Math.random() < 0.5 ? 'thumb_Persona_Male.png' : 'thumb_Persona_Female.png');
+      const genderThumb = window.__cxThumbData[genderKey];
+      const personaThumb = p.image || genderThumb || window.__cxFindThumb(s.title);
+      const href = (p.link || '').trim();
+
+      // Same .card / .card__thumb / .card__title / .card__desc markup as every
+      // other section, so Persona cards share the exact same size, spacing,
+      // and any future edits to references/card-template.md.
+      const inner = `
+        <div class="card__thumb${p.image ? ' card__thumb--img' : ((href && href !== '#') ? '' : ' card__thumb--muted')}"><img src="${personaThumb}" alt="${name}"></div>
+        <p class="card__title">${name}</p>
+        <p class="card__desc" title="${String(desg).replace(/"/g, '&quot;')}">${desg}</p>`;
+      // card--persona: taller card with a square image box (see card-template.md).
+      // Scoped to this renderer so technique cards keep the wider 300x200 shape.
+      if (href && href !== '#') {
+        return `<a class="card card--persona" href="${href}" target="_blank" rel="noopener noreferrer" title="${href}">${inner}</a>`;
+      }
+      return `<div class="card card--persona">${inner}</div>`;
+    }).join('');
+    const bodyHTML = s.personas.length > 1 ? `<div class="card-row card-row--persona">${cards}</div>` : cards;
+    return `<div class="tech-bridge ${phaseAccent(s)}">${bodyHTML}</div>`;
+  }
+
+  const SAMPLE_ITEMS = [
+    {icon:'ti-crosshair',   title:'Item 01', desc:'Provide description for this item in the intake.', tags:['Tag A','Tag B']},
+    {icon:'ti-camera',      title:'Item 02', desc:'Provide description for this item in the intake.', tags:['Tag C','Tag D']},
+    {icon:'ti-map-pin',     title:'Item 03', desc:'Provide description for this item in the intake.', tags:['Tag E']},
+    {icon:'ti-bolt',        title:'Item 04', desc:'Provide description for this item in the intake.', tags:['Tag F','Tag G']},
+    {icon:'ti-circle-check',title:'Item 05', desc:'Provide description for this item in the intake.', tags:['Tag H']},
+    {icon:'ti-calendar',    title:'Item 06', desc:'Provide description for this item in the intake.', tags:['Tag I','Tag J']}
+  ];
+
+
+  function renderIconCards(s){
+    const accent = s.color;
+    const rgba = s.color === GREEN ? GREEN_RGBA : CYAN_RGBA;
+    const items = (s.techniques && s.techniques.length > 0) ? s.techniques : SAMPLE_ITEMS;
+    const cards = items.map(it => `
+      <div class="grid-card">
+        <div class="icon-tile" style="background:rgba(${rgba},0.15);">
+          <i class="ti ${it.icon || s.icon}" aria-hidden="true" style="color:${accent};"></i>
+        </div>
+        <div class="title">${it.t || it.title}</div>
+        <div class="desc">${it.o || it.desc}</div>
+      </div>`).join('');
+    return `<div class="grid-cards">${cards}</div>`;
+  }
+
+
+
+
+  function toggleHTML(sectionColor){
+    const btns = LAYOUTS.map((L, i) => {
+      const active = i === 0;
+      const bg = active ? sectionColor : 'transparent';
+      const iconColor = active ? (sectionColor === GREEN ? '#18181b' : '#fff') : 'rgba(0,0,0,0.4)';
+      return `<button type="button" class="cx-layout-btn" data-layout="${L.id}" data-active="${active}" aria-label="${L.label}" title="${L.label}" style="background:${bg};color:${iconColor};"><i class="ti ${L.icon}" aria-hidden="true"></i></button>`;
+    }).join('');
+    return `
+      <div class="cx-toggle" data-accent="${sectionColor}">
+        <span class="cx-toggle-label">Layout</span>
+        <div class="cx-toggle-group">${btns}</div>
+      </div>`;
+  }
+
+  // chipsHTML removed — refs are now rendered per-card inside renderTechBridge.
+  // The old chipsHTML was dead code (never called). Refs come from x.links on
+  // each technique: [{label, url}, ...]. When no links, a dashed "Add link"
+  // placeholder pill is shown.
+
+  // Concept 2 gets an independent deep clone of the sections data so future edits
+  // to one concept do not touch the other. Both start identical.
+  // Concept 2 — same section content as Concept 1, but reordered.
+  // Phase dividers (D1..D5) are dropped, and sections are laid out in this
+  // sequence: High-Fi Mockups (Prototype) → Low-Fi Wireframes (Flows) →
+  // Analysis (Research) → IA/User Stories → Customer Journey (End-to-End
+  // Workflow) → Discovery Workshop → Service Blueprint → Design System →
+  // Persona → Business Objectives → Brainstorming → Develop → Deliver.
+  // Sub-cards inside each section are untouched — this only shuffles order.
+  const sections2 = (function(){
+    const clone   = JSON.parse(JSON.stringify(sections));
+    // Order comes from content.template.js itself. A hard-coded list of the
+    // 14 section numbers used to live here, which silently hid any section
+    // added later (e.g. "Others"). Array order in the content file is now the
+    // single source of truth for what appears and where.
+    return clone.filter(s => !s.divider);
+  })();
+
+  // Concept 2 renderer — simpler layout: no timeline, no badges, no phase dividers,
+  // no layout toggle. Just clean modular sections with title, description, and cards.
+  function initConcept2(rootId, secs){
+    const root = document.getElementById(rootId);
+    if (!root) return;
+    const html = secs.filter(s => !s.divider).map((s) => {
+      const iconColor = s.color === GREEN ? '#18181b' : '#fff';
+      const accent = phaseAccent(s);
+      return `
+      <section class="cx-sec" data-color="${s.color}" data-icon="${s.icon}">
+        <div class="sec-head">
+          <div class="cx-badge" style="background:${s.color};"><i class="ti ${s.icon}" aria-hidden="true" style="color:${iconColor};"></i></div>
+          <div class="sec-title-block">
+            <div class="sec-title">${s.title}</div>
+            <div class="sec-desc">${s.desc}</div>
+          </div>
+        </div>
+        <div class="cx-content">
+          ${s.layout === 'cards' ? renderIconCards(s) : renderTechBridge(s)}
+        </div>
+      </section>`;
+    }).join('');
+    root.innerHTML = html;
+
+    // Solid blue timeline line connecting the section badges (Concept 2).
+    // Reuses Concept 1's math: anchor at the first badge, terminate at the
+    // top of the last so the line meets each badge cleanly.
+    const line = document.createElement('div');
+    line.style.cssText = 'position:absolute;width:2px;opacity:0.7;z-index:0;pointer-events:none;background:#A855F7;';
+    root.appendChild(line);
+    function drawLine(){
+      const secs2 = root.querySelectorAll('.cx-sec');
+      if(secs2.length < 2){ line.style.display = 'none'; return; }
+      line.style.display = 'block';
+      const rootRect = root.getBoundingClientRect();
+      function badgeRect(sec){
+        const b = sec.querySelector('.cx-badge');
+        if(!b) return null;
+        const r = b.getBoundingClientRect();
+        return {
+          top:     r.top  - rootRect.top,
+          height:  r.height,
+          center:  r.top  - rootRect.top + r.height/2,
+          centerX: r.left - rootRect.left + r.width/2,
+        };
+      }
+      const firstRect = badgeRect(secs2[0]);
+      const lastRect  = badgeRect(secs2[secs2.length-1]);
+      if(!firstRect || !lastRect){ line.style.display = 'none'; return; }
+      const firstY  = firstRect.center;
+      const lastY   = lastRect.center - lastRect.height/2;
+      // Center the 2px line horizontally under the badges (line is 2px wide → offset by 1).
+      line.style.left   = (firstRect.centerX - 1) + 'px';
+      line.style.top    = firstY + 'px';
+      line.style.height = Math.max(0, lastY - firstY) + 'px';
+    }
+    requestAnimationFrame(drawLine);
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(drawLine); }
+    window.addEventListener('load', drawLine);
+    let rAF2 = 0;
+    window.addEventListener('resize', () => {
+      if(rAF2) cancelAnimationFrame(rAF2);
+      rAF2 = requestAnimationFrame(drawLine);
+    });
+    if(typeof ResizeObserver !== 'undefined'){
+      const ro2 = new ResizeObserver(() => {
+        if(rAF2) cancelAnimationFrame(rAF2);
+        rAF2 = requestAnimationFrame(drawLine);
+      });
+      ro2.observe(root);
+    }
+  }
+
+  function initConcept(rootId, secs){
+    const root = document.getElementById(rootId);
+    if (!root) return;
+    const html = secs.map((s) => {
+      if(s.divider){
+        const accent = s.accent || CYAN;
+        const rgba = accent === GREEN ? GREEN_RGBA : CYAN_RGBA;
+        const label = s.label || 'CX Strategy';
+        return `<div class="phase-divider" style="--dv-accent:${accent};--dv-rgba:${rgba};">
+          <div class="line" style="background:rgba(${rgba},0.25);"></div>
+          <div class="pill" style="border-color:${accent};color:${accent};background:rgba(${rgba},0.10);">${label}</div>
+          <div class="line" style="background:rgba(${rgba},0.25);"></div>
+        </div>`;
+      }
+      const iconColor = s.color === GREEN ? '#18181b' : '#fff';
+      const accent = phaseAccent(s);
+      return `
+      <section class="cx-sec" data-color="${s.color}" data-icon="${s.icon}">
+        <div class="sec-head">
+          <div class="cx-badge" style="background:${s.color};"><i class="ti ${s.icon}" aria-hidden="true" style="color:${iconColor};"></i></div>
+          <div class="sec-title-block">
+            <div class="sec-title">${s.title}</div>
+            <div class="sec-desc">${s.desc}</div>
+          </div>
+        </div>
+        <div class="cx-content">
+          ${s.layout === 'cards' ? renderIconCards(s) : renderTechBridge(s)}
+        </div>
+      </section>`;
+    }).join('');
+    root.innerHTML = html;
+
+    root.querySelectorAll('.cx-sec').forEach(sec => {
+      const accent = sec.dataset.color;
+      const iconColorActive = accent === GREEN ? '#18181b' : '#fff';
+      const group = sec.querySelector('.cx-toggle');
+      if(!group) return;
+      group.querySelectorAll('.cx-layout-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          group.querySelectorAll('.cx-layout-btn').forEach(b => {
+            b.dataset.active = 'false';
+            b.style.background = 'transparent';
+            b.style.color = 'rgba(0,0,0,0.4)';
+          });
+          btn.dataset.active = 'true';
+          btn.style.background = accent;
+          btn.style.color = iconColorActive;
+        });
+      });
+    });
+
+    // Timeline gradient line for this concept's sections.
+    const line = document.createElement('div');
+    line.style.cssText = 'position:absolute;width:2px;opacity:0.7;z-index:0;pointer-events:none;background:#A855F7;';
+    root.appendChild(line);
+    function drawTimeline(){
+      const secs = root.querySelectorAll('.cx-sec');
+      if(secs.length < 2){ line.style.display = 'none'; return; }
+      line.style.display = 'block';
+      const rootRect = root.getBoundingClientRect();
+      function badgeRect(sec){
+        const b = sec.querySelector('.cx-badge');
+        if(!b) return null;
+        const r = b.getBoundingClientRect();
+        return { top: r.top - rootRect.top, height: r.height, center: r.top - rootRect.top + r.height/2 };
+      }
+      const firstRect = badgeRect(secs[0]);
+      const lastRect = badgeRect(secs[secs.length-1]);
+      if(!firstRect || !lastRect){ line.style.display = 'none'; return; }
+      const firstY = firstRect.center;
+      const lastY = lastRect.center - lastRect.height/2;
+      const totalH = Math.max(0, lastY - firstY);
+      let lastGreenY = firstY, firstCyanY = lastY;
+      for(let i = 0; i < secs.length; i++){
+        if(secs[i].dataset.color === GREEN){
+          const r = badgeRect(secs[i]); if(r) lastGreenY = r.center;
+        }
+      }
+      for(let i = 0; i < secs.length; i++){
+        if(secs[i].dataset.color === CYAN){
+          const r = badgeRect(secs[i]); if(r){ firstCyanY = r.center; break; }
+        }
+      }
+      const greenStopPct = totalH > 0 ? ((lastGreenY - firstY) / totalH) * 100 : 0;
+      const cyanStartPct = totalH > 0 ? ((firstCyanY - firstY) / totalH) * 100 : 100;
+      line.style.top = firstY + 'px';
+      line.style.height = totalH + 'px';
+      line.style.background = `linear-gradient(to bottom, ${GREEN} 0%, ${GREEN} ${greenStopPct}%, ${CYAN} ${cyanStartPct}%, ${CYAN} 100%)`;
+    }
+    requestAnimationFrame(drawTimeline);
+    if(document.fonts && document.fonts.ready){ document.fonts.ready.then(drawTimeline); }
+    window.addEventListener('load', drawTimeline);
+    let rAF = 0;
+    window.addEventListener('resize', () => {
+      if(rAF) cancelAnimationFrame(rAF);
+      rAF = requestAnimationFrame(drawTimeline);
+    });
+    if(typeof ResizeObserver !== 'undefined'){
+      const ro = new ResizeObserver(() => {
+        if(rAF) cancelAnimationFrame(rAF);
+        rAF = requestAnimationFrame(drawTimeline);
+      });
+      ro.observe(root);
+    }
+
+    // ═════════ THEME TOGGLE — wire once (only if not already wired) ═══════
+    const themeBtn = document.querySelector('.theme-toggle');
+    if (themeBtn && !themeBtn.dataset.wired) {
+      themeBtn.dataset.wired = '1';
+      themeBtn.setAttribute('aria-pressed', 'false');
+      themeBtn.setAttribute('title', 'Switch to dark mode');
+      themeBtn.addEventListener('click', () => {
+        const isDark = document.body.classList.toggle('dark-mode');
+        themeBtn.setAttribute('aria-pressed', String(isDark));
+        themeBtn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+      });
+    }
+  }
+
+  // ═════════ THEME TOGGLE — wire once (only if not already wired) ═════════════════
+  const themeBtn = document.querySelector('.theme-toggle');
+  if (themeBtn && !themeBtn.dataset.wired) {
+    themeBtn.dataset.wired = '1';
+    themeBtn.setAttribute('aria-pressed', 'false');
+    themeBtn.setAttribute('title', 'Switch to dark mode');
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      themeBtn.setAttribute('aria-pressed', String(isDark));
+      themeBtn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+  }
+
+  // Render both concepts independently.
+  initConcept2('cx-sections-2', sections2);
+
+  // ═════════ THEME TOGGLE — wire once at page load ══════════════════
+  (function initThemeToggle(){
+    const themeBtn = document.querySelector('.theme-toggle');
+    if (!themeBtn || themeBtn.dataset.wired) return;
+    themeBtn.dataset.wired = '1';
+    const startsDark = document.body.classList.contains('dark-mode');
+    themeBtn.setAttribute('aria-pressed', String(startsDark));
+    themeBtn.setAttribute('title', startsDark ? 'Switch to light mode' : 'Switch to dark mode');
+    themeBtn.addEventListener('click', () => {
+      const isDark = document.body.classList.toggle('dark-mode');
+      themeBtn.setAttribute('aria-pressed', String(isDark));
+      themeBtn.setAttribute('title', isDark ? 'Switch to light mode' : 'Switch to dark mode');
+    });
+  })();
+
+  // ═════════ Concept tab switcher ═════════════════════════════
+  (function initConceptTabs(){
+    const tabs  = document.querySelectorAll('.concept-tab');
+    const views = { '1': document.getElementById('concept-1'),
+                    '2': document.getElementById('concept-2') };
+    if (!tabs.length || !views['1'] || !views['2']) return;
+    tabs.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const id = btn.dataset.concept;
+        tabs.forEach(b => {
+          const active = (b.dataset.concept === id);
+          b.dataset.active = active;
+          b.setAttribute('aria-selected', active ? 'true' : 'false');
+        });
+        Object.entries(views).forEach(([k, el]) => { el.hidden = (k !== id); });
+      });
+    });
+  })();
+
+})();
+</script>
+<button type="button" class="scroll-to-top" aria-label="Scroll to top" title="Scroll to top">
+  <i class="ti ti-arrow-up" aria-hidden="true"></i>
+</button>
+<script>
+(function(){
+  const btn = document.querySelector('.scroll-to-top');
+  if (!btn) return;
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+  btn.addEventListener('click', () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+})();
+</script>
+</body>
+</html>
