@@ -1,0 +1,344 @@
+{
+  "source": "https://drive.google.com/drive/folders/1Ynud4GIUWvdtl5P7vklwK3qDKZFovavV",
+  "publicDistributionApproved": "2026-09-23",
+  "assets": [
+    {
+      "id": "portfolio-74b657b62bdbaa0a",
+      "path": "website/assets/case-studies/Synnex/Images/Portfolio Missing/hero-bright-office.png",
+      "original": "originals/Synnex/hero-bright-office.png",
+      "slots": [],
+      "sha256": "74b657b62bdbaa0a09d44fa208b1333fc78ab52fb71df20def1594f37fca77c5"
+    },
+    {
+      "id": "portfolio-7fd0f284aaf7290e",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Live (1).mp4",
+      "original": "originals/Panoptica/Live (1).mp4",
+      "slots": [
+        "CS11-04-01"
+      ],
+      "sha256": "7fd0f284aaf7290e3d6ffe61e06bbf9d3dd71eb53376968badcb2d26c3d88888"
+    },
+    {
+      "id": "portfolio-89a7f7a1728f26a0",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Color Palette (3).mp4",
+      "original": "originals/Panoptica/Color Palette (3).mp4",
+      "slots": [
+        "CS11-04-02"
+      ],
+      "sha256": "89a7f7a1728f26a0c3e85dc7a26af53876948ec235afda098766b7b692ba2dae"
+    },
+    {
+      "id": "portfolio-697a544c6c3c2e17",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Cisco AI (7).mp4",
+      "original": "originals/Panoptica/Cisco AI (7).mp4",
+      "slots": [],
+      "sha256": "697a544c6c3c2e17f6ddc29e56fafcab08fd4f9cd1462f6657c2b4d970c19d39"
+    },
+    {
+      "id": "portfolio-8d66c701fd5311c1",
+      "path": "website/assets/case-studies/Panoptica/Images/Portfolio Missing/--.png",
+      "original": "originals/Panoptica/--.png",
+      "slots": [
+        "CS11-06-03"
+      ],
+      "sha256": "8d66c701fd5311c1db06865588914d43448b5894ff4acf0d233f87d5f15d8f97"
+    },
+    {
+      "id": "portfolio-d34c98ed48d85744",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Cisco AI (5) (1).mp4",
+      "original": "originals/Panoptica/Cisco AI (5) (1).mp4",
+      "slots": [],
+      "sha256": "d34c98ed48d85744044f8af41ca7f2d5c418323fb4d8069d038bebeb53ad3c67"
+    },
+    {
+      "id": "portfolio-af53b14c5e39e547",
+      "path": "website/assets/case-studies/Panoptica/Images/Portfolio Missing/dashboard.png",
+      "original": "originals/Panoptica/dashboard.png",
+      "slots": [
+        "CS11-06-02"
+      ],
+      "sha256": "af53b14c5e39e547d4280bb4cfc1a43936951ade749c458ceec6ee4c042add5e"
+    },
+    {
+      "id": "portfolio-40911f149c010056",
+      "path": "website/assets/case-studies/Synnex/Images/Portfolio Missing/hero-intelligaia-brand.png",
+      "original": "originals/Synnex/hero-intelligaia-brand.png",
+      "slots": [],
+      "sha256": "40911f149c010056f88bc120f62ea4c32981ce6df91be6de81c2410fc3e395f4"
+    },
+    {
+      "id": "portfolio-06295cf1ccf5b5a5",
+      "path": "website/assets/case-studies/Synnex/Images/Portfolio Missing/hero-dark-tech.png",
+      "original": "originals/Synnex/hero-dark-tech.png",
+      "slots": [],
+      "sha256": "06295cf1ccf5b5a56be3d1278cf2eecc7a1dbcb26099696f12995359c25788c3"
+    },
+    {
+      "id": "portfolio-ee89420879ca3b5f",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Toggle.mp4",
+      "original": "originals/Panoptica/Toggle.mp4",
+      "slots": [
+        "CS11-04-03"
+      ],
+      "sha256": "ee89420879ca3b5f147be66b46e577248dee7b73c424d9e6bc92a5e42be2e5a7"
+    },
+    {
+      "id": "portfolio-7e2d51d45d941e92",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Error Scenario.mov",
+      "original": "originals/Colibri/Error Scenario.mov",
+      "slots": [
+        "CS14-05-03"
+      ],
+      "sha256": "7e2d51d45d941e927053b55a2466e88ac889ea353acdf4410dcbf237bd7609c1"
+    },
+    {
+      "id": "portfolio-f6b0a9ba9825c8da",
+      "path": "website/assets/case-studies/Motific/Videos/Portfolio Missing/infinity loop.mp4",
+      "original": "originals/Motific/infinity loop.mp4",
+      "slots": [],
+      "sha256": "f6b0a9ba9825c8da4d9fdf4d01a117bc643d8e3fb276d5a380d663e3e83c15c9"
+    },
+    {
+      "id": "portfolio-268853f952cd0506",
+      "path": "website/assets/case-studies/DocuSign/Images/Portfolio Missing/MacBook on Desk Mockup.png",
+      "original": "originals/DocuSign/MacBook on Desk Mockup.png",
+      "slots": [
+        "CS05-06-04"
+      ],
+      "sha256": "268853f952cd05066b2272ea0b555c5474b9c743258c8c4b24197dbb19c154b2"
+    },
+    {
+      "id": "portfolio-986fb38b4101c645",
+      "path": "website/assets/case-studies/CCW/Videos/Portfolio Missing/Cisco Loop Animation (2).mp4",
+      "original": "originals/CCW/Cisco Loop Animation (2).mp4",
+      "slots": [
+        "CS12-02-03"
+      ],
+      "sha256": "986fb38b4101c6457c68860d7a11aa0b1e1e1b0a737edf827dc29dacc59fb88f"
+    },
+    {
+      "id": "portfolio-9d69d68fae2bb7e5",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Token Layers.mov",
+      "original": "originals/Colibri/Token Layers.mov",
+      "slots": [
+        "CS14-05-02"
+      ],
+      "sha256": "9d69d68fae2bb7e5187db661e78a7c15a10a1492cb526dd0a991da375089d799"
+    },
+    {
+      "id": "portfolio-5afcc7d8a41fa0cf",
+      "path": "website/assets/case-studies/Motific/Videos/Portfolio Missing/motific card 2.mp4",
+      "original": "originals/Motific/motific card 2.mp4",
+      "slots": [
+        "CS08-05-02"
+      ],
+      "sha256": "5afcc7d8a41fa0cf92e6d9748c5630b024fd4483c1974cd3a30cdd9232216d3e"
+    },
+    {
+      "id": "portfolio-4ee43a01c201cd86",
+      "path": "website/assets/case-studies/Motific/Images/Portfolio Missing/Typeface (1).png",
+      "original": "originals/Motific/Typeface (1).png",
+      "slots": [],
+      "sha256": "4ee43a01c201cd8667dca0fabcd167ee15c7ff5e9a931baccdb140aaae4899b7"
+    },
+    {
+      "id": "portfolio-4c8072b648646cb2",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Metrics.mp4",
+      "original": "originals/Panoptica/Metrics.mp4",
+      "slots": [
+        "CS11-04-05"
+      ],
+      "sha256": "4c8072b648646cb2e3bcbc6dcf5b3f81074ca5d1d9904baee7577ca070784f98"
+    },
+    {
+      "id": "portfolio-680715ba4ed27fa0",
+      "path": "website/assets/case-studies/Motific/Images/Portfolio Missing/Typeface.png",
+      "original": "originals/Motific/Typeface.png",
+      "slots": [
+        "CS08-06-01"
+      ],
+      "sha256": "680715ba4ed27fa0ae3088ea41bc97708645e6b020af557444451113084e42f2"
+    },
+    {
+      "id": "portfolio-5f9aa87733ba1787",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Metrics.mp4",
+      "original": "originals/Colibri/Metrics.m4s",
+      "slots": [
+        "CS14-02-03"
+      ],
+      "sha256": "5f9aa87733ba178724324458c369ae19297622ed1aeec829429bb4e92cbebdae"
+    },
+    {
+      "id": "portfolio-5d864873d0532350",
+      "path": "website/assets/case-studies/Motific/Images/Portfolio Missing/1 (2).png",
+      "original": "originals/Motific/1 (2).png",
+      "slots": [
+        "CS08-06-02"
+      ],
+      "sha256": "5d864873d0532350bc95104db74bf8f9a34a9761f6ea15b703bc2f93dca21f96"
+    },
+    {
+      "id": "portfolio-dc27c236bf130c63",
+      "path": "website/assets/case-studies/Motific/Videos/Portfolio Missing/motific card video.mp4",
+      "original": "originals/Motific/motific card video.mp4",
+      "slots": [],
+      "sha256": "dc27c236bf130c637b04228abfca021dbd3203bfa969d66dd1b612b975949abd"
+    },
+    {
+      "id": "portfolio-2bf028028af146c3",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Visual Audit (2).mp4",
+      "original": "originals/Colibri/Visual Audit (2).m4s",
+      "slots": [
+        "CS14-02-01"
+      ],
+      "sha256": "2bf028028af146c3dc11970a7a3e934bafe8255b4d64f153b44d3249807cf4c7"
+    },
+    {
+      "id": "portfolio-0b6d24117f0fe1bd",
+      "path": "website/assets/case-studies/Motific/Images/Portfolio Missing/Typeface (2).png",
+      "original": "originals/Motific/Typeface (2).png",
+      "slots": [],
+      "sha256": "0b6d24117f0fe1bdde2b183d70280975f7b3d56437c5a947f37fc669528680d1"
+    },
+    {
+      "id": "portfolio-4f04f7ccc3d8e446",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Cards Flip.mp4",
+      "original": "originals/Panoptica/Cards Flip.mp4",
+      "slots": [
+        "CS11-04-06"
+      ],
+      "sha256": "4f04f7ccc3d8e446f089f232d27ba294168334761474eb2014f812896636d8bb"
+    },
+    {
+      "id": "portfolio-069ad0f8da845288",
+      "path": "website/assets/case-studies/Zuora/Images/Portfolio Missing/zuora (2).png",
+      "original": "originals/Zuora/zuora (2).png",
+      "slots": [
+        "CS10-06-01"
+      ],
+      "sha256": "069ad0f8da845288215e0809b909d350de813498d8fc9e1e14c3e463b7df7106"
+    },
+    {
+      "id": "portfolio-8913d50f94482db0",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Visual Audit (3).mp4",
+      "original": "originals/Colibri/Visual Audit (3).m4s",
+      "slots": [],
+      "sha256": "8913d50f94482db0f4931cc6e277a8249efb0980a1ad0a29983ee4a7b5120e32"
+    },
+    {
+      "id": "portfolio-62b22b7a8d3f4edc",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Content & Microcopy Audit.mp4",
+      "original": "originals/Colibri/Content & Microcopy Audit.m4s",
+      "slots": [
+        "CS14-02-02"
+      ],
+      "sha256": "62b22b7a8d3f4edc0ef7edc80aaad338f3ede3ec3733e6c3e4bb209a883d4019"
+    },
+    {
+      "id": "portfolio-219c42170762c3c4",
+      "path": "website/assets/case-studies/Motific/Images/Portfolio Missing/Ipad-Pro-Free-Mockup-AnagramDesign (1) (1).png",
+      "original": "originals/Motific/Ipad-Pro-Free-Mockup-AnagramDesign (1) (1).png",
+      "slots": [
+        "CS08-06-04"
+      ],
+      "sha256": "219c42170762c3c45d7ccf009395effb00b110e22d255a6a2e8795ccec349ed6"
+    },
+    {
+      "id": "portfolio-f1efc0c30b3d0487",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Responsive commerce system.mov",
+      "original": "originals/Colibri/Responsive commerce system.mov",
+      "slots": [
+        "CS14-03-01"
+      ],
+      "sha256": "f1efc0c30b3d0487a8cfb0928e2267a23ae6594accd33e887724f0cbf08c7a44"
+    },
+    {
+      "id": "portfolio-6dab7a45da4838bc",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Typeface (1) (1).mp4",
+      "original": "originals/Panoptica/Typeface (1) (1).mp4",
+      "slots": [
+        "CS11-04-04"
+      ],
+      "sha256": "6dab7a45da4838bc1e9497f4b36ab232470a79b8767e1a6721fea6e61c49ab04"
+    },
+    {
+      "id": "portfolio-88c5c81e55e2e48b",
+      "path": "website/assets/case-studies/DocuSign/Images/Portfolio Missing/docusignfor upload __.png",
+      "original": "originals/DocuSign/docusignfor upload __.png",
+      "slots": [
+        "CS05-06-02"
+      ],
+      "sha256": "88c5c81e55e2e48bf99fe9d628babd88232865e53459f825632786d74372be89"
+    },
+    {
+      "id": "portfolio-2b624dded5a7c966",
+      "path": "website/assets/case-studies/CCW/Videos/Portfolio Missing/card.mp4",
+      "original": "originals/CCW/card.mp4",
+      "slots": [
+        "CS12-05-02"
+      ],
+      "sha256": "2b624dded5a7c966398314fd74d083ed10dcc9e7a910de33791a62b1a74b2683"
+    },
+    {
+      "id": "portfolio-b96303e8d7405807",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Credit Card States (1).mp4",
+      "original": "originals/Colibri/Credit Card States (1).m4s",
+      "slots": [
+        "CS14-05-04"
+      ],
+      "sha256": "b96303e8d7405807f7d212acf066295886c16410546d996b267dbeb0141504a1"
+    },
+    {
+      "id": "portfolio-61283972d2ce9185",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/infinity loop-3.mp4",
+      "original": "originals/Panoptica/infinity loop-3.mp4",
+      "slots": [
+        "CS11-03-01"
+      ],
+      "sha256": "61283972d2ce9185ef2684723c277e6d70ab542241906f5b582742efbeba1fb8"
+    },
+    {
+      "id": "portfolio-4d8f18ee992d36e2",
+      "path": "website/assets/case-studies/Panoptica/Videos/Portfolio Missing/Cisco AI (8).mp4",
+      "original": "originals/Panoptica/Cisco AI (8).mp4",
+      "slots": [
+        "CS11-06-01"
+      ],
+      "sha256": "4d8f18ee992d36e2fdba2de8503b29cad3c2e0e3c2eb31f14ef04efd17667916"
+    },
+    {
+      "id": "portfolio-c9cf79169060bfea",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Payment Flows.mov",
+      "original": "originals/Colibri/Payment Flows",
+      "slots": [
+        "CS14-02-04"
+      ],
+      "sha256": "c9cf79169060bfea9c68f7fa1158a0be2ffeb95c1f4307cdcef616a641b25352"
+    },
+    {
+      "id": "portfolio-aa8101f9a66009ff",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/Payment Flows_Slow.mov",
+      "original": "originals/Colibri/Payment Flows_Slow",
+      "slots": [],
+      "sha256": "aa8101f9a66009ff89cb320cb372942032333cdc4623076381fd17d78d8e3409"
+    },
+    {
+      "id": "portfolio-d547aa231acb2058",
+      "path": "website/assets/case-studies/Colibri/Videos/Portfolio Missing/The Token Architecture.mov",
+      "original": "originals/Colibri/The Token Architecture.mov",
+      "slots": [
+        "CS14-05-01"
+      ],
+      "sha256": "d547aa231acb205859524f85fe39c4f858b2c2ce85d2ac747f3f343fbcf0b805"
+    },
+    {
+      "id": "portfolio-3d7c148686d5e1af",
+      "path": "website/assets/case-studies/AgentVine/Images/Portfolio Missing/Banner (2).png",
+      "original": "originals/AgentVine/Banner (2).png",
+      "slots": [
+        "CS02-00-01"
+      ],
+      "sha256": "3d7c148686d5e1afd3442895fbd3b84db87ec0d6e8fde816d143884d751a3d30"
+    }
+  ]
+}

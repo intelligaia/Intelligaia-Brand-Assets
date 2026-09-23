@@ -2,7 +2,7 @@
   "$schema": "https://intelligaia.github.io/schemas/asset-manifest-v1.json",
   "name": "Intelligaia Illustration Assets",
   "version": "2.0",
-  "generated": "2026-09-15",
+  "generated": "2026-09-23",
   "description": "Intelligaia illustration library — curated assets only (case studies, diagrams, icons, illustrations, letters, logo). Templates, waves, banners, older graphics and documents live outside assets/.",
   "license": "Proprietary — Intelligaia internal and client work only.",
   "repository": "https://github.com/intelligaia/Intelligaia-Brand-Assets",
@@ -12,17 +12,18 @@
     "pages": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets"
   },
   "counts": {
-    "total": 174,
+    "total": 214,
     "by_category": {
-      "brand": 2,
+      "diagram": 14,
+      "icon": 41,
       "character-female": 30,
       "character-male": 18,
       "device": 21,
-      "diagram": 14,
-      "icon": 41,
-      "letter": 26,
       "nature": 10,
-      "object": 12
+      "object": 12,
+      "letter": 26,
+      "brand": 2,
+      "case-study": 40
     }
   },
   "categories": [
@@ -70,6 +71,11 @@
       "id": "object",
       "description": "Lighthouse, ships, binoculars and props",
       "count": 12
+    },
+    {
+      "id": "case-study",
+      "description": "Case-study project graphics and videos",
+      "count": 40
     }
   ],
   "construction_stages": [
@@ -3417,6 +3423,930 @@
       ],
       "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/logo/intelligaia-logo.svg",
       "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/logo/intelligaia-logo.svg"
+    },
+    {
+      "id": "portfolio-74b657b62bdbaa0a",
+      "name": "hero-bright-office.png",
+      "file": "hero-bright-office.png",
+      "path": "case-studies/Synnex/Images/Portfolio Missing/hero-bright-office.png",
+      "category": "case-study",
+      "folder": "case-studies/Synnex/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 5728076,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Synnex",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Synnex/Images/Portfolio%20Missing/hero-bright-office.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Synnex/Images/Portfolio%20Missing/hero-bright-office.png",
+      "source_sha256": "74b657b62bdbaa0a09d44fa208b1333fc78ab52fb71df20def1594f37fca77c5",
+      "slots": [],
+      "usage_status": "alternate-not-placed",
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "portfolio-7fd0f284aaf7290e",
+      "name": "Live (1).mp4",
+      "file": "Live (1).mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Live (1).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 1213464,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Live%20%281%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Live%20%281%29.mp4",
+      "source_sha256": "7fd0f284aaf7290e3d6ffe61e06bbf9d3dd71eb53376968badcb2d26c3d88888",
+      "slots": [
+        "CS11-04-01"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-89a7f7a1728f26a0",
+      "name": "Color Palette (3).mp4",
+      "file": "Color Palette (3).mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Color Palette (3).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 1344071,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Color%20Palette%20%283%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Color%20Palette%20%283%29.mp4",
+      "source_sha256": "89a7f7a1728f26a0c3e85dc7a26af53876948ec235afda098766b7b692ba2dae",
+      "slots": [
+        "CS11-04-02"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-697a544c6c3c2e17",
+      "name": "Cisco AI (7).mp4",
+      "file": "Cisco AI (7).mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Cisco AI (7).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 4767037,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Cisco%20AI%20%287%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Cisco%20AI%20%287%29.mp4",
+      "source_sha256": "697a544c6c3c2e17f6ddc29e56fafcab08fd4f9cd1462f6657c2b4d970c19d39",
+      "slots": [],
+      "usage_status": "alternate-not-placed"
+    },
+    {
+      "id": "portfolio-8d66c701fd5311c1",
+      "name": "--.png",
+      "file": "--.png",
+      "path": "case-studies/Panoptica/Images/Portfolio Missing/--.png",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 809584,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Images/Portfolio%20Missing/--.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Images/Portfolio%20Missing/--.png",
+      "source_sha256": "8d66c701fd5311c1db06865588914d43448b5894ff4acf0d233f87d5f15d8f97",
+      "slots": [
+        "CS11-06-03"
+      ],
+      "usage_status": "verified-match",
+      "width": 1042,
+      "height": 737
+    },
+    {
+      "id": "portfolio-d34c98ed48d85744",
+      "name": "Cisco AI (5) (1).mp4",
+      "file": "Cisco AI (5) (1).mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Cisco AI (5) (1).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 4715154,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Cisco%20AI%20%285%29%20%281%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Cisco%20AI%20%285%29%20%281%29.mp4",
+      "source_sha256": "d34c98ed48d85744044f8af41ca7f2d5c418323fb4d8069d038bebeb53ad3c67",
+      "slots": [],
+      "usage_status": "alternate-not-placed"
+    },
+    {
+      "id": "portfolio-af53b14c5e39e547",
+      "name": "dashboard.png",
+      "file": "dashboard.png",
+      "path": "case-studies/Panoptica/Images/Portfolio Missing/dashboard.png",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 336078,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Images/Portfolio%20Missing/dashboard.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Images/Portfolio%20Missing/dashboard.png",
+      "source_sha256": "af53b14c5e39e547d4280bb4cfc1a43936951ade749c458ceec6ee4c042add5e",
+      "slots": [
+        "CS11-06-02"
+      ],
+      "usage_status": "verified-match",
+      "width": 1042,
+      "height": 737
+    },
+    {
+      "id": "portfolio-40911f149c010056",
+      "name": "hero-intelligaia-brand.png",
+      "file": "hero-intelligaia-brand.png",
+      "path": "case-studies/Synnex/Images/Portfolio Missing/hero-intelligaia-brand.png",
+      "category": "case-study",
+      "folder": "case-studies/Synnex/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 5287415,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Synnex",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Synnex/Images/Portfolio%20Missing/hero-intelligaia-brand.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Synnex/Images/Portfolio%20Missing/hero-intelligaia-brand.png",
+      "source_sha256": "40911f149c010056f88bc120f62ea4c32981ce6df91be6de81c2410fc3e395f4",
+      "slots": [],
+      "usage_status": "alternate-not-placed",
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "portfolio-06295cf1ccf5b5a5",
+      "name": "hero-dark-tech.png",
+      "file": "hero-dark-tech.png",
+      "path": "case-studies/Synnex/Images/Portfolio Missing/hero-dark-tech.png",
+      "category": "case-study",
+      "folder": "case-studies/Synnex/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 5129542,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Synnex",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Synnex/Images/Portfolio%20Missing/hero-dark-tech.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Synnex/Images/Portfolio%20Missing/hero-dark-tech.png",
+      "source_sha256": "06295cf1ccf5b5a56be3d1278cf2eecc7a1dbcb26099696f12995359c25788c3",
+      "slots": [],
+      "usage_status": "alternate-not-placed",
+      "width": 3840,
+      "height": 2160
+    },
+    {
+      "id": "portfolio-ee89420879ca3b5f",
+      "name": "Toggle.mp4",
+      "file": "Toggle.mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Toggle.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 258080,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Toggle.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Toggle.mp4",
+      "source_sha256": "ee89420879ca3b5f147be66b46e577248dee7b73c424d9e6bc92a5e42be2e5a7",
+      "slots": [
+        "CS11-04-03"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-7e2d51d45d941e92",
+      "name": "Error Scenario.mov",
+      "file": "Error Scenario.mov",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Error Scenario.mov",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mov",
+      "bytes": 148407,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Error%20Scenario.mov",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Error%20Scenario.mov",
+      "source_sha256": "7e2d51d45d941e927053b55a2466e88ac889ea353acdf4410dcbf237bd7609c1",
+      "slots": [
+        "CS14-05-03"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-f6b0a9ba9825c8da",
+      "name": "infinity loop.mp4",
+      "file": "infinity loop.mp4",
+      "path": "case-studies/Motific/Videos/Portfolio Missing/infinity loop.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Motific/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 2811791,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Motific",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Motific/Videos/Portfolio%20Missing/infinity%20loop.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Motific/Videos/Portfolio%20Missing/infinity%20loop.mp4",
+      "source_sha256": "f6b0a9ba9825c8da4d9fdf4d01a117bc643d8e3fb276d5a380d663e3e83c15c9",
+      "slots": [],
+      "usage_status": "alternate-not-placed"
+    },
+    {
+      "id": "portfolio-268853f952cd0506",
+      "name": "MacBook on Desk Mockup.png",
+      "file": "MacBook on Desk Mockup.png",
+      "path": "case-studies/DocuSign/Images/Portfolio Missing/MacBook on Desk Mockup.png",
+      "category": "case-study",
+      "folder": "case-studies/DocuSign/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 6429445,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "DocuSign",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/DocuSign/Images/Portfolio%20Missing/MacBook%20on%20Desk%20Mockup.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/DocuSign/Images/Portfolio%20Missing/MacBook%20on%20Desk%20Mockup.png",
+      "source_sha256": "268853f952cd05066b2272ea0b555c5474b9c743258c8c4b24197dbb19c154b2",
+      "slots": [
+        "CS05-06-04"
+      ],
+      "usage_status": "verified-match",
+      "width": 2800,
+      "height": 2800
+    },
+    {
+      "id": "portfolio-986fb38b4101c645",
+      "name": "Cisco Loop Animation (2).mp4",
+      "file": "Cisco Loop Animation (2).mp4",
+      "path": "case-studies/CCW/Videos/Portfolio Missing/Cisco Loop Animation (2).mp4",
+      "category": "case-study",
+      "folder": "case-studies/CCW/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 1790171,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "CCW",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/CCW/Videos/Portfolio%20Missing/Cisco%20Loop%20Animation%20%282%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/CCW/Videos/Portfolio%20Missing/Cisco%20Loop%20Animation%20%282%29.mp4",
+      "source_sha256": "986fb38b4101c6457c68860d7a11aa0b1e1e1b0a737edf827dc29dacc59fb88f",
+      "slots": [
+        "CS12-02-03"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-9d69d68fae2bb7e5",
+      "name": "Token Layers.mov",
+      "file": "Token Layers.mov",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Token Layers.mov",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mov",
+      "bytes": 211346,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Token%20Layers.mov",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Token%20Layers.mov",
+      "source_sha256": "9d69d68fae2bb7e5187db661e78a7c15a10a1492cb526dd0a991da375089d799",
+      "slots": [
+        "CS14-05-02"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-5afcc7d8a41fa0cf",
+      "name": "motific card 2.mp4",
+      "file": "motific card 2.mp4",
+      "path": "case-studies/Motific/Videos/Portfolio Missing/motific card 2.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Motific/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 467825,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Motific",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Motific/Videos/Portfolio%20Missing/motific%20card%202.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Motific/Videos/Portfolio%20Missing/motific%20card%202.mp4",
+      "source_sha256": "5afcc7d8a41fa0cf92e6d9748c5630b024fd4483c1974cd3a30cdd9232216d3e",
+      "slots": [
+        "CS08-05-02"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-4ee43a01c201cd86",
+      "name": "Typeface (1).png",
+      "file": "Typeface (1).png",
+      "path": "case-studies/Motific/Images/Portfolio Missing/Typeface (1).png",
+      "category": "case-study",
+      "folder": "case-studies/Motific/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 130659,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Motific",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Motific/Images/Portfolio%20Missing/Typeface%20%281%29.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Motific/Images/Portfolio%20Missing/Typeface%20%281%29.png",
+      "source_sha256": "4ee43a01c201cd8667dca0fabcd167ee15c7ff5e9a931baccdb140aaae4899b7",
+      "slots": [],
+      "usage_status": "alternate-not-placed",
+      "width": 1040,
+      "height": 1474
+    },
+    {
+      "id": "portfolio-4c8072b648646cb2",
+      "name": "Metrics.mp4",
+      "file": "Metrics.mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Metrics.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 418016,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Metrics.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Metrics.mp4",
+      "source_sha256": "4c8072b648646cb2e3bcbc6dcf5b3f81074ca5d1d9904baee7577ca070784f98",
+      "slots": [
+        "CS11-04-05"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-680715ba4ed27fa0",
+      "name": "Typeface.png",
+      "file": "Typeface.png",
+      "path": "case-studies/Motific/Images/Portfolio Missing/Typeface.png",
+      "category": "case-study",
+      "folder": "case-studies/Motific/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 130559,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Motific",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Motific/Images/Portfolio%20Missing/Typeface.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Motific/Images/Portfolio%20Missing/Typeface.png",
+      "source_sha256": "680715ba4ed27fa0ae3088ea41bc97708645e6b020af557444451113084e42f2",
+      "slots": [
+        "CS08-06-01"
+      ],
+      "usage_status": "verified-match",
+      "width": 1040,
+      "height": 1474
+    },
+    {
+      "id": "portfolio-5f9aa87733ba1787",
+      "name": "Metrics.mp4",
+      "file": "Metrics.mp4",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Metrics.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 98215,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Metrics.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Metrics.mp4",
+      "source_sha256": "5f9aa87733ba178724324458c369ae19297622ed1aeec829429bb4e92cbebdae",
+      "slots": [
+        "CS14-02-03"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-5d864873d0532350",
+      "name": "1 (2).png",
+      "file": "1 (2).png",
+      "path": "case-studies/Motific/Images/Portfolio Missing/1 (2).png",
+      "category": "case-study",
+      "folder": "case-studies/Motific/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 692574,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Motific",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Motific/Images/Portfolio%20Missing/1%20%282%29.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Motific/Images/Portfolio%20Missing/1%20%282%29.png",
+      "source_sha256": "5d864873d0532350bc95104db74bf8f9a34a9761f6ea15b703bc2f93dca21f96",
+      "slots": [
+        "CS08-06-02"
+      ],
+      "usage_status": "verified-match",
+      "width": 1042,
+      "height": 737
+    },
+    {
+      "id": "portfolio-dc27c236bf130c63",
+      "name": "motific card video.mp4",
+      "file": "motific card video.mp4",
+      "path": "case-studies/Motific/Videos/Portfolio Missing/motific card video.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Motific/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 37691,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Motific",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Motific/Videos/Portfolio%20Missing/motific%20card%20video.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Motific/Videos/Portfolio%20Missing/motific%20card%20video.mp4",
+      "source_sha256": "dc27c236bf130c637b04228abfca021dbd3203bfa969d66dd1b612b975949abd",
+      "slots": [],
+      "usage_status": "alternate-not-placed"
+    },
+    {
+      "id": "portfolio-2bf028028af146c3",
+      "name": "Visual Audit (2).mp4",
+      "file": "Visual Audit (2).mp4",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Visual Audit (2).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 3926754,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Visual%20Audit%20%282%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Visual%20Audit%20%282%29.mp4",
+      "source_sha256": "2bf028028af146c3dc11970a7a3e934bafe8255b4d64f153b44d3249807cf4c7",
+      "slots": [
+        "CS14-02-01"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-0b6d24117f0fe1bd",
+      "name": "Typeface (2).png",
+      "file": "Typeface (2).png",
+      "path": "case-studies/Motific/Images/Portfolio Missing/Typeface (2).png",
+      "category": "case-study",
+      "folder": "case-studies/Motific/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 131727,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Motific",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Motific/Images/Portfolio%20Missing/Typeface%20%282%29.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Motific/Images/Portfolio%20Missing/Typeface%20%282%29.png",
+      "source_sha256": "0b6d24117f0fe1bdde2b183d70280975f7b3d56437c5a947f37fc669528680d1",
+      "slots": [],
+      "usage_status": "alternate-not-placed",
+      "width": 1040,
+      "height": 1474
+    },
+    {
+      "id": "portfolio-4f04f7ccc3d8e446",
+      "name": "Cards Flip.mp4",
+      "file": "Cards Flip.mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Cards Flip.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 1557391,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Cards%20Flip.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Cards%20Flip.mp4",
+      "source_sha256": "4f04f7ccc3d8e446f089f232d27ba294168334761474eb2014f812896636d8bb",
+      "slots": [
+        "CS11-04-06"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-069ad0f8da845288",
+      "name": "zuora (2).png",
+      "file": "zuora (2).png",
+      "path": "case-studies/Zuora/Images/Portfolio Missing/zuora (2).png",
+      "category": "case-study",
+      "folder": "case-studies/Zuora/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 5544476,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Zuora",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Zuora/Images/Portfolio%20Missing/zuora%20%282%29.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Zuora/Images/Portfolio%20Missing/zuora%20%282%29.png",
+      "source_sha256": "069ad0f8da845288215e0809b909d350de813498d8fc9e1e14c3e463b7df7106",
+      "slots": [
+        "CS10-06-01"
+      ],
+      "usage_status": "verified-match",
+      "width": 2092,
+      "height": 2968
+    },
+    {
+      "id": "portfolio-8913d50f94482db0",
+      "name": "Visual Audit (3).mp4",
+      "file": "Visual Audit (3).mp4",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Visual Audit (3).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 221152,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Visual%20Audit%20%283%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Visual%20Audit%20%283%29.mp4",
+      "source_sha256": "8913d50f94482db0f4931cc6e277a8249efb0980a1ad0a29983ee4a7b5120e32",
+      "slots": [],
+      "usage_status": "alternate-not-placed"
+    },
+    {
+      "id": "portfolio-62b22b7a8d3f4edc",
+      "name": "Content & Microcopy Audit.mp4",
+      "file": "Content & Microcopy Audit.mp4",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Content & Microcopy Audit.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 86108,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Content%20%26%20Microcopy%20Audit.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Content%20%26%20Microcopy%20Audit.mp4",
+      "source_sha256": "62b22b7a8d3f4edc0ef7edc80aaad338f3ede3ec3733e6c3e4bb209a883d4019",
+      "slots": [
+        "CS14-02-02"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-219c42170762c3c4",
+      "name": "Ipad-Pro-Free-Mockup-AnagramDesign (1) (1).png",
+      "file": "Ipad-Pro-Free-Mockup-AnagramDesign (1) (1).png",
+      "path": "case-studies/Motific/Images/Portfolio Missing/Ipad-Pro-Free-Mockup-AnagramDesign (1) (1).png",
+      "category": "case-study",
+      "folder": "case-studies/Motific/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 21754446,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Motific",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Motific/Images/Portfolio%20Missing/Ipad-Pro-Free-Mockup-AnagramDesign%20%281%29%20%281%29.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Motific/Images/Portfolio%20Missing/Ipad-Pro-Free-Mockup-AnagramDesign%20%281%29%20%281%29.png",
+      "source_sha256": "219c42170762c3c45d7ccf009395effb00b110e22d255a6a2e8795ccec349ed6",
+      "slots": [
+        "CS08-06-04"
+      ],
+      "usage_status": "verified-match",
+      "width": 4096,
+      "height": 4096
+    },
+    {
+      "id": "portfolio-f1efc0c30b3d0487",
+      "name": "Responsive commerce system.mov",
+      "file": "Responsive commerce system.mov",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Responsive commerce system.mov",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mov",
+      "bytes": 7846642,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Responsive%20commerce%20system.mov",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Responsive%20commerce%20system.mov",
+      "source_sha256": "f1efc0c30b3d0487a8cfb0928e2267a23ae6594accd33e887724f0cbf08c7a44",
+      "slots": [
+        "CS14-03-01"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-6dab7a45da4838bc",
+      "name": "Typeface (1) (1).mp4",
+      "file": "Typeface (1) (1).mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Typeface (1) (1).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 4558106,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Typeface%20%281%29%20%281%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Typeface%20%281%29%20%281%29.mp4",
+      "source_sha256": "6dab7a45da4838bc1e9497f4b36ab232470a79b8767e1a6721fea6e61c49ab04",
+      "slots": [
+        "CS11-04-04"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-88c5c81e55e2e48b",
+      "name": "docusignfor upload __.png",
+      "file": "docusignfor upload __.png",
+      "path": "case-studies/DocuSign/Images/Portfolio Missing/docusignfor upload __.png",
+      "category": "case-study",
+      "folder": "case-studies/DocuSign/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 1547323,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "DocuSign",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/DocuSign/Images/Portfolio%20Missing/docusignfor%20upload%20__.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/DocuSign/Images/Portfolio%20Missing/docusignfor%20upload%20__.png",
+      "source_sha256": "88c5c81e55e2e48bf99fe9d628babd88232865e53459f825632786d74372be89",
+      "slots": [
+        "CS05-06-02"
+      ],
+      "usage_status": "verified-match",
+      "width": 3210,
+      "height": 2271
+    },
+    {
+      "id": "portfolio-2b624dded5a7c966",
+      "name": "card.mp4",
+      "file": "card.mp4",
+      "path": "case-studies/CCW/Videos/Portfolio Missing/card.mp4",
+      "category": "case-study",
+      "folder": "case-studies/CCW/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 1483294,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "CCW",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/CCW/Videos/Portfolio%20Missing/card.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/CCW/Videos/Portfolio%20Missing/card.mp4",
+      "source_sha256": "2b624dded5a7c966398314fd74d083ed10dcc9e7a910de33791a62b1a74b2683",
+      "slots": [
+        "CS12-05-02"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-b96303e8d7405807",
+      "name": "Credit Card States (1).mp4",
+      "file": "Credit Card States (1).mp4",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Credit Card States (1).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 6438350,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Credit%20Card%20States%20%281%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Credit%20Card%20States%20%281%29.mp4",
+      "source_sha256": "b96303e8d7405807f7d212acf066295886c16410546d996b267dbeb0141504a1",
+      "slots": [
+        "CS14-05-04"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-61283972d2ce9185",
+      "name": "infinity loop-3.mp4",
+      "file": "infinity loop-3.mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/infinity loop-3.mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 6782561,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/infinity%20loop-3.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/infinity%20loop-3.mp4",
+      "source_sha256": "61283972d2ce9185ef2684723c277e6d70ab542241906f5b582742efbeba1fb8",
+      "slots": [
+        "CS11-03-01"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-4d8f18ee992d36e2",
+      "name": "Cisco AI (8).mp4",
+      "file": "Cisco AI (8).mp4",
+      "path": "case-studies/Panoptica/Videos/Portfolio Missing/Cisco AI (8).mp4",
+      "category": "case-study",
+      "folder": "case-studies/Panoptica/Videos/Portfolio Missing",
+      "format": "mp4",
+      "bytes": 5114588,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Panoptica",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Cisco%20AI%20%288%29.mp4",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Panoptica/Videos/Portfolio%20Missing/Cisco%20AI%20%288%29.mp4",
+      "source_sha256": "4d8f18ee992d36e2fdba2de8503b29cad3c2e0e3c2eb31f14ef04efd17667916",
+      "slots": [
+        "CS11-06-01"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-c9cf79169060bfea",
+      "name": "Payment Flows.mov",
+      "file": "Payment Flows.mov",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Payment Flows.mov",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mov",
+      "bytes": 6529584,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Payment%20Flows.mov",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Payment%20Flows.mov",
+      "source_sha256": "c9cf79169060bfea9c68f7fa1158a0be2ffeb95c1f4307cdcef616a641b25352",
+      "slots": [
+        "CS14-02-04"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-aa8101f9a66009ff",
+      "name": "Payment Flows_Slow.mov",
+      "file": "Payment Flows_Slow.mov",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/Payment Flows_Slow.mov",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mov",
+      "bytes": 10194107,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Payment%20Flows_Slow.mov",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/Payment%20Flows_Slow.mov",
+      "source_sha256": "aa8101f9a66009ff89cb320cb372942032333cdc4623076381fd17d78d8e3409",
+      "slots": [],
+      "usage_status": "alternate-not-placed"
+    },
+    {
+      "id": "portfolio-d547aa231acb2058",
+      "name": "The Token Architecture.mov",
+      "file": "The Token Architecture.mov",
+      "path": "case-studies/Colibri/Videos/Portfolio Missing/The Token Architecture.mov",
+      "category": "case-study",
+      "folder": "case-studies/Colibri/Videos/Portfolio Missing",
+      "format": "mov",
+      "bytes": 4737944,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "Colibri",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/Colibri/Videos/Portfolio%20Missing/The%20Token%20Architecture.mov",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/Colibri/Videos/Portfolio%20Missing/The%20Token%20Architecture.mov",
+      "source_sha256": "d547aa231acb205859524f85fe39c4f858b2c2ce85d2ac747f3f343fbcf0b805",
+      "slots": [
+        "CS14-05-01"
+      ],
+      "usage_status": "verified-match"
+    },
+    {
+      "id": "portfolio-3d7c148686d5e1af",
+      "name": "Banner (2).png",
+      "file": "Banner (2).png",
+      "path": "case-studies/AgentVine/Images/Portfolio Missing/Banner (2).png",
+      "category": "case-study",
+      "folder": "case-studies/AgentVine/Images/Portfolio Missing",
+      "format": "png",
+      "bytes": 5535456,
+      "stage": "final",
+      "tags": [
+        "case-study",
+        "AgentVine",
+        "portfolio-delivery"
+      ],
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/case-studies/AgentVine/Images/Portfolio%20Missing/Banner%20%282%29.png",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/case-studies/AgentVine/Images/Portfolio%20Missing/Banner%20%282%29.png",
+      "source_sha256": "3d7c148686d5e1afd3442895fbd3b84db87ec0d6e8fde816d143884d751a3d30",
+      "slots": [
+        "CS02-00-01"
+      ],
+      "usage_status": "verified-match"
     }
   ]
 }
