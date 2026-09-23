@@ -12,7 +12,7 @@
     "pages": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets"
   },
   "counts": {
-    "total": 370,
+    "total": 373,
     "by_category": {
       "diagram": 14,
       "icon": 41,
@@ -23,7 +23,8 @@
       "object": 12,
       "letter": 26,
       "brand": 2,
-      "case-study": 196
+      "case-study": 196,
+      "company-media": 3
     }
   },
   "categories": [
@@ -76,6 +77,11 @@
       "id": "case-study",
       "description": "Case-study project graphics and videos",
       "count": 196
+    },
+    {
+      "id": "company-media",
+      "description": "Approved company photographs and showreels",
+      "count": 3
     }
   ],
   "construction_stages": [
@@ -7779,6 +7785,60 @@
         "SHARED-03"
       ],
       "usage_status": "verified-published-source"
+    },
+    {
+      "id": "about-81bfadc1bf4e107a",
+      "name": "portfolio-poster.webp",
+      "file": "portfolio-poster.webp",
+      "path": "about/video/portfolio-poster.webp",
+      "category": "company-media",
+      "folder": "about/video",
+      "format": "webp",
+      "bytes": 9306,
+      "stage": "final",
+      "tags": [
+        "about",
+        "showreel",
+        "web-delivery"
+      ],
+      "source_sha256": "81bfadc1bf4e107ad7a69e9a2f0cd67fcb47ca0867f9726d6a9c64dfaebaff49",
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/about/video/portfolio-poster.webp"
+    },
+    {
+      "id": "about-1c16b57f5eec719a",
+      "name": "portfolio-showreel.mp4",
+      "file": "portfolio-showreel.mp4",
+      "path": "about/video/portfolio-showreel.mp4",
+      "category": "company-media",
+      "folder": "about/video",
+      "format": "mp4",
+      "bytes": 23673826,
+      "stage": "final",
+      "tags": [
+        "about",
+        "showreel",
+        "web-delivery"
+      ],
+      "source_sha256": "1c16b57f5eec719a4d77f9c5f611e9b38f2a4455e95e10c1c1c844d24486714b",
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/about/video/portfolio-showreel.mp4"
+    },
+    {
+      "id": "about-47f641cc59b91e06",
+      "name": "Portfolio.mp4",
+      "file": "Portfolio.mp4",
+      "path": "about/masters/Portfolio.mp4",
+      "category": "company-media",
+      "folder": "about/masters",
+      "format": "mp4",
+      "bytes": 218007405,
+      "stage": "final",
+      "tags": [
+        "about",
+        "showreel",
+        "original-master"
+      ],
+      "source_sha256": "47f641cc59b91e06443421564b66c6211ed0f36eca92667166108a6fc788f421",
+      "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/about/masters/Portfolio.mp4"
     }
   ]
 }
