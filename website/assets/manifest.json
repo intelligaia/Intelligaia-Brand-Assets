@@ -7787,21 +7787,21 @@
       "usage_status": "verified-published-source"
     },
     {
-      "id": "about-81bfadc1bf4e107a",
+      "id": "about-4745db630d44b880",
       "name": "portfolio-poster.webp",
       "file": "portfolio-poster.webp",
       "path": "about/video/portfolio-poster.webp",
       "category": "company-media",
       "folder": "about/video",
       "format": "webp",
-      "bytes": 9306,
+      "bytes": 10268,
       "stage": "final",
       "tags": [
         "about",
         "showreel",
         "web-delivery"
       ],
-      "source_sha256": "81bfadc1bf4e107ad7a69e9a2f0cd67fcb47ca0867f9726d6a9c64dfaebaff49",
+      "source_sha256": "4745db630d44b880e7d07c96045bc7ca89b5aaa2e75eb8a1deb20ef1845ba9b5",
       "raw_url": "https://media.githubusercontent.com/media/intelligaia/Intelligaia-Brand-Assets/main/website/assets/about/video/portfolio-poster.webp"
     },
     {
