@@ -26,7 +26,7 @@
       "case-study": 196,
       "company-media": 3,
       "illustration-library": 320,
-      "cx-roadmap-icons": 14,
+      "cx-roadmap-thumbnails": 14,
       "ai-and-robotics-elements": 21
     }
   },
@@ -92,8 +92,8 @@
       "count": 320
     },
     {
-      "id": "cx-roadmap-icons",
-      "description": "Customer experience roadmap illustrations",
+      "id": "cx-roadmap-thumbnails",
+      "description": "CX Roadmap Thumbnails",
       "count": 14
     },
     {
@@ -15470,19 +15470,19 @@
       "id": "figma-1306-34729",
       "name": "Analysis 1",
       "file": "analysis-1--1306-34729.svg",
-      "path": "cx-roadmap-icons/analysis-1--1306-34729.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/analysis-1--1306-34729.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 24206,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/analysis-1--1306-34729.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/analysis-1--1306-34729.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/analysis-1--1306-34729.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/analysis-1--1306-34729.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:34729",
@@ -15493,19 +15493,19 @@
       "id": "figma-1306-34782",
       "name": "Brainstorming 1",
       "file": "brainstorming-1--1306-34782.svg",
-      "path": "cx-roadmap-icons/brainstorming-1--1306-34782.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/brainstorming-1--1306-34782.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 21063,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/brainstorming-1--1306-34782.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/brainstorming-1--1306-34782.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/brainstorming-1--1306-34782.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/brainstorming-1--1306-34782.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:34782",
@@ -15516,19 +15516,19 @@
       "id": "figma-1306-34829",
       "name": "Code Deployment 1",
       "file": "code-deployment-1--1306-34829.svg",
-      "path": "cx-roadmap-icons/code-deployment-1--1306-34829.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/code-deployment-1--1306-34829.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 435327,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/code-deployment-1--1306-34829.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/code-deployment-1--1306-34829.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/code-deployment-1--1306-34829.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/code-deployment-1--1306-34829.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:34829",
@@ -15539,19 +15539,19 @@
       "id": "figma-1306-34904",
       "name": "Design Tokens 1",
       "file": "design-tokens-1--1306-34904.svg",
-      "path": "cx-roadmap-icons/design-tokens-1--1306-34904.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/design-tokens-1--1306-34904.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 8577,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/design-tokens-1--1306-34904.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/design-tokens-1--1306-34904.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/design-tokens-1--1306-34904.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/design-tokens-1--1306-34904.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:34904",
@@ -15562,19 +15562,19 @@
       "id": "figma-1306-34930",
       "name": "High-fidelity Mockups (Prototype) 1",
       "file": "high-fidelity-mockups-prototype-1--1306-34930.svg",
-      "path": "cx-roadmap-icons/high-fidelity-mockups-prototype-1--1306-34930.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/high-fidelity-mockups-prototype-1--1306-34930.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 23313,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/high-fidelity-mockups-prototype-1--1306-34930.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/high-fidelity-mockups-prototype-1--1306-34930.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/high-fidelity-mockups-prototype-1--1306-34930.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/high-fidelity-mockups-prototype-1--1306-34930.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:34930",
@@ -15585,19 +15585,19 @@
       "id": "figma-1306-34997",
       "name": "Information Architecture 1",
       "file": "information-architecture-1--1306-34997.svg",
-      "path": "cx-roadmap-icons/information-architecture-1--1306-34997.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/information-architecture-1--1306-34997.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 22309,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/information-architecture-1--1306-34997.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/information-architecture-1--1306-34997.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/information-architecture-1--1306-34997.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/information-architecture-1--1306-34997.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:34997",
@@ -15608,19 +15608,19 @@
       "id": "figma-1306-35044",
       "name": "Journey Mapping 1",
       "file": "journey-mapping-1--1306-35044.svg",
-      "path": "cx-roadmap-icons/journey-mapping-1--1306-35044.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/journey-mapping-1--1306-35044.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 24444,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/journey-mapping-1--1306-35044.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/journey-mapping-1--1306-35044.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/journey-mapping-1--1306-35044.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/journey-mapping-1--1306-35044.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:35044",
@@ -15631,19 +15631,19 @@
       "id": "figma-1306-35102",
       "name": "Low-fidelity Wireframe 1",
       "file": "low-fidelity-wireframe-1--1306-35102.svg",
-      "path": "cx-roadmap-icons/low-fidelity-wireframe-1--1306-35102.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/low-fidelity-wireframe-1--1306-35102.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 30411,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/low-fidelity-wireframe-1--1306-35102.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/low-fidelity-wireframe-1--1306-35102.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/low-fidelity-wireframe-1--1306-35102.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/low-fidelity-wireframe-1--1306-35102.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:35102",
@@ -15654,19 +15654,19 @@
       "id": "figma-1306-35182",
       "name": "Persona_Female 1",
       "file": "persona-female-1--1306-35182.svg",
-      "path": "cx-roadmap-icons/persona-female-1--1306-35182.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/persona-female-1--1306-35182.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 8825,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/persona-female-1--1306-35182.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/persona-female-1--1306-35182.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/persona-female-1--1306-35182.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/persona-female-1--1306-35182.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:35182",
@@ -15677,19 +15677,19 @@
       "id": "figma-1306-35206",
       "name": "Persona_Male 1",
       "file": "persona-male-1--1306-35206.svg",
-      "path": "cx-roadmap-icons/persona-male-1--1306-35206.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/persona-male-1--1306-35206.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 9068,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/persona-male-1--1306-35206.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/persona-male-1--1306-35206.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/persona-male-1--1306-35206.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/persona-male-1--1306-35206.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:35206",
@@ -15700,19 +15700,19 @@
       "id": "figma-1306-35239",
       "name": "QA Report 1",
       "file": "qa-report-1--1306-35239.svg",
-      "path": "cx-roadmap-icons/qa-report-1--1306-35239.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/qa-report-1--1306-35239.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 18489,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/qa-report-1--1306-35239.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/qa-report-1--1306-35239.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/qa-report-1--1306-35239.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/qa-report-1--1306-35239.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:35239",
@@ -15723,19 +15723,19 @@
       "id": "figma-1306-35291",
       "name": "Service Blueprint 1",
       "file": "service-blueprint-1--1306-35291.svg",
-      "path": "cx-roadmap-icons/service-blueprint-1--1306-35291.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/service-blueprint-1--1306-35291.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 14637,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/service-blueprint-1--1306-35291.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/service-blueprint-1--1306-35291.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/service-blueprint-1--1306-35291.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/service-blueprint-1--1306-35291.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:35291",
@@ -15746,19 +15746,19 @@
       "id": "figma-1306-35340",
       "name": "Workflow",
       "file": "workflow--1306-35340.svg",
-      "path": "cx-roadmap-icons/workflow--1306-35340.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/workflow--1306-35340.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 1077,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/workflow--1306-35340.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/workflow--1306-35340.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/workflow--1306-35340.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/workflow--1306-35340.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:35340",
@@ -15769,19 +15769,19 @@
       "id": "figma-1306-35352",
       "name": "User Story 1",
       "file": "user-story-1--1306-35352.svg",
-      "path": "cx-roadmap-icons/user-story-1--1306-35352.svg",
-      "category": "cx-roadmap-icons",
-      "folder": "cx-roadmap-icons",
+      "path": "cx-roadmap-thumbnails/user-story-1--1306-35352.svg",
+      "category": "cx-roadmap-thumbnails",
+      "folder": "cx-roadmap-thumbnails",
       "format": "svg",
       "bytes": 23913,
       "width": 334,
       "height": 250,
       "stage": "final",
       "tags": [
-        "cx-roadmap-icons"
+        "cx-roadmap-thumbnails"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-icons/user-story-1--1306-35352.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-icons/user-story-1--1306-35352.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cx-roadmap-thumbnails/user-story-1--1306-35352.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cx-roadmap-thumbnails/user-story-1--1306-35352.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1306:35352",
