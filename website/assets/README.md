@@ -27,7 +27,29 @@ Machine-readable index of everything: `manifest.json`
 
 | Folder | Contains | Files |
 |---|---|---|
-| `illustration-building-blocks/<subject>/` | Illustration Building Blocks — reusable elements for composing illustrations across 23 subject subcategories, including cloud variations | 320 |
+| `illustrations/aviation-space/` | Aviation Space illustration elements | 10 |
+| `illustrations/buildings/` | Buildings illustration elements | 18 |
+| `illustrations/business-workplace/` | Business Workplace illustration elements | 14 |
+| `illustrations/cameras-optics/` | Cameras Optics illustration elements | 6 |
+| `illustrations/celebration-events/` | Celebration Events illustration elements | 18 |
+| `illustrations/cloud-variations/` | Cloud Variations illustration elements | 3 |
+| `illustrations/commerce-retail/` | Commerce Retail illustration elements | 12 |
+| `illustrations/communication-social/` | Communication Social illustration elements | 6 |
+| `illustrations/computers-electronics/` | Computers Electronics illustration elements | 28 |
+| `illustrations/data-analytics/` | Data Analytics illustration elements | 24 |
+| `illustrations/education-learning/` | Education Learning illustration elements | 7 |
+| `illustrations/energy-systems/` | Energy Systems illustration elements | 15 |
+| `illustrations/environment-sustainability/` | Environment Sustainability illustration elements | 2 |
+| `illustrations/finance-payments/` | Finance Payments illustration elements | 7 |
+| `illustrations/food-drink/` | Food Drink illustration elements | 3 |
+| `illustrations/furniture-storage/` | Furniture Storage illustration elements | 28 |
+| `illustrations/health-wellness/` | Health Wellness illustration elements | 14 |
+| `illustrations/machinery-industry/` | Machinery Industry illustration elements | 19 |
+| `illustrations/maritime-nautical/` | Maritime Nautical illustration elements | 4 |
+| `illustrations/networking-infrastructure/` | Networking Infrastructure illustration elements | 29 |
+| `illustrations/security-trust/` | Security Trust illustration elements | 4 |
+| `illustrations/tools-objects/` | Tools Objects illustration elements | 23 |
+| `illustrations/vehicles/` | Vehicles illustration elements | 26 |
 | `cx-roadmap-thumbnails/` | CX Roadmap Thumbnails | 14 |
 | `ai-and-robotics-elements/` | Robotics, autonomous mobility and infrastructure | 21 |
 | `case-studies/<project>/` | Case study graphics, one folder per project | — |
