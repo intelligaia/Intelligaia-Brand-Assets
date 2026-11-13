@@ -1,0 +1,22 @@
+<svg width="334" height="250" viewBox="0 0 334 250" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g clip-path="url(#clip0_1306_35340)">
+<rect width="334" height="250" fill="white"/>
+<mask id="mask0_1306_35340" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="334" height="250">
+<path d="M334 0H0V250H334V0Z" fill="white"/>
+</mask>
+<g mask="url(#mask0_1306_35340)">
+<path d="M133.315 59.2578H204.894" stroke="#233464" stroke-width="11.4833"/>
+<path d="M232.741 87.3906L232.741 158.97" stroke="#233464" stroke-width="11.4833"/>
+<path d="M100.302 87.3906L100.302 158.97" stroke="#233464" stroke-width="11.4833"/>
+<circle cx="100.301" cy="58.3014" r="33.3014" fill="#3782F0"/>
+<circle cx="233.316" cy="191.7" r="33.3014" fill="#37AF37"/>
+<rect x="67" y="158.398" width="66.6029" height="66.6029" fill="#F04B46"/>
+<rect x="232.749" y="25.5742" width="47.772" height="47.772" transform="rotate(45 232.749 25.5742)" fill="#FFD923"/>
+</g>
+</g>
+<defs>
+<clipPath id="clip0_1306_35340">
+<rect width="334" height="250" fill="white"/>
+</clipPath>
+</defs>
+</svg>

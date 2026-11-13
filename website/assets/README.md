@@ -3,7 +3,7 @@
 Curated, versioned illustration assets for Intelligaia. One source, consumed by
 designers, engineers, marketing, and AI agents — and the basis for skill training.
 
-**174 assets · 9 categories · v2.0**
+**728 indexed assets · 15 categories · v2.0**
 
 > This folder holds **assets only**. Templates, wave patterns, website banner
 > assets, older graphics and HTML documents live outside it — see
@@ -27,6 +27,10 @@ Machine-readable index of everything: `manifest.json`
 
 | Folder | Contains | Files |
 |---|---|---|
+| `illustration-library/<subject>/` | Consolidated Figma illustrations, 22 subject subcategories | 317 |
+| `cx-roadmap-icons/` | CX roadmap illustrations | 14 |
+| `cloud-variations/` | Cloud compositions | 3 |
+| `ai-and-robotics-elements/` | Robotics, autonomous mobility and infrastructure | 21 |
 | `case-studies/<project>/` | Case study graphics, one folder per project | — |
 | `diagrams/` | Process and system diagrams (PDF + PNG pairs) | 14 |
 | `icons/` | UI and concept icon sets, SVG | 41 |
@@ -119,3 +123,7 @@ so `manifest.json` stays accurate.
 ## Licence
 
 Proprietary. Intelligaia internal and client work only. Not for redistribution.
+
+## Figma illustration import — 2026-11-13
+
+355 original SVG exports were added from the four supplied sections in Intelligaia Web DS. Catalog cards and category labels are excluded; each file contains the complete illustration frame. Original backgrounds and colors are preserved. Filenames include the Figma node ID to distinguish same-named variants. Each new manifest entry includes its source node and a direct raw URL on `main`.
