@@ -27,7 +27,7 @@ Machine-readable index of everything: `manifest.json`
 
 | Folder | Contains | Files |
 |---|---|---|
-| `illustration-library/<subject>/` | Consolidated Figma illustrations, 23 subject subcategories, including cloud variations | 320 |
+| `illustration-building-blocks/<subject>/` | Illustration Building Blocks — reusable elements for composing illustrations across 23 subject subcategories, including cloud variations | 320 |
 | `cx-roadmap-thumbnails/` | CX Roadmap Thumbnails | 14 |
 | `ai-and-robotics-elements/` | Robotics, autonomous mobility and infrastructure | 21 |
 | `case-studies/<project>/` | Case study graphics, one folder per project | — |
