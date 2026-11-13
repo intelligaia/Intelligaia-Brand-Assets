@@ -25,9 +25,8 @@
       "brand": 2,
       "case-study": 196,
       "company-media": 3,
-      "illustration-library": 317,
+      "illustration-library": 320,
       "cx-roadmap-icons": 14,
-      "cloud-variations": 3,
       "ai-and-robotics-elements": 21
     }
   },
@@ -89,18 +88,13 @@
     },
     {
       "id": "illustration-library",
-      "description": "Consolidated Figma illustration library, organized by 22 subject categories",
-      "count": 317
+      "description": "Consolidated Figma illustration library, organized by 23 subject categories including cloud variations",
+      "count": 320
     },
     {
       "id": "cx-roadmap-icons",
       "description": "Customer experience roadmap illustrations",
       "count": 14
-    },
-    {
-      "id": "cloud-variations",
-      "description": "Three original cloud compositions",
-      "count": 3
     },
     {
       "id": "ai-and-robotics-elements",
@@ -15798,19 +15792,20 @@
       "id": "figma-1343-2",
       "name": "Astra / Clouds / Offset drift — 01",
       "file": "astra-clouds-offset-drift-01--1343-2.svg",
-      "path": "cloud-variations/astra-clouds-offset-drift-01--1343-2.svg",
-      "category": "cloud-variations",
-      "folder": "cloud-variations",
+      "path": "illustration-library/cloud-variations/astra-clouds-offset-drift-01--1343-2.svg",
+      "category": "illustration-library",
+      "folder": "illustration-library/cloud-variations",
       "format": "svg",
       "bytes": 1638,
       "width": 640,
       "height": 480,
       "stage": "final",
       "tags": [
+        "illustration-library",
         "cloud-variations"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cloud-variations/astra-clouds-offset-drift-01--1343-2.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cloud-variations/astra-clouds-offset-drift-01--1343-2.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/illustration-library/cloud-variations/astra-clouds-offset-drift-01--1343-2.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustration-library/cloud-variations/astra-clouds-offset-drift-01--1343-2.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1343:2",
@@ -15821,19 +15816,20 @@
       "id": "figma-1344-12",
       "name": "Astra / Clouds / 03 — Compact",
       "file": "astra-clouds-03-compact--1344-12.svg",
-      "path": "cloud-variations/astra-clouds-03-compact--1344-12.svg",
-      "category": "cloud-variations",
-      "folder": "cloud-variations",
+      "path": "illustration-library/cloud-variations/astra-clouds-03-compact--1344-12.svg",
+      "category": "illustration-library",
+      "folder": "illustration-library/cloud-variations",
       "format": "svg",
       "bytes": 1021,
       "width": 640,
       "height": 480,
       "stage": "final",
       "tags": [
+        "illustration-library",
         "cloud-variations"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cloud-variations/astra-clouds-03-compact--1344-12.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cloud-variations/astra-clouds-03-compact--1344-12.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/illustration-library/cloud-variations/astra-clouds-03-compact--1344-12.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustration-library/cloud-variations/astra-clouds-03-compact--1344-12.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1344:12",
@@ -15844,19 +15840,20 @@
       "id": "figma-1344-22",
       "name": "Astra / Clouds / 04 — Fragmented",
       "file": "astra-clouds-04-fragmented--1344-22.svg",
-      "path": "cloud-variations/astra-clouds-04-fragmented--1344-22.svg",
-      "category": "cloud-variations",
-      "folder": "cloud-variations",
+      "path": "illustration-library/cloud-variations/astra-clouds-04-fragmented--1344-22.svg",
+      "category": "illustration-library",
+      "folder": "illustration-library/cloud-variations",
       "format": "svg",
       "bytes": 1135,
       "width": 640,
       "height": 480,
       "stage": "final",
       "tags": [
+        "illustration-library",
         "cloud-variations"
       ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/cloud-variations/astra-clouds-04-fragmented--1344-22.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/cloud-variations/astra-clouds-04-fragmented--1344-22.svg",
+      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/illustration-library/cloud-variations/astra-clouds-04-fragmented--1344-22.svg",
+      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustration-library/cloud-variations/astra-clouds-04-fragmented--1344-22.svg",
       "source": {
         "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
         "node_id": "1344:22",

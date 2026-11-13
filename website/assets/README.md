@@ -3,7 +3,7 @@
 Curated, versioned illustration assets for Intelligaia. One source, consumed by
 designers, engineers, marketing, and AI agents — and the basis for skill training.
 
-**728 indexed assets · 15 categories · v2.0**
+**728 indexed assets · 14 categories · v2.0**
 
 > This folder holds **assets only**. Templates, wave patterns, website banner
 > assets, older graphics and HTML documents live outside it — see
@@ -27,9 +27,8 @@ Machine-readable index of everything: `manifest.json`
 
 | Folder | Contains | Files |
 |---|---|---|
-| `illustration-library/<subject>/` | Consolidated Figma illustrations, 22 subject subcategories | 317 |
+| `illustration-library/<subject>/` | Consolidated Figma illustrations, 23 subject subcategories, including cloud variations | 320 |
 | `cx-roadmap-icons/` | CX roadmap illustrations | 14 |
-| `cloud-variations/` | Cloud compositions | 3 |
 | `ai-and-robotics-elements/` | Robotics, autonomous mobility and infrastructure | 21 |
 | `case-studies/<project>/` | Case study graphics, one folder per project | — |
 | `diagrams/` | Process and system diagrams (PDF + PNG pairs) | 14 |
