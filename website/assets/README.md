@@ -3,7 +3,7 @@
 Curated, versioned illustration assets for Intelligaia. One source, consumed by
 designers, engineers, marketing, and AI agents — and the basis for skill training.
 
-**726 indexed assets · 14 categories · v2.0**
+**738 indexed assets · 38 categories · v2.0**
 
 > This folder holds **assets only**. Templates, wave patterns, website banner
 > assets, older graphics and HTML documents live outside it — see
@@ -29,53 +29,71 @@ Machine-readable index of everything: `manifest.json`
 |---|---|---|
 | `about/masters/` | Masters | 1 |
 | `about/video/` | Video | 2 |
-| `ai-and-robotics-elements/` | Ai and robotics elements | 21 |
 | `cx-roadmap-thumbnails/` | Cx roadmap thumbnails | 14 |
 | `diagrams/` | Diagrams | 14 |
-| `icons/AI/` | Ai | 2 |
-| `icons/Abstract/` | Abstract | 1 |
-| `icons/Analytics/` | Analytics | 2 |
-| `icons/Data/` | Data | 1 |
-| `icons/Interface/` | Interface | 1 |
-| `icons/People/` | People | 3 |
-| `icons/Strategy/` | Strategy | 1 |
-| `icons/System/` | System | 2 |
-| `icons/UI/` | Ui | 27 |
-| `illustrations/aviation-space/` | Aviation space | 9 |
+| `icons/People/` | People | 1 |
+| `icons/abstract/` | Abstract | 1 |
+| `icons/ai-automation/` | Ai automation | 3 |
+| `icons/calendar-time/` | Calendar time | 7 |
+| `icons/data-analytics/` | Data analytics | 2 |
+| `icons/global-localization/` | Global localization | 4 |
+| `icons/help-support/` | Help support | 2 |
+| `icons/interface-navigation/` | Interface navigation | 2 |
+| `icons/people-accounts/` | People accounts | 6 |
+| `icons/security-verification/` | Security verification | 4 |
+| `icons/status-alerts/` | Status alerts | 7 |
+| `icons/strategy-goals/` | Strategy goals | 1 |
+| `illustrations/aviation-space/` | Aviation space | 15 |
 | `illustrations/buildings/` | Buildings | 18 |
-| `illustrations/business-workplace/` | Business workplace | 14 |
-| `illustrations/cameras-optics/` | Cameras optics | 6 |
-| `illustrations/celebration-events/` | Celebration events | 18 |
+| `illustrations/business-workplace/` | Business workplace | 15 |
+| `illustrations/cameras-optics/` | Cameras optics | 8 |
+| `illustrations/celebration-events/` | Celebration events | 15 |
 | `illustrations/characters-female/` | Characters female | 10 |
 | `illustrations/characters-male/` | Characters male | 6 |
 | `illustrations/commerce-retail/` | Commerce retail | 12 |
 | `illustrations/communication-social/` | Communication social | 6 |
-| `illustrations/computers-electronics/` | Computers electronics | 28 |
 | `illustrations/data-analytics/` | Data analytics | 23 |
-| `illustrations/devices/` | Devices | 3 |
+| `illustrations/devices/audio/` | Audio | 2 |
+| `illustrations/devices/components-storage/` | Components storage | 4 |
+| `illustrations/devices/computers-displays/` | Computers displays | 10 |
+| `illustrations/devices/kiosks/` | Kiosks | 1 |
+| `illustrations/devices/phones-tablets/` | Phones tablets | 5 |
+| `illustrations/devices/printing/` | Printing | 1 |
+| `illustrations/devices/wearables/` | Wearables | 6 |
 | `illustrations/education-learning/` | Education learning | 7 |
 | `illustrations/energy-systems/` | Energy systems | 15 |
 | `illustrations/environment-sustainability/` | Environment sustainability | 2 |
 | `illustrations/finance-payments/` | Finance payments | 7 |
-| `illustrations/food-drink/` | Food drink | 4 |
-| `illustrations/furniture-storage/` | Furniture storage | 28 |
+| `illustrations/food-drink/` | Food drink | 5 |
+| `illustrations/furniture-storage/` | Furniture storage | 26 |
 | `illustrations/health-wellness/` | Health wellness | 14 |
-| `illustrations/machinery-industry/` | Machinery industry | 19 |
-| `illustrations/maritime-nautical/` | Maritime nautical | 4 |
+| `illustrations/lighting/` | Lighting | 3 |
+| `illustrations/machinery-industry/` | Machinery industry | 20 |
+| `illustrations/maritime-nautical/` | Maritime nautical | 7 |
 | `illustrations/nature/animals/` | Animals | 5 |
 | `illustrations/nature/birds/` | Birds | 7 |
 | `illustrations/nature/clouds/` | Clouds | 4 |
 | `illustrations/nature/flowers/` | Flowers | 16 |
-| `illustrations/nature/landscapes-and-weather/` | Landscapes and weather | 11 |
+| `illustrations/nature/landscapes-and-weather/` | Landscapes and weather | 12 |
 | `illustrations/nature/plants-and-trees/` | Plants and trees | 22 |
 | `illustrations/nature/sea-life/` | Sea life | 5 |
-| `illustrations/networking-infrastructure/` | Networking infrastructure | 29 |
-| `illustrations/objects/` | Objects | 5 |
-| `illustrations/security-trust/` | Security trust | 4 |
-| `illustrations/tools-objects/` | Tools objects | 23 |
-| `illustrations/vehicles/` | Vehicles | 26 |
+| `illustrations/networking-infrastructure/` | Networking infrastructure | 28 |
+| `illustrations/objects/` | Objects | 6 |
+| `illustrations/robotics-automation/` | Robotics automation | 7 |
+| `illustrations/security-trust/` | Security trust | 5 |
+| `illustrations/time-scheduling/` | Time scheduling | 4 |
+| `illustrations/tools/` | Tools | 17 |
+| `illustrations/vehicles/autonomous-mobility/` | Autonomous mobility | 4 |
+| `illustrations/vehicles/buses/` | Buses | 5 |
+| `illustrations/vehicles/cars-vans/` | Cars vans | 8 |
+| `illustrations/vehicles/cycles-scooters/` | Cycles scooters | 5 |
+| `illustrations/vehicles/emergency/` | Emergency | 3 |
+| `illustrations/vehicles/rail/` | Rail | 2 |
+| `illustrations/vehicles/trucks/` | Trucks | 3 |
 | `letters/` | Letters | 26 |
 | `logo/` | Logo | 2 |
+| `numbers/` | Numbers | 10 |
+| `patterns/` | Patterns | 2 |
 | `case-studies/<project>/` | Case study graphics | — |
 
 ---
@@ -158,3 +176,7 @@ Proprietary. Intelligaia internal and client work only. Not for redistribution.
 ## Nature library — 2026-11-20
 
 Nature artwork is organized in subfolders under `illustrations/nature/`. Existing cloud variations and finished plants and trees are consolidated there. Source Figma node IDs and original labels are retained in the manifest. Distinct variants use two-digit numbers or descriptive details.
+
+## Category review — 2026-11-20
+
+All 496 SVGs were reviewed visually. Files are organized by depicted subject, with CX Roadmap retained as a purpose-specific thumbnail collection. Every SVG is indexed in the manifest, including numbers and patterns. See [category rules](CATEGORIES.md) for placement guidance.
