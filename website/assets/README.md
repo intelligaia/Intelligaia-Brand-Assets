@@ -3,7 +3,7 @@
 Curated, versioned illustration assets for Intelligaia. One source, consumed by
 designers, engineers, marketing, and AI agents — and the basis for skill training.
 
-**725 indexed assets · 14 categories · v2.0**
+**726 indexed assets · 14 categories · v2.0**
 
 > This folder holds **assets only**. Templates, wave patterns, website banner
 > assets, older graphics and HTML documents live outside it — see
@@ -27,41 +27,56 @@ Machine-readable index of everything: `manifest.json`
 
 | Folder | Contains | Files |
 |---|---|---|
-| `illustrations/aviation-space/` | Aviation Space illustration elements | 9 |
-| `illustrations/buildings/` | Buildings illustration elements | 18 |
-| `illustrations/business-workplace/` | Business Workplace illustration elements | 14 |
-| `illustrations/cameras-optics/` | Cameras Optics illustration elements | 6 |
-| `illustrations/celebration-events/` | Celebration Events illustration elements | 18 |
-| `illustrations/cloud-variations/` | Cloud Variations illustration elements | 3 |
-| `illustrations/commerce-retail/` | Commerce Retail illustration elements | 12 |
-| `illustrations/communication-social/` | Communication Social illustration elements | 6 |
-| `illustrations/computers-electronics/` | Computers Electronics illustration elements | 28 |
-| `illustrations/data-analytics/` | Data Analytics illustration elements | 23 |
-| `illustrations/education-learning/` | Education Learning illustration elements | 7 |
-| `illustrations/energy-systems/` | Energy Systems illustration elements | 15 |
-| `illustrations/environment-sustainability/` | Environment Sustainability illustration elements | 2 |
-| `illustrations/finance-payments/` | Finance Payments illustration elements | 7 |
-| `illustrations/food-drink/` | Food Drink illustration elements | 3 |
-| `illustrations/furniture-storage/` | Furniture Storage illustration elements | 28 |
-| `illustrations/health-wellness/` | Health Wellness illustration elements | 14 |
-| `illustrations/machinery-industry/` | Machinery Industry illustration elements | 19 |
-| `illustrations/maritime-nautical/` | Maritime Nautical illustration elements | 4 |
-| `illustrations/networking-infrastructure/` | Networking Infrastructure illustration elements | 29 |
-| `illustrations/security-trust/` | Security Trust illustration elements | 4 |
-| `illustrations/tools-objects/` | Tools Objects illustration elements | 23 |
-| `illustrations/vehicles/` | Vehicles illustration elements | 26 |
-| `cx-roadmap-thumbnails/` | CX Roadmap Thumbnails | 14 |
-| `ai-and-robotics-elements/` | Robotics, autonomous mobility and infrastructure | 21 |
-| `case-studies/<project>/` | Case study graphics, one folder per project | — |
-| `diagrams/` | Process and system diagrams (PDF + PNG pairs) | 14 |
-| `icons/` | UI and concept icon sets, SVG | 40 |
-| `illustrations/characters-female/` | Female characters, three-stage construction | 30 |
-| `illustrations/characters-male/` | Male characters, three-stage construction | 18 |
-| `illustrations/devices/` | Laptops, headsets, glasses, hardware | 21 |
-| `illustrations/nature/` | Clouds, plants, trees | 10 |
-| `illustrations/objects/` | Lighthouse, ships, binoculars, magnifier | 12 |
-| `letters/` | Isometric gradient letterforms A–Z, SVG | 26 |
-| `logo/` | Intelligaia logo and wordmark | 2 |
+| `about/masters/` | Masters | 1 |
+| `about/video/` | Video | 2 |
+| `ai-and-robotics-elements/` | Ai and robotics elements | 21 |
+| `cx-roadmap-thumbnails/` | Cx roadmap thumbnails | 14 |
+| `diagrams/` | Diagrams | 14 |
+| `icons/AI/` | Ai | 2 |
+| `icons/Abstract/` | Abstract | 1 |
+| `icons/Analytics/` | Analytics | 2 |
+| `icons/Data/` | Data | 1 |
+| `icons/Interface/` | Interface | 1 |
+| `icons/People/` | People | 3 |
+| `icons/Strategy/` | Strategy | 1 |
+| `icons/System/` | System | 2 |
+| `icons/UI/` | Ui | 27 |
+| `illustrations/aviation-space/` | Aviation space | 9 |
+| `illustrations/buildings/` | Buildings | 18 |
+| `illustrations/business-workplace/` | Business workplace | 14 |
+| `illustrations/cameras-optics/` | Cameras optics | 6 |
+| `illustrations/celebration-events/` | Celebration events | 18 |
+| `illustrations/characters-female/` | Characters female | 10 |
+| `illustrations/characters-male/` | Characters male | 6 |
+| `illustrations/commerce-retail/` | Commerce retail | 12 |
+| `illustrations/communication-social/` | Communication social | 6 |
+| `illustrations/computers-electronics/` | Computers electronics | 28 |
+| `illustrations/data-analytics/` | Data analytics | 23 |
+| `illustrations/devices/` | Devices | 3 |
+| `illustrations/education-learning/` | Education learning | 7 |
+| `illustrations/energy-systems/` | Energy systems | 15 |
+| `illustrations/environment-sustainability/` | Environment sustainability | 2 |
+| `illustrations/finance-payments/` | Finance payments | 7 |
+| `illustrations/food-drink/` | Food drink | 4 |
+| `illustrations/furniture-storage/` | Furniture storage | 28 |
+| `illustrations/health-wellness/` | Health wellness | 14 |
+| `illustrations/machinery-industry/` | Machinery industry | 19 |
+| `illustrations/maritime-nautical/` | Maritime nautical | 4 |
+| `illustrations/nature/animals/` | Animals | 5 |
+| `illustrations/nature/birds/` | Birds | 7 |
+| `illustrations/nature/clouds/` | Clouds | 4 |
+| `illustrations/nature/flowers/` | Flowers | 16 |
+| `illustrations/nature/landscapes-and-weather/` | Landscapes and weather | 11 |
+| `illustrations/nature/plants-and-trees/` | Plants and trees | 22 |
+| `illustrations/nature/sea-life/` | Sea life | 5 |
+| `illustrations/networking-infrastructure/` | Networking infrastructure | 29 |
+| `illustrations/objects/` | Objects | 5 |
+| `illustrations/security-trust/` | Security trust | 4 |
+| `illustrations/tools-objects/` | Tools objects | 23 |
+| `illustrations/vehicles/` | Vehicles | 26 |
+| `letters/` | Letters | 26 |
+| `logo/` | Logo | 2 |
+| `case-studies/<project>/` | Case study graphics | — |
 
 ---
 
@@ -85,18 +100,9 @@ part of the asset library.
 
 ---
 
-## Construction stages
+## Production illustrations
 
-Many illustrations ship in stages. The filename suffix tells you which.
-
-| Stage | Meaning |
-|---|---|
-| **Deconstructed** | Primitive circles and rectangles on the 50×50 grid |
-| **Outlined** | Stroke-only contour, no fill |
-| **Filled** | Flat brand-colour fill applied |
-| **Final** | Production-ready with shading and detail |
-
-Use **Final** unless you are documenting the method.
+Only finished illustrations are published. Construction-stage exports (outlined, deconstructed and filled) are excluded. Filenames omit stage suffixes; `stage: "final"` remains in the manifest for compatibility.
 
 ---
 
@@ -123,7 +129,7 @@ Type: **Oswald** 500 headings, 400 descriptions. **Geist** 400 body.
 
 ## Rules
 
-**Do** — pull by URL rather than copying · use `Final` stage in production ·
+**Do** — pull by URL rather than copying · use the production illustrations ·
 keep flat `#FFC800`, no gradients on hero yellow · one accent (blue *or* purple)
 per viewport.
 
@@ -147,4 +153,8 @@ Proprietary. Intelligaia internal and client work only. Not for redistribution.
 
 ## Figma illustration import — 2026-11-13
 
-355 original SVG exports were added from the four supplied sections in Intelligaia Web DS. Catalog cards and category labels are excluded; each file contains the complete illustration frame. Original backgrounds and colors are preserved. Filenames follow the existing illustration convention: `Subject [variant number] — [view or detail] — Stage.svg`. Same-named variants use two-digit numbers (for example, `House 01 — Final.svg`); descriptive details identify cloud and color variations (for example, `Cloud — Compact — Final.svg` and `Air Taxi — Blue — Final.svg`). Figma node IDs and original layer names remain in the manifest's source metadata. Each new manifest entry includes its source node and a direct raw URL on `main`.
+355 original SVG exports were added from the four supplied sections in Intelligaia Web DS. Catalog cards and category labels are excluded; each file contains the complete illustration frame. Original backgrounds and colors are preserved. Filenames follow the existing illustration convention: `Subject [variant number] — [view or detail].svg`. Same-named variants use two-digit numbers (for example, `House 01.svg`); descriptive details identify cloud and color variations (for example, `Cloud — Compact.svg` and `Air Taxi — Blue.svg`). Figma node IDs and original layer names remain in the manifest's source metadata. Each new manifest entry includes its source node and a direct raw URL on `main`.
+
+## Nature library — 2026-11-20
+
+Nature artwork is organized in subfolders under `illustrations/nature/`. Existing cloud variations and finished plants and trees are consolidated there. Source Figma node IDs and original labels are retained in the manifest. Distinct variants use two-digit numbers or descriptive details.

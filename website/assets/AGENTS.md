@@ -37,9 +37,9 @@ TOKENS    ../tokens/colours.json  ·  ../tokens/typography.json   (repo: website
   "assets": [
     {
       "id": "a1b2c3d4e5f6",
-      "name": "MacBook — Front face — Final",
-      "file": "MacBook — Front face — Final.png",
-      "path": "illustrations/devices/MacBook — Front face — Final.png",
+      "name": "MacBook — Front face",
+      "file": "MacBook — Front face.png",
+      "path": "illustrations/devices/MacBook — Front face.png",
       "category": "device",
       "folder": "illustrations/devices",
       "format": "png",
