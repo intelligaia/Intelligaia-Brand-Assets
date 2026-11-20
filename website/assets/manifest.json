@@ -2,7 +2,7 @@
   "$schema": "https://intelligaia.github.io/schemas/asset-manifest-v1.json",
   "name": "Intelligaia Illustration Assets",
   "version": "2.0",
-  "generated": "2026-11-13",
+  "generated": "2026-11-20",
   "description": "Intelligaia illustration library — curated assets only (case studies, diagrams, icons, illustrations, letters, logo). Templates, waves, banners, older graphics and documents live outside assets/.",
   "license": "Proprietary — Intelligaia internal and client work only.",
   "repository": "https://github.com/intelligaia/Intelligaia-Brand-Assets",
@@ -12,10 +12,10 @@
     "pages": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets"
   },
   "counts": {
-    "total": 728,
+    "total": 725,
     "by_category": {
       "diagram": 14,
-      "icon": 41,
+      "icon": 40,
       "character-female": 30,
       "character-male": 18,
       "device": 21,
@@ -25,7 +25,7 @@
       "brand": 2,
       "case-study": 196,
       "company-media": 3,
-      "illustration-building-blocks": 320,
+      "illustration-building-blocks": 318,
       "cx-roadmap-thumbnails": 14,
       "ai-and-robotics-elements": 21
     }
@@ -59,7 +59,7 @@
     {
       "id": "icon",
       "description": "UI and concept icon sets",
-      "count": 41
+      "count": 40
     },
     {
       "id": "letter",
@@ -89,7 +89,7 @@
     {
       "id": "illustration-building-blocks",
       "description": "Illustration Building Blocks — reusable elements for composing illustrations, organized into 23 subject categories including cloud variations",
-      "count": 320
+      "count": 318
     },
     {
       "id": "cx-roadmap-thumbnails",
@@ -454,24 +454,6 @@
       ],
       "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/icons/AI/Machine-Vision.svg",
       "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/icons/AI/Machine-Vision.svg"
-    },
-    {
-      "id": "221e667f5202",
-      "name": "Concentric-Arcs",
-      "file": "Concentric-Arcs.svg",
-      "path": "icons/Abstract/Concentric-Arcs.svg",
-      "category": "icon",
-      "folder": "icons/Abstract",
-      "format": "svg",
-      "bytes": 1675688,
-      "width": null,
-      "height": null,
-      "stage": null,
-      "tags": [
-        "icon"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/assets/icons/Abstract/Concentric-Arcs.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/icons/Abstract/Concentric-Arcs.svg"
     },
     {
       "id": "82c0566220db",
@@ -9184,31 +9166,6 @@
       }
     },
     {
-      "id": "figma-1183-298167",
-      "name": "Drone — Final",
-      "file": "Drone — Final.svg",
-      "path": "illustrations/aviation-space/Drone — Final.svg",
-      "category": "illustration-building-blocks",
-      "folder": "illustrations/aviation-space",
-      "format": "svg",
-      "bytes": 774,
-      "width": 531,
-      "height": 531,
-      "stage": "final",
-      "tags": [
-        "illustration-building-blocks",
-        "aviation & space"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/illustrations/aviation-space/Drone%20%E2%80%94%20Final.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/aviation-space/Drone%20%E2%80%94%20Final.svg",
-      "source": {
-        "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
-        "node_id": "1183:298167",
-        "url": "https://www.figma.com/design/ToMKzhnKI5sPwCXAYCKPHA?node-id=1183-298167",
-        "name": "drone"
-      }
-    },
-    {
       "id": "figma-1183-298179",
       "name": "Satellite — Final",
       "file": "Satellite — Final.svg",
@@ -13731,31 +13688,6 @@
         "node_id": "1183:300121",
         "url": "https://www.figma.com/design/ToMKzhnKI5sPwCXAYCKPHA?node-id=1183-300121",
         "name": "IC-DATA-09  ·  Data · Funnel"
-      }
-    },
-    {
-      "id": "figma-1183-300131",
-      "name": "Gauge 02 — Final",
-      "file": "Gauge 02 — Final.svg",
-      "path": "illustrations/data-analytics/Gauge 02 — Final.svg",
-      "category": "illustration-building-blocks",
-      "folder": "illustrations/data-analytics",
-      "format": "svg",
-      "bytes": 1570,
-      "width": 800,
-      "height": 880,
-      "stage": "final",
-      "tags": [
-        "illustration-building-blocks",
-        "data & analytics"
-      ],
-      "raw_url": "https://raw.githubusercontent.com/intelligaia/Intelligaia-Brand-Assets/main/website/assets/illustrations/data-analytics/Gauge%2002%20%E2%80%94%20Final.svg",
-      "pages_url": "https://intelligaia.github.io/Intelligaia-Brand-Assets/assets/illustrations/data-analytics/Gauge%2002%20%E2%80%94%20Final.svg",
-      "source": {
-        "file_key": "ToMKzhnKI5sPwCXAYCKPHA",
-        "node_id": "1183:300131",
-        "url": "https://www.figma.com/design/ToMKzhnKI5sPwCXAYCKPHA?node-id=1183-300131",
-        "name": "IC-DATA-X03  ·  Data · Gauge"
       }
     },
     {

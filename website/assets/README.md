@@ -3,7 +3,7 @@
 Curated, versioned illustration assets for Intelligaia. One source, consumed by
 designers, engineers, marketing, and AI agents — and the basis for skill training.
 
-**728 indexed assets · 14 categories · v2.0**
+**725 indexed assets · 14 categories · v2.0**
 
 > This folder holds **assets only**. Templates, wave patterns, website banner
 > assets, older graphics and HTML documents live outside it — see
@@ -27,7 +27,7 @@ Machine-readable index of everything: `manifest.json`
 
 | Folder | Contains | Files |
 |---|---|---|
-| `illustrations/aviation-space/` | Aviation Space illustration elements | 10 |
+| `illustrations/aviation-space/` | Aviation Space illustration elements | 9 |
 | `illustrations/buildings/` | Buildings illustration elements | 18 |
 | `illustrations/business-workplace/` | Business Workplace illustration elements | 14 |
 | `illustrations/cameras-optics/` | Cameras Optics illustration elements | 6 |
@@ -36,7 +36,7 @@ Machine-readable index of everything: `manifest.json`
 | `illustrations/commerce-retail/` | Commerce Retail illustration elements | 12 |
 | `illustrations/communication-social/` | Communication Social illustration elements | 6 |
 | `illustrations/computers-electronics/` | Computers Electronics illustration elements | 28 |
-| `illustrations/data-analytics/` | Data Analytics illustration elements | 24 |
+| `illustrations/data-analytics/` | Data Analytics illustration elements | 23 |
 | `illustrations/education-learning/` | Education Learning illustration elements | 7 |
 | `illustrations/energy-systems/` | Energy Systems illustration elements | 15 |
 | `illustrations/environment-sustainability/` | Environment Sustainability illustration elements | 2 |
@@ -54,7 +54,7 @@ Machine-readable index of everything: `manifest.json`
 | `ai-and-robotics-elements/` | Robotics, autonomous mobility and infrastructure | 21 |
 | `case-studies/<project>/` | Case study graphics, one folder per project | — |
 | `diagrams/` | Process and system diagrams (PDF + PNG pairs) | 14 |
-| `icons/` | UI and concept icon sets, SVG | 41 |
+| `icons/` | UI and concept icon sets, SVG | 40 |
 | `illustrations/characters-female/` | Female characters, three-stage construction | 30 |
 | `illustrations/characters-male/` | Male characters, three-stage construction | 18 |
 | `illustrations/devices/` | Laptops, headsets, glasses, hardware | 21 |
